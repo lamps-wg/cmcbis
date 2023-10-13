@@ -7,6 +7,20 @@ This is the working area for the individual Internet-Draft, "Certificate Managem
 * [Individual Draft](https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5272bis)
 * [Compare Editor's Copy to Individual Draft](https://seanturner.github.io/cmcbis/#go.draft-mandel-lamps-rfc5272bis.diff)
 
+This is the working area for the individual Internet-Draft, "Certificate Management over CMS (CMC): Transport Protocols".
+
+* [Editor's Copy](https://seanturner.github.io/cmcbis/#go.draft-mandel-lamps-rfc5273bis.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-mandel-lamps-rfc5273bis)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5232bis)
+* [Compare Editor's Copy to Individual Draft](https://seanturner.github.io/cmcbis/#go.draft-mandel-lamps-rfc5273bis.diff)
+
+This is the working area for the individual Internet-Draft, "Certificate Management Messages over CMS (CMC): Compliance Requirements".
+
+* [Editor's Copy](https://seanturner.github.io/cmcbis/#go.draft-mandel-lamps-rfc52744bis.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-mandel-lamps-rfc5274bis)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5274bis)
+* [Compare Editor's Copy to Individual Draft](https://seanturner.github.io/cmcbis/#go.draft-mandel-lamps-rfc5274bis.diff)
+
 
 ## Contributing
 
