@@ -51,7 +51,7 @@ normative:
     title: "RFC 5273 erratum 3593"
     target: https://www.rfc-editor.org/errata/eid3593
     date: 2013-04
-  CMC-STRUCT: RFC5272
+  CMC-STRUCT: I-D.mandel-lamps-rfc5272bis
   HTTP: RFC9111
   IPsec: RFC4301
   SMIMEV4: RFC8551
@@ -59,7 +59,7 @@ normative:
 
 informative:
   TLS: I-D.ietf-tls-rfc8446bis
-  CMC-TRANSv1: RFC5273
+  CMC-TRANSv1: I-D.mandel-lamps-rfc5273bis
   CMC-Updates: RFC6402
 
 
