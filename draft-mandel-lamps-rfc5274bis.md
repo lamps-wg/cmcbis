@@ -46,8 +46,8 @@ contributor:
    org: TraceRoute Security, Inc.
 
 normative:
-  CMC-STRUCT: RFC5272
-  CMC-TRANS:  RFC5273
+  CMC-STRUCT: I-D.mandel-lamps-rfc5272bis
+  CMC-TRANS: I-D.mandel-lamps-rfc5273bis
   CMS: RFC5652
   CMS-AES: RFC3565
   CMS-ALG: RFC3370
@@ -64,7 +64,7 @@ informative:
   PKCS10: RFC2986
   SMALL-SUB-GROUP: RFC2785
   HASH-ATTACKS: RFC4270
-  CMC-COMPv1: RFC5274
+  CMC-COMPv1: I-D.mandel-lamps-rfc5274bis
   CMC-Updates: RFC6402
 
 --- abstract
