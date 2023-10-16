@@ -567,7 +567,7 @@ The PKIData content type is used for the Full PKI Request. A PKIData
 content type is identified by:
 
 ~~~
-  id-cct-PKIData ::= {id-pkix id-cct(12) 2 }
+  id-cct-PKIData OBJECT IDENTIFIER ::= { id-pkix id-cct(12) 2 }
 ~~~
 
 The ASN.1 structure corresponding to the PKIData content type is:
