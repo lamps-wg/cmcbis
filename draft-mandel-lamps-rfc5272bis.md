@@ -3564,7 +3564,6 @@ id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }
       bodyIds         SEQUENCE OF BodyPartID
   }
 
- --
  id-cmc-getCert OBJECT IDENTIFIER ::= { id-cmc 15 }
 
  GetCert ::= SEQUENCE {
