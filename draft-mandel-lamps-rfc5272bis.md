@@ -2744,13 +2744,13 @@ Response.
 The Batch Request control is identified by the OID:
 
 ~~~
-  id-cmc-batchRequests OBJECT IDENTIFIER ::= {id-cmc 28}
+  id-cmc-batchRequests OBJECT IDENTIFIER ::= { id-cmc 28 }
 ~~~
 
 The Batch Response control is identified by the OID:
 
 ~~~
-  id-cmc-batchResponses OBJECT IDENTIFIER ::= {id-cmc 29}
+  id-cmc-batchResponses OBJECT IDENTIFIER ::= { id-cmc 29 }
 ~~~
 
 Both the Batch Request and Batch Response controls have the ASN.1
@@ -3355,27 +3355,27 @@ EnrollmentMessageSyntax
 
    -- PKIX Part 1 - Implicit    From [PKIXCERT]
       GeneralName, CRLReason, ReasonFlags
-      FROM PKIX1Implicit88 {iso(1) identified-organization(3) dod(6)
+      FROM PKIX1Implicit88 { iso(1) identified-organization(3) dod(6)
               internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-              id-pkix1-implicit(19)}
+              id-pkix1-implicit(19) }
 
    -- PKIX Part 1 - Explicit    From [PKIXCERT]
       AlgorithmIdentifier, Extension, Name, CertificateSerialNumber
-      FROM PKIX1Explicit88 {iso(1) identified-organization(3) dod(6)
+      FROM PKIX1Explicit88 { iso(1) identified-organization(3) dod(6)
               internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-              id-pkix1-explicit(18)}
+              id-pkix1-explicit(18) }
 
    -- Cryptographic Message Syntax   FROM [CMS]
       ContentInfo, Attribute, IssuerAndSerialNumber
         FROM CryptographicMessageSyntax2004 { iso(1) member-body(2)
              us(840) rsadsi(113549) pkcs(1) pkcs-9(9) smime(16)
-             modules(0) cms-2004(24)}
+             modules(0) cms-2004(24) }
 
    -- CRMF                         FROM [CRMF]
     CertReqMsg, PKIPublicationInfo, CertTemplate
-    FROM PKIXCRMF-2005 {iso(1) identified-organization(3) dod(6)
+    FROM PKIXCRMF-2005 { iso(1) identified-organization(3) dod(6)
            internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-           id-mod-crmf2005(36)};
+           id-mod-crmf2005(36) };
 
    -- Global Types
       UTF8String ::= [UNIVERSAL 12] IMPLICIT OCTET STRING
@@ -3557,7 +3557,7 @@ CMCFailInfo ::= INTEGER {
      thePOP          OCTET STRING
  }
 
-  id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }
+id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }
 
  LraPopWitness ::= SEQUENCE {
       pkiDataBodyid   BodyPartID,
