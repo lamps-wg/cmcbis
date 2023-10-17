@@ -3736,7 +3736,7 @@ Message #2 from client to server:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIData
+       eContentType = id-cct-PKIData
        eContent
          controlSequence
            {102, id-cmc-identityProof, computed value}
@@ -3786,7 +3786,7 @@ Message from client to RA:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIData
+       eContentType = id-cct-PKIData
        eContent
          controlSequence
            {102, id-cmc-identityProof, computed value}
@@ -3811,7 +3811,7 @@ Message from RA to CA:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIData
+       eContentType = id-cct-PKIData
        eContent
          controlSequence
            { 102, id-cmc-batchRequests, { 1, 2} }
@@ -3911,7 +3911,7 @@ Message #1 from client to server:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIData
+       eContentType = id-cct-PKIData
        eContent
          controlSequence
            {102, id-cmc-transactionId, 10132985123483401}
@@ -3980,7 +3980,7 @@ Response #1 from server to client:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIData
+       eContentType = id-cct-PKIData
        eContent
          controlSequence
            {102, id-cmc-transactionId, 10132985123483401}
