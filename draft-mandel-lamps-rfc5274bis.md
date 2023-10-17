@@ -23,7 +23,7 @@ venue:
   type: LAMPS
   mail: spasm@ietf.org
   arch: https://mailarchive.ietf.org/arch/browse/spasm/
-  github: TBD
+  github: "seanturner/cmcbis"
 
 author:
  -
