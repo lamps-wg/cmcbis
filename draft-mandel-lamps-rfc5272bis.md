@@ -3613,7 +3613,7 @@ id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }
  --    documents.
 
  id-aa OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
-       rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2)}
+       rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2) }
  id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= { id-aa 34 }
 
  CMCUnsignedData ::= SEQUENCE {
