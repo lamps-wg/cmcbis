@@ -411,7 +411,7 @@ Full PKI Request                        Full PKI Response
  |     object     |                      |     object     |
  +----------------+--------+             +----------------+--------+
  |                         |             |                         |
- | PKIData                 |             | PKIResponseBody         |
+ | PKIData                 |             | PKIResponse             |
  |                         |             |                         |
  | Sequence of:            |             | Sequence of:            |
  | <enrollment control>*   |             | <enrollment control>*   |
