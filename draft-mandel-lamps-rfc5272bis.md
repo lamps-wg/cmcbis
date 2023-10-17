@@ -478,8 +478,8 @@ where Extension is imported from {{PKIXCERT}} and ExtensionReq is
 identified by:
 
 ~~~
-  id-ExtensionReq OBJECT IDENTIFIER ::= {iso(1) member-body(2)
-    us(840) rsadsi(113549) pkcs(1) pkcs-9(9) 14}
+  id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2)
+    us(840) rsadsi(113549) pkcs(1) pkcs-9(9) 14 }
 ~~~
 
 Servers MUST be able to process all extensions defined, but not
@@ -3596,8 +3596,8 @@ CMCFailInfo ::= INTEGER {
  -- The following is used to request V3 extensions be added to a
  -- certificate
 
- id-ExtensionReq OBJECT IDENTIFIER ::= {iso(1) member-body(2) us(840)
-      rsadsi(113549) pkcs(1) pkcs-9(9) 14}
+ id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+      rsadsi(113549) pkcs(1) pkcs-9(9) 14 }
 
  ExtensionReq ::= SEQUENCE SIZE (1..MAX) OF Extension
 
@@ -3661,7 +3661,7 @@ CMCFailInfo ::= INTEGER {
      anchorHashes     SEQUENCE OF OCTET STRING
  }
 
- id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 2 7}
+ id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 27 }
 
  AuthPublish ::= BodyPartID
 
