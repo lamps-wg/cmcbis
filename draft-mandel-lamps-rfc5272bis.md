@@ -478,8 +478,8 @@ where Extension is imported from {{PKIXCERT}} and ExtensionReq is
 identified by:
 
 ~~~
-  id-ExtensionReq OBJECT IDENTIFIER ::= {iso(1) member-body(2)
-    us(840) rsadsi(113549) pkcs(1) pkcs-9(9) 14}
+  id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2)
+    us(840) rsadsi(113549) pkcs(1) pkcs-9(9) 14 }
 ~~~
 
 Servers MUST be able to process all extensions defined, but not
@@ -567,7 +567,7 @@ The PKIData content type is used for the Full PKI Request. A PKIData
 content type is identified by:
 
 ~~~
-  id-cct-PKIData ::= {id-pkix id-cct(12) 2 }
+  id-cct-PKIData OBJECT IDENTIFIER ::= { id-pkix id-cct(12) 2 }
 ~~~
 
 The ASN.1 structure corresponding to the PKIData content type is:
@@ -1019,7 +1019,7 @@ authenticated data wrapper.
 The CMC Unsigned Data attribute is identified by:
 
 ~~~
-  id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= {id-aa 34}
+  id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= { id-aa 34 }
 ~~~
 
 The CMC Unsigned Data attribute has the ASN.1 definition:
@@ -1110,7 +1110,7 @@ The PKIResponse content type is used for the Full PKI Response. The
 PKIResponse content type is identified by:
 
 ~~~
-  id-cct-PKIResponse ::= {id-pkix id-cct(12) 3  }
+  id-cct-PKIResponse OBJECT IDENTIFIER ::= { id-pkix id-cct(12) 3  }
 ~~~
 
 The ASN.1 structure corresponding to the PKIResponse content type is:
@@ -1294,7 +1294,7 @@ CMC Status Info control.
 The Extended CMC Status Info control is identified by the OID:
 
 ~~~
-  id-cmc-statusInfoV2 ::= { id-cmc 25 }
+  id-cmc-statusInfoV2 OBJECT IDENTIFIER ::= { id-cmc 25 }
 ~~~
 
 The Extended CMC Status Info control has the ASN.1 definition:
@@ -1385,7 +1385,7 @@ control MAY be omitted unless it is the only item in the response.
 The CMC Status Info control is identified by the OID:
 
 ~~~
-  id-cmc-statusInfo ::= { id-cmc 1 }
+  id-cmc-statusInfo OBJECT IDENTIFIER ::= { id-cmc 1 }
 ~~~
 
 The CMC Status Info control has the ASN.1 definition:
@@ -1573,7 +1573,7 @@ the shared-secret is used to compute the Identity Proof control.
 The Identity Proof Version 2 control is identified by the OID:
 
 ~~~
-  id-cmc-identityProofV2 ::= { id-cmc 34 }
+  id-cmc-identityProofV2 OBJECT IDENTIFIER ::= { id-cmc 34 }
 ~~~
 
 The Identity Proof Version 2 control has the ASN.1 definition:
@@ -1640,7 +1640,7 @@ of {{PASSWORD}}.
 The Identity Proof control is identified by the OID:
 
 ~~~
-  id-cmc-identityProof ::= { id-cmc 3 }
+  id-cmc-identityProof OBJECT IDENTIFIER ::= { id-cmc 3 }
 ~~~
 
 The Identity Proof control has the ASN.1 definition:
@@ -1669,7 +1669,7 @@ shared-secret.
 The Identification control is identified by the OID:
 
 ~~~
-  id-cmc-identification ::= { id-cmc 2 }
+  id-cmc-identification OBJECT IDENTIFIER ::= { id-cmc 2 }
 ~~~
 
 The Identification control has the ASN.1 definition:
@@ -1744,7 +1744,7 @@ certification request (PKCS #10 or CRMF).
 The POP Link Witness Version 2 control is identified by the OID:
 
 ~~~
-  id-cmc-popLinkWitnessV2 ::= { id-cmc 33 }
+  id-cmc-popLinkWitnessV2 OBJECT IDENTIFIER ::= { id-cmc 33 }
 ~~~
 
 The POP Link Witness Version 2 control has the ASN.1 definition:
@@ -1813,7 +1813,7 @@ secret was used.
 The POP Link Witness control is identified by the OID:
 
 ~~~
-  id-cmc-popLinkWitness ::= { id-cmc 23 }
+  id-cmc-popLinkWitness OBJECT IDENTIFIER ::= { id-cmc 23 }
 ~~~
 
 The POP Link Witness control has the ASN.1 definition:
@@ -1830,7 +1830,7 @@ HMAC-SHA1 is used as the mac algorithm.
 The POP Link Random control is identified by the OID:
 
 ~~~
-  id-cmc-popLinkRandom ::= { id-cmc 22 }
+  id-cmc-popLinkRandom OBJECT IDENTIFIER ::= { id-cmc 22 }
 ~~~
 
 The POP Link Random control has the ASN.1 definition:
@@ -1920,7 +1920,7 @@ outside the scope of this specification.
 The Data Return control is identified by the OID:
 
 ~~~
-  id-cmc-dataReturn ::= { id-cmc 4 }
+  id-cmc-dataReturn OBJECT IDENTIFIER ::= { id-cmc 4 }
 ~~~
 
 The Data Return control has the ASN.1 definition:
@@ -1954,7 +1954,7 @@ fields in a requested certificate.
 The Modify Certification Request control is identified by the OID:
 
 ~~~
-  id-cmc-modCertTemplate ::= { id-cmc 31 }
+  id-cmc-modCertTemplate OBJECT IDENTIFIER ::= { id-cmc 31 }
 ~~~
 
 The Modify Certification Request has the ASN.1 definition:
@@ -2037,7 +2037,7 @@ extensions that are to be included in certificates.
 The Add Extensions control is identified by the OID:
 
 ~~~
-id-cmc-addExtensions ::= { id-cmc 8 }
+id-cmc-addExtensions OBJECT IDENTIFIER ::= { id-cmc 8 }
 ~~~
 
 The Add Extensions control has the ASN.1 definition:
@@ -2105,7 +2105,7 @@ received transaction identifiers in the Full PKI Response.
 The Transaction Identifier control is identified by the OID:
 
 ~~~
-  id-cmc-transactionId  ::= { id-cmc 5 }
+  id-cmc-transactionId  OBJECT IDENTIFIER ::= { id-cmc 5 }
 ~~~
 
 The Transaction Identifier control has the ASN.1 definition:
@@ -2139,8 +2139,8 @@ The Sender Nonce and Recipient Nonce controls are identified by the
 OIDs:
 
 ~~~
-  id-cmc-senderNonce     ::= { id-cmc 6 }
-  id-cmc-recipientNonce  ::= { id-cmc 7 }
+  id-cmc-senderNonce    OBJECT IDENTIFIER ::= { id-cmc 6 }
+  id-cmc-recipientNonce OBJECT IDENTIFIER ::= { id-cmc 7 }
 ~~~
 
 The Sender Nonce control has the ASN.1 definition:
@@ -2208,7 +2208,7 @@ and providing the POP challenge in the encryptedPOP control.)
 The Encrypted POP control is identified by the OID:
 
 ~~~
-    id-cmc-encryptedPOP ::= { id-cmc 9 }
+    id-cmc-encryptedPOP OBJECT IDENTIFIER ::= { id-cmc 9 }
 ~~~
 
 The Encrypted POP control has the ASN.1 definition:
@@ -2226,7 +2226,7 @@ The Encrypted POP control has the ASN.1 definition:
 The Decrypted POP control is identified by the OID:
 
 ~~~
-  id-cmc-decryptedPOP   ::= { id-cmc 10 }
+  id-cmc-decryptedPOP  OBJECT IDENTIFIER ::= { id-cmc 10 }
 ~~~
 
 The Decrypted POP control has the ASN.1 definition:
@@ -2329,7 +2329,7 @@ Witness control addresses this issue.
 The RA POP Witness control is identified by the OID:
 
 ~~~
-  id-cmc-lraPOPWitness ::= { id-cmc 11 }
+  id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }
 ~~~
 
 The RA POP Witness control has the ASN.1 definition:
@@ -2371,7 +2371,7 @@ directory is either infeasible or undesirable.
 The Get Certificate control is identified by the OID:
 
 ~~~
-  id-cmc-getCert ::= { id-cmc 15 }
+  id-cmc-getCert OBJECT IDENTIFIER ::= { id-cmc 15 }
 ~~~
 
 The Get Certificate control has the ASN.1 definition:
@@ -2405,7 +2405,7 @@ where a fully deployed directory is either infeasible or undesirable.
 The Get CRL control is identified by the OID:
 
 ~~~
-  id-cmc-getCRL ::= { id-cmc 16 }
+  id-cmc-getCRL OBJECT IDENTIFIER ::= { id-cmc 16 }
 ~~~
 
 The Get CRL control has the ASN.1 definition:
@@ -2450,7 +2450,7 @@ be revoked.
 The Revocation Request control is identified by the OID:
 
 ~~~
-  id-cmc-revokeRequest ::= { id-cmc 17 }
+  id-cmc-revokeRequest OBJECT IDENTIFIER ::= { id-cmc 17 }
 ~~~
 
 The Revocation Request control has the ASN.1 definition:
@@ -2531,7 +2531,7 @@ additional information as part of a Full PKI Request.
 The Registration Information control is identified by the OID:
 
 ~~~
-  id-cmc-regInfo ::= { id-cmc 18 }
+  id-cmc-regInfo OBJECT IDENTIFIER ::= { id-cmc 18 }
 ~~~
 
 The Registration Information control has the ASN.1 definition:
@@ -2549,7 +2549,7 @@ information as part of a Full PKI Response.
 The Response Information control is identified by the OID:
 
 ~~~
-  id-cmc-responseInfo  ::= { id-cmc 19 }
+  id-cmc-responseInfo  OBJECT IDENTIFIER ::= { id-cmc 19 }
 ~~~
 
 The Response Information control has the ASN.1 definition:
@@ -2577,7 +2577,7 @@ request.
 The Query Pending control is identified by the OID:
 
 ~~~
-  id-cmc-queryPending  ::= { id-cmc 21 }
+  id-cmc-queryPending  OBJECT IDENTIFIER ::= { id-cmc 21 }
 ~~~
 
 The Query Pending control has the ASN.1 definition:
@@ -2607,7 +2607,7 @@ purpose.
 The Confirm Certificate Acceptance control is identified by the OID:
 
 ~~~
-  id-cmc-confirmCertAcceptance  ::= { id-cmc 24 }
+  id-cmc-confirmCertAcceptance  OBJECT IDENTIFIER ::= { id-cmc 24 }
 ~~~
 
 The Confirm Certificate Acceptance control has the ASN.1 definition:
@@ -2651,7 +2651,7 @@ validation algorithm in Section 6.1.1 of {{PKIXCERT}}.
 The Publish Trust Anchors control is identified by the OID:
 
 ~~~
-  id-cmc-trustedAnchors  ::= { id-cmc 26 }
+  id-cmc-trustedAnchors  OBJECT IDENTIFIER ::= { id-cmc 26 }
 ~~~
 
 The Publish Trust Anchors control has the ASN.1 definition:
@@ -2715,7 +2715,7 @@ was created for use with is the Publish Trust Anchors control
 The Authenticated Data control is identified by the OID:
 
 ~~~
-  id-cmc-authData ::= { id-cmc 27 }
+  id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 27 }
 ~~~
 
 The Authenticated Data control has the ASN.1 definition:
@@ -2744,13 +2744,13 @@ Response.
 The Batch Request control is identified by the OID:
 
 ~~~
-  id-cmc-batchRequests ::= {id-cmc 28}
+  id-cmc-batchRequests OBJECT IDENTIFIER ::= { id-cmc 28 }
 ~~~
 
 The Batch Response control is identified by the OID:
 
 ~~~
-  id-cmc-batchResponses ::= {id-cmc 29}
+  id-cmc-batchResponses OBJECT IDENTIFIER ::= { id-cmc 29 }
 ~~~
 
 Both the Batch Request and Batch Response controls have the ASN.1
@@ -2791,7 +2791,7 @@ processed if a certificate failed to be issued.
 The Publication Information control is identified by the OID:
 
 ~~~
-  id-cmc-publishCert ::= { id-cmc 30 }
+  id-cmc-publishCert OBJECT IDENTIFIER ::= { id-cmc 30 }
 ~~~
 
 The Publication Information control has the ASN.1 definition:
@@ -2867,7 +2867,7 @@ subsequent document.
 The Control Processed control is identified by the OID:
 
 ~~~
-  id-cmc-controlProcessed  ::= { id-cmc 32 }
+  id-cmc-controlProcessed  OBJECT IDENTIFIER ::= { id-cmc 32 }
 ~~~
 
 The Control Processed control has the ASN.1 definition:
@@ -2907,7 +2907,7 @@ follows:
   cmc-raIdentityWitness CMC-CONTROL ::=
     { BodyPartPath IDENTIFIED BY id-cmc-raIdentityWitness }
 
-  id-cmc-raIdentityWitness OBJECT IDENTIFIER ::= {id-cmc 35}
+  id-cmc-raIdentityWitness OBJECT IDENTIFIER ::= { id-cmc 35 }
 ~~~
 
 The above ASN.1 defines the following items:
@@ -2986,7 +2986,7 @@ The relevant ASN.1 for the Response Body Control is as follows:
      BodyPartPath IDENTIFIED BY id-cmc-responseBody
   }
 
-  id-cmc-responseBody OBJECT IDENTIFIER ::= {id-cmc 37}
+  id-cmc-responseBody OBJECT IDENTIFIER ::= { id-cmc 37 }
 ~~~
 
 The above ASN.1 defines the following items:
@@ -3034,7 +3034,7 @@ follows:
   at-cmc-changeSubjectName ATTRIBUTE ::=
     { ChangeSubjectName IDENTIFIED BY id-cmc-changeSubjectName }
 
-  id-cmc-changeSubjectName OBJECT IDENTIFIER ::= {id-cmc 36}
+  id-cmc-changeSubjectName OBJECT IDENTIFIER ::= { id-cmc 36 }
 
   ChangeSubjectName ::= SEQUENCE {
     subject             Name OPTIONAL,
@@ -3355,27 +3355,27 @@ EnrollmentMessageSyntax
 
    -- PKIX Part 1 - Implicit    From [PKIXCERT]
       GeneralName, CRLReason, ReasonFlags
-      FROM PKIX1Implicit88 {iso(1) identified-organization(3) dod(6)
+      FROM PKIX1Implicit88 { iso(1) identified-organization(3) dod(6)
               internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-              id-pkix1-implicit(19)}
+              id-pkix1-implicit(19) }
 
    -- PKIX Part 1 - Explicit    From [PKIXCERT]
       AlgorithmIdentifier, Extension, Name, CertificateSerialNumber
-      FROM PKIX1Explicit88 {iso(1) identified-organization(3) dod(6)
+      FROM PKIX1Explicit88 { iso(1) identified-organization(3) dod(6)
               internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-              id-pkix1-explicit(18)}
+              id-pkix1-explicit(18) }
 
    -- Cryptographic Message Syntax   FROM [CMS]
       ContentInfo, Attribute, IssuerAndSerialNumber
         FROM CryptographicMessageSyntax2004 { iso(1) member-body(2)
              us(840) rsadsi(113549) pkcs(1) pkcs-9(9) smime(16)
-             modules(0) cms-2004(24)}
+             modules(0) cms-2004(24) }
 
    -- CRMF                         FROM [CRMF]
     CertReqMsg, PKIPublicationInfo, CertTemplate
-    FROM PKIXCRMF-2005 {iso(1) identified-organization(3) dod(6)
+    FROM PKIXCRMF-2005 { iso(1) identified-organization(3) dod(6)
            internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-           id-mod-crmf2005(36)};
+           id-mod-crmf2005(36) };
 
    -- Global Types
       UTF8String ::= [UNIVERSAL 12] IMPLICIT OCTET STRING
@@ -3384,31 +3384,31 @@ EnrollmentMessageSyntax
  id-pkix OBJECT IDENTIFIER  ::= { iso(1) identified-organization(3)
       dod(6) internet(1) security(5) mechanisms(5) pkix(7) }
 
- id-cmc OBJECT IDENTIFIER ::= {id-pkix 7}   -- CMC controls
- id-cct OBJECT IDENTIFIER ::= {id-pkix 12}  -- CMC content types
+ id-cmc OBJECT IDENTIFIER ::= { id-pkix 7 }   -- CMC controls
+ id-cct OBJECT IDENTIFIER ::= { id-pkix 12 }  -- CMC content types
 
  -- The following controls have the type OCTET STRING
 
- id-cmc-identityProof OBJECT IDENTIFIER ::= {id-cmc 3}
- id-cmc-dataReturn OBJECT IDENTIFIER ::= {id-cmc 4}
- id-cmc-regInfo OBJECT IDENTIFIER ::= {id-cmc 18}
- id-cmc-responseInfo OBJECT IDENTIFIER ::= {id-cmc 19}
- id-cmc-queryPending OBJECT IDENTIFIER ::= {id-cmc 21}
- id-cmc-popLinkRandom OBJECT IDENTIFIER ::= {id-cmc 22}
- id-cmc-popLinkWitness OBJECT IDENTIFIER ::= {id-cmc 23}
+ id-cmc-identityProof OBJECT IDENTIFIER ::= { id-cmc 3 }
+ id-cmc-dataReturn OBJECT IDENTIFIER ::= { id-cmc 4 }
+ id-cmc-regInfo OBJECT IDENTIFIER ::= { id-cmc 18 }
+ id-cmc-responseInfo OBJECT IDENTIFIER ::= { id-cmc 19 }
+ id-cmc-queryPending OBJECT IDENTIFIER ::= { id-cmc 21 }
+ id-cmc-popLinkRandom OBJECT IDENTIFIER ::= { id-cmc 22 }
+ id-cmc-popLinkWitness OBJECT IDENTIFIER ::= { id-cmc 23 }
 
  -- The following controls have the type UTF8String
 
- id-cmc-identification OBJECT IDENTIFIER ::= {id-cmc 2}
+ id-cmc-identification OBJECT IDENTIFIER ::= { id-cmc 2 }
 
  -- The following controls have the type INTEGER
 
- id-cmc-transactionId OBJECT IDENTIFIER ::= {id-cmc 5}
+ id-cmc-transactionId OBJECT IDENTIFIER ::= { id-cmc 5 }
 
  -- The following controls have the type OCTET STRING
 
- id-cmc-senderNonce OBJECT IDENTIFIER ::= {id-cmc 6}
- id-cmc-recipientNonce OBJECT IDENTIFIER ::= {id-cmc 7}
+ id-cmc-senderNonce OBJECT IDENTIFIER ::= { id-cmc 6 }
+ id-cmc-recipientNonce OBJECT IDENTIFIER ::= { id-cmc 7 }
 
   -- This is the content type used for a request message in the protocol
 
@@ -3483,7 +3483,7 @@ TaggedAttribute ::= SEQUENCE {
 
  -- Used to return status state in a response
 
- id-cmc-statusInfo OBJECT IDENTIFIER ::= {id-cmc 1}
+ id-cmc-statusInfo OBJECT IDENTIFIER ::= { id-cmc 1 }
 
  CMCStatusInfo ::= SEQUENCE {
      cMCStatus       CMCStatus,
@@ -3531,7 +3531,7 @@ CMCFailInfo ::= INTEGER {
  }
 
  -- Used for RAs to add extensions to certification requests
- id-cmc-addExtensions OBJECT IDENTIFIER ::= {id-cmc 8}
+ id-cmc-addExtensions OBJECT IDENTIFIER ::= { id-cmc 8 }
 
  AddExtensions ::= SEQUENCE {
      pkiDataReference    BodyPartID,
@@ -3540,8 +3540,8 @@ CMCFailInfo ::= INTEGER {
  }
 
 
- id-cmc-encryptedPOP OBJECT IDENTIFIER ::= {id-cmc 9}
- id-cmc-decryptedPOP OBJECT IDENTIFIER ::= {id-cmc 10}
+ id-cmc-encryptedPOP OBJECT IDENTIFIER ::= { id-cmc 9 }
+ id-cmc-decryptedPOP OBJECT IDENTIFIER ::= { id-cmc 10 }
 
  EncryptedPOP ::= SEQUENCE {
      request       TaggedRequest,
@@ -3557,21 +3557,20 @@ CMCFailInfo ::= INTEGER {
      thePOP          OCTET STRING
  }
 
-  id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= {id-cmc 11}
+id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }
 
  LraPopWitness ::= SEQUENCE {
       pkiDataBodyid   BodyPartID,
       bodyIds         SEQUENCE OF BodyPartID
   }
 
- --
- id-cmc-getCert OBJECT IDENTIFIER ::= {id-cmc 15}
+ id-cmc-getCert OBJECT IDENTIFIER ::= { id-cmc 15 }
 
  GetCert ::= SEQUENCE {
      issuerName      GeneralName,
      serialNumber    INTEGER }
 
- id-cmc-getCRL OBJECT IDENTIFIER ::= {id-cmc 16}
+ id-cmc-getCRL OBJECT IDENTIFIER ::= { id-cmc 16 }
 
  GetCRL ::= SEQUENCE {
      issuerName    Name,
@@ -3579,7 +3578,7 @@ CMCFailInfo ::= INTEGER {
      time          GeneralizedTime OPTIONAL,
      reasons       ReasonFlags OPTIONAL }
 
- id-cmc-revokeRequest OBJECT IDENTIFIER ::= {id-cmc 17}
+ id-cmc-revokeRequest OBJECT IDENTIFIER ::= { id-cmc 17 }
 
  RevokeRequest ::= SEQUENCE {
      issuerName            Name,
@@ -3589,22 +3588,22 @@ CMCFailInfo ::= INTEGER {
      passphrase            OCTET STRING OPTIONAL,
      comment               UTF8String OPTIONAL }
 
- id-cmc-confirmCertAcceptance OBJECT IDENTIFIER ::= {id-cmc 24}
+ id-cmc-confirmCertAcceptance OBJECT IDENTIFIER ::= { id-cmc 24 }
 
  CMCCertId ::= IssuerAndSerialNumber
 
  -- The following is used to request V3 extensions be added to a
  -- certificate
 
- id-ExtensionReq OBJECT IDENTIFIER ::= {iso(1) member-body(2) us(840)
-      rsadsi(113549) pkcs(1) pkcs-9(9) 14}
+ id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+      rsadsi(113549) pkcs(1) pkcs-9(9) 14 }
 
  ExtensionReq ::= SEQUENCE SIZE (1..MAX) OF Extension
 
  -- The following exists to allow Diffie-Hellman Certification Requests
  -- Messages to be well-formed
 
- id-alg-noSignature OBJECT IDENTIFIER ::= {id-pkix id-alg(6) 2}
+ id-alg-noSignature OBJECT IDENTIFIER ::= { id-pkix id-alg(6) 2 }
 
  NoSignatureValue ::= OCTET STRING
 
@@ -3614,8 +3613,8 @@ CMCFailInfo ::= INTEGER {
  --    documents.
 
  id-aa OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
-       rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2)}
- id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= {id-aa 34}
+       rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2) }
+ id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= { id-aa 34 }
 
  CMCUnsignedData ::= SEQUENCE {
      bodyPartPath        BodyPartPath,
@@ -3626,7 +3625,7 @@ CMCFailInfo ::= INTEGER {
  --  Replaces CMC Status Info
  --
 
- id-cmc-statusInfoV2 OBJECT IDENTIFIER ::= {id-cmc 25}
+ id-cmc-statusInfoV2 OBJECT IDENTIFIER ::= { id-cmc 25 }
 
  CMCStatusInfoV2 ::= SEQUENCE {
     cMCStatus             CMCStatus,
@@ -3653,7 +3652,7 @@ CMCFailInfo ::= INTEGER {
  --  Allow for distribution of trust anchors
  --
 
- id-cmc-trustedAnchors OBJECT IDENTIFIER ::= {id-cmc 26}
+ id-cmc-trustedAnchors OBJECT IDENTIFIER ::= { id-cmc 26 }
 
  PublishTrustAnchors ::= SEQUENCE {
      seqNumber      INTEGER,
@@ -3661,18 +3660,18 @@ CMCFailInfo ::= INTEGER {
      anchorHashes     SEQUENCE OF OCTET STRING
  }
 
- id-cmc-authData OBJECT IDENTIFIER ::= {id-cmc 27}
+ id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 27 }
 
  AuthPublish ::= BodyPartID
 
  --   These two items use BodyPartList
- id-cmc-batchRequests OBJECT IDENTIFIER ::= {id-cmc 28}
- id-cmc-batchResponses OBJECT IDENTIFIER ::= {id-cmc 29}
+ id-cmc-batchRequests OBJECT IDENTIFIER ::= { id-cmc 28 }
+ id-cmc-batchResponses OBJECT IDENTIFIER ::= { id-cmc 29 }
 
  BodyPartList ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
 
  --
- id-cmc-publishCert OBJECT IDENTIFIER ::= {id-cmc 30}
+ id-cmc-publishCert OBJECT IDENTIFIER ::= { id-cmc 30 }
 
  CMCPublicationInfo ::= SEQUENCE {
      hashAlg                      AlgorithmIdentifier,
@@ -3680,7 +3679,7 @@ CMCFailInfo ::= INTEGER {
      pubInfo                          PKIPublicationInfo
  }
 
- id-cmc-modCertTemplate OBJECT IDENTIFIER ::= {id-cmc 31}
+ id-cmc-modCertTemplate OBJECT IDENTIFIER ::= { id-cmc 31 }
 
  ModCertTemplate ::= SEQUENCE {
      pkiDataReference             BodyPartPath,
@@ -3692,7 +3691,7 @@ CMCFailInfo ::= INTEGER {
  -- Inform follow on servers that one or more controls have already been
  -- processed
 
- id-cmc-controlProcessed OBJECT IDENTIFIER ::= {id-cmc 32}
+ id-cmc-controlProcessed OBJECT IDENTIFIER ::= { id-cmc 32 }
 
  ControlsProcessed ::= SEQUENCE {
      bodyList              SEQUENCE SIZE(1..MAX) OF BodyPartReference
@@ -4051,7 +4050,7 @@ identifier and signature value are used to identify this signature
 type:
 
 ~~~
-  id-alg-noSignature OBJECT IDENTIFIER ::= {id-pkix id-alg(6) 2}
+  id-alg-noSignature OBJECT IDENTIFIER ::= { id-pkix id-alg(6) 2 }
 
   NoSignatureValue ::= OCTET STRING
 ~~~
