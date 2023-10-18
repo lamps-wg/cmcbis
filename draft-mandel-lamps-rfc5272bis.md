@@ -2903,17 +2903,18 @@ to be used, while the CA is prevented from knowing the secret.  If
 the identity proof fails, then the RA returns an error to the client
 denoting that fact.
 
-The relevant ASN.1 for the RA Identity Proof Witness control is as
-follows:
+The RA Identity Proof Witness control is identified by the OID:
+
+~~~
+ id-cmc-raIdentityWitness OBJECT IDENTIFIER ::= { id-cmc 35 }
+~~~
+
+The RA Identity Proof Witness control has the ASN.1 definition:
 
 ~~~
   cmc-raIdentityWitness CMC-CONTROL ::=
     { BodyPartPath IDENTIFIED BY id-cmc-raIdentityWitness }
-
-  id-cmc-raIdentityWitness OBJECT IDENTIFIER ::= { id-cmc 35 }
 ~~~
-
-The above ASN.1 defines the following items:
 
 >> cmc-raIdentityWitness is a CMC-CONTROL associating the object
    identifier id-cmc-raIdentityWitness and the type BodyPartPath.
@@ -2982,17 +2983,19 @@ and the EE (rather than between the CA and the EE) and the RA returns
 the Publish Trust Anchors control (to populate the correct trust
 points).
 
-The relevant ASN.1 for the Response Body Control is as follows:
+The Response Body Control is identified by the OID:
+
+~~~
+  id-cmc-responseBody OBJECT IDENTIFIER ::= { id-cmc 37 }
+~~~
+
+The Response Body Control has the ASN.1 definition:
 
 ~~~
   cmc-responseBody CMC-CONTROL ::= {
      BodyPartPath IDENTIFIED BY id-cmc-responseBody
   }
-
-  id-cmc-responseBody OBJECT IDENTIFIER ::= { id-cmc 37 }
 ~~~
-
-The above ASN.1 defines the following items:
 
 >> cmc-responseBody  is a CMC-CONTROL associating the object identifier
    id-cmc-responseBody with the type BodyPartPath.  This object is
