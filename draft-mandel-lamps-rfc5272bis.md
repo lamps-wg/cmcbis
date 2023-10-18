@@ -69,7 +69,14 @@ informative:
     target: https://www.rfc-editor.org/errata/eid7627
     title: RFC 5272 erratum 7627
     date: 2023-09-04
-
+  erratum2731:
+    target: https://www.rfc-editor.org/errata/eid2731
+    title: RFC 5272 erratum 2731
+    date: 2011-02-23
+  erratum4775:
+    target: https://www.rfc-editor.org/errata/eid4775
+    title: RFC 5272 erratum 4775
+    date: 2016-08-11
 
 --- abstract
 
@@ -210,11 +217,16 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
---01 version todo:
-
+--01 todo:
 * Rework Section 1.3
-* Change RFC 5273 references to draft-mandel-lamps-rfc5273bis
-* Change RFC 5274 references to draft-mandel-lamps-rfc5274bis
+
+--01 version changes:
+* Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
+* Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis
+* Added missing "OBJECT IDENTIFIER" to declarations throughout mainbody
+  to match ASN.1 module
+* Merged {{erratum2731}}
+* Merged {{erratum4775}}
 
 --00 version changes:
 
