@@ -2912,7 +2912,7 @@ The RA Identity Proof Witness control has the ASN.1 definition:
   cmc-raIdentityWitness CMC-CONTROL ::=
     { BodyPartPath IDENTIFIED BY id-cmc-raIdentityWitness }
 ~~~
- 
+
 >> cmc-raIdentityWitness is a CMC-CONTROL associating the object
    identifier id-cmc-raIdentityWitness and the type BodyPartPath.
    This object is omitted from the 1988 module.  The object is added
