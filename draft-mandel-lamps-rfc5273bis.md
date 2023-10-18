@@ -153,7 +153,7 @@ type or content-disposition statement.
 
 Full enrollment request messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-Request".  A file name with the ".p7m" extension
+with a value of "CMC-request".  A file name with the ".p7m" extension
 MUST be specified as part of the content-type or content-disposition
 statement.
 
