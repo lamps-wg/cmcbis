@@ -27,7 +27,7 @@ venue:
 
 author:
  -
-    ins: J. Mandel
+    ins: J. Mandel, Ed.
     name: Joseph Mandel
     org: AKAYLA, Inc.
     email: joe@akayla.com
