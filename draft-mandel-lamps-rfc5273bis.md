@@ -98,19 +98,20 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
-TODO for -01:
+TODO for -02:
 
 * Update TLS 1.0 text.
 * Consider AuthEnvelopedData.
 
-
+-01 version changes:
+* Merged {{erratum3593}}
+  
 -00 version changes:
 
 * Moved 2119-text to its own section
 * Added "Changes Since 5273 and 6402" section
 * Updated references
 * Merged {{CMC-Updates}} text
-* Merged {{erratum3593}}
 * Updated and moved Acknowledgments
 
 
