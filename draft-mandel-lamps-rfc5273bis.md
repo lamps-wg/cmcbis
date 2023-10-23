@@ -105,7 +105,7 @@ TODO for -02:
 
 -01 version changes:
 * Merged {{erratum3593}}
-  
+
 -00 version changes:
 
 * Moved 2119-text to its own section
