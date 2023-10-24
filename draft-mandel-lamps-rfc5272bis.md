@@ -69,7 +69,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid7627
     title: RFC 5272 erratum 7627
     date: 2023-09-04
-
+  erratum4775:
+    target: https://www.rfc-editor.org/errata/eid4775
+    title: RFC 5272 erratum 4775
+    date: 2016-08-11
 
 --- abstract
 
