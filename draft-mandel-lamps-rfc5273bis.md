@@ -27,7 +27,7 @@ venue:
 
 author:
  -
-    ins: J. Mandel
+    ins: J. Mandel, Ed.
     name: Joseph Mandel
     org: AKAYLA, Inc.
     email: joe@akayla.com
@@ -98,11 +98,13 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
-TODO for -01:
+TODO for -02:
 
 * Update TLS 1.0 text.
 * Consider AuthEnvelopedData.
 
+-01 version changes:
+* Merged {{erratum3593}}
 
 -00 version changes:
 
@@ -110,7 +112,6 @@ TODO for -01:
 * Added "Changes Since 5273 and 6402" section
 * Updated references
 * Merged {{CMC-Updates}} text
-* Merged {{erratum3593}}
 * Updated and moved Acknowledgments
 
 
@@ -153,7 +154,7 @@ type or content-disposition statement.
 
 Full enrollment request messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-Request".  A file name with the ".p7m" extension
+with a value of "CMC-request".  A file name with the ".p7m" extension
 MUST be specified as part of the content-type or content-disposition
 statement.
 
