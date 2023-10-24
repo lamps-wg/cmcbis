@@ -69,6 +69,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid7627
     title: RFC 5272 erratum 7627
     date: 2023-09-04
+  erratum2731:
+    target: https://www.rfc-editor.org/errata/eid2731
+    title: RFC 5272 erratum 2731
+    date: 2011-02-23
   erratum4775:
     target: https://www.rfc-editor.org/errata/eid4775
     title: RFC 5272 erratum 4775
@@ -221,6 +225,8 @@ Note: For now, this section will be list of the changes introduced
 * Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis
 * Added missing "OBJECT IDENTIFIER" to declarations throughout mainbody
   to match ASN.1 module
+* Merged {{erratum2731}}
+* Merged {{erratum4775}}
 
 --00 version changes:
 
@@ -417,7 +423,7 @@ Full PKI Request                        Full PKI Response
  |     object     |                      |     object     |
  +----------------+--------+             +----------------+--------+
  |                         |             |                         |
- | PKIData                 |             | PKIResponseBody         |
+ | PKIData                 |             | PKIResponse             |
  |                         |             |                         |
  | Sequence of:            |             | Sequence of:            |
  | <enrollment control>*   |             | <enrollment control>*   |
