@@ -217,7 +217,10 @@ Note: For now, this section will be list of the changes introduced
 * Rework Section 1.3
 
 --01 version changes:
-* Merged {{erratum4775}}
+* Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
+* Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis
+* Added missing "OBJECT IDENTIFIER" to declarations throughout mainbody
+  to match ASN.1 module
 
 --00 version changes:
 
@@ -2903,17 +2906,18 @@ to be used, while the CA is prevented from knowing the secret.  If
 the identity proof fails, then the RA returns an error to the client
 denoting that fact.
 
-The relevant ASN.1 for the RA Identity Proof Witness control is as
-follows:
+The RA Identity Proof Witness control is identified by the OID:
+
+~~~
+ id-cmc-raIdentityWitness OBJECT IDENTIFIER ::= { id-cmc 35 }
+~~~
+
+The RA Identity Proof Witness control has the ASN.1 definition:
 
 ~~~
   cmc-raIdentityWitness CMC-CONTROL ::=
     { BodyPartPath IDENTIFIED BY id-cmc-raIdentityWitness }
-
-  id-cmc-raIdentityWitness OBJECT IDENTIFIER ::= { id-cmc 35 }
 ~~~
-
-The above ASN.1 defines the following items:
 
 >> cmc-raIdentityWitness is a CMC-CONTROL associating the object
    identifier id-cmc-raIdentityWitness and the type BodyPartPath.
@@ -2982,17 +2986,19 @@ and the EE (rather than between the CA and the EE) and the RA returns
 the Publish Trust Anchors control (to populate the correct trust
 points).
 
-The relevant ASN.1 for the Response Body Control is as follows:
+The Response Body Control is identified by the OID:
+
+~~~
+  id-cmc-responseBody OBJECT IDENTIFIER ::= { id-cmc 37 }
+~~~
+
+The Response Body Control has the ASN.1 definition:
 
 ~~~
   cmc-responseBody CMC-CONTROL ::= {
      BodyPartPath IDENTIFIED BY id-cmc-responseBody
   }
-
-  id-cmc-responseBody OBJECT IDENTIFIER ::= { id-cmc 37 }
 ~~~
-
-The above ASN.1 defines the following items:
 
 >> cmc-responseBody  is a CMC-CONTROL associating the object identifier
    id-cmc-responseBody with the type BodyPartPath.  This object is
@@ -3764,7 +3770,7 @@ Response from server to client:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIResponse
+       eContentType = id-cct-PKIResponse
        eContent
          controlSequence
            {102, id-cmc-statusInfoV2, {success, 201}}
@@ -3839,7 +3845,7 @@ Response from CA to RA:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIResponse
+       eContentType = id-cct-PKIResponse
        eContent
          controlSequence
            {102, id-cmc-BatchResponse, {999, 998}}
@@ -3851,7 +3857,7 @@ Response from CA to RA:
                ContentInfo.contentType = id-signedData
                ContentInfo.content
                  SignedData.encapContentInfo
-                   eContentType = id-ct-PKIResponse
+                   eContentType = id-cct-PKIResponse
                    eContent
                      controlSequence
                       {102, id-cmc-statusInfoV2, {success, 201}}
@@ -3866,7 +3872,7 @@ Response from CA to RA:
                ContentInfo.contentType = id-signedData
                ContentInfo.content
                  SignedData.encapContentInfo
-                   eContentType = id-ct-PKIResponse
+                   eContentType = id-cct-PKIResponse
                    eContent
                      controlSequence
                        {102, id-cmc-statusInfoV2, {failure, badAlg}}
@@ -3886,7 +3892,7 @@ Response from RA to client:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIResponse
+       eContentType = id-cct-PKIResponse
        eContent
          controlSequence
            {102, id-cmc-statusInfoV2, {success, 201}}
@@ -3943,7 +3949,7 @@ Response #1 from server to client:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIResponse
+       eContentType = id-cct-PKIResponse
        eContent
          controlSequence
            {101, id-cmc-statusInfoV2, {failed, 201, popRequired}}
@@ -4017,7 +4023,7 @@ Response #2 from server to client:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIResponse
+       eContentType = id-cct-PKIResponse
        eContent
          controlSequence
            {101, id-cmc-transactionId, 10132985123483401}
