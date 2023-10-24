@@ -225,7 +225,7 @@ Note: For now, this section will be list of the changes introduced
 * Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis
 * Added missing "OBJECT IDENTIFIER" to declarations throughout mainbody
   to match ASN.1 module
-* Merged {{erratum2731}
+* Merged {{erratum2731}}
 * Merged {{erratum4775}}
 
 --00 version changes:
