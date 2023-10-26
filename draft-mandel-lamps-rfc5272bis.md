@@ -219,6 +219,7 @@ Note: For now, this section will be list of the changes introduced
 
 --01 todo:
 * Rework Section 1.3
+* Update CMC Control Attribute Table
 
 --01 version changes:
 * Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
