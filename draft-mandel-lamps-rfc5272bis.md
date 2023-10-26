@@ -1246,44 +1246,41 @@ body.
 The following table lists the names, OID, and syntactic structure for
 each of the controls described in this document.
 
-~~~
- Identifier  Description       OID       ASN.1 Structure      Section
- --------------------------------------------------------------------
- id-cmc-statusInfo            id-cmc 1   CMCStatusInfo        6.1.2
- id-cmc-identification        id-cmc 2   UTF8String           6.2.3
- id-cmc-identityProof         id-cmc 3   OCTET STRING         6.2.2
- id-cmc-dataReturn            id-cmc 4   OCTET STRING         6.4
- id-cmc-transactionId         id-cmc 5   INTEGER              6.6
- id-cmc-senderNonce           id-cmc 6   OCTET STRING         6.6
- id-cmc-recipientNonce        id-cmc 7   OCTET STRING         6.6
- id-cmc-addExtensions         id-cmc 8   AddExtensions        6.5.2
- id-cmc-encryptedPOP          id-cmc 9   EncryptedPOP         6.7
- id-cmc-decryptedPOP          id-cmc 10  DecryptedPOP         6.7
- id-cmc-lraPOPWitness         id-cmc 11  LraPOPWitness        6.8
- id-cmc-getCert               id-cmc 15  GetCert              6.9
- id-cmc-getCRL                id-cmc 16  GetCRL               6.10
- id-cmc-revokeRequest         id-cmc 17  RevokeRequest        6.11
- id-cmc-regInfo               id-cmc 18  OCTET STRING         6.12
- id-cmc-responseInfo          id-cmc 19  OCTET STRING         6.12
- id-cmc-queryPending          id-cmc 21  OCTET STRING         6.13
- id-cmc-popLinkRandom         id-cmc 22  OCTET STRING         6.3.1
- id-cmc-popLinkWitness        id-cmc 23  OCTET STRING         6.3.1
- id-cmc-popLinkWitnessV2      id-cmc 33  OCTET STRING         6.3.1.1
- id-cmc-confirmCertAcceptance id-cmc 24  CMCCertId            6.14
- id-cmc-statusInfoV2          id-cmc 25  CMCStatusInfoV2      6.1.1
- id-cmc-trustedAnchors        id-cmc 26  PublishTrustAnchors  6.15
- id-cmc-authData              id-cmc 27  AuthPublish          6.16
- id-cmc-batchRequests         id-cmc 28  BodyPartList         6.17
- id-cmc-batchResponses        id-cmc 29  BodyPartList         6.17
- id-cmc-publishCert           id-cmc 30  CMCPublicationInfo   6.18
- id-cmc-modCertTemplate       id-cmc 31  ModCertTemplate      6.5.1
- id-cmc-controlProcessed      id-cmc 32  ControlsProcessed    6.19
- id-cmc-identityProofV2       id-cmc 34  IdentityProofV2      6.2.1
- id-cmc-raIdentityWitness     id-cmc 35  BodyPartPath         6.20
- id-cmc-responseBody          id-cmc 37  BodyPartPath         6.21
-
-              Table 1: CMC Control Attributes
-~~~
+| Identifier Description   | OID      | ASN.1 Structure     | Section|
+|:-------------|:-----------------------|:-----------|:-------------|
+| id-cmc-statusInfo          |  id-cmc 1  |  CMCStatusInfo |      6.1.2 |
+| id-cmc-identification      |  id-cmc 2  |  UTF8String    |      6.2.3 |
+| id-cmc-identityProof       |  id-cmc 3  |  OCTET STRING  |      6.2.2 |
+| id-cmc-dataReturn          |  id-cmc 4  |  OCTET STRING  |      6.4 |
+| id-cmc-transactionId       |  id-cmc 5  |  INTEGER       |      6.6 |
+| id-cmc-senderNonce         |  id-cmc 6  |  OCTET STRING  |      6.6 |
+| id-cmc-recipientNonce      |  id-cmc 7  |  OCTET STRING  |      6.6 |
+| id-cmc-addExtensions       |  id-cmc 8  |  AddExtensions |      6.5.2 |
+| id-cmc-encryptedPOP        |  id-cmc 9  |  EncryptedPOP  |      6.7 |
+| id-cmc-decryptedPOP        |  id-cmc 10 |  DecryptedPOP  |      6.7 |
+| id-cmc-lraPOPWitness       |  id-cmc 11 |  LraPOPWitness |      6.8 |
+| id-cmc-getCert             |  id-cmc 15 |  GetCert       |      6.9 |
+| id-cmc-getCRL              |  id-cmc 16 |  GetCRL        |      6.10 |
+| id-cmc-revokeRequest       |  id-cmc 17 |  RevokeRequest |      6.11 |
+| id-cmc-regInfo             |  id-cmc 18 |  OCTET STRING  |      6.12 |
+| id-cmc-responseInfo        |  id-cmc 19 |  OCTET STRING  |      6.12 |
+| id-cmc-queryPending        |  id-cmc 21 |  OCTET STRING  |      6.13 |
+| id-cmc-popLinkRandom       |  id-cmc 22 |  OCTET STRING  |      6.3.1 |
+| id-cmc-popLinkWitness      |  id-cmc 23 |  OCTET STRING  |      6.3.1 |
+| id-cmc-popLinkWitnessV2    |  id-cmc 33 |  OCTET STRING  |      6.3.1.1 |
+| id-cmc-confirmCertAcceptance |  id-cmc 24 |  CMCCertId   |      6.14 |
+| id-cmc-statusInfoV2        |  id-cmc 25 |  CMCStatusInfoV2 |    6.1.1 |
+| id-cmc-trustedAnchors      |  id-cmc 26 |  PublishTrustAnchors |6.15 |
+| id-cmc-authData            |  id-cmc 27 |  AuthPublish |        6.16 |
+| id-cmc-batchRequests       |  id-cmc 28 |  BodyPartList |       6.17 |
+| id-cmc-batchResponses      |  id-cmc 29 |  BodyPartList |       6.17 |
+| id-cmc-publishCert         |  id-cmc 30 |  CMCPublicationInfo | 6.18 |
+| id-cmc-modCertTemplate     |  id-cmc 31 |  ModCertTemplate |    6.5.1 |
+| id-cmc-controlProcessed    |  id-cmc 32 |  ControlsProcessed |  6.19 |
+| id-cmc-identityProofV2     |  id-cmc 34 |  IdentityProofV2 |    6.2.1 |
+| id-cmc-raIdentityWitness   |  id-cmc 35 |  BodyPartPath |       6.20 |
+| id-cmc-responseBody        |  id-cmc 37 |  BodyPartPath |       6.21 |
+{: #mime-id title="CMC Control Attributes"}
 
 ##  CMC Status Info Controls {#xtCMCStatusInfo}
 
