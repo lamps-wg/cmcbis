@@ -1281,7 +1281,7 @@ each of the controls described in this document.
 | id-cmc-identityProofV2     |  id-cmc 34 |  IdentityProofV2 |    6.2.1 |
 | id-cmc-raIdentityWitness   |  id-cmc 35 |  BodyPartPath |       6.20 |
 | id-cmc-responseBody        |  id-cmc 37 |  BodyPartPath |       6.21 |
-{: #mime-id title="CMC Control Attributes"}
+{: #ctrl-attrs title="CMC Control Attributes"}
 
 ##  CMC Status Info Controls {#xtCMCStatusInfo}
 
