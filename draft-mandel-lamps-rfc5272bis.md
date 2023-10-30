@@ -3355,10 +3355,10 @@ updates.
 # ASN.1 Module {#ASN.1}
 
 ~~~
-EnrollmentMessageSyntax-2011-v08
+EnrollmentMessageSyntax-2023
     {iso(1) identified-organization(3) dod(6) internet(1)
     security(5) mechanisms(5) pkix(7) id-mod(0)
-    id-mod-enrollMsgSyntax-2011-08(76)}
+    id-mod-enrollMsgSyntax-2023(TBD)}
 DEFINITIONS IMPLICIT TAGS ::=
 BEGIN
   EXPORTS ALL;
@@ -3411,7 +3411,12 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   FROM PKIX1-PSS-OAEP-Algorithms-2009
        { iso(1) identified-organization(3) dod(6)
          internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-         id-mod-pkix1-rsa-pkalgs-02(54) } ;
+         id-mod-pkix1-rsa-pkalgs-02(54) }
+
+  maca-hMAC-SHA256
+  FROM HMAC-2010
+      { iso(1) identified-organization(3) dod(6) internet(1)
+      security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
 
   --  CMS content types defined in this document
 
@@ -3668,8 +3673,8 @@ CMCStatus ::= INTEGER {
       witness         OCTET STRING
   }
 
-  POPAlgs MAC-ALGORITHM ::= {maca-hMAC-SHA1, ...}
-  WitnessAlgs DIGEST-ALGORITHM ::= {mda-sha1, ...}
+  POPAlgs MAC-ALGORITHM ::= {maca-hMAC-SHA1, maca-hMAC-SHA256, ...}
+  WitnessAlgs DIGEST-ALGORITHM ::= {mda-sha1, mda-sha256, ...}
 
   DecryptedPOP ::= SEQUENCE {
       bodyPartID      BodyPartID,
