@@ -217,6 +217,9 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
+--02 todo:
+* Update ASN.1
+
 --01 todo:
 * Rework Section 1.3
 * Update CMC Control Attribute Table
