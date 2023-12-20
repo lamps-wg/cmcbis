@@ -3683,8 +3683,10 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
     cmc-decryptedPOP CMC-CONTROL ::=
       { DecryptedPOP IDENTIFIED BY id-cmc-decryptedPOP }
-  id-cmc-encryptedPOP OBJECT IDENTIFIER ::= {id-cmc 9}
-  id-cmc-decryptedPOP OBJECT IDENTIFIER ::= {id-cmc 10}
+
+    id-cmc-encryptedPOP OBJECT IDENTIFIER ::= { id-cmc 9 }
+  
+    id-cmc-decryptedPOP OBJECT IDENTIFIER ::= { id-cmc 10 }
  EncryptedPOP ::= SEQUENCE {
       request       TaggedRequest,
       cms             ContentInfo,
