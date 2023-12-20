@@ -3404,8 +3404,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   mda-sha1
   FROM PKIXAlgs-2009
        { iso(1) identified-organization(3) dod(6)
-       internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-       id-mod-pkix1-algorithms2008-02(56)}
+         internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
+         id-mod-pkix1-algorithms2008-02(56) }
 
   kda-PBKDF2, maca-hMAC-SHA1
   FROM CryptographicMessageSyntaxAlgorithms-2009
