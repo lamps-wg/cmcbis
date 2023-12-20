@@ -3541,6 +3541,7 @@ OtherMsg ::= SEQUENCE {
 
   ct-PKIResponse CONTENT-TYPE ::=
       { TYPE PKIResponse IDENTIFIED BY id-cct-PKIResponse }
+
   id-cct-PKIResponse OBJECT IDENTIFIER ::= { id-cct 3 }
 
   ResponseBody ::= PKIResponse
