@@ -3696,8 +3696,9 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
       witness         OCTET STRING
   }
 
-  POPAlgs MAC-ALGORITHM ::= {maca-hMAC-SHA1, maca-hMAC-SHA256, ...}
-  WitnessAlgs DIGEST-ALGORITHM ::= {mda-sha1, mda-sha256, ...}
+  POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1, maca-hMAC-SHA256, ... }
+
+    WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1, mda-sha256, ... }
 
   DecryptedPOP ::= SEQUENCE {
       bodyPartID      BodyPartID,
