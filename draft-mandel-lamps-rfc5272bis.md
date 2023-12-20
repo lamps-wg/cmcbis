@@ -3532,7 +3532,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   --  No other messages currently defined
 
   OtherMsgSet OTHER-MSG ::= {...}
-OtherMsg ::= SEQUENCE {
+  OtherMsg ::= SEQUENCE {
       bodyPartID        BodyPartID,
       otherMsgType      OTHER-MSG.&id({OtherMsgSet}),
       otherMsgValue     OTHER-MSG.&Type({OtherMsgSet}{@otherMsgType}) }
