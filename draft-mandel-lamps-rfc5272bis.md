@@ -3359,10 +3359,12 @@ updates.
 
 ~~~
 EnrollmentMessageSyntax-2023
-    {iso(1) identified-organization(3) dod(6) internet(1)
+    { iso(1) identified-organization(3) dod(6) internet(1)
     security(5) mechanisms(5) pkix(7) id-mod(0)
-    id-mod-enrollMsgSyntax-2023(TBD)}
+    id-mod-enrollMsgSyntax-2023(TBD) }
+
 DEFINITIONS IMPLICIT TAGS ::=
+
 BEGIN
 
   EXPORTS ALL;
@@ -3371,8 +3373,8 @@ BEGIN
 
   AttributeSet{}, Extension{}, EXTENSION, ATTRIBUTE
   FROM PKIX-CommonTypes-2009
-      {iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0) id-mod-pkixCommon-02(57)}
+      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+      mechanisms(5) pkix(7) id-mod(0) id-mod-pkixCommon-02(57) }
 
   AlgorithmIdentifier{}, DIGEST-ALGORITHM, KEY-WRAP, KEY-DERIVATION,
       MAC-ALGORITHM, SIGNATURE-ALGORITHM, PUBLIC-KEY
@@ -3384,13 +3386,13 @@ BEGIN
   CertificateSerialNumber, GeneralName, CRLReason, ReasonFlags,
       CertExtensions, GeneralNames
   FROM PKIX1Implicit-2009
-      {iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-implicit-02(59)}
+      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+      mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-implicit-02(59) }
 
   Name, id-pkix, PublicKeyAlgorithms, SignatureAlgorithms, id-ad, id-kp
   FROM PKIX1Explicit-2009
-      {iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-explicit-02(51)}
+      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+        mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-explicit-02(51) }
 ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   FROM CryptographicMessageSyntax-2010
     { iso(1) member-body(2) us(840) rsadsi(113549)
@@ -3398,8 +3400,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   CertReqMsg, PKIPublicationInfo, CertTemplate
   FROM PKIXCRMF-2009
-      {iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0) id-mod-crmf2005-02(55)}
+      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+        mechanisms(5) pkix(7) id-mod(0) id-mod-crmf2005-02(55) }
 
   mda-sha1
   FROM PKIXAlgs-2009
@@ -3438,8 +3440,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   --
   --
 
-  id-cmc OBJECT IDENTIFIER ::= {id-pkix 7}   -- CMC controls
-  id-cct OBJECT IDENTIFIER ::= {id-pkix 12}  -- CMC content types
+  id-cmc OBJECT IDENTIFIER ::= { id-pkix 7 }   -- CMC controls
+  id-cct OBJECT IDENTIFIER ::= { id-pkix 12 }  -- CMC content types
 
   -- This is the content type for a request message in the protocol
 
@@ -3501,8 +3503,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
       certificationRequest  CertificationRequest
   }
 
-  AttributeList ATTRIBUTE ::= {at-extension-req, ...,
-      at-cmc-changeSubjectName}
+  AttributeList ATTRIBUTE ::= { at-extension-req, ...,
+      at-cmc-changeSubjectName }
 
   CertificationRequest ::= SEQUENCE {
      certificationRequestInfo  SEQUENCE {
@@ -3614,7 +3616,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-recipientNonce CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-recipientNonce }
 
-  id-cmc-recipientNonce OBJECT IDENTIFIER ::= {id-cmc 7}
+  id-cmc-recipientNonce OBJECT IDENTIFIER ::= { id-cmc 7 }
 
   -- Used to return status in a response
 
