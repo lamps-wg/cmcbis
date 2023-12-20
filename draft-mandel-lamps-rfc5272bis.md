@@ -3680,7 +3680,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-encryptedPOP CMC-CONTROL ::=
       { EncryptedPOP IDENTIFIED BY id-cmc-encryptedPOP }
-  cmc-decryptedPOP CMC-CONTROL ::=
+
+    cmc-decryptedPOP CMC-CONTROL ::=
       { DecryptedPOP IDENTIFIED BY id-cmc-decryptedPOP }
   id-cmc-encryptedPOP OBJECT IDENTIFIER ::= {id-cmc 9}
   id-cmc-decryptedPOP OBJECT IDENTIFIER ::= {id-cmc 10}
