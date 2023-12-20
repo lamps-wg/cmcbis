@@ -3421,7 +3421,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   maca-hMAC-SHA256
   FROM HMAC-2010
       { iso(1) identified-organization(3) dod(6) internet(1)
-      security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
+        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
 
   --  CMS content types defined in this document
 
