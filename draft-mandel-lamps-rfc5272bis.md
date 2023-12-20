@@ -3916,7 +3916,7 @@ cmc-raIdentityWitness CMC-CONTROL ::=
   at-cmc-changeSubjectName ATTRIBUTE ::=
      { TYPE ChangeSubjectName IDENTIFIED BY id-cmc-changeSubjectName }
 
-  id-cmc-changeSubjectName OBJECT IDENTIFIER ::= {id-cmc 36}
+  id-cmc-changeSubjectName OBJECT IDENTIFIER ::= { id-cmc 36 }
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
