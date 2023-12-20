@@ -3620,7 +3620,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-statusInfo CMC-CONTROL ::=
       { CMCStatusInfo IDENTIFIED BY id-cmc-statusInfo }
-  id-cmc-statusInfo OBJECT IDENTIFIER ::= {id-cmc 1}
+
+    id-cmc-statusInfo OBJECT IDENTIFIER ::= { id-cmc 1 }
 
   CMCStatusInfo ::= SEQUENCE {
       cMCStatus       CMCStatus,
