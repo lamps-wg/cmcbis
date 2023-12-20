@@ -3757,7 +3757,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   CMCCertId ::= IssuerAndSerialNumber
 
   -- The following is used to request V3 extensions be added
-  --     to a certificate
+  -- to a certificate
 
   at-extension-req ATTRIBUTE ::=
       { TYPE ExtensionReq IDENTIFIED BY id-ExtensionReq }
