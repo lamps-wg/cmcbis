@@ -3445,6 +3445,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   ct-PKIData CONTENT-TYPE ::=
       { TYPE PKIData IDENTIFIED BY id-cct-PKIData }
+
   id-cct-PKIData OBJECT IDENTIFIER ::= { id-cct 2 }
 
   PKIData ::= SEQUENCE {
