@@ -218,7 +218,10 @@ Note: For now, this section will be list of the changes introduced
 </aside>
 
 --02 todo:
-* Update ASN.1
+* Updates ASN.1 to use 2002 ASN.1 module baseed on {{CMC-Updates}}
+* To support adopting SHA-256 and HMAC-SHA256:
+  * Add maca-hMAC-SHA256 to POPAlgs
+  * Add mda-sha256 to WitnessAlgs
 
 --01 todo:
 * Rework Section 1.3
