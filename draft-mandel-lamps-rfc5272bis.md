@@ -3594,7 +3594,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-identification CMC-CONTROL ::=
       { UTF8String IDENTIFIED BY id-cmc-identification }
-  id-cmc-identification OBJECT IDENTIFIER ::= {id-cmc 2}
+
+    id-cmc-identification OBJECT IDENTIFIER ::= { id-cmc 2 }
 
   -- The following controls have the type INTEGER
 
