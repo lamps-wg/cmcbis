@@ -3485,7 +3485,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   OtherRequests OTHER-REQUEST ::= {...}
 
-TaggedRequest ::= CHOICE {
+  TaggedRequest ::= CHOICE {
       tcr               [0] TaggedCertificationRequest,
       crm               [1] CertReqMsg,
       orm               [2] SEQUENCE {
