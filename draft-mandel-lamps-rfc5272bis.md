@@ -3737,7 +3737,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
       cRLName       GeneralName OPTIONAL,
       time          GeneralizedTime OPTIONAL,
       reasons       ReasonFlags OPTIONAL }
-cmc-revokeRequest CMC-CONTROL ::=
+  cmc-revokeRequest CMC-CONTROL ::=
       { RevokeRequest IDENTIFIED BY id-cmc-revokeRequest}
   id-cmc-revokeRequest OBJECT IDENTIFIER ::= {id-cmc 17}
 
