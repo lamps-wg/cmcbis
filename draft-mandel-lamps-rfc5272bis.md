@@ -3410,7 +3410,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   kda-PBKDF2, maca-hMAC-SHA1
   FROM CryptographicMessageSyntaxAlgorithms-2009
       { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-      smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
+        smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
 
   mda-sha256
   FROM PKIX1-PSS-OAEP-Algorithms-2009
