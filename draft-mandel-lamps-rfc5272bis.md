@@ -3739,7 +3739,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
       reasons       ReasonFlags OPTIONAL }
   cmc-revokeRequest CMC-CONTROL ::=
       { RevokeRequest IDENTIFIED BY id-cmc-revokeRequest}
-  id-cmc-revokeRequest OBJECT IDENTIFIER ::= {id-cmc 17}
+
+    id-cmc-revokeRequest OBJECT IDENTIFIER ::= { id-cmc 17 }
 
   RevokeRequest ::= SEQUENCE {
       issuerName            Name,
