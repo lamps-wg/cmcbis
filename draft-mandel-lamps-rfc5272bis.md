@@ -3587,7 +3587,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
     id-cmc-popLinkRandom OBJECT IDENTIFIER ::= { id-cmc 22 }
   cmc-popLinkWitness CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-popLinkWitness }
-  id-cmc-popLinkWitness OBJECT IDENTIFIER ::= {id-cmc 23}
+
+    id-cmc-popLinkWitness OBJECT IDENTIFIER ::= { id-cmc 23 }
 
   -- The following controls have the type UTF8String
 
