@@ -3608,7 +3608,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-senderNonce CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-senderNonce }
-  id-cmc-senderNonce OBJECT IDENTIFIER ::= {id-cmc 6}
+
+    id-cmc-senderNonce OBJECT IDENTIFIER ::= { id-cmc 6 }
 
   cmc-recipientNonce CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-recipientNonce }
