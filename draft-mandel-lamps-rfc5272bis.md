@@ -3573,7 +3573,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-responseInfo CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-responseInfo }
-  id-cmc-responseInfo OBJECT IDENTIFIER ::= {id-cmc 19}
+
+    id-cmc-responseInfo OBJECT IDENTIFIER ::= { id-cmc 19 }
 
   cmc-queryPending CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-queryPending }
