@@ -3729,7 +3729,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-getCRL CMC-CONTROL ::=
       { GetCRL IDENTIFIED BY id-cmc-getCRL }
-  id-cmc-getCRL OBJECT IDENTIFIER ::= {id-cmc 16}
+
+    id-cmc-getCRL OBJECT IDENTIFIER ::= { id-cmc 16 }
 
   GetCRL ::= SEQUENCE {
       issuerName    Name,
