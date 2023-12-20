@@ -3481,7 +3481,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   OTHER-REQUEST ::= TYPE-IDENTIFIER
 
   --  We do not define any other requests in this document.
-  --     Examples might be attribute certification requests.
+  --   Examples might be attribute certification requests.
 
   OtherRequests OTHER-REQUEST ::= {...}
 
