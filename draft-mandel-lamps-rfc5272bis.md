@@ -3951,7 +3951,7 @@ cmc-raIdentityWitness CMC-CONTROL ::=
      BodyPartPath IDENTIFIED BY id-cmc-responseBody
   }
 
-  id-cmc-responseBody OBJECT IDENTIFIER ::= {id-cmc 37}
+  id-cmc-responseBody OBJECT IDENTIFIER ::= { id-cmc 37 }
 
   --
   --  Key purpose identifiers are in the Extended Key Usage extension
