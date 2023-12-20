@@ -3364,7 +3364,9 @@ EnrollmentMessageSyntax-2023
     id-mod-enrollMsgSyntax-2023(TBD)}
 DEFINITIONS IMPLICIT TAGS ::=
 BEGIN
+
   EXPORTS ALL;
+  
   IMPORTS
 
   AttributeSet{}, Extension{}, EXTENSION, ATTRIBUTE
