@@ -3637,7 +3637,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
       pendToken        OCTET STRING,
       pendTime         GeneralizedTime
   }
-CMCStatus ::= INTEGER {
+
+  CMCStatus ::= INTEGER {
       success         (0),
       failed          (2),
       pending         (3),
