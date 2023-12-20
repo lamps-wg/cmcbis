@@ -3558,7 +3558,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-identityProof CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-identityProof }
-  id-cmc-identityProof OBJECT IDENTIFIER ::= {id-cmc 3}
+
+    id-cmc-identityProof OBJECT IDENTIFIER ::= { id-cmc 3 }
 
   cmc-dataReturn CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-dataReturn }
