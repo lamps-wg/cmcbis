@@ -3578,7 +3578,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-queryPending CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-queryPending }
-  id-cmc-queryPending OBJECT IDENTIFIER ::= {id-cmc 21}
+
+    id-cmc-queryPending OBJECT IDENTIFIER ::= { id-cmc 21 }
 
   cmc-popLinkRandom CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-popLinkRandom }
