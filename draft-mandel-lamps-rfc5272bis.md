@@ -3568,7 +3568,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-regInfo CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-regInfo }
-  id-cmc-regInfo OBJECT IDENTIFIER ::= {id-cmc 18}
+
+    id-cmc-regInfo OBJECT IDENTIFIER ::= { id-cmc 18 }
 
   cmc-responseInfo CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-responseInfo }
