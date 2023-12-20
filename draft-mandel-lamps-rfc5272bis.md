@@ -3601,7 +3601,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-transactionId CMC-CONTROL ::=
       { INTEGER IDENTIFIED BY id-cmc-transactionId }
-  id-cmc-transactionId OBJECT IDENTIFIER ::= {id-cmc 5}
+
+    id-cmc-transactionId OBJECT IDENTIFIER ::= { id-cmc 5 }
 
   -- The following controls have the type OCTET STRING
 
