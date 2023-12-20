@@ -3368,7 +3368,7 @@ DEFINITIONS IMPLICIT TAGS ::=
 BEGIN
 
   EXPORTS ALL;
-  
+ 
   IMPORTS
 
   AttributeSet{}, Extension{}, EXTENSION, ATTRIBUTE
@@ -3687,7 +3687,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
       { DecryptedPOP IDENTIFIED BY id-cmc-decryptedPOP }
 
     id-cmc-encryptedPOP OBJECT IDENTIFIER ::= { id-cmc 9 }
-  
+
     id-cmc-decryptedPOP OBJECT IDENTIFIER ::= { id-cmc 10 }
  EncryptedPOP ::= SEQUENCE {
       request       TaggedRequest,
