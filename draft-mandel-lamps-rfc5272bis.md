@@ -3669,7 +3669,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-addExtensions CMC-CONTROL ::=
       { AddExtensions IDENTIFIED BY id-cmc-addExtensions }
-  id-cmc-addExtensions OBJECT IDENTIFIER ::= {id-cmc 8}
+
+    id-cmc-addExtensions OBJECT IDENTIFIER ::= { id-cmc 8 }
 
   AddExtensions ::= SEQUENCE {
       pkiDataReference    BodyPartID,
