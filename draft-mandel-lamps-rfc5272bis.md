@@ -3720,7 +3720,8 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   cmc-getCert CMC-CONTROL ::=
       { GetCert IDENTIFIED BY id-cmc-getCert }
-  id-cmc-getCert OBJECT IDENTIFIER ::= {id-cmc 15}
+
+    id-cmc-getCert OBJECT IDENTIFIER ::= { id-cmc 15 }
 
   GetCert ::= SEQUENCE {
       issuerName      GeneralName,
