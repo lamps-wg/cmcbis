@@ -77,6 +77,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid4775
     title: RFC 5272 erratum 4775
     date: 2016-08-11
+  erratum7628
+    target: https://www.rfc-editor.org/errata/eid7628
+    title: RFC 5272 erratum 7628
+    date: 2023-09-04
   erratum7629
     target: https://www.rfc-editor.org/errata/eid7629
     title: RFC 5272 erratum 7629
@@ -227,7 +231,9 @@ Note: For now, this section will be list of the changes introduced
 * To support adopting SHA-256 and HMAC-SHA256:
   * Add maca-hMAC-SHA256 to POPAlgs
   * Add mda-sha256 to WitnessAlgs
+* Merge {{erratum7628}}
 * Merge {{erratum7629}}
+* Address management of KEM certificate
 
 --01 todo:
 
@@ -900,7 +906,8 @@ client or no certificate exists for a signing key.
 > The id-cmc-authData control ({{AuthenticatedDataControl}}), and
 
 > The top-level wrapper in environments where an encryption-only key
-  is being certified.
+  is being certified or where a shared-secret exists, but a PKI-based
+  trust (needed for SignedData) has not yet been established.
 
 This content type can include both PKIData and PKIResponse as the
 encapsulated content types. These embedded content types can contain
