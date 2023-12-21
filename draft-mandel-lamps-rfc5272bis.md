@@ -231,6 +231,7 @@ Note: For now, this section will be list of the changes introduced
 * To support adopting SHA-256 and HMAC-SHA256:
   * Add maca-hMAC-SHA256 to POPAlgs
   * Add mda-sha256 to WitnessAlgs
+  * Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B
 * Merge {{erratum7628}}
 * Merge {{erratum7629}}
 * Address management of KEM certificate
@@ -956,7 +957,7 @@ returned using a `CMCFailInfo` with a value of `badMessageCheck` and a
 For the PKI Response, `SignedData` allows the server to sign the
 returning data, if any exists, and to carry the certificates and CRLs
 corresponding to the PKI Request. If no data is being returned
-beyond the certificates and CRLs, the `EncapsulatedContentInfo` and `SignerInfo`
+beyond the certificates and CRLs, the `EncapsulatedInfo` and `SignerInfo`
 fields are not populated.
 
 Only if the server is unable to sign the response (and unable to use
