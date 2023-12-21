@@ -4242,8 +4242,8 @@ Response #1 from server to client:
                   encryptedContentInfo
                     eContentType = id-data
                     eContent = <Encrypted value of 'y'>
-              thePOPAlgID = HMAC-SHA1
-              witnessAlgID = SHA-1
+              thePOPAlgID = HMAC-SHA256
+              witnessAlgID = SHA-256
               witness <hashed value of 'y'>}}
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
@@ -4265,7 +4265,7 @@ Response #1 from server to client:
            {105, id-cmc-recipientNonce, 10005}
            {107, id-cmc-decryptedPOP, {
              bodyPartID 201,
-             thePOPAlgID HMAC-SHA1,
+             thePOPAlgID HMAC-SHA256,
              thePOP <HMAC computed value goes here>}}
          reqSequence
            certRequest
