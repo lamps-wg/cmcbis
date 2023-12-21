@@ -77,6 +77,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid4775
     title: RFC 5272 erratum 4775
     date: 2016-08-11
+  erratum7629
+    target: https://www.rfc-editor.org/errata/eid7629
+    title: RFC 5272 erratum 7629
+    date: 2023-09-04
 
 --- abstract
 
@@ -218,10 +222,12 @@ Note: For now, this section will be list of the changes introduced
 </aside>
 
 --02 todo:
+
 * Updates ASN.1 to use 2002 ASN.1 module baseed on {{CMC-Updates}}
 * To support adopting SHA-256 and HMAC-SHA256:
   * Add maca-hMAC-SHA256 to POPAlgs
   * Add mda-sha256 to WitnessAlgs
+* Merge {{erratum7629}}
 
 --01 todo:
 
@@ -943,8 +949,16 @@ returned using a `CMCFailInfo` with a value of `badMessageCheck` and a
 For the PKI Response, `SignedData` allows the server to sign the
 returning data, if any exists, and to carry the certificates and CRLs
 corresponding to the PKI Request. If no data is being returned
-beyond the certificates and CRLs, the `EncapsulatedInfo` and `SignerInfo`
+beyond the certificates and CRLs, the `EncapsulatedContentInfo` and `SignerInfo`
 fields are not populated.
+
+Only if the server is unable to sign the response (and unable to use 
+any `RecipientInfo` options of the `AuthenticatedData` content type), 
+and at the same time it should send a negative response, 
+Full PKI Response `SignedData` type containing a CMC Status Info control 
+MUST be returned using a `CMCFailInfo` with a value of internalCAError and 
+a `bodyPartID` of 0, and the eContent field in the `EncapsulatedContentInfo` 
+as well as `SignerInfo` fields MUST not be populated.
 
 ####  Other Message Bodies {#OtherMessageBodies}
 
