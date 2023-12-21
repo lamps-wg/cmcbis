@@ -952,12 +952,12 @@ corresponding to the PKI Request. If no data is being returned
 beyond the certificates and CRLs, the `EncapsulatedContentInfo` and `SignerInfo`
 fields are not populated.
 
-Only if the server is unable to sign the response (and unable to use 
-any `RecipientInfo` options of the `AuthenticatedData` content type), 
-and at the same time it should send a negative response, 
-Full PKI Response `SignedData` type containing a CMC Status Info control 
-MUST be returned using a `CMCFailInfo` with a value of internalCAError and 
-a `bodyPartID` of 0, and the eContent field in the `EncapsulatedContentInfo` 
+Only if the server is unable to sign the response (and unable to use
+any `RecipientInfo` options of the `AuthenticatedData` content type),
+and at the same time it should send a negative response,
+Full PKI Response `SignedData` type containing a CMC Status Info control
+MUST be returned using a `CMCFailInfo` with a value of internalCAError and
+a `bodyPartID` of 0, and the eContent field in the `EncapsulatedContentInfo`
 as well as `SignerInfo` fields MUST not be populated.
 
 ####  Other Message Bodies {#OtherMessageBodies}
