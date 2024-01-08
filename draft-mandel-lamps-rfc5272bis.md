@@ -227,19 +227,8 @@ Note: For now, this section will be list of the changes introduced
 
 --02 todo:
 
-* Updates ASN.1 to use 2002 ASN.1 module baseed on {{CMC-Updates}}
-* To support adopting SHA-256 and HMAC-SHA256:
-  * Add maca-hMAC-SHA256 to POPAlgs
-  * Add mda-sha256 to WitnessAlgs
-  * Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B
-* Merge {{erratum7628}}
-* Merge {{erratum7629}}
 * Address management of KEM certificate
-
---01 todo:
-
-* Rework Section 1.3
-* Update CMC Control Attribute Table
+* Add module to support PBKDF2
 
 --01 version changes:
 
@@ -247,8 +236,18 @@ Note: For now, this section will be list of the changes introduced
 * Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis
 * Added missing "OBJECT IDENTIFIER" to declarations throughout mainbody
   to match ASN.1 module
+* Rework Section 1.3
+* Update CMC Control Attribute Table
+* Updates ASN.1 to use 2002 ASN.1 module baseed on {{CMC-Updates}}
+* To support adopting SHA-256 and HMAC-SHA256:
+  * Add maca-hMAC-SHA256 to POPAlgs
+  * Add mda-sha256 to WitnessAlgs
+  * Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B
 * Merged {{erratum2731}}
 * Merged {{erratum4775}}
+* Mereged {{erratum7379}}
+* Merged {{erratum7628}}
+* Merged {{erratum7629}}
 
 --00 version changes:
 
