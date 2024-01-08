@@ -100,10 +100,12 @@ Note: For now, this section will be list of the changes introduced
 
 TODO for -02:
 
-* Update TLS 1.0 text.
-* Consider AuthEnvelopedData.
+* Update TLS 1.0 text
+* Consider AuthEnvelopedData
 
 -01 version changes:
+
+* Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis
 * Merged {{erratum3593}}
 
 -00 version changes:
