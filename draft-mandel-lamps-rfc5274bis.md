@@ -197,13 +197,17 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
-TODO for -01:
+TODO for -02:
 
 * Update TLS text
 * Update SHA-1 text
 * Merge requirements terminology and terminology sections
 * Make sure section count in s1 is correct
-* Update references to 5272bis and 5273bis
+
+-01 version changes:
+
+* Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis
+* Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
 
 -00 version changes:
 
