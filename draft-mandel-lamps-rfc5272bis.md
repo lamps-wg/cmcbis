@@ -77,11 +77,15 @@ informative:
     target: https://www.rfc-editor.org/errata/eid4775
     title: RFC 5272 erratum 4775
     date: 2016-08-11
-  erratum7628
+  erratum7379:
+    target: https://www.rfc-editor.org/errata/eid7379
+    title: RFC 5272 erratum 7379
+    date: 2023-03-08
+  erratum7628:
     target: https://www.rfc-editor.org/errata/eid7628
     title: RFC 5272 erratum 7628
     date: 2023-09-04
-  erratum7629
+  erratum7629:
     target: https://www.rfc-editor.org/errata/eid7629
     title: RFC 5272 erratum 7629
     date: 2023-09-04
