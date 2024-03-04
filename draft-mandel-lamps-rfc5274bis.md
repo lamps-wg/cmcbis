@@ -107,8 +107,8 @@ involved.
 
 This document is divided into six sections, each section specifying
 the requirements that are specific to a class of agents in the CMC
-model.  These are 1) All agents, 2) all servers, 3) all clients, 4)
-all End-Entities, 5) all Registration Entities, 6) all Certificate
+model.  These are 1) all Entities, 2) all Servers, 3) all Clients, 4)
+all End-Entities, 5) all Registration Authorities, 6) all Certification
 Authorities.
 
 This document obsoletes {{CMC-COMPv1}} and {{CMC-Updates}}.
@@ -197,12 +197,15 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
-TODO for -02:
+TODO for -03:
 
-* Update TLS text
-* Update SHA-1 text
-* Merge requirements terminology and terminology sections
-* Make sure section count in s1 is correct
+* Update cryptographic algorithm requirements
+
+-02 version changes:
+
+* Updated text in intro
+* Changed "all agents" to "all entities" in overview
+* Updated section header numbering
 
 -01 version changes:
 
@@ -393,7 +396,7 @@ by the id-cmc-revokeRequest control.
 
 The id-regCtrl-protocolEncrKey is not used.
 
-## Requirements for Clients
+# Requirements for Clients
 
 There are no additional requirements.
 
