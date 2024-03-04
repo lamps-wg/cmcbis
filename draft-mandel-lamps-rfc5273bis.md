@@ -52,13 +52,13 @@ normative:
     target: https://www.rfc-editor.org/errata/eid3593
     date: 2013-04
   CMC-STRUCT: I-D.mandel-lamps-rfc5272bis
-  HTTP: RFC9111
+  HTTP: RFC9110
   IPsec: RFC4301
   SMIMEV4: RFC8551
 
 
 informative:
-  TLS: I-D.ietf-tls-rfc8446bis
+  TLS: RFC5246
   CMC-TRANSv1: I-D.mandel-lamps-rfc5273bis
   CMC-Updates: RFC6402
 
@@ -98,10 +98,13 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
-TODO for -02:
+TODO for -03:
 
-* Update TLS 1.0 text
 * Consider AuthEnvelopedData
+
+-02 version changes:
+
+* Replaced TLS 1.0 with TLS 1.2
 
 -01 version changes:
 
@@ -179,7 +182,7 @@ disposition statement.
 
 This section describes the conventions for use of HTTP {{HTTP}} as a
 transport layer.  In most circumstances, the use of HTTP over TLS
-{{TLS}} provides any necessary content protection from eavesdroppers.
+{{HTTP}} provides any necessary content protection from eavesdroppers.
 
 In order for CMC clients and servers using HTTP to interoperate, the
 following rules apply.
@@ -188,7 +191,7 @@ following rules apply.
 
 > Servers MUST use the 200 response code for successful responses.
 
-> Clients MAY attempt to send HTTP requests using TLS 1.0 {{TLS}} or
+> Clients MAY attempt to send HTTP requests using TLS 1.2 {{TLS}} or
 later, although servers are not required to support TLS.
 
 > Servers MUST NOT assume client support for any type of HTTP
