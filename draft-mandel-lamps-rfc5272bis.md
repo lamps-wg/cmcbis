@@ -4039,7 +4039,7 @@ compiling {{asn.1-cmc}} to ensure the imported kda-PBKDF2 includes the
 ~~~
 PBKDF2-PRFs-2023
   { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-	   smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
+    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
 
 DEFINITIONS IMPLICT TAGS ::=
 BEGIN
