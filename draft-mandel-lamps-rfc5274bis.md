@@ -105,9 +105,9 @@ not all RAs will see all certificate requests.  The routing between
 the RAs may be dependent on the content of the certificate requests
 involved.
 
-This document is divided into five sections, each section specifying
+This document is divided into six sections, each section specifying
 the requirements that are specific to a class of agents in the CMC
-model.  These are 1) all agents, 2) all servers, 3) all clients, 4)
+model.  These are 1) all Entities, 2) all Servers, 3) all Clients, 4)
 all End-Entities, 5) all Registration Authorities, 6) all Certification
 Authorities.
 
@@ -204,6 +204,8 @@ TODO for -03:
 -02 version changes:
 
 * Updated text in intro
+* Changed "all agents" to "all entities" in overview
+* Updated section header numbering
 
 -01 version changes:
 
@@ -394,7 +396,7 @@ by the id-cmc-revokeRequest control.
 
 The id-regCtrl-protocolEncrKey is not used.
 
-## Requirements for Clients
+# Requirements for Clients
 
 There are no additional requirements.
 
