@@ -4030,7 +4030,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
  END
 ~~~
 
-## ASN.1 Module for PBDKF2 PRFs
+## ASN.1 Module for PBKDF2 PRFs
 
 The module contained in this appendix extends the PBKDF2-PRFs algorithm
 set defined in {{Section 3 of CMS-ALGS}}. Apply this extension prior to
