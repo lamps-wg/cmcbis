@@ -4033,7 +4033,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 ## ASN.1 Module for PBDKF2 PRFs
 
 The module contained in this appendix extends the PBKDF2-PRFs algorithm
-set defined in {{Section 3 of CMS-ALGs}}. Apply this extension prior to
+set defined in {{Section 3 of CMS-ALGS}}. Apply this extension prior to
 compiling {{asn.1-cmc}} to ensure the imported kda-PBKDF2 includes the
 6 HMAC algorithms included in this ASN.1 module.
 ~~~
