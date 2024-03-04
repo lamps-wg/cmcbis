@@ -3420,7 +3420,8 @@ BEGIN
   FROM PKIX1Explicit-2009
       { iso(1) identified-organization(3) dod(6) internet(1) security(5)
         mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-explicit-02(51) }
-ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
+
+  ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   FROM CryptographicMessageSyntax-2010
     { iso(1) member-body(2) us(840) rsadsi(113549)
        pkcs(1) pkcs-9(9) smime(16) modules(0) id-mod-cms-2009(58) }
@@ -3510,7 +3511,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   OTHER-REQUEST ::= TYPE-IDENTIFIER
 
   --  We do not define any other requests in this document.
-  --   Examples might be attribute certification requests.
+  --  Examples might be attribute certification requests.
 
   OtherRequests OTHER-REQUEST ::= {...}
 
@@ -3561,6 +3562,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   --  No other messages currently defined
 
   OtherMsgSet OTHER-MSG ::= {...}
+
   OtherMsg ::= SEQUENCE {
       bodyPartID        BodyPartID,
       otherMsgType      OTHER-MSG.&id({OtherMsgSet}),
@@ -3588,57 +3590,58 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-identityProof CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-identityProof }
 
-    id-cmc-identityProof OBJECT IDENTIFIER ::= { id-cmc 3 }
+  id-cmc-identityProof OBJECT IDENTIFIER ::= { id-cmc 3 }
 
   cmc-dataReturn CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-dataReturn }
 
-    id-cmc-dataReturn OBJECT IDENTIFIER ::= { id-cmc 4 }
+  id-cmc-dataReturn OBJECT IDENTIFIER ::= { id-cmc 4 }
 
   cmc-regInfo CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-regInfo }
 
-    id-cmc-regInfo OBJECT IDENTIFIER ::= { id-cmc 18 }
+  id-cmc-regInfo OBJECT IDENTIFIER ::= { id-cmc 18 }
 
   cmc-responseInfo CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-responseInfo }
 
-    id-cmc-responseInfo OBJECT IDENTIFIER ::= { id-cmc 19 }
+  id-cmc-responseInfo OBJECT IDENTIFIER ::= { id-cmc 19 }
 
   cmc-queryPending CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-queryPending }
 
-    id-cmc-queryPending OBJECT IDENTIFIER ::= { id-cmc 21 }
+  id-cmc-queryPending OBJECT IDENTIFIER ::= { id-cmc 21 }
 
   cmc-popLinkRandom CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-popLinkRandom }
 
-    id-cmc-popLinkRandom OBJECT IDENTIFIER ::= { id-cmc 22 }
+  id-cmc-popLinkRandom OBJECT IDENTIFIER ::= { id-cmc 22 }
+
   cmc-popLinkWitness CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-popLinkWitness }
 
-    id-cmc-popLinkWitness OBJECT IDENTIFIER ::= { id-cmc 23 }
+  id-cmc-popLinkWitness OBJECT IDENTIFIER ::= { id-cmc 23 }
 
   -- The following controls have the type UTF8String
 
   cmc-identification CMC-CONTROL ::=
       { UTF8String IDENTIFIED BY id-cmc-identification }
 
-    id-cmc-identification OBJECT IDENTIFIER ::= { id-cmc 2 }
+  id-cmc-identification OBJECT IDENTIFIER ::= { id-cmc 2 }
 
   -- The following controls have the type INTEGER
 
   cmc-transactionId CMC-CONTROL ::=
       { INTEGER IDENTIFIED BY id-cmc-transactionId }
 
-    id-cmc-transactionId OBJECT IDENTIFIER ::= { id-cmc 5 }
+  id-cmc-transactionId OBJECT IDENTIFIER ::= { id-cmc 5 }
 
   -- The following controls have the type OCTET STRING
 
   cmc-senderNonce CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-senderNonce }
 
-    id-cmc-senderNonce OBJECT IDENTIFIER ::= { id-cmc 6 }
+  id-cmc-senderNonce OBJECT IDENTIFIER ::= { id-cmc 6 }
 
   cmc-recipientNonce CMC-CONTROL ::=
       { OCTET STRING IDENTIFIED BY id-cmc-recipientNonce }
@@ -3650,7 +3653,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-statusInfo CMC-CONTROL ::=
       { CMCStatusInfo IDENTIFIED BY id-cmc-statusInfo }
 
-    id-cmc-statusInfo OBJECT IDENTIFIER ::= { id-cmc 1 }
+  id-cmc-statusInfo OBJECT IDENTIFIER ::= { id-cmc 1 }
 
   CMCStatusInfo ::= SEQUENCE {
       cMCStatus       CMCStatus,
@@ -3699,7 +3702,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-addExtensions CMC-CONTROL ::=
       { AddExtensions IDENTIFIED BY id-cmc-addExtensions }
 
-    id-cmc-addExtensions OBJECT IDENTIFIER ::= { id-cmc 8 }
+  id-cmc-addExtensions OBJECT IDENTIFIER ::= { id-cmc 8 }
 
   AddExtensions ::= SEQUENCE {
       pkiDataReference    BodyPartID,
@@ -3710,13 +3713,14 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-encryptedPOP CMC-CONTROL ::=
       { EncryptedPOP IDENTIFIED BY id-cmc-encryptedPOP }
 
-    cmc-decryptedPOP CMC-CONTROL ::=
+  cmc-decryptedPOP CMC-CONTROL ::=
       { DecryptedPOP IDENTIFIED BY id-cmc-decryptedPOP }
 
-    id-cmc-encryptedPOP OBJECT IDENTIFIER ::= { id-cmc 9 }
+  id-cmc-encryptedPOP OBJECT IDENTIFIER ::= { id-cmc 9 }
 
-    id-cmc-decryptedPOP OBJECT IDENTIFIER ::= { id-cmc 10 }
- EncryptedPOP ::= SEQUENCE {
+  id-cmc-decryptedPOP OBJECT IDENTIFIER ::= { id-cmc 10 }
+
+  EncryptedPOP ::= SEQUENCE {
       request       TaggedRequest,
       cms             ContentInfo,
       thePOPAlgID     AlgorithmIdentifier{MAC-ALGORITHM, {POPAlgs}},
@@ -3727,7 +3731,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1, maca-hMAC-SHA256, ... }
 
-    WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1, mda-sha256, ... }
+  WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1, mda-sha256, ... }
 
   DecryptedPOP ::= SEQUENCE {
       bodyPartID      BodyPartID,
@@ -3750,7 +3754,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-getCert CMC-CONTROL ::=
       { GetCert IDENTIFIED BY id-cmc-getCert }
 
-    id-cmc-getCert OBJECT IDENTIFIER ::= { id-cmc 15 }
+  id-cmc-getCert OBJECT IDENTIFIER ::= { id-cmc 15 }
 
   GetCert ::= SEQUENCE {
       issuerName      GeneralName,
@@ -3759,17 +3763,18 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-getCRL CMC-CONTROL ::=
       { GetCRL IDENTIFIED BY id-cmc-getCRL }
 
-    id-cmc-getCRL OBJECT IDENTIFIER ::= { id-cmc 16 }
+  id-cmc-getCRL OBJECT IDENTIFIER ::= { id-cmc 16 }
 
   GetCRL ::= SEQUENCE {
       issuerName    Name,
       cRLName       GeneralName OPTIONAL,
       time          GeneralizedTime OPTIONAL,
       reasons       ReasonFlags OPTIONAL }
+
   cmc-revokeRequest CMC-CONTROL ::=
       { RevokeRequest IDENTIFIED BY id-cmc-revokeRequest}
 
-    id-cmc-revokeRequest OBJECT IDENTIFIER ::= { id-cmc 17 }
+  id-cmc-revokeRequest OBJECT IDENTIFIER ::= { id-cmc 17 }
 
   RevokeRequest ::= SEQUENCE {
       issuerName            Name,
@@ -3782,7 +3787,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-confirmCertAcceptance CMC-CONTROL ::=
       { CMCCertId IDENTIFIED BY id-cmc-confirmCertAcceptance }
 
-    id-cmc-confirmCertAcceptance OBJECT IDENTIFIER ::= { id-cmc 24 }
+  id-cmc-confirmCertAcceptance OBJECT IDENTIFIER ::= { id-cmc 24 }
 
   CMCCertId ::= IssuerAndSerialNumber
 
@@ -3792,7 +3797,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   at-extension-req ATTRIBUTE ::=
       { TYPE ExtensionReq IDENTIFIED BY id-ExtensionReq }
 
-    id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+  id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
       rsadsi(113549) pkcs(1) pkcs-9(9) 14 }
 
   ExtensionReq ::= SEQUENCE SIZE (1..MAX) OF
@@ -3808,7 +3813,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
       HASHES { mda-sha1 }
   }
 
-    id-alg-noSignature OBJECT IDENTIFIER ::= { id-pkix id-alg(6) 2 }
+  id-alg-noSignature OBJECT IDENTIFIER ::= { id-pkix id-alg(6) 2 }
 
   NoSignatureValue ::= OCTET STRING
 
@@ -3817,10 +3822,10 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   id-aa OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
       rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2) }
 
-    aa-cmc-unsignedData ATTRIBUTE ::=
+  aa-cmc-unsignedData ATTRIBUTE ::=
       { TYPE CMCUnsignedData IDENTIFIED BY id-aa-cmc-unsignedData }
 
-    id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= { id-aa 34 }
+  id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= { id-aa 34 }
 
   CMCUnsignedData ::= SEQUENCE {
       bodyPartPath        BodyPartPath,
@@ -3834,7 +3839,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-statusInfoV2 CMC-CONTROL ::=
       { CMCStatusInfoV2 IDENTIFIED BY id-cmc-statusInfoV2 }
 
-    id-cmc-statusInfoV2 OBJECT IDENTIFIER ::= { id-cmc 25 }
+  id-cmc-statusInfoV2 OBJECT IDENTIFIER ::= { id-cmc 25 }
 
   EXTENDED-FAILURE-INFO ::= TYPE-IDENTIFIER
 
@@ -3865,13 +3870,13 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   BodyPartPath ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
 
-    --  Allow for distribution of trust anchors
+  --  Allow for distribution of trust anchors
   --
 
   cmc-trustedAnchors CMC-CONTROL ::=
       { PublishTrustAnchors IDENTIFIED BY id-cmc-trustedAnchors }
 
-    id-cmc-trustedAnchors OBJECT IDENTIFIER ::= { id-cmc 26 }
+  id-cmc-trustedAnchors OBJECT IDENTIFIER ::= { id-cmc 26 }
 
   PublishTrustAnchors ::= SEQUENCE {
       seqNumber      INTEGER,
@@ -3887,7 +3892,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-authData CMC-CONTROL ::=
       { AuthPublish IDENTIFIED BY id-cmc-authData }
 
-    id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 27 }
+  id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 27 }
 
   AuthPublish ::= BodyPartID
 
@@ -3901,14 +3906,14 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-batchResponses CMC-CONTROL ::=
       { BodyPartList IDENTIFIED BY id-cmc-batchResponses }
 
-    id-cmc-batchResponses OBJECT IDENTIFIER ::= { id-cmc 29 }
+  id-cmc-batchResponses OBJECT IDENTIFIER ::= { id-cmc 29 }
 
   BodyPartList ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
 
   cmc-publishCert CMC-CONTROL ::=
       { CMCPublicationInfo IDENTIFIED BY id-cmc-publishCert }
 
-    id-cmc-publishCert OBJECT IDENTIFIER ::= { id-cmc 30 }
+  id-cmc-publishCert OBJECT IDENTIFIER ::= { id-cmc 30 }
 
   CMCPublicationInfo ::= SEQUENCE {
       hashAlg        AlgorithmIdentifier{DIGEST-ALGORITHM,
@@ -3935,7 +3940,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-controlProcessed CMC-CONTROL ::=
       { ControlsProcessed IDENTIFIED BY id-cmc-controlProcessed }
 
-    id-cmc-controlProcessed OBJECT IDENTIFIER ::= { id-cmc 32 }
+  id-cmc-controlProcessed OBJECT IDENTIFIER ::= { id-cmc 32 }
 
   ControlsProcessed ::= SEQUENCE {
       bodyList              SEQUENCE SIZE(1..MAX) OF BodyPartReference
@@ -3946,7 +3951,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-identityProofV2 CMC-CONTROL ::=
       { IdentityProofV2 IDENTIFIED BY id-cmc-identityProofV2 }
 
-    id-cmc-identityProofV2 OBJECT IDENTIFIER ::= { id-cmc 33 }
+  id-cmc-identityProofV2 OBJECT IDENTIFIER ::= { id-cmc 33 }
 
   IdentityProofV2 ::= SEQUENCE {
       proofAlgID       AlgorithmIdentifier{DIGEST-ALGORITHM,
@@ -3958,7 +3963,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   cmc-popLinkWitnessV2 CMC-CONTROL ::=
       { PopLinkWitnessV2 IDENTIFIED BY id-cmc-popLinkWitnessV2 }
 
-    id-cmc-popLinkWitnessV2 OBJECT IDENTIFIER ::= { id-cmc 34 }
+  id-cmc-popLinkWitnessV2 OBJECT IDENTIFIER ::= { id-cmc 34 }
 
   PopLinkWitnessV2 ::= SEQUENCE {
       keyGenAlgorithm   AlgorithmIdentifier{KEY-DERIVATION,
@@ -3968,6 +3973,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   }
 
   KeyDevAlgs KEY-DERIVATION ::= { kda-PBKDF2, ... }
+
   cmc-raIdentityWitness CMC-CONTROL ::=
      { BodyPartPath IDENTIFIED BY id-cmc-raIdentityWitness }
 
@@ -4013,7 +4019,7 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
 
   id-ad-cmc OBJECT IDENTIFIER ::= { id-ad 12 }
 
- END
+END
 ~~~
 
 # Enrollment Message Flows {#enroll}
