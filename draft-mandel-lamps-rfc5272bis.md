@@ -2,6 +2,7 @@
 title: "Certificate Management over CMS (CMC)"
 abbrev: "CMC: Structures"
 category: std
+updates: 5911
 obsoletes: 5272, 6402
 
 docname: draft-mandel-lamps-rfc5272bis-latest
@@ -46,10 +47,13 @@ contributor:
 
 normative:
    CMS: RFC5652
+   CMS-ALGS: RFC5911
    CRMF: RFC4211
    DH-POP: RFC2875
+   HMAC-ALGS: RFC6268
    PKCS10: RFC2986
    PKIXCERT: RFC5280
+   PKIX-ALGS: RFC5912
 
 informative:
   CMC-PROTv1: RFC5272
@@ -110,6 +114,9 @@ definition.
 
 This document obsoletes RFCs 5272 and 6402.
 
+This document also updates part of RFC 5911 to add support for additional
+HMAC algorithms used with the POP Link Witness control.
+
 --- middle
 
 # Introduction
@@ -129,6 +136,9 @@ A small number of additional services are defined to supplement the
 core certification request service.
 
 This document obsoletes {{CMC-PROTv1}} and {{CMC-Updates}}.
+
+This document also updates {{CMS-ALGS}} to add support for additional
+HMAC algorithms used in the POP Link Witness V2 control.
 
 ## Protocol Requirements
 
@@ -229,10 +239,13 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
---02 todo:
+--03 todo:
 
 * Address management of KEM certificate
-* Add module to support PBKDF2
+
+--02 version changes:
+
+* Add module to support new HMAC algorithms in PBKDF2
 
 --01 version changes:
 
@@ -3382,8 +3395,9 @@ updates.
 
 --- back
 
-# ASN.1 Module {#ASN.1}
+# ASN.1 Modules {#ASN.1}
 
+## ASN.1 Module for CMC {#asn.1-cmc}
 ~~~
 EnrollmentMessageSyntax-2023
     { iso(1) identified-organization(3) dod(6) internet(1)
@@ -4014,6 +4028,80 @@ ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
   id-ad-cmc OBJECT IDENTIFIER ::= { id-ad 12 }
 
  END
+~~~
+
+## ASN.1 Module for PBDKF2 PRFs
+
+The module contained in this appendix extends the PBKDF2-PRFs algorithm
+set defined in {{Section 3 of CMS-ALGs}}. Apply this extension prior to
+compiling {{asn.1-cmc}} to ensure the imported kda-PBKDF2 includes the
+6 HMAC algorithms included in this ASN.1 module.
+~~~
+PBKDF2-PRFs-2023
+  { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+	   smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
+
+DEFINITIONS IMPLICT TAGS ::=
+BEGIN
+IMPORTS
+
+ALGORITHM
+  FROM AlgorithmInformation-2009 -- From [PKIX-Algs]
+    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+      mechanisms(5) pkix(7) id-mod(0)
+      id-mod-algorithmInformation-02(58) }
+
+id-hmacWithSHA224, id-hmacWithSHA256,
+id-hmacWithSHA384, id-hmacWithSHA512
+  FROM HMAC-2010 -- From [HMAC-Algs]
+    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+      mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
+;
+
+--
+-- Base OID for algorithms
+--
+
+rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+                               rsadsi(113549) }
+
+digestAlgorithm   OBJECT IDENTIFIER ::= { rsadsi 2 }
+
+id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
+id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
+
+--
+-- PBKF2-PRFs
+--
+
+PBKDF2-PRFs ALGORITHM ::= {
+  alg-hMAC-SHA224 	|
+  alg-hMAC-SHA256 	|
+  alg-hMAC-SHA384 	|
+  alg-hMAC-SHA512 	|
+  alg-hMAC-SHA512-224 |
+  alg-hMAC-SHA512-256,
+  ... }
+
+alg-hMAC-SHA224 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA224 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA256 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA256 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA384 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA384 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA512 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA512 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA512-224 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA512-224 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA512-256 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA512-256 PARAMS TYPE NULL ARE preferredAbsent }
+
+END
 ~~~
 
 # Enrollment Message Flows {#enroll}
