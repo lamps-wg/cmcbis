@@ -243,6 +243,10 @@ Note: For now, this section will be list of the changes introduced
 
 * Address management of KEM certificate
 
+--03 version changes:
+
+* Publish Trust Anchors Control hashAlgorithm changed to SHA-256
+
 --02 version changes:
 
 * Add module to support new HMAC algorithms in PBKDF2
@@ -2726,7 +2730,7 @@ The fields in PublishTrustAnchors have the following meaning:
 
 >> hashAlgorithm is the identifier and parameters for the hash
    algorithm that is used in computing the values of the anchorHashes
-   field. All implementations MUST implement SHA-1 for this field.
+   field. All implementations MUST implement SHA-256 for this field.
 
 >> anchorHashes are the hashes for the certificates that are to be
    treated as trust anchors by the client. The actual certificates
