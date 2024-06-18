@@ -49,7 +49,7 @@ normative:
    CMS: RFC5652
    CMS-ALGS: RFC5911
    CRMF: RFC4211
-   DH-POP: RFC2875
+   DH-POP: RFC6955
    HMAC-ALGS: RFC6268
    PKCS10: RFC2986
    PKIXCERT: RFC5280
@@ -242,6 +242,11 @@ Note: For now, this section will be list of the changes introduced
 --03 todo:
 
 * Address management of KEM certificate
+
+--03 version changes:
+
+* Publish Trust Anchors Control hashAlgorithm changed to SHA-256
+* Update DH-POP from RFC2875 to RFC6955
 
 --02 version changes:
 
