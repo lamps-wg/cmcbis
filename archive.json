@@ -1,0 +1,2072 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-06-20T01:19:39.977648+00:00",
+  "repo": "seanturner/cmcbis",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOKfq5gM5zwJhi",
+      "title": "5273 & 5274: Fix GH repo links",
+      "url": "https://github.com/seanturner/cmcbis/issues/1",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Links need to be updated.",
+      "createdAt": "2023-10-13T13:47:18Z",
+      "updatedAt": "2023-10-17T15:57:02Z",
+      "closedAt": "2023-10-17T15:57:02Z",
+      "comments": []
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOKfq5gM5zxG-f",
+      "title": "527*: Update references to -bis",
+      "url": "https://github.com/seanturner/cmcbis/issues/5",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Updating the following references:\r\n\r\n- When 5272bis refers to 5273 & 5274, 5272bis should refer to 5273bis & 5274bis\r\n- When 5273bis refers to 5272 & 5274, 5273bis should refer to 5272bis & 5274bis\r\n- When 5274bis refers to 5272 & 5273, 5274bis should refer to 5272bis & 5273bis",
+      "createdAt": "2023-10-13T16:28:16Z",
+      "updatedAt": "2023-10-17T15:57:53Z",
+      "closedAt": "2023-10-17T15:57:52Z",
+      "comments": []
+    },
+    {
+      "number": 6,
+      "id": "I_kwDOKfq5gM5zxHYI",
+      "title": "527*: Replace SHA-1 and HMAC-SHA-1",
+      "url": "https://github.com/seanturner/cmcbis/issues/6",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Update 5272*bis to remove defaults of SHA-1 and HMAC-SHA-1.",
+      "createdAt": "2023-10-13T16:29:35Z",
+      "updatedAt": "2023-12-21T02:20:44Z",
+      "closedAt": "2023-12-21T02:20:44Z",
+      "comments": [
+        {
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "body": "References to SHA-1 and HMAC-SHA-1\r\n\r\nhttps://seanturner.github.io/cmcbis/draft-mandel-lamps-rfc5272bis.html#name-identity-proof-control\r\nhttps://seanturner.github.io/cmcbis/draft-mandel-lamps-rfc5272bis.html#section-6.3.1.2\r\nhttps://seanturner.github.io/cmcbis/draft-mandel-lamps-rfc5272bis.html#section-6.7\r\nhttps://seanturner.github.io/cmcbis/draft-mandel-lamps-rfc5272bis.html#section-6.15\r\n \r\nhttps://seanturner.github.io/cmcbis/draft-mandel-lamps-rfc5274bis.html#name-cryptographic-algorithm-req ",
+          "createdAt": "2023-10-18T22:47:48Z",
+          "updatedAt": "2023-10-18T22:47:48Z"
+        },
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Also see B.3:\r\nhttps://seanturner.github.io/cmcbis/draft-mandel-lamps-rfc5272bis.html#name-direct-pop-for-an-rsa-certi",
+          "createdAt": "2023-11-29T16:03:55Z",
+          "updatedAt": "2023-11-29T16:03:55Z"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOKfq5gM5z_BtU",
+      "title": "5272: erratum7379",
+      "url": "https://github.com/seanturner/cmcbis/issues/7",
+      "state": "CLOSED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-10-16T19:02:27Z",
+      "updatedAt": "2024-01-08T18:29:26Z",
+      "closedAt": "2024-01-08T18:29:26Z",
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Here's a link to the erratum:\r\nhttps://www.rfc-editor.org/errata_search.php?eid=7379",
+          "createdAt": "2023-10-17T17:38:17Z",
+          "updatedAt": "2023-10-17T17:38:17Z"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "I_kwDOKfq5gM5z_B8K",
+      "title": "5272: erratum7628",
+      "url": "https://github.com/seanturner/cmcbis/issues/8",
+      "state": "CLOSED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-10-16T19:03:10Z",
+      "updatedAt": "2023-12-21T21:45:02Z",
+      "closedAt": "2023-12-21T21:45:02Z",
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Here's a link to the erratum:\r\nhttps://www.rfc-editor.org/errata_search.php?eid=7628",
+          "createdAt": "2023-10-17T17:38:44Z",
+          "updatedAt": "2023-10-17T17:38:44Z"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOKfq5gM5z_CDA",
+      "title": "5272: erratum7629",
+      "url": "https://github.com/seanturner/cmcbis/issues/9",
+      "state": "CLOSED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-10-16T19:03:28Z",
+      "updatedAt": "2023-12-21T21:44:34Z",
+      "closedAt": "2023-12-21T21:44:34Z",
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Here's a link to the erratum:\r\nhttps://www.rfc-editor.org/errata_search.php?eid=7629",
+          "createdAt": "2023-10-17T17:39:07Z",
+          "updatedAt": "2023-10-17T17:39:07Z"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "I_kwDOKfq5gM5z_CKV",
+      "title": "5272: erratum4775",
+      "url": "https://github.com/seanturner/cmcbis/issues/10",
+      "state": "CLOSED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-10-16T19:03:48Z",
+      "updatedAt": "2023-10-24T01:08:43Z",
+      "closedAt": "2023-10-24T01:08:43Z",
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Here's a link to the erratum:\r\nhttps://www.rfc-editor.org/errata_search.php?eid=4775",
+          "createdAt": "2023-10-17T17:39:34Z",
+          "updatedAt": "2023-10-17T17:39:34Z"
+        },
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "I believe this errata:\r\n* is correctly marked as editorial\r\n* should be marked as HFDU (hold for document update)\r\n* should be incorporated into rfc5272bis",
+          "createdAt": "2023-10-17T17:46:48Z",
+          "updatedAt": "2023-10-17T17:46:48Z"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "I_kwDOKfq5gM5z_CS3",
+      "title": "5272: erratum2731",
+      "url": "https://github.com/seanturner/cmcbis/issues/11",
+      "state": "CLOSED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-10-16T19:04:08Z",
+      "updatedAt": "2023-10-24T01:13:29Z",
+      "closedAt": "2023-10-24T01:13:29Z",
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Here's a link to the erratum:\r\nhttps://www.rfc-editor.org/errata_search.php?eid=2731",
+          "createdAt": "2023-10-17T17:40:51Z",
+          "updatedAt": "2023-10-17T17:40:51Z"
+        },
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "I submitted this so I might be a little biased, but this is also editorial so I think we should marked the errata HFDU (hold for document update) and incorporate it in -rfc5272bis.",
+          "createdAt": "2023-10-17T17:42:15Z",
+          "updatedAt": "2023-10-17T17:42:15Z"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "I_kwDOKfq5gM50Ibwe",
+      "title": "5273 Errata ID: 3593",
+      "url": "https://github.com/seanturner/cmcbis/issues/16",
+      "state": "CLOSED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://www.rfc-editor.org/errata_search.php?eid=3593",
+      "createdAt": "2023-10-17T22:09:47Z",
+      "updatedAt": "2023-10-24T00:55:45Z",
+      "closedAt": "2023-10-24T00:55:45Z",
+      "comments": []
+    },
+    {
+      "number": 17,
+      "id": "I_kwDOKfq5gM50Id-p",
+      "title": "Fix tables in 5273",
+      "url": "https://github.com/seanturner/cmcbis/issues/17",
+      "state": "CLOSED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix tables in section 2 and 3",
+      "createdAt": "2023-10-17T22:16:58Z",
+      "updatedAt": "2024-01-08T18:29:37Z",
+      "closedAt": "2024-01-08T18:29:37Z",
+      "comments": []
+    },
+    {
+      "number": 21,
+      "id": "I_kwDOKfq5gM50rqxp",
+      "title": "5273: Fix HTTP references",
+      "url": "https://github.com/seanturner/cmcbis/issues/21",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "HTTP references need to be updated.",
+      "createdAt": "2023-10-23T16:57:22Z",
+      "updatedAt": "2024-03-04T16:00:58Z",
+      "closedAt": "2024-03-04T16:00:57Z",
+      "comments": []
+    },
+    {
+      "number": 24,
+      "id": "I_kwDOKfq5gM52XNt1",
+      "title": "527*: Remove pre-5378 boilerplate",
+      "url": "https://github.com/seanturner/cmcbis/issues/24",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "After discussions with the IETF, it turns out because RFC 6402 updates all three of the RFCs the pre-5378 boilerplate is not required.",
+      "createdAt": "2023-11-09T14:54:07Z",
+      "updatedAt": "2023-11-17T23:33:03Z",
+      "closedAt": "2023-11-17T23:33:03Z",
+      "comments": []
+    },
+    {
+      "number": 32,
+      "id": "I_kwDOKfq5gM5--2wH",
+      "title": "Add newer hmacs to PBKDF2-PRFs",
+      "url": "https://github.com/seanturner/cmcbis/issues/32",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "In [RFC 6402](https://www.rfc-editor.org/rfc/rfc6402#appendix-A.2),  defines kda-PBKDF2 for use with KeyDevAlgs, which is used in the PopLinkWitnessV2 control.  If you look at kda-PBKDF2, which is imported from [RFC 5911](https://datatracker.ietf.org/doc/html/rfc5911#section-3) only alg-hMAC-SHA1 is included. Obviously, we need to add additional algorithms there, so we need to update PBKDF2-PRFs to include additional algorithms.  We are proposing adding the following algorithms:\r\n\r\n    alg-hMAC-SHA224\r\n    alg-hMAC-SHA256\r\n    alg-hMAC-SHA384\r\n    alg-hMAC-SHA512\r\n    alg-hMAC-SHA512-224\r\n    alg-hMAC-SHA512-256\r\n\r\nThis requires a new module and probably adding \"updates 5911\" to the header.",
+      "createdAt": "2024-02-12T15:44:32Z",
+      "updatedAt": "2024-03-04T19:42:13Z",
+      "closedAt": "2024-03-04T19:42:13Z",
+      "comments": []
+    },
+    {
+      "number": 37,
+      "id": "I_kwDOKfq5gM6BGCJs",
+      "title": "5274: Update cryptographic requirements",
+      "url": "https://github.com/seanturner/cmcbis/issues/37",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Update cryptographic algorithm requirements.",
+      "createdAt": "2024-03-04T03:24:32Z",
+      "updatedAt": "2024-03-04T03:24:32Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 38,
+      "id": "I_kwDOKfq5gM6BGCwl",
+      "title": "5273: Adopt management of KEM certificates",
+      "url": "https://github.com/seanturner/cmcbis/issues/38",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Look to what CMP is doing to manage KEM certificates.",
+      "createdAt": "2024-03-04T03:27:33Z",
+      "updatedAt": "2024-03-04T03:27:33Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 39,
+      "id": "I_kwDOKfq5gM6FSDc1",
+      "title": "5272: Need Publish Trust Anchors Control v2",
+      "url": "https://github.com/seanturner/cmcbis/issues/39",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Publish Trust Anchors Control requires SHA-1 as the hash algorithm.  Need to define v2 for the control that allows other algorithms.",
+      "createdAt": "2024-04-10T17:31:22Z",
+      "updatedAt": "2024-04-10T17:39:36Z",
+      "closedAt": "2024-04-10T17:39:36Z",
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Ah .... we don't need a new control, we can just change the requirement.",
+          "createdAt": "2024-04-10T17:39:26Z",
+          "updatedAt": "2024-04-10T17:39:26Z"
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "id": "I_kwDOKfq5gM6FSJnO",
+      "title": "5272: Update Publish Trust Anchors Control hash algorithm",
+      "url": "https://github.com/seanturner/cmcbis/issues/40",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Currently it says SHA-1, change to SHA-256.",
+      "createdAt": "2024-04-10T17:48:20Z",
+      "updatedAt": "2024-06-18T20:06:57Z",
+      "closedAt": "2024-06-18T20:06:57Z",
+      "comments": []
+    },
+    {
+      "number": 42,
+      "id": "I_kwDOKfq5gM6Fnxne",
+      "title": "DH PoP Alg References - 2875 to 6955",
+      "url": "https://github.com/seanturner/cmcbis/issues/42",
+      "state": "CLOSED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Update the references from RFC 2875 to 6955 in 5272bis",
+      "createdAt": "2024-04-13T22:05:51Z",
+      "updatedAt": "2024-06-18T19:57:04Z",
+      "closedAt": "2024-06-18T19:57:03Z",
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 2,
+      "id": "PR_kwDOKfq5gM5cvhK6",
+      "title": "5273: GH repo links",
+      "url": "https://github.com/seanturner/cmcbis/pull/2",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-10-13T13:51:30Z",
+      "updatedAt": "2023-10-17T15:56:41Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "d2b1c61387e3874ec9c6f8826cbe8d05d6305450",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-repo-links",
+      "headRefOid": "3c0b01e66ace87ee8c946397e29ee7dea48a572a",
+      "closedAt": "2023-10-17T15:56:41Z",
+      "mergedAt": "2023-10-17T15:56:41Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "3ce08d5b56c5880cd4d82a263097314542cec3ff"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5kTKWG",
+          "commit": {
+            "abbreviatedOid": "3c0b01e"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-17T15:54:29Z",
+          "updatedAt": "2023-10-17T15:54:29Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOKfq5gM5cviOd",
+      "title": "5274: GH Repo Links",
+      "url": "https://github.com/seanturner/cmcbis/pull/3",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1",
+      "createdAt": "2023-10-13T13:54:26Z",
+      "updatedAt": "2023-10-17T15:56:51Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "seanturner-repo-links",
+      "baseRefOid": "3c0b01e66ace87ee8c946397e29ee7dea48a572a",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-repo-links-2",
+      "headRefOid": "4b97f01da4568a9584c19f318e848ad3b634ed99",
+      "closedAt": "2023-10-17T15:56:51Z",
+      "mergedAt": "2023-10-17T15:56:51Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "8e9d47451bf148281eafa94cb1c3e4b1dff5c139"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5kTKga",
+          "commit": {
+            "abbreviatedOid": "4b97f01"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-17T15:54:49Z",
+          "updatedAt": "2023-10-17T15:54:49Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOKfq5gM5cvzlI",
+      "title": "Update 5272, 5273, and 5274 refs to bis I-Ds",
+      "url": "https://github.com/seanturner/cmcbis/pull/4",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #5.",
+      "createdAt": "2023-10-13T14:41:52Z",
+      "updatedAt": "2023-10-17T15:57:52Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "d2b1c61387e3874ec9c6f8826cbe8d05d6305450",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "CMCbis-refs",
+      "headRefOid": "cd071fef65faa0ec03fe3a5ac9be1353c7e14825",
+      "closedAt": "2023-10-17T15:57:51Z",
+      "mergedAt": "2023-10-17T15:57:51Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "5b77fd18b46a22e45be4e7aeb53f768921d8c98f"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5kTLLJ",
+          "commit": {
+            "abbreviatedOid": "cd071fe"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-17T15:55:36Z",
+          "updatedAt": "2023-10-17T15:55:36Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOKfq5gM5c8NhX",
+      "title": "Add OBJECT IDENTIFIER and spacing ",
+      "url": "https://github.com/seanturner/cmcbis/pull/12",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-10-16T19:53:14Z",
+      "updatedAt": "2023-10-17T18:00:34Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "d2b1c61387e3874ec9c6f8826cbe8d05d6305450",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "mandelj7-patch-2",
+      "headRefOid": "c10dcb16b39ee47b5a019cfd3d718f1f35e5ad0f",
+      "closedAt": "2023-10-17T18:00:34Z",
+      "mergedAt": "2023-10-17T18:00:34Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "4951b56160053b7c04b95a224187102eb81afc75"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5kSZUZ",
+          "commit": {
+            "abbreviatedOid": "7376101"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-17T14:34:46Z",
+          "updatedAt": "2023-10-17T14:34:47Z",
+          "comments": [
+            {
+              "originalPosition": 394,
+              "body": "```suggestion\r\nid-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }\r\n```",
+              "createdAt": "2023-10-17T14:34:47Z",
+              "updatedAt": "2023-10-17T14:34:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kSZrK",
+          "commit": {
+            "abbreviatedOid": "7376101"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-17T14:35:23Z",
+          "updatedAt": "2023-10-17T14:35:23Z",
+          "comments": [
+            {
+              "originalPosition": 401,
+              "body": "```suggestion\r\n```",
+              "createdAt": "2023-10-17T14:35:23Z",
+              "updatedAt": "2023-10-17T14:35:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kSbVC",
+          "commit": {
+            "abbreviatedOid": "7376101"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-17T14:38:01Z",
+          "updatedAt": "2023-10-17T14:38:01Z",
+          "comments": [
+            {
+              "originalPosition": 444,
+              "body": "```suggestion\r\n id-aa OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)\r\n       rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2) }\r\n```",
+              "createdAt": "2023-10-17T14:38:01Z",
+              "updatedAt": "2023-10-17T14:38:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kSbxN",
+          "commit": {
+            "abbreviatedOid": "7376101"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-17T14:38:41Z",
+          "updatedAt": "2023-10-17T14:38:42Z",
+          "comments": [
+            {
+              "originalPosition": 473,
+              "body": "```suggestion\r\n id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 27 }\r\n```",
+              "createdAt": "2023-10-17T14:38:41Z",
+              "updatedAt": "2023-10-17T14:38:42Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kSdPX",
+          "commit": {
+            "abbreviatedOid": "7376101"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Two others:\r\n\r\n1) On line 481 add this:\r\n\r\nOLD: id-ExtensionReq OBJECT IDENTIFIER ::= {iso(1)\r\n\r\nNEW: id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1)\r\n\r\n2) On line 3500 and 3501 add some spaces:\u2028\r\n\r\nOLD: id-ExtensionReq OBJECT IDENTIFIER ::= {iso(1) member-body(2) us(840)\r\nrsadsi(113549) pkcs(1) pkcs-9(9) 14}\r\n\r\nNEW: id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)\r\nrsadsi(113549) pkcs(1) pkcs-9(9) 14 }\r\n",
+          "createdAt": "2023-10-17T14:41:13Z",
+          "updatedAt": "2023-10-17T14:41:13Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kUMJ3",
+          "commit": {
+            "abbreviatedOid": "8467b8f"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-17T17:52:49Z",
+          "updatedAt": "2023-10-17T17:52:49Z",
+          "comments": [
+            {
+              "originalPosition": 503,
+              "body": "```suggestion\r\n       rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2) }\r\n       \r\n id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= { id-aa 34 }\r\n```",
+              "createdAt": "2023-10-17T17:52:49Z",
+              "updatedAt": "2023-10-17T17:52:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kUM_Q",
+          "commit": {
+            "abbreviatedOid": "83376cd"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-17T17:54:50Z",
+          "updatedAt": "2023-10-17T17:54:50Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kUN_n",
+          "commit": {
+            "abbreviatedOid": "83376cd"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-17T17:56:49Z",
+          "updatedAt": "2023-10-17T17:56:49Z",
+          "comments": [
+            {
+              "originalPosition": 503,
+              "body": "```suggestion\r\n```",
+              "createdAt": "2023-10-17T17:56:49Z",
+              "updatedAt": "2023-10-17T17:56:50Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOKfq5gM5dD7v6",
+      "title": "Errata 4775",
+      "url": "https://github.com/seanturner/cmcbis/pull/13",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://www.rfc-editor.org/errata_search.php?eid=4775",
+      "createdAt": "2023-10-17T20:57:29Z",
+      "updatedAt": "2023-10-24T01:08:43Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "84a7a94bd10be61b0f7dfc5efe451159bb3663ee",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "Addresses-errata-ID-4775",
+      "headRefOid": "51a1f5a02cf20b509280fa7652e6a63f4bea5a96",
+      "closedAt": "2023-10-24T01:08:42Z",
+      "mergedAt": "2023-10-24T01:08:42Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "1832a01f4966cc3871bd40052911eb4770a3258f"
+      },
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Closes #10.",
+          "createdAt": "2023-10-23T16:47:16Z",
+          "updatedAt": "2023-10-23T16:47:16Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5kXSvH",
+          "commit": {
+            "abbreviatedOid": "887e099"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Please update -01 version changes section to include:\r\n\r\n* Merged {{erratum4775}\r\n\r\nand add the following informative reference:\r\n\r\n    erratum4775:\r\n      target: https://www.rfc-editor.org/errata/eid4775\r\n      title: RFC 5272 erratum 4775\r\n      date: 2016-08-11",
+          "createdAt": "2023-10-18T02:50:51Z",
+          "updatedAt": "2023-10-18T02:50:51Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kfgPe",
+          "commit": {
+            "abbreviatedOid": "3109077"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-18T19:35:22Z",
+          "updatedAt": "2023-10-18T19:35:22Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5k6CkI",
+          "commit": {
+            "abbreviatedOid": "3109077"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "I think these can safely be removed from the PR because they are addressed by other PRs. Might also help with other conflicts.",
+          "createdAt": "2023-10-23T15:56:29Z",
+          "updatedAt": "2023-10-23T15:59:13Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\n```",
+              "createdAt": "2023-10-23T15:56:29Z",
+              "updatedAt": "2023-10-23T15:59:14Z"
+            },
+            {
+              "originalPosition": 32,
+              "body": "```suggestion\r\n```",
+              "createdAt": "2023-10-23T15:56:56Z",
+              "updatedAt": "2023-10-23T15:59:14Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOKfq5gM5dEDXT",
+      "title": "Errata 2731",
+      "url": "https://github.com/seanturner/cmcbis/pull/14",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Change PKIResponseBody to PKIResponse in Figure 2 \r\n\r\nhttps://www.rfc-editor.org/errata_search.php?eid=2731",
+      "createdAt": "2023-10-17T21:13:16Z",
+      "updatedAt": "2023-10-24T01:13:28Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "1832a01f4966cc3871bd40052911eb4770a3258f",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "mandelj7--Errata-2731",
+      "headRefOid": "6b513cc95cc4b6d508f5d00f1848af65d91e05d0",
+      "closedAt": "2023-10-24T01:13:28Z",
+      "mergedAt": "2023-10-24T01:13:28Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "947faac15e4a9e6ad5a3d5f5a95ce5a08e9b1644"
+      },
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Closes #11.",
+          "createdAt": "2023-10-18T02:38:44Z",
+          "updatedAt": "2023-10-18T02:38:44Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5kXO-3",
+          "commit": {
+            "abbreviatedOid": "9f92421"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-18T02:39:02Z",
+          "updatedAt": "2023-10-18T02:39:02Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kXTBC",
+          "commit": {
+            "abbreviatedOid": "9f92421"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": " Please update -01 version changes section to include:\r\n\r\n* Merged {{erratum2731}\r\n\r\nand add the following informative reference:\r\n\r\n    erratum2731:\r\n      target: https://www.rfc-editor.org/errata/eid2731\r\n      title: RFC 5272 erratum 2731\r\n      date: 2011-02-23",
+          "createdAt": "2023-10-18T02:51:56Z",
+          "updatedAt": "2023-10-18T02:51:56Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5keXTR",
+          "commit": {
+            "abbreviatedOid": "23bed92"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-18T17:14:04Z",
+          "updatedAt": "2023-10-18T17:14:04Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "id": "PR_kwDOKfq5gM5dEN6K",
+      "title": "Format Changes - 6402 to 5272",
+      "url": "https://github.com/seanturner/cmcbis/pull/15",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Took the updates from RFC 6402 and changed the format to align with previous sections.",
+      "createdAt": "2023-10-17T21:42:51Z",
+      "updatedAt": "2023-10-18T21:22:52Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "4951b56160053b7c04b95a224187102eb81afc75",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "mandelj7-6402-to-5272-Formatting",
+      "headRefOid": "f33ea9357a27ec75c3516c5bc010ed8c32b52f1e",
+      "closedAt": "2023-10-18T21:22:52Z",
+      "mergedAt": "2023-10-18T21:22:52Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "ad1ec85f4fa4e14644603cd86d5781667b65c836"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5kXVEY",
+          "commit": {
+            "abbreviatedOid": "1d95b71"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-18T02:58:50Z",
+          "updatedAt": "2023-10-18T02:58:50Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "```suggestion\r\n~~~\r\n  cmc-raIdentityWitness CMC-CONTROL ::=\r\n    { BodyPartPath IDENTIFIED BY id-cmc-raIdentityWitness }\r\n~~~\r\n\r\n```",
+              "createdAt": "2023-10-18T02:58:50Z",
+              "updatedAt": "2023-10-18T02:58:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5keIl9",
+          "commit": {
+            "abbreviatedOid": "f33ea93"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-18T16:47:18Z",
+          "updatedAt": "2023-10-18T16:47:18Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOKfq5gM5dEcoV",
+      "title": "Mandelj7  update eContentType ",
+      "url": "https://github.com/seanturner/cmcbis/pull/18",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Made changes in Appendix B to update eContentType = id-cct-PKIResponse similar to errata 4775. https://www.rfc-editor.org/errata_search.php?eid=4775",
+      "createdAt": "2023-10-17T22:31:42Z",
+      "updatedAt": "2023-10-18T21:22:27Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "4951b56160053b7c04b95a224187102eb81afc75",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "mandelj7--Update-eContentType",
+      "headRefOid": "b132f4408cd8ff43201d710fd02db8e6f714afc1",
+      "closedAt": "2023-10-18T21:22:27Z",
+      "mergedAt": "2023-10-18T21:22:27Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "7f18a9da77513e05a4fdff1a2fd8137c114aa0db"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5kXTNy",
+          "commit": {
+            "abbreviatedOid": "b132f44"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-18T02:52:33Z",
+          "updatedAt": "2023-10-18T02:52:33Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "id": "PR_kwDOKfq5gM5dFYZ7",
+      "title": "Add -01 version changes",
+      "url": "https://github.com/seanturner/cmcbis/pull/19",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Include section for -01 changes \r\n\r\n@mandelj7 merge this one 1st!",
+      "createdAt": "2023-10-18T02:46:36Z",
+      "updatedAt": "2023-10-18T15:35:08Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "4951b56160053b7c04b95a224187102eb81afc75",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-01-changes",
+      "headRefOid": "46fdf0198bc367cb291340376bd5487767c142bf",
+      "closedAt": "2023-10-18T15:35:08Z",
+      "mergedAt": "2023-10-18T15:35:08Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "f577851f7bc03a05b4e86fbea6cd91bbed9a73f8"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 20,
+      "id": "PR_kwDOKfq5gM5dMsjP",
+      "title": "5273: Errata 3593",
+      "url": "https://github.com/seanturner/cmcbis/pull/20",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Changed CMC-Request to CMC-request \r\n",
+      "createdAt": "2023-10-18T22:32:42Z",
+      "updatedAt": "2023-10-24T00:55:45Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "ad1ec85f4fa4e14644603cd86d5781667b65c836",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "mandelj7--errata-3593",
+      "headRefOid": "8aafe7ddc751c8624258b1bd6730d8bdc0e7b6c2",
+      "closedAt": "2023-10-24T00:55:44Z",
+      "mergedAt": "2023-10-24T00:55:44Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "84a7a94bd10be61b0f7dfc5efe451159bb3663ee"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5kwJcJ",
+          "commit": {
+            "abbreviatedOid": "09ad2c4"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-20T15:38:58Z",
+          "updatedAt": "2023-10-20T15:38:58Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5kwKSg",
+          "commit": {
+            "abbreviatedOid": "09ad2c4"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Oops forgot to ask that you add the erratum to the change section and the reference section.",
+          "createdAt": "2023-10-20T15:40:16Z",
+          "updatedAt": "2023-10-20T15:40:16Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5k6Hpt",
+          "commit": {
+            "abbreviatedOid": "3ae8a9c"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-23T16:07:03Z",
+          "updatedAt": "2023-10-23T16:07:03Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "```suggestion\r\n-01 version changes:\r\n* Merged {{erratum3593}}\r\n\r\n```",
+              "createdAt": "2023-10-23T16:07:03Z",
+              "updatedAt": "2023-10-23T16:07:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5k6IZ4",
+          "commit": {
+            "abbreviatedOid": "8aafe7d"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Sorry was looking at 5272bis - this is to add in the errata that I said I was going to add in, but didn't.\r\n\r\nCloses #16.",
+          "createdAt": "2023-10-23T16:08:37Z",
+          "updatedAt": "2023-10-23T16:46:10Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "id": "PR_kwDOKfq5gM5d4L2r",
+      "title": "Update CMC Control Attributes Table",
+      "url": "https://github.com/seanturner/cmcbis/pull/22",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Updated the formatting of the table.",
+      "createdAt": "2023-10-26T14:40:25Z",
+      "updatedAt": "2023-10-28T16:22:15Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "947faac15e4a9e6ad5a3d5f5a95ce5a08e9b1644",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "mandelj7-Update-CMC-Control-Attribute-Table",
+      "headRefOid": "0d7a10c79198b3485185627eeff895263c659e6b",
+      "closedAt": "2023-10-28T16:22:15Z",
+      "mergedAt": "2023-10-28T16:22:15Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "faff915deb479bcff17988be18bd5ef93a29e749"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5lUiMD",
+          "commit": {
+            "abbreviatedOid": "584a750"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Looks good except for the md ref tag. I tweaked it to be more descriptive of the table.  Feel free to merge this entire PR as it's editorial.",
+          "createdAt": "2023-10-26T14:58:23Z",
+          "updatedAt": "2023-10-26T14:59:18Z",
+          "comments": [
+            {
+              "originalPosition": 84,
+              "body": "```suggestion\r\n{: #ctrl-attrs title=\"CMC Control Attributes\"}\r\n```",
+              "createdAt": "2023-10-26T14:58:23Z",
+              "updatedAt": "2023-10-26T14:59:18Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "id": "PR_kwDOKfq5gM5eKCDS",
+      "title": "Update ASN.1 from RFC 6402",
+      "url": "https://github.com/seanturner/cmcbis/pull/23",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Added ASN.1 from RFC 6402 and removed the old text",
+      "createdAt": "2023-10-30T19:10:36Z",
+      "updatedAt": "2023-12-20T22:01:41Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "Update-ASN.1",
+      "baseRefOid": "faff915deb479bcff17988be18bd5ef93a29e749",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "Updated-ASN.1",
+      "headRefOid": "7f54f4823db779cddb82f135afac705d61fa15a0",
+      "closedAt": "2023-12-20T22:01:41Z",
+      "mergedAt": "2023-12-20T22:01:41Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "b6a1149c4d7d485bdbcd155a69f38bbcfd57396b"
+      },
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Do we also need to add other algs to POPAlgs and WitnessAlgs, e.g.,\r\n\r\n    POPAlgs MAC-ALGORITHM ::= {\r\n       maca-hMAC-SHA1       |\r\n       maca-hMAC-SHA256     |\r\n       maca-hMAC-SHA384     |\r\n       maca-hMAC-SHA512     |\r\n       maca-hMAC-SHA512-224 |\r\n       maca-hMAC-SHA512-256 |\r\n       maca-hMAC-SHA3-224   |\r\n       maca-hMAC-SHA3-256   |\r\n       maca-hMAC-SHA3-384   |\r\n       maca-SHA3-512,\r\n        ... }\r\n\r\nand\r\n\r\n    WitnessAlgs DIGEST-ALGORITHM ::= {\r\n       mda-sha1       |\r\n       mda-sha256     |\r\n       mda-SHA384     |\r\n       mda-SHA512     |\r\n       mda-SHA512-224 |\r\n       mda-SHA512-256 |\r\n       mda-SHA3-224   |\r\n       mda-SHA3-256   |\r\n       mda-SHA3-384   |\r\n       mda-SHA3-512,\r\n        ...}",
+          "createdAt": "2023-12-20T03:50:45Z",
+          "updatedAt": "2023-12-20T03:50:45Z"
+        },
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "We also probably need to define a new module for kda-PBKDF2 to include the HMAC algorithms.",
+          "createdAt": "2023-12-20T03:51:52Z",
+          "updatedAt": "2023-12-20T03:51:52Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5lpJ6c",
+          "commit": {
+            "abbreviatedOid": "ba13d21"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Mostly just adding ws and new lines.",
+          "createdAt": "2023-10-31T01:06:06Z",
+          "updatedAt": "2023-10-31T01:50:59Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n* Updates ASN.1 to use 2002 ASN.1 module baseed on {{CMC-Updates}}\r\n* To support adopting SHA-256 and HMAC-SHA256:\r\n  * Add maca-hMAC-SHA256 to POPAlgs\r\n  * Add mda-sha256 to WitnessAlgs\r\n```",
+              "createdAt": "2023-10-31T01:06:06Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 23,
+              "body": "```suggestion\r\nBEGIN\r\n\r\n  EXPORTS ALL;\r\n  \r\n```",
+              "createdAt": "2023-10-31T01:06:41Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 152,
+              "body": "```suggestion\r\n      { TYPE PKIData IDENTIFIED BY id-cct-PKIData }\r\n\r\n  id-cct-PKIData OBJECT IDENTIFIER ::= { id-cct 2 }\r\n```",
+              "createdAt": "2023-10-31T01:08:38Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 202,
+              "body": "```suggestion\r\n  --   Examples might be attribute certification requests.\r\n```",
+              "createdAt": "2023-10-31T01:09:09Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 273,
+              "body": "```suggestion\r\n      { TYPE PKIResponse IDENTIFIED BY id-cct-PKIResponse }\r\n\r\n  id-cct-PKIResponse OBJECT IDENTIFIER ::= { id-cct 3 }\r\n```",
+              "createdAt": "2023-10-31T01:10:51Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 207,
+              "body": "```suggestion\r\n  TaggedRequest ::= CHOICE {\r\n```",
+              "createdAt": "2023-10-31T01:12:42Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 264,
+              "body": "```suggestion\r\n  OtherMsg ::= SEQUENCE {\r\n```",
+              "createdAt": "2023-10-31T01:13:09Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 289,
+              "body": "```suggestion\r\n      { OCTET STRING IDENTIFIED BY id-cmc-identityProof }\r\n\r\n    id-cmc-identityProof OBJECT IDENTIFIER ::= { id-cmc 3 }\r\n```",
+              "createdAt": "2023-10-31T01:13:30Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 293,
+              "body": "```suggestion\r\n      { OCTET STRING IDENTIFIED BY id-cmc-dataReturn }\r\n\r\n    id-cmc-dataReturn OBJECT IDENTIFIER ::= { id-cmc 4 }\r\n```",
+              "createdAt": "2023-10-31T01:13:39Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 297,
+              "body": "```suggestion\r\n      { OCTET STRING IDENTIFIED BY id-cmc-regInfo }\r\n\r\n    id-cmc-regInfo OBJECT IDENTIFIER ::= { id-cmc 18 }\r\n```",
+              "createdAt": "2023-10-31T01:13:48Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 301,
+              "body": "```suggestion\r\n      { OCTET STRING IDENTIFIED BY id-cmc-responseInfo }\r\n\r\n    id-cmc-responseInfo OBJECT IDENTIFIER ::= { id-cmc 19 }\r\n```",
+              "createdAt": "2023-10-31T01:14:00Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 305,
+              "body": "```suggestion\r\n      { OCTET STRING IDENTIFIED BY id-cmc-queryPending }\r\n\r\n    id-cmc-queryPending OBJECT IDENTIFIER ::= { id-cmc 21 }\r\n```",
+              "createdAt": "2023-10-31T01:14:09Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 309,
+              "body": "```suggestion\r\n      { OCTET STRING IDENTIFIED BY id-cmc-popLinkRandom }\r\n\r\n    id-cmc-popLinkRandom OBJECT IDENTIFIER ::= { id-cmc 22 }\r\n```",
+              "createdAt": "2023-10-31T01:14:20Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 310,
+              "body": "```suggestion\r\n  cmc-popLinkWitness CMC-CONTROL ::=\r\n```",
+              "createdAt": "2023-10-31T01:14:33Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 312,
+              "body": "```suggestion\r\n      { OCTET STRING IDENTIFIED BY id-cmc-popLinkWitness }\r\n\r\n    id-cmc-popLinkWitness OBJECT IDENTIFIER ::= { id-cmc 23 }\r\n```",
+              "createdAt": "2023-10-31T01:14:44Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 318,
+              "body": "```suggestion\r\n      { UTF8String IDENTIFIED BY id-cmc-identification }\r\n\r\n    id-cmc-identification OBJECT IDENTIFIER ::= { id-cmc 2 }\r\n```",
+              "createdAt": "2023-10-31T01:14:53Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 324,
+              "body": "```suggestion\r\n      { INTEGER IDENTIFIED BY id-cmc-transactionId }\r\n\r\n    id-cmc-transactionId OBJECT IDENTIFIER ::= { id-cmc 5 }\r\n```",
+              "createdAt": "2023-10-31T01:15:00Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 330,
+              "body": "```suggestion\r\n      { OCTET STRING IDENTIFIED BY id-cmc-senderNonce }\r\n\r\n    id-cmc-senderNonce OBJECT IDENTIFIER ::= { id-cmc 6 }\r\n```",
+              "createdAt": "2023-10-31T01:15:08Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 341,
+              "body": "```suggestion\r\n      { CMCStatusInfo IDENTIFIED BY id-cmc-statusInfo }\r\n\r\n    id-cmc-statusInfo OBJECT IDENTIFIER ::= { id-cmc 1 }\r\n```",
+              "createdAt": "2023-10-31T01:15:18Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 439,
+              "body": "```suggestion\r\n  }\r\n\r\n  CMCStatus ::= INTEGER {\r\n```",
+              "createdAt": "2023-10-31T01:15:28Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 470,
+              "body": "```suggestion\r\n      { AddExtensions IDENTIFIED BY id-cmc-addExtensions }\r\n\r\n    id-cmc-addExtensions OBJECT IDENTIFIER ::= { id-cmc 8 }\r\n```",
+              "createdAt": "2023-10-31T01:15:42Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 480,
+              "body": "```suggestion\r\n      { EncryptedPOP IDENTIFIED BY id-cmc-encryptedPOP }\r\n\r\n    cmc-decryptedPOP CMC-CONTROL ::=\r\n```",
+              "createdAt": "2023-10-31T01:15:59Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 483,
+              "body": "```suggestion\r\n      { DecryptedPOP IDENTIFIED BY id-cmc-decryptedPOP }\r\n\r\n    id-cmc-encryptedPOP OBJECT IDENTIFIER ::= { id-cmc 9 }\r\n  \r\n    id-cmc-decryptedPOP OBJECT IDENTIFIER ::= { id-cmc 10 }\r\n```",
+              "createdAt": "2023-10-31T01:16:27Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 510,
+              "body": "```suggestion\r\n  POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1, maca-hMAC-SHA256, ... }\r\n\r\n    WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1, mda-sha256, ... }\r\n```",
+              "createdAt": "2023-10-31T01:16:40Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 536,
+              "body": "```suggestion\r\n      { GetCert IDENTIFIED BY id-cmc-getCert }\r\n\r\n    id-cmc-getCert OBJECT IDENTIFIER ::= { id-cmc 15 }\r\n```",
+              "createdAt": "2023-10-31T01:16:54Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 550,
+              "body": "```suggestion\r\n      { GetCRL IDENTIFIED BY id-cmc-getCRL }\r\n\r\n    id-cmc-getCRL OBJECT IDENTIFIER ::= { id-cmc 16 }\r\n```",
+              "createdAt": "2023-10-31T01:17:03Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 558,
+              "body": "```suggestion\r\n  cmc-revokeRequest CMC-CONTROL ::=\r\n```",
+              "createdAt": "2023-10-31T01:17:13Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 560,
+              "body": "```suggestion\r\n      { RevokeRequest IDENTIFIED BY id-cmc-revokeRequest}\r\n\r\n    id-cmc-revokeRequest OBJECT IDENTIFIER ::= { id-cmc 17 }\r\n```",
+              "createdAt": "2023-10-31T01:17:23Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 580,
+              "body": "```suggestion\r\n      { CMCCertId IDENTIFIED BY id-cmc-confirmCertAcceptance }\r\n\r\n    id-cmc-confirmCertAcceptance OBJECT IDENTIFIER ::= { id-cmc 24 }\r\n```",
+              "createdAt": "2023-10-31T01:17:32Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 588,
+              "body": "```suggestion\r\n  -- to a certificate\r\n```",
+              "createdAt": "2023-10-31T01:17:45Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 604,
+              "body": "```suggestion\r\n  -- Messages to be well-formed\r\n```",
+              "createdAt": "2023-10-31T01:18:16Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 613,
+              "body": "```suggestion\r\n  }\r\n\r\n    id-alg-noSignature OBJECT IDENTIFIER ::= { id-pkix id-alg(6) 2 }\r\n```",
+              "createdAt": "2023-10-31T01:18:24Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 629,
+              "body": "```suggestion\r\n      rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2) }\r\n\r\n    aa-cmc-unsignedData ATTRIBUTE ::=\r\n```",
+              "createdAt": "2023-10-31T01:18:45Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 631,
+              "body": "```suggestion\r\n      { TYPE CMCUnsignedData IDENTIFIED BY id-aa-cmc-unsignedData }\r\n\r\n    id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= { id-aa 34 }\r\n```",
+              "createdAt": "2023-10-31T01:18:55Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 651,
+              "body": "```suggestion\r\n      { CMCStatusInfoV2 IDENTIFIED BY id-cmc-statusInfoV2 }\r\n\r\n    id-cmc-statusInfoV2 OBJECT IDENTIFIER ::= { id-cmc 25 }\r\n```",
+              "createdAt": "2023-10-31T01:19:04Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 696,
+              "body": "```suggestion\r\n  BodyPartPath ::= SEQUENCE SIZE (1..MAX) OF BodyPartID\r\n\r\n    --  Allow for distribution of trust anchors\r\n```",
+              "createdAt": "2023-10-31T01:19:57Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 705,
+              "body": "```suggestion\r\n      { PublishTrustAnchors IDENTIFIED BY id-cmc-trustedAnchors }\r\n\r\n    id-cmc-trustedAnchors OBJECT IDENTIFIER ::= { id-cmc 26 }\r\n```",
+              "createdAt": "2023-10-31T01:20:11Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 724,
+              "body": "```suggestion\r\n      { AuthPublish IDENTIFIED BY id-cmc-authData }\r\n\r\n    id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 27 }\r\n```",
+              "createdAt": "2023-10-31T01:20:23Z",
+              "updatedAt": "2023-10-31T01:50:59Z"
+            },
+            {
+              "originalPosition": 748,
+              "body": "```suggestion\r\n      { BodyPartList IDENTIFIED BY id-cmc-batchResponses }\r\n\r\n    id-cmc-batchResponses OBJECT IDENTIFIER ::= { id-cmc 29 }\r\n```",
+              "createdAt": "2023-10-31T01:20:40Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 761,
+              "body": "```suggestion\r\n      { CMCPublicationInfo IDENTIFIED BY id-cmc-publishCert }\r\n\r\n    id-cmc-publishCert OBJECT IDENTIFIER ::= { id-cmc 30 }\r\n```",
+              "createdAt": "2023-10-31T01:20:48Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 770,
+              "body": "```suggestion\r\n  }\r\n\r\n  cmc-modCertTemplate CMC-CONTROL ::=\r\n```",
+              "createdAt": "2023-10-31T01:21:00Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 792,
+              "body": "```suggestion\r\n  -- already been processed\r\n```",
+              "createdAt": "2023-10-31T01:21:13Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 800,
+              "body": "```suggestion\r\n      { ControlsProcessed IDENTIFIED BY id-cmc-controlProcessed }\r\n\r\n    id-cmc-controlProcessed OBJECT IDENTIFIER ::= { id-cmc 32 }\r\n```",
+              "createdAt": "2023-10-31T01:21:23Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 811,
+              "body": "```suggestion\r\n      { IdentityProofV2 IDENTIFIED BY id-cmc-identityProofV2 }\r\n\r\n    id-cmc-identityProofV2 OBJECT IDENTIFIER ::= { id-cmc 33 }\r\n```",
+              "createdAt": "2023-10-31T01:21:33Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 822,
+              "body": "```suggestion\r\n      { PopLinkWitnessV2 IDENTIFIED BY id-cmc-popLinkWitnessV2 }\r\n\r\n    id-cmc-popLinkWitnessV2 OBJECT IDENTIFIER ::= { id-cmc 34 }\r\n```",
+              "createdAt": "2023-10-31T01:21:41Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 832,
+              "body": "```suggestion\r\n  cmc-raIdentityWitness CMC-CONTROL ::=\r\n```",
+              "createdAt": "2023-10-31T01:21:50Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 22,
+              "body": "```suggestion\r\n    { iso(1) identified-organization(3) dod(6) internet(1)\r\n    security(5) mechanisms(5) pkix(7) id-mod(0)\r\n    id-mod-enrollMsgSyntax-2023(TBD) }\r\n\r\nDEFINITIONS IMPLICIT TAGS ::=\r\n\r\nBEGIN\r\n```",
+              "createdAt": "2023-10-31T01:24:23Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 31,
+              "body": "```suggestion\r\n      { iso(1) identified-organization(3) dod(6) internet(1) security(5)\r\n      mechanisms(5) pkix(7) id-mod(0) id-mod-pkixCommon-02(57) }\r\n```",
+              "createdAt": "2023-10-31T01:24:45Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 49,
+              "body": "```suggestion\r\n      { iso(1) identified-organization(3) dod(6) internet(1) security(5)\r\n      mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-implicit-02(59) }\r\n```",
+              "createdAt": "2023-10-31T01:27:06Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 59,
+              "body": "```suggestion\r\n      { iso(1) identified-organization(3) dod(6) internet(1) security(5)\r\n        mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-explicit-02(51) }\r\n```",
+              "createdAt": "2023-10-31T01:27:19Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 73,
+              "body": "```suggestion\r\n      { iso(1) identified-organization(3) dod(6) internet(1) security(5)\r\n        mechanisms(5) pkix(7) id-mod(0) id-mod-crmf2005-02(55) }\r\n```",
+              "createdAt": "2023-10-31T01:27:35Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 143,
+              "body": "```suggestion\r\n  id-cmc OBJECT IDENTIFIER ::= { id-pkix 7 }   -- CMC controls\r\n  id-cct OBJECT IDENTIFIER ::= { id-pkix 12 }  -- CMC content types\r\n```",
+              "createdAt": "2023-10-31T01:28:24Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 225,
+              "body": "```suggestion\r\n  AttributeList ATTRIBUTE ::= { at-extension-req, ...,\r\n      at-cmc-changeSubjectName }\r\n```",
+              "createdAt": "2023-10-31T01:28:57Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 335,
+              "body": "```suggestion\r\n  id-cmc-recipientNonce OBJECT IDENTIFIER ::= { id-cmc 7 }\r\n```",
+              "createdAt": "2023-10-31T01:30:57Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 521,
+              "body": "```suggestion\r\n  id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }\r\n```",
+              "createdAt": "2023-10-31T01:32:06Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 595,
+              "body": "```suggestion\r\n      { TYPE ExtensionReq IDENTIFIED BY id-ExtensionReq }\r\n\r\n    id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)\r\n      rsadsi(113549) pkcs(1) pkcs-9(9) 14 }\r\n```",
+              "createdAt": "2023-10-31T01:33:27Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 743,
+              "body": "```suggestion\r\n  id-cmc-batchRequests OBJECT IDENTIFIER ::= { id-cmc 28 }\r\n```",
+              "createdAt": "2023-10-31T01:35:28Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 779,
+              "body": "```suggestion\r\n  id-cmc-modCertTemplate OBJECT IDENTIFIER ::= { id-cmc 31 }\r\n```",
+              "createdAt": "2023-10-31T01:35:59Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 831,
+              "body": "```suggestion\r\n  KeyDevAlgs KEY-DERIVATION ::= { kda-PBKDF2, ... }\r\n```",
+              "createdAt": "2023-10-31T01:36:28Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 844,
+              "body": "```suggestion\r\n  id-cmc-changeSubjectName OBJECT IDENTIFIER ::= { id-cmc 36 }\r\n```",
+              "createdAt": "2023-10-31T01:36:40Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 866,
+              "body": "```suggestion\r\n  id-cmc-responseBody OBJECT IDENTIFIER ::= { id-cmc 37 }\r\n```",
+              "createdAt": "2023-10-31T01:36:52Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 84,
+              "body": "```suggestion\r\n         internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)\r\n         id-mod-pkix1-algorithms2008-02(56) }\r\n```",
+              "createdAt": "2023-10-31T01:50:00Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 94,
+              "body": "```suggestion\r\n      { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)\r\n        smime(16) modules(0) id-mod-cmsalg-2001-02(37) }\r\n```",
+              "createdAt": "2023-10-31T01:50:12Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            },
+            {
+              "originalPosition": 110,
+              "body": "```suggestion\r\n        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;\r\n```",
+              "createdAt": "2023-10-31T01:50:23Z",
+              "updatedAt": "2023-10-31T01:51:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "id": "PR_kwDOKfq5gM5fC7R5",
+      "title": "Drop pre-5378 boilerplate",
+      "url": "https://github.com/seanturner/cmcbis/pull/25",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #24.",
+      "createdAt": "2023-11-09T15:10:39Z",
+      "updatedAt": "2023-11-17T23:33:12Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "faff915deb479bcff17988be18bd5ef93a29e749",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-drop-pre5378-boilerplate",
+      "headRefOid": "a38a47280dfbde40c9fc046a4f13c3b16c885632",
+      "closedAt": "2023-11-17T23:33:02Z",
+      "mergedAt": "2023-11-17T23:33:02Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "b4a62cef3bf2f841b735befba53a4451fe6db524"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 26,
+      "id": "PR_kwDOKfq5gM5ihs7k",
+      "title": "Update ASN.1 from RFC 6402 (#23)",
+      "url": "https://github.com/seanturner/cmcbis/pull/26",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Also Closes #6.",
+      "createdAt": "2023-12-21T02:19:41Z",
+      "updatedAt": "2023-12-21T02:20:43Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "418eaf9fe2e7cce63ba1a1f3b540dbbbb1fa687d",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "Update-ASN.1",
+      "headRefOid": "b6a1149c4d7d485bdbcd155a69f38bbcfd57396b",
+      "closedAt": "2023-12-21T02:20:43Z",
+      "mergedAt": "2023-12-21T02:20:43Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "4e2a0c22fdecc109fdd084b6649cf7a6cfe33875"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 27,
+      "id": "PR_kwDOKfq5gM5ihxsh",
+      "title": "SHA1 replacement in Section B.3",
+      "url": "https://github.com/seanturner/cmcbis/pull/27",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-12-21T02:47:38Z",
+      "updatedAt": "2023-12-21T20:46:44Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "4e2a0c22fdecc109fdd084b6649cf7a6cfe33875",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "SHA1-replacement-in-Section-B.3",
+      "headRefOid": "135c36d31ec6d8522d6abf60859b22d85650e817",
+      "closedAt": "2023-12-21T20:46:44Z",
+      "mergedAt": "2023-12-21T20:46:44Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "3b3ae121c5884383532fdacd354ee69a32b36486"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 28,
+      "id": "PR_kwDOKfq5gM5ih2Ql",
+      "title": "Merge erratum 7629",
+      "url": "https://github.com/seanturner/cmcbis/pull/28",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-12-21T03:20:49Z",
+      "updatedAt": "2023-12-21T21:44:33Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "4e2a0c22fdecc109fdd084b6649cf7a6cfe33875",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "Merge-erratum-7629",
+      "headRefOid": "1d38c648aa43abc0e3ffe6025ca04c41adcbfd5a",
+      "closedAt": "2023-12-21T21:44:33Z",
+      "mergedAt": "2023-12-21T21:44:33Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "01faa6b1ea96e1d7a0eb8418725cce65c6dae564"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 29,
+      "id": "PR_kwDOKfq5gM5ih4VJ",
+      "title": "Merge-erratum-7628",
+      "url": "https://github.com/seanturner/cmcbis/pull/29",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-12-21T03:35:53Z",
+      "updatedAt": "2023-12-21T21:22:55Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "Merge-erratum-7629",
+      "baseRefOid": "08e337fef64ec2f264cd84989bff57d12e928a73",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "Merge-erratum-7628",
+      "headRefOid": "f42a75daf00b8584319955518279ca1296034bf0",
+      "closedAt": "2023-12-21T21:22:55Z",
+      "mergedAt": "2023-12-21T21:22:55Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "d6428e342aac8099fb9601e7955caf3554a06b8b"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5q6Q_r",
+          "commit": {
+            "abbreviatedOid": "f42a75d"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-12-21T20:52:00Z",
+          "updatedAt": "2023-12-21T20:52:00Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "id": "PR_kwDOKfq5gM5jhEcL",
+      "title": "Fix updates section",
+      "url": "https://github.com/seanturner/cmcbis/pull/30",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-01-08T21:00:11Z",
+      "updatedAt": "2024-01-08T21:04:23Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "f1668d31607ee36bab40bfea57fa894c53b6d679",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-update-updates-section",
+      "headRefOid": "b32da018a46a4a08277be8ecfadd8371e0050983",
+      "closedAt": "2024-01-08T21:04:23Z",
+      "mergedAt": "2024-01-08T21:04:23Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "7643cb46b176da43ffdba93d8e69a13437ea4c84"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 31,
+      "id": "PR_kwDOKfq5gM5jhFb-",
+      "title": "Update updates section",
+      "url": "https://github.com/seanturner/cmcbis/pull/31",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-01-08T21:03:51Z",
+      "updatedAt": "2024-01-08T21:04:37Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "f1668d31607ee36bab40bfea57fa894c53b6d679",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-update-updates",
+      "headRefOid": "805499e439793c8d3d127f312b159202602b9474",
+      "closedAt": "2024-01-08T21:04:37Z",
+      "mergedAt": "2024-01-08T21:04:37Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "66707225cf6b2d1fee0b6d3a14794f9407dbada2"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 33,
+      "id": "PR_kwDOKfq5gM5oiFry",
+      "title": "Tweak TLS text",
+      "url": "https://github.com/seanturner/cmcbis/pull/33",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #21.",
+      "createdAt": "2024-03-04T02:21:09Z",
+      "updatedAt": "2024-03-04T16:00:57Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "66707225cf6b2d1fee0b6d3a14794f9407dbada2",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-tls-refs",
+      "headRefOid": "4a8312c3fcd4f903a5a4662b7145ce8c02f87d7d",
+      "closedAt": "2024-03-04T16:00:56Z",
+      "mergedAt": "2024-03-04T16:00:56Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "67d2be07aca9c80e0e6727bbc0bbcfb19c3449a9"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 34,
+      "id": "PR_kwDOKfq5gM5oiHwh",
+      "title": "Minor tweaks",
+      "url": "https://github.com/seanturner/cmcbis/pull/34",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Minor updates.",
+      "createdAt": "2024-03-04T02:32:40Z",
+      "updatedAt": "2024-03-04T19:43:39Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "66707225cf6b2d1fee0b6d3a14794f9407dbada2",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-minor",
+      "headRefOid": "93ef41e35cd6abc8b7e2bc78b550c909945aefde",
+      "closedAt": "2024-03-04T19:43:33Z",
+      "mergedAt": "2024-03-04T19:43:33Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "ef0cc0e16fcf9317e458578f24e51b5d27cadc93"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5yI8_s",
+          "commit": {
+            "abbreviatedOid": "93ef41e"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Made some minor changes.",
+          "createdAt": "2024-03-04T17:54:36Z",
+          "updatedAt": "2024-03-04T17:54:36Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "id": "PR_kwDOKfq5gM5oiSRd",
+      "title": "Add HMAC algs to PBKDF2",
+      "url": "https://github.com/seanturner/cmcbis/pull/35",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #32.",
+      "createdAt": "2024-03-04T03:11:12Z",
+      "updatedAt": "2024-03-04T19:42:15Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "66707225cf6b2d1fee0b6d3a14794f9407dbada2",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-pbkdf-algs",
+      "headRefOid": "ade6ddac384b91ad7d13121fd289c1965e81ccc3",
+      "closedAt": "2024-03-04T19:42:12Z",
+      "mergedAt": "2024-03-04T19:42:12Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "be79910af2542eef718ae0136170fa7dde5ecacd"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5yCs3n",
+          "commit": {
+            "abbreviatedOid": "f3b70d9"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-04T03:12:15Z",
+          "updatedAt": "2024-03-04T03:12:15Z",
+          "comments": [
+            {
+              "originalPosition": 82,
+              "body": "```suggestion\r\n    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }\r\n```",
+              "createdAt": "2024-03-04T03:12:15Z",
+              "updatedAt": "2024-03-04T03:12:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5yCuCy",
+          "commit": {
+            "abbreviatedOid": "1b7474e"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-03-04T03:20:57Z",
+          "updatedAt": "2024-03-04T03:20:57Z",
+          "comments": [
+            {
+              "originalPosition": 76,
+              "body": "```suggestion\r\nset defined in {{Section 3 of CMS-ALGS}}. Apply this extension prior to\r\n```",
+              "createdAt": "2024-03-04T03:20:57Z",
+              "updatedAt": "2024-03-04T03:20:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM5yI8o3",
+          "commit": {
+            "abbreviatedOid": "ade6dda"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-03-04T17:53:47Z",
+          "updatedAt": "2024-03-04T17:53:47Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 36,
+      "id": "PR_kwDOKfq5gM5oiUJR",
+      "title": "ASN.1 spacing nits",
+      "url": "https://github.com/seanturner/cmcbis/pull/36",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixed some ASN.1 spacing issues.",
+      "createdAt": "2024-03-04T03:22:01Z",
+      "updatedAt": "2024-03-04T19:41:23Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "66707225cf6b2d1fee0b6d3a14794f9407dbada2",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-asn1-spacing",
+      "headRefOid": "88679a7f913b6e886829db65c84bf4f183f629e3",
+      "closedAt": "2024-03-04T19:41:05Z",
+      "mergedAt": "2024-03-04T19:41:05Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "87cd46105efc896cdfb74052650d07f5290a6ef1"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM5yJzga",
+          "commit": {
+            "abbreviatedOid": "88679a7"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-03-04T19:27:46Z",
+          "updatedAt": "2024-03-04T19:27:46Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "id": "PR_kwDOKfq5gM5sRoSb",
+      "title": "Publish Trust Anchors Control hashAlgorithm change",
+      "url": "https://github.com/seanturner/cmcbis/pull/41",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Changed Publish Trust Anchors Control hashAlgorithm to SHA-256.\r\n\r\nCloses #40.",
+      "createdAt": "2024-04-10T17:56:30Z",
+      "updatedAt": "2024-06-18T20:06:57Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "04b811937b3dafaf2718d1e6cb41d9dcc8b57cb8",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-publish_trust_anchors_control_hashAlgorithm",
+      "headRefOid": "c80b557eccc912e58886a5c48f8d7583db6c6bf2",
+      "closedAt": "2024-06-18T20:06:56Z",
+      "mergedAt": "2024-06-18T20:06:56Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM53K-pl",
+          "commit": {
+            "abbreviatedOid": "935987a"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-13T22:06:37Z",
+          "updatedAt": "2024-04-13T22:06:37Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "id": "PR_kwDOKfq5gM5s8Apm",
+      "title": "Update DH-POP Reference from RFC 2875 to RFC 6955",
+      "url": "https://github.com/seanturner/cmcbis/pull/43",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-04-17T15:22:59Z",
+      "updatedAt": "2024-06-18T19:57:03Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "e8b382e3d337482491d4a400a4ac5ddf6e9ef04f",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "Update-DH-POP-Reference",
+      "headRefOid": "e77ec062db7f47234fa56fd3805bd881a0eec30d",
+      "closedAt": "2024-06-18T19:57:03Z",
+      "mergedAt": "2024-06-18T19:57:03Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "04b811937b3dafaf2718d1e6cb41d9dcc8b57cb8"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
