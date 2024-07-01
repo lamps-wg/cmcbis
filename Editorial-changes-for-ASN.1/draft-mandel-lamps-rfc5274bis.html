@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="en" class="Internet-Draft">
+<head>
+<meta charset="utf-8">
+<meta content="Common,Latin" name="scripts">
+<meta content="initial-scale=1.0" name="viewport">
+<title>Certificate Management Messages over CMS (CMC): Compliance Requirements</title>
+<meta content="Joseph Mandel" name="author">
+<meta content="Sean Turner" name="author">
+<meta content="
+       This document provides a set of compliance statements about the CMC
+(Certificate Management over CMS) enrollment protocol.  The ASN.1
+structures and the transport mechanisms for the CMC enrollment
+protocol are covered in other documents.  This document provides the
+information needed to make a compliant version of CMC. 
+       This document obsoletes RFCs 5274 and 6402. 
+    " name="description">
+<meta content="xml2rfc 3.21.0" name="generator">
+<meta content="Public Key Infrastructure" name="keyword">
+<meta content="Cryptographic Message Syntax" name="keyword">
+<meta content="Certificate Management" name="keyword">
+<meta content="Compliance" name="keyword">
+<meta content="draft-mandel-lamps-rfc5274bis-latest" name="ietf.draft">
+<!-- Generator version information:
+  xml2rfc 3.21.0
+    Python 3.12.3
+    ConfigArgParse 1.7
+    google-i18n-address 3.1.0
+    intervaltree 3.1.0
+    Jinja2 3.1.4
+    lxml 4.9.4
+    platformdirs 4.2.2
+    pycountry 22.3.5
+    PyYAML 6.0.1
+    requests 2.31.0
+    setuptools 69.5.1
+    six 1.16.0
+    wcwidth 0.2.13
+-->
+<link href="draft-mandel-lamps-rfc5274bis.xml" rel="alternate" type="application/rfc+xml">
+<link href="#copyright" rel="license">
+<style type="text/css">@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Lora SemiBold'), local('Lora-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light dark;
+  --background-color: #fff;
+  --text-color: #222;
+  --title-color: #191919;
+  --link-color: #2a6496;
+  --highlight-color: #f9f9f9;
+  --line-color: #eee;
+  --pilcrow-weak: #ddd;
+  --pilcrow-strong: #bbb;
+  --small-font-size: 14.5px;
+  --font-mono: 'Oxygen Mono', monospace;
+  scrollbar-color: #bbb #eee;
+}
+body {
+  max-width: 600px;
+  margin: 75px auto;
+  padding: 0 5px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font: 16px/22px "Lora", serif;
+  scroll-behavior: smooth;
+}
+
+.ears {
+  display: none;
+}
+
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cabin Condensed", sans-serif;
+  font-weight: 600;
+  margin: 0.8em 0 0.3em;
+  font-size-adjust: 0.5;
+  color: var(--title-color);
+}
+h1#title {
+  font-size: 32px;
+  line-height: 40px;
+  clear: both;
+}
+h1#title, h1#rfcnum {
+  margin: 1.5em 0 0.2em;
+}
+h1#rfcnum + h1#title {
+  margin: 0.2em 0;
+}
+
+h1, h2, h3 {
+  font-size: 22px;
+  line-height: 27px;
+}
+h4, h5, h6 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* general structure */
+.author {
+  padding-bottom: 0.3em;
+}
+#abstract+p {
+  font-size: 18px;
+  line-height: 24px;
+}
+#abstract+p code, #abstract+p samp, #abstract+p tt {
+  font-size: 16px;
+  line-height: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0.5em 0;
+  text-align: left;
+}
+div {
+  margin: 0;
+}
+.alignRight.art-text {
+  background-color: var(--highlight-color);
+  border: 1px solid var(--line-color);
+  border-radius: 3px;
+  padding: 0.5em 1em 0;
+  margin-bottom: 0.5em;
+}
+.alignRight.art-text pre {
+  padding: 0;
+  width: auto;
+}
+.alignRight {
+  margin: 1em 0;
+}
+.alignRight > *:first-child {
+  border: none;
+  margin: 0;
+  float: right;
+  clear: both;
+}
+.alignRight > *:nth-child(2) {
+  clear: both;
+  display: block;
+  border: none;
+}
+svg {
+  display: block;
+}
+/* font-family isn't space-separated, but =~ will have to do */
+svg[font-family~="monospace" i], svg [font-family~="monospace" i] {
+  font-family: var(--font-mono);
+}
+.alignCenter.art-text {
+  background-color: var(--highlight-color);
+  border: 1px solid var(--line-color);
+  border-radius: 3px;
+  padding: 0.5em 1em 0;
+  margin-bottom: 0.5em;
+}
+.alignCenter.art-text pre {
+  padding: 0;
+  width: auto;
+}
+.alignCenter {
+  margin: 1em 0;
+}
+.alignCenter > *:first-child {
+  border: none;
+  /* this isn't optimal, but it's an existence proof.  PrinceXML doesn't
+     support flexbox yet.
+  */
+  display: table;
+  margin: 0 auto;
+}
+
+/* lists */
+ol, ul {
+  padding: 0;
+  margin: 0 0 0.5em 2em;
+}
+:is(ol, ul) :is(ol, ul) {
+  margin-left: 1em;
+}
+li {
+  margin: 0 0 0.25em 0;
+}
+.ulCompact li {
+  margin: 0;
+}
+ul.empty, .ulEmpty {
+  list-style-type: none;
+}
+ul.empty li, .ulEmpty li {
+  margin-top: 0.5em;
+}
+:is(ul, ol).compact, .ulCompact, .olCompact {
+  line-height: 1;
+  margin: 0 0 0 2em;
+}
+
+/* definition lists */
+dl {
+  clear: left;
+  --indent: 3ch;
+  /* --indent: attr(indent ch); not supported in any browser, but we can dream */
+}
+dl.olPercent {
+  --indent: 5ch;
+}
+dl > dt {
+  float: left;
+  margin-right: 2ch;
+  min-width: 8ch;
+}
+dl.dlNewline > dt {
+  float: none;
+}
+dl > dd {
+  margin-bottom: .8em;
+  margin-left: var(--indent) !important; /* stupid element overrides */
+  min-height: 2ex;
+}
+dl.olPercent > dt {
+  min-width: calc(var(--indent) - 2ch);
+}
+:is(dl.compact, .dlCompact) > dd {
+  margin-bottom: 0;
+}
+:is(dl.compact, .dlCompact) > dd > :is(:first-child, .break:first-child + *) {
+  margin-top: 0;
+}
+:is(dl.compact, .dlCompact) > dd > :is(:last-child) {
+  margin-bottom: 0;
+}
+dl > dd > dl {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+:is(dd, span).break {
+  display: none;
+}
+
+/* links */
+a, a[href].selfRef:hover {
+  text-decoration: none;
+}
+a[href] {
+  color: var(--link-color);
+}
+a[href].selfRef, .iref + a[href].internal {
+  color: var(--text-color);
+}
+a[href]:hover {
+  text-decoration: underline;
+}
+a[href].selfRef:hover {
+  background-color: var(--highlight-color);
+}
+a.xref:is(.cite, .auto), :is(#status-of-memo, #copyright) a {
+  white-space: nowrap;
+}
+
+/* Figures */
+tt, code, pre {
+  background-color: var(--highlight-color);
+  font: 14px/22px var(--font-mono);
+}
+tt, code {
+  /* changing the font for inline elements leads to different ascender
+     and descender heights; as we want to retain baseline alignment,
+     remove leading to avoid altering the final height of lines
+     note: this fails if these blocks take an entire line,
+     a different solution would be great */
+  line-height: 0;
+}
+:is(h1, h2, h3, h4, h5, h6) :is(tt, code) {
+  font-size: 84%;
+}
+pre {
+  border: 1px solid var(--line-color);
+  font-size: 13.5px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  margin: 5px;
+  padding: 5px;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 0.5em 0;
+  padding: 0;
+}
+figure blockquote {
+  margin: 0.8em 0.4em 0.4em;
+}
+figcaption, caption {
+  font-style: italic;
+  margin: 0.5em 1.5em;
+  text-align: left;
+}
+@media screen {
+  /* Auto-collapse boilerplate. */
+  :is(#status-of-memo, #copyright) p {
+    margin: -2px 0;
+    max-height: 0;
+    transition: max-height 2s ease, margin 0.5s ease 0.5s;
+    overflow: hidden;
+  }
+  :is(#status-of-memo, #copyright):hover p,
+  :is(#status-of-memo, #copyright) h2:target ~ p {
+    margin: 0.5em 0;
+    max-height: 500px;
+    overflow: auto;
+  }
+  pre, svg {
+    display: inline-block;
+    overflow-x: auto;
+  }
+  pre {
+    max-width: 100%;
+    width: calc(100% - 22px - 1em);
+  }
+  svg {
+    max-width: calc(100% - 22px - 1em);
+  }
+  figure pre {
+    display: block;
+    width: calc(100% - 25px);
+  }
+  :is(pre, svg) + .pilcrow {
+    display: inline-block;
+    vertical-align: text-bottom;
+    padding-bottom: 8px;
+  }
+}
+
+/* aside, blockquote */
+aside, blockquote {
+  margin-left: 0;
+  padding: 0 2em;
+  font-style: italic;
+}
+blockquote {
+  margin: 1em 0;
+}
+cite {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
+/* tables */
+table {
+  max-width: 100%;
+  margin: 0 0 1em;
+  border-collapse: collapse;
+}
+table.right {
+  margin-left: auto;
+}
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+table.left {
+  margin-right: auto;
+}
+thead, tbody {
+  border: 1px solid var(--line-color);
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 10px;
+}
+th {
+  background-color: var(--line-color);
+}
+:is(tr:nth-child(2n), thead+tbody > tr:nth-child(2n+1)) > td {
+  background-color: var(--background-color);
+}
+:is(tr:nth-child(2n+1), thead+tbody > tr:nth-child(2n)) > td {
+  background-color: var(--highlight-color);
+}
+table caption {
+  margin: 0;
+  padding: 3px 0 3px 1em;
+}
+table p {
+  margin: 0;
+}
+
+/* pilcrow */
+a.pilcrow {
+  margin-left: 3px;
+  opacity: 0.2;
+  user-select: none;
+}
+a.pilcrow[href] { color: var(--pilcrow-weak); }
+a.pilcrow[href]:hover { text-decoration: none; }
+@media not print {
+  :hover > a.pilcrow {
+    opacity: 1;
+  }
+  a.pilcrow[href]:hover {
+    color: var(--pilcrow-strong);
+    background-color: transparent;
+  }
+}
+@media print {
+  a.pilcrow {
+    display: none;
+  }
+}
+
+/* misc */
+hr {
+  border: 0;
+  border-top: 1px solid var(--line-color);
+}
+.bcp14 {
+  font-variant: small-caps;
+  font-weight: 600;
+  font-size: var(--small-font-size);
+}
+.role {
+  font-variant: all-small-caps;
+}
+sub, sup {
+  line-height: 1;
+  font-size: 80%;
+}
+
+/* info block */
+#identifiers {
+  margin: 0;
+  font-size: var(--small-font-size);
+  line-height: 18px;
+  --identifier-width: 15ch;
+}
+#identifiers dt {
+  width: var(--identifier-width);
+  min-width: var(--identifier-width);
+  clear: left;
+  float: left;
+  text-align: right;
+  margin-right: 1ch;
+}
+#identifiers dd {
+  margin: 0;
+  margin-left: calc(1em + var(--identifier-width)) !important;
+  min-width: 5em;
+}
+#identifiers .authors .author {
+  display: inline-block;
+  margin-right: 1.5em;
+}
+#identifiers .authors .org {
+  font-style: italic;
+}
+
+/* The prepared/rendered info at the very bottom of the page */
+.docInfo {
+  color: #999;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 2em;
+}
+.docInfo .prepared {
+  float: left;
+}
+.docInfo .prepared {
+  float: right;
+}
+
+/* table of contents */
+#toc {
+  padding: 0.75em 0 2em 0;
+  margin-bottom: 1em;
+}
+#toc nav ul {
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  list-style: none;
+}
+#toc nav li {
+  line-height: 1.3em;
+  margin: 2px 0;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+#toc a.xref {
+  white-space: normal;
+}
+/* references */
+.references dt {
+  text-align: right;
+  font-weight: bold;
+  min-width: 10ch;
+  margin-right: 1.5ch;
+}
+.references dt:target::before {
+  content: "⇒";
+  width: 15px;
+  margin: 0 10px 0 -25px;
+}
+.references dd {
+  margin-left: 12ch !important;
+  overflow: auto;
+}
+
+.refInstance {
+  margin-bottom: 1.25em;
+}
+
+.references .ascii {
+  margin-bottom: 0.25em;
+}
+
+/* index */
+#rfc\.index\.index + ul {
+  margin-left: 0;
+}
+
+/* authors */
+address.vcard {
+  font-style: normal;
+  margin: 1em 0;
+}
+address.vcard .nameRole {
+  font-weight: 700;
+  margin-left: 0;
+}
+address.vcard .label {
+  margin: 0.5em 0;
+}
+address.vcard .type {
+  display: none;
+}
+.alternative-contact {
+  margin: 1.5em 0 1em;
+}
+hr.addr {
+  border-top: 1px dashed;
+  margin: 0;
+  color: #ddd;
+  max-width: calc(100% - 16px);
+}
+@media (min-width: 500px) {
+  #authors-addresses > section {
+    column-count: 2;
+    column-gap: 20px;
+  }
+  #authors-addresses > section > h2 {
+    column-span: all;
+  }
+  /* hack for break-inside: avoid-column */
+  #authors-addresses address {
+    display: inline-block;
+    break-inside: avoid-column;
+  }
+}
+
+.rfcEditorRemove p:first-of-type {
+  font-style: italic;
+}
+.cref {
+  background-color: rgba(249, 232, 105, 0.3);
+  padding: 2px 4px;
+}
+.crefSource {
+  font-style: italic;
+}
+/* alternative layout for smaller screens */
+@media screen and (max-width: 929px) {
+  #toc {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 1px 0 0 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    opacity: 0.6;
+  }
+  #toc.active {
+      opacity: 1;
+  }
+  #toc h2 {
+    margin: 0;
+    padding: 2px 0 2px 6px;
+    padding-right: 1em;
+    font-size: 18px;
+    line-height: 24px;
+    min-width: 190px;
+    text-align: right;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+  }
+  #toc h2::before { /* css hamburger */
+    float: right;
+    position: relative;
+    width: 1em;
+    height: 1px;
+    left: -164px;
+    margin: 8px 0 0 0;
+    background: white none repeat scroll 0 0;
+    box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
+    content: "";
+  }
+  #toc nav {
+    display: none;
+    background-color: var(--background-color);
+    padding: 0.5em 1em 1em;
+    overflow: auto;
+    overscroll-behavior: contain;
+    height: calc(100vh - 48px);
+    border-left: 1px solid #ddd;
+  }
+  #toc.active nav {
+    display: block;
+  }
+  /* Make the collapsed ToC header render white on gray also when it's a link */
+  #toc h2 a,
+  #toc h2 a:link,
+  #toc h2 a:focus,
+  #toc h2 a:hover,
+  #toc a.toplink,
+  #toc a.toplink:hover {
+    color: white;
+    background-color: #444;
+    text-decoration: none;
+  }
+  #toc a.toplink {
+    margin-top: 2px;
+  }
+}
+
+/* alternative layout for wide screens */
+@media screen and (min-width: 930px) {
+  body {
+    padding-right: 360px;
+    padding-right: calc(min(180px + 20%, 500px));
+  }
+  #toc {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    right: calc(50vw - 480px);
+    width: 312px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+  #toc h2 {
+    margin: 0;
+    padding: 0.25em 1em 1em 0;
+  }
+  #toc nav {
+    display: block;
+    height: calc(90vh - 84px);
+    bottom: 0;
+    padding: 0.5em 0 2em;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  #toc nav > ul  {
+    margin-bottom: 2em;
+  }
+  #toc ul {
+    margin: 0 0 0 4px;
+    font-size: var(--small-font-size);
+  }
+  #toc ul :is(p, li) {
+    margin: 2px 0;
+    line-height: 22px;
+  }
+  img { /* future proofing */
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* pagination */
+@media print {
+  body {
+    width: 100%;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  #n-copyright-notice {
+    border-bottom: none;
+  }
+  #toc, #n-introduction {
+    page-break-before: always;
+  }
+  #toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  figure, pre, .vcard {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  :is(h2, h3, h4, h5, h6)+*, dd {
+    page-break-before: avoid;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 10pt;
+  }
+  table {
+    border: 1px solid #ddd;
+  }
+  td {
+    border-top: 1px solid #ddd;
+  }
+  .toplink {
+    display: none;
+  }
+}
+
+@page :first {
+  padding-top: 0;
+  @top-left {
+    content: normal;
+    border: none;
+  }
+  @top-center {
+    content: normal;
+    border: none;
+  }
+  @top-right {
+    content: normal;
+    border: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin-bottom: 45mm;
+  padding-top: 20px;
+}
+
+/* Changes introduced to fix issues found during implementation */
+
+/* Separate body from document info even without intervening H1 */
+section {
+  clear: both;
+}
+
+/* Top align author divs, to avoid names without organization dropping level with org names */
+.author {
+  vertical-align: top;
+}
+
+/* Style section numbers with more space between number and title */
+.section-number {
+  padding-right: 0.5em;
+}
+
+/* Add styling for a link in the ToC that points to the top of the document */
+a.toplink {
+  float: right;
+  margin: 8px 0.5em 0;
+}
+
+/* Provide styling for table cell text alignment */
+table .text-left {
+  text-align: left;
+}
+table .text-center {
+  text-align: center;
+}
+table .text-right {
+  text-align: right;
+}
+
+/* Make the alternative author contact information look less like just another
+   author, and group it closer with the primary author contact information */
+.alternative-contact {
+  margin: 0.5em 0 0.25em 0;
+}
+address .non-ascii {
+  margin: 0 0 0 2em;
+}
+
+/* With it being possible to set tables with alignment
+  left, center, and right, { width: 100%; } does not make sense */
+table {
+  width: auto;
+}
+
+/* Avoid reference text that sits in a block with very wide left margin,
+   because of a long floating dt label.*/
+.references dd {
+  overflow: visible;
+}
+
+/* Control caption placement */
+caption {
+  caption-side: bottom;
+}
+
+/* Limit the width of the author address vcard, so names in right-to-left
+   script don't end up on the other side of the page. */
+
+address.vcard {
+  max-width: 20em;
+  margin-right: auto;
+}
+
+/* For address alignment dependent on LTR or RTL scripts */
+address div.left {
+  text-align: left;
+}
+address div.right {
+  text-align: right;
+}
+
+/* Dark mode. */
+@media (prefers-color-scheme: dark) {
+:root {
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+  --title-color: #fff;
+  --link-color: #4da4f0;
+  --highlight-color: #282828;
+  --line-color: #444;
+  --pilcrow-weak: #444;
+  --pilcrow-strong: #666;
+  scrollbar-color: #777 #333;
+}
+}
+
+/* SVG Trick: a prefix match works because only black and white are allowed */
+svg :is([stroke="black"], [stroke^="#000"]) {
+  stroke: var(--text-color);
+}
+svg :is([stroke="white"], [stroke^="#fff"]) {
+  stroke: var(--background-color);
+}
+svg :is([fill="black"], [fill^="#000"], :not([fill])) {
+  fill: var(--text-color);
+}
+svg :is([fill="white"], [fill^="#fff"]) {
+  fill: var(--background-color);
+}
+</style>
+
+</head>
+<body class="xml2rfc">
+<table class="ears">
+<thead><tr>
+<td class="left">Internet-Draft</td>
+<td class="center">CMC: Compliance</td>
+<td class="right">July 2024</td>
+</tr></thead>
+<tfoot><tr>
+<td class="left">Mandel, Ed &amp; Turner, Ed</td>
+<td class="center">Expires 2 January 2025</td>
+<td class="right">[Page]</td>
+</tr></tfoot>
+</table>
+<div id="external-metadata" class="document-information"></div>
+<div id="internal-metadata" class="document-information">
+<dl id="identifiers">
+<dt class="label-workgroup">Workgroup:</dt>
+<dd class="workgroup">LAMPS Working Group</dd>
+<dt class="label-internet-draft">Internet-Draft:</dt>
+<dd class="internet-draft">draft-mandel-lamps-rfc5274bis-latest</dd>
+<dt class="label-obsoletes">Obsoletes:</dt>
+<dd class="obsoletes">
+<a href="https://www.rfc-editor.org/rfc/rfc5274" class="eref">5274</a>, <a href="https://www.rfc-editor.org/rfc/rfc6402" class="eref">6402</a> (if approved)</dd>
+<dt class="label-published">Published:</dt>
+<dd class="published">
+<time datetime="2024-07-01" class="published">1 July 2024</time>
+    </dd>
+<dt class="label-intended-status">Intended Status:</dt>
+<dd class="intended-status">Standards Track</dd>
+<dt class="label-expires">Expires:</dt>
+<dd class="expires"><time datetime="2025-01-02">2 January 2025</time></dd>
+<dt class="label-authors">Authors:</dt>
+<dd class="authors">
+<div class="author">
+      <div class="author-name">J. Mandel, Ed</div>
+<div class="org">AKAYLA, Inc.</div>
+</div>
+<div class="author">
+      <div class="author-name">S. Turner, Ed</div>
+<div class="org">sn3rd</div>
+</div>
+</dd>
+</dl>
+</div>
+<h1 id="title">Certificate Management Messages over CMS (CMC): Compliance Requirements</h1>
+<section id="section-abstract">
+      <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
+<p id="section-abstract-1">This document provides a set of compliance statements about the CMC
+(Certificate Management over CMS) enrollment protocol.  The ASN.1
+structures and the transport mechanisms for the CMC enrollment
+protocol are covered in other documents.  This document provides the
+information needed to make a compliant version of CMC.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-2">This document obsoletes RFCs 5274 and 6402.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+</section>
+<section class="note rfcEditorRemove" id="section-note.1">
+      <h2 id="name-about-this-document">
+<a href="#name-about-this-document" class="section-name selfRef">About This Document</a>
+      </h2>
+<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
+<p id="section-note.1-2">
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-mandel-lamps-rfc5274bis/">https://datatracker.ietf.org/doc/draft-mandel-lamps-rfc5274bis/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+<p id="section-note.1-3">
+        Discussion of this document takes place on the
+        WG LAMPS mailing list (<span><a href="mailto:spasm@ietf.org">mailto:spasm@ietf.org</a></span>),
+        which is archived at <span><a href="https://mailarchive.ietf.org/arch/browse/spasm/">https://mailarchive.ietf.org/arch/browse/spasm/</a></span>.
+        Subscribe at <span><a href="https://www.ietf.org/mailman/listinfo/spasm/">https://www.ietf.org/mailman/listinfo/spasm/</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+<p id="section-note.1-4">Source for this draft and an issue tracker can be found at
+        <span><a href="https://github.com/TBD">https://github.com/TBD</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
+</section>
+<div id="status-of-memo">
+<section id="section-boilerplate.1">
+        <h2 id="name-status-of-this-memo">
+<a href="#name-status-of-this-memo" class="section-name selfRef">Status of This Memo</a>
+        </h2>
+<p id="section-boilerplate.1-1">
+        This Internet-Draft is submitted in full conformance with the
+        provisions of BCP 78 and BCP 79.<a href="#section-boilerplate.1-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-2">
+        Internet-Drafts are working documents of the Internet Engineering Task
+        Force (IETF). Note that other groups may also distribute working
+        documents as Internet-Drafts. The list of current Internet-Drafts is
+        at <span><a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a></span>.<a href="#section-boilerplate.1-2" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-3">
+        Internet-Drafts are draft documents valid for a maximum of six months
+        and may be updated, replaced, or obsoleted by other documents at any
+        time. It is inappropriate to use Internet-Drafts as reference
+        material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-4">
+        This Internet-Draft will expire on 2 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="copyright">
+<section id="section-boilerplate.2">
+        <h2 id="name-copyright-notice">
+<a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
+        </h2>
+<p id="section-boilerplate.2-1">
+            Copyright (c) 2024 IETF Trust and the persons identified as the
+            document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.2-2">
+            This document is subject to BCP 78 and the IETF Trust's Legal
+            Provisions Relating to IETF Documents
+            (<span><a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/license-info</a></span>) in effect on the date of
+            publication of this document. Please review these documents
+            carefully, as they describe your rights and restrictions with
+            respect to this document. Code Components extracted from this
+            document must include Revised BSD License text as described in
+            Section 4.e of the Trust Legal Provisions and are provided without
+            warranty as described in the Revised BSD License.<a href="#section-boilerplate.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="toc">
+<section id="section-toc.1">
+        <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
+<a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
+        </h2>
+<nav class="toc"><ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
+            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-terminology" class="internal xref">Terminology</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
+            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-requirements-terminology" class="internal xref">Requirements Terminology</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-changes-since-rfc-5274-and-" class="internal xref">Changes since RFC 5274 and 6402</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-requirements-for-all-entiti" class="internal xref">Requirements for All Entities</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
+                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-cryptographic-algorithm-req" class="internal xref">Cryptographic Algorithm Requirements</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
+                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-controls" class="internal xref">Controls</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
+                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-crmf-feature-requirements" class="internal xref">CRMF Feature Requirements</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-requirements-for-clients" class="internal xref">Requirements for Clients</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-requirements-for-servers" class="internal xref">Requirements for Servers</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-requirements-for-ees" class="internal xref">Requirements for EEs</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-requirements-for-ras" class="internal xref">Requirements for RAs</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-requirements-for-cas" class="internal xref">Requirements for CAs</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
+            <p id="section-toc.1-1.12.1"><a href="#section-12" class="auto internal xref">12</a>. <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.1">
+                <p id="section-toc.1-1.12.2.1.1"><a href="#section-12.1" class="auto internal xref">12.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.2">
+                <p id="section-toc.1-1.12.2.2.1"><a href="#section-12.2" class="auto internal xref">12.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
+            <p id="section-toc.1-1.13.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgements" class="internal xref">Acknowledgements</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14">
+            <p id="section-toc.1-1.14.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-contributors" class="internal xref">Contributors</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15">
+            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+</li>
+        </ul>
+</nav>
+</section>
+</div>
+<div id="introduction">
+<section id="section-1">
+      <h2 id="name-introduction">
+<a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
+      </h2>
+<p id="section-1-1">The CMC (Certificate Management over CMS) protocol is designed in
+terms of a client/server relationship.  In the simplest case, the
+client is the requestor of the certificate (i.e., the End Entity
+(EE)) and the server is the issuer of the certificate (i.e., the
+Certification Authority (CA)).  The introduction of a Registration
+Authority (RA) into the set of agents complicates the picture only
+slightly.  The RA becomes the server with respect to the certificate
+requestor, and it becomes the client with respect to the certificate
+issuer.  Any number of RAs can be inserted into the picture in this
+manner.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">The RAs may serve specialized purposes that are not currently covered
+by this document.  One such purpose would be a Key Escrow agent.  As
+such, all certificate requests for encryption keys would be directed
+through this RA and it would take appropriate action to do the key
+archival.  Key recovery requests could be defined in the CMC
+methodology allowing for the Key Escrow agent to perform that
+operation acting as the final server in the chain of agents.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">If there are multiple RAs in the system, it is considered normal that
+not all RAs will see all certificate requests.  The routing between
+the RAs may be dependent on the content of the certificate requests
+involved.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">This document is divided into six sections, each section specifying
+the requirements that are specific to a class of agents in the CMC
+model.  These are 1) all Entities, 2) all Servers, 3) all Clients, 4)
+all End-Entities, 5) all Registration Authorities, 6) all Certification
+Authorities.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-5">This document obsoletes <span>[<a href="#CMC-COMPv1" class="cite xref">CMC-COMPv1</a>]</span> and <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="terminology">
+<section id="section-2">
+      <h2 id="name-terminology">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-terminology" class="section-name selfRef">Terminology</a>
+      </h2>
+<p id="section-2-1">There are several different terms, abbreviations, and acronyms used
+in this document that we define here for convenience and consistency
+of usage:<a href="#section-2-1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-2-2">
+        <dt id="section-2-2.1">End-Entity (EE):</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.2">
+          <p id="section-2-2.2.1">Refers to the entity that owns a key pair and for
+whom a certificate is issued.<a href="#section-2-2.2.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.3">Registration Authority (RA) or Local RA (LRA):</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.4">
+          <p id="section-2-2.4.1">Refers to an entity
+that acts as an intermediary between the EE and the CA.  Multiple
+RAs can exist between the End-Entity and the Certification
+Authority.  RAs may perform additional services such as key
+generation or key archival.  This document uses the term RA for
+both RA and LRA.<a href="#section-2-2.4.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.5">Certification Authority (CA):</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.6">
+          <p id="section-2-2.6.1">Refers to the entity that issues
+certificates.<a href="#section-2-2.6.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.7">Client:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.8">
+          <p id="section-2-2.8.1">Refers to an entity that creates a PKI Request.  In this
+document, both RAs and EEs can be clients.<a href="#section-2-2.8.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.9">Server:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.10">
+          <p id="section-2-2.10.1">Refers to the entities that process PKI Requests and create
+PKI Responses.  In this document both CAs and RAs can be servers.<a href="#section-2-2.10.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.11">PKCS #10:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.12">
+          <p id="section-2-2.12.1">Refers to the Public Key Cryptography Standard #10
+<span>[<a href="#PKCS10" class="cite xref">PKCS10</a>]</span>, which defines a certification request syntax.<a href="#section-2-2.12.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.13">CRMF:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.14">
+          <p id="section-2-2.14.1">Refers to the Certificate Request Message Format RFC <span>[<a href="#CRMF" class="cite xref">CRMF</a>]</span>.
+CMC uses this certification request syntax defined in this
+document as part of the protocol.<a href="#section-2-2.14.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.15">CMS:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.16">
+          <p id="section-2-2.16.1">Refers to the Cryptographic Message Syntax RFC <span>[<a href="#CMS" class="cite xref">CMS</a>]</span>.  This
+document provides for basic cryptographic services including
+encryption and signing with and without key management.<a href="#section-2-2.16.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.17">PKI Request/Response:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.18">
+          <p id="section-2-2.18.1">Refers to the requests/responses described in
+this document.  PKI Requests include certification requests,
+revocation requests, etc.  PKI Responses include certs-only
+messages, failure messages, etc.<a href="#section-2-2.18.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.19">Proof-of-Identity:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.20">
+          <p id="section-2-2.20.1">Refers to the client proving they are who they say
+that they are to the server.<a href="#section-2-2.20.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.21">Proof-of-Possession (POP):</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.22">
+          <p id="section-2-2.22.1">Refers to a value that can be used to
+prove that the private key corresponding to a public key is in the
+possession and can be used by an end-entity.<a href="#section-2-2.22.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.23">Transport wrapper:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.24">
+          <p id="section-2-2.24.1">Refers to the outermost CMS wrapping layer.<a href="#section-2-2.24.1" class="pilcrow">¶</a></p>
+</dd>
+      <dd class="break"></dd>
+</dl>
+</section>
+</div>
+<div id="requirements-terminology">
+<section id="section-3">
+      <h2 id="name-requirements-terminology">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-requirements-terminology" class="section-name selfRef">Requirements Terminology</a>
+      </h2>
+<p id="section-3-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
+"<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
+described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
+appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="changes-since-rfc-5274-and-6402">
+<section id="section-4">
+      <h2 id="name-changes-since-rfc-5274-and-">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-changes-since-rfc-5274-and-" class="section-name selfRef">Changes since RFC 5274 and 6402</a>
+      </h2>
+<aside id="section-4-1">
+        <p id="section-4-1.1">Note: For now, this section will be list of the changes introduced
+  by each version. After WGLC, this section will be finalized.<a href="#section-4-1.1" class="pilcrow">¶</a></p>
+</aside>
+<p id="section-4-2">TODO for -03:<a href="#section-4-2" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4-3.1">
+          <p id="section-4-3.1.1">Update cryptographic algorithm requirements<a href="#section-4-3.1.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-4-4">-02 version changes:<a href="#section-4-4" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4-5.1">
+          <p id="section-4-5.1.1">Updated text in intro<a href="#section-4-5.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-4-5.2">
+          <p id="section-4-5.2.1">Changed "all agents" to "all entities" in overview<a href="#section-4-5.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-4-5.3">
+          <p id="section-4-5.3.1">Updated section header numbering<a href="#section-4-5.3.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-4-6">-01 version changes:<a href="#section-4-6" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4-7.1">
+          <p id="section-4-7.1.1">Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis<a href="#section-4-7.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-4-7.2">
+          <p id="section-4-7.2.1">Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis<a href="#section-4-7.2.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-4-8">-00 version changes:<a href="#section-4-8" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4-9.1">
+          <p id="section-4-9.1.1">Added "Changes Since 5274 and 6402" section<a href="#section-4-9.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-4-9.2">
+          <p id="section-4-9.2.1">Updated references<a href="#section-4-9.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-4-9.3">
+          <p id="section-4-9.3.1">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text<a href="#section-4-9.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-4-9.4">
+          <p id="section-4-9.4.1">Updated and moved Acknowledgments<a href="#section-4-9.4.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+</section>
+</div>
+<div id="requirements-for-all-entities">
+<section id="section-5">
+      <h2 id="name-requirements-for-all-entiti">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-requirements-for-all-entiti" class="section-name selfRef">Requirements for All Entities</a>
+      </h2>
+<p id="section-5-1">All <span>[<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> and <span>[<a href="#CMC-TRANS" class="cite xref">CMC-TRANS</a>]</span> compliance statements <span class="bcp14">MUST</span> be
+adhered to unless specifically stated otherwise in this document.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-2">All entities <span class="bcp14">MUST</span> support Full PKI Requests, Simple PKI Responses,
+and Full PKI Responses.  Servers <span class="bcp14">SHOULD</span> support Simple PKI Requests.<a href="#section-5-2" class="pilcrow">¶</a></p>
+<p id="section-5-3">All entities <span class="bcp14">MUST</span> support the use of the CRMF syntax for
+certification requests.  Support for the PKCS #10 syntax for
+certification requests <span class="bcp14">SHOULD</span> be implemented by servers.<a href="#section-5-3" class="pilcrow">¶</a></p>
+<p id="section-5-4">The extendedFailInfo field <span class="bcp14">SHOULD NOT</span> be populated in the
+CMCStatusInfoV2 object; the failInfo field <span class="bcp14">SHOULD</span> be used to relay
+this information.  If the extendedFailInfo field is used, it is
+suggested that an additional CMCStatusInfoV2 item exist for the same
+body part with a failInfo field.<a href="#section-5-4" class="pilcrow">¶</a></p>
+<p id="section-5-5">All entities <span class="bcp14">MUST</span> implement the HTTP transport mechanism as defined
+in <span>[<a href="#CMC-TRANS" class="cite xref">CMC-TRANS</a>]</span>.  Other transport mechanisms <span class="bcp14">MAY</span> be implemented.<a href="#section-5-5" class="pilcrow">¶</a></p>
+<div id="cryptographic-algorithm-requirements">
+<section id="section-5.1">
+        <h3 id="name-cryptographic-algorithm-req">
+<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-cryptographic-algorithm-req" class="section-name selfRef">Cryptographic Algorithm Requirements</a>
+        </h3>
+<p id="section-5.1-1">All entities <span class="bcp14">MUST</span> verify DSA-SHA1 and RSA-SHA1 signatures in
+SignedData (see <span>[<a href="#CMS-ALG" class="cite xref">CMS-ALG</a>]</span>).  Entities <span class="bcp14">MAY</span> verify other signature
+algorithms.  It is strongly suggested that RSA-PSS with SHA-1 be
+verified (see <span>[<a href="#CMS-RSA-PSS" class="cite xref">CMS-RSA-PSS</a>]</span>).  It is strongly suggested that SHA-256
+using RSA and RSA-PSS be verified (see <span>[<a href="#RSA-256" class="cite xref">RSA-256</a>]</span>).<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+<p id="section-5.1-2">All entities <span class="bcp14">MUST</span> generate either DSA-SHA1 or RSA-SHA1 signatures for
+SignedData (see <span>[<a href="#CMS-ALG" class="cite xref">CMS-ALG</a>]</span>).  Other signatures algorithms <span class="bcp14">MAY</span> be used
+for generation.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
+<p id="section-5.1-3">All entities <span class="bcp14">MUST</span> support Advanced Encryption Standard (AES) as the
+content encryption algorithm for EnvelopedData (see <span>[<a href="#CMS-AES" class="cite xref">CMS-AES</a>]</span>).
+Other content encryption algorithms <span class="bcp14">MAY</span> be implemented.<a href="#section-5.1-3" class="pilcrow">¶</a></p>
+<p id="section-5.1-4">All entities <span class="bcp14">MUST</span> support RSA as a key transport algorithm for
+EnvelopedData (see <span>[<a href="#CMS-ALG" class="cite xref">CMS-ALG</a>]</span>).  All entities <span class="bcp14">SHOULD</span> support RSA-OAEP
+(see <span>[<a href="#CMS-RSA-OAEP" class="cite xref">CMS-RSA-OAEP</a>]</span>) as a key transport algorithm.  Other key
+transport algorithms <span class="bcp14">MAY</span> be implemented.<a href="#section-5.1-4" class="pilcrow">¶</a></p>
+<p id="section-5.1-5">If an entity supports key agreement for EnvelopedData, it <span class="bcp14">MUST</span>
+support Diffie-Hellman (see <span>[<a href="#CMS-DH" class="cite xref">CMS-DH</a>]</span>).<a href="#section-5.1-5" class="pilcrow">¶</a></p>
+<p id="section-5.1-6">If an entity supports PasswordRecipientInfo for EnvelopedData or
+AuthenticatedData, it <span class="bcp14">MUST</span> support PBKDF2 <span>[<a href="#PBKDF2" class="cite xref">PBKDF2</a>]</span> for key derivation
+algorithms.  It <span class="bcp14">MUST</span> support AES key wrap (see <span>[<a href="#AES-WRAP" class="cite xref">AES-WRAP</a>]</span> as the key
+encryption algorithm.<a href="#section-5.1-6" class="pilcrow">¶</a></p>
+<p id="section-5.1-7">If AuthenticatedData is supported, PasswordRecipientInfo <span class="bcp14">MUST</span> be
+supported.<a href="#section-5.1-7" class="pilcrow">¶</a></p>
+<p id="section-5.1-8">Algorithm requirements for the Identity Proof Version 2 control
+<span><a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5272bis-02#section-6.2.1" class="relref">Section 6.2.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-1 <span class="bcp14">MUST</span> be implemented for
+hashAlgId.  SHA-256 <span class="bcp14">SHOULD</span> be implemented for hashAlgId.  HMAC-SHA1
+<span class="bcp14">MUST</span> be implemented for macAlgId.  HMAC-SHA256 <span class="bcp14">SHOULD</span> be implemented
+for macAlgId.<a href="#section-5.1-8" class="pilcrow">¶</a></p>
+<p id="section-5.1-9">Algorithm requirements for the Pop Link Witness Version 2 control
+<span><a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5272bis-02#section-6.3.1" class="relref">Section 6.3.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-1 <span class="bcp14">MUST</span> be implemented for
+keyGenAlgorithm.  SHA-256 <span class="bcp14">SHOULD</span> be implemented for keyGenAlgorithm.
+PBKDF2 <span>[<a href="#PBKDF2" class="cite xref">PBKDF2</a>]</span> <span class="bcp14">MAY</span> be implemented for keyGenAlgorithm.  HMAC-SHA1
+<span class="bcp14">MUST</span> be implemented for macAlgorithm.  HMAC-SHA256 <span class="bcp14">SHOULD</span> be
+implemented for macAlgorithm.<a href="#section-5.1-9" class="pilcrow">¶</a></p>
+<p id="section-5.1-10">Algorithm requirements for the Encrypted POP and Decrypted POP
+controls <span><a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5272bis-02#section-6.7" class="relref">Section 6.7</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-1 <span class="bcp14">MUST</span> be implemented
+for witnessAlgID.  SHA-256 <span class="bcp14">SHOULD</span> be implemented for witnessAlgID.
+HMAC-SHA1 <span class="bcp14">MUST</span> be implemented for thePOPAlgID.  HMAC-SHA256 <span class="bcp14">SHOULD</span> be
+implemented for thePOPAlgID.<a href="#section-5.1-10" class="pilcrow">¶</a></p>
+<p id="section-5.1-11">Algorithm requirements for Publish Trust Anchors control <span><a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5272bis-02#section-6.15" class="relref">Section 6.15</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-1 <span class="bcp14">MUST</span> be implemented for
+hashAlgorithm.  SHA-256 <span class="bcp14">SHOULD</span> be implemented for hashAlgorithm.<a href="#section-5.1-11" class="pilcrow">¶</a></p>
+<p id="section-5.1-12">If an EE generates DH keys for certification, it <span class="bcp14">MUST</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span>.  EEs <span class="bcp14">MAY</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-3" class="relref">Section 3</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span>.  CAs and RAs
+that do POP verification <span class="bcp14">MUST</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> and
+<span class="bcp14">SHOULD</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-3" class="relref">Section 3</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span>.<a href="#section-5.1-12" class="pilcrow">¶</a></p>
+<p id="section-5.1-13">EEs that need to use a signature algorithm for keys that cannot
+produce a signature <span class="bcp14">MUST</span> support Appendix C of <span>[<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> and <span class="bcp14">MUST</span>
+support the Encrypted/Decrypted POP controls.  CAs and RAs that do
+POP verification <span class="bcp14">MUST</span> support this signature algorithm and <span class="bcp14">MUST</span>
+support the Encrypted/Decrypted POP controls.<a href="#section-5.1-13" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="controls">
+<section id="section-5.2">
+        <h3 id="name-controls">
+<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-controls" class="section-name selfRef">Controls</a>
+        </h3>
+<p id="section-5.2-1">The following table lists the name and level of support required for
+each control.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+<span id="name-cmc-control-attributes"></span><div id="cmc-controls">
+<table class="center" id="table-1">
+          <caption>
+<a href="#table-1" class="selfRef">Table 1</a>:
+<a href="#name-cmc-control-attributes" class="selfRef">CMC Control Attributes</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Control</th>
+              <th class="text-left" rowspan="1" colspan="1">EE</th>
+              <th class="text-left" rowspan="1" colspan="1">RA</th>
+              <th class="text-left" rowspan="1" colspan="1">CA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Extended CMC Status Info</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">CMC Status Info</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Identity Proof Version 2</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Identity Proof</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Identification</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">POP Link Random</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">POP Link Witness Version 2</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">POP Link Witness</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Data Return</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Modify Cert Request</td>
+              <td class="text-left" rowspan="1" colspan="1">N/A</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">(2)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Add Extensions</td>
+              <td class="text-left" rowspan="1" colspan="1">N/A</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MAY</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">(1)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Transaction ID</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Sender Nonce</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Recipient Nonce</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Encrypted POP</td>
+              <td class="text-left" rowspan="1" colspan="1">(4)</td>
+              <td class="text-left" rowspan="1" colspan="1">(5)</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Decrypted POP</td>
+              <td class="text-left" rowspan="1" colspan="1">(4)</td>
+              <td class="text-left" rowspan="1" colspan="1">(5)</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">RA POP Witness</td>
+              <td class="text-left" rowspan="1" colspan="1">N/A</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">(1)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Get Certificate</td>
+              <td class="text-left" rowspan="1" colspan="1">optional</td>
+              <td class="text-left" rowspan="1" colspan="1">optional</td>
+              <td class="text-left" rowspan="1" colspan="1">optional</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Get CRL</td>
+              <td class="text-left" rowspan="1" colspan="1">optional</td>
+              <td class="text-left" rowspan="1" colspan="1">optional</td>
+              <td class="text-left" rowspan="1" colspan="1">optional</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Revocation Request</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Registration Info</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Response Information</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">SHOULD</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Query Pending</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Confirm Cert.  Acceptance</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Publish Trust Anchors</td>
+              <td class="text-left" rowspan="1" colspan="1">(3)</td>
+              <td class="text-left" rowspan="1" colspan="1">(3)</td>
+              <td class="text-left" rowspan="1" colspan="1">(3)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Authenticate Data</td>
+              <td class="text-left" rowspan="1" colspan="1">(3)</td>
+              <td class="text-left" rowspan="1" colspan="1">(3)</td>
+              <td class="text-left" rowspan="1" colspan="1">(3)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Batch Request</td>
+              <td class="text-left" rowspan="1" colspan="1">N/A</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">(2)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Batch Responses</td>
+              <td class="text-left" rowspan="1" colspan="1">N/A</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">(2)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Publication Information</td>
+              <td class="text-left" rowspan="1" colspan="1">optional</td>
+              <td class="text-left" rowspan="1" colspan="1">optional</td>
+              <td class="text-left" rowspan="1" colspan="1">optional</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Control Processed</td>
+              <td class="text-left" rowspan="1" colspan="1">N/A</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">(2)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">RA Identity Proof Witness</td>
+              <td class="text-left" rowspan="1" colspan="1">N/A</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span class="bcp14">MUST</span>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">(2)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Response Body</td>
+              <td class="text-left" rowspan="1" colspan="1">(6)</td>
+              <td class="text-left" rowspan="1" colspan="1">(6)</td>
+              <td class="text-left" rowspan="1" colspan="1">N/A.</td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+<p id="section-5.2-3">Notes:<a href="#section-5.2-3" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-5.2-4">
+<li id="section-5.2-4.1">
+            <p id="section-5.2-4.1.1">CAs <span class="bcp14">SHOULD</span> implement this control if designed to work with RAs.<a href="#section-5.2-4.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li id="section-5.2-4.2">
+            <p id="section-5.2-4.2.1">CAs <span class="bcp14">MUST</span> implement this control if designed to work with RAs.<a href="#section-5.2-4.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li id="section-5.2-4.3">
+            <p id="section-5.2-4.3.1">Implementation is optional for these controls.  We strongly
+suggest that they be implemented in order to populate client
+trust anchors.<a href="#section-5.2-4.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li id="section-5.2-4.4">
+            <p id="section-5.2-4.4.1">EEs only need to implement this if (a) they support key agreement
+algorithms or (b) they need to operate in environments where the
+hardware keys cannot provide POP.<a href="#section-5.2-4.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li id="section-5.2-4.5">
+            <p id="section-5.2-4.5.1">RAs <span class="bcp14">SHOULD</span> implement this if they implement RA POP Witness.<a href="#section-5.2-4.5.1" class="pilcrow">¶</a></p>
+</li>
+          <li id="section-5.2-4.6">
+            <p id="section-5.2-4.6.1">EE's <span class="bcp14">SHOULD</span> implement if designed to work with RAs and <span class="bcp14">MUST</span>
+implement if intended to be used in environments where RAs are
+used for identity validation or key generation.  RAs <span class="bcp14">SHOULD</span>
+implement and validate responses for consistency.<a href="#section-5.2-4.6.1" class="pilcrow">¶</a></p>
+</li>
+        </ol>
+<p id="section-5.2-5">Strong consideration should be given to implementing the Authenticate
+Data and Publish Trust Anchors controls as this gives a simple method
+for distributing trust anchors into clients without user
+intervention.<a href="#section-5.2-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="crmf-feature-requirements">
+<section id="section-5.3">
+        <h3 id="name-crmf-feature-requirements">
+<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-crmf-feature-requirements" class="section-name selfRef">CRMF Feature Requirements</a>
+        </h3>
+<p id="section-5.3-1">The following additional restrictions are placed on CRMF features:<a href="#section-5.3-1" class="pilcrow">¶</a></p>
+<p id="section-5.3-2">The registration control tokens id-regCtrl-regToken and id-regCtrl-
+authToken <span class="bcp14">MUST NOT</span> be used.  No specific CMC feature is used to
+replace these items, but generally the CMC controls identification
+and identityProof will perform the same service and are more
+specifically defined.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
+<p id="section-5.3-3">The control token id-regCtrl-pkiArchiveOptions <span class="bcp14">SHOULD NOT</span> be
+supported.  An alternative method is under development to provide
+this functionality.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
+<p id="section-5.3-4">The behavior of id-regCtrl-oldCertID is not presently used.  It is
+replaced by issuing the new certificate and using the id-cmc-
+publishCert to remove the old certificate from publication.  This
+operation would not normally be accompanied by an immediate
+revocation of the old certificate; however, that can be accomplished
+by the id-cmc-revokeRequest control.<a href="#section-5.3-4" class="pilcrow">¶</a></p>
+<p id="section-5.3-5">The id-regCtrl-protocolEncrKey is not used.<a href="#section-5.3-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="requirements-for-clients">
+<section id="section-6">
+      <h2 id="name-requirements-for-clients">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-requirements-for-clients" class="section-name selfRef">Requirements for Clients</a>
+      </h2>
+<p id="section-6-1">There are no additional requirements.<a href="#section-6-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="requirements-for-servers">
+<section id="section-7">
+      <h2 id="name-requirements-for-servers">
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-requirements-for-servers" class="section-name selfRef">Requirements for Servers</a>
+      </h2>
+<p id="section-7-1">There are no additional requirements.<a href="#section-7-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="requirements-for-ees">
+<section id="section-8">
+      <h2 id="name-requirements-for-ees">
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-requirements-for-ees" class="section-name selfRef">Requirements for EEs</a>
+      </h2>
+<p id="section-8-1">If an entity implements Diffie-Hellman, it <span class="bcp14">MUST</span> implement either the
+DH-POP Proof-of-Possession as defined in <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> or the
+challenge-response POP controls id-cmc-encryptedPOP and id-cmc-
+decryptedPOP.<a href="#section-8-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="requirements-for-ras">
+<section id="section-9">
+      <h2 id="name-requirements-for-ras">
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-requirements-for-ras" class="section-name selfRef">Requirements for RAs</a>
+      </h2>
+<p id="section-9-1">RAs <span class="bcp14">SHOULD</span> be able to do delegated POP.  RAs implementing this
+feature <span class="bcp14">MUST</span> implement the id-cmc-lraPOPWitness control.<a href="#section-9-1" class="pilcrow">¶</a></p>
+<p id="section-9-2">All RAs <span class="bcp14">MUST</span> implement the promotion of the id-aa-cmc-unsignedData as
+covered in <span><a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5272bis-02#section-3.2.3" class="relref">Section 3.2.3</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>.<a href="#section-9-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="requirements-for-cas">
+<section id="section-10">
+      <h2 id="name-requirements-for-cas">
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-requirements-for-cas" class="section-name selfRef">Requirements for CAs</a>
+      </h2>
+<p id="section-10-1">Providing for CAs to work in an environment with RAs is strongly
+suggested.  Implementation of such support is strongly suggested as
+this permits the delegation of substantial administrative interaction
+onto an RA rather than at the CA.<a href="#section-10-1" class="pilcrow">¶</a></p>
+<p id="section-10-2">CAs <span class="bcp14">MUST</span> perform at least minimal checks on all public keys before
+issuing a certificate.  At a minimum, a check for syntax would occur
+with the POP operation.  Additionally, CAs <span class="bcp14">SHOULD</span> perform simple
+checks for known bad keys such as small subgroups for DSA-SHA1 and DH
+keys <span>[<a href="#SMALL-SUB-GROUP" class="cite xref">SMALL-SUB-GROUP</a>]</span> or known bad exponents for RSA keys.<a href="#section-10-2" class="pilcrow">¶</a></p>
+<p id="section-10-3">CAs <span class="bcp14">MUST</span> enforce POP checking before issuing any certificate.  CAs
+<span class="bcp14">MAY</span> delegate the POP operation to an RA for those cases where 1) a
+challenge/response message pair must be used, 2) an RA performs
+escrow of a key and checks for POP in that manner, or 3) an unusual
+algorithm is used and that validation is done at the RA.<a href="#section-10-3" class="pilcrow">¶</a></p>
+<p id="section-10-4">CAs <span class="bcp14">SHOULD</span> implement both the DH-POP Proof-of-Possession as defined
+in <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> and the challenge-response POP controls id-
+cmc-encryptedPOP and id-cmc-decryptedPOP.<a href="#section-10-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="security-considerations">
+<section id="section-11">
+      <h2 id="name-security-considerations">
+<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      </h2>
+<p id="section-11-1">This document uses <span>[<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> and <span>[<a href="#CMC-TRANS" class="cite xref">CMC-TRANS</a>]</span> as building blocks to
+this document.  The security sections of those two documents are
+included by reference.<a href="#section-11-1" class="pilcrow">¶</a></p>
+<p id="section-11-2">Knowledge of how an entity is expected to operate is vital in
+determining which sections of requirements are applicable to that
+entity.  Care needs to be taken in determining which sections apply
+and fully implementing the necessary code.<a href="#section-11-2" class="pilcrow">¶</a></p>
+<p id="section-11-3">Cryptographic algorithms have and will be broken or weakened.
+Implementers and users need to check that the cryptographic
+algorithms listed in this document make sense from a security level.
+The IETF from time to time may issue documents dealing with the
+current state of the art.  Two examples of such documents are
+<span>[<a href="#SMALL-SUB-GROUP" class="cite xref">SMALL-SUB-GROUP</a>]</span> and <span>[<a href="#HASH-ATTACKS" class="cite xref">HASH-ATTACKS</a>]</span>.<a href="#section-11-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<section id="section-12">
+      <h2 id="name-references">
+<a href="#section-12" class="section-number selfRef">12. </a><a href="#name-references" class="section-name selfRef">References</a>
+      </h2>
+<div id="sec-normative-references">
+<section id="section-12.1">
+        <h3 id="name-normative-references">
+<a href="#section-12.1" class="section-number selfRef">12.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+        </h3>
+<dl class="references">
+<dt id="AES-WRAP">[AES-WRAP]</dt>
+        <dd>
+<span class="refAuthor">Schaad, J.</span> and <span class="refAuthor">R. Housley</span>, <span class="refTitle">"Advanced Encryption Standard (AES) Key Wrap Algorithm"</span>, <span class="seriesInfo">RFC 3394</span>, <span class="seriesInfo">DOI 10.17487/RFC3394</span>, <time datetime="2002-09" class="refDate">September 2002</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3394">https://www.rfc-editor.org/rfc/rfc3394</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMC-STRUCT">[CMC-STRUCT]</dt>
+        <dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-mandel-lamps-rfc5272bis-02</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5272bis-02">https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5272bis-02</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMC-TRANS">[CMC-TRANS]</dt>
+        <dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-mandel-lamps-rfc5273bis-02</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5273bis-02">https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5273bis-02</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMS">[CMS]</dt>
+        <dd>
+<span class="refAuthor">Housley, R.</span>, <span class="refTitle">"Cryptographic Message Syntax (CMS)"</span>, <span class="seriesInfo">STD 70</span>, <span class="seriesInfo">RFC 5652</span>, <span class="seriesInfo">DOI 10.17487/RFC5652</span>, <time datetime="2009-09" class="refDate">September 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5652">https://www.rfc-editor.org/rfc/rfc5652</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMS-AES">[CMS-AES]</dt>
+        <dd>
+<span class="refAuthor">Schaad, J.</span>, <span class="refTitle">"Use of the Advanced Encryption Standard (AES) Encryption Algorithm in Cryptographic Message Syntax (CMS)"</span>, <span class="seriesInfo">RFC 3565</span>, <span class="seriesInfo">DOI 10.17487/RFC3565</span>, <time datetime="2003-07" class="refDate">July 2003</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3565">https://www.rfc-editor.org/rfc/rfc3565</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMS-ALG">[CMS-ALG]</dt>
+        <dd>
+<span class="refAuthor">Housley, R.</span>, <span class="refTitle">"Cryptographic Message Syntax (CMS) Algorithms"</span>, <span class="seriesInfo">RFC 3370</span>, <span class="seriesInfo">DOI 10.17487/RFC3370</span>, <time datetime="2002-08" class="refDate">August 2002</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3370">https://www.rfc-editor.org/rfc/rfc3370</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMS-DH">[CMS-DH]</dt>
+        <dd>
+<span class="refAuthor">Rescorla, E.</span>, <span class="refTitle">"Diffie-Hellman Key Agreement Method"</span>, <span class="seriesInfo">RFC 2631</span>, <span class="seriesInfo">DOI 10.17487/RFC2631</span>, <time datetime="1999-06" class="refDate">June 1999</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2631">https://www.rfc-editor.org/rfc/rfc2631</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMS-RSA-OAEP">[CMS-RSA-OAEP]</dt>
+        <dd>
+<span class="refAuthor">Housley, R.</span>, <span class="refTitle">"Use of the RSAES-OAEP Key Transport Algorithm in Cryptographic Message Syntax (CMS)"</span>, <span class="seriesInfo">RFC 3560</span>, <span class="seriesInfo">DOI 10.17487/RFC3560</span>, <time datetime="2003-07" class="refDate">July 2003</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3560">https://www.rfc-editor.org/rfc/rfc3560</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMS-RSA-PSS">[CMS-RSA-PSS]</dt>
+        <dd>
+<span class="refAuthor">Schaad, J.</span>, <span class="refTitle">"Use of the RSASSA-PSS Signature Algorithm in Cryptographic Message Syntax (CMS)"</span>, <span class="seriesInfo">RFC 4056</span>, <span class="seriesInfo">DOI 10.17487/RFC4056</span>, <time datetime="2005-06" class="refDate">June 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4056">https://www.rfc-editor.org/rfc/rfc4056</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CRMF">[CRMF]</dt>
+        <dd>
+<span class="refAuthor">Schaad, J.</span>, <span class="refTitle">"Internet X.509 Public Key Infrastructure Certificate Request Message Format (CRMF)"</span>, <span class="seriesInfo">RFC 4211</span>, <span class="seriesInfo">DOI 10.17487/RFC4211</span>, <time datetime="2005-09" class="refDate">September 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4211">https://www.rfc-editor.org/rfc/rfc4211</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="DH-POP">[DH-POP]</dt>
+        <dd>
+<span class="refAuthor">Schaad, J.</span> and <span class="refAuthor">H. Prafullchandra</span>, <span class="refTitle">"Diffie-Hellman Proof-of-Possession Algorithms"</span>, <span class="seriesInfo">RFC 6955</span>, <span class="seriesInfo">DOI 10.17487/RFC6955</span>, <time datetime="2013-05" class="refDate">May 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6955">https://www.rfc-editor.org/rfc/rfc6955</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PBKDF2">[PBKDF2]</dt>
+        <dd>
+<span class="refAuthor">Kaliski, B.</span>, <span class="refTitle">"PKCS #5: Password-Based Cryptography Specification Version 2.0"</span>, <span class="seriesInfo">RFC 2898</span>, <span class="seriesInfo">DOI 10.17487/RFC2898</span>, <time datetime="2000-09" class="refDate">September 2000</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2898">https://www.rfc-editor.org/rfc/rfc2898</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC2119">[RFC2119]</dt>
+        <dd>
+<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8174">[RFC8174]</dt>
+        <dd>
+<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RSA-256">[RSA-256]</dt>
+      <dd>
+<span class="refAuthor">Schaad, J.</span>, <span class="refAuthor">Kaliski, B.</span>, and <span class="refAuthor">R. Housley</span>, <span class="refTitle">"Additional Algorithms and Identifiers for RSA Cryptography for use in the Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile"</span>, <span class="seriesInfo">RFC 4055</span>, <span class="seriesInfo">DOI 10.17487/RFC4055</span>, <time datetime="2005-06" class="refDate">June 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4055">https://www.rfc-editor.org/rfc/rfc4055</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</div>
+<div id="sec-informative-references">
+<section id="section-12.2">
+        <h3 id="name-informative-references">
+<a href="#section-12.2" class="section-number selfRef">12.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+        </h3>
+<dl class="references">
+<dt id="CMC-COMPv1">[CMC-COMPv1]</dt>
+        <dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-mandel-lamps-rfc5274bis-02</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5274bis-02">https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5274bis-02</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMC-Updates">[CMC-Updates]</dt>
+        <dd>
+<span class="refAuthor">Schaad, J.</span>, <span class="refTitle">"Certificate Management over CMS (CMC) Updates"</span>, <span class="seriesInfo">RFC 6402</span>, <span class="seriesInfo">DOI 10.17487/RFC6402</span>, <time datetime="2011-11" class="refDate">November 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6402">https://www.rfc-editor.org/rfc/rfc6402</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="HASH-ATTACKS">[HASH-ATTACKS]</dt>
+        <dd>
+<span class="refAuthor">Hoffman, P.</span> and <span class="refAuthor">B. Schneier</span>, <span class="refTitle">"Attacks on Cryptographic Hashes in Internet Protocols"</span>, <span class="seriesInfo">RFC 4270</span>, <span class="seriesInfo">DOI 10.17487/RFC4270</span>, <time datetime="2005-11" class="refDate">November 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4270">https://www.rfc-editor.org/rfc/rfc4270</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PKCS10">[PKCS10]</dt>
+        <dd>
+<span class="refAuthor">Nystrom, M.</span> and <span class="refAuthor">B. Kaliski</span>, <span class="refTitle">"PKCS #10: Certification Request Syntax Specification Version 1.7"</span>, <span class="seriesInfo">RFC 2986</span>, <span class="seriesInfo">DOI 10.17487/RFC2986</span>, <time datetime="2000-11" class="refDate">November 2000</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2986">https://www.rfc-editor.org/rfc/rfc2986</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="SMALL-SUB-GROUP">[SMALL-SUB-GROUP]</dt>
+      <dd>
+<span class="refAuthor">Zuccherato, R.</span>, <span class="refTitle">"Methods for Avoiding the "Small-Subgroup" Attacks on the Diffie-Hellman Key Agreement Method for S/MIME"</span>, <span class="seriesInfo">RFC 2785</span>, <span class="seriesInfo">DOI 10.17487/RFC2785</span>, <time datetime="2000-03" class="refDate">March 2000</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2785">https://www.rfc-editor.org/rfc/rfc2785</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</div>
+</section>
+<div id="acknowledgements">
+<section id="appendix-A">
+      <h2 id="name-acknowledgements">
+<a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
+      </h2>
+<p id="appendix-A-1">Obviously, the authors of this version of the document would like to
+thank Jim Schaad and Michael Myers for their work on the previous
+version of this document.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<p id="appendix-A-2">The acknowledgment from the previous version of this document follows:<a href="#appendix-A-2" class="pilcrow">¶</a></p>
+<p id="appendix-A-3">The authors and the PKIX Working Group are grateful for the
+participation of Xiaoyi Liu and Jeff Weinstein in helping to author
+the original versions of this document.<a href="#appendix-A-3" class="pilcrow">¶</a></p>
+<p id="appendix-A-4">The authors would like to thank Brian LaMacchia for his work in
+developing and writing up many of the concepts presented in this
+document.  The authors would also like to thank Alex Deacon and Barb
+Fox for their contributions.<a href="#appendix-A-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="contributors">
+<section id="appendix-B">
+      <h2 id="name-contributors">
+<a href="#name-contributors" class="section-name selfRef">Contributors</a>
+      </h2>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Jim Schaad</span></div>
+<div dir="auto" class="left"><span class="org">August Cellars</span></div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Michael Myers</span></div>
+<div dir="auto" class="left"><span class="org">TraceRoute Security, Inc.</span></div>
+</address>
+</section>
+</div>
+<div id="authors-addresses">
+<section id="appendix-C">
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
+      </h2>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Joseph Mandel</span></div>
+<div dir="auto" class="left"><span class="org">AKAYLA, Inc.</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:joe@akyala.com" class="email">joe@akyala.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Sean Turner</span></div>
+<div dir="auto" class="left"><span class="org">sn3rd</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:sean@sn3rd.com" class="email">sean@sn3rd.com</a>
+</div>
+</address>
+</section>
+</div>
+<script>const toc = document.getElementById("toc");
+toc.querySelector("h2").addEventListener("click", e => {
+  toc.classList.toggle("active");
+});
+toc.querySelector("nav").addEventListener("click", e => {
+  toc.classList.remove("active");
+});
+</script>
+</body>
+</html>
