@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-30T01:33:48.850922+00:00",
+  "timestamp": "2024-07-02T01:21:57.383249+00:00",
   "repo": "seanturner/cmcbis",
   "labels": [
     {
@@ -413,6 +413,22 @@
       "createdAt": "2024-04-13T22:05:51Z",
       "updatedAt": "2024-06-18T19:57:04Z",
       "closedAt": "2024-06-18T19:57:03Z",
+      "comments": []
+    },
+    {
+      "number": 45,
+      "id": "I_kwDOKfq5gM6OIG5h",
+      "title": "5272: Erratum3943",
+      "url": "https://github.com/seanturner/cmcbis/issues/45",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Errata 3943 from RFC 6402",
+      "createdAt": "2024-07-01T18:34:25Z",
+      "updatedAt": "2024-07-01T18:34:25Z",
+      "closedAt": null,
       "comments": []
     }
   ],
@@ -2065,6 +2081,58 @@
       "mergeCommit": {
         "oid": "04b811937b3dafaf2718d1e6cb41d9dcc8b57cb8"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 44,
+      "id": "PR_kwDOKfq5gM50GLjT",
+      "title": "Editorial changes for ASN.1",
+      "url": "https://github.com/seanturner/cmcbis/pull/44",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Changes made to address ASN.1 and comments ",
+      "createdAt": "2024-07-01T16:58:18Z",
+      "updatedAt": "2024-07-01T17:05:06Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "Editorial-changes-for-ASN.1",
+      "headRefOid": "bc30fc4d065b154301d6d6ecf5e005b3a5bae200",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 46,
+      "id": "PR_kwDOKfq5gM50G1fp",
+      "title": "Include Errata 3943 for RFC 6402",
+      "url": "https://github.com/seanturner/cmcbis/pull/46",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://www.rfc-editor.org/errata/eid3943 ",
+      "createdAt": "2024-07-01T18:47:30Z",
+      "updatedAt": "2024-07-01T18:47:31Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "Editorial-changes-for-ASN.1",
+      "baseRefOid": "bc30fc4d065b154301d6d6ecf5e005b3a5bae200",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "Include-Errata-3943-for-RFC-6402",
+      "headRefOid": "8b34f330ac724bbfd12877d2fe5c740ccf84bd9a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
