@@ -93,6 +93,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid7629
     title: RFC 5272 erratum 7629
     date: 2023-09-04
+  erratum3943:
+    target: https://www.rfc-editor.org/errata/eid3943
+    title: RFC 6402 erratum 3943
+    date: 2014-04-02
 
 --- abstract
 
