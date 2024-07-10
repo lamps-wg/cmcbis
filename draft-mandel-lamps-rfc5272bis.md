@@ -246,6 +246,7 @@ Note: For now, this section will be list of the changes introduced
 --03 version changes:
 
 * Publish Trust Anchors Control hashAlgorithm changed to SHA-256
+* Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256
 * Update DH-POP from RFC2875 to RFC6955
 
 
@@ -2373,12 +2374,12 @@ problem by reducing the amount of state kept on the CA to a single
     kept for a short time afterwards.)
 
 2.  For certification request R, server computes y = F(x,R). F can
-    be, for example, HMAC-SHA1(x,R). All that's important for
+    be, for example, HMAC-SHA256(x,R). All that's important for
     statelessness is that y be consistently computable with only
     known state constant x and function F, other inputs coming from
     the certification request structure. y should not be predictable
     based on knowledge of R, thus the use of a one-way function like
-    HMAC-SHA1.
+    HMAC-SHA256.
 
 ##  RA POP Witness Control {#RAPOPWitnessControl}
 
