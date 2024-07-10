@@ -93,6 +93,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid7629
     title: RFC 5272 erratum 7629
     date: 2023-09-04
+  erratum3943:
+    target: https://www.rfc-editor.org/errata/eid3943
+    title: RFC 6402 erratum 3943
+    date: 2014-04-02
 
 --- abstract
 
@@ -248,6 +252,7 @@ Note: For now, this section will be list of the changes introduced
 * Publish Trust Anchors Control hashAlgorithm changed to SHA-256
 * Update DH-POP from RFC2875 to RFC6955
 * Editorial changes
+* Addressed errata 3943 for RFC 6402
 
 --02 version changes:
 
@@ -4004,7 +4009,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          GeneralNames OPTIONAL
+      subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
