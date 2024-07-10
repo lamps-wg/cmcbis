@@ -268,7 +268,7 @@ Note: For now, this section will be list of the changes introduced
   * Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B
 * Merged {{erratum2731}}
 * Merged {{erratum4775}}
-* Mereged {{erratum7379}}
+* Merged {{erratum7379}}
 * Merged {{erratum7628}}
 * Merged {{erratum7629}}
 
