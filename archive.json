@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-09T01:23:13.187093+00:00",
+  "timestamp": "2024-07-11T01:23:47.284646+00:00",
   "repo": "seanturner/cmcbis",
   "labels": [
     {
@@ -428,6 +428,38 @@
       "body": "Errata 3943 from RFC 6402",
       "createdAt": "2024-07-01T18:34:25Z",
       "updatedAt": "2024-07-01T18:34:25Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 49,
+      "id": "I_kwDOKfq5gM6PB6pA",
+      "title": "5273: Refer to BCP 195",
+      "url": "https://github.com/seanturner/cmcbis/issues/49",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "While we updated to TLS 1.2 or later, it is probably worth also referring to BCP 195 in the very next sentence.",
+      "createdAt": "2024-07-10T03:02:08Z",
+      "updatedAt": "2024-07-10T03:03:07Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 51,
+      "id": "I_kwDOKfq5gM6PCErr",
+      "title": "Updates from 6955 - Static ECDH POP",
+      "url": "https://github.com/seanturner/cmcbis/issues/51",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "RFC 6955 added Static ECDH POP - \"Appendix C: Production of Diffie-Hellman Public Key Certification Requests\" only mentions 2 ways to produce the signature and \"Simple PKI Request\" section mentions it as well. ",
+      "createdAt": "2024-07-10T03:51:32Z",
+      "updatedAt": "2024-07-10T03:51:32Z",
       "closedAt": null,
       "comments": []
     }
@@ -2096,7 +2128,7 @@
       "labels": [],
       "body": "Changes made to address ASN.1 and comments ",
       "createdAt": "2024-07-01T16:58:18Z",
-      "updatedAt": "2024-07-01T17:05:06Z",
+      "updatedAt": "2024-07-10T02:45:38Z",
       "baseRepository": "seanturner/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
@@ -2108,7 +2140,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6BN8bZ",
+          "commit": {
+            "abbreviatedOid": "bc30fc4"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-10T02:45:38Z",
+          "updatedAt": "2024-07-10T02:45:38Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 46,
@@ -2122,13 +2168,113 @@
       "labels": [],
       "body": "https://www.rfc-editor.org/errata/eid3943 ",
       "createdAt": "2024-07-01T18:47:30Z",
-      "updatedAt": "2024-07-01T18:47:31Z",
+      "updatedAt": "2024-07-10T02:56:51Z",
       "baseRepository": "seanturner/cmcbis",
       "baseRefName": "Editorial-changes-for-ASN.1",
       "baseRefOid": "bc30fc4d065b154301d6d6ecf5e005b3a5bae200",
       "headRepository": "seanturner/cmcbis",
       "headRefName": "Include-Errata-3943-for-RFC-6402",
-      "headRefOid": "8b34f330ac724bbfd12877d2fe5c740ccf84bd9a",
+      "headRefOid": "ea36f862187e304b0375f7b7792bb1bd88c591d7",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Resolves #46.",
+          "createdAt": "2024-07-10T02:56:50Z",
+          "updatedAt": "2024-07-10T02:56:50Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6BN8OS",
+          "commit": {
+            "abbreviatedOid": "8b34f33"
+          },
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Can you add the following in the informative references:\r\n\r\n    erratum3943:\r\n    target: https://www.rfc-editor.org/errata/eid3943\r\n    title: RFC 6402 erratum 3943\r\n    date: 2014-04-02",
+          "createdAt": "2024-07-10T02:45:20Z",
+          "updatedAt": "2024-07-10T02:45:20Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 47,
+      "id": "PR_kwDOKfq5gM506DDb",
+      "title": "fixed spelling mistake",
+      "url": "https://github.com/seanturner/cmcbis/pull/47",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-07-10T02:50:33Z",
+      "updatedAt": "2024-07-10T02:50:34Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-spelling-00",
+      "headRefOid": "2c6f548fd713a1f0a99bdb4bdc5cc1708eb8d871",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 48,
+      "id": "PR_kwDOKfq5gM506EQV",
+      "title": "Use HMAC-256 in Encrypted and Decrypted POP Controls section",
+      "url": "https://github.com/seanturner/cmcbis/pull/48",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "The Encrypted and Decrypted POP Controls section includes HMAC-SHA1. Updated to instead use HMAC-SHA256.",
+      "createdAt": "2024-07-10T02:54:58Z",
+      "updatedAt": "2024-07-10T02:54:58Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-pop-controls-HMAC-SHA256",
+      "headRefOid": "2471b54c935c506bd24ebcf03ea66fa4bce6f8fb",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 50,
+      "id": "PR_kwDOKfq5gM506HK1",
+      "title": "Add requirements for BCP 195",
+      "url": "https://github.com/seanturner/cmcbis/pull/50",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #49.",
+      "createdAt": "2024-07-10T03:09:44Z",
+      "updatedAt": "2024-07-10T03:09:45Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-bcp195",
+      "headRefOid": "eeef6c7418cb8fe0c6b9e1589eaae54257916539",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
