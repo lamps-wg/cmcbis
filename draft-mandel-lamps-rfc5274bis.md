@@ -6,7 +6,7 @@ obsoletes: 5274, 6402
 
 docname: draft-mandel-lamps-rfc5274bis-latest
 submissiontype: IETF
-ipr: trust200902
+ipr: pre5378Trust200902
 number:
 date:
 consensus: true
