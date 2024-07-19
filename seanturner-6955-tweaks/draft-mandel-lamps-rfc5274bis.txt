@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 20 December 2024                                   18 June 2024
+Expires: 20 January 2025                                    19 July 2024
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 December 2024.
+   This Internet-Draft will expire on 20 January 2025.
 
 Copyright Notice
 
