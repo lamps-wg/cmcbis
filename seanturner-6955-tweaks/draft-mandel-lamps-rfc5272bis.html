@@ -29,13 +29,13 @@ definition.
        This document also updates part of RFC 5911 to add support for additional
 HMAC algorithms used with the POP Link Witness control. 
     " name="description">
-<meta content="xml2rfc 3.21.0" name="generator">
+<meta content="xml2rfc 3.22.0" name="generator">
 <meta content="Public Key Infrastructure" name="keyword">
 <meta content="Certificate Management" name="keyword">
 <meta content="Cryptographic Message Syntax" name="keyword">
 <meta content="draft-mandel-lamps-rfc5272bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.21.0
+  xml2rfc 3.22.0
     Python 3.12.3
     ConfigArgParse 1.7
     google-i18n-address 3.1.0
@@ -45,9 +45,8 @@ HMAC algorithms used with the POP Link Witness control.
     platformdirs 4.2.2
     pycountry 22.3.5
     PyYAML 6.0.1
-    requests 2.31.0
+    requests 2.32.3
     setuptools 69.5.1
-    six 1.16.0
     wcwidth 0.2.13
 -->
 <link href="draft-mandel-lamps-rfc5272bis.xml" rel="alternate" type="application/rfc+xml">
@@ -1047,11 +1046,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CMC: Structures</td>
-<td class="right">June 2024</td>
+<td class="right">July 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Mandel, Ed &amp; Turner, Ed</td>
-<td class="center">Expires 20 December 2024</td>
+<td class="center">Expires 20 January 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1070,12 +1069,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5911" class="eref">5911</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-06-18" class="published">18 June 2024</time>
+<time datetime="2024-07-19" class="published">19 July 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-12-20">20 December 2024</time></dd>
+<dd class="expires"><time datetime="2025-01-20">20 January 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1148,7 +1147,7 @@ HMAC algorithms used with the POP Link Witness control.<a href="#section-abstrac
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 20 December 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 20 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1437,7 +1436,7 @@ HMAC algorithms used with the POP Link Witness control.<a href="#section-abstrac
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15">
-            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-production-of-diffie-hellma" class="internal xref">Production of Diffie-Hellman Public Key Certification Requests</a></p>
+            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-production-of-dh-ecdh-rsa-k" class="internal xref">Production of DH, ECDH, RSA-KEM, and ML-KEM Public Key Certification Requests</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1">
                 <p id="section-toc.1-1.15.2.1.1"><a href="#appendix-C.1" class="auto internal xref">C.1</a>.  <a href="#name-no-signature-signature-mech" class="internal xref">No-Signature Signature Mechanism</a></p>
@@ -2151,8 +2150,8 @@ returned is:<a href="#section-3.1-2" class="pilcrow">¶</a></p>
 to be included.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
 <p id="section-3.1-6">The Simple PKI Request cannot be used if the private key is not
 capable of producing some type of signature (i.e., Diffie-Hellman
-(DH) keys can use the signature algorithms in <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> for production
-of the signature).<a href="#section-3.1-6" class="pilcrow">¶</a></p>
+(DH) and Elliptic Curve Diffie-Hellman (ECDH) keys can use the
+signature algorithms in <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> for production of the signature).<a href="#section-3.1-6" class="pilcrow">¶</a></p>
 <p id="section-3.1-7">The Simple PKI Request cannot be used for any of the advanced
 services specified in this document.<a href="#section-3.1-7" class="pilcrow">¶</a></p>
 <p id="section-3.1-8">The client <span class="bcp14">MAY</span> incorporate one or more X.509v3 extensions in any
@@ -6381,6 +6380,7 @@ action by IANA is necessary for this document or any anticipated
 updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 </section>
 </div>
+<div id="sec-combined-references">
 <section id="section-12">
       <h2 id="name-references">
 <a href="#section-12" class="section-number selfRef">12. </a><a href="#name-references" class="section-name selfRef">References</a>
@@ -6508,6 +6508,7 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
+</div>
 <div id="ASN.1">
 <section id="appendix-A">
       <h2 id="name-asn1-modules">
@@ -7554,13 +7555,14 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
 </div>
 <div id="enroll-dh">
 <section id="appendix-C">
-      <h2 id="name-production-of-diffie-hellma">
-<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-production-of-diffie-hellma" class="section-name selfRef">Production of Diffie-Hellman Public Key Certification Requests</a>
+      <h2 id="name-production-of-dh-ecdh-rsa-k">
+<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-production-of-dh-ecdh-rsa-k" class="section-name selfRef">Production of DH, ECDH, RSA-KEM, and ML-KEM Public Key Certification Requests</a>
       </h2>
 <p id="appendix-C-1">Part of a certification request is a signature over the request;
-Diffie-Hellman is a key agreement algorithm and cannot be used to
+DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
+are key encapsulation mechanisms (KEM) are and cannot be used to
 directly produce the required signature object.  <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> provides
-two ways to produce the necessary signature value.  This document
+three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
 but can be used to produce the necessary signature value.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
 <div id="NoSig-Sig">
