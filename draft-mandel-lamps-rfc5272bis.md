@@ -516,8 +516,8 @@ to be included.
 
 The Simple PKI Request cannot be used if the private key is not
 capable of producing some type of signature (i.e., Diffie-Hellman
-(DH) keys can use the signature algorithms in {{DH-POP}} for production
-of the signature).
+(DH) and Elliptic Curve Diffie-Hellman (ECDH) keys can use the
+signature algorithms in {{DH-POP}} for production of the signature).
 
 The Simple PKI Request cannot be used for any of the advanced
 services specified in this document.
@@ -4430,12 +4430,13 @@ Response #2 from server to client:
        Signed by CA
 ~~~
 
-# Production of Diffie-Hellman Public Key Certification Requests {#enroll-dh}
+# Production of DH, ECDH, RSA-KEM, and ML-KEM Public Key Certification Requests {#enroll-dh}
 
 Part of a certification request is a signature over the request;
-Diffie-Hellman is a key agreement algorithm and cannot be used to
+DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
+are key encapsulation mechanisms (KEM) are and cannot be used to
 directly produce the required signature object.  {{DH-POP}} provides
-two ways to produce the necessary signature value.  This document
+three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
 but can be used to produce the necessary signature value.
 
