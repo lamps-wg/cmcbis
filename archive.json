@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-18T01:22:27.539174+00:00",
+  "timestamp": "2024-07-21T01:35:27.853838+00:00",
   "repo": "seanturner/cmcbis",
   "labels": [
     {
@@ -460,6 +460,22 @@
       "body": "RFC 6955 added Static ECDH POP - \"Appendix C: Production of Diffie-Hellman Public Key Certification Requests\" only mentions 2 ways to produce the signature and \"Simple PKI Request\" section mentions it as well. ",
       "createdAt": "2024-07-10T03:51:32Z",
       "updatedAt": "2024-07-10T03:51:32Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 52,
+      "id": "I_kwDOKfq5gM6QCKGx",
+      "title": "Add pre5378 boilerplate",
+      "url": "https://github.com/seanturner/cmcbis/issues/52",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Need to add \"pre5378Trust200902\" in markdown.",
+      "createdAt": "2024-07-18T14:01:41Z",
+      "updatedAt": "2024-07-18T14:01:41Z",
       "closedAt": null,
       "comments": []
     }
@@ -2216,7 +2232,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2024-07-10T02:50:33Z",
-      "updatedAt": "2024-07-10T02:50:34Z",
+      "updatedAt": "2024-07-19T01:19:01Z",
       "baseRepository": "seanturner/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
@@ -2228,7 +2244,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6CXNWX",
+          "commit": {
+            "abbreviatedOid": "2c6f548"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-19T01:19:01Z",
+          "updatedAt": "2024-07-19T01:19:01Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 48,
@@ -2242,7 +2272,7 @@
       "labels": [],
       "body": "The Encrypted and Decrypted POP Controls section includes HMAC-SHA1. Updated to instead use HMAC-SHA256.",
       "createdAt": "2024-07-10T02:54:58Z",
-      "updatedAt": "2024-07-10T02:54:58Z",
+      "updatedAt": "2024-07-19T01:19:37Z",
       "baseRepository": "seanturner/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
@@ -2254,7 +2284,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6CXNb3",
+          "commit": {
+            "abbreviatedOid": "2471b54"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-19T01:19:37Z",
+          "updatedAt": "2024-07-19T01:19:37Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 50,
@@ -2268,13 +2312,93 @@
       "labels": [],
       "body": "Closes #49.",
       "createdAt": "2024-07-10T03:09:44Z",
-      "updatedAt": "2024-07-10T03:09:45Z",
+      "updatedAt": "2024-07-19T01:20:02Z",
       "baseRepository": "seanturner/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
       "headRepository": "seanturner/cmcbis",
       "headRefName": "seanturner-bcp195",
       "headRefOid": "eeef6c7418cb8fe0c6b9e1589eaae54257916539",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6CXNfl",
+          "commit": {
+            "abbreviatedOid": "eeef6c7"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-19T01:20:02Z",
+          "updatedAt": "2024-07-19T01:20:02Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 53,
+      "id": "PR_kwDOKfq5gM51yQAH",
+      "title": "Add pre5378 boilerplate",
+      "url": "https://github.com/seanturner/cmcbis/pull/53",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #52.",
+      "createdAt": "2024-07-18T14:04:17Z",
+      "updatedAt": "2024-07-19T01:20:27Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-pre5378",
+      "headRefOid": "b24fc7cdf77be08f2abd4b04c6d12241d0a2ec4e",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6CXNjx",
+          "commit": {
+            "abbreviatedOid": "b24fc7c"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-19T01:20:27Z",
+          "updatedAt": "2024-07-19T01:20:27Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 54,
+      "id": "PR_kwDOKfq5gM516cn2",
+      "title": "Update 6955 related text",
+      "url": "https://github.com/seanturner/cmcbis/pull/54",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #51.",
+      "createdAt": "2024-07-19T15:21:55Z",
+      "updatedAt": "2024-07-19T15:21:56Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-6955-tweaks",
+      "headRefOid": "a393d0aa3fd91a61b07e28b1526a9b625b38716e",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
