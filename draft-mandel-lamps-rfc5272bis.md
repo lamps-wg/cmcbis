@@ -65,6 +65,7 @@ informative:
   SMALL-GROUP: RFC2785
   X942: RFC2631
   RFC2797:
+  CMS-RI: I-D.ietf-lamps-cms-kemri
   erratum2063:
     target: https://www.rfc-editor.org/errata/eid2063
     title: RFC 5272 erratum 2063
@@ -2249,10 +2250,10 @@ round-trip, since there are four distinct steps:
    presented public encryption key.
 
 3. Client decrypts the POP challenge using the private key that
-   corresponds to the presented public key and sends the plaintext
-   back to the server.
+   corresponds to the presented public key and sends the hash of
+   the plaintext back to the server.
 
-4. Server validates the decrypted POP challenge and continues
+5. Server validates the decrypted POP challenge and continues
    processing the certification request.
 
 CMC defines two different controls. The first deals with the
@@ -4294,11 +4295,11 @@ Response from RA to client:
        Signed by CA
 ~~~
 
-##  Direct POP for an RSA Certificate {#DirectPOPforRSACertificate}
+##  Direct POP for an RSA or KEM Certificate {#DirectPOPforRSACertificate}
 
 This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only certificate using an
-direct POP method.  For simplicity, it is assumed that the
+an enrollment is done for an encryption only certificate using a
+direct POP method; the example below shows.  For simplicity, it is assumed that the
 certification requester already has a signing-only certificate.
 
 The fact that a second round-trip is required is implicit rather than
@@ -4376,7 +4377,11 @@ Response #1 from server to client:
        Other certificates (optional)
      SignedData.SignerInfos
        Signed by CA
+~~~
 
+Message #2 from client to server:
+
+~~~
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
@@ -4430,6 +4435,157 @@ Response #2 from server to client:
        Signed by CA
 ~~~
 
+##  Direct POP with No Signature Mechanism  {#DirectPOPwithNoSignature}
+
+This section looks at the messages that would flow in the event that
+an enrollment is done for an encryption only cerrtificate using a
+direct POP method.  Instead of assuming that the certification
+requester already has a signing-only certificate as in
+{{DirectPOPforRSACertificate}}, here the No Signature mechanism from
+{{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData uses
+the KEMRecipientInfo from {{CMS-RI}}.
+
+The fact that a second round-trip is required is implicit rather than
+explicit.  The server determines this based on the fact that no other
+POP exists for the certification request.
+
+Message #1 from client to server:
+
+~~~
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-ct-PKIData
+       eContent
+         controlSequence
+           {102, id-cmc-transactionId, 10132985123483401}
+           {103, id-cmc-senderNonce, 10001}
+           {104, id-cmc-dataReturn, <packet of binary data identifying
+                                     where the key in question is.>}
+         reqSequence
+           certRequest
+             certReqId = 201
+             certTemplate
+               subject = < My DN >
+               publicKey = My Public Key
+               extensions
+                 {id-ce-keyUsage, keyEncipherment}
+             popo
+               keyEncipherment
+                 subsequentMessage = challengeResp
+     SignedData.SignerInfos
+      SignerInfo
+        sid = < subjectKeyIdentifier >
+        signatureAlgorithm = id-alg-noSignature
+~~~
+
+Response #1 from server to client:
+
+~~~
+
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-ct-PKIResponse
+       eContent
+         controlSequence
+           {101, id-cmc-statusInfoV2, {failed, 201, popRequired}}
+           {102, id-cmc-transactionId, 10132985123483401}
+           {103, id-cmc-senderNonce, 10005}
+           {104, id-cmc-recipientNonce, 10001}
+           {105, id-cmc-encryptedPOP, {
+              request {
+                certRequest
+                  certReqId = 201
+                   certTemplate
+                     subject = < My DN >
+                     publicKey = My Public Key
+                     extensions
+                       {id-ce-keyUsage, keyEncipherment}
+                   popo
+                     keyEncipherment
+                       subsequentMessage = challengeResp
+              }
+              cms
+                contentType = id-envelopedData
+                content < uses ori.KEMRecipientInfo >
+                  recipientInfos.ori.riid.issuerSerialNumber = < NULL, 201>
+                  encryptedContentInfo
+                    eContentType = id-data
+                    eContent = <Encrypted value of 'y'>
+       thePOPAlgID = KmacWithSHAKE128
+       witnessAlgID = SHAKE128
+       witness <hashed value of 'y'>}}
+           {106, id-cmc-dataReturn, <packet of binary data identifying
+                                     where the key in question is.>}
+     Certificates
+       Other certificates (optional)
+     SignedData.SignerInfos
+       Signed by CA
+
+~~~
+
+Message #2 from client to server:
+
+~~~
+
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-ct-PKIData
+       eContent
+         controlSequence
+           {102, id-cmc-transactionId, 10132985123483401}
+           {103, id-cmc-senderNonce, 100101}
+           {104, id-cmc-dataReturn, <packet of binary data identifying
+                                     where the key in question is.>}
+           {105, id-cmc-recipientNonce, 10005}
+           {107, id-cmc-decryptedPOP, {
+             bodyPartID 201,
+             thePOPAlgID KmacWithSHAKE128,
+             thePOP <KMAC computed value goes here>}}
+         reqSequence
+           certRequest
+             certReqId = 201
+             certTemplate
+               subject = < My DN >
+               publicKey = My Public Key
+               extensions
+                 {id-ce-keyUsage, keyEncipherment}
+             popo
+               keyEncipherment
+                 subsequentMessage = challengeResp
+     SignedData.SignerInfos
+       SignerInfo
+         sid = < subjectKeyIdentifier >
+         signatureAlgorithm = id-alg-noSignature
+
+~~~
+
+Response #2 from server to client:
+
+~~~
+
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-ct-PKIResponse
+       eContent
+         controlSequence
+           {101, id-cmc-transactionId, 10132985123483401}
+           {102, id-cmc-statusInfoV2, {success, 201}}
+           {103, id-cmc-senderNonce, 10019}
+           {104, id-cmc-recipientNonce, 100101}
+           {105, id-cmc-dataReturn, <packet of binary data identifying
+                                     where the key in question is.>}
+     certificates
+       Newly issued certificate
+       Other certificates
+     SignedData.SignerInfos
+       Signed by CA
+
+~~~
+
 # Production of Diffie-Hellman Public Key Certification Requests {#enroll-dh}
 
 Part of a certification request is a signature over the request;
@@ -4462,6 +4618,12 @@ security associated with this signature type.  If this signature type
 is on a certification request and the Certification Authority policy
 requires proof-of-possession of the private key, the POP mechanism
 defined in {{EncryptedandDecryptedPOPControls}} MUST be used.
+
+When the client generates the SignedData.SignerInfos.SignerInfo.sid
+field it has two choices issuerAndSerialNumber or subjectKeyIdentifier.
+The client does not yet have a certificate and there cannot fill in
+the issuerAndSerialNumber and therefore MUST use the subjectKeyIdentifier
+choice.
 
 # Acknowledgments
 {:numbered="false"}
