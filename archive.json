@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-23T01:24:03.973793+00:00",
+  "timestamp": "2024-07-25T01:23:53.840295+00:00",
   "repo": "seanturner/cmcbis",
   "labels": [
     {
@@ -476,6 +476,22 @@
       "body": "Need to add \"pre5378Trust200902\" in markdown.",
       "createdAt": "2024-07-18T14:01:41Z",
       "updatedAt": "2024-07-18T14:01:41Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 56,
+      "id": "I_kwDOKfq5gM6QwY4_",
+      "title": "Look into the Renew / re-key case",
+      "url": "https://github.com/seanturner/cmcbis/issues/56",
+      "state": "OPEN",
+      "author": "ounsworth",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "(taking notes during 120)\r\nI think the problem case is where client has a KEM cert that they are trying to renew / re-key.",
+      "createdAt": "2024-07-24T22:59:18Z",
+      "updatedAt": "2024-07-24T22:59:18Z",
       "closedAt": null,
       "comments": []
     }
@@ -2404,6 +2420,47 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 55,
+      "id": "PR_kwDOKfq5gM52XfRg",
+      "title": "Add No Signature Example for KEM certificate",
+      "url": "https://github.com/seanturner/cmcbis/pull/55",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Adding an example to 5272 Appendix B that shows the No Signature mechanism for KEM key.",
+      "createdAt": "2024-07-24T16:52:31Z",
+      "updatedAt": "2024-07-24T17:11:33Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-nosigwithkem",
+      "headRefOid": "4d70cfbb6ca99bd6c775b0c4d5928ae7ef95aadb",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "@ounsworth @johngray-dev @HBrock PTAL.  Note that we will also need to add some text in -rfc5273bis; see #38.",
+          "createdAt": "2024-07-24T16:55:37Z",
+          "updatedAt": "2024-07-24T16:55:37Z"
+        },
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "Will tweak this via a later PR to address erratum [8027](https://www.rfc-editor.org/errata/eid8027).",
+          "createdAt": "2024-07-24T17:11:32Z",
+          "updatedAt": "2024-07-24T17:11:32Z"
+        }
+      ],
       "reviews": []
     }
   ]
