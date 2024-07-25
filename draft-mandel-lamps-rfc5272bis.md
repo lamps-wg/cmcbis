@@ -4130,7 +4130,7 @@ certificate was designed for both signing and encryption, the only
 difference would be the key usage extension in the certification
 request.
 
-Message #2 from client to server:
+Message from client to server:
 
 ~~~
    ContentInfo.contentType = id-signedData
