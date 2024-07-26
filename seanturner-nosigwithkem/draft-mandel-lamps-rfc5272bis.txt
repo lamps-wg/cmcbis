@@ -6,8 +6,8 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Updates: 5911 (if approved)                                        sn3rd
-Intended status: Standards Track                            24 July 2024
-Expires: 25 January 2025
+Intended status: Standards Track                            26 July 2024
+Expires: 27 January 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 January 2025.
+   This Internet-Draft will expire on 27 January 2025.
 
 Copyright Notice
 
@@ -4528,7 +4528,7 @@ B.4.  Direct POP with No Signature Mechanism
      ContentInfo.contentType = id-signedData
      ContentInfo.content
        SignedData.encapContentInfo
-         eContentType = id-ct-PKIData
+         eContentType = id-cct-PKIData
          eContent
            controlSequence
              {102, id-cmc-transactionId, 10132985123483401}
@@ -4556,7 +4556,7 @@ B.4.  Direct POP with No Signature Mechanism
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIResponse
+       eContentType = id-cct-PKIResponse
        eContent
          controlSequence
            {101, id-cmc-statusInfoV2, {failed, 201, popRequired}}
@@ -4598,7 +4598,7 @@ B.4.  Direct POP with No Signature Mechanism
      ContentInfo.contentType = id-signedData
      ContentInfo.content
        SignedData.encapContentInfo
-         eContentType = id-ct-PKIData
+         eContentType = id-cct-PKIData
          eContent
            controlSequence
              {102, id-cmc-transactionId, 10132985123483401}
@@ -4631,7 +4631,7 @@ B.4.  Direct POP with No Signature Mechanism
      ContentInfo.contentType = id-signedData
      ContentInfo.content
        SignedData.encapContentInfo
-         eContentType = id-ct-PKIResponse
+         eContentType = id-cct-PKIResponse
          eContent
            controlSequence
              {101, id-cmc-transactionId, 10132985123483401}
