@@ -4455,7 +4455,7 @@ Message #1 from client to server:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIData
+       eContentType = id-cct-PKIData
        eContent
          controlSequence
            {102, id-cmc-transactionId, 10132985123483401}
@@ -4486,7 +4486,7 @@ Response #1 from server to client:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIResponse
+       eContentType = id-cct-PKIResponse
        eContent
          controlSequence
            {101, id-cmc-statusInfoV2, {failed, 201, popRequired}}
@@ -4532,7 +4532,7 @@ Message #2 from client to server:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIData
+       eContentType = id-cct-PKIData
        eContent
          controlSequence
            {102, id-cmc-transactionId, 10132985123483401}
@@ -4569,7 +4569,7 @@ Response #2 from server to client:
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
-       eContentType = id-ct-PKIResponse
+       eContentType = id-cct-PKIResponse
        eContent
          controlSequence
            {101, id-cmc-transactionId, 10132985123483401}
