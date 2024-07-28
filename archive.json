@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-25T01:23:53.840295+00:00",
+  "timestamp": "2024-07-28T01:36:17.647132+00:00",
   "repo": "seanturner/cmcbis",
   "labels": [
     {
@@ -2434,13 +2434,13 @@
       "labels": [],
       "body": "Adding an example to 5272 Appendix B that shows the No Signature mechanism for KEM key.",
       "createdAt": "2024-07-24T16:52:31Z",
-      "updatedAt": "2024-07-24T17:11:33Z",
+      "updatedAt": "2024-07-26T20:29:04Z",
       "baseRepository": "seanturner/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
       "headRepository": "seanturner/cmcbis",
       "headRefName": "seanturner-nosigwithkem",
-      "headRefOid": "4d70cfbb6ca99bd6c775b0c4d5928ae7ef95aadb",
+      "headRefOid": "a3a75ad0ba1f5e25888b4600baa5256637476b44",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -2459,8 +2459,48 @@
           "body": "Will tweak this via a later PR to address erratum [8027](https://www.rfc-editor.org/errata/eid8027).",
           "createdAt": "2024-07-24T17:11:32Z",
           "updatedAt": "2024-07-24T17:11:32Z"
+        },
+        {
+          "author": "seanturner",
+          "authorAssociation": "OWNER",
+          "body": "@carl-wallace PTAL",
+          "createdAt": "2024-07-25T18:28:22Z",
+          "updatedAt": "2024-07-25T18:28:22Z"
+        },
+        {
+          "author": "carl-wallace",
+          "authorAssociation": "NONE",
+          "body": "Two comments:\r\n1) id-ct-PKIData should be id-cct-PKIData, as defined in Section 3.2.1. This is noted in https://www.rfc-editor.org/errata/eid4775 as being a pervasive issue.\r\n2) The first client to server message example should include subjectKeyIdentifier extension to satisfy 3.2.a.",
+          "createdAt": "2024-07-26T09:49:33Z",
+          "updatedAt": "2024-07-26T09:49:33Z"
         }
       ],
+      "reviews": []
+    },
+    {
+      "number": 57,
+      "id": "PR_kwDOKfq5gM52gCbZ",
+      "title": "minor edit",
+      "url": "https://github.com/seanturner/cmcbis/pull/57",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-07-25T18:19:06Z",
+      "updatedAt": "2024-07-25T18:19:06Z",
+      "baseRepository": "seanturner/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "0b43f149e26fd2b9ba4f6903fed74c375227a5ae",
+      "headRepository": "seanturner/cmcbis",
+      "headRefName": "seanturner-cleanup-0",
+      "headRefOid": "22fcc029462d7db3c867e071631cba9dd0b82bd1",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
       "reviews": []
     }
   ]
