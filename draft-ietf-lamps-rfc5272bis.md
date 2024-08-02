@@ -5,7 +5,7 @@ category: std
 updates: 5911
 obsoletes: 5272, 6402
 
-docname: draft-mandel-lamps-rfc5272bis-latest
+docname: draft-ietf-lamps-rfc5272bis-latest
 submissiontype: IETF
 ipr: pre5378Trust200902
 number:

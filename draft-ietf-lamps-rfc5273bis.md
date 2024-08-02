@@ -4,7 +4,7 @@ abbrev: "CMC: Transport Protocols"
 category: std
 obsoletes: 5273, 6402
 
-docname: draft-mandel-lamps-rfc5273bis-latest
+docname: draft-ietf-lamps-rfc5273bis-latest
 submissiontype: IETF
 ipr: pre5378Trust200902
 number:
