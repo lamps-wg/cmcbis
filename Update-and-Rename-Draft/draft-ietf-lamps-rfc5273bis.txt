@@ -10,7 +10,7 @@ Expires: 3 February 2025                                   2 August 2024
 
 
        Certificate Management over CMS (CMC): Transport Protocols
-                  draft-mandel-lamps-rfc5273bis-latest
+                   draft-ietf-lamps-rfc5273bis-latest
 
 Abstract
 
@@ -26,7 +26,7 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    Status information for this document may be found at
-   https://datatracker.ietf.org/doc/draft-mandel-lamps-rfc5273bis/.
+   https://datatracker.ietf.org/doc/draft-ietf-lamps-rfc5273bis/.
 
    Discussion of this document takes place on the WG LAMPS mailing list
    (mailto:spasm@ietf.org), which is archived at
