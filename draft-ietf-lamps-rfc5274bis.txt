@@ -6,11 +6,11 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 11 January 2025                                    10 July 2024
+Expires: 13 March 2025                                  9 September 2024
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
-                  draft-mandel-lamps-rfc5274bis-latest
+                   draft-ietf-lamps-rfc5274bis-latest
 
 Abstract
 
@@ -27,7 +27,7 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    Status information for this document may be found at
-   https://datatracker.ietf.org/doc/draft-mandel-lamps-rfc5274bis/.
+   https://datatracker.ietf.org/doc/draft-ietf-lamps-rfc5274bis/.
 
    Discussion of this document takes place on the WG LAMPS mailing list
    (mailto:spasm@ietf.org), which is archived at
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 January 2025.
+   This Internet-Draft will expire on 13 March 2025.
 
 Copyright Notice
 
@@ -67,6 +67,18 @@ Copyright Notice
    extracted from this document must include Revised BSD License text as
    described in Section 4.e of the Trust Legal Provisions and are
    provided without warranty as described in the Revised BSD License.
+
+   This document may contain material from IETF Documents or IETF
+   Contributions published or made publicly available before November
+   10, 2008.  The person(s) controlling the copyright in some of this
+   material may not have granted the IETF Trust the right to allow
+   modifications of such material outside the IETF Standards Process.
+   Without obtaining an adequate license from the person(s) controlling
+   the copyright in such materials, this document may not be modified
+   outside the IETF Standards Process, and derivative works of it may
+   not be created outside the IETF Standards Process, except to format
+   it for publication as an RFC or to translate it into languages other
+   than English.
 
 Table of Contents
 

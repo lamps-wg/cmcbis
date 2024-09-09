@@ -6,12 +6,12 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Updates: 5911 (if approved)                                        sn3rd
-Intended status: Standards Track                            10 July 2024
-Expires: 11 January 2025
+Intended status: Standards Track                        9 September 2024
+Expires: 13 March 2025
 
 
                  Certificate Management over CMS (CMC)
-                  draft-mandel-lamps-rfc5272bis-latest
+                   draft-ietf-lamps-rfc5272bis-latest
 
 Abstract
 
@@ -41,7 +41,7 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    Status information for this document may be found at
-   https://datatracker.ietf.org/doc/draft-mandel-lamps-rfc5272bis/.
+   https://datatracker.ietf.org/doc/draft-ietf-lamps-rfc5272bis/.
 
    Discussion of this document takes place on the Limited Additional
    Mechanisms for PKIX and SMIME Working Group mailing list
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 January 2025.
+   This Internet-Draft will expire on 13 March 2025.
 
 Copyright Notice
 
@@ -82,6 +82,18 @@ Copyright Notice
    extracted from this document must include Revised BSD License text as
    described in Section 4.e of the Trust Legal Provisions and are
    provided without warranty as described in the Revised BSD License.
+
+   This document may contain material from IETF Documents or IETF
+   Contributions published or made publicly available before November
+   10, 2008.  The person(s) controlling the copyright in some of this
+   material may not have granted the IETF Trust the right to allow
+   modifications of such material outside the IETF Standards Process.
+   Without obtaining an adequate license from the person(s) controlling
+   the copyright in such materials, this document may not be modified
+   outside the IETF Standards Process, and derivative works of it may
+   not be created outside the IETF Standards Process, except to format
+   it for publication as an RFC or to translate it into languages other
+   than English.
 
 Table of Contents
 
@@ -299,10 +311,6 @@ Table of Contents
    *  Publish Trust Anchors Control hashAlgorithm changed to SHA-256
 
    *  Update DH-POP from RFC2875 to RFC6955
-
-   *  Editorial changes
-
-   *  Addressed errata 3943 for RFC 6402
 
    --02 version changes:
 
@@ -3465,10 +3473,6 @@ Table of Contents
               "RFC 5272 erratum 2731", 23 February 2011,
               <https://www.rfc-editor.org/errata/eid2731>.
 
-   [erratum3943]
-              "RFC 6402 erratum 3943", 2 April 2014,
-              <https://www.rfc-editor.org/errata/eid3943>.
-
    [erratum4775]
               "RFC 5272 erratum 4775", 11 August 2016,
               <https://www.rfc-editor.org/errata/eid4775>.
@@ -3598,6 +3602,9 @@ BEGIN
 
   CMC-UnsignedAtts ATTRIBUTE ::= { aa-cmc-unsignedData }
 
+  --
+  --
+
   id-cmc OBJECT IDENTIFIER ::= { id-pkix 7 }   -- CMC controls
   id-cct OBJECT IDENTIFIER ::= { id-pkix 12 }  -- CMC content types
 
@@ -3635,8 +3642,8 @@ BEGIN
       cmc-statusInfoV2 | cmc-trustedAnchors | cmc-authData |
       cmc-batchRequests | cmc-batchResponses | cmc-publishCert |
       cmc-modCertTemplate | cmc-controlProcessed |
-      cmc-identityProofV2 | cmc-popLinkWitnessV2 |
-      cmc-raIdentityWitness | cmc-responseBody, ... }
+      cmc-identityProofV2 | cmc-popLinkWitnessV2, ...,
+      cmc-raIdentityWitness | cmc-responseBody }
 
   OTHER-REQUEST ::= TYPE-IDENTIFIER
 
@@ -3661,8 +3668,8 @@ BEGIN
       certificationRequest  CertificationRequest
   }
 
-  AttributeList ATTRIBUTE ::= { at-extension-req |
-      at-cmc-changeSubjectName, ... }
+  AttributeList ATTRIBUTE ::= { at-extension-req, ...,
+      at-cmc-changeSubjectName }
 
   CertificationRequest ::= SEQUENCE {
      certificationRequestInfo  SEQUENCE {
@@ -3859,9 +3866,9 @@ BEGIN
       witness         OCTET STRING
   }
 
-  POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1 | maca-hMAC-SHA256, ... }
+  POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1, maca-hMAC-SHA256, ... }
 
-  WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1 | mda-sha256, ... }
+  WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1, mda-sha256, ... }
 
   DecryptedPOP ::= SEQUENCE {
       bodyPartID      BodyPartID,
@@ -3878,6 +3885,8 @@ BEGIN
       pkiDataBodyid   BodyPartID,
       bodyIds         SEQUENCE OF BodyPartID
   }
+
+  --
 
   cmc-getCert CMC-CONTROL ::=
       { GetCert IDENTIFIED BY id-cmc-getCert }
@@ -3999,6 +4008,7 @@ BEGIN
   BodyPartPath ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
 
   --  Allow for distribution of trust anchors
+  --
 
   cmc-trustedAnchors CMC-CONTROL ::=
       { PublishTrustAnchors IDENTIFIED BY id-cmc-trustedAnchors }
@@ -4117,7 +4127,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          [1] GeneralNames OPTIONAL
+      subjectAlt          GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
@@ -4154,72 +4164,55 @@ A.2.  ASN.1 Module for PBKDF2 PRFs
    algorithm set defined in Section 3 of [CMS-ALGS].  Apply this
    extension prior to compiling Appendix A.1 to ensure the imported kda-
    PBKDF2 includes the 6 HMAC algorithms included in this ASN.1 module.
+   ~~~ PBKDF2-PRFs-2023 { iso(1) member-body(2) us(840) rsadsi(113549)
+   pkcs(1) pkcs-9(9) smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
 
-PBKDF2-PRFs-2023
-  { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
+   DEFINITIONS IMPLICT TAGS ::= BEGIN IMPORTS
 
-DEFINITIONS IMPLICT TAGS ::=
-BEGIN
-IMPORTS
+   ALGORITHM FROM AlgorithmInformation-2009 -- From [PKIX-ALGS] { iso(1)
+   identified-organization(3) dod(6) internet(1) security(5)
+   mechanisms(5) pkix(7) id-mod(0) id-mod-algorithmInformation-02(58) }
 
-ALGORITHM
-  FROM AlgorithmInformation-2009 -- From [PKIX-Algs]
-    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0)
-      id-mod-algorithmInformation-02(58) }
+   id-hmacWithSHA224, id-hmacWithSHA256, id-hmacWithSHA384, id-
+   hmacWithSHA512 FROM HMAC-2010 -- From [HMAC-ALGS] { iso(1)
+   identified-organization(3) dod(6) internet(1) security(5)
+   mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
 
-id-hmacWithSHA224, id-hmacWithSHA256,
-id-hmacWithSHA384, id-hmacWithSHA512
-  FROM HMAC-2010 -- From [HMAC-Algs]
-    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
-;
+   -- -- Base OID for algorithms --
 
---
--- Base OID for algorithms
---
+   rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+   rsadsi(113549) }
 
-rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
-                               rsadsi(113549) }
+   digestAlgorithm OBJECT IDENTIFIER ::= { rsadsi 2 }
 
-digestAlgorithm   OBJECT IDENTIFIER ::= { rsadsi 2 }
+   id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
+   id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
 
-id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
-id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
+   -- -- PBKF2-PRFs --
 
---
--- PBKF2-PRFs
---
+   PBKDF2-PRFs ALGORITHM ::= { alg-hMAC-SHA224 | alg-hMAC-SHA256 | alg-
+   hMAC-SHA384 | alg-hMAC-SHA512 | alg-hMAC-SHA512-224 | alg-hMAC-
+   SHA512-256, ... }
 
-PBKDF2-PRFs ALGORITHM ::= {
-  alg-hMAC-SHA224       |
-  alg-hMAC-SHA256       |
-  alg-hMAC-SHA384       |
-  alg-hMAC-SHA512       |
-  alg-hMAC-SHA512-224 |
-  alg-hMAC-SHA512-256,
-  ... }
+   alg-hMAC-SHA224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA224 PARAMS
+   TYPE NULL ARE preferredAbsent }
 
-alg-hMAC-SHA224 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA224 PARAMS TYPE NULL ARE preferredAbsent }
+   alg-hMAC-SHA256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA256 PARAMS
+   TYPE NULL ARE preferredAbsent }
 
-alg-hMAC-SHA256 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA256 PARAMS TYPE NULL ARE preferredAbsent }
+   alg-hMAC-SHA384 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA384 PARAMS
+   TYPE NULL ARE preferredAbsent }
 
-alg-hMAC-SHA384 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA384 PARAMS TYPE NULL ARE preferredAbsent }
+   alg-hMAC-SHA512 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512 PARAMS
+   TYPE NULL ARE preferredAbsent }
 
-alg-hMAC-SHA512 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512 PARAMS TYPE NULL ARE preferredAbsent }
+   alg-hMAC-SHA512-224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-224
+   PARAMS TYPE NULL ARE preferredAbsent }
 
-alg-hMAC-SHA512-224 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512-224 PARAMS TYPE NULL ARE preferredAbsent }
+   alg-hMAC-SHA512-256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-256
+   PARAMS TYPE NULL ARE preferredAbsent }
 
-alg-hMAC-SHA512-256 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512-256 PARAMS TYPE NULL ARE preferredAbsent }
-
-END
+   END ~~~
 
 Appendix B.  Enrollment Message Flows
 
