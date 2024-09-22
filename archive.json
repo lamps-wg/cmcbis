@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-09-19T01:39:14.606762+00:00",
+  "timestamp": "2024-09-22T01:46:55.841841+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -2600,6 +2600,32 @@
       "mergeCommit": {
         "oid": "aa0dcf13894765440df630fd54185011b490cf41"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 61,
+      "id": "PR_kwDOKfq5gM58LS6A",
+      "title": "Update workflow",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/61",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Update archive.yml",
+      "createdAt": "2024-09-20T14:28:30Z",
+      "updatedAt": "2024-09-20T14:31:17Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "aa0dcf13894765440df630fd54185011b490cf41",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-update-workflow",
+      "headRefOid": "f44d6e763400ec47d4de7bb4238868e2176c1611",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
