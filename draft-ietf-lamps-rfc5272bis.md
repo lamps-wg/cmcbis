@@ -254,6 +254,7 @@ Note: For now, this section will be list of the changes introduced
 * Editorial changes
 * Addressed errata 3943 for RFC 6402
 
+
 --02 version changes:
 
 * Add module to support new HMAC algorithms in PBKDF2
