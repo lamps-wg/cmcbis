@@ -347,7 +347,7 @@ Table of Contents
 
    *  Merged [erratum4775]
 
-   *  Mereged [erratum7379]
+   *  Merged [erratum7379]
 
    *  Merged [erratum7628]
 
