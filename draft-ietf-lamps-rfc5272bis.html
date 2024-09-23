@@ -1443,12 +1443,15 @@ HMAC algorithms used with the POP Link Witness control.<a href="#section-abstrac
                 <p id="section-toc.1-1.14.2.2.1"><a href="#appendix-B.2" class="auto internal xref">B.2</a>.  <a href="#name-single-certification-reques" class="internal xref">Single Certification Request, But Modified by RA</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.3">
-                <p id="section-toc.1-1.14.2.3.1"><a href="#appendix-B.3" class="auto internal xref">B.3</a>.  <a href="#name-direct-pop-for-an-rsa-certi" class="internal xref">Direct POP for an RSA Certificate</a></p>
+                <p id="section-toc.1-1.14.2.3.1"><a href="#appendix-B.3" class="auto internal xref">B.3</a>.  <a href="#name-direct-pop-for-an-rsa-or-ke" class="internal xref">Direct POP for an RSA or KEM Certificate</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.4">
+                <p id="section-toc.1-1.14.2.4.1"><a href="#appendix-B.4" class="auto internal xref">B.4</a>.  <a href="#name-direct-pop-with-no-signatur" class="internal xref">Direct POP with No Signature Mechanism</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15">
-            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-production-of-dh-ecdh-rsa-k" class="internal xref">Production of DH, ECDH, RSA-KEM, and ML-KEM Public Key Certification Requests</a></p>
+            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-production-of-diffie-hellma" class="internal xref">Production of Diffie-Hellman Public Key Certification Requests</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1">
                 <p id="section-toc.1-1.15.2.1.1"><a href="#appendix-C.1" class="auto internal xref">C.1</a>.  <a href="#name-no-signature-signature-mech" class="internal xref">No-Signature Signature Mechanism</a></p>
@@ -4852,8 +4855,8 @@ presented public encryption key.<a href="#section-6.7-4.2.1" class="pilcrow">¶<
 </li>
           <li id="section-6.7-4.3">
             <p id="section-6.7-4.3.1">Client decrypts the POP challenge using the private key that
-corresponds to the presented public key and sends the plaintext
-back to the server.<a href="#section-6.7-4.3.1" class="pilcrow">¶</a></p>
+corresponds to the presented public key and sends the hash of
+the plaintext back to the server.<a href="#section-6.7-4.3.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-6.7-4.4">
             <p id="section-6.7-4.4.1">Server validates the decrypted POP challenge and continues
@@ -6477,6 +6480,10 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
         <dd>
 <span class="refAuthor">Schaad, J.</span>, <span class="refTitle">"Certificate Management over CMS (CMC) Updates"</span>, <span class="seriesInfo">RFC 6402</span>, <span class="seriesInfo">DOI 10.17487/RFC6402</span>, <time datetime="2011-11" class="refDate">November 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6402">https://www.rfc-editor.org/rfc/rfc6402</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="CMS-RI">[CMS-RI]</dt>
+        <dd>
+<span class="refAuthor">Housley, R.</span>, <span class="refAuthor">Gray, J.</span>, and <span class="refAuthor">T. Okubo</span>, <span class="refTitle">"Using Key Encapsulation Mechanism (KEM) Algorithms in the Cryptographic Message Syntax (CMS)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-cms-kemri-08</span>, <time datetime="2024-02-06" class="refDate">6 February 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-cms-kemri-08">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-cms-kemri-08</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="erratum2063">[erratum2063]</dt>
         <dd>
 <span class="refTitle">"RFC 5272 erratum 2063"</span>, <time datetime="2010-03-04" class="refDate">4 March 2010</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid2063">https://www.rfc-editor.org/errata/eid2063</a>&gt;</span>. </dd>
@@ -7451,12 +7458,12 @@ will modify the certification request before passing it on to the CA.<a href="#a
 </div>
 <div id="DirectPOPforRSACertificate">
 <section id="appendix-B.3">
-        <h3 id="name-direct-pop-for-an-rsa-certi">
-<a href="#appendix-B.3" class="section-number selfRef">B.3. </a><a href="#name-direct-pop-for-an-rsa-certi" class="section-name selfRef">Direct POP for an RSA Certificate</a>
+        <h3 id="name-direct-pop-for-an-rsa-or-ke">
+<a href="#appendix-B.3" class="section-number selfRef">B.3. </a><a href="#name-direct-pop-for-an-rsa-or-ke" class="section-name selfRef">Direct POP for an RSA or KEM Certificate</a>
         </h3>
 <p id="appendix-B.3-1">This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only certificate using an
-direct POP method.  For simplicity, it is assumed that the
+an enrollment is done for an encryption only certificate using a
+direct POP method; the example below shows.  For simplicity, it is assumed that the
 certification requester already has a signing-only certificate.<a href="#appendix-B.3-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.3-2">The fact that a second round-trip is required is implicit rather than
 explicit.  The server determines this based on the fact that no other
@@ -7532,7 +7539,11 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
        Other certificates (optional)
      SignedData.SignerInfos
        Signed by CA
-
+</pre><a href="#appendix-B.3-6" class="pilcrow">¶</a>
+</div>
+<p id="appendix-B.3-7">Message #2 from client to server:<a href="#appendix-B.3-7" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-8">
+<pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
@@ -7562,10 +7573,10 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
-</pre><a href="#appendix-B.3-6" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-8" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.3-7">Response #2 from server to client:<a href="#appendix-B.3-7" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-8">
+<p id="appendix-B.3-9">Response #2 from server to client:<a href="#appendix-B.3-9" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-10">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7584,7 +7595,158 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
        Other certificates
      SignedData.SignerInfos
        Signed by CA
-</pre><a href="#appendix-B.3-8" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-10" class="pilcrow">¶</a>
+</div>
+</section>
+</div>
+<div id="DirectPOPwithNoSignature">
+<section id="appendix-B.4">
+        <h3 id="name-direct-pop-with-no-signatur">
+<a href="#appendix-B.4" class="section-number selfRef">B.4. </a><a href="#name-direct-pop-with-no-signatur" class="section-name selfRef">Direct POP with No Signature Mechanism</a>
+        </h3>
+<p id="appendix-B.4-1">This section looks at the messages that would flow in the event that
+an enrollment is done for an encryption only cerrtificate using a
+direct POP method.  Instead of assuming that the certification
+requester already has a signing-only certificate as in
+<a href="#DirectPOPforRSACertificate" class="auto internal xref">Appendix B.3</a>, here the No Signature mechanism from
+<a href="#NoSig-Sig" class="auto internal xref">Appendix C.1</a>, the public key is for a KEM, and the EnvelopedData uses
+the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]</span>.<a href="#appendix-B.4-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.4-2">The fact that a second round-trip is required is implicit rather than
+explicit.  The server determines this based on the fact that no other
+POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcrow">¶</a></p>
+<p id="appendix-B.4-3">Message #1 from client to server:<a href="#appendix-B.4-3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-4">
+<pre>
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-cct-PKIData
+       eContent
+         controlSequence
+           {102, id-cmc-transactionId, 10132985123483401}
+           {103, id-cmc-senderNonce, 10001}
+           {104, id-cmc-dataReturn, &lt;packet of binary data identifying
+                                     where the key in question is.&gt;}
+         reqSequence
+           certRequest
+             certReqId = 201
+             certTemplate
+               subject = &lt; My DN &gt;
+               publicKey = My Public Key
+               extensions
+                 {id-ce-keyUsage, keyEncipherment}
+             popo
+               keyEncipherment
+                 subsequentMessage = challengeResp
+     SignedData.SignerInfos
+      SignerInfo
+        sid = &lt; subjectKeyIdentifier &gt;
+        signatureAlgorithm = id-alg-noSignature
+</pre><a href="#appendix-B.4-4" class="pilcrow">¶</a>
+</div>
+<p id="appendix-B.4-5">Response #1 from server to client:<a href="#appendix-B.4-5" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-6">
+<pre>
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-cct-PKIResponse
+       eContent
+         controlSequence
+           {101, id-cmc-statusInfoV2, {failed, 201, popRequired}}
+           {102, id-cmc-transactionId, 10132985123483401}
+           {103, id-cmc-senderNonce, 10005}
+           {104, id-cmc-recipientNonce, 10001}
+           {105, id-cmc-encryptedPOP, {
+              request {
+                certRequest
+                  certReqId = 201
+                   certTemplate
+                     subject = &lt; My DN &gt;
+                     publicKey = My Public Key
+                     extensions
+                       {id-ce-keyUsage, keyEncipherment}
+                   popo
+                     keyEncipherment
+                       subsequentMessage = challengeResp
+              }
+              cms
+                contentType = id-envelopedData
+                content &lt; uses ori.KEMRecipientInfo &gt;
+                  recipientInfos.ori.riid.issuerSerialNumber = &lt; NULL, 201&gt;
+                  encryptedContentInfo
+                    eContentType = id-data
+                    eContent = &lt;Encrypted value of 'y'&gt;
+       thePOPAlgID = KmacWithSHAKE128
+       witnessAlgID = SHAKE128
+       witness &lt;hashed value of 'y'&gt;}}
+           {106, id-cmc-dataReturn, &lt;packet of binary data identifying
+                                     where the key in question is.&gt;}
+     Certificates
+       Other certificates (optional)
+     SignedData.SignerInfos
+       Signed by CA
+
+</pre><a href="#appendix-B.4-6" class="pilcrow">¶</a>
+</div>
+<p id="appendix-B.4-7">Message #2 from client to server:<a href="#appendix-B.4-7" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-8">
+<pre>
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-cct-PKIData
+       eContent
+         controlSequence
+           {102, id-cmc-transactionId, 10132985123483401}
+           {103, id-cmc-senderNonce, 100101}
+           {104, id-cmc-dataReturn, &lt;packet of binary data identifying
+                                     where the key in question is.&gt;}
+           {105, id-cmc-recipientNonce, 10005}
+           {107, id-cmc-decryptedPOP, {
+             bodyPartID 201,
+             thePOPAlgID KmacWithSHAKE128,
+             thePOP &lt;KMAC computed value goes here&gt;}}
+         reqSequence
+           certRequest
+             certReqId = 201
+             certTemplate
+               subject = &lt; My DN &gt;
+               publicKey = My Public Key
+               extensions
+                 {id-ce-keyUsage, keyEncipherment}
+             popo
+               keyEncipherment
+                 subsequentMessage = challengeResp
+     SignedData.SignerInfos
+       SignerInfo
+         sid = &lt; subjectKeyIdentifier &gt;
+         signatureAlgorithm = id-alg-noSignature
+
+</pre><a href="#appendix-B.4-8" class="pilcrow">¶</a>
+</div>
+<p id="appendix-B.4-9">Response #2 from server to client:<a href="#appendix-B.4-9" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-10">
+<pre>
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-cct-PKIResponse
+       eContent
+         controlSequence
+           {101, id-cmc-transactionId, 10132985123483401}
+           {102, id-cmc-statusInfoV2, {success, 201}}
+           {103, id-cmc-senderNonce, 10019}
+           {104, id-cmc-recipientNonce, 100101}
+           {105, id-cmc-dataReturn, &lt;packet of binary data identifying
+                                     where the key in question is.&gt;}
+     certificates
+       Newly issued certificate
+       Other certificates
+     SignedData.SignerInfos
+       Signed by CA
+
+</pre><a href="#appendix-B.4-10" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -7592,8 +7754,8 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
 </div>
 <div id="enroll-dh">
 <section id="appendix-C">
-      <h2 id="name-production-of-dh-ecdh-rsa-k">
-<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-production-of-dh-ecdh-rsa-k" class="section-name selfRef">Production of DH, ECDH, RSA-KEM, and ML-KEM Public Key Certification Requests</a>
+      <h2 id="name-production-of-diffie-hellma">
+<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-production-of-diffie-hellma" class="section-name selfRef">Production of Diffie-Hellman Public Key Certification Requests</a>
       </h2>
 <p id="appendix-C-1">Part of a certification request is a signature over the request;
 DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
@@ -7628,6 +7790,11 @@ security associated with this signature type.  If this signature type
 is on a certification request and the Certification Authority policy
 requires proof-of-possession of the private key, the POP mechanism
 defined in <a href="#EncryptedandDecryptedPOPControls" class="auto internal xref">Section 6.7</a> <span class="bcp14">MUST</span> be used.<a href="#appendix-C.1-3" class="pilcrow">¶</a></p>
+<p id="appendix-C.1-4">When the client generates the SignedData.SignerInfos.SignerInfo.sid
+field it has two choices issuerAndSerialNumber or subjectKeyIdentifier.
+The client does not yet have a certificate and there cannot fill in
+the issuerAndSerialNumber and therefore <span class="bcp14">MUST</span> use the subjectKeyIdentifier
+choice.<a href="#appendix-C.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
