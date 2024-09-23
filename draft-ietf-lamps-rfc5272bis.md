@@ -247,7 +247,7 @@ Note: For now, this section will be list of the changes introduced
 
 * Publish Trust Anchors Control hashAlgorithm changed to SHA-256
 * Update DH-POP from RFC2875 to RFC6955
-
+* Editorial changes
 
 --02 version changes:
 
@@ -3485,9 +3485,6 @@ BEGIN
 
   CMC-UnsignedAtts ATTRIBUTE ::= { aa-cmc-unsignedData }
 
-  --
-  --
-
   id-cmc OBJECT IDENTIFIER ::= { id-pkix 7 }   -- CMC controls
   id-cct OBJECT IDENTIFIER ::= { id-pkix 12 }  -- CMC content types
 
@@ -3525,8 +3522,8 @@ BEGIN
       cmc-statusInfoV2 | cmc-trustedAnchors | cmc-authData |
       cmc-batchRequests | cmc-batchResponses | cmc-publishCert |
       cmc-modCertTemplate | cmc-controlProcessed |
-      cmc-identityProofV2 | cmc-popLinkWitnessV2, ...,
-      cmc-raIdentityWitness | cmc-responseBody }
+      cmc-identityProofV2 | cmc-popLinkWitnessV2 |
+      cmc-raIdentityWitness | cmc-responseBody, ... }
 
   OTHER-REQUEST ::= TYPE-IDENTIFIER
 
@@ -3551,8 +3548,8 @@ BEGIN
       certificationRequest  CertificationRequest
   }
 
-  AttributeList ATTRIBUTE ::= { at-extension-req, ...,
-      at-cmc-changeSubjectName }
+  AttributeList ATTRIBUTE ::= { at-extension-req |
+      at-cmc-changeSubjectName, ... }
 
   CertificationRequest ::= SEQUENCE {
      certificationRequestInfo  SEQUENCE {
@@ -3749,9 +3746,9 @@ BEGIN
       witness         OCTET STRING
   }
 
-  POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1, maca-hMAC-SHA256, ... }
+  POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1 | maca-hMAC-SHA256, ... }
 
-  WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1, mda-sha256, ... }
+  WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1 | mda-sha256, ... }
 
   DecryptedPOP ::= SEQUENCE {
       bodyPartID      BodyPartID,
@@ -3768,8 +3765,6 @@ BEGIN
       pkiDataBodyid   BodyPartID,
       bodyIds         SEQUENCE OF BodyPartID
   }
-
-  --
 
   cmc-getCert CMC-CONTROL ::=
       { GetCert IDENTIFIED BY id-cmc-getCert }
@@ -3891,7 +3886,6 @@ BEGIN
   BodyPartPath ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
 
   --  Allow for distribution of trust anchors
-  --
 
   cmc-trustedAnchors CMC-CONTROL ::=
       { PublishTrustAnchors IDENTIFIED BY id-cmc-trustedAnchors }
@@ -4048,6 +4042,7 @@ The module contained in this appendix extends the PBKDF2-PRFs algorithm
 set defined in {{Section 3 of CMS-ALGS}}. Apply this extension prior to
 compiling {{asn.1-cmc}} to ensure the imported kda-PBKDF2 includes the
 6 HMAC algorithms included in this ASN.1 module.
+
 ~~~
 PBKDF2-PRFs-2023
   { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
