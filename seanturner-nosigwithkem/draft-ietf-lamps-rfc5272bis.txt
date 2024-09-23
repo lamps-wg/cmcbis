@@ -311,6 +311,9 @@ Table of Contents
 
    *  Publish Trust Anchors Control hashAlgorithm changed to SHA-256
 
+   *  Updated Encrypted and Decrypted POP Controls section to use HMAC-
+      SHA256
+
    *  Update DH-POP from RFC2875 to RFC6955
 
    *  Editorial changes
@@ -348,7 +351,7 @@ Table of Contents
 
    *  Merged [erratum4775]
 
-   *  Mereged [erratum7379]
+   *  Merged [erratum7379]
 
    *  Merged [erratum7628]
 
@@ -597,8 +600,8 @@ Table of Contents
 
    The Simple PKI Request cannot be used if the private key is not
    capable of producing some type of signature (i.e., Diffie-Hellman
-   (DH) keys can use the signature algorithms in [DH-POP] for production
-   of the signature).
+   (DH) and Elliptic Curve Diffie-Hellman (ECDH) keys can use the
+   signature algorithms in [DH-POP] for production of the signature).
 
    The Simple PKI Request cannot be used for any of the advanced
    services specified in this document.
@@ -2426,12 +2429,12 @@ Table of Contents
        kept for a short time afterwards.)
 
    2.  For certification request R, server computes y = F(x,R).  F can
-       be, for example, HMAC-SHA1(x,R).  All that's important for
+       be, for example, HMAC-SHA256(x,R).  All that's important for
        statelessness is that y be consistently computable with only
        known state constant x and function F, other inputs coming from
        the certification request structure. y should not be predictable
        based on knowledge of R, thus the use of a one-way function like
-       HMAC-SHA1.
+       HMAC-SHA256.
 
 6.8.  RA POP Witness Control
 
@@ -4680,12 +4683,13 @@ B.4.  Direct POP with No Signature Mechanism
 Appendix C.  Production of Diffie-Hellman Public Key Certification
              Requests
 
-   Part of a certification request is a signature over the request;
-   Diffie-Hellman is a key agreement algorithm and cannot be used to
-   directly produce the required signature object.  [DH-POP] provides
-   two ways to produce the necessary signature value.  This document
-   also defines a signature algorithm that does not provide a POP value,
-   but can be used to produce the necessary signature value.
+   Part of a certification request is a signature over the request; DH
+   and ECDH are key agreement algorithms and RSA-KEM and ML-KEM are key
+   encapsulation mechanisms (KEM) are and cannot be used to directly
+   produce the required signature object.  [DH-POP] provides three ways
+   to produce the necessary signature value.  This document also defines
+   a signature algorithm that does not provide a POP value, but can be
+   used to produce the necessary signature value.
 
 C.1.  No-Signature Signature Mechanism
 

@@ -1648,13 +1648,16 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
             <p id="section-1.5-5.1.1">Publish Trust Anchors Control hashAlgorithm changed to SHA-256<a href="#section-1.5-5.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-5.2">
-            <p id="section-1.5-5.2.1">Update DH-POP from RFC2875 to RFC6955<a href="#section-1.5-5.2.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-5.2.1">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256<a href="#section-1.5-5.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-5.3">
-            <p id="section-1.5-5.3.1">Editorial changes<a href="#section-1.5-5.3.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-5.3.1">Update DH-POP from RFC2875 to RFC6955<a href="#section-1.5-5.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-5.4">
-            <p id="section-1.5-5.4.1">Addressed errata 3943 for RFC 6402<a href="#section-1.5-5.4.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-5.4.1">Editorial changes<a href="#section-1.5-5.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-5.5">
+            <p id="section-1.5-5.5.1">Addressed errata 3943 for RFC 6402<a href="#section-1.5-5.5.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-1.5-6">--02 version changes:<a href="#section-1.5-6" class="pilcrow">¶</a></p>
@@ -1705,7 +1708,7 @@ to match ASN.1 module<a href="#section-1.5-9.3.1" class="pilcrow">¶</a></p>
             <p id="section-1.5-9.9.1">Merged <span>[<a href="#erratum4775" class="cite xref">erratum4775</a>]</span><a href="#section-1.5-9.9.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-9.10">
-            <p id="section-1.5-9.10.1">Mereged <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span><a href="#section-1.5-9.10.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-9.10.1">Merged <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span><a href="#section-1.5-9.10.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-9.11">
             <p id="section-1.5-9.11.1">Merged <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span><a href="#section-1.5-9.11.1" class="pilcrow">¶</a></p>
@@ -2171,8 +2174,8 @@ returned is:<a href="#section-3.1-2" class="pilcrow">¶</a></p>
 to be included.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
 <p id="section-3.1-6">The Simple PKI Request cannot be used if the private key is not
 capable of producing some type of signature (i.e., Diffie-Hellman
-(DH) keys can use the signature algorithms in <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> for production
-of the signature).<a href="#section-3.1-6" class="pilcrow">¶</a></p>
+(DH) and Elliptic Curve Diffie-Hellman (ECDH) keys can use the
+signature algorithms in <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> for production of the signature).<a href="#section-3.1-6" class="pilcrow">¶</a></p>
 <p id="section-3.1-7">The Simple PKI Request cannot be used for any of the advanced
 services specified in this document.<a href="#section-3.1-7" class="pilcrow">¶</a></p>
 <p id="section-3.1-8">The client <span class="bcp14">MAY</span> incorporate one or more X.509v3 extensions in any
@@ -4995,12 +4998,12 @@ kept for a short time afterwards.)<a href="#section-6.7-19.1.1" class="pilcrow">
 </li>
           <li id="section-6.7-19.2">
             <p id="section-6.7-19.2.1">For certification request R, server computes y = F(x,R). F can
-be, for example, HMAC-SHA1(x,R). All that's important for
+be, for example, HMAC-SHA256(x,R). All that's important for
 statelessness is that y be consistently computable with only
 known state constant x and function F, other inputs coming from
 the certification request structure. y should not be predictable
 based on knowledge of R, thus the use of a one-way function like
-HMAC-SHA1.<a href="#section-6.7-19.2.1" class="pilcrow">¶</a></p>
+HMAC-SHA256.<a href="#section-6.7-19.2.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
@@ -7755,9 +7758,10 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
 <a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-production-of-diffie-hellma" class="section-name selfRef">Production of Diffie-Hellman Public Key Certification Requests</a>
       </h2>
 <p id="appendix-C-1">Part of a certification request is a signature over the request;
-Diffie-Hellman is a key agreement algorithm and cannot be used to
+DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
+are key encapsulation mechanisms (KEM) are and cannot be used to
 directly produce the required signature object.  <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> provides
-two ways to produce the necessary signature value.  This document
+three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
 but can be used to produce the necessary signature value.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
 <div id="NoSig-Sig">
