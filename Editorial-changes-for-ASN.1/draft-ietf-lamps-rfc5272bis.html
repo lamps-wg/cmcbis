@@ -1650,6 +1650,9 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
           <li class="normal" id="section-1.5-5.3">
             <p id="section-1.5-5.3.1">Editorial changes<a href="#section-1.5-5.3.1" class="pilcrow">¶</a></p>
 </li>
+          <li class="normal" id="section-1.5-5.4">
+            <p id="section-1.5-5.4.1">Addressed errata 3943 for RFC 6402<a href="#section-1.5-5.4.1" class="pilcrow">¶</a></p>
+</li>
         </ul>
 <p id="section-1.5-6">--02 version changes:<a href="#section-1.5-6" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -6479,6 +6482,10 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
         <dd>
 <span class="refTitle">"RFC 5272 erratum 2731"</span>, <time datetime="2011-02-23" class="refDate">23 February 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid2731">https://www.rfc-editor.org/errata/eid2731</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="erratum3943">[erratum3943]</dt>
+        <dd>
+<span class="refTitle">"RFC 6402 erratum 3943"</span>, <time datetime="2014-04-02" class="refDate">2 April 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid3943">https://www.rfc-editor.org/errata/eid3943</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="erratum4775">[erratum4775]</dt>
         <dd>
 <span class="refTitle">"RFC 5272 erratum 4775"</span>, <time datetime="2016-08-11" class="refDate">11 August 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid4775">https://www.rfc-editor.org/errata/eid4775</a>&gt;</span>. </dd>
@@ -7135,7 +7142,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          GeneralNames OPTIONAL
+      subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
