@@ -314,6 +314,8 @@ Table of Contents
 
    *  Editorial changes
 
+   *  Addressed errata 3943 for RFC 6402
+
    --02 version changes:
 
    *  Add module to support new HMAC algorithms in PBKDF2
@@ -3475,6 +3477,10 @@ Table of Contents
               "RFC 5272 erratum 2731", 23 February 2011,
               <https://www.rfc-editor.org/errata/eid2731>.
 
+   [erratum3943]
+              "RFC 6402 erratum 3943", 2 April 2014,
+              <https://www.rfc-editor.org/errata/eid3943>.
+
    [erratum4775]
               "RFC 5272 erratum 4775", 11 August 2016,
               <https://www.rfc-editor.org/errata/eid4775>.
@@ -4123,7 +4129,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          GeneralNames OPTIONAL
+      subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
