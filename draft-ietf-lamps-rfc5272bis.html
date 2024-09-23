@@ -1448,7 +1448,7 @@ HMAC algorithms used with the POP Link Witness control.<a href="#section-abstrac
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15">
-            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-production-of-diffie-hellma" class="internal xref">Production of Diffie-Hellman Public Key Certification Requests</a></p>
+            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-production-of-dh-ecdh-rsa-k" class="internal xref">Production of DH, ECDH, RSA-KEM, and ML-KEM Public Key Certification Requests</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1">
                 <p id="section-toc.1-1.15.2.1.1"><a href="#appendix-C.1" class="auto internal xref">C.1</a>.  <a href="#name-no-signature-signature-mech" class="internal xref">No-Signature Signature Mechanism</a></p>
@@ -2171,8 +2171,8 @@ returned is:<a href="#section-3.1-2" class="pilcrow">¶</a></p>
 to be included.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
 <p id="section-3.1-6">The Simple PKI Request cannot be used if the private key is not
 capable of producing some type of signature (i.e., Diffie-Hellman
-(DH) keys can use the signature algorithms in <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> for production
-of the signature).<a href="#section-3.1-6" class="pilcrow">¶</a></p>
+(DH) and Elliptic Curve Diffie-Hellman (ECDH) keys can use the
+signature algorithms in <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> for production of the signature).<a href="#section-3.1-6" class="pilcrow">¶</a></p>
 <p id="section-3.1-7">The Simple PKI Request cannot be used for any of the advanced
 services specified in this document.<a href="#section-3.1-7" class="pilcrow">¶</a></p>
 <p id="section-3.1-8">The client <span class="bcp14">MAY</span> incorporate one or more X.509v3 extensions in any
@@ -7592,13 +7592,14 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
 </div>
 <div id="enroll-dh">
 <section id="appendix-C">
-      <h2 id="name-production-of-diffie-hellma">
-<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-production-of-diffie-hellma" class="section-name selfRef">Production of Diffie-Hellman Public Key Certification Requests</a>
+      <h2 id="name-production-of-dh-ecdh-rsa-k">
+<a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-production-of-dh-ecdh-rsa-k" class="section-name selfRef">Production of DH, ECDH, RSA-KEM, and ML-KEM Public Key Certification Requests</a>
       </h2>
 <p id="appendix-C-1">Part of a certification request is a signature over the request;
-Diffie-Hellman is a key agreement algorithm and cannot be used to
+DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
+are key encapsulation mechanisms (KEM) are and cannot be used to
 directly produce the required signature object.  <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> provides
-two ways to produce the necessary signature value.  This document
+three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
 but can be used to produce the necessary signature value.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
 <div id="NoSig-Sig">

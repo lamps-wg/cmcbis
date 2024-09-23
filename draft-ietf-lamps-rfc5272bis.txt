@@ -173,8 +173,8 @@ Table of Contents
      B.1.  Request of a Signing Certificate
      B.2.  Single Certification Request, But Modified by RA
      B.3.  Direct POP for an RSA Certificate
-   Appendix C.  Production of Diffie-Hellman Public Key Certification
-           Requests
+   Appendix C.  Production of DH, ECDH, RSA-KEM, and ML-KEM Public Key
+           Certification Requests
      C.1.  No-Signature Signature Mechanism
    Acknowledgments
    Contributors
@@ -599,8 +599,8 @@ Table of Contents
 
    The Simple PKI Request cannot be used if the private key is not
    capable of producing some type of signature (i.e., Diffie-Hellman
-   (DH) keys can use the signature algorithms in [DH-POP] for production
-   of the signature).
+   (DH) and Elliptic Curve Diffie-Hellman (ECDH) keys can use the
+   signature algorithms in [DH-POP] for production of the signature).
 
    The Simple PKI Request cannot be used for any of the advanced
    services specified in this document.
@@ -4532,15 +4532,16 @@ B.3.  Direct POP for an RSA Certificate
        SignedData.SignerInfos
          Signed by CA
 
-Appendix C.  Production of Diffie-Hellman Public Key Certification
-             Requests
+Appendix C.  Production of DH, ECDH, RSA-KEM, and ML-KEM Public Key
+             Certification Requests
 
-   Part of a certification request is a signature over the request;
-   Diffie-Hellman is a key agreement algorithm and cannot be used to
-   directly produce the required signature object.  [DH-POP] provides
-   two ways to produce the necessary signature value.  This document
-   also defines a signature algorithm that does not provide a POP value,
-   but can be used to produce the necessary signature value.
+   Part of a certification request is a signature over the request; DH
+   and ECDH are key agreement algorithms and RSA-KEM and ML-KEM are key
+   encapsulation mechanisms (KEM) are and cannot be used to directly
+   produce the required signature object.  [DH-POP] provides three ways
+   to produce the necessary signature value.  This document also defines
+   a signature algorithm that does not provide a POP value, but can be
+   used to produce the necessary signature value.
 
 C.1.  No-Signature Signature Mechanism
 
