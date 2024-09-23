@@ -51,6 +51,7 @@ normative:
     title: "RFC 5273 erratum 3593"
     target: https://www.rfc-editor.org/errata/eid3593
     date: 2013-04
+  BCP195: RFC9325
   CMC-STRUCT: I-D.mandel-lamps-rfc5272bis
   HTTP: RFC9110
   IPsec: RFC4301
@@ -101,10 +102,11 @@ Note: For now, this section will be list of the changes introduced
 TODO for -03:
 
 * Consider AuthEnvelopedData
+* Added requirements to follow BCP 195
 
 -02 version changes:
 
-* Replaced TLS 1.0 with TLS 1.2
+* Replaced TLS 1.0 with TLS 1.2 or later
 
 -01 version changes:
 
@@ -192,7 +194,9 @@ following rules apply.
 > Servers MUST use the 200 response code for successful responses.
 
 > Clients MAY attempt to send HTTP requests using TLS 1.2 {{TLS}} or
-later, although servers are not required to support TLS.
+later, although servers are not required to support TLS. If
+TLS 1.2 {{TLS}} (or later) is used then implementations MUST follow
+the recommendations in {{BCP195}}.
 
 > Servers MUST NOT assume client support for any type of HTTP
 authentication such as cookies, Basic authentication, or Digest
