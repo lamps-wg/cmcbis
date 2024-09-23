@@ -4258,7 +4258,7 @@ B.1.  Request of a Signing Certificate
    difference would be the key usage extension in the certification
    request.
 
-   Message #2 from client to server:
+   Message from client to server:
 
       ContentInfo.contentType = id-signedData
       ContentInfo.content
