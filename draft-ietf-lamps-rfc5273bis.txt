@@ -126,9 +126,11 @@ Table of Contents
 
    *  Consider AuthEnvelopedData
 
+   *  Added requirements to follow BCP 195
+
    -02 version changes:
 
-   *  Replaced TLS 1.0 with TLS 1.2
+   *  Replaced TLS 1.0 with TLS 1.2 or later
 
    -01 version changes:
 
@@ -235,7 +237,9 @@ Table of Contents
       Servers MUST use the 200 response code for successful responses.
 
       Clients MAY attempt to send HTTP requests using TLS 1.2 [TLS] or
-      later, although servers are not required to support TLS.
+      later, although servers are not required to support TLS.  If TLS
+      1.2 [TLS] (or later) is used then implementations MUST follow the
+      recommendations in [BCP195].
 
       Servers MUST NOT assume client support for any type of HTTP
       authentication such as cookies, Basic authentication, or Digest
@@ -337,6 +341,12 @@ Table of Contents
 10.  References
 
 10.1.  Normative References
+
+   [BCP195]   Sheffer, Y., Saint-Andre, P., and T. Fossati,
+              "Recommendations for Secure Use of Transport Layer
+              Security (TLS) and Datagram Transport Layer Security
+              (DTLS)", BCP 195, RFC 9325, DOI 10.17487/RFC9325, November
+              2022, <https://www.rfc-editor.org/rfc/rfc9325>.
 
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
