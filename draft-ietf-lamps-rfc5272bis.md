@@ -251,6 +251,7 @@ Note: For now, this section will be list of the changes introduced
 --03 version changes:
 
 * Publish Trust Anchors Control hashAlgorithm changed to SHA-256
+* Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256
 * Update DH-POP from RFC2875 to RFC6955
 * Editorial changes
 * Addressed errata 3943 for RFC 6402
@@ -275,7 +276,7 @@ Note: For now, this section will be list of the changes introduced
   * Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B
 * Merged {{erratum2731}}
 * Merged {{erratum4775}}
-* Mereged {{erratum7379}}
+* Merged {{erratum7379}}
 * Merged {{erratum7628}}
 * Merged {{erratum7629}}
 
@@ -523,8 +524,8 @@ to be included.
 
 The Simple PKI Request cannot be used if the private key is not
 capable of producing some type of signature (i.e., Diffie-Hellman
-(DH) keys can use the signature algorithms in {{DH-POP}} for production
-of the signature).
+(DH) and Elliptic Curve Diffie-Hellman (ECDH) keys can use the
+signature algorithms in {{DH-POP}} for production of the signature).
 
 The Simple PKI Request cannot be used for any of the advanced
 services specified in this document.
@@ -2380,12 +2381,12 @@ problem by reducing the amount of state kept on the CA to a single
     kept for a short time afterwards.)
 
 2.  For certification request R, server computes y = F(x,R). F can
-    be, for example, HMAC-SHA1(x,R). All that's important for
+    be, for example, HMAC-SHA256(x,R). All that's important for
     statelessness is that y be consistently computable with only
     known state constant x and function F, other inputs coming from
     the certification request structure. y should not be predictable
     based on knowledge of R, thus the use of a one-way function like
-    HMAC-SHA1.
+    HMAC-SHA256.
 
 ##  RA POP Witness Control {#RAPOPWitnessControl}
 
@@ -4590,9 +4591,10 @@ Response #2 from server to client:
 # Production of Diffie-Hellman Public Key Certification Requests {#enroll-dh}
 
 Part of a certification request is a signature over the request;
-Diffie-Hellman is a key agreement algorithm and cannot be used to
+DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
+are key encapsulation mechanisms (KEM) are and cannot be used to
 directly produce the required signature object.  {{DH-POP}} provides
-two ways to produce the necessary signature value.  This document
+three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
 but can be used to produce the necessary signature value.
 
