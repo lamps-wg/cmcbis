@@ -52,7 +52,7 @@ normative:
     target: https://www.rfc-editor.org/errata/eid3593
     date: 2013-04
   BCP195: RFC9325
-  CMC-STRUCT: I-D.mandel-lamps-rfc5272bis
+  CMC-STRUCT: I-D.ietf-lamps-rfc5272bis
   HTTP: RFC9110
   IPsec: RFC4301
   SMIMEV4: RFC8551
@@ -60,7 +60,7 @@ normative:
 
 informative:
   TLS: RFC5246
-  CMC-TRANSv1: I-D.mandel-lamps-rfc5273bis
+  CMC-TRANSv1: I-D.ietf-lamps-rfc5273bis
   CMC-Updates: RFC6402
 
 
