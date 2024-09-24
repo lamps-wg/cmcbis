@@ -514,17 +514,17 @@ Table of Contents
 
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
-              (CMC)", Work in Progress, Internet-Draft, draft-mandel-
-              lamps-rfc5272bis-02, 4 March 2024,
-              <https://datatracker.ietf.org/doc/html/draft-mandel-lamps-
-              rfc5272bis-02>.
+              (CMC)", Work in Progress, Internet-Draft, draft-ietf-
+              lamps-rfc5272bis-00, 12 September 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
+              rfc5272bis-00>.
 
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-mandel-lamps-rfc5273bis-02, 4 March 2024,
-              <https://datatracker.ietf.org/doc/html/draft-mandel-lamps-
-              rfc5273bis-02>.
+              Draft, draft-ietf-lamps-rfc5273bis-00, 12 September 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
+              rfc5273bis-00>.
 
    [CMS]      Housley, R., "Cryptographic Message Syntax (CMS)", STD 70,
               RFC 5652, DOI 10.17487/RFC5652, September 2009,
@@ -590,9 +590,9 @@ Table of Contents
    [CMC-COMPv1]
               Mandel, J. and S. Turner, "Certificate Management Messages
               over CMS (CMC): Compliance Requirements", Work in
-              Progress, Internet-Draft, draft-mandel-lamps-rfc5274bis-
-              02, 4 March 2024, <https://datatracker.ietf.org/doc/html/
-              draft-mandel-lamps-rfc5274bis-02>.
+              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-00,
+              13 September 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-lamps-rfc5274bis-00>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
@@ -648,7 +648,7 @@ Authors' Addresses
 
    Joseph Mandel
    AKAYLA, Inc.
-   Email: joe@akyala.com
+   Email: joe@akayla.com
 
 
    Sean Turner
