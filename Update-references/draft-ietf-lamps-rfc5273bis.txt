@@ -350,10 +350,10 @@ Table of Contents
 
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
-              (CMC)", Work in Progress, Internet-Draft, draft-mandel-
-              lamps-rfc5272bis-02, 4 March 2024,
-              <https://datatracker.ietf.org/doc/html/draft-mandel-lamps-
-              rfc5272bis-02>.
+              (CMC)", Work in Progress, Internet-Draft, draft-ietf-
+              lamps-rfc5272bis-00, 12 September 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
+              rfc5272bis-00>.
 
    [erratum3593]
               "RFC 5273 erratum 3593", April 2013,
@@ -387,9 +387,9 @@ Table of Contents
    [CMC-TRANSv1]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-mandel-lamps-rfc5273bis-02, 4 March 2024,
-              <https://datatracker.ietf.org/doc/html/draft-mandel-lamps-
-              rfc5273bis-02>.
+              Draft, draft-ietf-lamps-rfc5273bis-00, 12 September 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
+              rfc5273bis-00>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
