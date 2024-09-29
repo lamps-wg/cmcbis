@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-09-26T01:41:08.441139+00:00",
+  "timestamp": "2024-09-29T01:48:24.839806+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -2768,7 +2768,7 @@
       "labels": [],
       "body": "Update normative and informative references",
       "createdAt": "2024-09-24T00:07:13Z",
-      "updatedAt": "2024-09-24T00:10:33Z",
+      "updatedAt": "2024-09-29T01:03:31Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "471cc78aeba7bd900fcd019848eed4e2a015c565",
@@ -2780,7 +2780,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6LNO5X",
+          "commit": {
+            "abbreviatedOid": "26d24c8"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-09-29T01:03:30Z",
+          "updatedAt": "2024-09-29T01:03:30Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
