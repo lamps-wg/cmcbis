@@ -57,8 +57,8 @@ normative:
 
 informative:
   CMC-PROTv1: RFC5272
-  CMC-TRANS: I-D.mandel-lamps-rfc5273bis
-  CMC-COMPL: I-D.mandel-lamps-rfc5274bis
+  CMC-TRANS: I-D.ietf-lamps-rfc5273bis
+  CMC-COMPL: I-D.ietf-lamps-rfc5274bis
   CMC-Updates: RFC6402
   PASSWORD: DOI.10.6028/NIST.SP.800-63-3
   RANDOM: RFC4086
