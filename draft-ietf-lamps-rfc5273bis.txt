@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 27 March 2025                                 23 September 2024
+Expires: 2 April 2025                                  29 September 2024
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 March 2025.
+   This Internet-Draft will expire on 2 April 2025.
 
 Copyright Notice
 
@@ -350,10 +350,10 @@ Table of Contents
 
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
-              (CMC)", Work in Progress, Internet-Draft, draft-mandel-
-              lamps-rfc5272bis-02, 4 March 2024,
-              <https://datatracker.ietf.org/doc/html/draft-mandel-lamps-
-              rfc5272bis-02>.
+              (CMC)", Work in Progress, Internet-Draft, draft-ietf-
+              lamps-rfc5272bis-00, 12 September 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
+              rfc5272bis-00>.
 
    [erratum3593]
               "RFC 5273 erratum 3593", April 2013,
@@ -387,9 +387,9 @@ Table of Contents
    [CMC-TRANSv1]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-mandel-lamps-rfc5273bis-02, 4 March 2024,
-              <https://datatracker.ietf.org/doc/html/draft-mandel-lamps-
-              rfc5273bis-02>.
+              Draft, draft-ietf-lamps-rfc5273bis-00, 12 September 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
+              rfc5273bis-00>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)

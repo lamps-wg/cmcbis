@@ -6,8 +6,8 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Updates: 5911 (if approved)                                        sn3rd
-Intended status: Standards Track                       23 September 2024
-Expires: 27 March 2025
+Intended status: Standards Track                       29 September 2024
+Expires: 2 April 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 March 2025.
+   This Internet-Draft will expire on 2 April 2025.
 
 Copyright Notice
 
@@ -3452,9 +3452,9 @@ Table of Contents
    [CMC-COMPL]
               Mandel, J. and S. Turner, "Certificate Management Messages
               over CMS (CMC): Compliance Requirements", Work in
-              Progress, Internet-Draft, draft-mandel-lamps-rfc5274bis-
-              02, 4 March 2024, <https://datatracker.ietf.org/doc/html/
-              draft-mandel-lamps-rfc5274bis-02>.
+              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-00,
+              13 September 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-lamps-rfc5274bis-00>.
 
    [CMC-PROTv1]
               Schaad, J. and M. Myers, "Certificate Management over CMS
@@ -3464,9 +3464,9 @@ Table of Contents
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-mandel-lamps-rfc5273bis-02, 4 March 2024,
-              <https://datatracker.ietf.org/doc/html/draft-mandel-lamps-
-              rfc5273bis-02>.
+              Draft, draft-ietf-lamps-rfc5273bis-00, 12 September 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
+              rfc5273bis-00>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
