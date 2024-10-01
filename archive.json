@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-09-29T01:48:24.839806+00:00",
+  "timestamp": "2024-10-01T01:50:32.740094+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -2761,24 +2761,26 @@
       "id": "PR_kwDOKfq5gM58cVM1",
       "title": "Update references",
       "url": "https://github.com/lamps-wg/cmcbis/pull/64",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Update normative and informative references",
       "createdAt": "2024-09-24T00:07:13Z",
-      "updatedAt": "2024-09-29T01:03:31Z",
+      "updatedAt": "2024-09-29T18:34:21Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "471cc78aeba7bd900fcd019848eed4e2a015c565",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "Update-references",
       "headRefOid": "26d24c8d5fb8ee3205a44befa8bf98525f81e598",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-09-29T18:34:20Z",
+      "mergedAt": "2024-09-29T18:34:20Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "9a0a52f01a680a980c81af0d7679c4539ebc5617"
+      },
       "comments": [],
       "reviews": [
         {
