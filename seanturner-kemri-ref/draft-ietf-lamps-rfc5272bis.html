@@ -29,19 +29,19 @@ definition.
        This document also updates part of RFC 5911 to add support for additional
 HMAC algorithms used with the POP Link Witness control. 
     " name="description">
-<meta content="xml2rfc 3.23.1" name="generator">
+<meta content="xml2rfc 3.24.0" name="generator">
 <meta content="Public Key Infrastructure" name="keyword">
 <meta content="Certificate Management" name="keyword">
 <meta content="Cryptographic Message Syntax" name="keyword">
 <meta content="draft-ietf-lamps-rfc5272bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.23.1
-    Python 3.12.6
+  xml2rfc 3.24.0
+    Python 3.12.7
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.4
-    lxml 4.9.4
+    lxml 5.3.0
     platformdirs 4.3.6
     pycountry 22.3.5
     PyYAML 6.0.1
@@ -183,31 +183,6 @@ HMAC algorithms used with the POP Link Witness control.
 }
 
 @font-face {
-  font-family: 'Cabin Condensed';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-vietnamese.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
-}
-@font-face {
-  font-family: 'Cabin Condensed';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'Cabin Condensed';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
   font-family: 'Oxygen Mono';
   font-style: normal;
   font-weight: 400;
@@ -224,6 +199,77 @@ HMAC algorithms used with the POP Link Witness control.
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: italic;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-style: normal;
+  font-weight: 1 1000;
+  src: url('https://martinthomson.github.io/rfc-css/fonts/sofiasanssemicondensed-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   color-scheme: light dark;
   --background-color: #fff;
@@ -236,6 +282,7 @@ HMAC algorithms used with the POP Link Witness control.
   --pilcrow-strong: #bbb;
   --small-font-size: 14.5px;
   --font-mono: 'Oxygen Mono', monospace;
+  --font-title: "Sofia Sans Semi Condensed", sans-serif;
   scrollbar-color: #bbb #eee;
 }
 body {
@@ -254,8 +301,8 @@ body {
 
 /* headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Cabin Condensed", sans-serif;
-  font-weight: 600;
+  font-family: var(--font-title);
+  font-weight: 680;
   margin: 0.8em 0 0.3em;
   font-size-adjust: 0.5;
   color: var(--title-color);
@@ -663,6 +710,12 @@ sub, sup {
   padding: 0.75em 0 2em 0;
   margin-bottom: 1em;
 }
+@media screen {
+  #toc nav {
+    font-family: var(--font-title);
+    font-weight: 360;
+  }
+}
 #toc nav ul {
   margin: 0 0.5em 0 0;
   padding: 0;
@@ -1046,11 +1099,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CMC: Structures</td>
-<td class="right">September 2024</td>
+<td class="right">November 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Mandel, Ed &amp; Turner, Ed</td>
-<td class="center">Expires 24 March 2025</td>
+<td class="center">Expires 9 May 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1069,12 +1122,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5911" class="eref">5911</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-09-20" class="published">20 September 2024</time>
+<time datetime="2024-11-05" class="published">5 November 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-03-24">24 March 2025</time></dd>
+<dd class="expires"><time datetime="2025-05-09">9 May 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1147,7 +1200,7 @@ HMAC algorithms used with the POP Link Witness control.<a href="#section-abstrac
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 24 March 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 9 May 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1443,7 +1496,10 @@ HMAC algorithms used with the POP Link Witness control.<a href="#section-abstrac
                 <p id="section-toc.1-1.14.2.2.1"><a href="#appendix-B.2" class="auto internal xref">B.2</a>.  <a href="#name-single-certification-reques" class="internal xref">Single Certification Request, But Modified by RA</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.3">
-                <p id="section-toc.1-1.14.2.3.1"><a href="#appendix-B.3" class="auto internal xref">B.3</a>.  <a href="#name-direct-pop-for-an-rsa-certi" class="internal xref">Direct POP for an RSA Certificate</a></p>
+                <p id="section-toc.1-1.14.2.3.1"><a href="#appendix-B.3" class="auto internal xref">B.3</a>.  <a href="#name-direct-pop-for-an-rsa-or-ke" class="internal xref">Direct POP for an RSA or KEM Certificate</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.4">
+                <p id="section-toc.1-1.14.2.4.1"><a href="#appendix-B.4" class="auto internal xref">B.4</a>.  <a href="#name-direct-pop-with-no-signatur" class="internal xref">Direct POP with No Signature Mechanism</a></p>
 </li>
             </ul>
 </li>
@@ -1645,7 +1701,16 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
             <p id="section-1.5-5.1.1">Publish Trust Anchors Control hashAlgorithm changed to SHA-256<a href="#section-1.5-5.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-5.2">
-            <p id="section-1.5-5.2.1">Update DH-POP from RFC2875 to RFC6955<a href="#section-1.5-5.2.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-5.2.1">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256<a href="#section-1.5-5.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-5.3">
+            <p id="section-1.5-5.3.1">Update DH-POP from RFC2875 to RFC6955<a href="#section-1.5-5.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-5.4">
+            <p id="section-1.5-5.4.1">Editorial changes<a href="#section-1.5-5.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-5.5">
+            <p id="section-1.5-5.5.1">Addressed errata 3943 for RFC 6402<a href="#section-1.5-5.5.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-1.5-6">--02 version changes:<a href="#section-1.5-6" class="pilcrow">¶</a></p>
@@ -1696,7 +1761,7 @@ to match ASN.1 module<a href="#section-1.5-9.3.1" class="pilcrow">¶</a></p>
             <p id="section-1.5-9.9.1">Merged <span>[<a href="#erratum4775" class="cite xref">erratum4775</a>]</span><a href="#section-1.5-9.9.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-9.10">
-            <p id="section-1.5-9.10.1">Mereged <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span><a href="#section-1.5-9.10.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-9.10.1">Merged <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span><a href="#section-1.5-9.10.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-9.11">
             <p id="section-1.5-9.11.1">Merged <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span><a href="#section-1.5-9.11.1" class="pilcrow">¶</a></p>
@@ -2162,8 +2227,8 @@ returned is:<a href="#section-3.1-2" class="pilcrow">¶</a></p>
 to be included.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
 <p id="section-3.1-6">The Simple PKI Request cannot be used if the private key is not
 capable of producing some type of signature (i.e., Diffie-Hellman
-(DH) keys can use the signature algorithms in <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> for production
-of the signature).<a href="#section-3.1-6" class="pilcrow">¶</a></p>
+(DH) and Elliptic Curve Diffie-Hellman (ECDH) keys can use the
+signature algorithms in <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> for production of the signature).<a href="#section-3.1-6" class="pilcrow">¶</a></p>
 <p id="section-3.1-7">The Simple PKI Request cannot be used for any of the advanced
 services specified in this document.<a href="#section-3.1-7" class="pilcrow">¶</a></p>
 <p id="section-3.1-8">The client <span class="bcp14">MAY</span> incorporate one or more X.509v3 extensions in any
@@ -4843,8 +4908,8 @@ presented public encryption key.<a href="#section-6.7-4.2.1" class="pilcrow">¶<
 </li>
           <li id="section-6.7-4.3">
             <p id="section-6.7-4.3.1">Client decrypts the POP challenge using the private key that
-corresponds to the presented public key and sends the plaintext
-back to the server.<a href="#section-6.7-4.3.1" class="pilcrow">¶</a></p>
+corresponds to the presented public key and sends the hash of
+the plaintext back to the server.<a href="#section-6.7-4.3.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-6.7-4.4">
             <p id="section-6.7-4.4.1">Server validates the decrypted POP challenge and continues
@@ -4986,12 +5051,12 @@ kept for a short time afterwards.)<a href="#section-6.7-19.1.1" class="pilcrow">
 </li>
           <li id="section-6.7-19.2">
             <p id="section-6.7-19.2.1">For certification request R, server computes y = F(x,R). F can
-be, for example, HMAC-SHA1(x,R). All that's important for
+be, for example, HMAC-SHA256(x,R). All that's important for
 statelessness is that y be consistently computable with only
 known state constant x and function F, other inputs coming from
 the certification request structure. y should not be predictable
 based on knowledge of R, thus the use of a one-way function like
-HMAC-SHA1.<a href="#section-6.7-19.2.1" class="pilcrow">¶</a></p>
+HMAC-SHA256.<a href="#section-6.7-19.2.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
@@ -6454,7 +6519,7 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <dl class="references">
 <dt id="CMC-COMPL">[CMC-COMPL]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-mandel-lamps-rfc5274bis-02</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5274bis-02">https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5274bis-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5274bis-01</span>, <time datetime="2024-09-29" class="refDate">29 September 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-01">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-01</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-PROTv1">[CMC-PROTv1]</dt>
         <dd>
@@ -6462,11 +6527,15 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="CMC-TRANS">[CMC-TRANS]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-mandel-lamps-rfc5273bis-02</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5273bis-02">https://datatracker.ietf.org/doc/html/draft-mandel-lamps-rfc5273bis-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-01</span>, <time datetime="2024-09-29" class="refDate">29 September 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-01">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-01</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-Updates">[CMC-Updates]</dt>
         <dd>
 <span class="refAuthor">Schaad, J.</span>, <span class="refTitle">"Certificate Management over CMS (CMC) Updates"</span>, <span class="seriesInfo">RFC 6402</span>, <span class="seriesInfo">DOI 10.17487/RFC6402</span>, <time datetime="2011-11" class="refDate">November 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6402">https://www.rfc-editor.org/rfc/rfc6402</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CMS-RI">[CMS-RI]</dt>
+        <dd>
+<span class="refAuthor">Housley, R.</span>, <span class="refAuthor">Gray, J.</span>, and <span class="refAuthor">T. Okubo</span>, <span class="refTitle">"Using Key Encapsulation Mechanism (KEM) Algorithms in the Cryptographic Message Syntax (CMS)"</span>, <span class="seriesInfo">RFC 9629</span>, <span class="seriesInfo">DOI 10.17487/RFC9629</span>, <time datetime="2024-08" class="refDate">August 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9629">https://www.rfc-editor.org/rfc/rfc9629</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="erratum2063">[erratum2063]</dt>
         <dd>
@@ -6475,6 +6544,10 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <dt id="erratum2731">[erratum2731]</dt>
         <dd>
 <span class="refTitle">"RFC 5272 erratum 2731"</span>, <time datetime="2011-02-23" class="refDate">23 February 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid2731">https://www.rfc-editor.org/errata/eid2731</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="erratum3943">[erratum3943]</dt>
+        <dd>
+<span class="refTitle">"RFC 6402 erratum 3943"</span>, <time datetime="2014-04-02" class="refDate">2 April 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid3943">https://www.rfc-editor.org/errata/eid3943</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="erratum4775">[erratum4775]</dt>
         <dd>
@@ -6613,9 +6686,6 @@ BEGIN
 
   CMC-UnsignedAtts ATTRIBUTE ::= { aa-cmc-unsignedData }
 
-  --
-  --
-
   id-cmc OBJECT IDENTIFIER ::= { id-pkix 7 }   -- CMC controls
   id-cct OBJECT IDENTIFIER ::= { id-pkix 12 }  -- CMC content types
 
@@ -6653,8 +6723,8 @@ BEGIN
       cmc-statusInfoV2 | cmc-trustedAnchors | cmc-authData |
       cmc-batchRequests | cmc-batchResponses | cmc-publishCert |
       cmc-modCertTemplate | cmc-controlProcessed |
-      cmc-identityProofV2 | cmc-popLinkWitnessV2, ...,
-      cmc-raIdentityWitness | cmc-responseBody }
+      cmc-identityProofV2 | cmc-popLinkWitnessV2 |
+      cmc-raIdentityWitness | cmc-responseBody, ... }
 
   OTHER-REQUEST ::= TYPE-IDENTIFIER
 
@@ -6679,8 +6749,8 @@ BEGIN
       certificationRequest  CertificationRequest
   }
 
-  AttributeList ATTRIBUTE ::= { at-extension-req, ...,
-      at-cmc-changeSubjectName }
+  AttributeList ATTRIBUTE ::= { at-extension-req |
+      at-cmc-changeSubjectName, ... }
 
   CertificationRequest ::= SEQUENCE {
      certificationRequestInfo  SEQUENCE {
@@ -6877,9 +6947,9 @@ BEGIN
       witness         OCTET STRING
   }
 
-  POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1, maca-hMAC-SHA256, ... }
+  POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1 | maca-hMAC-SHA256, ... }
 
-  WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1, mda-sha256, ... }
+  WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1 | mda-sha256, ... }
 
   DecryptedPOP ::= SEQUENCE {
       bodyPartID      BodyPartID,
@@ -6896,8 +6966,6 @@ BEGIN
       pkiDataBodyid   BodyPartID,
       bodyIds         SEQUENCE OF BodyPartID
   }
-
-  --
 
   cmc-getCert CMC-CONTROL ::=
       { GetCert IDENTIFIED BY id-cmc-getCert }
@@ -7019,7 +7087,6 @@ BEGIN
   BodyPartPath ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
 
   --  Allow for distribution of trust anchors
-  --
 
   cmc-trustedAnchors CMC-CONTROL ::=
       { PublishTrustAnchors IDENTIFIED BY id-cmc-trustedAnchors }
@@ -7138,7 +7205,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          GeneralNames OPTIONAL
+      subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
@@ -7180,58 +7247,76 @@ END
 <p id="appendix-A.2-1">The module contained in this appendix extends the PBKDF2-PRFs algorithm
 set defined in <span><a href="https://rfc-editor.org/rfc/rfc5911#section-3" class="relref">Section 3</a> of [<a href="#CMS-ALGS" class="cite xref">CMS-ALGS</a>]</span>. Apply this extension prior to
 compiling <a href="#asn.1-cmc" class="auto internal xref">Appendix A.1</a> to ensure the imported kda-PBKDF2 includes the
-6 HMAC algorithms included in this ASN.1 module.
-~~~
+6 HMAC algorithms included in this ASN.1 module.<a href="#appendix-A.2-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-A.2-2">
+<pre>
 PBKDF2-PRFs-2023
   { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }<a href="#appendix-A.2-1" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-2">DEFINITIONS IMPLICT TAGS ::=
+    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
+
+DEFINITIONS IMPLICT TAGS ::=
 BEGIN
-IMPORTS<a href="#appendix-A.2-2" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-3">ALGORITHM
-  FROM AlgorithmInformation-2009 -- From <span>[<a href="#PKIX-ALGS" class="cite xref">PKIX-ALGS</a>]</span>
+IMPORTS
+
+ALGORITHM
+  FROM AlgorithmInformation-2009 -- From [PKIX-Algs]
     { iso(1) identified-organization(3) dod(6) internet(1) security(5)
       mechanisms(5) pkix(7) id-mod(0)
-      id-mod-algorithmInformation-02(58) }<a href="#appendix-A.2-3" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-4">id-hmacWithSHA224, id-hmacWithSHA256,
+      id-mod-algorithmInformation-02(58) }
+
+id-hmacWithSHA224, id-hmacWithSHA256,
 id-hmacWithSHA384, id-hmacWithSHA512
-  FROM HMAC-2010 -- From <span>[<a href="#HMAC-ALGS" class="cite xref">HMAC-ALGS</a>]</span>
+  FROM HMAC-2010 -- From [HMAC-Algs]
     { iso(1) identified-organization(3) dod(6) internet(1) security(5)
       mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
-;<a href="#appendix-A.2-4" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-5">--
+;
+
+--
 -- Base OID for algorithms
---<a href="#appendix-A.2-5" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-6">rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
-                               rsadsi(113549) }<a href="#appendix-A.2-6" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-7">digestAlgorithm   OBJECT IDENTIFIER ::= { rsadsi 2 }<a href="#appendix-A.2-7" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-8">id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
-id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }<a href="#appendix-A.2-8" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-9">--
+--
+
+rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+                               rsadsi(113549) }
+
+digestAlgorithm   OBJECT IDENTIFIER ::= { rsadsi 2 }
+
+id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
+id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
+
+--
 -- PBKF2-PRFs
---<a href="#appendix-A.2-9" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-10">PBKDF2-PRFs ALGORITHM ::= {
+--
+
+PBKDF2-PRFs ALGORITHM ::= {
   alg-hMAC-SHA224       |
   alg-hMAC-SHA256       |
   alg-hMAC-SHA384       |
   alg-hMAC-SHA512       |
   alg-hMAC-SHA512-224 |
   alg-hMAC-SHA512-256,
-  ... }<a href="#appendix-A.2-10" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-11">alg-hMAC-SHA224 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA224 PARAMS TYPE NULL ARE preferredAbsent }<a href="#appendix-A.2-11" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-12">alg-hMAC-SHA256 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA256 PARAMS TYPE NULL ARE preferredAbsent }<a href="#appendix-A.2-12" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-13">alg-hMAC-SHA384 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA384 PARAMS TYPE NULL ARE preferredAbsent }<a href="#appendix-A.2-13" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-14">alg-hMAC-SHA512 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512 PARAMS TYPE NULL ARE preferredAbsent }<a href="#appendix-A.2-14" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-15">alg-hMAC-SHA512-224 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512-224 PARAMS TYPE NULL ARE preferredAbsent }<a href="#appendix-A.2-15" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-16">alg-hMAC-SHA512-256 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512-256 PARAMS TYPE NULL ARE preferredAbsent }<a href="#appendix-A.2-16" class="pilcrow">¶</a></p>
-<p id="appendix-A.2-17">END
-~~~<a href="#appendix-A.2-17" class="pilcrow">¶</a></p>
+  ... }
+
+alg-hMAC-SHA224 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA224 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA256 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA256 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA384 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA384 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA512 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA512 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA512-224 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA512-224 PARAMS TYPE NULL ARE preferredAbsent }
+
+alg-hMAC-SHA512-256 ALGORITHM ::=
+  { IDENTIFIER id-hmacWithSHA512-256 PARAMS TYPE NULL ARE preferredAbsent }
+
+END
+</pre><a href="#appendix-A.2-2" class="pilcrow">¶</a>
+</div>
 </section>
 </div>
 </section>
@@ -7254,7 +7339,7 @@ an enrollment is occurring for a signing-only key.  If the
 certificate was designed for both signing and encryption, the only
 difference would be the key usage extension in the certification
 request.<a href="#appendix-B.1-1" class="pilcrow">¶</a></p>
-<p id="appendix-B.1-2">Message #2 from client to server:<a href="#appendix-B.1-2" class="pilcrow">¶</a></p>
+<p id="appendix-B.1-2">Message from client to server:<a href="#appendix-B.1-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.1-3">
 <pre>
    ContentInfo.contentType = id-signedData
@@ -7426,12 +7511,12 @@ will modify the certification request before passing it on to the CA.<a href="#a
 </div>
 <div id="DirectPOPforRSACertificate">
 <section id="appendix-B.3">
-        <h3 id="name-direct-pop-for-an-rsa-certi">
-<a href="#appendix-B.3" class="section-number selfRef">B.3. </a><a href="#name-direct-pop-for-an-rsa-certi" class="section-name selfRef">Direct POP for an RSA Certificate</a>
+        <h3 id="name-direct-pop-for-an-rsa-or-ke">
+<a href="#appendix-B.3" class="section-number selfRef">B.3. </a><a href="#name-direct-pop-for-an-rsa-or-ke" class="section-name selfRef">Direct POP for an RSA or KEM Certificate</a>
         </h3>
 <p id="appendix-B.3-1">This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only certificate using an
-direct POP method.  For simplicity, it is assumed that the
+an enrollment is done for an encryption only certificate using a
+direct POP method; the example below shows.  For simplicity, it is assumed that the
 certification requester already has a signing-only certificate.<a href="#appendix-B.3-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.3-2">The fact that a second round-trip is required is implicit rather than
 explicit.  The server determines this based on the fact that no other
@@ -7507,7 +7592,11 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
        Other certificates (optional)
      SignedData.SignerInfos
        Signed by CA
-
+</pre><a href="#appendix-B.3-6" class="pilcrow">¶</a>
+</div>
+<p id="appendix-B.3-7">Message #2 from client to server:<a href="#appendix-B.3-7" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-8">
+<pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
      SignedData.encapContentInfo
@@ -7537,10 +7626,10 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
-</pre><a href="#appendix-B.3-6" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-8" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.3-7">Response #2 from server to client:<a href="#appendix-B.3-7" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-8">
+<p id="appendix-B.3-9">Response #2 from server to client:<a href="#appendix-B.3-9" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-10">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7559,7 +7648,158 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
        Other certificates
      SignedData.SignerInfos
        Signed by CA
-</pre><a href="#appendix-B.3-8" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-10" class="pilcrow">¶</a>
+</div>
+</section>
+</div>
+<div id="DirectPOPwithNoSignature">
+<section id="appendix-B.4">
+        <h3 id="name-direct-pop-with-no-signatur">
+<a href="#appendix-B.4" class="section-number selfRef">B.4. </a><a href="#name-direct-pop-with-no-signatur" class="section-name selfRef">Direct POP with No Signature Mechanism</a>
+        </h3>
+<p id="appendix-B.4-1">This section looks at the messages that would flow in the event that
+an enrollment is done for an encryption only cerrtificate using a
+direct POP method.  Instead of assuming that the certification
+requester already has a signing-only certificate as in
+<a href="#DirectPOPforRSACertificate" class="auto internal xref">Appendix B.3</a>, here the No Signature mechanism from
+<a href="#NoSig-Sig" class="auto internal xref">Appendix C.1</a>, the public key is for a KEM, and the EnvelopedData uses
+the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]</span>.<a href="#appendix-B.4-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.4-2">The fact that a second round-trip is required is implicit rather than
+explicit.  The server determines this based on the fact that no other
+POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcrow">¶</a></p>
+<p id="appendix-B.4-3">Message #1 from client to server:<a href="#appendix-B.4-3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-4">
+<pre>
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-cct-PKIData
+       eContent
+         controlSequence
+           {102, id-cmc-transactionId, 10132985123483401}
+           {103, id-cmc-senderNonce, 10001}
+           {104, id-cmc-dataReturn, &lt;packet of binary data identifying
+                                     where the key in question is.&gt;}
+         reqSequence
+           certRequest
+             certReqId = 201
+             certTemplate
+               subject = &lt; My DN &gt;
+               publicKey = My Public Key
+               extensions
+                 {id-ce-keyUsage, keyEncipherment}
+             popo
+               keyEncipherment
+                 subsequentMessage = challengeResp
+     SignedData.SignerInfos
+      SignerInfo
+        sid = &lt; subjectKeyIdentifier &gt;
+        signatureAlgorithm = id-alg-noSignature
+</pre><a href="#appendix-B.4-4" class="pilcrow">¶</a>
+</div>
+<p id="appendix-B.4-5">Response #1 from server to client:<a href="#appendix-B.4-5" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-6">
+<pre>
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-cct-PKIResponse
+       eContent
+         controlSequence
+           {101, id-cmc-statusInfoV2, {failed, 201, popRequired}}
+           {102, id-cmc-transactionId, 10132985123483401}
+           {103, id-cmc-senderNonce, 10005}
+           {104, id-cmc-recipientNonce, 10001}
+           {105, id-cmc-encryptedPOP, {
+              request {
+                certRequest
+                  certReqId = 201
+                   certTemplate
+                     subject = &lt; My DN &gt;
+                     publicKey = My Public Key
+                     extensions
+                       {id-ce-keyUsage, keyEncipherment}
+                   popo
+                     keyEncipherment
+                       subsequentMessage = challengeResp
+              }
+              cms
+                contentType = id-envelopedData
+                content &lt; uses ori.KEMRecipientInfo &gt;
+                  recipientInfos.ori.riid.issuerSerialNumber = &lt; NULL, 201&gt;
+                  encryptedContentInfo
+                    eContentType = id-data
+                    eContent = &lt;Encrypted value of 'y'&gt;
+       thePOPAlgID = KmacWithSHAKE128
+       witnessAlgID = SHAKE128
+       witness &lt;hashed value of 'y'&gt;}}
+           {106, id-cmc-dataReturn, &lt;packet of binary data identifying
+                                     where the key in question is.&gt;}
+     Certificates
+       Other certificates (optional)
+     SignedData.SignerInfos
+       Signed by CA
+
+</pre><a href="#appendix-B.4-6" class="pilcrow">¶</a>
+</div>
+<p id="appendix-B.4-7">Message #2 from client to server:<a href="#appendix-B.4-7" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-8">
+<pre>
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-cct-PKIData
+       eContent
+         controlSequence
+           {102, id-cmc-transactionId, 10132985123483401}
+           {103, id-cmc-senderNonce, 100101}
+           {104, id-cmc-dataReturn, &lt;packet of binary data identifying
+                                     where the key in question is.&gt;}
+           {105, id-cmc-recipientNonce, 10005}
+           {107, id-cmc-decryptedPOP, {
+             bodyPartID 201,
+             thePOPAlgID KmacWithSHAKE128,
+             thePOP &lt;KMAC computed value goes here&gt;}}
+         reqSequence
+           certRequest
+             certReqId = 201
+             certTemplate
+               subject = &lt; My DN &gt;
+               publicKey = My Public Key
+               extensions
+                 {id-ce-keyUsage, keyEncipherment}
+             popo
+               keyEncipherment
+                 subsequentMessage = challengeResp
+     SignedData.SignerInfos
+       SignerInfo
+         sid = &lt; subjectKeyIdentifier &gt;
+         signatureAlgorithm = id-alg-noSignature
+
+</pre><a href="#appendix-B.4-8" class="pilcrow">¶</a>
+</div>
+<p id="appendix-B.4-9">Response #2 from server to client:<a href="#appendix-B.4-9" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-10">
+<pre>
+   ContentInfo.contentType = id-signedData
+   ContentInfo.content
+     SignedData.encapContentInfo
+       eContentType = id-cct-PKIResponse
+       eContent
+         controlSequence
+           {101, id-cmc-transactionId, 10132985123483401}
+           {102, id-cmc-statusInfoV2, {success, 201}}
+           {103, id-cmc-senderNonce, 10019}
+           {104, id-cmc-recipientNonce, 100101}
+           {105, id-cmc-dataReturn, &lt;packet of binary data identifying
+                                     where the key in question is.&gt;}
+     certificates
+       Newly issued certificate
+       Other certificates
+     SignedData.SignerInfos
+       Signed by CA
+
+</pre><a href="#appendix-B.4-10" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -7571,9 +7811,10 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
 <a href="#appendix-C" class="section-number selfRef">Appendix C. </a><a href="#name-production-of-diffie-hellma" class="section-name selfRef">Production of Diffie-Hellman Public Key Certification Requests</a>
       </h2>
 <p id="appendix-C-1">Part of a certification request is a signature over the request;
-Diffie-Hellman is a key agreement algorithm and cannot be used to
+DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
+are key encapsulation mechanisms (KEM) are and cannot be used to
 directly produce the required signature object.  <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> provides
-two ways to produce the necessary signature value.  This document
+three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
 but can be used to produce the necessary signature value.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
 <div id="NoSig-Sig">
@@ -7602,6 +7843,11 @@ security associated with this signature type.  If this signature type
 is on a certification request and the Certification Authority policy
 requires proof-of-possession of the private key, the POP mechanism
 defined in <a href="#EncryptedandDecryptedPOPControls" class="auto internal xref">Section 6.7</a> <span class="bcp14">MUST</span> be used.<a href="#appendix-C.1-3" class="pilcrow">¶</a></p>
+<p id="appendix-C.1-4">When the client generates the SignedData.SignerInfos.SignerInfo.sid
+field it has two choices issuerAndSerialNumber or subjectKeyIdentifier.
+The client does not yet have a certificate and there cannot fill in
+the issuerAndSerialNumber and therefore <span class="bcp14">MUST</span> use the subjectKeyIdentifier
+choice.<a href="#appendix-C.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>

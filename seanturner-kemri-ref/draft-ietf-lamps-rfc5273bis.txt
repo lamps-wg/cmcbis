@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 2 April 2025                                  29 September 2024
+Expires: 9 May 2025                                      5 November 2024
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 April 2025.
+   This Internet-Draft will expire on 9 May 2025.
 
 Copyright Notice
 
@@ -351,9 +351,9 @@ Table of Contents
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC)", Work in Progress, Internet-Draft, draft-ietf-
-              lamps-rfc5272bis-00, 12 September 2024,
+              lamps-rfc5272bis-01, 29 September 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5272bis-00>.
+              rfc5272bis-01>.
 
    [erratum3593]
               "RFC 5273 erratum 3593", April 2013,
@@ -387,9 +387,9 @@ Table of Contents
    [CMC-TRANSv1]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-00, 12 September 2024,
+              Draft, draft-ietf-lamps-rfc5273bis-01, 29 September 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-00>.
+              rfc5273bis-01>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
