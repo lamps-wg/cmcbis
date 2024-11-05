@@ -65,7 +65,7 @@ informative:
   SMALL-GROUP: RFC2785
   X942: RFC2631
   RFC2797:
-  CMS-RI: I-D.ietf-lamps-cms-kemri
+  CMS-RI: RFC9629
   erratum2063:
     target: https://www.rfc-editor.org/errata/eid2063
     title: RFC 5272 erratum 2063
