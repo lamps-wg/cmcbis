@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-05T01:40:51.609093+00:00",
+  "timestamp": "2024-11-07T01:40:26.587593+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -2794,6 +2794,46 @@
           "body": "",
           "createdAt": "2024-09-29T01:03:30Z",
           "updatedAt": "2024-09-29T01:03:30Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 65,
+      "id": "PR_kwDOKfq5gM6A7VrI",
+      "title": "Update kemri ref",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/65",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "RFC 9629 was published.",
+      "createdAt": "2024-11-05T13:05:12Z",
+      "updatedAt": "2024-11-06T17:59:15Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "9a0a52f01a680a980c81af0d7679c4539ebc5617",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-kemri-ref",
+      "headRefOid": "cb30e380b325c91ff24d2031151c9624d00131fc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6QL_zE",
+          "commit": {
+            "abbreviatedOid": "cb30e38"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-06T17:59:15Z",
+          "updatedAt": "2024-11-06T17:59:15Z",
           "comments": []
         }
       ]
