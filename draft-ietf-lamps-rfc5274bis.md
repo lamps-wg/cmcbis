@@ -197,22 +197,30 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
-TODO for -03:
+TODO for -02 WG version:
 
 * Update cryptographic algorithm requirements
 
--02 version changes:
+-01 WG version changes:
+
+* Updated references
+
+-00 WG version changes:
+
+* Added pre-5378 boilerplate
+
+-02 individual version changes:
 
 * Updated text in intro
 * Changed "all agents" to "all entities" in overview
 * Updated section header numbering
 
--01 version changes:
+-01 individual version changes:
 
 * Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis
 * Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
 
--00 version changes:
+-00 individual version changes:
 
 * Added "Changes Since 5274 and 6402" section
 * Updated references
