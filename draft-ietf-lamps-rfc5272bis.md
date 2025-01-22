@@ -4366,7 +4366,7 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content
-                  recipientInfos.riid.issuerSerialNumber = <NULL, 201>
+                  recipientInfos.riid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
                     eContent = <Encrypted value of 'y'>
@@ -4511,7 +4511,7 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content < uses ori.KEMRecipientInfo >
-                  recipientInfos.ori.riid.issuerSerialNumber = < NULL, 201>
+                  recipientInfos.ori.riid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
                     eContent = <Encrypted value of 'y'>
