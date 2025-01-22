@@ -303,6 +303,8 @@ Table of Contents
       |  introduced by each version.  After WGLC, this section will be
       |  finalized.
 
+   --02 WG version * Merged [erratum8027]
+
    --03 todo:
 
    *  Address management of KEM certificate
@@ -3511,6 +3513,10 @@ Table of Contents
    [erratum7629]
               "RFC 5272 erratum 7629", 4 September 2023,
               <https://www.rfc-editor.org/errata/eid7629>.
+
+   [erratum8027]
+              "RFC 5272 erratum 8027", 11 July 2024,
+              <https://www.rfc-editor.org/errata/eid8027>.
 
    [PASSWORD] Grassi, P., Garcia, M., and J. Fenton, "Digital identity
               guidelines: revision 3", National Institute of Standards
