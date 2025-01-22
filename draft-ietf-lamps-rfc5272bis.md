@@ -3111,7 +3111,7 @@ follows:
 
   ChangeSubjectName ::= SEQUENCE {
     subject             Name OPTIONAL,
-    subjectAlt          SubjectAltName OPTIONAL
+    subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
     COMPONENTS {..., subjectAlt PRESENT} )
@@ -4012,7 +4012,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          [1] GeneralNames OPTIONAL
+      subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
