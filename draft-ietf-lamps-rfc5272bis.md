@@ -65,7 +65,7 @@ informative:
   SMALL-GROUP: RFC2785
   X942: RFC2631
   RFC2797:
-  CMS-RI: I-D.ietf-lamps-cms-kemri
+  CMS-RI: RFC9629
   erratum2063:
     target: https://www.rfc-editor.org/errata/eid2063
     title: RFC 5272 erratum 2063
@@ -98,6 +98,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid3943
     title: RFC 6402 erratum 3943
     date: 2014-04-02
+  erratum8027:
+    target: https://www.rfc-editor.org/errata/eid8027
+    title: RFC 5272 erratum 8027
+    date: 2024-07-11
 
 --- abstract
 
@@ -243,6 +247,10 @@ rekey that previously was implicit.
 Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
+
+--02 WG version
+
+* Merged {{erratum8027}}
 
 --01 WG version changes:
 
@@ -3111,7 +3119,7 @@ follows:
 
   ChangeSubjectName ::= SEQUENCE {
     subject             Name OPTIONAL,
-    subjectAlt          SubjectAltName OPTIONAL
+    subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
     COMPONENTS {..., subjectAlt PRESENT} )
@@ -4012,7 +4020,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          [1] GeneralNames OPTIONAL
+      subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
@@ -4366,7 +4374,7 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content
-                  recipientInfos.riid.issuerSerialNumber = <NULL, 201>
+                  recipientInfos.riid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
                     eContent = <Encrypted value of 'y'>
@@ -4511,7 +4519,7 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content < uses ori.KEMRecipientInfo >
-                  recipientInfos.ori.riid.issuerSerialNumber = < NULL, 201>
+                  recipientInfos.ori.riid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
                     eContent = <Encrypted value of 'y'>
