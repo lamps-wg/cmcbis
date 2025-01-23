@@ -6,8 +6,8 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Updates: 5911 (if approved)                                        sn3rd
-Intended status: Standards Track                       29 September 2024
-Expires: 2 April 2025
+Intended status: Standards Track                         23 January 2025
+Expires: 27 July 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -67,11 +67,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 April 2025.
+   This Internet-Draft will expire on 27 July 2025.
 
 Copyright Notice
 
-   Copyright (c) 2024 IETF Trust and the persons identified as the
+   Copyright (c) 2025 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -3452,9 +3452,9 @@ Table of Contents
    [CMC-COMPL]
               Mandel, J. and S. Turner, "Certificate Management Messages
               over CMS (CMC): Compliance Requirements", Work in
-              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-00,
-              13 September 2024, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-lamps-rfc5274bis-00>.
+              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-01,
+              29 September 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-lamps-rfc5274bis-01>.
 
    [CMC-PROTv1]
               Schaad, J. and M. Myers, "Certificate Management over CMS
@@ -3464,9 +3464,9 @@ Table of Contents
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-00, 12 September 2024,
+              Draft, draft-ietf-lamps-rfc5273bis-01, 29 September 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-00>.
+              rfc5273bis-01>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
@@ -3475,10 +3475,9 @@ Table of Contents
 
    [CMS-RI]   Housley, R., Gray, J., and T. Okubo, "Using Key
               Encapsulation Mechanism (KEM) Algorithms in the
-              Cryptographic Message Syntax (CMS)", Work in Progress,
-              Internet-Draft, draft-ietf-lamps-cms-kemri-08, 6 February
-              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              lamps-cms-kemri-08>.
+              Cryptographic Message Syntax (CMS)", RFC 9629,
+              DOI 10.17487/RFC9629, August 2024,
+              <https://www.rfc-editor.org/rfc/rfc9629>.
 
    [erratum2063]
               "RFC 5272 erratum 2063", 4 March 2010,
