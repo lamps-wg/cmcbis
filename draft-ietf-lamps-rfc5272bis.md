@@ -249,26 +249,27 @@ Note: For now, this section will be list of the changes introduced
 </aside>
 
 --02 WG version
+
 * Merged {{erratum8027}}
 
---03 todo:
+--01 WG version changes:
 
-* Address management of KEM certificate
-
---03 version changes:
-
-* Publish Trust Anchors Control hashAlgorithm changed to SHA-256
 * Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256
-* Update DH-POP from RFC2875 to RFC6955
 * Editorial changes
 * Addressed errata 3943 for RFC 6402
+* Added direct POP example to address management of KEM certificates
+* Clarified that subjectKeyIdentifier choice used with id-alg-noSignature
 
+--00 WG version changes:
 
---02 version changes:
+* Added pre-5378 boilerplate
+* Update DH-POP from RFC2875 to RFC6955
 
-* Add module to support new HMAC algorithms in PBKDF2
+--02 individual version changes:
 
---01 version changes:
+* Added module to support new HMAC algorithms in PBKDF2
+
+--01 individual version changes:
 
 * Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
 * Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis
@@ -287,7 +288,7 @@ Note: For now, this section will be list of the changes introduced
 * Merged {{erratum7628}}
 * Merged {{erratum7629}}
 
---00 version changes:
+--00 individual version changes:
 
 * Added "Updates Made by RFC 6402" section
 * Merged {{CMC-Updates}} text
