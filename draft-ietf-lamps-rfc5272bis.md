@@ -98,6 +98,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid3943
     title: RFC 6402 erratum 3943
     date: 2014-04-02
+  erratum8027:
+    target: https://www.rfc-editor.org/errata/eid8027
+    title: RFC 5272 erratum 8027
+    date: 2024-07-11
 
 --- abstract
 
@@ -243,6 +247,9 @@ rekey that previously was implicit.
 Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
+
+--02 WG version
+* Merged {{erratum8027}}
 
 --03 todo:
 
@@ -4366,7 +4373,7 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content
-                  recipientInfos.riid.issuerSerialNumber = <NULL, 201>
+                  recipientInfos.riid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
                     eContent = <Encrypted value of 'y'>
@@ -4511,7 +4518,7 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content < uses ori.KEMRecipientInfo >
-                  recipientInfos.ori.riid.issuerSerialNumber = < NULL, 201>
+                  recipientInfos.ori.riid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
                     eContent = <Encrypted value of 'y'>
