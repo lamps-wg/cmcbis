@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-23T01:40:07.097910+00:00",
+  "timestamp": "2025-01-26T01:42:24.783377+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -500,15 +500,15 @@
       "id": "I_kwDOKfq5gM6nKtTr",
       "title": "5272: Erratum8027",
       "url": "https://github.com/lamps-wg/cmcbis/issues/66",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "See https://www.rfc-editor.org/errata/eid8027.",
       "createdAt": "2025-01-22T14:53:05Z",
-      "updatedAt": "2025-01-22T14:53:05Z",
-      "closedAt": null,
+      "updatedAt": "2025-01-23T02:47:16Z",
+      "closedAt": "2025-01-23T02:47:16Z",
       "comments": []
     },
     {
@@ -516,15 +516,15 @@
       "id": "I_kwDOKfq5gM6nK6WC",
       "title": "5272: Changes Since RFC 6402 Section",
       "url": "https://github.com/lamps-wg/cmcbis/issues/68",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "The section is a little out of step.",
       "createdAt": "2025-01-22T15:13:12Z",
-      "updatedAt": "2025-01-22T15:13:12Z",
-      "closedAt": null,
+      "updatedAt": "2025-01-23T02:51:14Z",
+      "closedAt": "2025-01-23T02:51:14Z",
       "comments": []
     },
     {
@@ -532,15 +532,15 @@
       "id": "I_kwDOKfq5gM6nLbC6",
       "title": "5273: Changes Since 5273 and 6402",
       "url": "https://github.com/lamps-wg/cmcbis/issues/71",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Section is a little out step.",
       "createdAt": "2025-01-22T16:09:42Z",
-      "updatedAt": "2025-01-22T16:24:01Z",
-      "closedAt": null,
+      "updatedAt": "2025-01-23T02:33:06Z",
+      "closedAt": "2025-01-23T02:33:06Z",
       "comments": []
     },
     {
@@ -548,15 +548,15 @@
       "id": "I_kwDOKfq5gM6nLkAh",
       "title": "5274: Changes Since 5274 and 6042",
       "url": "https://github.com/lamps-wg/cmcbis/issues/73",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Section is a little out step.",
       "createdAt": "2025-01-22T16:26:12Z",
-      "updatedAt": "2025-01-22T16:26:12Z",
-      "closedAt": null,
+      "updatedAt": "2025-01-23T02:33:22Z",
+      "closedAt": "2025-01-23T02:33:22Z",
       "comments": []
     }
   ],
@@ -2867,24 +2867,26 @@
       "id": "PR_kwDOKfq5gM6A7VrI",
       "title": "Update kemri ref",
       "url": "https://github.com/lamps-wg/cmcbis/pull/65",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "RFC 9629 was published.",
       "createdAt": "2024-11-05T13:05:12Z",
-      "updatedAt": "2024-11-06T17:59:15Z",
+      "updatedAt": "2025-01-23T02:28:14Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "9a0a52f01a680a980c81af0d7679c4539ebc5617",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-kemri-ref",
       "headRefOid": "cb30e380b325c91ff24d2031151c9624d00131fc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-01-23T02:28:14Z",
+      "mergedAt": "2025-01-23T02:28:14Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "b1ac18eae7acba8f7a016fc14da0f37c0346d14a"
+      },
       "comments": [],
       "reviews": [
         {
@@ -2907,130 +2909,210 @@
       "id": "PR_kwDOKfq5gM6Io_t6",
       "title": "Addresses #66",
       "url": "https://github.com/lamps-wg/cmcbis/pull/67",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Closes #66.",
       "createdAt": "2025-01-22T14:57:40Z",
-      "updatedAt": "2025-01-22T15:12:31Z",
+      "updatedAt": "2025-01-23T02:47:15Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "9a0a52f01a680a980c81af0d7679c4539ebc5617",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-closes-66",
       "headRefOid": "2f8481f26f32db32202b6fdf94a118069f6b1020",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-01-23T02:47:15Z",
+      "mergedAt": "2025-01-23T02:47:15Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "55f46e878eef45f2704d25bcec570a236d8a370a"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6ZG-lQ",
+          "commit": {
+            "abbreviatedOid": "2f8481f"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-23T02:43:59Z",
+          "updatedAt": "2025-01-23T02:43:59Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 69,
       "id": "PR_kwDOKfq5gM6IpULM",
       "title": "Addresses #68",
       "url": "https://github.com/lamps-wg/cmcbis/pull/69",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Closes #68.",
       "createdAt": "2025-01-22T15:34:30Z",
-      "updatedAt": "2025-01-22T15:34:31Z",
+      "updatedAt": "2025-01-23T02:51:13Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
-      "baseRefOid": "9a0a52f01a680a980c81af0d7679c4539ebc5617",
+      "baseRefOid": "d3b40799eae62aee5445b42492d4268cc27126a3",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-68",
-      "headRefOid": "885640b2d6bf0f138a0e48c6b6a096386e93ac72",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "68cb5c97e10af17f6f395baae31336865b03eae6",
+      "closedAt": "2025-01-23T02:51:13Z",
+      "mergedAt": "2025-01-23T02:51:13Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "07f74bcaebc91e1bb9693e093042eacd7a91e467"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6ZG-rt",
+          "commit": {
+            "abbreviatedOid": "885640b"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-23T02:44:25Z",
+          "updatedAt": "2025-01-23T02:44:25Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 70,
       "id": "PR_kwDOKfq5gM6Ipeph",
       "title": "Fix 3943 Errata",
       "url": "https://github.com/lamps-wg/cmcbis/pull/70",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "See [errata 3943](https://www.rfc-editor.org/errata/eid3943)",
       "createdAt": "2025-01-22T15:55:07Z",
-      "updatedAt": "2025-01-22T15:55:07Z",
+      "updatedAt": "2025-01-23T02:48:15Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "9a0a52f01a680a980c81af0d7679c4539ebc5617",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-fix-3943-1",
       "headRefOid": "4e13e55580ea10caa67045fd8beaa21cf85d4924",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-01-23T02:48:15Z",
+      "mergedAt": "2025-01-23T02:48:15Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "d3b40799eae62aee5445b42492d4268cc27126a3"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6ZG-xX",
+          "commit": {
+            "abbreviatedOid": "4e13e55"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-23T02:44:49Z",
+          "updatedAt": "2025-01-23T02:44:49Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 72,
       "id": "PR_kwDOKfq5gM6IptfR",
       "title": "Addresses #71",
       "url": "https://github.com/lamps-wg/cmcbis/pull/72",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Closes #71",
       "createdAt": "2025-01-22T16:25:06Z",
-      "updatedAt": "2025-01-22T16:25:07Z",
+      "updatedAt": "2025-01-23T02:33:05Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "9a0a52f01a680a980c81af0d7679c4539ebc5617",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-71",
       "headRefOid": "10e78153f827a1ac8ef3de2977fad064e7e33d57",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-01-23T02:33:05Z",
+      "mergedAt": "2025-01-23T02:33:05Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "edfda7462cb4a6fd6984ec4aa34bec73febac324"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6ZGu4u",
+          "commit": {
+            "abbreviatedOid": "10e7815"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-23T01:40:55Z",
+          "updatedAt": "2025-01-23T01:40:55Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 74,
       "id": "PR_kwDOKfq5gM6IpvZD",
       "title": "Address #73",
       "url": "https://github.com/lamps-wg/cmcbis/pull/74",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Closes #73",
       "createdAt": "2025-01-22T16:29:10Z",
-      "updatedAt": "2025-01-22T16:29:11Z",
+      "updatedAt": "2025-01-23T02:33:21Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "9a0a52f01a680a980c81af0d7679c4539ebc5617",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-73",
       "headRefOid": "ebe984fe894d827872bc674d50b01653f6a8b5aa",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-01-23T02:33:21Z",
+      "mergedAt": "2025-01-23T02:33:21Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "233c89e3cbca8fcd1a70edcfafd30c3e281d50ff"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6ZGuus",
+          "commit": {
+            "abbreviatedOid": "ebe984f"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-23T01:40:35Z",
+          "updatedAt": "2025-01-23T01:40:35Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
