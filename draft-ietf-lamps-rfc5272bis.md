@@ -251,6 +251,7 @@ Note: For now, this section will be list of the changes introduced
 --02 WG version
 
 * Merged {{erratum8027}}
+* Added id-ce-subjectPublicKeyIdentifier to examples
 
 --01 WG version changes:
 
@@ -4337,6 +4338,7 @@ Message #1 from client to server:
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
+                 {id-ce-subjectPublicKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage
@@ -4367,6 +4369,7 @@ Response #1 from server to client:
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
+                       {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                      subsequentMessage
@@ -4415,6 +4418,7 @@ Message #2 from client to server:
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
+                 {id-ce-subjectPublicKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage
@@ -4479,6 +4483,7 @@ Message #1 from client to server:
                subject = < My DN >
                publicKey = My Public Key
                extensions
+                 {id-ce-subjectPublicKeyIdentifier, 1000}
                  {id-ce-keyUsage, keyEncipherment}
              popo
                keyEncipherment
@@ -4512,6 +4517,7 @@ Response #1 from server to client:
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
+                       {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                        subsequentMessage = challengeResp
@@ -4562,6 +4568,7 @@ Message #2 from client to server:
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
+                 {id-ce-subjectPublicKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp
