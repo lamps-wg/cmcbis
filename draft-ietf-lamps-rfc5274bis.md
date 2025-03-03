@@ -309,7 +309,7 @@ Optional: Algorithms that MAY be supported
 | Encrypted POP and Decrypted POP controls | thePOPAlgID | TBD | TBD | TBD |
 | Publish Trust Anchors control | hashAlgorithm | TBD | TBD | TBD |
 |:-----------------------|:-----------|:-------------| :-------------|:-------------|
-{: #AlgReq-ED-and-AD title="Algorithm Requirements for Controls"}
+{: #AlgReq-Controls title="Algorithm Requirements for Controls"}
 
 The following table shows the algorithm requirements for Proof of Possession (POP) of DH Certification Requests and the No-Signature mechanism.
 
@@ -325,7 +325,7 @@ Optional: Algorithms that MAY be supported
 | EE generates DH keys for certification | EE and CA/RA {{Section 4 of DH-POP}} | {TBD} | EE and CA/RA {{Section 3 of DH-POP}} |
 | No-Signature Signature Mechanism | Appendix C of {{CMC-STRUCT}} | {TBD} | {TBD} |
 |:-----------------------|:-----------|:-------------| :-------------|
-{: #AlgReq-ED-and-AD title="Algorithm Requirements for DH Certification Requests and the No-Signature mechanism"}
+{: #AlgReq-DH-and-NS title="Algorithm Requirements for DH Certification Requests and the No-Signature mechanism"}
 
 ## Controls
 
