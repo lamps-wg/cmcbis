@@ -6,8 +6,8 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Updates: 5911 (if approved)                                        sn3rd
-Intended status: Standards Track                         23 January 2025
-Expires: 27 July 2025
+Intended status: Standards Track                            3 March 2025
+Expires: 4 September 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 July 2025.
+   This Internet-Draft will expire on 4 September 2025.
 
 Copyright Notice
 
@@ -306,6 +306,8 @@ Table of Contents
    --02 WG version
 
    *  Merged [erratum8027]
+
+   *  Added id-ce-subjectPublicKeyIdentifier to examples
 
    --01 WG version changes:
 
@@ -4452,6 +4454,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
                  publicKey = My Public Key
                  extensions
                    {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage
@@ -4480,6 +4483,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
+                       {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                      subsequentMessage
@@ -4526,6 +4530,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
                  publicKey = My Public Key
                  extensions
                    {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage
@@ -4586,6 +4591,7 @@ B.4.  Direct POP with No Signature Mechanism
                  subject = < My DN >
                  publicKey = My Public Key
                  extensions
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
                    {id-ce-keyUsage, keyEncipherment}
                popo
                  keyEncipherment
@@ -4616,6 +4622,7 @@ B.4.  Direct POP with No Signature Mechanism
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
+                       {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                        subsequentMessage = challengeResp
@@ -4662,6 +4669,7 @@ B.4.  Direct POP with No Signature Mechanism
                  publicKey = My Public Key
                  extensions
                    {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage = challengeResp
