@@ -6,8 +6,8 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Updates: 5911 (if approved)                                        sn3rd
-Intended status: Standards Track                         22 January 2025
-Expires: 26 July 2025
+Intended status: Standards Track                            3 March 2025
+Expires: 4 September 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 July 2025.
+   This Internet-Draft will expire on 4 September 2025.
 
 Copyright Notice
 
@@ -303,30 +303,37 @@ Table of Contents
       |  introduced by each version.  After WGLC, this section will be
       |  finalized.
 
-   --02 WG version * Merged [erratum8027]
+   --02 WG version
 
-   --03 todo:
+   *  Merged [erratum8027]
 
-   *  Address management of KEM certificate
+   *  Added id-ce-subjectPublicKeyIdentifier to examples
 
-   --03 version changes:
-
-   *  Publish Trust Anchors Control hashAlgorithm changed to SHA-256
+   --01 WG version changes:
 
    *  Updated Encrypted and Decrypted POP Controls section to use HMAC-
       SHA256
-
-   *  Update DH-POP from RFC2875 to RFC6955
 
    *  Editorial changes
 
    *  Addressed errata 3943 for RFC 6402
 
-   --02 version changes:
+   *  Added direct POP example to address management of KEM certificates
 
-   *  Add module to support new HMAC algorithms in PBKDF2
+   *  Clarified that subjectKeyIdentifier choice used with id-alg-
+      noSignature
 
-   --01 version changes:
+   --00 WG version changes:
+
+   *  Added pre-5378 boilerplate
+
+   *  Update DH-POP from RFC2875 to RFC6955
+
+   --02 individual version changes:
+
+   *  Added module to support new HMAC algorithms in PBKDF2
+
+   --01 individual version changes:
 
    *  Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
 
@@ -359,7 +366,7 @@ Table of Contents
 
    *  Merged [erratum7629]
 
-   --00 version changes:
+   --00 individual version changes:
 
    *  Added "Updates Made by RFC 6402" section
 
@@ -3103,7 +3110,7 @@ Table of Contents
 
      ChangeSubjectName ::= SEQUENCE {
        subject             Name OPTIONAL,
-       subjectAlt          SubjectAltName OPTIONAL
+       subjectAlt          [1] SubjectAltName OPTIONAL
      }
      (WITH COMPONENTS {..., subject PRESENT} |
        COMPONENTS {..., subjectAlt PRESENT} )
@@ -3477,10 +3484,9 @@ Table of Contents
 
    [CMS-RI]   Housley, R., Gray, J., and T. Okubo, "Using Key
               Encapsulation Mechanism (KEM) Algorithms in the
-              Cryptographic Message Syntax (CMS)", Work in Progress,
-              Internet-Draft, draft-ietf-lamps-cms-kemri-08, 6 February
-              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              lamps-cms-kemri-08>.
+              Cryptographic Message Syntax (CMS)", RFC 9629,
+              DOI 10.17487/RFC9629, August 2024,
+              <https://www.rfc-editor.org/rfc/rfc9629>.
 
    [erratum2063]
               "RFC 5272 erratum 2063", 4 March 2010,
@@ -4146,7 +4152,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          [1] GeneralNames OPTIONAL
+      subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
@@ -4448,6 +4454,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
                  publicKey = My Public Key
                  extensions
                    {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage
@@ -4476,6 +4483,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
+                       {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                      subsequentMessage
@@ -4522,6 +4530,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
                  publicKey = My Public Key
                  extensions
                    {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage
@@ -4582,6 +4591,7 @@ B.4.  Direct POP with No Signature Mechanism
                  subject = < My DN >
                  publicKey = My Public Key
                  extensions
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
                    {id-ce-keyUsage, keyEncipherment}
                popo
                  keyEncipherment
@@ -4612,6 +4622,7 @@ B.4.  Direct POP with No Signature Mechanism
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
+                       {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                        subsequentMessage = challengeResp
@@ -4658,6 +4669,7 @@ B.4.  Direct POP with No Signature Mechanism
                  publicKey = My Public Key
                  extensions
                    {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage = challengeResp
