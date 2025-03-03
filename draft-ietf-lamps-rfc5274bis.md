@@ -201,7 +201,7 @@ TODO for -03 WG version:
 
 * Add cryptographic algorithm requirements
 
--01 WG version changes:
+-02 WG version changes:
 
 * Reformat cryptographic algorithm section
 
