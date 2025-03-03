@@ -205,7 +205,7 @@ Table of Contents
 
    *  Add cryptographic algorithm requirements
 
-   -01 WG version changes:
+   -02 WG version changes:
 
    *  Reformat cryptographic algorithm section
 
@@ -595,16 +595,16 @@ Table of Contents
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC)", Work in Progress, Internet-Draft, draft-ietf-
-              lamps-rfc5272bis-01, 29 September 2024,
+              lamps-rfc5272bis-02, 3 March 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5272bis-01>.
+              rfc5272bis-02>.
 
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-01, 29 September 2024,
+              Draft, draft-ietf-lamps-rfc5273bis-02, 3 March 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-01>.
+              rfc5273bis-02>.
 
    [CMS]      Housley, R., "Cryptographic Message Syntax (CMS)", STD 70,
               RFC 5652, DOI 10.17487/RFC5652, September 2009,

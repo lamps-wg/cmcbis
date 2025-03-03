@@ -3473,9 +3473,9 @@ Table of Contents
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-01, 29 September 2024,
+              Draft, draft-ietf-lamps-rfc5273bis-02, 3 March 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-01>.
+              rfc5273bis-02>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
