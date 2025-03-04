@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-02T01:50:02.354519+00:00",
+  "timestamp": "2025-03-04T01:46:49.434218+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -348,15 +348,15 @@
       "id": "I_kwDOKfq5gM6BGCwl",
       "title": "5273: Adopt management of KEM certificates",
       "url": "https://github.com/lamps-wg/cmcbis/issues/38",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Look to what CMP is doing to manage KEM certificates.",
       "createdAt": "2024-03-04T03:27:33Z",
-      "updatedAt": "2024-03-04T03:27:33Z",
-      "closedAt": null,
+      "updatedAt": "2025-03-03T20:49:59Z",
+      "closedAt": "2025-03-03T20:49:59Z",
       "comments": []
     },
     {
@@ -484,16 +484,24 @@
       "id": "I_kwDOKfq5gM6QwY4_",
       "title": "Look into the Renew / re-key case",
       "url": "https://github.com/lamps-wg/cmcbis/issues/56",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "ounsworth",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "(taking notes during 120)\r\nI think the problem case is where client has a KEM cert that they are trying to renew / re-key.",
       "createdAt": "2024-07-24T22:59:18Z",
-      "updatedAt": "2024-07-24T22:59:18Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2025-03-03T20:48:50Z",
+      "closedAt": "2025-03-03T20:48:48Z",
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "body": "So we looked, and CMC does direct only. No plans to add indirect.  Also, there is nothing special done for renew/re-key; you just follow the same steps as an initial. Also, see #38.",
+          "createdAt": "2025-03-03T20:48:49Z",
+          "updatedAt": "2025-03-03T20:48:49Z"
+        }
+      ]
     },
     {
       "number": 66,
@@ -3113,6 +3121,104 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 75,
+      "id": "PR_kwDOKfq5gM6NNSM3",
+      "title": "Add SKI to examples",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/75",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "As Carl noted in #38, SKI is missing in some examples.",
+      "createdAt": "2025-03-03T20:46:40Z",
+      "updatedAt": "2025-03-03T20:49:17Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "07f74bcaebc91e1bb9693e093042eacd7a91e467",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-add-ski-examples",
+      "headRefOid": "06bd40b8e211ca201fe0a69c0ddae4081d7f83fd",
+      "closedAt": "2025-03-03T20:49:17Z",
+      "mergedAt": "2025-03-03T20:49:17Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "533f16702800730d09a4786a195dc15b63ace63d"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 76,
+      "id": "PR_kwDOKfq5gM6NNYBB",
+      "title": "Report cryptographic algorithms requirements",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/76",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Swap text out for tables.",
+      "createdAt": "2025-03-03T21:00:57Z",
+      "updatedAt": "2025-03-03T21:33:40Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "533f16702800730d09a4786a195dc15b63ace63d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-crypto-tables",
+      "headRefOid": "42bade8b0a1a511babfdb73101c6300cb8e026a7",
+      "closedAt": "2025-03-03T21:33:40Z",
+      "mergedAt": "2025-03-03T21:33:40Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "80a2fad06b127c5b89ca4908971b79a0cfda5940"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6eReZg",
+          "commit": {
+            "abbreviatedOid": "42bade8"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-03T21:25:02Z",
+          "updatedAt": "2025-03-03T21:25:02Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 77,
+      "id": "PR_kwDOKfq5gM6NN3I5",
+      "title": "Fix Typo",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/77",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-03-03T22:15:41Z",
+      "updatedAt": "2025-03-03T22:16:15Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "80a2fad06b127c5b89ca4908971b79a0cfda5940",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-typo",
+      "headRefOid": "66a3e0cc77de8e2fe47ddeef25fb60d1c8fba7c0",
+      "closedAt": "2025-03-03T22:16:15Z",
+      "mergedAt": "2025-03-03T22:16:15Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "91e8ac843e7d271f63fe0753378b7f6e7be31b09"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
