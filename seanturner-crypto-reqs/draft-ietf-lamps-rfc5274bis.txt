@@ -535,10 +535,9 @@ Table of Contents
               (CMS)", RFC 3565, DOI 10.17487/RFC3565, July 2003,
               <https://www.rfc-editor.org/rfc/rfc3565>.
 
-   [CMS-ALG2] Schaad, J. and M. Myers, "Certificate Management Messages
-              over CMS (CMC): Compliance Requirements", RFC 5274,
-              DOI 10.17487/RFC5274, June 2008,
-              <https://www.rfc-editor.org/rfc/rfc5274>.
+   [CMS-ALG2] Turner, S., "Using SHA2 Algorithms with Cryptographic
+              Message Syntax", RFC 5754, DOI 10.17487/RFC5754, January
+              2010, <https://www.rfc-editor.org/rfc/rfc5754>.
 
    [CMS-DH]   Rescorla, E., "Diffie-Hellman Key Agreement Method",
               RFC 2631, DOI 10.17487/RFC2631, June 1999,
