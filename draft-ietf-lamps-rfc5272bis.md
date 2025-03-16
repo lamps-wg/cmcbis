@@ -102,6 +102,11 @@ informative:
     target: https://www.rfc-editor.org/errata/eid8027
     title: RFC 5272 erratum 8027
     date: 2024-07-11
+  erratum8137:
+    target: https://www.rfc-editor.org/errata/eid8137
+    title: RFC 5272 erratum 8137
+    date: 2024-10-12
+
 
 --- abstract
 
@@ -247,6 +252,10 @@ rekey that previously was implicit.
 Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
+
+--03 WG version
+
+* Merged {{erratum8027}}
 
 --02 WG version
 
@@ -4630,7 +4639,7 @@ type:
 ~~~
 
 The parameters for id-alg-noSignature MUST be present and MUST be
-encoded as NULL.  NoSignatureValue contains the hash of the
+encoded as NULL.  NoSignatureValue contains the SHA-1 hash of the
 certification request.  It is important to realize that there is no
 security associated with this signature type.  If this signature type
 is on a certification request and the Certification Authority policy
