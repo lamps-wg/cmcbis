@@ -6,8 +6,8 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Updates: 5911 (if approved)                                        sn3rd
-Intended status: Standards Track                           15 March 2025
-Expires: 16 September 2025
+Intended status: Standards Track                           16 March 2025
+Expires: 17 September 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 September 2025.
+   This Internet-Draft will expire on 17 September 2025.
 
 Copyright Notice
 

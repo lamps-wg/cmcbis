@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 16 September 2025                                 15 March 2025
+Expires: 17 September 2025                                 16 March 2025
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 September 2025.
+   This Internet-Draft will expire on 17 September 2025.
 
 Copyright Notice
 
@@ -315,6 +315,11 @@ Table of Contents
    support the Encrypted/Decrypted POP controls.  CAs and RAs that do
    POP verification MUST support this signature algorithm and MUST
    support the Encrypted/Decrypted POP controls.
+
+   For backwards compatibility with the previous version of CMC, servers
+   MAY offer the algorithms specified therein, but SHOULD use the CMC
+   requests to identify which certificates should be transitioned to
+   more secure algorithms, if possible.
 
 5.2.  Controls
 
