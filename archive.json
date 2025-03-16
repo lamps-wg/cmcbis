@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-13T01:48:21.525186+00:00",
+  "timestamp": "2025-03-16T01:53:56.843173+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -3219,6 +3219,102 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 78,
+      "id": "PR_kwDOKfq5gM6OwtX-",
+      "title": "Cryptographic Algorithm Requirements",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/78",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on [RFC 9481](https://www.rfc-editor.org/rfc/rfc9481.html#name-symmetric-key-encryption-al) at 128 bit level of security.",
+      "createdAt": "2025-03-15T07:34:59Z",
+      "updatedAt": "2025-03-15T07:51:36Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "91e8ac843e7d271f63fe0753378b7f6e7be31b09",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-crypto-reqs",
+      "headRefOid": "61fe33fb0ec9a8d6ee3522d9b2575bd0efe9e972",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closes #37",
+          "createdAt": "2025-03-15T07:51:36Z",
+          "updatedAt": "2025-03-15T07:51:36Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 79,
+      "id": "PR_kwDOKfq5gM6OzXb1",
+      "title": "Address erratum 8137",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/79",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "David noted in erratum 8137 that no hash algorithm was specified with id-alg-noSignature algorithm in Appendix C. RFC 6402 fixed this by defining sa-noSignature; it defines the hash algorithm as mda-sha1. RFC 6402's ASN.1 module is now in the I-D, so all that is really left is to say what that hash algorithm is in Appendix C. This is the PR for that.",
+      "createdAt": "2025-03-16T01:13:22Z",
+      "updatedAt": "2025-03-16T01:26:00Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "91e8ac843e7d271f63fe0753378b7f6e7be31b09",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-erratum-8137",
+      "headRefOid": "4c30f4242e9a555922e8f226c8f873e463b6e442",
+      "closedAt": "2025-03-16T01:26:00Z",
+      "mergedAt": "2025-03-16T01:26:00Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "2089870dd347b748fbc7cbf10e66e4c961b66a72"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6gPvCE",
+          "commit": {
+            "abbreviatedOid": "eeafd6c"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-16T01:13:45Z",
+          "updatedAt": "2025-03-16T01:13:46Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "```suggestion\r\n--03 WG version\r\n\r\n```",
+              "createdAt": "2025-03-16T01:13:45Z",
+              "updatedAt": "2025-03-16T01:13:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6gPvIK",
+          "commit": {
+            "abbreviatedOid": "4c30f42"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-16T01:16:52Z",
+          "updatedAt": "2025-03-16T01:16:52Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
