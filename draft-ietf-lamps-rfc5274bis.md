@@ -307,6 +307,11 @@ support the Encrypted/Decrypted POP controls.  CAs and RAs that do
 POP verification MUST support this signature algorithm and MUST
 support the Encrypted/Decrypted POP controls.
 
+For backwards compatibility with the previous version of CMC,
+servers MAY offer the algorithms specified therein, but SHOULD
+use the CMC requests to identify which certificates should be
+transitioned to more secure algorithms, if possible.
+
 ## Controls
 
 The following table lists the name and level of support required for
