@@ -303,7 +303,9 @@ Table of Contents
       |  introduced by each version.  After WGLC, this section will be
       |  finalized.
 
-   --03 WG version * Merged [erratum8027]
+   --03 WG version
+
+   *  Merged [erratum8027]
 
    --02 WG version
 
