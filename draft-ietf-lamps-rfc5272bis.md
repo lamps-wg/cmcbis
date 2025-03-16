@@ -254,6 +254,7 @@ Note: For now, this section will be list of the changes introduced
 </aside>
 
 --03 WG version
+
 * Merged {{erratum8027}}
 
 --02 WG version
