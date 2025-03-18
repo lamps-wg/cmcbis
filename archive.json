@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-16T01:53:56.843173+00:00",
+  "timestamp": "2025-03-18T01:48:49.963363+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -3232,13 +3232,13 @@
       "labels": [],
       "body": "Based on [RFC 9481](https://www.rfc-editor.org/rfc/rfc9481.html#name-symmetric-key-encryption-al) at 128 bit level of security.",
       "createdAt": "2025-03-15T07:34:59Z",
-      "updatedAt": "2025-03-15T07:51:36Z",
+      "updatedAt": "2025-03-16T04:09:50Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "91e8ac843e7d271f63fe0753378b7f6e7be31b09",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-crypto-reqs",
-      "headRefOid": "61fe33fb0ec9a8d6ee3522d9b2575bd0efe9e972",
+      "headRefOid": "c95ba2724eaa824085a278aa1c52a084eefd5193",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3252,7 +3252,28 @@
           "updatedAt": "2025-03-15T07:51:36Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6gP1q0",
+          "commit": {
+            "abbreviatedOid": "61fe33f"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-16T04:09:33Z",
+          "updatedAt": "2025-03-16T04:09:34Z",
+          "comments": [
+            {
+              "originalPosition": 146,
+              "body": "```suggestion\r\nsupport the Encrypted/Decrypted POP controls.\r\n\r\nFor backwards compatibility with the previous version of CMC,\r\nservers MAY offer the algorithms specified therein, but SHOULD\r\nuse the CMC requests to identify which certificates should be\r\ntransitioned to more secure algorithms, if possible.\r\n```",
+              "createdAt": "2025-03-16T04:09:34Z",
+              "updatedAt": "2025-03-16T04:09:34Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 79,
