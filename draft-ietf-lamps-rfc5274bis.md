@@ -50,14 +50,12 @@ normative:
   CMC-TRANS: I-D.ietf-lamps-rfc5273bis
   CMS: RFC5652
   CMS-AES: RFC3565
-  CMS-ALG: RFC3370
+  CMS-ALG2: RFC5754
   CMS-DH: RFC2631
   CRMF: RFC4211
-  CMS-RSA-OAEP: RFC3560
-  CMS-RSA-PSS: RFC4056
   DH-POP: RFC6955
   RSA-256: RFC4055
-  PBKDF2: RFC2898
+  PBKDF2: I-D.ietf-lamps-rfc9579bis
   AES-WRAP: RFC3394
 
 informative:
@@ -254,78 +252,65 @@ in {{CMC-TRANS}}.  Other transport mechanisms MAY be implemented.
 
 ## Cryptographic Algorithm Requirements
 
-The following table shows the algorithm requirements that must be used for SignedData and AuthenticatedData.
+All entities MUST verify RSA-SHA256 signatures in
+SignedData; see {{!CMS-ALG2}}.  Entities MAY verify other signature
+algorithms.
 
-Description of the columns in the table:
+All entities MUST generate RSA-SHA256 signatures for
+SignedData; see {{CMS-ALG2}}.  Other signatures algorithms MAY be used
+for generation.
 
-Use: Description of the key usage
-Mandatory: Algorithms that MUST be supported by conforming implementations
-Recommend: Algorithms that SHOULD be supported
-Optional: Algorithms that MAY be supported
+All entities MUST support Advanced Encryption Standard (AES) as the
+content encryption algorithm for EnvelopedData; see {{CMS-AES}}.
+Other content encryption algorithms MAY be implemented.
 
-| Use      | Mandatory    | Recommend | Optional |
-|:-----------------------|:-----------|:-------------|
-| Verify signature in SignedData | TBD | TBD | other algorithms |
-| Generate signature for SignedData | TBD | TBD | other algorithms |
-| Content encryption for EnvelopedData | TBD | TBD | other algorithms |
-| Key transport for EnvelopedData | TBD | TBD | other algorithms |
-|:-----------------------|:-----------|:-------------|:-------------|
-{: #AlgReq-SD-and-AD title="Algorithm Requirements for SignedData and AuthenticatedData"}
+All entities MUST support RSA as a key transport algorithm for
+EnvelopedData; see {{CMS-ALG2}}. Other key transport algorithms MAY
+be implemented.
 
-The following table shows the algorithm requirements for EnvelopedData and AuthenticatedData if supported by the entity.
+If an entity supports key agreement for EnvelopedData, it MUST
+support Diffie-Hellman; see {{CMS-DH}}.
 
-Description of the columns in the table:
+If an entity supports PasswordRecipientInfo for EnvelopedData or
+AuthenticatedData, it MUST support PBKDF2 {{!PBKDF2}} for key derivation
+algorithms.  It MUST support AES key wrap see {{!AES-WRAP}} as the key
+encryption algorithm.
 
-Use: Description of key usage
-Mandatory: Algorithms that MUST be supported by conforming implementations
-Recommend: Algorithms that SHOULD be supported
-Optional: Algorithms that MAY be supported
+If AuthenticatedData is supported, PasswordRecipientInfo MUST be
+supported.
 
-| Use      | Mandatory    | Recommend | Optional |
-|:-----------------------|:-----------|:-------------|
-| key agreement for EnvelopedData | TBD | TBD | TBD |
-| PasswordRecipientInfo for EnvelopedData or AuthenticatedData | TBD | TBD | TBD |
-| AuthenticatedData | PasswordRecipientInfo | TBD | TBD |
-|:-----------------------|:-----------|:-------------|:-------------|
-{: #AlgReq-ED-and-AD title="Algorithm Requirements for EnvelopedData and AuthenticatedData"}
+Algorithm requirements for the Identity Proof Version 2 control
+{{Section 6.2.1 of CMC-STRUCT}} are: SHA-256 MUST be implemented
+for hashAlgId.  HMAC-SHA256 MUST be implemented for macAlgId.
 
-The following table shows the algorithm requirements for Controls.
+Algorithm requirements for the Pop Link Witness Version 2 control
+{{Section 6.3.1 of CMC-STRUCT}} are: SHA-256 MUST be implemented
+for keyGenAlgorithm. PBKDF2 {{!PBKDF2}} MAY be implemented for
+keyGenAlgorithm.  HMAC-SHA256 MUST be implemented for macAlgorithm.
 
-Description of the columns in the table:
+Algorithm requirements for the Encrypted POP and Decrypted POP
+controls {{Section 6.7 of CMC-STRUCT}} are: SHA-256 MUST be
+implemented for witnessAlgID. HMAC-SHA256 MUST be implemented for
+thePOPAlgID.
 
-Control: Control carried as part of Full PKI Requests and Responses
-AlgId: Notes the algorithm identifier which is used
-Mandatory: Algorithms that MUST be supported by conforming implementations
-Recommend: Algorithms that SHOULD be supported
-Optional: Algorithms that MAY be supported
+Algorithm requirements for Publish Trust Anchors control {{Section
+6.15 of CMC-STRUCT}} are: SHA-256 MUST be implemented for hashAlgorithm.
 
-| Control | AlgId      | Mandatory    | Recommend | Optional |
-|:-----------------------|:-----------|:-------------|:-------------|:-------------|
-| Identity Proof Version 2 control | hashAlgId | TBD | TBD | TBD |
-| Identity Proof Version 2 control | macAlgId | TBD | TBD | TBD |
-| Pop Link Witness Version 2 control | keyGenAlgorithm | TBD | TBD | TBD |
-| Pop Link Witness Version 2 control | macAlgorithm | TBD | TBD | TBD |
-| Encrypted POP and Decrypted POP controls | witnessAlgID | TBD | TBD | TBD |
-| Encrypted POP and Decrypted POP controls | thePOPAlgID | TBD | TBD | TBD |
-| Publish Trust Anchors control | hashAlgorithm | TBD | TBD | TBD |
-|:-----------------------|:-----------|:-------------| :-------------|:-------------|
-{: #AlgReq-Controls title="Algorithm Requirements for Controls"}
+If an EE generates DH keys for certification, it MUST support {{Section
+4 of DH-POP}}].  EEs MAY support {{Section 3 of DH-POP}}.  CAs and RAs
+that do POP verification MUST support {{Section 4 of DH-POP}} and
+SHOULD support {{Section 3 of DH-POP}}.
 
-The following table shows the algorithm requirements for Proof of Possession (POP) of DH Certification Requests and the No-Signature mechanism.
+EEs that need to use a signature algorithm for keys that cannot
+produce a signature MUST support {{Appendix C of CMC-STRUCT}} and MUST
+support the Encrypted/Decrypted POP controls.  CAs and RAs that do
+POP verification MUST support this signature algorithm and MUST
+support the Encrypted/Decrypted POP controls.
 
-Description of the columns in the table:
-
-Use: Request type from Appendix C of {{CMC-STRUCT}}
-Mandatory: Algorithms that MUST be supported by conforming implementations
-Recommend: Algorithms that SHOULD be supported
-Optional: Algorithms that MAY be supported
-
-|Use | Mandatory | Recommend | Optional |
-|:-----------------------|:-----------------------|:-----------|:-------------|
-| EE generates DH keys for certification | EE and CA/RA {{Section 4 of DH-POP}} | {TBD} | EE and CA/RA {{Section 3 of DH-POP}} |
-| No-Signature Signature Mechanism | Appendix C of {{CMC-STRUCT}} | {TBD} | {TBD} |
-|:-----------------------|:-----------|:-------------| :-------------|
-{: #AlgReq-DH-and-NS title="Algorithm Requirements for DH Certification Requests and the No-Signature mechanism"}
+For backwards compatibility with the previous version of CMC,
+servers MAY offer the algorithms specified therein, but SHOULD
+use the CMC requests to identify which certificates should be
+transitioned to more secure algorithms, if possible.
 
 ## Controls
 
