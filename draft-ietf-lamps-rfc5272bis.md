@@ -3421,9 +3421,14 @@ algorithm choices, and algorithm parameters.
 
 This document defines a number of control objects.  These are
 identified by Object Identifiers (OIDs).  The objects are defined
-from an arc delegated by IANA to the PKIX Working Group.  No further
-action by IANA is necessary for this document or any anticipated
-updates.
+from an arc delegated by IANA to the PKIX Working Group.
+
+For the ASN.1 modules in Appendix A, IANA is requested to assign
+an OID for the module identifier (TBD1) with a Description of
+"id-mod-enrollMsgSyntax-2023" and an OID for the module
+identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs".
+The OIDs for the modules should be allocated in the "SMI Security
+for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).
 
 --- back
 
@@ -3434,7 +3439,7 @@ updates.
 EnrollmentMessageSyntax-2023
     { iso(1) identified-organization(3) dod(6) internet(1)
     security(5) mechanisms(5) pkix(7) id-mod(0)
-    id-mod-enrollMsgSyntax-2023(TBD) }
+    id-mod-enrollMsgSyntax-2023(TBD1) }
 
 DEFINITIONS IMPLICIT TAGS ::=
 
@@ -3483,7 +3488,7 @@ BEGIN
          internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
          id-mod-pkix1-algorithms2008-02(56) }
 
-  kda-PBKDF2, maca-hMAC-SHA1
+  maca-hMAC-SHA1
   FROM CryptographicMessageSyntaxAlgorithms-2009
       { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
         smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
@@ -3497,7 +3502,12 @@ BEGIN
   maca-hMAC-SHA256
   FROM HMAC-2010
       { iso(1) identified-organization(3) dod(6) internet(1)
-        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
+        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
+
+  kda-PBKDF2
+  FROM PBKDF2-PRFs-2025
+      { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+        smime(16) modules(0) id-mod-pbkdf2-prfs(TBD2) } ;
 
   --  CMS content types defined in this document
 
@@ -4064,15 +4074,10 @@ END
 
 ## ASN.1 Module for PBKDF2 PRFs
 
-The module contained in this appendix extends the PBKDF2-PRFs algorithm
-set defined in {{Section 3 of CMS-ALGS}}. Apply this extension prior to
-compiling {{asn.1-cmc}} to ensure the imported kda-PBKDF2 includes the
-6 HMAC algorithms included in this ASN.1 module.
-
 ~~~
 PBKDF2-PRFs-2023
   { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
+    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD2) }
 
 DEFINITIONS IMPLICT TAGS ::=
 BEGIN
