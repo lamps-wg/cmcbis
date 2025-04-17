@@ -29,20 +29,20 @@ definition.
        This document also updates part of RFC 5911 to add support for additional
 HMAC algorithms used with the POP Link Witness control. 
     " name="description">
-<meta content="xml2rfc 3.28.0" name="generator">
+<meta content="xml2rfc 3.28.1" name="generator">
 <meta content="Public Key Infrastructure" name="keyword">
 <meta content="Certificate Management" name="keyword">
 <meta content="Cryptographic Message Syntax" name="keyword">
 <meta content="draft-ietf-lamps-rfc5272bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.28.0
+  xml2rfc 3.28.1
     Python 3.12.9
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
-    Jinja2 3.1.5
+    Jinja2 3.1.6
     lxml 5.3.0
-    platformdirs 4.3.6
+    platformdirs 4.3.7
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.3
@@ -1066,11 +1066,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CMC: Structures</td>
-<td class="right">March 2025</td>
+<td class="right">April 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Mandel, Ed &amp; Turner, Ed</td>
-<td class="center">Expires 17 September 2025</td>
+<td class="center">Expires 19 October 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1089,12 +1089,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5911" class="eref">5911</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-03-16" class="published">16 March 2025</time>
+<time datetime="2025-04-17" class="published">17 April 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-09-17">17 September 2025</time></dd>
+<dd class="expires"><time datetime="2025-10-19">19 October 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1167,7 +1167,7 @@ HMAC algorithms used with the POP Link Witness control.<a href="#section-abstrac
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 17 September 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 19 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -6437,9 +6437,13 @@ algorithm choices, and algorithm parameters.<a href="#section-10-11" class="pilc
       </h2>
 <p id="section-11-1">This document defines a number of control objects.  These are
 identified by Object Identifiers (OIDs).  The objects are defined
-from an arc delegated by IANA to the PKIX Working Group.  No further
-action by IANA is necessary for this document or any anticipated
-updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
+from an arc delegated by IANA to the PKIX Working Group.<a href="#section-11-1" class="pilcrow">¶</a></p>
+<p id="section-11-2">For the ASN.1 modules in Appendix A, IANA is requested to assign
+an OID for the module identifier (TBD1) with a Description of
+"id-mod-enrollMsgSyntax-2023" and an OID for the module
+identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs".
+The OIDs for the modules should be allocated in the "SMI Security
+for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).<a href="#section-11-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
@@ -6504,7 +6508,7 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <dl class="references">
 <dt id="CMC-COMPL">[CMC-COMPL]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5274bis-02</span>, <time datetime="2025-03-03" class="refDate">3 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-02">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5274bis-03</span>, <time datetime="2025-03-19" class="refDate">19 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-03">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-PROTv1">[CMC-PROTv1]</dt>
         <dd>
@@ -6512,7 +6516,7 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="CMC-TRANS">[CMC-TRANS]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-02</span>, <time datetime="2025-03-03" class="refDate">3 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-02">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-03</span>, <time datetime="2025-03-19" class="refDate">19 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-03">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-Updates">[CMC-Updates]</dt>
         <dd>
@@ -6602,7 +6606,7 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 EnrollmentMessageSyntax-2023
     { iso(1) identified-organization(3) dod(6) internet(1)
     security(5) mechanisms(5) pkix(7) id-mod(0)
-    id-mod-enrollMsgSyntax-2023(TBD) }
+    id-mod-enrollMsgSyntax-2023(TBD1) }
 
 DEFINITIONS IMPLICIT TAGS ::=
 
@@ -6651,7 +6655,7 @@ BEGIN
          internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
          id-mod-pkix1-algorithms2008-02(56) }
 
-  kda-PBKDF2, maca-hMAC-SHA1
+  maca-hMAC-SHA1
   FROM CryptographicMessageSyntaxAlgorithms-2009
       { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
         smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
@@ -6665,7 +6669,12 @@ BEGIN
   maca-hMAC-SHA256
   FROM HMAC-2010
       { iso(1) identified-organization(3) dod(6) internet(1)
-        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
+        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
+
+  kda-PBKDF2
+  FROM PBKDF2-PRFs-2025
+      { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+        smime(16) modules(0) id-mod-pbkdf2-prfs(TBD2) } ;
 
   --  CMS content types defined in this document
 
@@ -7237,15 +7246,11 @@ END
         <h3 id="name-asn1-module-for-pbkdf2-prfs">
 <a href="#appendix-A.2" class="section-number selfRef">A.2. </a><a href="#name-asn1-module-for-pbkdf2-prfs" class="section-name selfRef">ASN.1 Module for PBKDF2 PRFs</a>
         </h3>
-<p id="appendix-A.2-1">The module contained in this appendix extends the PBKDF2-PRFs algorithm
-set defined in <span><a href="https://rfc-editor.org/rfc/rfc5911#section-3" class="relref">Section 3</a> of [<a href="#CMS-ALGS" class="cite xref">CMS-ALGS</a>]</span>. Apply this extension prior to
-compiling <a href="#asn.1-cmc" class="auto internal xref">Appendix A.1</a> to ensure the imported kda-PBKDF2 includes the
-6 HMAC algorithms included in this ASN.1 module.<a href="#appendix-A.2-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-A.2-2">
+<div class="alignLeft art-text artwork" id="appendix-A.2-1">
 <pre>
 PBKDF2-PRFs-2023
   { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
+    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD2) }
 
 DEFINITIONS IMPLICT TAGS ::=
 BEGIN
@@ -7308,7 +7313,7 @@ alg-hMAC-SHA512-256 ALGORITHM ::=
   { IDENTIFIER id-hmacWithSHA512-256 PARAMS TYPE NULL ARE preferredAbsent }
 
 END
-</pre><a href="#appendix-A.2-2" class="pilcrow">¶</a>
+</pre><a href="#appendix-A.2-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
