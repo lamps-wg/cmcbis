@@ -106,6 +106,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid8137
     title: RFC 5272 erratum 8137
     date: 2024-10-12
+  erratum8385:
+    target: https://www.rfc-editor.org/errata/eid8385
+    title: RFC 6402 erratum 8385
+    date: 2025-04-18
 
 
 --- abstract
