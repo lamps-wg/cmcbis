@@ -317,7 +317,6 @@ Note: For now, this section will be list of the changes introduced
 * Merged {{erratum7379}}
 * Merged {{erratum7628}}
 * Merged {{erratum7629}}
-* Merged {{erratum6571}}
 
 
 --00 individual version changes:
