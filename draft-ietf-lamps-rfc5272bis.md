@@ -4033,7 +4033,7 @@ BEGIN
       subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
-        WITH COMPONENTS {..., subjectAlt PRESENT} )
+    WITH COMPONENTS {..., subjectAlt PRESENT} )
 
   --
   --  Embedded response from a third party for processing
