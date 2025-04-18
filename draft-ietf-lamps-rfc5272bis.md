@@ -3421,9 +3421,14 @@ algorithm choices, and algorithm parameters.
 
 This document defines a number of control objects.  These are
 identified by Object Identifiers (OIDs).  The objects are defined
-from an arc delegated by IANA to the PKIX Working Group.  No further
-action by IANA is necessary for this document or any anticipated
-updates.
+from an arc delegated by IANA to the PKIX Working Group.
+
+For the ASN.1 modules in Appendix A, IANA is requested to assign
+an OID for the module identifier (TBD1) with a Description of
+"id-mod-enrollMsgSyntax-2025" and an OID for the module
+identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs-2025".
+The OIDs for the modules should be allocated in the "SMI Security
+for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).
 
 --- back
 
@@ -3431,10 +3436,10 @@ updates.
 
 ## ASN.1 Module for CMC {#asn.1-cmc}
 ~~~
-EnrollmentMessageSyntax-2023
+EnrollmentMessageSyntax-2025
     { iso(1) identified-organization(3) dod(6) internet(1)
     security(5) mechanisms(5) pkix(7) id-mod(0)
-    id-mod-enrollMsgSyntax-2023(TBD) }
+    id-mod-enrollMsgSyntax-2025(TBD1) }
 
 DEFINITIONS IMPLICIT TAGS ::=
 
@@ -3483,7 +3488,7 @@ BEGIN
          internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
          id-mod-pkix1-algorithms2008-02(56) }
 
-  kda-PBKDF2, maca-hMAC-SHA1
+  maca-hMAC-SHA1
   FROM CryptographicMessageSyntaxAlgorithms-2009
       { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
         smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
@@ -3497,7 +3502,12 @@ BEGIN
   maca-hMAC-SHA256
   FROM HMAC-2010
       { iso(1) identified-organization(3) dod(6) internet(1)
-        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
+        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
+
+  kda-PBKDF2
+  FROM PBKDF2-PRFs-2025
+      { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+        smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) } ;
 
   --  CMS content types defined in this document
 
@@ -4064,75 +4074,101 @@ END
 
 ## ASN.1 Module for PBKDF2 PRFs
 
-The module contained in this appendix extends the PBKDF2-PRFs algorithm
-set defined in {{Section 3 of CMS-ALGS}}. Apply this extension prior to
-compiling {{asn.1-cmc}} to ensure the imported kda-PBKDF2 includes the
-6 HMAC algorithms included in this ASN.1 module.
-
 ~~~
-PBKDF2-PRFs-2023
-  { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
+PBKDF2-PRFs-2025
+  { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
+    pkcs-9(9) smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) }
 
-DEFINITIONS IMPLICT TAGS ::=
-BEGIN
-IMPORTS
+  DEFINITIONS IMPLICIT TAGS ::= BEGIN
 
-ALGORITHM
-  FROM AlgorithmInformation-2009 -- From [PKIX-Algs]
-    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0)
-      id-mod-algorithmInformation-02(58) }
+  IMPORTS
 
-id-hmacWithSHA224, id-hmacWithSHA256,
-id-hmacWithSHA384, id-hmacWithSHA512
-  FROM HMAC-2010 -- From [HMAC-Algs]
-    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
-;
+  ALGORITHM, AlgorithmIdentifier{}, KEY-DERIVATION
+  FROM AlgorithmInformation-2009 -- From [PKIX-ALGS]
+      { iso(1) identified-organization(3) dod(6) internet(1)
+        security(5) mechanisms(5) pkix(7) id-mod(0)
+        id-mod-algorithmInformation-02(58) }
 
---
--- Base OID for algorithms
---
+  hMAC-SHA1, alg-hMAC-SHA1, id-PBKDF2
+  FROM CryptographicMessageSyntaxAlgorithms-2009 -- From RFC 5911
+      { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+         smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
 
-rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
-                               rsadsi(113549) }
+  id-hmacWithSHA224, id-hmacWithSHA256,
+  id-hmacWithSHA384, id-hmacWithSHA512
+  FROM HMAC-2010 -- From [HMAC-ALGS]
+      { iso(1) identified-organization(3) dod(6) internet(1)
+        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
 
-digestAlgorithm   OBJECT IDENTIFIER ::= { rsadsi 2 }
+  -- Base OID for algorithms --
 
-id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
-id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
+  rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+      rsadsi(113549) }
 
---
--- PBKF2-PRFs
---
+  digestAlgorithm OBJECT IDENTIFIER ::= { rsadsi 2 }
 
-PBKDF2-PRFs ALGORITHM ::= {
-  alg-hMAC-SHA224 	|
-  alg-hMAC-SHA256 	|
-  alg-hMAC-SHA384 	|
-  alg-hMAC-SHA512 	|
-  alg-hMAC-SHA512-224 |
-  alg-hMAC-SHA512-256,
-  ... }
+  id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
 
-alg-hMAC-SHA224 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA224 PARAMS TYPE NULL ARE preferredAbsent }
+  id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
 
-alg-hMAC-SHA256 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA256 PARAMS TYPE NULL ARE preferredAbsent }
+  -- PBKF2-PRFs --
 
-alg-hMAC-SHA384 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA384 PARAMS TYPE NULL ARE preferredAbsent }
+  PBKDF2-PRFs ALGORITHM ::= {
+      alg-hMAC-SHA1 |
+      alg-hMAC-SHA224 | alg-hMAC-SHA256 |
+      alg-hMAC-SHA384 | alg-hMAC-SHA512 |
+      alg-hMAC-SHA512-224 | alg-hMAC-SHA512-256, ... }
 
-alg-hMAC-SHA512 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512 PARAMS TYPE NULL ARE preferredAbsent }
+  PBKDF2-PRFsAlgorithmIdentifier ::=
+      AlgorithmIdentifier{ ALGORITHM, {PBKDF2-PRFs} }
 
-alg-hMAC-SHA512-224 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512-224 PARAMS TYPE NULL ARE preferredAbsent }
+  alg-hMAC-SHA224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA224
+      PARAMS TYPE NULL ARE preferredAbsent }
 
-alg-hMAC-SHA512-256 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512-256 PARAMS TYPE NULL ARE preferredAbsent }
+  alg-hMAC-SHA256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA256
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  alg-hMAC-SHA384 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA384
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  alg-hMAC-SHA512 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  alg-hMAC-SHA512-224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-224
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  alg-hMAC-SHA512-256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-256
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  -- PBKF2-SaltSources --
+
+  PBKDF2-SaltSources ALGORITHM ::= { ... }
+
+  PBKDF2-SaltSourcesAlgorithmIdentifier ::=
+      AlgorithmIdentifier {ALGORITHM, {PBKDF2-SaltSources} }
+
+  -- PBKF2-params --
+
+  PBKDF2-params ::= SEQUENCE {
+      salt CHOICE {
+          specified OCTET STRING,
+          otherSource PBKDF2-SaltSourcesAlgorithmIdentifier },
+      iterationCount INTEGER (1..MAX),
+      keyLength INTEGER (1..MAX) OPTIONAL,
+      prf PBKDF2-PRFsAlgorithmIdentifier DEFAULT defaultPBKDF2 }
+
+  defaultPBKDF2 PBKDF2-PRFsAlgorithmIdentifier ::=
+      { algorithm alg-hMAC-SHA1.&id, parameters NULL:NULL }
+
+  -- Key Derivation Algorithms --
+
+  KeyDerivationAlgs KEY-DERIVATION ::= { kda-PBKDF2, ... }
+
+  kda-PBKDF2 KEY-DERIVATION ::= {
+      IDENTIFIER id-PBKDF2
+      PARAMS TYPE PBKDF2-params ARE required
+      -- No S/MIME caps defined
+  }
 
 END
 ~~~
