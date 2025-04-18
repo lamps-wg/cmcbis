@@ -259,7 +259,7 @@ Note: For now, this section will be list of the changes introduced
 
 --04 WG version
 
-* Merged {{erratum8835}}
+* Merged {{erratum8385}}
 * Refactored A.2 Module to allow import into A.1 Module
 
 --03 WG version
