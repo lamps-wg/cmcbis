@@ -106,6 +106,10 @@ informative:
     target: https://www.rfc-editor.org/errata/eid8137
     title: RFC 5272 erratum 8137
     date: 2024-10-12
+  erratum8385:
+    target: https://www.rfc-editor.org/errata/eid8385
+    title: RFC 6402 erratum 8385
+    date: 2025-04-18
 
 
 --- abstract
@@ -252,6 +256,11 @@ rekey that previously was implicit.
 Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
+
+--04 WG version
+
+* Merged {{erratum8385}}
+* Refactored A.2 Module to allow import into A.1 Module
 
 --03 WG version
 
@@ -3129,10 +3138,10 @@ follows:
 
   ChangeSubjectName ::= SEQUENCE {
     subject             Name OPTIONAL,
-    subjectAlt          [1] SubjectAltName OPTIONAL
+    subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
-    COMPONENTS {..., subjectAlt PRESENT} )
+   WITH COMPONENTS {..., subjectAlt PRESENT} )
 ~~~
 
 The attribute is designed to be used as an ATTRIBUTE object.  As
@@ -4040,7 +4049,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          [1] SubjectAltName OPTIONAL
+      subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
