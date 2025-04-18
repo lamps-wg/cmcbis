@@ -3117,7 +3117,7 @@ Table of Contents
        subjectAlt          [1] SubjectAltName OPTIONAL
      }
      (WITH COMPONENTS {..., subject PRESENT} |
-      WITH COMPONENTS {..., subjectAlt PRESENT} )
+           WITH COMPONENTS {..., subjectAlt PRESENT} )
 
    The attribute is designed to be used as an ATTRIBUTE object.  As
    such, the attribute is placed in one of the following two places:
@@ -4163,7 +4163,7 @@ BEGIN
       subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
-   WITH COMPONENTS {..., subjectAlt PRESENT} )
+        COMPONENTS {..., subjectAlt PRESENT} )
 
   --
   --  Embedded response from a third party for processing

@@ -6085,7 +6085,7 @@ follows:<a href="#section-7.1-2" class="pilcrow">¶</a></p>
     subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
-   WITH COMPONENTS {..., subjectAlt PRESENT} )
+        WITH COMPONENTS {..., subjectAlt PRESENT} )
 </pre><a href="#section-7.1-3" class="pilcrow">¶</a>
 </div>
 <p id="section-7.1-4">The attribute is designed to be used as an ATTRIBUTE object.  As
@@ -7201,7 +7201,7 @@ BEGIN
       subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
-   WITH COMPONENTS {..., subjectAlt PRESENT} )
+        COMPONENTS {..., subjectAlt PRESENT} )
 
   --
   --  Embedded response from a third party for processing
