@@ -3129,7 +3129,7 @@ follows:
 
   ChangeSubjectName ::= SEQUENCE {
     subject             Name OPTIONAL,
-    subjectAlt          [1] SubjectAltName OPTIONAL
+    subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
