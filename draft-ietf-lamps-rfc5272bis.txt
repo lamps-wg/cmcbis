@@ -307,6 +307,8 @@ Table of Contents
 
    *  Merged [erratum8385]
 
+   *  Merged [erratum6571] into text
+
    *  Refactored A.2 Module to allow import into A.1 Module
 
    --03 WG version
@@ -369,6 +371,10 @@ Table of Contents
    *  Merged [erratum2731]
 
    *  Merged [erratum4775]
+
+   *  Merged [erratum5931]
+
+   *  Merged [erratum6571]
 
    *  Merged [erratum7379]
 
@@ -1503,7 +1509,7 @@ Table of Contents
       OtherStatusInfo ::= CHOICE {
          failInfo              CMCFailInfo,
          pendInfo              PendInfo,
-         extendedFailInfo      ExtendedFailInfo
+         extendedFailInfo      [1] ExtendedFailInfo
       }
 
       PendInfo ::= SEQUENCE {
@@ -3518,6 +3524,14 @@ Table of Contents
    [erratum4775]
               "RFC 5272 erratum 4775", 11 August 2016,
               <https://www.rfc-editor.org/errata/eid4775>.
+
+   [erratum5931]
+              "RFC 6402 erratum 5931", 7 December 2019,
+              <https://www.rfc-editor.org/errata/eid5931>.
+
+   [erratum6571]
+              "RFC 6402 erratum 6571", 4 May 2021,
+              <https://www.rfc-editor.org/errata/eid6571>.
 
    [erratum7379]
               "RFC 5272 erratum 7379", 8 March 2023,

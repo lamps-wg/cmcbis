@@ -1662,7 +1662,10 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
             <p id="section-1.5-3.1.1">Merged <span>[<a href="#erratum8385" class="cite xref">erratum8385</a>]</span><a href="#section-1.5-3.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-3.2">
-            <p id="section-1.5-3.2.1">Refactored A.2 Module to allow import into A.1 Module<a href="#section-1.5-3.2.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-3.2.1">Merged <span>[<a href="#erratum6571" class="cite xref">erratum6571</a>]</span> into text<a href="#section-1.5-3.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-3.3">
+            <p id="section-1.5-3.3.1">Refactored A.2 Module to allow import into A.1 Module<a href="#section-1.5-3.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-1.5-4">--03 WG version<a href="#section-1.5-4" class="pilcrow">¶</a></p>
@@ -1755,13 +1758,19 @@ to match ASN.1 module<a href="#section-1.5-15.3.1" class="pilcrow">¶</a></p>
             <p id="section-1.5-15.9.1">Merged <span>[<a href="#erratum4775" class="cite xref">erratum4775</a>]</span><a href="#section-1.5-15.9.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-15.10">
-            <p id="section-1.5-15.10.1">Merged <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span><a href="#section-1.5-15.10.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-15.10.1">Merged <span>[<a href="#erratum5931" class="cite xref">erratum5931</a>]</span><a href="#section-1.5-15.10.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-15.11">
-            <p id="section-1.5-15.11.1">Merged <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span><a href="#section-1.5-15.11.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-15.11.1">Merged <span>[<a href="#erratum6571" class="cite xref">erratum6571</a>]</span><a href="#section-1.5-15.11.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-15.12">
-            <p id="section-1.5-15.12.1">Merged <span>[<a href="#erratum7629" class="cite xref">erratum7629</a>]</span><a href="#section-1.5-15.12.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-15.12.1">Merged <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span><a href="#section-1.5-15.12.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-15.13">
+            <p id="section-1.5-15.13.1">Merged <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span><a href="#section-1.5-15.13.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-15.14">
+            <p id="section-1.5-15.14.1">Merged <span>[<a href="#erratum7629" class="cite xref">erratum7629</a>]</span><a href="#section-1.5-15.14.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-1.5-16">--00 individual version changes:<a href="#section-1.5-16" class="pilcrow">¶</a></p>
@@ -3547,7 +3556,7 @@ Status Info control. Clients <span class="bcp14">MUST</span> be able to process 
    OtherStatusInfo ::= CHOICE {
       failInfo              CMCFailInfo,
       pendInfo              PendInfo,
-      extendedFailInfo      ExtendedFailInfo
+      extendedFailInfo      [1] ExtendedFailInfo
    }
 
    PendInfo ::= SEQUENCE {
@@ -6550,6 +6559,14 @@ for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).<a href="#section-11-2" c
 <dt id="erratum4775">[erratum4775]</dt>
         <dd>
 <span class="refTitle">"RFC 5272 erratum 4775"</span>, <time datetime="2016-08-11" class="refDate">11 August 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid4775">https://www.rfc-editor.org/errata/eid4775</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="erratum5931">[erratum5931]</dt>
+        <dd>
+<span class="refTitle">"RFC 6402 erratum 5931"</span>, <time datetime="2019-12-07" class="refDate">7 December 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid5931">https://www.rfc-editor.org/errata/eid5931</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="erratum6571">[erratum6571]</dt>
+        <dd>
+<span class="refTitle">"RFC 6402 erratum 6571"</span>, <time datetime="2021-05-04" class="refDate">4 May 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid6571">https://www.rfc-editor.org/errata/eid6571</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="erratum7379">[erratum7379]</dt>
         <dd>
