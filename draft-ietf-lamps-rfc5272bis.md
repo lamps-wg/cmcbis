@@ -3132,7 +3132,7 @@ follows:
     subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
-    COMPONENTS {..., subjectAlt PRESENT} )
+        COMPONENTS {..., subjectAlt PRESENT} )
 ~~~
 
 The attribute is designed to be used as an ATTRIBUTE object.  As
@@ -4033,7 +4033,7 @@ BEGIN
       subjectAlt          [1] SubjectAltName OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
-   WITH COMPONENTS {..., subjectAlt PRESENT} )
+        COMPONENTS {..., subjectAlt PRESENT} )
 
   --
   --  Embedded response from a third party for processing
