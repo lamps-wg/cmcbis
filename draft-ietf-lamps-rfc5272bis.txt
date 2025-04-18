@@ -303,6 +303,12 @@ Table of Contents
       |  introduced by each version.  After WGLC, this section will be
       |  finalized.
 
+   --04 WG version
+
+   *  Merged [erratum8385]
+
+   *  Refactored A.2 Module to allow import into A.1 Module
+
    --03 WG version
 
    *  Merged [erratum8027]
@@ -3114,10 +3120,10 @@ Table of Contents
 
      ChangeSubjectName ::= SEQUENCE {
        subject             Name OPTIONAL,
-       subjectAlt          [1] SubjectAltName OPTIONAL
+       subjectAlt          [1] GeneralNames OPTIONAL
      }
      (WITH COMPONENTS {..., subject PRESENT} |
-       COMPONENTS {..., subjectAlt PRESENT} )
+      WITH COMPONENTS {..., subjectAlt PRESENT} )
 
    The attribute is designed to be used as an ATTRIBUTE object.  As
    such, the attribute is placed in one of the following two places:
@@ -3536,6 +3542,10 @@ Table of Contents
    [erratum8137]
               "RFC 5272 erratum 8137", 12 October 2024,
               <https://www.rfc-editor.org/errata/eid8137>.
+
+   [erratum8385]
+              "RFC 6402 erratum 8385", 18 April 2025,
+              <https://www.rfc-editor.org/errata/eid8385>.
 
    [PASSWORD] Grassi, P., Garcia, M., and J. Fenton, "Digital identity
               guidelines: revision 3", National Institute of Standards
@@ -4170,7 +4180,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          [1] SubjectAltName OPTIONAL
+      subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
