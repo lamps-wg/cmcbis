@@ -382,8 +382,6 @@ Table of Contents
 
    *  Merged [erratum7629]
 
-   *  Merged [erratum6571]
-
    --00 individual version changes:
 
    *  Added "Updates Made by RFC 6402" section
