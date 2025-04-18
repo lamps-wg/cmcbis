@@ -110,6 +110,14 @@ informative:
     target: https://www.rfc-editor.org/errata/eid8385
     title: RFC 6402 erratum 8385
     date: 2025-04-18
+  erratum6571:
+    target: https://www.rfc-editor.org/errata/eid6571
+    title: RFC 6402 erratum 6571
+    date: 2021-05-04
+  erratum5931:
+    target: https://www.rfc-editor.org/errata/eid5931
+    title: RFC 6402 erratum 5931
+    date: 2019-12-07
 
 
 --- abstract
@@ -260,6 +268,7 @@ Note: For now, this section will be list of the changes introduced
 --04 WG version
 
 * Merged {{erratum8385}}
+* Merged {{erratum6571}} into text
 * Refactored A.2 Module to allow import into A.1 Module
 
 --03 WG version
@@ -303,9 +312,13 @@ Note: For now, this section will be list of the changes introduced
   * Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B
 * Merged {{erratum2731}}
 * Merged {{erratum4775}}
+* Merged {{erratum5931}}
+* Merged {{erratum6571}}
 * Merged {{erratum7379}}
 * Merged {{erratum7628}}
 * Merged {{erratum7629}}
+* Merged {{erratum6571}}
+
 
 --00 individual version changes:
 
@@ -1408,7 +1421,7 @@ The Extended CMC Status Info control has the ASN.1 definition:
    OtherStatusInfo ::= CHOICE {
       failInfo              CMCFailInfo,
       pendInfo              PendInfo,
-      extendedFailInfo      ExtendedFailInfo
+      extendedFailInfo      [1] ExtendedFailInfo
    }
 
    PendInfo ::= SEQUENCE {
