@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-30T01:57:20.510715+00:00",
+  "timestamp": "2025-04-20T01:59:12.430371+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -3357,6 +3357,293 @@
           "createdAt": "2025-03-16T01:16:52Z",
           "updatedAt": "2025-03-16T01:16:52Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 80,
+      "id": "PR_kwDOKfq5gM6TBTjs",
+      "title": "Refactor kda-PBKDF2 import",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/80",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-04-17T17:19:38Z",
+      "updatedAt": "2025-04-18T18:01:18Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "880c82d08e33b302cbaa8a9ddcc3f3b4258e49b2",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-kda-PBKDF2-import",
+      "headRefOid": "0401aa6e4b41c669b33a669799ee769abe41a367",
+      "closedAt": "2025-04-18T18:01:18Z",
+      "mergedAt": "2025-04-18T18:01:18Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "68aba5b831178099021e26916aa1135cfd6fba13"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 81,
+      "id": "PR_kwDOKfq5gM6THptd",
+      "title": "Fix ChangeSubjectName ASN.1",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/81",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Module contained an extra WITH in the constraints.",
+      "createdAt": "2025-04-18T12:58:15Z",
+      "updatedAt": "2025-04-18T18:02:50Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "880c82d08e33b302cbaa8a9ddcc3f3b4258e49b2",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-constraints-fix",
+      "headRefOid": "48399bffed3e0d20741adb74b265df67c6575e6a",
+      "closedAt": "2025-04-18T18:02:50Z",
+      "mergedAt": "2025-04-18T18:02:50Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "b05e60cddacc0b344aabf9bfc5c81ac855a79ffa"
+      },
+      "comments": [
+        {
+          "author": "russhousley",
+          "authorAssociation": "NONE",
+          "body": "It now looks right to me.\r\n\r\n",
+          "createdAt": "2025-04-18T17:52:40Z",
+          "updatedAt": "2025-04-18T17:52:40Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6lpPT9",
+          "commit": {
+            "abbreviatedOid": "9e6d290"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T17:20:42Z",
+          "updatedAt": "2025-04-18T17:20:43Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n        WITH COMPONENTS {..., subjectAlt PRESENT} )\r\n```",
+              "createdAt": "2025-04-18T17:20:42Z",
+              "updatedAt": "2025-04-18T17:20:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6lpPvJ",
+          "commit": {
+            "abbreviatedOid": "f7b3c9d"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T17:21:12Z",
+          "updatedAt": "2025-04-18T17:21:12Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "```suggestion\r\n        WITH COMPONENTS {..., subjectAlt PRESENT} )\r\n```",
+              "createdAt": "2025-04-18T17:21:12Z",
+              "updatedAt": "2025-04-18T17:21:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6lpQGL",
+          "commit": {
+            "abbreviatedOid": "44ea0a5"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T17:21:34Z",
+          "updatedAt": "2025-04-18T17:21:34Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "```suggestion\r\n    WITH COMPONENTS {..., subjectAlt PRESENT} )\r\n```",
+              "createdAt": "2025-04-18T17:21:34Z",
+              "updatedAt": "2025-04-18T17:21:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6lpQTh",
+          "commit": {
+            "abbreviatedOid": "a65238e"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T17:21:51Z",
+          "updatedAt": "2025-04-18T17:21:51Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "```suggestion\r\n   WITH COMPONENTS {..., subjectAlt PRESENT} )\r\n```",
+              "createdAt": "2025-04-18T17:21:51Z",
+              "updatedAt": "2025-04-18T17:21:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6lpQvA",
+          "commit": {
+            "abbreviatedOid": "2ec40c1"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T17:23:01Z",
+          "updatedAt": "2025-04-18T17:23:02Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n    WITH COMPONENTS {..., subjectAlt PRESENT} )\r\n```",
+              "createdAt": "2025-04-18T17:23:01Z",
+              "updatedAt": "2025-04-18T17:23:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6lpQz4",
+          "commit": {
+            "abbreviatedOid": "1ca93ff"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T17:23:17Z",
+          "updatedAt": "2025-04-18T17:23:18Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n   WITH COMPONENTS {..., subjectAlt PRESENT} )\r\n```",
+              "createdAt": "2025-04-18T17:23:18Z",
+              "updatedAt": "2025-04-18T17:23:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6lpVaY",
+          "commit": {
+            "abbreviatedOid": "ed631b4"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-04-18T17:30:24Z",
+          "updatedAt": "2025-04-18T17:30:24Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6lpVoF",
+          "commit": {
+            "abbreviatedOid": "ed631b4"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T17:31:10Z",
+          "updatedAt": "2025-04-18T17:31:11Z",
+          "comments": [
+            {
+              "originalPosition": 1,
+              "body": "```suggestion\r\n    subjectAlt          [1] GeneralNames OPTIONAL\r\n```",
+              "createdAt": "2025-04-18T17:31:10Z",
+              "updatedAt": "2025-04-18T17:31:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6lplCu",
+          "commit": {
+            "abbreviatedOid": "a9e8134"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T18:00:23Z",
+          "updatedAt": "2025-04-18T18:00:24Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "```suggestion\r\n* Merged {{erratum8385}}\r\n```",
+              "createdAt": "2025-04-18T18:00:23Z",
+              "updatedAt": "2025-04-18T18:00:24Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 82,
+      "id": "PR_kwDOKfq5gM6TJpU5",
+      "title": "Add more about erratum",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/82",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Needed to be more specific about 6402 erratum.",
+      "createdAt": "2025-04-18T18:10:22Z",
+      "updatedAt": "2025-04-18T18:13:39Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "b05e60cddacc0b344aabf9bfc5c81ac855a79ffa",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-6402-erratum",
+      "headRefOid": "7d337c941693a90b32ee0062d5f7c9002bb31030",
+      "closedAt": "2025-04-18T18:13:38Z",
+      "mergedAt": "2025-04-18T18:13:38Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "8466414afd780875c89157514eb743b6c571a584"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6lpocn",
+          "commit": {
+            "abbreviatedOid": "6ee4bd4"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T18:10:34Z",
+          "updatedAt": "2025-04-18T18:10:35Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "```suggestion\r\n```",
+              "createdAt": "2025-04-18T18:10:34Z",
+              "updatedAt": "2025-04-18T18:10:35Z"
+            }
+          ]
         }
       ]
     }
