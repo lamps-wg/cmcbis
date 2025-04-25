@@ -4443,13 +4443,13 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content
-                  recipientInfos.riid.issuerSerialNumber = <NULL-DN, 201>
+                  recipientInfos.rid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
-                    eContent = <Encrypted value of 'y'>
+                    eContent = <Encrypted value of 'y' from Section 6.7>
               thePOPAlgID = HMAC-SHA256
               witnessAlgID = SHA-256
-              witness <hashed value of 'y'>}}
+              witness <hashed value of 'y' from Section 6.7>}}
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      certificates
@@ -4591,13 +4591,13 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content < uses ori.KEMRecipientInfo >
-                  recipientInfos.ori.riid.issuerSerialNumber = <NULL-DN, 201>
+                  recipientInfos.ori.rid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
-                    eContent = <Encrypted value of 'y'>
+                    eContent = <Encrypted value of 'y' from Section 6.7>
        thePOPAlgID = KmacWithSHAKE128
        witnessAlgID = SHAKE128
-       witness <hashed value of 'y'>}}
+       witness <hashed value of 'y' from Section 6.7>}}
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      Certificates
