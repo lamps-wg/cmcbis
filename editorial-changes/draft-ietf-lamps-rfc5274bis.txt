@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 21 September 2025                                 20 March 2025
+Expires: 27 October 2025                                   25 April 2025
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 September 2025.
+   This Internet-Draft will expire on 27 October 2025.
 
 Copyright Notice
 
@@ -520,16 +520,16 @@ Table of Contents
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC)", Work in Progress, Internet-Draft, draft-ietf-
-              lamps-rfc5272bis-02, 3 March 2025,
+              lamps-rfc5272bis-03, 19 March 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5272bis-02>.
+              rfc5272bis-03>.
 
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-02, 3 March 2025,
+              Draft, draft-ietf-lamps-rfc5273bis-03, 19 March 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-02>.
+              rfc5273bis-03>.
 
    [CMS]      Housley, R., "Cryptographic Message Syntax (CMS)", STD 70,
               RFC 5652, DOI 10.17487/RFC5652, September 2009,
@@ -559,9 +559,9 @@ Table of Contents
 
    [PBKDF2]   Kario, A., "Use of Password-Based Message Authentication
               Code 1 (PBMAC1) in PKCS #12 Syntax", Work in Progress,
-              Internet-Draft, draft-ietf-lamps-rfc9579bis-05, 21 January
+              Internet-Draft, draft-ietf-lamps-rfc9579bis-06, 25 April
               2025, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              lamps-rfc9579bis-05>.
+              lamps-rfc9579bis-06>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -584,9 +584,9 @@ Table of Contents
    [CMC-COMPv1]
               Mandel, J. and S. Turner, "Certificate Management Messages
               over CMS (CMC): Compliance Requirements", Work in
-              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-02,
-              3 March 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-lamps-rfc5274bis-02>.
+              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-03,
+              19 March 2025, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-lamps-rfc5274bis-03>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)

@@ -18,7 +18,7 @@ and services based on CMS and PKCS #10 (Public Key Cryptography
 Standard), and 
          
          
-           The need for a PKI enrollment protocol for encryption only keys
+           The need for a PKI enrollment protocol for encryption-only keys
 due to algorithm or hardware design. 
          
        
@@ -29,20 +29,20 @@ definition.
        This document also updates part of RFC 5911 to add support for additional
 HMAC algorithms used with the POP Link Witness control. 
     " name="description">
-<meta content="xml2rfc 3.28.0" name="generator">
+<meta content="xml2rfc 3.28.1" name="generator">
 <meta content="Public Key Infrastructure" name="keyword">
 <meta content="Certificate Management" name="keyword">
 <meta content="Cryptographic Message Syntax" name="keyword">
 <meta content="draft-ietf-lamps-rfc5272bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.28.0
-    Python 3.12.9
+  xml2rfc 3.28.1
+    Python 3.12.10
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.0
-    platformdirs 4.3.6
+    platformdirs 4.3.7
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.3
@@ -1066,11 +1066,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CMC: Structures</td>
-<td class="right">March 2025</td>
+<td class="right">April 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Mandel, Ed &amp; Turner, Ed</td>
-<td class="center">Expires 21 September 2025</td>
+<td class="center">Expires 27 October 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1089,12 +1089,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5911" class="eref">5911</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-03-20" class="published">20 March 2025</time>
+<time datetime="2025-04-25" class="published">25 April 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-09-21">21 September 2025</time></dd>
+<dd class="expires"><time datetime="2025-10-27">27 October 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1122,7 +1122,7 @@ and services based on CMS and PKCS #10 (Public Key Cryptography
 Standard), and<a href="#section-abstract-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-abstract-2.2">
-          <p id="section-abstract-2.2.1">The need for a PKI enrollment protocol for encryption only keys
+          <p id="section-abstract-2.2.1">The need for a PKI enrollment protocol for encryption-only keys
 due to algorithm or hardware design.<a href="#section-abstract-2.2.1" class="pilcrow">¶</a></p>
 </li>
       </ol>
@@ -1167,7 +1167,7 @@ HMAC algorithms used with the POP Link Witness control.<a href="#section-abstrac
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 21 September 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 27 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1506,7 +1506,7 @@ community:<a href="#section-1-1" class="pilcrow">¶</a></p>
 and services based on CMS and PKCS #10, and<a href="#section-1-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-1-2.2">
-          <p id="section-1-2.2.1">The need for a PKI enrollment protocol for encryption only keys
+          <p id="section-1-2.2.1">The need for a PKI enrollment protocol for encryption-only keys
 due to algorithm or hardware design.<a href="#section-1-2.2.1" class="pilcrow">¶</a></p>
 </li>
       </ol>
@@ -1529,15 +1529,15 @@ subset of the protocol.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
 <p id="section-1.1-3">The protocol must easily support the multi-key enrollment protocols
 required by S/MIME and other groups.<a href="#section-1.1-3" class="pilcrow">¶</a></p>
 <p id="section-1.1-4">The protocol must supply a way of doing all enrollment operations in
-a single round-trip.  When this is not possible the number of
-round-trips is to be minimized.<a href="#section-1.1-4" class="pilcrow">¶</a></p>
+a single round trip.  When this is not possible the number of
+round trips is to be minimized.<a href="#section-1.1-4" class="pilcrow">¶</a></p>
 <p id="section-1.1-5">The protocol must be designed such that all key generation can occur
 on the client.<a href="#section-1.1-5" class="pilcrow">¶</a></p>
 <p id="section-1.1-6">Support must exist for the mandatory algorithms used by S/MIME.
 Support should exist for all other algorithms cited by the S/MIME
 core documents.<a href="#section-1.1-6" class="pilcrow">¶</a></p>
 <p id="section-1.1-7">The protocol must contain Proof-of-Possession (POP) methods.
-Optional provisions for multiple-round-trip POP will be made if
+Optional provisions for multiple round trip POP will be made if
 necessary.<a href="#section-1.1-7" class="pilcrow">¶</a></p>
 <p id="section-1.1-8">The protocol must support deferred and pending responses to
 enrollment requests for cases where external procedures are required
@@ -1656,121 +1656,139 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
           <p id="section-1.5-1.1">Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.<a href="#section-1.5-1.1" class="pilcrow">¶</a></p>
 </aside>
-<p id="section-1.5-2">--03 WG version<a href="#section-1.5-2" class="pilcrow">¶</a></p>
+<p id="section-1.5-2">--04 WG version<a href="#section-1.5-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1.5-3.1">
-            <p id="section-1.5-3.1.1">Merged <span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span><a href="#section-1.5-3.1.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-3.1.1">Merged <span>[<a href="#erratum8385" class="cite xref">erratum8385</a>]</span><a href="#section-1.5-3.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-3.2">
+            <p id="section-1.5-3.2.1">Merged <span>[<a href="#erratum6571" class="cite xref">erratum6571</a>]</span> into text<a href="#section-1.5-3.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-3.3">
+            <p id="section-1.5-3.3.1">Refactored A.2 Module to allow import into A.1 Module<a href="#section-1.5-3.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-1.5-4">--02 WG version<a href="#section-1.5-4" class="pilcrow">¶</a></p>
+<p id="section-1.5-4">--03 WG version<a href="#section-1.5-4" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1.5-5.1">
             <p id="section-1.5-5.1.1">Merged <span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span><a href="#section-1.5-5.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-5.2">
-            <p id="section-1.5-5.2.1">Added id-ce-subjectPublicKeyIdentifier to examples<a href="#section-1.5-5.2.1" class="pilcrow">¶</a></p>
-</li>
         </ul>
-<p id="section-1.5-6">--01 WG version changes:<a href="#section-1.5-6" class="pilcrow">¶</a></p>
+<p id="section-1.5-6">--02 WG version<a href="#section-1.5-6" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1.5-7.1">
-            <p id="section-1.5-7.1.1">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256<a href="#section-1.5-7.1.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-7.1.1">Merged <span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span><a href="#section-1.5-7.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-7.2">
-            <p id="section-1.5-7.2.1">Editorial changes<a href="#section-1.5-7.2.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-7.3">
-            <p id="section-1.5-7.3.1">Addressed errata 3943 for RFC 6402<a href="#section-1.5-7.3.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-7.4">
-            <p id="section-1.5-7.4.1">Added direct POP example to address management of KEM certificates<a href="#section-1.5-7.4.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-7.5">
-            <p id="section-1.5-7.5.1">Clarified that subjectKeyIdentifier choice used with id-alg-noSignature<a href="#section-1.5-7.5.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-7.2.1">Added id-ce-subjectPublicKeyIdentifier to examples<a href="#section-1.5-7.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-1.5-8">--00 WG version changes:<a href="#section-1.5-8" class="pilcrow">¶</a></p>
+<p id="section-1.5-8">--01 WG version changes:<a href="#section-1.5-8" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1.5-9.1">
-            <p id="section-1.5-9.1.1">Added pre-5378 boilerplate<a href="#section-1.5-9.1.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-9.1.1">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256<a href="#section-1.5-9.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-9.2">
-            <p id="section-1.5-9.2.1">Update DH-POP from RFC2875 to RFC6955<a href="#section-1.5-9.2.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-9.2.1">Editorial changes<a href="#section-1.5-9.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-9.3">
+            <p id="section-1.5-9.3.1">Addressed errata 3943 for RFC 6402<a href="#section-1.5-9.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-9.4">
+            <p id="section-1.5-9.4.1">Added direct POP example to address management of KEM certificates<a href="#section-1.5-9.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-9.5">
+            <p id="section-1.5-9.5.1">Clarified that subjectKeyIdentifier choice used with id-alg-noSignature<a href="#section-1.5-9.5.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-1.5-10">--02 individual version changes:<a href="#section-1.5-10" class="pilcrow">¶</a></p>
+<p id="section-1.5-10">--00 WG version changes:<a href="#section-1.5-10" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1.5-11.1">
-            <p id="section-1.5-11.1.1">Added module to support new HMAC algorithms in PBKDF2<a href="#section-1.5-11.1.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-11.1.1">Added pre-5378 boilerplate<a href="#section-1.5-11.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-11.2">
+            <p id="section-1.5-11.2.1">Update DH-POP from RFC2875 to RFC6955<a href="#section-1.5-11.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-1.5-12">--01 individual version changes:<a href="#section-1.5-12" class="pilcrow">¶</a></p>
+<p id="section-1.5-12">--02 individual version changes:<a href="#section-1.5-12" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1.5-13.1">
-            <p id="section-1.5-13.1.1">Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis<a href="#section-1.5-13.1.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-13.1.1">Added module to support new HMAC algorithms in PBKDF2<a href="#section-1.5-13.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-13.2">
-            <p id="section-1.5-13.2.1">Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis<a href="#section-1.5-13.2.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-13.3">
-            <p id="section-1.5-13.3.1">Added missing "OBJECT IDENTIFIER" to declarations throughout mainbody
-to match ASN.1 module<a href="#section-1.5-13.3.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-13.4">
-            <p id="section-1.5-13.4.1">Rework Section 1.3<a href="#section-1.5-13.4.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-13.5">
-            <p id="section-1.5-13.5.1">Update CMC Control Attribute Table<a href="#section-1.5-13.5.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-13.6">
-            <p id="section-1.5-13.6.1">Updates ASN.1 to use 2002 ASN.1 module baseed on <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span><a href="#section-1.5-13.6.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-13.7">
-            <p id="section-1.5-13.7.1">To support adopting SHA-256 and HMAC-SHA256:<a href="#section-1.5-13.7.1" class="pilcrow">¶</a></p>
+        </ul>
+<p id="section-1.5-14">--01 individual version changes:<a href="#section-1.5-14" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-1.5-13.7.2.1">
-                <p id="section-1.5-13.7.2.1.1">Add maca-hMAC-SHA256 to POPAlgs<a href="#section-1.5-13.7.2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-1.5-15.1">
+            <p id="section-1.5-15.1.1">Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis<a href="#section-1.5-15.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-1.5-13.7.2.2">
-                <p id="section-1.5-13.7.2.2.1">Add mda-sha256 to WitnessAlgs<a href="#section-1.5-13.7.2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-15.2">
+            <p id="section-1.5-15.2.1">Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis<a href="#section-1.5-15.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-1.5-13.7.2.3">
-                <p id="section-1.5-13.7.2.3.1">Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B<a href="#section-1.5-13.7.2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-15.3">
+            <p id="section-1.5-15.3.1">Added missing "OBJECT IDENTIFIER" to declarations throughout mainbody
+to match ASN.1 module<a href="#section-1.5-15.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-15.4">
+            <p id="section-1.5-15.4.1">Rework Section 1.3<a href="#section-1.5-15.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-15.5">
+            <p id="section-1.5-15.5.1">Update CMC Control Attribute Table<a href="#section-1.5-15.5.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-15.6">
+            <p id="section-1.5-15.6.1">Updates ASN.1 to use 2002 ASN.1 module baseed on <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span><a href="#section-1.5-15.6.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-15.7">
+            <p id="section-1.5-15.7.1">To support adopting SHA-256 and HMAC-SHA256:<a href="#section-1.5-15.7.1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-1.5-15.7.2.1">
+                <p id="section-1.5-15.7.2.1.1">Add maca-hMAC-SHA256 to POPAlgs<a href="#section-1.5-15.7.2.1.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-1.5-15.7.2.2">
+                <p id="section-1.5-15.7.2.2.1">Add mda-sha256 to WitnessAlgs<a href="#section-1.5-15.7.2.2.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-1.5-15.7.2.3">
+                <p id="section-1.5-15.7.2.3.1">Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B<a href="#section-1.5-15.7.2.3.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="normal" id="section-1.5-13.8">
-            <p id="section-1.5-13.8.1">Merged <span>[<a href="#erratum2731" class="cite xref">erratum2731</a>]</span><a href="#section-1.5-13.8.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-15.8">
+            <p id="section-1.5-15.8.1">Merged <span>[<a href="#erratum2731" class="cite xref">erratum2731</a>]</span><a href="#section-1.5-15.8.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-13.9">
-            <p id="section-1.5-13.9.1">Merged <span>[<a href="#erratum4775" class="cite xref">erratum4775</a>]</span><a href="#section-1.5-13.9.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-15.9">
+            <p id="section-1.5-15.9.1">Merged <span>[<a href="#erratum4775" class="cite xref">erratum4775</a>]</span><a href="#section-1.5-15.9.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-13.10">
-            <p id="section-1.5-13.10.1">Merged <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span><a href="#section-1.5-13.10.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-15.10">
+            <p id="section-1.5-15.10.1">Merged <span>[<a href="#erratum5931" class="cite xref">erratum5931</a>]</span><a href="#section-1.5-15.10.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-13.11">
-            <p id="section-1.5-13.11.1">Merged <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span><a href="#section-1.5-13.11.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-15.11">
+            <p id="section-1.5-15.11.1">Merged <span>[<a href="#erratum6571" class="cite xref">erratum6571</a>]</span><a href="#section-1.5-15.11.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-13.12">
-            <p id="section-1.5-13.12.1">Merged <span>[<a href="#erratum7629" class="cite xref">erratum7629</a>]</span><a href="#section-1.5-13.12.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-15.12">
+            <p id="section-1.5-15.12.1">Merged <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span><a href="#section-1.5-15.12.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-15.13">
+            <p id="section-1.5-15.13.1">Merged <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span><a href="#section-1.5-15.13.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-15.14">
+            <p id="section-1.5-15.14.1">Merged <span>[<a href="#erratum7629" class="cite xref">erratum7629</a>]</span><a href="#section-1.5-15.14.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-1.5-14">--00 individual version changes:<a href="#section-1.5-14" class="pilcrow">¶</a></p>
+<p id="section-1.5-16">--00 individual version changes:<a href="#section-1.5-16" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-1.5-15.1">
-            <p id="section-1.5-15.1.1">Added "Updates Made by RFC 6402" section<a href="#section-1.5-15.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-1.5-17.1">
+            <p id="section-1.5-17.1.1">Added "Updates Made by RFC 6402" section<a href="#section-1.5-17.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-15.2">
-            <p id="section-1.5-15.2.1">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text<a href="#section-1.5-15.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-17.2">
+            <p id="section-1.5-17.2.1">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text<a href="#section-1.5-17.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-15.3">
-            <p id="section-1.5-15.3.1">Merged <span>[<a href="#erratum2063" class="cite xref">erratum2063</a>]</span><a href="#section-1.5-15.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-17.3">
+            <p id="section-1.5-17.3.1">Merged <span>[<a href="#erratum2063" class="cite xref">erratum2063</a>]</span><a href="#section-1.5-17.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-15.4">
-            <p id="section-1.5-15.4.1">Merged <span>[<a href="#erratum7627" class="cite xref">erratum7627</a>]</span><a href="#section-1.5-15.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-17.4">
+            <p id="section-1.5-17.4.1">Merged <span>[<a href="#erratum7627" class="cite xref">erratum7627</a>]</span><a href="#section-1.5-17.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.5-15.5">
-            <p id="section-1.5-15.5.1">Updated and moved Acknowledgments<a href="#section-1.5-15.5.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-1.5-17.5">
+            <p id="section-1.5-17.5.1">Updated and moved Acknowledgments<a href="#section-1.5-17.5.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -1783,12 +1801,12 @@ to match ASN.1 module<a href="#section-1.5-13.3.1" class="pilcrow">¶</a></p>
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-protocol-overview" class="section-name selfRef">Protocol Overview</a>
       </h2>
 <p id="section-2-1">A PKI enrollment transaction in this specification is generally
-composed of a single round-trip of messages. In the simplest case a
+composed of a single round trip of messages. In the simplest case a
 PKI enrollment request, henceforth referred to as a PKI Request, is
 sent from the client to the server and a PKI enrollment response,
 henceforth referred to as a PKI Response, is then returned from the
 server to the client. In more complicated cases, such as delayed
-certificate issuance, more than one round-trip is required.<a href="#section-2-1" class="pilcrow">¶</a></p>
+certificate issuance, more than one round trip is required.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">This specification defines two PKI Request types and two PKI Response
 types.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <p id="section-2-3">PKI Requests are formed using either the PKCS #10 or CRMF structure.
@@ -3538,7 +3556,7 @@ Status Info control. Clients <span class="bcp14">MUST</span> be able to process 
    OtherStatusInfo ::= CHOICE {
       failInfo              CMCFailInfo,
       pendInfo              PendInfo,
-      extendedFailInfo      ExtendedFailInfo
+      extendedFailInfo      [1] ExtendedFailInfo
    }
 
    PendInfo ::= SEQUENCE {
@@ -4881,7 +4899,7 @@ encryption operations, POP <span class="bcp14">MUST</span> be performed by forci
 decrypt a value. See <span><a href="https://rfc-editor.org/rfc/rfc4211#section-5" class="relref">Section 5</a> of [<a href="#CRMF" class="cite xref">CRMF</a>]</span> for a detailed discussion
 of POP.<a href="#section-6.7-2" class="pilcrow">¶</a></p>
 <p id="section-6.7-3">By necessity, POP for encryption-only keys cannot be done in one
-round-trip, since there are four distinct steps:<a href="#section-6.7-3" class="pilcrow">¶</a></p>
+round trip, since there are four distinct steps:<a href="#section-6.7-3" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-6.7-4">
 <li id="section-6.7-4.1">
             <p id="section-6.7-4.1.1">Client tells the server about the public component of a new
@@ -5446,7 +5464,7 @@ being accepted.<a href="#section-6.14-7" class="pilcrow">¶</a></p>
 <p id="section-6.14-8">Servers <span class="bcp14">MUST</span> return a Full PKI Response for a Confirm Certificate
 Acceptance control.<a href="#section-6.14-8" class="pilcrow">¶</a></p>
 <p id="section-6.14-9">Note that if the CA includes this control, there will be two full
-round-trips of messages.<a href="#section-6.14-9" class="pilcrow">¶</a></p>
+round trips of messages.<a href="#section-6.14-9" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-6.14-10">
 <li id="section-6.14-10.1">
             <p id="section-6.14-10.1.1">The client sends the certification request to the CA.<a href="#section-6.14-10.1.1" class="pilcrow">¶</a></p>
@@ -6082,10 +6100,10 @@ follows:<a href="#section-7.1-2" class="pilcrow">¶</a></p>
 
   ChangeSubjectName ::= SEQUENCE {
     subject             Name OPTIONAL,
-    subjectAlt          [1] SubjectAltName OPTIONAL
+    subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
-    COMPONENTS {..., subjectAlt PRESENT} )
+   WITH COMPONENTS {..., subjectAlt PRESENT} )
 </pre><a href="#section-7.1-3" class="pilcrow">¶</a>
 </div>
 <p id="section-7.1-4">The attribute is designed to be used as an ATTRIBUTE object.  As
@@ -6437,9 +6455,13 @@ algorithm choices, and algorithm parameters.<a href="#section-10-11" class="pilc
       </h2>
 <p id="section-11-1">This document defines a number of control objects.  These are
 identified by Object Identifiers (OIDs).  The objects are defined
-from an arc delegated by IANA to the PKIX Working Group.  No further
-action by IANA is necessary for this document or any anticipated
-updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
+from an arc delegated by IANA to the PKIX Working Group.<a href="#section-11-1" class="pilcrow">¶</a></p>
+<p id="section-11-2">For the ASN.1 modules in Appendix A, IANA is requested to assign
+an OID for the module identifier (TBD1) with a Description of
+"id-mod-enrollMsgSyntax-2025" and an OID for the module
+identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs-2025".
+The OIDs for the modules should be allocated in the "SMI Security
+for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).<a href="#section-11-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
@@ -6504,7 +6526,7 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <dl class="references">
 <dt id="CMC-COMPL">[CMC-COMPL]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5274bis-02</span>, <time datetime="2025-03-03" class="refDate">3 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-02">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5274bis-03</span>, <time datetime="2025-03-19" class="refDate">19 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-03">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-PROTv1">[CMC-PROTv1]</dt>
         <dd>
@@ -6512,7 +6534,7 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="CMC-TRANS">[CMC-TRANS]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-02</span>, <time datetime="2025-03-03" class="refDate">3 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-02">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-03</span>, <time datetime="2025-03-19" class="refDate">19 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-03">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-Updates">[CMC-Updates]</dt>
         <dd>
@@ -6538,6 +6560,14 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
         <dd>
 <span class="refTitle">"RFC 5272 erratum 4775"</span>, <time datetime="2016-08-11" class="refDate">11 August 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid4775">https://www.rfc-editor.org/errata/eid4775</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="erratum5931">[erratum5931]</dt>
+        <dd>
+<span class="refTitle">"RFC 6402 erratum 5931"</span>, <time datetime="2019-12-07" class="refDate">7 December 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid5931">https://www.rfc-editor.org/errata/eid5931</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="erratum6571">[erratum6571]</dt>
+        <dd>
+<span class="refTitle">"RFC 6402 erratum 6571"</span>, <time datetime="2021-05-04" class="refDate">4 May 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid6571">https://www.rfc-editor.org/errata/eid6571</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="erratum7379">[erratum7379]</dt>
         <dd>
 <span class="refTitle">"RFC 5272 erratum 7379"</span>, <time datetime="2023-03-08" class="refDate">8 March 2023</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid7379">https://www.rfc-editor.org/errata/eid7379</a>&gt;</span>. </dd>
@@ -6561,6 +6591,10 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <dt id="erratum8137">[erratum8137]</dt>
         <dd>
 <span class="refTitle">"RFC 5272 erratum 8137"</span>, <time datetime="2024-10-12" class="refDate">12 October 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid8137">https://www.rfc-editor.org/errata/eid8137</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="erratum8385">[erratum8385]</dt>
+        <dd>
+<span class="refTitle">"RFC 6402 erratum 8385"</span>, <time datetime="2025-04-18" class="refDate">18 April 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid8385">https://www.rfc-editor.org/errata/eid8385</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="PASSWORD">[PASSWORD]</dt>
         <dd>
@@ -6599,10 +6633,10 @@ updates.<a href="#section-11-1" class="pilcrow">¶</a></p>
         </h3>
 <div class="alignLeft art-text artwork" id="appendix-A.1-1">
 <pre>
-EnrollmentMessageSyntax-2023
+EnrollmentMessageSyntax-2025
     { iso(1) identified-organization(3) dod(6) internet(1)
     security(5) mechanisms(5) pkix(7) id-mod(0)
-    id-mod-enrollMsgSyntax-2023(TBD) }
+    id-mod-enrollMsgSyntax-2025(TBD1) }
 
 DEFINITIONS IMPLICIT TAGS ::=
 
@@ -6651,7 +6685,7 @@ BEGIN
          internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
          id-mod-pkix1-algorithms2008-02(56) }
 
-  kda-PBKDF2, maca-hMAC-SHA1
+  maca-hMAC-SHA1
   FROM CryptographicMessageSyntaxAlgorithms-2009
       { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
         smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
@@ -6665,7 +6699,12 @@ BEGIN
   maca-hMAC-SHA256
   FROM HMAC-2010
       { iso(1) identified-organization(3) dod(6) internet(1)
-        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
+        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
+
+  kda-PBKDF2
+  FROM PBKDF2-PRFs-2025
+      { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+        smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) } ;
 
   --  CMS content types defined in this document
 
@@ -7198,7 +7237,7 @@ BEGIN
 
   ChangeSubjectName ::= SEQUENCE {
       subject             Name OPTIONAL,
-      subjectAlt          [1] SubjectAltName OPTIONAL
+      subjectAlt          [1] GeneralNames OPTIONAL
   }
   (WITH COMPONENTS {..., subject PRESENT} |
    WITH COMPONENTS {..., subjectAlt PRESENT} )
@@ -7237,78 +7276,105 @@ END
         <h3 id="name-asn1-module-for-pbkdf2-prfs">
 <a href="#appendix-A.2" class="section-number selfRef">A.2. </a><a href="#name-asn1-module-for-pbkdf2-prfs" class="section-name selfRef">ASN.1 Module for PBKDF2 PRFs</a>
         </h3>
-<p id="appendix-A.2-1">The module contained in this appendix extends the PBKDF2-PRFs algorithm
-set defined in <span><a href="https://rfc-editor.org/rfc/rfc5911#section-3" class="relref">Section 3</a> of [<a href="#CMS-ALGS" class="cite xref">CMS-ALGS</a>]</span>. Apply this extension prior to
-compiling <a href="#asn.1-cmc" class="auto internal xref">Appendix A.1</a> to ensure the imported kda-PBKDF2 includes the
-6 HMAC algorithms included in this ASN.1 module.<a href="#appendix-A.2-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-A.2-2">
+<div class="alignLeft art-text artwork" id="appendix-A.2-1">
 <pre>
-PBKDF2-PRFs-2023
-  { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-    smime(16) modules(0) id-mod-pbkdf2-prfs(TBD) }
+PBKDF2-PRFs-2025
+  { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
+    pkcs-9(9) smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) }
 
-DEFINITIONS IMPLICT TAGS ::=
-BEGIN
-IMPORTS
+  DEFINITIONS IMPLICIT TAGS ::= BEGIN
 
-ALGORITHM
-  FROM AlgorithmInformation-2009 -- From [PKIX-Algs]
-    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0)
-      id-mod-algorithmInformation-02(58) }
+  IMPORTS
 
-id-hmacWithSHA224, id-hmacWithSHA256,
-id-hmacWithSHA384, id-hmacWithSHA512
-  FROM HMAC-2010 -- From [HMAC-Algs]
-    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
-;
+  ALGORITHM, AlgorithmIdentifier{}, KEY-DERIVATION
+  FROM AlgorithmInformation-2009 -- From [PKIX-ALGS]
+      { iso(1) identified-organization(3) dod(6) internet(1)
+        security(5) mechanisms(5) pkix(7) id-mod(0)
+        id-mod-algorithmInformation-02(58) }
 
---
--- Base OID for algorithms
---
+  hMAC-SHA1, alg-hMAC-SHA1, id-PBKDF2
+  FROM CryptographicMessageSyntaxAlgorithms-2009 -- From RFC 5911
+      { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+         smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
 
-rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
-                               rsadsi(113549) }
+  id-hmacWithSHA224, id-hmacWithSHA256,
+  id-hmacWithSHA384, id-hmacWithSHA512
+  FROM HMAC-2010 -- From [HMAC-ALGS]
+      { iso(1) identified-organization(3) dod(6) internet(1)
+        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
 
-digestAlgorithm   OBJECT IDENTIFIER ::= { rsadsi 2 }
+  -- Base OID for algorithms --
 
-id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
-id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
+  rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+      rsadsi(113549) }
 
---
--- PBKF2-PRFs
---
+  digestAlgorithm OBJECT IDENTIFIER ::= { rsadsi 2 }
 
-PBKDF2-PRFs ALGORITHM ::= {
-  alg-hMAC-SHA224       |
-  alg-hMAC-SHA256       |
-  alg-hMAC-SHA384       |
-  alg-hMAC-SHA512       |
-  alg-hMAC-SHA512-224 |
-  alg-hMAC-SHA512-256,
-  ... }
+  id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
 
-alg-hMAC-SHA224 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA224 PARAMS TYPE NULL ARE preferredAbsent }
+  id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
 
-alg-hMAC-SHA256 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA256 PARAMS TYPE NULL ARE preferredAbsent }
+  -- PBKF2-PRFs --
 
-alg-hMAC-SHA384 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA384 PARAMS TYPE NULL ARE preferredAbsent }
+  PBKDF2-PRFs ALGORITHM ::= {
+      alg-hMAC-SHA1 |
+      alg-hMAC-SHA224 | alg-hMAC-SHA256 |
+      alg-hMAC-SHA384 | alg-hMAC-SHA512 |
+      alg-hMAC-SHA512-224 | alg-hMAC-SHA512-256, ... }
 
-alg-hMAC-SHA512 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512 PARAMS TYPE NULL ARE preferredAbsent }
+  PBKDF2-PRFsAlgorithmIdentifier ::=
+      AlgorithmIdentifier{ ALGORITHM, {PBKDF2-PRFs} }
 
-alg-hMAC-SHA512-224 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512-224 PARAMS TYPE NULL ARE preferredAbsent }
+  alg-hMAC-SHA224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA224
+      PARAMS TYPE NULL ARE preferredAbsent }
 
-alg-hMAC-SHA512-256 ALGORITHM ::=
-  { IDENTIFIER id-hmacWithSHA512-256 PARAMS TYPE NULL ARE preferredAbsent }
+  alg-hMAC-SHA256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA256
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  alg-hMAC-SHA384 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA384
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  alg-hMAC-SHA512 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  alg-hMAC-SHA512-224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-224
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  alg-hMAC-SHA512-256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-256
+      PARAMS TYPE NULL ARE preferredAbsent }
+
+  -- PBKF2-SaltSources --
+
+  PBKDF2-SaltSources ALGORITHM ::= { ... }
+
+  PBKDF2-SaltSourcesAlgorithmIdentifier ::=
+      AlgorithmIdentifier {ALGORITHM, {PBKDF2-SaltSources} }
+
+  -- PBKF2-params --
+
+  PBKDF2-params ::= SEQUENCE {
+      salt CHOICE {
+          specified OCTET STRING,
+          otherSource PBKDF2-SaltSourcesAlgorithmIdentifier },
+      iterationCount INTEGER (1..MAX),
+      keyLength INTEGER (1..MAX) OPTIONAL,
+      prf PBKDF2-PRFsAlgorithmIdentifier DEFAULT defaultPBKDF2 }
+
+  defaultPBKDF2 PBKDF2-PRFsAlgorithmIdentifier ::=
+      { algorithm alg-hMAC-SHA1.&amp;id, parameters NULL:NULL }
+
+  -- Key Derivation Algorithms --
+
+  KeyDerivationAlgs KEY-DERIVATION ::= { kda-PBKDF2, ... }
+
+  kda-PBKDF2 KEY-DERIVATION ::= {
+      IDENTIFIER id-PBKDF2
+      PARAMS TYPE PBKDF2-params ARE required
+      -- No S/MIME caps defined
+  }
 
 END
-</pre><a href="#appendix-A.2-2" class="pilcrow">¶</a>
+</pre><a href="#appendix-A.2-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -7508,10 +7574,10 @@ will modify the certification request before passing it on to the CA.<a href="#a
 <a href="#appendix-B.3" class="section-number selfRef">B.3. </a><a href="#name-direct-pop-for-an-rsa-or-ke" class="section-name selfRef">Direct POP for an RSA or KEM Certificate</a>
         </h3>
 <p id="appendix-B.3-1">This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only certificate using a
-direct POP method; the example below shows.  For simplicity, it is assumed that the
+an enrollment is done for an encryption-only certificate using a
+direct POP method.  For simplicity, it is assumed that the
 certification requester already has a signing-only certificate.<a href="#appendix-B.3-1" class="pilcrow">¶</a></p>
-<p id="appendix-B.3-2">The fact that a second round-trip is required is implicit rather than
+<p id="appendix-B.3-2">The fact that a second round trip is required is implicit rather than
 explicit.  The server determines this based on the fact that no other
 POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcrow">¶</a></p>
 <p id="appendix-B.3-3">Message #1 from client to server:<a href="#appendix-B.3-3" class="pilcrow">¶</a></p>
@@ -7654,13 +7720,13 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
 <a href="#appendix-B.4" class="section-number selfRef">B.4. </a><a href="#name-direct-pop-with-no-signatur" class="section-name selfRef">Direct POP with No Signature Mechanism</a>
         </h3>
 <p id="appendix-B.4-1">This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only cerrtificate using a
+an enrollment is done for an encryption-only cerrtificate using a
 direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 <a href="#DirectPOPforRSACertificate" class="auto internal xref">Appendix B.3</a>, here the No Signature mechanism from
 <a href="#NoSig-Sig" class="auto internal xref">Appendix C.1</a>, the public key is for a KEM, and the EnvelopedData uses
 the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]</span>.<a href="#appendix-B.4-1" class="pilcrow">¶</a></p>
-<p id="appendix-B.4-2">The fact that a second round-trip is required is implicit rather than
+<p id="appendix-B.4-2">The fact that a second round trip is required is implicit rather than
 explicit.  The server determines this based on the fact that no other
 POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcrow">¶</a></p>
 <p id="appendix-B.4-3">Message #1 from client to server:<a href="#appendix-B.4-3" class="pilcrow">¶</a></p>
@@ -7811,7 +7877,7 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
       </h2>
 <p id="appendix-C-1">Part of a certification request is a signature over the request;
 DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
-are key encapsulation mechanisms (KEM) are and cannot be used to
+are key encapsulation mechanisms (KEM) and cannot be used to
 directly produce the required signature object.  <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> provides
 three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
@@ -7843,7 +7909,7 @@ is on a certification request and the Certification Authority policy
 requires proof-of-possession of the private key, the POP mechanism
 defined in <a href="#EncryptedandDecryptedPOPControls" class="auto internal xref">Section 6.7</a> <span class="bcp14">MUST</span> be used.<a href="#appendix-C.1-3" class="pilcrow">¶</a></p>
 <p id="appendix-C.1-4">When the client generates the SignedData.SignerInfos.SignerInfo.sid
-field it has two choices issuerAndSerialNumber or subjectKeyIdentifier.
+field it has two choices: issuerAndSerialNumber or subjectKeyIdentifier.
 The client does not yet have a certificate and there cannot fill in
 the issuerAndSerialNumber and therefore <span class="bcp14">MUST</span> use the subjectKeyIdentifier
 choice.<a href="#appendix-C.1-4" class="pilcrow">¶</a></p>
