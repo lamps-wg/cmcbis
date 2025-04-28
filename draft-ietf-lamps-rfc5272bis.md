@@ -4379,10 +4379,6 @@ an enrollment is done for an encryption only certificate using a
 direct POP method; the example below shows.  For simplicity, it is assumed that the
 certification requester already has a signing-only certificate.
 
-The fact that a second round-trip is required is implicit rather than
-explicit.  The server determines this based on the fact that no other
-POP exists for the certification request.
-
 Message #1 from client to server:
 
 ~~~
@@ -4524,10 +4520,6 @@ requester already has a signing-only certificate as in
 {{DirectPOPforRSACertificate}}, here the No Signature mechanism from
 {{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData uses
 the KEMRecipientInfo from {{CMS-RI}}.
-
-The fact that a second round-trip is required is implicit rather than
-explicit.  The server determines this based on the fact that no other
-POP exists for the certification request.
 
 Message #1 from client to server:
 
