@@ -99,9 +99,17 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
-TODO for -02 WG version:
+-04 WG version:
 
-* Consider adding AuthEnvelopedData to Security Considerations.
+* Added text to explain file extensions.
+
+-03 WG version:
+
+* No changes.
+
+-02 WG version:
+
+* Updated this section.
 
 -01 WG version changes:
 
@@ -136,7 +144,9 @@ and servers using file-system-based mechanisms, such as when
 enrollment is performed for an off-line client.  When files are used
 to transport binary, Full PKI Request or Full PKI Response messages,
 there MUST be only one instance of a request or response message in a
-single file.  The following file type extensions SHOULD be used:
+single file. crq and crp stand for Full PKI Request/Response,
+respectively; for clarity we define file extensions for them. The
+following file type extensions SHOULD be used:
 
 
 | Message Type        | File Extension |
