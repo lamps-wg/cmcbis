@@ -4498,7 +4498,7 @@ B.2.  Single Certification Request, But Modified by RA
 B.3.  Direct POP for an RSA or KEM Certificate
 
    This section looks at the messages that would flow in the event that
-   an enrollment is done for an encryption only certificate using a
+   an enrollment is done for an encryption-only certificate using a
    direct POP method; the example below shows.  For simplicity, it is
    assumed that the certification requester already has a signature
    certificate.
@@ -4632,7 +4632,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
 B.4.  Direct POP with No Signature Mechanism
 
    This section looks at the messages that would flow in the event that
-   an enrollment is done for an encryption-only cerrtificate using a
+   an enrollment is done for an encryption-only certificate using a
    direct POP method.  Instead of assuming that the certification
    requester already has a signing-only certificate as in Appendix B.3,
    here the No Signature mechanism from Appendix C.1, the public key is
