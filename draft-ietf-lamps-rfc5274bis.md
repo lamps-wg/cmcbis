@@ -195,9 +195,13 @@ Note: For now, this section will be list of the changes introduced
   by each version. After WGLC, this section will be finalized.
 </aside>
 
-TODO for -03 WG version:
+-04 WG version:
 
-* Add cryptographic algorithm requirements
+* Update this section
+
+-03 WG version:
+
+* Updated cryptographic algorithm requirements
 
 -02 WG version changes:
 
