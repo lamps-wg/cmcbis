@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 20 October 2025                                   18 April 2025
+Expires: 31 October 2025                                   29 April 2025
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 October 2025.
+   This Internet-Draft will expire on 31 October 2025.
 
 Copyright Notice
 
@@ -559,9 +559,9 @@ Table of Contents
 
    [PBKDF2]   Kario, A., "Use of Password-Based Message Authentication
               Code 1 (PBMAC1) in PKCS #12 Syntax", Work in Progress,
-              Internet-Draft, draft-ietf-lamps-rfc9579bis-05, 21 January
+              Internet-Draft, draft-ietf-lamps-rfc9579bis-06, 25 April
               2025, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              lamps-rfc9579bis-05>.
+              lamps-rfc9579bis-06>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
