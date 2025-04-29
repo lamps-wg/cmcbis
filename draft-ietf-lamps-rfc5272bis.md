@@ -4223,14 +4223,15 @@ Message from client to server:
            {102, id-cmc-identityProof, computed value}
            {103, id-cmc-senderNonce, 10001}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = My Proposed DN
-               publicKey = My Public Key
-               extensions
-                 {id-ce-subjectKeyIdentifier, 1000}
-                 {id-ce-keyUsage, digitalSignature}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = My Proposed DN
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-subjectKeyIdentifier, 1000}
+                   {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
          sid.subjectKeyIdentifier = 1000
@@ -4479,14 +4480,15 @@ Message #2 from client to server:
              thePOPAlgID HMAC-SHA256,
              thePOP <HMAC computed value goes here>}}
          reqSequence
-           certReq
-             certReqId = 201
-             certTemplate
-               subject = <My DN>
-               publicKey = My Public Key
-               extensions
-                 {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectKeyIdentifier, 1000}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = <My DN>
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp
