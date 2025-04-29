@@ -4379,7 +4379,7 @@ Response from RA to client:
 ##  Direct POP for an RSA or KEM Certificate {#DirectPOPforRSACertificate}
 
 This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only certificate using a
+an enrollment is done for an encryption-only certificate using a
 direct POP method; the example below shows.  For simplicity, it is assumed that the
 certification requester already has a signature certificate.
 
@@ -4520,7 +4520,7 @@ Response #2 from server to client:
 ##  Direct POP with No Signature Mechanism  {#DirectPOPwithNoSignature}
 
 This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption-only cerrtificate using a
+an enrollment is done for an encryption-only certificate using a
 direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 {{DirectPOPforRSACertificate}}, here the No Signature mechanism from
