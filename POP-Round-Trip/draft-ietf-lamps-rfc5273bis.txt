@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 30 October 2025                                   28 April 2025
+Expires: 31 October 2025                                   29 April 2025
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 October 2025.
+   This Internet-Draft will expire on 31 October 2025.
 
 Copyright Notice
 
@@ -122,9 +122,17 @@ Table of Contents
       |  introduced by each version.  After WGLC, this section will be
       |  finalized.
 
-   TODO for -02 WG version:
+   -04 WG version:
 
-   *  Consider adding AuthEnvelopedData to Security Considerations.
+   *  Added text to explain file extensions.
+
+   -03 WG version:
+
+   *  No changes.
+
+   -02 WG version:
+
+   *  Updated this section.
 
    -01 WG version changes:
 
@@ -163,7 +171,9 @@ Table of Contents
    enrollment is performed for an off-line client.  When files are used
    to transport binary, Full PKI Request or Full PKI Response messages,
    there MUST be only one instance of a request or response message in a
-   single file.  The following file type extensions SHOULD be used:
+   single file. crq and crp stand for Full PKI Request/Response,
+   respectively; for clarity we define file extensions for them.  The
+   following file type extensions SHOULD be used:
 
                  +=====================+================+
                  | Message Type        | File Extension |
