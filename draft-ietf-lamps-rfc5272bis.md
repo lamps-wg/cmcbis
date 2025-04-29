@@ -131,7 +131,7 @@ Public Key Infrastructure (PKI) community:
    and services based on CMS and PKCS #10 (Public Key Cryptography
    Standard), and
 
-2. The need for a PKI enrollment protocol for encryption only keys
+2. The need for a PKI enrollment protocol for encryption-only keys
    due to algorithm or hardware design.
 
 CMC also requires the use of the transport document and the
@@ -155,7 +155,7 @@ community:
 1. The need for an interface to public key certification products
    and services based on CMS and PKCS #10, and
 
-2. The need for a PKI enrollment protocol for encryption only keys
+2. The need for a PKI enrollment protocol for encryption-only keys
    due to algorithm or hardware design.
 
 A small number of additional services are defined to supplement the
@@ -180,8 +180,8 @@ The protocol must easily support the multi-key enrollment protocols
 required by S/MIME and other groups.
 
 The protocol must supply a way of doing all enrollment operations in
-a single round-trip.  When this is not possible the number of
-round-trips is to be minimized.
+a single round trip.  When this is not possible the number of
+round trips is to be minimized.
 
 The protocol must be designed such that all key generation can occur
 on the client.
@@ -191,7 +191,7 @@ Support should exist for all other algorithms cited by the S/MIME
 core documents.
 
 The protocol must contain Proof-of-Possession (POP) methods.
-Optional provisions for multiple-round-trip POP will be made if
+Optional provisions for multiple round trip POP will be made if
 necessary.
 
 The protocol must support deferred and pending responses to
@@ -330,12 +330,12 @@ Note: For now, this section will be list of the changes introduced
 #  Protocol Overview
 
 A PKI enrollment transaction in this specification is generally
-composed of a single round-trip of messages. In the simplest case a
+composed of a single round trip of messages. In the simplest case a
 PKI enrollment request, henceforth referred to as a PKI Request, is
 sent from the client to the server and a PKI enrollment response,
 henceforth referred to as a PKI Response, is then returned from the
 server to the client. In more complicated cases, such as delayed
-certificate issuance, more than one round-trip is required.
+certificate issuance, more than one round trip is required.
 
 This specification defines two PKI Request types and two PKI Response
 types.
@@ -2287,7 +2287,7 @@ decrypt a value. See {{Section 5 of CRMF}} for a detailed discussion
 of POP.
 
 By necessity, POP for encryption-only keys cannot be done in one
-round-trip, since there are four distinct steps:
+round trip, since there are four distinct steps:
 
 1. Client tells the server about the public component of a new
    encryption key pair.
@@ -2732,7 +2732,7 @@ Servers MUST return a Full PKI Response for a Confirm Certificate
 Acceptance control.
 
 Note that if the CA includes this control, there will be two full
-round-trips of messages.
+round trips of messages.
 
 1. The client sends the certification request to the CA.
 
@@ -4375,11 +4375,11 @@ Response from RA to client:
 ##  Direct POP for an RSA or KEM Certificate {#DirectPOPforRSACertificate}
 
 This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only certificate using a
-direct POP method; the example below shows.  For simplicity, it is assumed that the
+an enrollment is done for an encryption-only certificate using a
+direct POP method.  For simplicity, it is assumed that the
 certification requester already has a signing-only certificate.
 
-The fact that a second round-trip is required is implicit rather than
+The fact that a second round trip is required is implicit rather than
 explicit.  The server determines this based on the fact that no other
 POP exists for the certification request.
 
@@ -4518,14 +4518,14 @@ Response #2 from server to client:
 ##  Direct POP with No Signature Mechanism  {#DirectPOPwithNoSignature}
 
 This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only cerrtificate using a
+an enrollment is done for an encryption-only cerrtificate using a
 direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 {{DirectPOPforRSACertificate}}, here the No Signature mechanism from
 {{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData uses
 the KEMRecipientInfo from {{CMS-RI}}.
 
-The fact that a second round-trip is required is implicit rather than
+The fact that a second round trip is required is implicit rather than
 explicit.  The server determines this based on the fact that no other
 POP exists for the certification request.
 
@@ -4673,7 +4673,7 @@ Response #2 from server to client:
 
 Part of a certification request is a signature over the request;
 DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
-are key encapsulation mechanisms (KEM) are and cannot be used to
+are key encapsulation mechanisms (KEM) and cannot be used to
 directly produce the required signature object.  {{DH-POP}} provides
 three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
@@ -4704,7 +4704,7 @@ requires proof-of-possession of the private key, the POP mechanism
 defined in {{EncryptedandDecryptedPOPControls}} MUST be used.
 
 When the client generates the SignedData.SignerInfos.SignerInfo.sid
-field it has two choices issuerAndSerialNumber or subjectKeyIdentifier.
+field it has two choices: issuerAndSerialNumber or subjectKeyIdentifier.
 The client does not yet have a certificate and there cannot fill in
 the issuerAndSerialNumber and therefore MUST use the subjectKeyIdentifier
 choice.
