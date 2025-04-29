@@ -1668,7 +1668,10 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
             <p id="section-1.5-3.3.1">Refactored A.2 Module to allow import into A.1 Module<a href="#section-1.5-3.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-3.4">
-            <p id="section-1.5-3.4.1">Merged <span>[<a href="#erratum8137" class="cite xref">erratum8137</a>]</span><a href="#section-1.5-3.4.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-3.4.1">Editorial corrections from WGLC<a href="#section-1.5-3.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-3.5">
+            <p id="section-1.5-3.5.1">Merged <span>[<a href="#erratum8137" class="cite xref">erratum8137</a>]</span><a href="#section-1.5-3.5.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-1.5-4">--03 WG version<a href="#section-1.5-4" class="pilcrow">¶</a></p>
@@ -7467,14 +7470,15 @@ will modify the certification request before passing it on to the CA.<a href="#a
            {102, id-cmc-identityProof, computed value}
            {103, id-cmc-senderNonce, 10001}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = My Proposed DN
-               publicKey = My Public Key
-               extensions
-                 {id-ce-subjectKeyIdentifier, 1000}
-                 {id-ce-keyUsage, digitalSignature}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = My Proposed DN
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-subjectKeyIdentifier, 1000}
+                   {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
          sid.subjectKeyIdentifier = 1000
@@ -7594,17 +7598,18 @@ certification requester already has a signature certificate.<a href="#appendix-B
            {104, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = &lt;My DN from my signing cert&gt;
-               publicKey = My Public Key
-               extensions
-                 {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectKeyIdentifier, 1000}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = &lt;My DN&gt;
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
              popo
                keyEncipherment
-                 subsequentMessage
+                 subsequentMessage = challengeResp
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
@@ -7625,17 +7630,18 @@ certification requester already has a signature certificate.<a href="#appendix-B
            {104, id-cmc-recipientNonce, 10001}
            {105, id-cmc-encryptedPOP, {
               request {
-                certRequest
-                  certReqId = 201
-                   certTemplate
-                     subject = &lt;My DN from my signing cert&gt;
-                     publicKey = My Public Key
-                     extensions
-                       {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectKeyIdentifier, 1000}
+                crm
+                  certReq
+                    certReqId = 201
+                     certTemplate
+                       subject = &lt;My DN&gt;
+                       publicKey = My Public Key
+                       extensions
+                         {id-ce-keyUsage, keyEncipherment}
+                         {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
-                     subsequentMessage
+                       subsequentMessage = challengeResp
               }
               cms
                 contentType = id-envelopedData
@@ -7650,7 +7656,7 @@ certification requester already has a signature certificate.<a href="#appendix-B
            {106, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
      certificates
-       Other certificates (optional)
+       Other certificates (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 </pre><a href="#appendix-B.3-5" class="pilcrow">¶</a>
@@ -7674,17 +7680,17 @@ certification requester already has a signature certificate.<a href="#appendix-B
              thePOPAlgID HMAC-SHA256,
              thePOP &lt;HMAC computed value goes here&gt;}}
          reqSequence
-           certRequest
+           certReq
              certReqId = 201
              certTemplate
-               subject = &lt;My DN from my signing cert&gt;
+               subject = &lt;My DN&gt;
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
                  {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
-                 subsequentMessage
+                 subsequentMessage = challengeResp
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
@@ -7707,7 +7713,7 @@ certification requester already has a signature certificate.<a href="#appendix-B
                                      where the key in question is.&gt;}
      certificates
        Newly issued certificate
-       Other certificates
+       Other certificates (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 </pre><a href="#appendix-B.3-9" class="pilcrow">¶</a>
@@ -7740,14 +7746,15 @@ the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]
            {104, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = &lt; My DN &gt;
-               publicKey = My Public Key
-               extensions
-                 {id-ce-subjectKeyIdentifier, 1000}
-                 {id-ce-keyUsage, keyEncipherment}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = &lt; My DN &gt;
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
+                   {id-ce-keyUsage, keyEncipherment}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp
@@ -7772,14 +7779,15 @@ the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]
            {104, id-cmc-recipientNonce, 10001}
            {105, id-cmc-encryptedPOP, {
               request {
-                certRequest
-                  certReqId = 201
-                   certTemplate
-                     subject = &lt; My DN &gt;
-                     publicKey = My Public Key
-                     extensions
-                       {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectKeyIdentifier, 1000}
+                crm
+                  certReq
+                    certReqId = 201
+                     certTemplate
+                       subject = &lt; My DN &gt;
+                       publicKey = My Public Key
+                       extensions
+                         {id-ce-keyUsage, keyEncipherment}
+                         {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                        subsequentMessage = challengeResp
@@ -7797,7 +7805,7 @@ the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]
            {106, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
      Certificates
-       Other certificates (optional)
+       Other certificates (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 
@@ -7822,14 +7830,15 @@ the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]
              thePOPAlgID KmacWithSHAKE128,
              thePOP &lt;KMAC computed value goes here&gt;}}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = &lt; My DN &gt;
-               publicKey = My Public Key
-               extensions
-                 {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectKeyIdentifier, 1000}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = &lt; My DN &gt;
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp
