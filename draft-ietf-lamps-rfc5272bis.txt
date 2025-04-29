@@ -4500,10 +4500,6 @@ B.3.  Direct POP for an RSA or KEM Certificate
    assumed that the certification requester already has a signature
    certificate.
 
-   The fact that a second round trip is required is implicit rather than
-   explicit.  The server determines this based on the fact that no other
-   POP exists for the certification request.
-
    Message #1 from client to server:
 
      ContentInfo.contentType = id-signedData
@@ -4637,10 +4633,6 @@ B.4.  Direct POP with No Signature Mechanism
    here the No Signature mechanism from Appendix C.1, the public key is
    for a KEM, and the EnvelopedData uses the KEMRecipientInfo from
    [CMS-RI].
-
-   The fact that a second round trip is required is implicit rather than
-   explicit.  The server determines this based on the fact that no other
-   POP exists for the certification request.
 
    Message #1 from client to server:
 

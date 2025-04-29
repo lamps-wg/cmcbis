@@ -7580,11 +7580,8 @@ will modify the certification request before passing it on to the CA.<a href="#a
 an enrollment is done for an encryption only certificate using a
 direct POP method; the example below shows.  For simplicity, it is assumed that the
 certification requester already has a signature certificate.<a href="#appendix-B.3-1" class="pilcrow">¶</a></p>
-<p id="appendix-B.3-2">The fact that a second round trip is required is implicit rather than
-explicit.  The server determines this based on the fact that no other
-POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcrow">¶</a></p>
-<p id="appendix-B.3-3">Message #1 from client to server:<a href="#appendix-B.3-3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-4">
+<p id="appendix-B.3-2">Message #1 from client to server:<a href="#appendix-B.3-2" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-3">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7611,10 +7608,10 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
-</pre><a href="#appendix-B.3-4" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-3" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.3-5">Response #1 from server to client:<a href="#appendix-B.3-5" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-6">
+<p id="appendix-B.3-4">Response #1 from server to client:<a href="#appendix-B.3-4" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-5">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7656,10 +7653,10 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
        Other certificates (optional)
      SignedData.SignerInfos
        Signed by CA
-</pre><a href="#appendix-B.3-6" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-5" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.3-7">Message #2 from client to server:<a href="#appendix-B.3-7" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-8">
+<p id="appendix-B.3-6">Message #2 from client to server:<a href="#appendix-B.3-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-7">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7691,10 +7688,10 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
-</pre><a href="#appendix-B.3-8" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-7" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.3-9">Response #2 from server to client:<a href="#appendix-B.3-9" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-10">
+<p id="appendix-B.3-8">Response #2 from server to client:<a href="#appendix-B.3-8" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-9">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7713,7 +7710,7 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
        Other certificates
      SignedData.SignerInfos
        Signed by CA
-</pre><a href="#appendix-B.3-10" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-9" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -7729,11 +7726,8 @@ requester already has a signing-only certificate as in
 <a href="#DirectPOPforRSACertificate" class="auto internal xref">Appendix B.3</a>, here the No Signature mechanism from
 <a href="#NoSig-Sig" class="auto internal xref">Appendix C.1</a>, the public key is for a KEM, and the EnvelopedData uses
 the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]</span>.<a href="#appendix-B.4-1" class="pilcrow">¶</a></p>
-<p id="appendix-B.4-2">The fact that a second round trip is required is implicit rather than
-explicit.  The server determines this based on the fact that no other
-POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcrow">¶</a></p>
-<p id="appendix-B.4-3">Message #1 from client to server:<a href="#appendix-B.4-3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.4-4">
+<p id="appendix-B.4-2">Message #1 from client to server:<a href="#appendix-B.4-2" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-3">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7761,10 +7755,10 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
       SignerInfo
         sid = &lt; subjectKeyIdentifier &gt;
         signatureAlgorithm = id-alg-noSignature
-</pre><a href="#appendix-B.4-4" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.4-3" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.4-5">Response #1 from server to client:<a href="#appendix-B.4-5" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.4-6">
+<p id="appendix-B.4-4">Response #1 from server to client:<a href="#appendix-B.4-4" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-5">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7807,10 +7801,10 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
      SignedData.SignerInfos
        Signed by CA
 
-</pre><a href="#appendix-B.4-6" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.4-5" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.4-7">Message #2 from client to server:<a href="#appendix-B.4-7" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.4-8">
+<p id="appendix-B.4-6">Message #2 from client to server:<a href="#appendix-B.4-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-7">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7844,10 +7838,10 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
          sid = &lt; subjectKeyIdentifier &gt;
          signatureAlgorithm = id-alg-noSignature
 
-</pre><a href="#appendix-B.4-8" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.4-7" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.4-9">Response #2 from server to client:<a href="#appendix-B.4-9" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.4-10">
+<p id="appendix-B.4-8">Response #2 from server to client:<a href="#appendix-B.4-8" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-9">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7867,7 +7861,7 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
      SignedData.SignerInfos
        Signed by CA
 
-</pre><a href="#appendix-B.4-10" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.4-9" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
