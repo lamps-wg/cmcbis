@@ -4273,14 +4273,15 @@ Message from client to RA:
            {102, id-cmc-identityProof, computed value}
            {103, id-cmc-senderNonce, 10001}
          reqSequence
-           certReq
-             certReqId = 201
-             certTemplate
-               subject = My Proposed DN
-               publicKey = My Public Key
-               extensions
-                 {id-ce-subjectKeyIdentifier, 1000}
-                 {id-ce-keyUsage, digitalSignature}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = My Proposed DN
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-subjectKeyIdentifier, 1000}
+                   {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
          sid.subjectKeyIdentifier = 1000
