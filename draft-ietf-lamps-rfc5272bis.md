@@ -270,6 +270,7 @@ Note: For now, this section will be list of the changes introduced
 * Merged {{erratum8385}}
 * Merged {{erratum6571}} into text
 * Refactored A.2 Module to allow import into A.1 Module
+* Merged {{erratum8137}}
 
 --03 WG version
 
@@ -4697,7 +4698,8 @@ type:
 
 The parameters for id-alg-noSignature MUST be present and MUST be
 encoded as NULL.  NoSignatureValue contains the SHA-1 hash of the
-certification request.  It is important to realize that there is no
+certification request.  The hash value given by NoSignatureValue
+SHOULD be ignored.  It is important to realize that there is no
 security associated with this signature type.  If this signature type
 is on a certification request and the Certification Authority policy
 requires proof-of-possession of the private key, the POP mechanism
