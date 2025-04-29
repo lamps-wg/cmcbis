@@ -4376,9 +4376,9 @@ Response from RA to client:
 ##  Direct POP for an RSA or KEM Certificate {#DirectPOPforRSACertificate}
 
 This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption-only certificate using a
-direct POP method.  For simplicity, it is assumed that the
-certification requester already has a signing-only certificate.
+an enrollment is done for an encryption only certificate using a
+direct POP method; the example below shows.  For simplicity, it is assumed that the
+certification requester already has a signature certificate.
 
 The fact that a second round trip is required is implicit rather than
 explicit.  The server determines this based on the fact that no other
