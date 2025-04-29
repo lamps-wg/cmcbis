@@ -7640,13 +7640,13 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
               cms
                 contentType = id-envelopedData
                 content
-                  recipientInfos.riid.issuerSerialNumber = &lt;NULL-DN, 201&gt;
+                  recipientInfos.rid.issuerSerialNumber = &lt;NULL-DN, 201&gt;
                   encryptedContentInfo
                     eContentType = id-data
-                    eContent = &lt;Encrypted value of 'y'&gt;
+                    eContent = &lt;Encrypted value of 'y' from Section 6.7&gt;
               thePOPAlgID = HMAC-SHA256
               witnessAlgID = SHA-256
-              witness &lt;hashed value of 'y'&gt;}}
+              witness &lt;hashed value of 'y' from Section 6.7&gt;}}
            {106, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
      certificates
@@ -7790,13 +7790,13 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
               cms
                 contentType = id-envelopedData
                 content &lt; uses ori.KEMRecipientInfo &gt;
-                  recipientInfos.ori.riid.issuerSerialNumber = &lt;NULL-DN, 201&gt;
+                  recipientInfos.ori.rid.issuerSerialNumber = &lt;NULL-DN, 201&gt;
                   encryptedContentInfo
                     eContentType = id-data
-                    eContent = &lt;Encrypted value of 'y'&gt;
+                    eContent = &lt;Encrypted value of 'y' from Section 6.7&gt;
        thePOPAlgID = KmacWithSHAKE128
        witnessAlgID = SHAKE128
-       witness &lt;hashed value of 'y'&gt;}}
+       witness &lt;hashed value of 'y' from Section 6.7&gt;}}
            {106, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
      Certificates
