@@ -270,7 +270,9 @@ Note: For now, this section will be list of the changes introduced
 * Merged {{erratum8385}}
 * Merged {{erratum6571}} into text
 * Refactored A.2 Module to allow import into A.1 Module
+* Editorial corrections from WGLC
 * Merged {{erratum8137}}
+
 
 --03 WG version
 
@@ -4271,14 +4273,15 @@ Message from client to RA:
            {102, id-cmc-identityProof, computed value}
            {103, id-cmc-senderNonce, 10001}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = My Proposed DN
-               publicKey = My Public Key
-               extensions
-                 {id-ce-subjectKeyIdentifier, 1000}
-                 {id-ce-keyUsage, digitalSignature}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = My Proposed DN
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-subjectKeyIdentifier, 1000}
+                   {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
          sid.subjectKeyIdentifier = 1000
@@ -4394,17 +4397,18 @@ Message #1 from client to server:
            {104, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = <My DN from my signing cert>
-               publicKey = My Public Key
-               extensions
-                 {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectKeyIdentifier, 1000}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = <My DN>
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
              popo
                keyEncipherment
-                 subsequentMessage
+                 subsequentMessage = challengeResp
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
@@ -4425,17 +4429,18 @@ Response #1 from server to client:
            {104, id-cmc-recipientNonce, 10001}
            {105, id-cmc-encryptedPOP, {
               request {
-                certRequest
-                  certReqId = 201
-                   certTemplate
-                     subject = <My DN from my signing cert>
-                     publicKey = My Public Key
-                     extensions
-                       {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectKeyIdentifier, 1000}
+                crm
+                  certReq
+                    certReqId = 201
+                     certTemplate
+                       subject = <My DN>
+                       publicKey = My Public Key
+                       extensions
+                         {id-ce-keyUsage, keyEncipherment}
+                         {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
-                     subsequentMessage
+                       subsequentMessage = challengeResp
               }
               cms
                 contentType = id-envelopedData
@@ -4450,7 +4455,7 @@ Response #1 from server to client:
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      certificates
-       Other certificates (optional)
+       Other certificates (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 ~~~
@@ -4474,17 +4479,17 @@ Message #2 from client to server:
              thePOPAlgID HMAC-SHA256,
              thePOP <HMAC computed value goes here>}}
          reqSequence
-           certRequest
+           certReq
              certReqId = 201
              certTemplate
-               subject = <My DN from my signing cert>
+               subject = <My DN>
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
                  {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
-                 subsequentMessage
+                 subsequentMessage = challengeResp
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
@@ -4507,7 +4512,7 @@ Response #2 from server to client:
                                      where the key in question is.>}
      certificates
        Newly issued certificate
-       Other certificates
+       Other certificates (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 ~~~
@@ -4536,14 +4541,15 @@ Message #1 from client to server:
            {104, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = < My DN >
-               publicKey = My Public Key
-               extensions
-                 {id-ce-subjectKeyIdentifier, 1000}
-                 {id-ce-keyUsage, keyEncipherment}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = < My DN >
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
+                   {id-ce-keyUsage, keyEncipherment}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp
@@ -4569,14 +4575,15 @@ Response #1 from server to client:
            {104, id-cmc-recipientNonce, 10001}
            {105, id-cmc-encryptedPOP, {
               request {
-                certRequest
-                  certReqId = 201
-                   certTemplate
-                     subject = < My DN >
-                     publicKey = My Public Key
-                     extensions
-                       {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectKeyIdentifier, 1000}
+                crm
+                  certReq
+                    certReqId = 201
+                     certTemplate
+                       subject = < My DN >
+                       publicKey = My Public Key
+                       extensions
+                         {id-ce-keyUsage, keyEncipherment}
+                         {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                        subsequentMessage = challengeResp
@@ -4594,7 +4601,7 @@ Response #1 from server to client:
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      Certificates
-       Other certificates (optional)
+       Other certificates (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 
@@ -4620,14 +4627,15 @@ Message #2 from client to server:
              thePOPAlgID KmacWithSHAKE128,
              thePOP <KMAC computed value goes here>}}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = < My DN >
-               publicKey = My Public Key
-               extensions
-                 {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectKeyIdentifier, 1000}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = < My DN >
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp
