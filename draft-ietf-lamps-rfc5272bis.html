@@ -1680,7 +1680,7 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
             <p id="section-1.5-7.1.1">Merged <span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span><a href="#section-1.5-7.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-7.2">
-            <p id="section-1.5-7.2.1">Added id-ce-subjectPublicKeyIdentifier to examples<a href="#section-1.5-7.2.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-7.2.1">Added id-ce-subjectKeyIdentifier to examples<a href="#section-1.5-7.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-1.5-8">--01 WG version changes:<a href="#section-1.5-8" class="pilcrow">¶</a></p>
@@ -7416,7 +7416,7 @@ request.<a href="#appendix-B.1-1" class="pilcrow">¶</a></p>
                subject = My Proposed DN
                publicKey = My Public Key
                extensions
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
                  {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
@@ -7470,7 +7470,7 @@ will modify the certification request before passing it on to the CA.<a href="#a
                subject = My Proposed DN
                publicKey = My Public Key
                extensions
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
                  {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
@@ -7601,7 +7601,7 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage
@@ -7632,7 +7632,7 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectPublicKeyIdentifier, 1000}
+                       {id-ce-subjectKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                      subsequentMessage
@@ -7681,7 +7681,7 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage
@@ -7749,7 +7749,7 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
                subject = &lt; My DN &gt;
                publicKey = My Public Key
                extensions
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
                  {id-ce-keyUsage, keyEncipherment}
              popo
                keyEncipherment
@@ -7782,7 +7782,7 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectPublicKeyIdentifier, 1000}
+                       {id-ce-subjectKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                        subsequentMessage = challengeResp
@@ -7832,7 +7832,7 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp

@@ -319,7 +319,7 @@ Table of Contents
 
    *  Merged [erratum8027]
 
-   *  Added id-ce-subjectPublicKeyIdentifier to examples
+   *  Added id-ce-subjectKeyIdentifier to examples
 
    --01 WG version changes:
 
@@ -4355,7 +4355,7 @@ B.1.  Request of a Signing Certificate
                   subject = My Proposed DN
                   publicKey = My Public Key
                   extensions
-                    {id-ce-subjectPublicKeyIdentifier, 1000}
+                    {id-ce-subjectKeyIdentifier, 1000}
                     {id-ce-keyUsage, digitalSignature}
         SignedData.SignerInfos
           SignerInfo
@@ -4401,7 +4401,7 @@ B.2.  Single Certification Request, But Modified by RA
                   subject = My Proposed DN
                   publicKey = My Public Key
                   extensions
-                    {id-ce-subjectPublicKeyIdentifier, 1000}
+                    {id-ce-subjectKeyIdentifier, 1000}
                     {id-ce-keyUsage, digitalSignature}
         SignedData.SignerInfos
           SignerInfo
@@ -4521,7 +4521,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
                  publicKey = My Public Key
                  extensions
                    {id-ce-keyUsage, keyEncipherment}
-                   {id-ce-subjectPublicKeyIdentifier, 1000}
+                   {id-ce-subjectKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage
@@ -4550,7 +4550,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectPublicKeyIdentifier, 1000}
+                       {id-ce-subjectKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                      subsequentMessage
@@ -4597,7 +4597,7 @@ B.3.  Direct POP for an RSA or KEM Certificate
                  publicKey = My Public Key
                  extensions
                    {id-ce-keyUsage, keyEncipherment}
-                   {id-ce-subjectPublicKeyIdentifier, 1000}
+                   {id-ce-subjectKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage
@@ -4658,7 +4658,7 @@ B.4.  Direct POP with No Signature Mechanism
                  subject = < My DN >
                  publicKey = My Public Key
                  extensions
-                   {id-ce-subjectPublicKeyIdentifier, 1000}
+                   {id-ce-subjectKeyIdentifier, 1000}
                    {id-ce-keyUsage, keyEncipherment}
                popo
                  keyEncipherment
@@ -4689,7 +4689,7 @@ B.4.  Direct POP with No Signature Mechanism
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectPublicKeyIdentifier, 1000}
+                       {id-ce-subjectKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                        subsequentMessage = challengeResp
@@ -4736,7 +4736,7 @@ B.4.  Direct POP with No Signature Mechanism
                  publicKey = My Public Key
                  extensions
                    {id-ce-keyUsage, keyEncipherment}
-                   {id-ce-subjectPublicKeyIdentifier, 1000}
+                   {id-ce-subjectKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage = challengeResp
