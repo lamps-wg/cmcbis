@@ -131,7 +131,7 @@ Public Key Infrastructure (PKI) community:
    and services based on CMS and PKCS #10 (Public Key Cryptography
    Standard), and
 
-2. The need for a PKI enrollment protocol for encryption only keys
+2. The need for a PKI enrollment protocol for encryption-only keys
    due to algorithm or hardware design.
 
 CMC also requires the use of the transport document and the
@@ -155,7 +155,7 @@ community:
 1. The need for an interface to public key certification products
    and services based on CMS and PKCS #10, and
 
-2. The need for a PKI enrollment protocol for encryption only keys
+2. The need for a PKI enrollment protocol for encryption-only keys
    due to algorithm or hardware design.
 
 A small number of additional services are defined to supplement the
@@ -180,8 +180,8 @@ The protocol must easily support the multi-key enrollment protocols
 required by S/MIME and other groups.
 
 The protocol must supply a way of doing all enrollment operations in
-a single round-trip.  When this is not possible the number of
-round-trips is to be minimized.
+a single round trip.  When this is not possible the number of
+round trips is to be minimized.
 
 The protocol must be designed such that all key generation can occur
 on the client.
@@ -191,7 +191,7 @@ Support should exist for all other algorithms cited by the S/MIME
 core documents.
 
 The protocol must contain Proof-of-Possession (POP) methods.
-Optional provisions for multiple-round-trip POP will be made if
+Optional provisions for multiple round trip POP will be made if
 necessary.
 
 The protocol must support deferred and pending responses to
@@ -270,6 +270,7 @@ Note: For now, this section will be list of the changes introduced
 * Merged {{erratum8385}}
 * Merged {{erratum6571}} into text
 * Refactored A.2 Module to allow import into A.1 Module
+* Merged {{erratum8137}}
 
 --03 WG version
 
@@ -278,7 +279,7 @@ Note: For now, this section will be list of the changes introduced
 --02 WG version
 
 * Merged {{erratum8027}}
-* Added id-ce-subjectPublicKeyIdentifier to examples
+* Added id-ce-subjectKeyIdentifier to examples
 
 --01 WG version changes:
 
@@ -330,12 +331,12 @@ Note: For now, this section will be list of the changes introduced
 #  Protocol Overview
 
 A PKI enrollment transaction in this specification is generally
-composed of a single round-trip of messages. In the simplest case a
+composed of a single round trip of messages. In the simplest case a
 PKI enrollment request, henceforth referred to as a PKI Request, is
 sent from the client to the server and a PKI enrollment response,
 henceforth referred to as a PKI Response, is then returned from the
 server to the client. In more complicated cases, such as delayed
-certificate issuance, more than one round-trip is required.
+certificate issuance, more than one round trip is required.
 
 This specification defines two PKI Request types and two PKI Response
 types.
@@ -2287,7 +2288,7 @@ decrypt a value. See {{Section 5 of CRMF}} for a detailed discussion
 of POP.
 
 By necessity, POP for encryption-only keys cannot be done in one
-round-trip, since there are four distinct steps:
+round trip, since there are four distinct steps:
 
 1. Client tells the server about the public component of a new
    encryption key pair.
@@ -2296,16 +2297,16 @@ round-trip, since there are four distinct steps:
    presented public encryption key.
 
 3. Client decrypts the POP challenge using the private key that
-   corresponds to the presented public key and sends the hash of
-   the plaintext back to the server.
+   corresponds to the presented public key and uses it for
+   computing a keyed hash value sent back to the server.
 
 5. Server validates the decrypted POP challenge and continues
    processing the certification request.
 
 CMC defines two different controls. The first deals with the
 encrypted challenge sent from the server to the user in Step 2. The
-second deals with the decrypted challenge sent from the client to the
-server in Step 3.
+second deals with the value derived from the decrypted challenge
+sent by the client to the server in Step 3.
 
 The Encrypted POP control is used to send the encrypted challenge
 from the server to the client as part of the PKIResponse. (Note that
@@ -2732,7 +2733,7 @@ Servers MUST return a Full PKI Response for a Confirm Certificate
 Acceptance control.
 
 Note that if the CA includes this control, there will be two full
-round-trips of messages.
+round trips of messages.
 
 1. The client sends the certification request to the CA.
 
@@ -4226,7 +4227,7 @@ Message from client to server:
                subject = My Proposed DN
                publicKey = My Public Key
                extensions
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
                  {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
@@ -4276,7 +4277,7 @@ Message from client to RA:
                subject = My Proposed DN
                publicKey = My Public Key
                extensions
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
                  {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
@@ -4379,7 +4380,7 @@ an enrollment is done for an encryption only certificate using a
 direct POP method; the example below shows.  For simplicity, it is assumed that the
 certification requester already has a signature certificate.
 
-The fact that a second round-trip is required is implicit rather than
+The fact that a second round trip is required is implicit rather than
 explicit.  The server determines this based on the fact that no other
 POP exists for the certification request.
 
@@ -4404,7 +4405,7 @@ Message #1 from client to server:
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage
@@ -4435,7 +4436,7 @@ Response #1 from server to client:
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectPublicKeyIdentifier, 1000}
+                       {id-ce-subjectKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                      subsequentMessage
@@ -4443,13 +4444,13 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content
-                  recipientInfos.riid.issuerSerialNumber = <NULL-DN, 201>
+                  recipientInfos.rid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
-                    eContent = <Encrypted value of 'y'>
+                    eContent = <Encrypted value of 'y' from Section 6.7>
               thePOPAlgID = HMAC-SHA256
               witnessAlgID = SHA-256
-              witness <hashed value of 'y'>}}
+              witness <hashed value of 'y' from Section 6.7>}}
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      certificates
@@ -4484,7 +4485,7 @@ Message #2 from client to server:
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage
@@ -4518,14 +4519,14 @@ Response #2 from server to client:
 ##  Direct POP with No Signature Mechanism  {#DirectPOPwithNoSignature}
 
 This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only cerrtificate using a
+an enrollment is done for an encryption-only cerrtificate using a
 direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 {{DirectPOPforRSACertificate}}, here the No Signature mechanism from
 {{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData uses
 the KEMRecipientInfo from {{CMS-RI}}.
 
-The fact that a second round-trip is required is implicit rather than
+The fact that a second round trip is required is implicit rather than
 explicit.  The server determines this based on the fact that no other
 POP exists for the certification request.
 
@@ -4549,7 +4550,7 @@ Message #1 from client to server:
                subject = < My DN >
                publicKey = My Public Key
                extensions
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
                  {id-ce-keyUsage, keyEncipherment}
              popo
                keyEncipherment
@@ -4583,7 +4584,7 @@ Response #1 from server to client:
                      publicKey = My Public Key
                      extensions
                        {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectPublicKeyIdentifier, 1000}
+                       {id-ce-subjectKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                        subsequentMessage = challengeResp
@@ -4591,13 +4592,13 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content < uses ori.KEMRecipientInfo >
-                  recipientInfos.ori.riid.issuerSerialNumber = <NULL-DN, 201>
+                  recipientInfos.ori.rid.issuerSerialNumber = <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
-                    eContent = <Encrypted value of 'y'>
+                    eContent = <Encrypted value of 'y' from Section 6.7>
        thePOPAlgID = KmacWithSHAKE128
        witnessAlgID = SHAKE128
-       witness <hashed value of 'y'>}}
+       witness <hashed value of 'y' from Section 6.7>}}
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      Certificates
@@ -4634,7 +4635,7 @@ Message #2 from client to server:
                publicKey = My Public Key
                extensions
                  {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+                 {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp
@@ -4673,7 +4674,7 @@ Response #2 from server to client:
 
 Part of a certification request is a signature over the request;
 DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
-are key encapsulation mechanisms (KEM) are and cannot be used to
+are key encapsulation mechanisms (KEM) and cannot be used to
 directly produce the required signature object.  {{DH-POP}} provides
 three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
@@ -4697,14 +4698,15 @@ type:
 
 The parameters for id-alg-noSignature MUST be present and MUST be
 encoded as NULL.  NoSignatureValue contains the SHA-1 hash of the
-certification request.  It is important to realize that there is no
+certification request.  The hash value given by NoSignatureValue
+SHOULD be ignored.  It is important to realize that there is no
 security associated with this signature type.  If this signature type
 is on a certification request and the Certification Authority policy
 requires proof-of-possession of the private key, the POP mechanism
 defined in {{EncryptedandDecryptedPOPControls}} MUST be used.
 
 When the client generates the SignedData.SignerInfos.SignerInfo.sid
-field it has two choices issuerAndSerialNumber or subjectKeyIdentifier.
+field it has two choices: issuerAndSerialNumber or subjectKeyIdentifier.
 The client does not yet have a certificate and there cannot fill in
 the issuerAndSerialNumber and therefore MUST use the subjectKeyIdentifier
 choice.
