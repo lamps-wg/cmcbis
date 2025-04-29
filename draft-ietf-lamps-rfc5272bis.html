@@ -4911,8 +4911,8 @@ presented public encryption key.<a href="#section-6.7-4.2.1" class="pilcrow">¶<
 </li>
           <li id="section-6.7-4.3">
             <p id="section-6.7-4.3.1">Client decrypts the POP challenge using the private key that
-corresponds to the presented public key and sends the hash of
-the plaintext back to the server.<a href="#section-6.7-4.3.1" class="pilcrow">¶</a></p>
+corresponds to the presented public key and uses it for
+computing a keyed hash value sent back to the server.<a href="#section-6.7-4.3.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-6.7-4.4">
             <p id="section-6.7-4.4.1">Server validates the decrypted POP challenge and continues
@@ -4921,8 +4921,8 @@ processing the certification request.<a href="#section-6.7-4.4.1" class="pilcrow
         </ol>
 <p id="section-6.7-5">CMC defines two different controls. The first deals with the
 encrypted challenge sent from the server to the user in Step 2. The
-second deals with the decrypted challenge sent from the client to the
-server in Step 3.<a href="#section-6.7-5" class="pilcrow">¶</a></p>
+second deals with the value derived from the decrypted challenge
+sent by the client to the server in Step 3.<a href="#section-6.7-5" class="pilcrow">¶</a></p>
 <p id="section-6.7-6">The Encrypted POP control is used to send the encrypted challenge
 from the server to the client as part of the PKIResponse. (Note that
 it is assumed that the message sent in Step 1 above is a Full PKI

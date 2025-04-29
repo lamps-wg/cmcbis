@@ -2338,16 +2338,16 @@ Table of Contents
        presented public encryption key.
 
    3.  Client decrypts the POP challenge using the private key that
-       corresponds to the presented public key and sends the hash of the
-       plaintext back to the server.
+       corresponds to the presented public key and uses it for computing
+       a keyed hash value sent back to the server.
 
    4.  Server validates the decrypted POP challenge and continues
        processing the certification request.
 
    CMC defines two different controls.  The first deals with the
    encrypted challenge sent from the server to the user in Step 2.  The
-   second deals with the decrypted challenge sent from the client to the
-   server in Step 3.
+   second deals with the value derived from the decrypted challenge sent
+   by the client to the server in Step 3.
 
    The Encrypted POP control is used to send the encrypted challenge
    from the server to the client as part of the PKIResponse.  (Note that
