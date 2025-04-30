@@ -60,7 +60,7 @@ normative:
 
 informative:
   TLS: RFC5246
-  CMC-TRANSv1: I-D.ietf-lamps-rfc5273bis
+  CMC-TRANSv1: RFC5273
   CMC-Updates: RFC6402
 
 
