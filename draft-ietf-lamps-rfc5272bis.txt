@@ -6,8 +6,8 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Updates: 5911 (if approved)                                        sn3rd
-Intended status: Standards Track                           29 April 2025
-Expires: 31 October 2025
+Intended status: Standards Track                           30 April 2025
+Expires: 1 November 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 October 2025.
+   This Internet-Draft will expire on 1 November 2025.
 
 Copyright Notice
 
@@ -4353,14 +4353,15 @@ B.1.  Request of a Signing Certificate
               {102, id-cmc-identityProof, computed value}
               {103, id-cmc-senderNonce, 10001}
             reqSequence
-              certRequest
-                certReqId = 201
-                certTemplate
-                  subject = My Proposed DN
-                  publicKey = My Public Key
-                  extensions
-                    {id-ce-subjectKeyIdentifier, 1000}
-                    {id-ce-keyUsage, digitalSignature}
+              crm
+                certReq
+                  certReqId = 201
+                  certTemplate
+                    subject = My Proposed DN
+                    publicKey = My Public Key
+                    extensions
+                      {id-ce-subjectKeyIdentifier, 1000}
+                      {id-ce-keyUsage, digitalSignature}
         SignedData.SignerInfos
           SignerInfo
             sid.subjectKeyIdentifier = 1000
@@ -4594,14 +4595,15 @@ B.3.  Direct POP for an RSA or KEM Certificate
                thePOPAlgID HMAC-SHA256,
                thePOP <HMAC computed value goes here>}}
            reqSequence
-             certReq
-               certReqId = 201
-               certTemplate
-                 subject = <My DN>
-                 publicKey = My Public Key
-                 extensions
-                   {id-ce-keyUsage, keyEncipherment}
-                   {id-ce-subjectKeyIdentifier, 1000}
+             crm
+               certReq
+                 certReqId = 201
+                 certTemplate
+                   subject = <My DN>
+                   publicKey = My Public Key
+                   extensions
+                     {id-ce-keyUsage, keyEncipherment}
+                     {id-ce-subjectKeyIdentifier, 1000}
                popo
                  keyEncipherment
                    subsequentMessage = challengeResp
