@@ -401,11 +401,10 @@ Table of Contents
 10.2.  Informative References
 
    [CMC-TRANSv1]
-              Mandel, J. and S. Turner, "Certificate Management over CMS
-              (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-03, 19 March 2025,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-03>.
+              Schaad, J. and M. Myers, "Certificate Management over CMS
+              (CMC): Transport Protocols", RFC 5273,
+              DOI 10.17487/RFC5273, June 2008,
+              <https://www.rfc-editor.org/rfc/rfc5273>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
