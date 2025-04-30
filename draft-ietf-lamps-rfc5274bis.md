@@ -54,7 +54,6 @@ normative:
   CMS-DH: RFC2631
   CRMF: RFC4211
   DH-POP: RFC6955
-  RSA-256: RFC4055
   PBKDF2: I-D.ietf-lamps-rfc9579bis
   AES-WRAP: RFC3394
 
@@ -62,7 +61,7 @@ informative:
   PKCS10: RFC2986
   SMALL-SUB-GROUP: RFC2785
   HASH-ATTACKS: RFC4270
-  CMC-COMPv1: I-D.ietf-lamps-rfc5274bis
+  CMC-COMPv1: RFC5274
   CMC-Updates: RFC6402
 
 --- abstract
