@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 1 November 2025                                   30 April 2025
+Expires: 2 November 2025                                      1 May 2025
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 November 2025.
+   This Internet-Draft will expire on 2 November 2025.
 
 Copyright Notice
 
@@ -524,9 +524,9 @@ Table of Contents
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC)", Work in Progress, Internet-Draft, draft-ietf-
-              lamps-rfc5272bis-03, 19 March 2025,
+              lamps-rfc5272bis-04, 30 April 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5272bis-03>.
+              rfc5272bis-04>.
 
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
@@ -576,21 +576,13 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-   [RSA-256]  Schaad, J., Kaliski, B., and R. Housley, "Additional
-              Algorithms and Identifiers for RSA Cryptography for use in
-              the Internet X.509 Public Key Infrastructure Certificate
-              and Certificate Revocation List (CRL) Profile", RFC 4055,
-              DOI 10.17487/RFC4055, June 2005,
-              <https://www.rfc-editor.org/rfc/rfc4055>.
-
 12.2.  Informative References
 
    [CMC-COMPv1]
-              Mandel, J. and S. Turner, "Certificate Management Messages
-              over CMS (CMC): Compliance Requirements", Work in
-              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-03,
-              19 March 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-lamps-rfc5274bis-03>.
+              Schaad, J. and M. Myers, "Certificate Management Messages
+              over CMS (CMC): Compliance Requirements", RFC 5274,
+              DOI 10.17487/RFC5274, June 2008,
+              <https://www.rfc-editor.org/rfc/rfc5274>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
