@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-01T02:04:09.625042+00:00",
+  "timestamp": "2025-05-04T02:04:57.537890+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -4297,26 +4297,42 @@
       "id": "PR_kwDOKfq5gM6Uj8B5",
       "title": "Fix references",
       "url": "https://github.com/lamps-wg/cmcbis/pull/103",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-04-30T19:53:41Z",
-      "updatedAt": "2025-04-30T19:58:34Z",
+      "updatedAt": "2025-05-01T19:25:58Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "a165b971cc28b2ffbc768ca9b54a43bb8bdf2340",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "Fix-refs",
       "headRefOid": "9b08a8cf0a1f6dcffd87660f34f6890dd98a0e13",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-05-01T19:25:54Z",
+      "mergedAt": "2025-05-01T19:25:54Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "964fde443cbb39e7bcaddcd3ea32684704cfb4e2"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6nhVxt",
+          "commit": {
+            "abbreviatedOid": "9b08a8c"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-01T19:25:17Z",
+          "updatedAt": "2025-05-01T19:25:17Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
