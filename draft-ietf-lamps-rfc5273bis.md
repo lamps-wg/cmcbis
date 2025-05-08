@@ -72,7 +72,7 @@ to move CMC (Certificate Management over CMS (Cryptographic Message
 Syntax)) messages.  The transport mechanisms described in this
 document are HTTP, file, mail, and TCP.
 
-This document obsoletes RFCs 5273 and 6402.
+This document obsoletes RFC 5273 and RFC 6402.
 
 
 --- middle
