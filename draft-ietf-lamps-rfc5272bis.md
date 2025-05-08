@@ -2,7 +2,7 @@
 title: "Certificate Management over CMS (CMC)"
 abbrev: "CMC: Structures"
 category: std
-updates: 5911
+updates:
 obsoletes: 5272, 6402
 
 docname: draft-ietf-lamps-rfc5272bis-latest
@@ -138,10 +138,7 @@ CMC also requires the use of the transport document and the
 requirements usage document along with this document for a full
 definition.
 
-This document obsoletes RFCs 5272 and 6402.
-
-This document also updates part of RFC 5911 to add support for additional
-HMAC algorithms used with the POP Link Witness control.
+This document obsoletes RFC 5272 and RFC 6402.
 
 --- middle
 
@@ -1038,7 +1035,7 @@ and at the same time it should send a negative response,
 Full PKI Response `SignedData` type containing a CMC Status Info control
 MUST be returned using a `CMCFailInfo` with a value of internalCAError and
 a `bodyPartID` of 0, and the eContent field in the `EncapsulatedContentInfo`
-as well as `SignerInfo` fields MUST not be populated.
+as well as `SignerInfo` fields MUST NOT be populated.
 
 ####  Other Message Bodies {#OtherMessageBodies}
 
@@ -3460,6 +3457,8 @@ for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).
 
 ## ASN.1 Module for CMC {#asn.1-cmc}
 ~~~
+<CODE BEGINS>
+
 EnrollmentMessageSyntax-2025
     { iso(1) identified-organization(3) dod(6) internet(1)
     security(5) mechanisms(5) pkix(7) id-mod(0)
@@ -4094,11 +4093,15 @@ BEGIN
   id-ad-cmc OBJECT IDENTIFIER ::= { id-ad 12 }
 
 END
+
+<CODE ENDS>
 ~~~
 
 ## ASN.1 Module for PBKDF2 PRFs
 
 ~~~
+<CODE BEGINS>
+
 PBKDF2-PRFs-2025
   { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
     pkcs-9(9) smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) }
@@ -4114,7 +4117,7 @@ PBKDF2-PRFs-2025
         id-mod-algorithmInformation-02(58) }
 
   hMAC-SHA1, alg-hMAC-SHA1, id-PBKDF2
-  FROM CryptographicMessageSyntaxAlgorithms-2009 -- From RFC 5911
+  FROM CryptographicMessageSyntaxAlgorithms-2009 -- From RFC [5911]
       { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
          smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
 
@@ -4195,6 +4198,8 @@ PBKDF2-PRFs-2025
   }
 
 END
+
+<CODE ENDS>
 ~~~
 
 # Enrollment Message Flows {#enroll}
@@ -4456,7 +4461,8 @@ Response #1 from server to client:
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      certificates
-       Other certificates (optional - related to this message's SignedData)
+       Other certificates
+         (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 ~~~
@@ -4514,7 +4520,8 @@ Response #2 from server to client:
                                      where the key in question is.>}
      certificates
        Newly issued certificate
-       Other certificates (optional - related to this message's SignedData)
+       Other certificates
+         (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 ~~~
@@ -4593,7 +4600,8 @@ Response #1 from server to client:
               cms
                 contentType = id-envelopedData
                 content < uses ori.KEMRecipientInfo >
-                  recipientInfos.ori.rid.issuerSerialNumber = <NULL-DN, 201>
+                  recipientInfos.ori.rid.issuerSerialNumber =
+                    <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
                     eContent = <Encrypted value of 'y' from Section 6.7>
@@ -4603,7 +4611,8 @@ Response #1 from server to client:
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      Certificates
-       Other certificates (optional - related to this message's SignedData)
+       Other certificates
+         (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 
