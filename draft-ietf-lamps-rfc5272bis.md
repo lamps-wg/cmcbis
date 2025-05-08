@@ -2,7 +2,6 @@
 title: "Certificate Management over CMS (CMC)"
 abbrev: "CMC: Structures"
 category: std
-updates:
 obsoletes: 5272, 6402
 
 docname: draft-ietf-lamps-rfc5272bis-latest
