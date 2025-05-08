@@ -4117,7 +4117,7 @@ PBKDF2-PRFs-2025
         id-mod-algorithmInformation-02(58) }
 
   hMAC-SHA1, alg-hMAC-SHA1, id-PBKDF2
-  FROM CryptographicMessageSyntaxAlgorithms-2009 -- From RFC [5911]
+  FROM CryptographicMessageSyntaxAlgorithms-2009 -- From [RFC5911]
       { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
          smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
 
