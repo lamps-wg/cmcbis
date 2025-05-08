@@ -212,8 +212,8 @@ following rules apply.
 
 > Clients MAY attempt to send HTTP requests using TLS 1.2 {{TLS}} or
 later, although servers are not required to support TLS. If
-TLS 1.2 {{TLS}} (or later) is used then implementations MUST follow
-the recommendations in {{BCP195}}.
+TLS is supported by an implementation, then the implementation MUST
+folow the recommendations in {{BCP195}}.
 
 > Servers MUST NOT assume client support for any type of HTTP
 authentication such as cookies, Basic authentication, or Digest
