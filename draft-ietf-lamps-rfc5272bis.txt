@@ -5,9 +5,8 @@
 Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
-Updates: 5911 (if approved)                                        sn3rd
-Intended status: Standards Track                              1 May 2025
-Expires: 2 November 2025
+Intended status: Standards Track                                   sn3rd
+Expires: 13 November 2025                                    12 May 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -31,10 +30,7 @@ Abstract
    requirements usage document along with this document for a full
    definition.
 
-   This document obsoletes RFCs 5272 and 6402.
-
-   This document also updates part of RFC 5911 to add support for
-   additional HMAC algorithms used with the POP Link Witness control.
+   This document obsoletes RFC 5272 and RFC 6402.
 
 About This Document
 
@@ -67,7 +63,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 November 2025.
+   This Internet-Draft will expire on 13 November 2025.
 
 Copyright Notice
 
@@ -1084,7 +1080,7 @@ Table of Contents
    Response SignedData type containing a CMC Status Info control MUST be
    returned using a CMCFailInfo with a value of internalCAError and a
    bodyPartID of 0, and the eContent field in the
-   EncapsulatedContentInfo as well as SignerInfo fields MUST not be
+   EncapsulatedContentInfo as well as SignerInfo fields MUST NOT be
    populated.
 
 3.2.1.4.  Other Message Bodies
@@ -3486,9 +3482,9 @@ Table of Contents
    [CMC-COMPL]
               Mandel, J. and S. Turner, "Certificate Management Messages
               over CMS (CMC): Compliance Requirements", Work in
-              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-03,
-              19 March 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-lamps-rfc5274bis-03>.
+              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-05,
+              1 May 2025, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-lamps-rfc5274bis-05>.
 
    [CMC-PROTv1]
               Schaad, J. and M. Myers, "Certificate Management over CMS
@@ -3498,9 +3494,9 @@ Table of Contents
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-03, 19 March 2025,
+              Draft, draft-ietf-lamps-rfc5273bis-05, 1 May 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-03>.
+              rfc5273bis-05>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
@@ -3594,739 +3590,743 @@ Appendix A.  ASN.1 Modules
 
 A.1.  ASN.1 Module for CMC
 
-EnrollmentMessageSyntax-2025
-    { iso(1) identified-organization(3) dod(6) internet(1)
-    security(5) mechanisms(5) pkix(7) id-mod(0)
-    id-mod-enrollMsgSyntax-2025(TBD1) }
+   <CODE BEGINS>
+   EnrollmentMessageSyntax-2025
+       { iso(1) identified-organization(3) dod(6) internet(1)
+       security(5) mechanisms(5) pkix(7) id-mod(0)
+       id-mod-enrollMsgSyntax-2025(TBD1) }
 
-DEFINITIONS IMPLICIT TAGS ::=
+   DEFINITIONS IMPLICIT TAGS ::=
 
-BEGIN
+   BEGIN
 
-  EXPORTS ALL;
+     EXPORTS ALL;
 
-  IMPORTS
+     IMPORTS
 
-  AttributeSet{}, Extension{}, EXTENSION, ATTRIBUTE
-  FROM PKIX-CommonTypes-2009
-      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0) id-mod-pkixCommon-02(57) }
-
-  AlgorithmIdentifier{}, DIGEST-ALGORITHM, KEY-WRAP, KEY-DERIVATION,
-      MAC-ALGORITHM, SIGNATURE-ALGORITHM, PUBLIC-KEY
-  FROM AlgorithmInformation-2009
-      {iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0)
-      id-mod-algorithmInformation-02(58)}
-
-  CertificateSerialNumber, GeneralName, CRLReason, ReasonFlags,
-      CertExtensions, GeneralNames
-  FROM PKIX1Implicit-2009
-      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-implicit-02(59) }
-
-  Name, id-pkix, PublicKeyAlgorithms, SignatureAlgorithms, id-ad, id-kp
-  FROM PKIX1Explicit-2009
-      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-        mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-explicit-02(51) }
-
-  ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
-  FROM CryptographicMessageSyntax-2010
-    { iso(1) member-body(2) us(840) rsadsi(113549)
-       pkcs(1) pkcs-9(9) smime(16) modules(0) id-mod-cms-2009(58) }
-
-  CertReqMsg, PKIPublicationInfo, CertTemplate
-  FROM PKIXCRMF-2009
-      { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-        mechanisms(5) pkix(7) id-mod(0) id-mod-crmf2005-02(55) }
-
-  mda-sha1
-  FROM PKIXAlgs-2009
-       { iso(1) identified-organization(3) dod(6)
-         internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-         id-mod-pkix1-algorithms2008-02(56) }
-
-  maca-hMAC-SHA1
-  FROM CryptographicMessageSyntaxAlgorithms-2009
-      { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-        smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
-
-  mda-sha256
-  FROM PKIX1-PSS-OAEP-Algorithms-2009
-       { iso(1) identified-organization(3) dod(6)
-         internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
-         id-mod-pkix1-rsa-pkalgs-02(54) }
-
-  maca-hMAC-SHA256
-  FROM HMAC-2010
-      { iso(1) identified-organization(3) dod(6) internet(1)
-        security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
-
-  kda-PBKDF2
-  FROM PBKDF2-PRFs-2025
-      { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-        smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) } ;
-
-  --  CMS content types defined in this document
-
-  CMC-ContentTypes CONTENT-TYPE ::= { ct-PKIData | ct-PKIResponse, ... }
-
-  --  Signature Algorithms defined in this document
-
-  SignatureAlgs SIGNATURE-ALGORITHM ::= { sa-noSignature }
-
-  --  CMS Unsigned Attributes
-
-  CMC-UnsignedAtts ATTRIBUTE ::= { aa-cmc-unsignedData }
-
-  id-cmc OBJECT IDENTIFIER ::= { id-pkix 7 }   -- CMC controls
-  id-cct OBJECT IDENTIFIER ::= { id-pkix 12 }  -- CMC content types
-
-  -- This is the content type for a request message in the protocol
-
-  ct-PKIData CONTENT-TYPE ::=
-      { TYPE PKIData IDENTIFIED BY id-cct-PKIData }
-
-  id-cct-PKIData OBJECT IDENTIFIER ::= { id-cct 2 }
-
-  PKIData ::= SEQUENCE {
-      controlSequence    SEQUENCE SIZE(0..MAX) OF TaggedAttribute,
-      reqSequence        SEQUENCE SIZE(0..MAX) OF TaggedRequest,
-      cmsSequence        SEQUENCE SIZE(0..MAX) OF TaggedContentInfo,
-      otherMsgSequence   SEQUENCE SIZE(0..MAX) OF OtherMsg
-  }
-
-  BodyPartID ::= INTEGER(0..4294967295)
-
-  TaggedAttribute ::= SEQUENCE {
-      bodyPartID         BodyPartID,
-      attrType           CMC-CONTROL.&id({Cmc-Control-Set}),
-      attrValues         SET OF CMC-CONTROL.
-                             &Type({Cmc-Control-Set}{@attrType})
-  }
-
-  Cmc-Control-Set CMC-CONTROL ::= {
-      cmc-identityProof | cmc-dataReturn | cmc-regInfo |
-      cmc-responseInfo | cmc-queryPending | cmc-popLinkRandom |
-      cmc-popLinkWitness | cmc-identification | cmc-transactionId |
-      cmc-senderNonce | cmc-recipientNonce | cmc-statusInfo |
-      cmc-addExtensions | cmc-encryptedPOP | cmc-decryptedPOP |
-      cmc-lraPOPWitness | cmc-getCert | cmc-getCRL |
-      cmc-revokeRequest | cmc-confirmCertAcceptance |
-      cmc-statusInfoV2 | cmc-trustedAnchors | cmc-authData |
-      cmc-batchRequests | cmc-batchResponses | cmc-publishCert |
-      cmc-modCertTemplate | cmc-controlProcessed |
-      cmc-identityProofV2 | cmc-popLinkWitnessV2 |
-      cmc-raIdentityWitness | cmc-responseBody, ... }
-
-  OTHER-REQUEST ::= TYPE-IDENTIFIER
-
-  --  We do not define any other requests in this document.
-  --  Examples might be attribute certification requests.
-
-  OtherRequests OTHER-REQUEST ::= {...}
-
-  TaggedRequest ::= CHOICE {
-      tcr               [0] TaggedCertificationRequest,
-      crm               [1] CertReqMsg,
-      orm               [2] SEQUENCE {
-          bodyPartID            BodyPartID,
-          requestMessageType    OTHER-REQUEST.&id({OtherRequests}),
-          requestMessageValue   OTHER-REQUEST.&Type({OtherRequests}
-                                    {@.requestMessageType})
-      }
-  }
-
-  TaggedCertificationRequest ::= SEQUENCE {
-      bodyPartID            BodyPartID,
-      certificationRequest  CertificationRequest
-  }
-
-  AttributeList ATTRIBUTE ::= { at-extension-req |
-      at-cmc-changeSubjectName, ... }
-
-  CertificationRequest ::= SEQUENCE {
-     certificationRequestInfo  SEQUENCE {
-         version                   INTEGER,
-         subject                   Name,
-         subjectPublicKeyInfo      SEQUENCE {
-             algorithm                 AlgorithmIdentifier{PUBLIC-KEY,
-                                           {PublicKeyAlgorithms}},
-             subjectPublicKey          BIT STRING
-         },
-         attributes                [0] IMPLICIT SET OF
-                                       AttributeSet{{AttributeList}}
-      },
-      signatureAlgorithm        AlgorithmIdentifier
-                                    {SIGNATURE-ALGORITHM,
-                                        {SignatureAlgorithms}},
-      signature                 BIT STRING
-  }
-
-  TaggedContentInfo ::= SEQUENCE {
-      bodyPartID              BodyPartID,
-      contentInfo             ContentInfo
-  }
-
-  OTHER-MSG ::= TYPE-IDENTIFIER
-
-  --  No other messages currently defined
-
-  OtherMsgSet OTHER-MSG ::= {...}
-
-  OtherMsg ::= SEQUENCE {
-      bodyPartID        BodyPartID,
-      otherMsgType      OTHER-MSG.&id({OtherMsgSet}),
-      otherMsgValue     OTHER-MSG.&Type({OtherMsgSet}{@otherMsgType}) }
-
-  --  This defines the response message in the protocol
-
-  ct-PKIResponse CONTENT-TYPE ::=
-      { TYPE PKIResponse IDENTIFIED BY id-cct-PKIResponse }
-
-  id-cct-PKIResponse OBJECT IDENTIFIER ::= { id-cct 3 }
-
-  ResponseBody ::= PKIResponse
-
-  PKIResponse ::= SEQUENCE {
-      controlSequence   SEQUENCE SIZE(0..MAX) OF TaggedAttribute,
-      cmsSequence       SEQUENCE SIZE(0..MAX) OF TaggedContentInfo,
-      otherMsgSequence  SEQUENCE SIZE(0..MAX) OF OtherMsg
-  }
-
-  CMC-CONTROL ::= TYPE-IDENTIFIER
-
-  -- The following controls have the type OCTET STRING
-
-  cmc-identityProof CMC-CONTROL ::=
-      { OCTET STRING IDENTIFIED BY id-cmc-identityProof }
-
-  id-cmc-identityProof OBJECT IDENTIFIER ::= { id-cmc 3 }
-
-  cmc-dataReturn CMC-CONTROL ::=
-      { OCTET STRING IDENTIFIED BY id-cmc-dataReturn }
-
-  id-cmc-dataReturn OBJECT IDENTIFIER ::= { id-cmc 4 }
-
-  cmc-regInfo CMC-CONTROL ::=
-      { OCTET STRING IDENTIFIED BY id-cmc-regInfo }
-
-  id-cmc-regInfo OBJECT IDENTIFIER ::= { id-cmc 18 }
-
-  cmc-responseInfo CMC-CONTROL ::=
-      { OCTET STRING IDENTIFIED BY id-cmc-responseInfo }
-
-  id-cmc-responseInfo OBJECT IDENTIFIER ::= { id-cmc 19 }
-
-  cmc-queryPending CMC-CONTROL ::=
-      { OCTET STRING IDENTIFIED BY id-cmc-queryPending }
-
-  id-cmc-queryPending OBJECT IDENTIFIER ::= { id-cmc 21 }
-
-  cmc-popLinkRandom CMC-CONTROL ::=
-      { OCTET STRING IDENTIFIED BY id-cmc-popLinkRandom }
-
-  id-cmc-popLinkRandom OBJECT IDENTIFIER ::= { id-cmc 22 }
-
-  cmc-popLinkWitness CMC-CONTROL ::=
-      { OCTET STRING IDENTIFIED BY id-cmc-popLinkWitness }
-
-  id-cmc-popLinkWitness OBJECT IDENTIFIER ::= { id-cmc 23 }
-
-  -- The following controls have the type UTF8String
-
-  cmc-identification CMC-CONTROL ::=
-      { UTF8String IDENTIFIED BY id-cmc-identification }
-
-  id-cmc-identification OBJECT IDENTIFIER ::= { id-cmc 2 }
-
-  -- The following controls have the type INTEGER
-
-  cmc-transactionId CMC-CONTROL ::=
-      { INTEGER IDENTIFIED BY id-cmc-transactionId }
-
-  id-cmc-transactionId OBJECT IDENTIFIER ::= { id-cmc 5 }
-
-  -- The following controls have the type OCTET STRING
-
-  cmc-senderNonce CMC-CONTROL ::=
-      { OCTET STRING IDENTIFIED BY id-cmc-senderNonce }
-
-  id-cmc-senderNonce OBJECT IDENTIFIER ::= { id-cmc 6 }
-
-  cmc-recipientNonce CMC-CONTROL ::=
-      { OCTET STRING IDENTIFIED BY id-cmc-recipientNonce }
-
-  id-cmc-recipientNonce OBJECT IDENTIFIER ::= { id-cmc 7 }
-
-  -- Used to return status in a response
-
-  cmc-statusInfo CMC-CONTROL ::=
-      { CMCStatusInfo IDENTIFIED BY id-cmc-statusInfo }
-
-  id-cmc-statusInfo OBJECT IDENTIFIER ::= { id-cmc 1 }
-
-  CMCStatusInfo ::= SEQUENCE {
-      cMCStatus       CMCStatus,
-      bodyList        SEQUENCE SIZE (1..MAX) OF BodyPartID,
-      statusString    UTF8String OPTIONAL,
-      otherInfo       CHOICE {
-         failInfo         CMCFailInfo,
-         pendInfo         PendInfo
-      } OPTIONAL
-  }
-
-  PendInfo ::= SEQUENCE {
-      pendToken        OCTET STRING,
-      pendTime         GeneralizedTime
-  }
-
-  CMCStatus ::= INTEGER {
-      success         (0),
-      failed          (2),
-      pending         (3),
-      noSupport       (4),
-      confirmRequired (5),
-      popRequired     (6),
-      partial         (7)
-  }
-
-  CMCFailInfo ::= INTEGER {
-      badAlg          (0),
-      badMessageCheck (1),
-      badRequest      (2),
-      badTime         (3),
-      badCertId       (4),
-      unsuportedExt   (5),
-      mustArchiveKeys (6),
-      badIdentity     (7),
-      popRequired     (8),
-      popFailed       (9),
-      noKeyReuse      (10),
-      internalCAError (11),
-      tryLater        (12),
-      authDataFail    (13)
-  }
-
-  -- Used for RAs to add extensions to certification requests
-
-  cmc-addExtensions CMC-CONTROL ::=
-      { AddExtensions IDENTIFIED BY id-cmc-addExtensions }
-
-  id-cmc-addExtensions OBJECT IDENTIFIER ::= { id-cmc 8 }
-
-  AddExtensions ::= SEQUENCE {
-      pkiDataReference    BodyPartID,
-      certReferences      SEQUENCE OF BodyPartID,
-      extensions          SEQUENCE OF Extension{{CertExtensions}}
-  }
-
-  cmc-encryptedPOP CMC-CONTROL ::=
-      { EncryptedPOP IDENTIFIED BY id-cmc-encryptedPOP }
-
-  cmc-decryptedPOP CMC-CONTROL ::=
-      { DecryptedPOP IDENTIFIED BY id-cmc-decryptedPOP }
-
-  id-cmc-encryptedPOP OBJECT IDENTIFIER ::= { id-cmc 9 }
-
-  id-cmc-decryptedPOP OBJECT IDENTIFIER ::= { id-cmc 10 }
-
-  EncryptedPOP ::= SEQUENCE {
-      request       TaggedRequest,
-      cms             ContentInfo,
-      thePOPAlgID     AlgorithmIdentifier{MAC-ALGORITHM, {POPAlgs}},
-      witnessAlgID    AlgorithmIdentifier{DIGEST-ALGORITHM,
-                          {WitnessAlgs}},
-      witness         OCTET STRING
-  }
-
-  POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1 | maca-hMAC-SHA256, ... }
-
-  WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1 | mda-sha256, ... }
-
-  DecryptedPOP ::= SEQUENCE {
-      bodyPartID      BodyPartID,
-      thePOPAlgID     AlgorithmIdentifier{MAC-ALGORITHM, {POPAlgs}},
-      thePOP          OCTET STRING
-  }
-
-  cmc-lraPOPWitness CMC-CONTROL ::=
-      { LraPopWitness IDENTIFIED BY id-cmc-lraPOPWitness }
-
-  id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }
-
-  LraPopWitness ::= SEQUENCE {
-      pkiDataBodyid   BodyPartID,
-      bodyIds         SEQUENCE OF BodyPartID
-  }
-
-  cmc-getCert CMC-CONTROL ::=
-      { GetCert IDENTIFIED BY id-cmc-getCert }
-
-  id-cmc-getCert OBJECT IDENTIFIER ::= { id-cmc 15 }
-
-  GetCert ::= SEQUENCE {
-      issuerName      GeneralName,
-      serialNumber    INTEGER }
-
-  cmc-getCRL CMC-CONTROL ::=
-      { GetCRL IDENTIFIED BY id-cmc-getCRL }
-
-  id-cmc-getCRL OBJECT IDENTIFIER ::= { id-cmc 16 }
-
-  GetCRL ::= SEQUENCE {
-      issuerName    Name,
-      cRLName       GeneralName OPTIONAL,
-      time          GeneralizedTime OPTIONAL,
-      reasons       ReasonFlags OPTIONAL }
-
-  cmc-revokeRequest CMC-CONTROL ::=
-      { RevokeRequest IDENTIFIED BY id-cmc-revokeRequest}
-
-  id-cmc-revokeRequest OBJECT IDENTIFIER ::= { id-cmc 17 }
-
-  RevokeRequest ::= SEQUENCE {
-      issuerName            Name,
-      serialNumber          INTEGER,
-      reason                CRLReason,
-      invalidityDate         GeneralizedTime OPTIONAL,
-      passphrase            OCTET STRING OPTIONAL,
-      comment               UTF8String OPTIONAL }
-
-  cmc-confirmCertAcceptance CMC-CONTROL ::=
-      { CMCCertId IDENTIFIED BY id-cmc-confirmCertAcceptance }
-
-  id-cmc-confirmCertAcceptance OBJECT IDENTIFIER ::= { id-cmc 24 }
-
-  CMCCertId ::= IssuerAndSerialNumber
-
-  -- The following is used to request V3 extensions be added
-  -- to a certificate
-
-  at-extension-req ATTRIBUTE ::=
-      { TYPE ExtensionReq IDENTIFIED BY id-ExtensionReq }
-
-  id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
-      rsadsi(113549) pkcs(1) pkcs-9(9) 14 }
-
-  ExtensionReq ::= SEQUENCE SIZE (1..MAX) OF
-      Extension{{CertExtensions}}
-
-  -- The following allows Diffie-Hellman Certification Request
-  -- Messages to be well-formed
-
-  sa-noSignature SIGNATURE-ALGORITHM ::= {
-      IDENTIFIER id-alg-noSignature
-      VALUE NoSignatureValue
-      PARAMS TYPE NULL ARE required
-      HASHES { mda-sha1 }
-  }
-
-  id-alg-noSignature OBJECT IDENTIFIER ::= { id-pkix id-alg(6) 2 }
-
-  NoSignatureValue ::= OCTET STRING
-
-  --  Unauthenticated attribute to carry removable data.
-
-  id-aa OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
-      rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2) }
-
-  aa-cmc-unsignedData ATTRIBUTE ::=
-      { TYPE CMCUnsignedData IDENTIFIED BY id-aa-cmc-unsignedData }
-
-  id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= { id-aa 34 }
-
-  CMCUnsignedData ::= SEQUENCE {
-      bodyPartPath        BodyPartPath,
-      identifier          TYPE-IDENTIFIER.&id,
-      content             TYPE-IDENTIFIER.&Type
-  }
-
-  --  Replaces CMC Status Info
-  --
-
-  cmc-statusInfoV2 CMC-CONTROL ::=
-      { CMCStatusInfoV2 IDENTIFIED BY id-cmc-statusInfoV2 }
-
-  id-cmc-statusInfoV2 OBJECT IDENTIFIER ::= { id-cmc 25 }
-
-  EXTENDED-FAILURE-INFO ::= TYPE-IDENTIFIER
-
-  ExtendedFailures EXTENDED-FAILURE-INFO ::= {...}
-
-  CMCStatusInfoV2 ::= SEQUENCE {
-     cMCStatus             CMCStatus,
-     bodyList              SEQUENCE SIZE (1..MAX) OF
-                                    BodyPartReference,
-     statusString          UTF8String OPTIONAL,
-     otherInfo             CHOICE {
-         failInfo               CMCFailInfo,
-         pendInfo               PendInfo,
-         extendedFailInfo       [1] SEQUENCE {
-            failInfoOID            TYPE-IDENTIFIER.&id
-                                       ({ExtendedFailures}),
-            failInfoValue          TYPE-IDENTIFIER.&Type
-                                       ({ExtendedFailures}
-                                           {@.failInfoOID})
+     AttributeSet{}, Extension{}, EXTENSION, ATTRIBUTE
+     FROM PKIX-CommonTypes-2009
+         { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+         mechanisms(5) pkix(7) id-mod(0) id-mod-pkixCommon-02(57) }
+
+     AlgorithmIdentifier{}, DIGEST-ALGORITHM, KEY-WRAP, KEY-DERIVATION,
+         MAC-ALGORITHM, SIGNATURE-ALGORITHM, PUBLIC-KEY
+     FROM AlgorithmInformation-2009
+         {iso(1) identified-organization(3) dod(6) internet(1) security(5)
+         mechanisms(5) pkix(7) id-mod(0)
+         id-mod-algorithmInformation-02(58)}
+
+     CertificateSerialNumber, GeneralName, CRLReason, ReasonFlags,
+         CertExtensions, GeneralNames
+     FROM PKIX1Implicit-2009
+         { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+         mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-implicit-02(59) }
+
+     Name, id-pkix, PublicKeyAlgorithms, SignatureAlgorithms, id-ad, id-kp
+     FROM PKIX1Explicit-2009
+         { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+           mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-explicit-02(51) }
+
+     ContentInfo, IssuerAndSerialNumber, CONTENT-TYPE
+     FROM CryptographicMessageSyntax-2010
+       { iso(1) member-body(2) us(840) rsadsi(113549)
+          pkcs(1) pkcs-9(9) smime(16) modules(0) id-mod-cms-2009(58) }
+
+     CertReqMsg, PKIPublicationInfo, CertTemplate
+     FROM PKIXCRMF-2009
+         { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+           mechanisms(5) pkix(7) id-mod(0) id-mod-crmf2005-02(55) }
+
+     mda-sha1
+     FROM PKIXAlgs-2009
+          { iso(1) identified-organization(3) dod(6)
+            internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
+            id-mod-pkix1-algorithms2008-02(56) }
+
+     maca-hMAC-SHA1
+     FROM CryptographicMessageSyntaxAlgorithms-2009
+         { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+           smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
+
+     mda-sha256
+     FROM PKIX1-PSS-OAEP-Algorithms-2009
+          { iso(1) identified-organization(3) dod(6)
+            internet(1) security(5) mechanisms(5) pkix(7) id-mod(0)
+            id-mod-pkix1-rsa-pkalgs-02(54) }
+
+     maca-hMAC-SHA256
+     FROM HMAC-2010
+         { iso(1) identified-organization(3) dod(6) internet(1)
+           security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) }
+
+     kda-PBKDF2
+     FROM PBKDF2-PRFs-2025
+         { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+           smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) } ;
+
+     --  CMS content types defined in this document
+
+     CMC-ContentTypes CONTENT-TYPE ::= { ct-PKIData | ct-PKIResponse, ... }
+
+     --  Signature Algorithms defined in this document
+
+     SignatureAlgs SIGNATURE-ALGORITHM ::= { sa-noSignature }
+
+     --  CMS Unsigned Attributes
+
+     CMC-UnsignedAtts ATTRIBUTE ::= { aa-cmc-unsignedData }
+
+     id-cmc OBJECT IDENTIFIER ::= { id-pkix 7 }   -- CMC controls
+     id-cct OBJECT IDENTIFIER ::= { id-pkix 12 }  -- CMC content types
+
+     -- This is the content type for a request message in the protocol
+
+     ct-PKIData CONTENT-TYPE ::=
+         { TYPE PKIData IDENTIFIED BY id-cct-PKIData }
+
+     id-cct-PKIData OBJECT IDENTIFIER ::= { id-cct 2 }
+
+     PKIData ::= SEQUENCE {
+         controlSequence    SEQUENCE SIZE(0..MAX) OF TaggedAttribute,
+         reqSequence        SEQUENCE SIZE(0..MAX) OF TaggedRequest,
+         cmsSequence        SEQUENCE SIZE(0..MAX) OF TaggedContentInfo,
+         otherMsgSequence   SEQUENCE SIZE(0..MAX) OF OtherMsg
+     }
+
+     BodyPartID ::= INTEGER(0..4294967295)
+
+     TaggedAttribute ::= SEQUENCE {
+         bodyPartID         BodyPartID,
+         attrType           CMC-CONTROL.&id({Cmc-Control-Set}),
+         attrValues         SET OF CMC-CONTROL.
+                                &Type({Cmc-Control-Set}{@attrType})
+     }
+
+     Cmc-Control-Set CMC-CONTROL ::= {
+         cmc-identityProof | cmc-dataReturn | cmc-regInfo |
+         cmc-responseInfo | cmc-queryPending | cmc-popLinkRandom |
+         cmc-popLinkWitness | cmc-identification | cmc-transactionId |
+         cmc-senderNonce | cmc-recipientNonce | cmc-statusInfo |
+         cmc-addExtensions | cmc-encryptedPOP | cmc-decryptedPOP |
+         cmc-lraPOPWitness | cmc-getCert | cmc-getCRL |
+         cmc-revokeRequest | cmc-confirmCertAcceptance |
+         cmc-statusInfoV2 | cmc-trustedAnchors | cmc-authData |
+         cmc-batchRequests | cmc-batchResponses | cmc-publishCert |
+         cmc-modCertTemplate | cmc-controlProcessed |
+         cmc-identityProofV2 | cmc-popLinkWitnessV2 |
+         cmc-raIdentityWitness | cmc-responseBody, ... }
+
+     OTHER-REQUEST ::= TYPE-IDENTIFIER
+
+     --  We do not define any other requests in this document.
+     --  Examples might be attribute certification requests.
+
+     OtherRequests OTHER-REQUEST ::= {...}
+
+     TaggedRequest ::= CHOICE {
+         tcr               [0] TaggedCertificationRequest,
+         crm               [1] CertReqMsg,
+         orm               [2] SEQUENCE {
+             bodyPartID            BodyPartID,
+             requestMessageType    OTHER-REQUEST.&id({OtherRequests}),
+             requestMessageValue   OTHER-REQUEST.&Type({OtherRequests}
+                                       {@.requestMessageType})
          }
-      } OPTIONAL
-  }
+     }
 
-  BodyPartReference ::= CHOICE {
-     bodyPartID           BodyPartID,
-     bodyPartPath         BodyPartPath
-  }
+     TaggedCertificationRequest ::= SEQUENCE {
+         bodyPartID            BodyPartID,
+         certificationRequest  CertificationRequest
+     }
 
-  BodyPartPath ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
+     AttributeList ATTRIBUTE ::= { at-extension-req |
+         at-cmc-changeSubjectName, ... }
 
-  --  Allow for distribution of trust anchors
+     CertificationRequest ::= SEQUENCE {
+        certificationRequestInfo  SEQUENCE {
+            version                   INTEGER,
+            subject                   Name,
+            subjectPublicKeyInfo      SEQUENCE {
+                algorithm                 AlgorithmIdentifier{PUBLIC-KEY,
+                                              {PublicKeyAlgorithms}},
+                subjectPublicKey          BIT STRING
+            },
+            attributes                [0] IMPLICIT SET OF
+                                          AttributeSet{{AttributeList}}
+         },
+         signatureAlgorithm        AlgorithmIdentifier
+                                       {SIGNATURE-ALGORITHM,
+                                           {SignatureAlgorithms}},
+         signature                 BIT STRING
+     }
 
-  cmc-trustedAnchors CMC-CONTROL ::=
-      { PublishTrustAnchors IDENTIFIED BY id-cmc-trustedAnchors }
+     TaggedContentInfo ::= SEQUENCE {
+         bodyPartID              BodyPartID,
+         contentInfo             ContentInfo
+     }
 
-  id-cmc-trustedAnchors OBJECT IDENTIFIER ::= { id-cmc 26 }
+     OTHER-MSG ::= TYPE-IDENTIFIER
 
-  PublishTrustAnchors ::= SEQUENCE {
-      seqNumber      INTEGER,
-      hashAlgorithm  AlgorithmIdentifier{DIGEST-ALGORITHM,
-                         {HashAlgorithms}},
-      anchorHashes   SEQUENCE OF OCTET STRING
-  }
+     --  No other messages currently defined
 
-  HashAlgorithms DIGEST-ALGORITHM ::= {
-     mda-sha1 | mda-sha256, ...
-  }
+     OtherMsgSet OTHER-MSG ::= {...}
 
-  cmc-authData CMC-CONTROL ::=
-      { AuthPublish IDENTIFIED BY id-cmc-authData }
+     OtherMsg ::= SEQUENCE {
+         bodyPartID        BodyPartID,
+         otherMsgType      OTHER-MSG.&id({OtherMsgSet}),
+         otherMsgValue     OTHER-MSG.&Type({OtherMsgSet}{@otherMsgType}) }
 
-  id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 27 }
+     --  This defines the response message in the protocol
 
-  AuthPublish ::= BodyPartID
+     ct-PKIResponse CONTENT-TYPE ::=
+         { TYPE PKIResponse IDENTIFIED BY id-cct-PKIResponse }
 
-  --   These two items use BodyPartList
+     id-cct-PKIResponse OBJECT IDENTIFIER ::= { id-cct 3 }
 
-  cmc-batchRequests CMC-CONTROL ::=
-      { BodyPartList IDENTIFIED BY id-cmc-batchRequests }
+     ResponseBody ::= PKIResponse
 
-  id-cmc-batchRequests OBJECT IDENTIFIER ::= { id-cmc 28 }
+     PKIResponse ::= SEQUENCE {
+         controlSequence   SEQUENCE SIZE(0..MAX) OF TaggedAttribute,
+         cmsSequence       SEQUENCE SIZE(0..MAX) OF TaggedContentInfo,
+         otherMsgSequence  SEQUENCE SIZE(0..MAX) OF OtherMsg
+     }
 
-  cmc-batchResponses CMC-CONTROL ::=
-      { BodyPartList IDENTIFIED BY id-cmc-batchResponses }
+     CMC-CONTROL ::= TYPE-IDENTIFIER
 
-  id-cmc-batchResponses OBJECT IDENTIFIER ::= { id-cmc 29 }
+     -- The following controls have the type OCTET STRING
 
-  BodyPartList ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
+     cmc-identityProof CMC-CONTROL ::=
+         { OCTET STRING IDENTIFIED BY id-cmc-identityProof }
 
-  cmc-publishCert CMC-CONTROL ::=
-      { CMCPublicationInfo IDENTIFIED BY id-cmc-publishCert }
+     id-cmc-identityProof OBJECT IDENTIFIER ::= { id-cmc 3 }
 
-  id-cmc-publishCert OBJECT IDENTIFIER ::= { id-cmc 30 }
+     cmc-dataReturn CMC-CONTROL ::=
+         { OCTET STRING IDENTIFIED BY id-cmc-dataReturn }
 
-  CMCPublicationInfo ::= SEQUENCE {
-      hashAlg        AlgorithmIdentifier{DIGEST-ALGORITHM,
-                           {HashAlgorithms}},
-      certHashes     SEQUENCE OF OCTET STRING,
-      pubInfo        PKIPublicationInfo
-  }
+     id-cmc-dataReturn OBJECT IDENTIFIER ::= { id-cmc 4 }
 
-  cmc-modCertTemplate CMC-CONTROL ::=
-      { ModCertTemplate IDENTIFIED BY id-cmc-modCertTemplate }
+     cmc-regInfo CMC-CONTROL ::=
+         { OCTET STRING IDENTIFIED BY id-cmc-regInfo }
 
-  id-cmc-modCertTemplate OBJECT IDENTIFIER ::= { id-cmc 31 }
+     id-cmc-regInfo OBJECT IDENTIFIER ::= { id-cmc 18 }
 
-  ModCertTemplate ::= SEQUENCE {
-      pkiDataReference             BodyPartPath,
-      certReferences               BodyPartList,
-      replace                      BOOLEAN DEFAULT TRUE,
-      certTemplate                 CertTemplate
-  }
+     cmc-responseInfo CMC-CONTROL ::=
+         { OCTET STRING IDENTIFIED BY id-cmc-responseInfo }
 
-  -- Inform follow-on servers that one or more controls have
-  -- already been processed
+     id-cmc-responseInfo OBJECT IDENTIFIER ::= { id-cmc 19 }
 
-  cmc-controlProcessed CMC-CONTROL ::=
-      { ControlsProcessed IDENTIFIED BY id-cmc-controlProcessed }
+     cmc-queryPending CMC-CONTROL ::=
+         { OCTET STRING IDENTIFIED BY id-cmc-queryPending }
 
-  id-cmc-controlProcessed OBJECT IDENTIFIER ::= { id-cmc 32 }
+     id-cmc-queryPending OBJECT IDENTIFIER ::= { id-cmc 21 }
 
-  ControlsProcessed ::= SEQUENCE {
-      bodyList              SEQUENCE SIZE(1..MAX) OF BodyPartReference
-  }
+     cmc-popLinkRandom CMC-CONTROL ::=
+         { OCTET STRING IDENTIFIED BY id-cmc-popLinkRandom }
 
-  --  Identity Proof control w/ algorithm agility
+     id-cmc-popLinkRandom OBJECT IDENTIFIER ::= { id-cmc 22 }
 
-  cmc-identityProofV2 CMC-CONTROL ::=
-      { IdentityProofV2 IDENTIFIED BY id-cmc-identityProofV2 }
+     cmc-popLinkWitness CMC-CONTROL ::=
+         { OCTET STRING IDENTIFIED BY id-cmc-popLinkWitness }
 
-  id-cmc-identityProofV2 OBJECT IDENTIFIER ::= { id-cmc 33 }
+     id-cmc-popLinkWitness OBJECT IDENTIFIER ::= { id-cmc 23 }
 
-  IdentityProofV2 ::= SEQUENCE {
-      proofAlgID       AlgorithmIdentifier{DIGEST-ALGORITHM,
-                           {WitnessAlgs}},
-      macAlgId         AlgorithmIdentifier{MAC-ALGORITHM, {POPAlgs}},
-      witness          OCTET STRING
-  }
+     -- The following controls have the type UTF8String
 
-  cmc-popLinkWitnessV2 CMC-CONTROL ::=
-      { PopLinkWitnessV2 IDENTIFIED BY id-cmc-popLinkWitnessV2 }
+     cmc-identification CMC-CONTROL ::=
+         { UTF8String IDENTIFIED BY id-cmc-identification }
 
-  id-cmc-popLinkWitnessV2 OBJECT IDENTIFIER ::= { id-cmc 34 }
+     id-cmc-identification OBJECT IDENTIFIER ::= { id-cmc 2 }
 
-  PopLinkWitnessV2 ::= SEQUENCE {
-      keyGenAlgorithm   AlgorithmIdentifier{KEY-DERIVATION,
-                            {KeyDevAlgs}},
-      macAlgorithm      AlgorithmIdentifier{MAC-ALGORITHM, {POPAlgs}},
-      witness           OCTET STRING
-  }
+     -- The following controls have the type INTEGER
 
-  KeyDevAlgs KEY-DERIVATION ::= { kda-PBKDF2, ... }
+     cmc-transactionId CMC-CONTROL ::=
+         { INTEGER IDENTIFIED BY id-cmc-transactionId }
 
-  cmc-raIdentityWitness CMC-CONTROL ::=
-     { BodyPartPath IDENTIFIED BY id-cmc-raIdentityWitness }
+     id-cmc-transactionId OBJECT IDENTIFIER ::= { id-cmc 5 }
 
-  id-cmc-raIdentityWitness OBJECT IDENTIFIER ::= {id-cmc 35}
+     -- The following controls have the type OCTET STRING
 
-  --
-  --  Allow for an End-Entity to request a change in name.
-  --  This item is added to RegControlSet in CRMF.
-  --
-  at-cmc-changeSubjectName ATTRIBUTE ::=
-     { TYPE ChangeSubjectName IDENTIFIED BY id-cmc-changeSubjectName }
+     cmc-senderNonce CMC-CONTROL ::=
+         { OCTET STRING IDENTIFIED BY id-cmc-senderNonce }
 
-  id-cmc-changeSubjectName OBJECT IDENTIFIER ::= { id-cmc 36 }
+     id-cmc-senderNonce OBJECT IDENTIFIER ::= { id-cmc 6 }
 
-  ChangeSubjectName ::= SEQUENCE {
-      subject             Name OPTIONAL,
-      subjectAlt          [1] GeneralNames OPTIONAL
-  }
-  (WITH COMPONENTS {..., subject PRESENT} |
-   WITH COMPONENTS {..., subjectAlt PRESENT} )
+     cmc-recipientNonce CMC-CONTROL ::=
+         { OCTET STRING IDENTIFIED BY id-cmc-recipientNonce }
 
-  --
-  --  Embedded response from a third party for processing
-  --
+     id-cmc-recipientNonce OBJECT IDENTIFIER ::= { id-cmc 7 }
 
-  cmc-responseBody CMC-CONTROL ::= {
-     BodyPartPath IDENTIFIED BY id-cmc-responseBody
-  }
+     -- Used to return status in a response
 
-  id-cmc-responseBody OBJECT IDENTIFIER ::= { id-cmc 37 }
+     cmc-statusInfo CMC-CONTROL ::=
+         { CMCStatusInfo IDENTIFIED BY id-cmc-statusInfo }
 
-  --
-  --  Key purpose identifiers are in the Extended Key Usage extension
-  --
+     id-cmc-statusInfo OBJECT IDENTIFIER ::= { id-cmc 1 }
 
-  id-kp-cmcCA OBJECT IDENTIFIER ::= { id-kp 27 }
-  id-kp-cmcRA OBJECT IDENTIFIER ::= { id-kp 28 }
-  id-kp-cmcArchive OBJECT IDENTIFIER ::= { id-kp 29 }
+     CMCStatusInfo ::= SEQUENCE {
+         cMCStatus       CMCStatus,
+         bodyList        SEQUENCE SIZE (1..MAX) OF BodyPartID,
+         statusString    UTF8String OPTIONAL,
+         otherInfo       CHOICE {
+            failInfo         CMCFailInfo,
+            pendInfo         PendInfo
+         } OPTIONAL
+     }
 
-  --
-  --  Subject Information Access identifier
-  --
+     PendInfo ::= SEQUENCE {
+         pendToken        OCTET STRING,
+         pendTime         GeneralizedTime
+     }
 
-  id-ad-cmc OBJECT IDENTIFIER ::= { id-ad 12 }
+     CMCStatus ::= INTEGER {
+         success         (0),
+         failed          (2),
+         pending         (3),
+         noSupport       (4),
+         confirmRequired (5),
+         popRequired     (6),
+         partial         (7)
+     }
 
-END
+     CMCFailInfo ::= INTEGER {
+         badAlg          (0),
+         badMessageCheck (1),
+         badRequest      (2),
+         badTime         (3),
+         badCertId       (4),
+         unsuportedExt   (5),
+         mustArchiveKeys (6),
+         badIdentity     (7),
+         popRequired     (8),
+         popFailed       (9),
+         noKeyReuse      (10),
+         internalCAError (11),
+         tryLater        (12),
+         authDataFail    (13)
+     }
+
+     -- Used for RAs to add extensions to certification requests
+
+     cmc-addExtensions CMC-CONTROL ::=
+         { AddExtensions IDENTIFIED BY id-cmc-addExtensions }
+
+     id-cmc-addExtensions OBJECT IDENTIFIER ::= { id-cmc 8 }
+
+     AddExtensions ::= SEQUENCE {
+         pkiDataReference    BodyPartID,
+         certReferences      SEQUENCE OF BodyPartID,
+         extensions          SEQUENCE OF Extension{{CertExtensions}}
+     }
+
+     cmc-encryptedPOP CMC-CONTROL ::=
+         { EncryptedPOP IDENTIFIED BY id-cmc-encryptedPOP }
+
+     cmc-decryptedPOP CMC-CONTROL ::=
+         { DecryptedPOP IDENTIFIED BY id-cmc-decryptedPOP }
+
+     id-cmc-encryptedPOP OBJECT IDENTIFIER ::= { id-cmc 9 }
+
+     id-cmc-decryptedPOP OBJECT IDENTIFIER ::= { id-cmc 10 }
+
+     EncryptedPOP ::= SEQUENCE {
+         request       TaggedRequest,
+         cms             ContentInfo,
+         thePOPAlgID     AlgorithmIdentifier{MAC-ALGORITHM, {POPAlgs}},
+         witnessAlgID    AlgorithmIdentifier{DIGEST-ALGORITHM,
+                             {WitnessAlgs}},
+         witness         OCTET STRING
+     }
+
+     POPAlgs MAC-ALGORITHM ::= { maca-hMAC-SHA1 | maca-hMAC-SHA256, ... }
+
+     WitnessAlgs DIGEST-ALGORITHM ::= { mda-sha1 | mda-sha256, ... }
+
+     DecryptedPOP ::= SEQUENCE {
+         bodyPartID      BodyPartID,
+         thePOPAlgID     AlgorithmIdentifier{MAC-ALGORITHM, {POPAlgs}},
+         thePOP          OCTET STRING
+     }
+
+     cmc-lraPOPWitness CMC-CONTROL ::=
+         { LraPopWitness IDENTIFIED BY id-cmc-lraPOPWitness }
+
+     id-cmc-lraPOPWitness OBJECT IDENTIFIER ::= { id-cmc 11 }
+
+     LraPopWitness ::= SEQUENCE {
+         pkiDataBodyid   BodyPartID,
+         bodyIds         SEQUENCE OF BodyPartID
+     }
+
+     cmc-getCert CMC-CONTROL ::=
+         { GetCert IDENTIFIED BY id-cmc-getCert }
+
+     id-cmc-getCert OBJECT IDENTIFIER ::= { id-cmc 15 }
+
+     GetCert ::= SEQUENCE {
+         issuerName      GeneralName,
+         serialNumber    INTEGER }
+
+     cmc-getCRL CMC-CONTROL ::=
+         { GetCRL IDENTIFIED BY id-cmc-getCRL }
+
+     id-cmc-getCRL OBJECT IDENTIFIER ::= { id-cmc 16 }
+
+     GetCRL ::= SEQUENCE {
+         issuerName    Name,
+         cRLName       GeneralName OPTIONAL,
+         time          GeneralizedTime OPTIONAL,
+         reasons       ReasonFlags OPTIONAL }
+
+     cmc-revokeRequest CMC-CONTROL ::=
+         { RevokeRequest IDENTIFIED BY id-cmc-revokeRequest}
+
+     id-cmc-revokeRequest OBJECT IDENTIFIER ::= { id-cmc 17 }
+
+     RevokeRequest ::= SEQUENCE {
+         issuerName            Name,
+         serialNumber          INTEGER,
+         reason                CRLReason,
+         invalidityDate         GeneralizedTime OPTIONAL,
+         passphrase            OCTET STRING OPTIONAL,
+         comment               UTF8String OPTIONAL }
+
+     cmc-confirmCertAcceptance CMC-CONTROL ::=
+         { CMCCertId IDENTIFIED BY id-cmc-confirmCertAcceptance }
+
+     id-cmc-confirmCertAcceptance OBJECT IDENTIFIER ::= { id-cmc 24 }
+
+     CMCCertId ::= IssuerAndSerialNumber
+
+     -- The following is used to request V3 extensions be added
+     -- to a certificate
+
+     at-extension-req ATTRIBUTE ::=
+         { TYPE ExtensionReq IDENTIFIED BY id-ExtensionReq }
+
+     id-ExtensionReq OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+         rsadsi(113549) pkcs(1) pkcs-9(9) 14 }
+
+     ExtensionReq ::= SEQUENCE SIZE (1..MAX) OF
+         Extension{{CertExtensions}}
+
+     -- The following allows Diffie-Hellman Certification Request
+     -- Messages to be well-formed
+
+     sa-noSignature SIGNATURE-ALGORITHM ::= {
+         IDENTIFIER id-alg-noSignature
+         VALUE NoSignatureValue
+         PARAMS TYPE NULL ARE required
+         HASHES { mda-sha1 }
+     }
+
+     id-alg-noSignature OBJECT IDENTIFIER ::= { id-pkix id-alg(6) 2 }
+
+     NoSignatureValue ::= OCTET STRING
+
+     --  Unauthenticated attribute to carry removable data.
+
+     id-aa OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+         rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) id-aa(2) }
+
+     aa-cmc-unsignedData ATTRIBUTE ::=
+         { TYPE CMCUnsignedData IDENTIFIED BY id-aa-cmc-unsignedData }
+
+     id-aa-cmc-unsignedData OBJECT IDENTIFIER ::= { id-aa 34 }
+
+     CMCUnsignedData ::= SEQUENCE {
+         bodyPartPath        BodyPartPath,
+         identifier          TYPE-IDENTIFIER.&id,
+         content             TYPE-IDENTIFIER.&Type
+     }
+
+     --  Replaces CMC Status Info
+     --
+
+     cmc-statusInfoV2 CMC-CONTROL ::=
+         { CMCStatusInfoV2 IDENTIFIED BY id-cmc-statusInfoV2 }
+
+     id-cmc-statusInfoV2 OBJECT IDENTIFIER ::= { id-cmc 25 }
+
+     EXTENDED-FAILURE-INFO ::= TYPE-IDENTIFIER
+
+     ExtendedFailures EXTENDED-FAILURE-INFO ::= {...}
+
+     CMCStatusInfoV2 ::= SEQUENCE {
+        cMCStatus             CMCStatus,
+        bodyList              SEQUENCE SIZE (1..MAX) OF
+                                       BodyPartReference,
+        statusString          UTF8String OPTIONAL,
+        otherInfo             CHOICE {
+            failInfo               CMCFailInfo,
+            pendInfo               PendInfo,
+            extendedFailInfo       [1] SEQUENCE {
+               failInfoOID            TYPE-IDENTIFIER.&id
+                                          ({ExtendedFailures}),
+               failInfoValue          TYPE-IDENTIFIER.&Type
+                                          ({ExtendedFailures}
+                                              {@.failInfoOID})
+            }
+         } OPTIONAL
+     }
+
+     BodyPartReference ::= CHOICE {
+        bodyPartID           BodyPartID,
+        bodyPartPath         BodyPartPath
+     }
+
+     BodyPartPath ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
+
+     --  Allow for distribution of trust anchors
+
+     cmc-trustedAnchors CMC-CONTROL ::=
+         { PublishTrustAnchors IDENTIFIED BY id-cmc-trustedAnchors }
+
+     id-cmc-trustedAnchors OBJECT IDENTIFIER ::= { id-cmc 26 }
+
+     PublishTrustAnchors ::= SEQUENCE {
+         seqNumber      INTEGER,
+         hashAlgorithm  AlgorithmIdentifier{DIGEST-ALGORITHM,
+                            {HashAlgorithms}},
+         anchorHashes   SEQUENCE OF OCTET STRING
+     }
+
+     HashAlgorithms DIGEST-ALGORITHM ::= {
+        mda-sha1 | mda-sha256, ...
+     }
+
+     cmc-authData CMC-CONTROL ::=
+         { AuthPublish IDENTIFIED BY id-cmc-authData }
+
+     id-cmc-authData OBJECT IDENTIFIER ::= { id-cmc 27 }
+
+     AuthPublish ::= BodyPartID
+
+     --   These two items use BodyPartList
+
+     cmc-batchRequests CMC-CONTROL ::=
+         { BodyPartList IDENTIFIED BY id-cmc-batchRequests }
+
+     id-cmc-batchRequests OBJECT IDENTIFIER ::= { id-cmc 28 }
+
+     cmc-batchResponses CMC-CONTROL ::=
+         { BodyPartList IDENTIFIED BY id-cmc-batchResponses }
+
+     id-cmc-batchResponses OBJECT IDENTIFIER ::= { id-cmc 29 }
+
+     BodyPartList ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
+
+     cmc-publishCert CMC-CONTROL ::=
+         { CMCPublicationInfo IDENTIFIED BY id-cmc-publishCert }
+
+     id-cmc-publishCert OBJECT IDENTIFIER ::= { id-cmc 30 }
+
+     CMCPublicationInfo ::= SEQUENCE {
+         hashAlg        AlgorithmIdentifier{DIGEST-ALGORITHM,
+                              {HashAlgorithms}},
+         certHashes     SEQUENCE OF OCTET STRING,
+         pubInfo        PKIPublicationInfo
+     }
+
+     cmc-modCertTemplate CMC-CONTROL ::=
+         { ModCertTemplate IDENTIFIED BY id-cmc-modCertTemplate }
+
+     id-cmc-modCertTemplate OBJECT IDENTIFIER ::= { id-cmc 31 }
+
+     ModCertTemplate ::= SEQUENCE {
+         pkiDataReference             BodyPartPath,
+         certReferences               BodyPartList,
+         replace                      BOOLEAN DEFAULT TRUE,
+         certTemplate                 CertTemplate
+     }
+
+     -- Inform follow-on servers that one or more controls have
+     -- already been processed
+
+     cmc-controlProcessed CMC-CONTROL ::=
+         { ControlsProcessed IDENTIFIED BY id-cmc-controlProcessed }
+
+     id-cmc-controlProcessed OBJECT IDENTIFIER ::= { id-cmc 32 }
+
+     ControlsProcessed ::= SEQUENCE {
+         bodyList              SEQUENCE SIZE(1..MAX) OF BodyPartReference
+     }
+
+     --  Identity Proof control w/ algorithm agility
+
+     cmc-identityProofV2 CMC-CONTROL ::=
+         { IdentityProofV2 IDENTIFIED BY id-cmc-identityProofV2 }
+
+     id-cmc-identityProofV2 OBJECT IDENTIFIER ::= { id-cmc 33 }
+
+     IdentityProofV2 ::= SEQUENCE {
+         proofAlgID       AlgorithmIdentifier{DIGEST-ALGORITHM,
+                              {WitnessAlgs}},
+         macAlgId         AlgorithmIdentifier{MAC-ALGORITHM, {POPAlgs}},
+         witness          OCTET STRING
+     }
+
+     cmc-popLinkWitnessV2 CMC-CONTROL ::=
+         { PopLinkWitnessV2 IDENTIFIED BY id-cmc-popLinkWitnessV2 }
+
+     id-cmc-popLinkWitnessV2 OBJECT IDENTIFIER ::= { id-cmc 34 }
+
+     PopLinkWitnessV2 ::= SEQUENCE {
+         keyGenAlgorithm   AlgorithmIdentifier{KEY-DERIVATION,
+                               {KeyDevAlgs}},
+         macAlgorithm      AlgorithmIdentifier{MAC-ALGORITHM, {POPAlgs}},
+         witness           OCTET STRING
+     }
+
+     KeyDevAlgs KEY-DERIVATION ::= { kda-PBKDF2, ... }
+
+     cmc-raIdentityWitness CMC-CONTROL ::=
+        { BodyPartPath IDENTIFIED BY id-cmc-raIdentityWitness }
+
+     id-cmc-raIdentityWitness OBJECT IDENTIFIER ::= {id-cmc 35}
+
+     --
+     --  Allow for an End-Entity to request a change in name.
+     --  This item is added to RegControlSet in CRMF.
+     --
+     at-cmc-changeSubjectName ATTRIBUTE ::=
+        { TYPE ChangeSubjectName IDENTIFIED BY id-cmc-changeSubjectName }
+
+     id-cmc-changeSubjectName OBJECT IDENTIFIER ::= { id-cmc 36 }
+
+     ChangeSubjectName ::= SEQUENCE {
+         subject             Name OPTIONAL,
+         subjectAlt          [1] GeneralNames OPTIONAL
+     }
+     (WITH COMPONENTS {..., subject PRESENT} |
+      WITH COMPONENTS {..., subjectAlt PRESENT} )
+
+     --
+     --  Embedded response from a third party for processing
+     --
+
+     cmc-responseBody CMC-CONTROL ::= {
+        BodyPartPath IDENTIFIED BY id-cmc-responseBody
+     }
+
+     id-cmc-responseBody OBJECT IDENTIFIER ::= { id-cmc 37 }
+
+     --
+     --  Key purpose identifiers are in the Extended Key Usage extension
+     --
+
+     id-kp-cmcCA OBJECT IDENTIFIER ::= { id-kp 27 }
+     id-kp-cmcRA OBJECT IDENTIFIER ::= { id-kp 28 }
+     id-kp-cmcArchive OBJECT IDENTIFIER ::= { id-kp 29 }
+
+     --
+     --  Subject Information Access identifier
+     --
+
+     id-ad-cmc OBJECT IDENTIFIER ::= { id-ad 12 }
+
+   END
+   <CODE ENDS>
 
 A.2.  ASN.1 Module for PBKDF2 PRFs
 
-  PBKDF2-PRFs-2025
-    { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
-      pkcs-9(9) smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) }
+   <CODE BEGINS>
+   PBKDF2-PRFs-2025
+     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
+       pkcs-9(9) smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) }
 
-    DEFINITIONS IMPLICIT TAGS ::= BEGIN
+     DEFINITIONS IMPLICIT TAGS ::= BEGIN
 
-    IMPORTS
+     IMPORTS
 
-    ALGORITHM, AlgorithmIdentifier{}, KEY-DERIVATION
-    FROM AlgorithmInformation-2009 -- From [PKIX-ALGS]
-        { iso(1) identified-organization(3) dod(6) internet(1)
-          security(5) mechanisms(5) pkix(7) id-mod(0)
-          id-mod-algorithmInformation-02(58) }
+     ALGORITHM, AlgorithmIdentifier{}, KEY-DERIVATION
+     FROM AlgorithmInformation-2009 -- From [PKIX-ALGS]
+         { iso(1) identified-organization(3) dod(6) internet(1)
+           security(5) mechanisms(5) pkix(7) id-mod(0)
+           id-mod-algorithmInformation-02(58) }
 
-    hMAC-SHA1, alg-hMAC-SHA1, id-PBKDF2
-    FROM CryptographicMessageSyntaxAlgorithms-2009 -- From RFC 5911
-        { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
-           smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
+     hMAC-SHA1, alg-hMAC-SHA1, id-PBKDF2
+     FROM CryptographicMessageSyntaxAlgorithms-2009 -- From [RFC5911]
+         { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
+            smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
 
-    id-hmacWithSHA224, id-hmacWithSHA256,
-    id-hmacWithSHA384, id-hmacWithSHA512
-    FROM HMAC-2010 -- From [HMAC-ALGS]
-        { iso(1) identified-organization(3) dod(6) internet(1)
-          security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
+     id-hmacWithSHA224, id-hmacWithSHA256,
+     id-hmacWithSHA384, id-hmacWithSHA512
+     FROM HMAC-2010 -- From [HMAC-ALGS]
+         { iso(1) identified-organization(3) dod(6) internet(1)
+           security(5) mechanisms(5) pkix(7) mod(0) id-mod-hmac(74) } ;
 
-    -- Base OID for algorithms --
+     -- Base OID for algorithms --
 
-    rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
-        rsadsi(113549) }
+     rsadsi OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840)
+         rsadsi(113549) }
 
-    digestAlgorithm OBJECT IDENTIFIER ::= { rsadsi 2 }
+     digestAlgorithm OBJECT IDENTIFIER ::= { rsadsi 2 }
 
-    id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
+     id-hmacWithSHA512-224 OBJECT IDENTIFIER ::= { digestAlgorithm 12 }
 
-    id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
+     id-hmacWithSHA512-256 OBJECT IDENTIFIER ::= { digestAlgorithm 13 }
 
-    -- PBKF2-PRFs --
+     -- PBKF2-PRFs --
 
-    PBKDF2-PRFs ALGORITHM ::= {
-        alg-hMAC-SHA1 |
-        alg-hMAC-SHA224 | alg-hMAC-SHA256 |
-        alg-hMAC-SHA384 | alg-hMAC-SHA512 |
-        alg-hMAC-SHA512-224 | alg-hMAC-SHA512-256, ... }
+     PBKDF2-PRFs ALGORITHM ::= {
+         alg-hMAC-SHA1 |
+         alg-hMAC-SHA224 | alg-hMAC-SHA256 |
+         alg-hMAC-SHA384 | alg-hMAC-SHA512 |
+         alg-hMAC-SHA512-224 | alg-hMAC-SHA512-256, ... }
 
-    PBKDF2-PRFsAlgorithmIdentifier ::=
-        AlgorithmIdentifier{ ALGORITHM, {PBKDF2-PRFs} }
+     PBKDF2-PRFsAlgorithmIdentifier ::=
+         AlgorithmIdentifier{ ALGORITHM, {PBKDF2-PRFs} }
 
-    alg-hMAC-SHA224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA224
-        PARAMS TYPE NULL ARE preferredAbsent }
+     alg-hMAC-SHA224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA224
+         PARAMS TYPE NULL ARE preferredAbsent }
 
-    alg-hMAC-SHA256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA256
-        PARAMS TYPE NULL ARE preferredAbsent }
+     alg-hMAC-SHA256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA256
+         PARAMS TYPE NULL ARE preferredAbsent }
 
-    alg-hMAC-SHA384 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA384
-        PARAMS TYPE NULL ARE preferredAbsent }
+     alg-hMAC-SHA384 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA384
+         PARAMS TYPE NULL ARE preferredAbsent }
 
-    alg-hMAC-SHA512 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512
-        PARAMS TYPE NULL ARE preferredAbsent }
+     alg-hMAC-SHA512 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512
+         PARAMS TYPE NULL ARE preferredAbsent }
 
-    alg-hMAC-SHA512-224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-224
-        PARAMS TYPE NULL ARE preferredAbsent }
+     alg-hMAC-SHA512-224 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-224
+         PARAMS TYPE NULL ARE preferredAbsent }
 
-    alg-hMAC-SHA512-256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-256
-        PARAMS TYPE NULL ARE preferredAbsent }
+     alg-hMAC-SHA512-256 ALGORITHM ::= { IDENTIFIER id-hmacWithSHA512-256
+         PARAMS TYPE NULL ARE preferredAbsent }
 
-    -- PBKF2-SaltSources --
+     -- PBKF2-SaltSources --
 
-    PBKDF2-SaltSources ALGORITHM ::= { ... }
+     PBKDF2-SaltSources ALGORITHM ::= { ... }
 
-    PBKDF2-SaltSourcesAlgorithmIdentifier ::=
-        AlgorithmIdentifier {ALGORITHM, {PBKDF2-SaltSources} }
+     PBKDF2-SaltSourcesAlgorithmIdentifier ::=
+         AlgorithmIdentifier {ALGORITHM, {PBKDF2-SaltSources} }
 
-    -- PBKF2-params --
+     -- PBKF2-params --
 
-    PBKDF2-params ::= SEQUENCE {
-        salt CHOICE {
-            specified OCTET STRING,
-            otherSource PBKDF2-SaltSourcesAlgorithmIdentifier },
-        iterationCount INTEGER (1..MAX),
-        keyLength INTEGER (1..MAX) OPTIONAL,
-        prf PBKDF2-PRFsAlgorithmIdentifier DEFAULT defaultPBKDF2 }
+     PBKDF2-params ::= SEQUENCE {
+         salt CHOICE {
+             specified OCTET STRING,
+             otherSource PBKDF2-SaltSourcesAlgorithmIdentifier },
+         iterationCount INTEGER (1..MAX),
+         keyLength INTEGER (1..MAX) OPTIONAL,
+         prf PBKDF2-PRFsAlgorithmIdentifier DEFAULT defaultPBKDF2 }
 
-    defaultPBKDF2 PBKDF2-PRFsAlgorithmIdentifier ::=
-        { algorithm alg-hMAC-SHA1.&id, parameters NULL:NULL }
+     defaultPBKDF2 PBKDF2-PRFsAlgorithmIdentifier ::=
+         { algorithm alg-hMAC-SHA1.&id, parameters NULL:NULL }
 
-    -- Key Derivation Algorithms --
+     -- Key Derivation Algorithms --
 
-    KeyDerivationAlgs KEY-DERIVATION ::= { kda-PBKDF2, ... }
+     KeyDerivationAlgs KEY-DERIVATION ::= { kda-PBKDF2, ... }
 
-    kda-PBKDF2 KEY-DERIVATION ::= {
-        IDENTIFIER id-PBKDF2
-        PARAMS TYPE PBKDF2-params ARE required
-        -- No S/MIME caps defined
-    }
+     kda-PBKDF2 KEY-DERIVATION ::= {
+         IDENTIFIER id-PBKDF2
+         PARAMS TYPE PBKDF2-params ARE required
+         -- No S/MIME caps defined
+     }
 
-  END
+   END
+   <CODE ENDS>
 
 Appendix B.  Enrollment Message Flows
 
@@ -4573,7 +4573,8 @@ B.3.  Direct POP for an RSA or KEM Certificate
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      certificates
-       Other certificates (optional - related to this message's SignedData)
+       Other certificates
+         (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 
@@ -4613,23 +4614,24 @@ B.3.  Direct POP for an RSA or KEM Certificate
 
    Response #2 from server to client:
 
-   ContentInfo.contentType = id-signedData
-   ContentInfo.content
-     SignedData.encapContentInfo
-       eContentType = id-cct-PKIResponse
-       eContent
-         controlSequence
-           {101, id-cmc-transactionId, 10132985123483401}
-           {102, id-cmc-statusInfoV2, {success, 201}}
-           {103, id-cmc-senderNonce, 10019}
-           {104, id-cmc-recipientNonce, 100101}
-           {105, id-cmc-dataReturn, <packet of binary data identifying
-                                     where the key in question is.>}
-     certificates
-       Newly issued certificate
-       Other certificates (optional - related to this message's SignedData)
-     SignedData.SignerInfos
-       Signed by CA
+     ContentInfo.contentType = id-signedData
+     ContentInfo.content
+       SignedData.encapContentInfo
+         eContentType = id-cct-PKIResponse
+         eContent
+           controlSequence
+             {101, id-cmc-transactionId, 10132985123483401}
+             {102, id-cmc-statusInfoV2, {success, 201}}
+             {103, id-cmc-senderNonce, 10019}
+             {104, id-cmc-recipientNonce, 100101}
+             {105, id-cmc-dataReturn, <packet of binary data identifying
+                                       where the key in question is.>}
+       certificates
+         Newly issued certificate
+         Other certificates
+           (optional - related to this message's SignedData)
+       SignedData.SignerInfos
+         Signed by CA
 
 B.4.  Direct POP with No Signature Mechanism
 
@@ -4701,7 +4703,8 @@ B.4.  Direct POP with No Signature Mechanism
               cms
                 contentType = id-envelopedData
                 content < uses ori.KEMRecipientInfo >
-                  recipientInfos.ori.rid.issuerSerialNumber = <NULL-DN, 201>
+                  recipientInfos.ori.rid.issuerSerialNumber =
+                    <NULL-DN, 201>
                   encryptedContentInfo
                     eContentType = id-data
                     eContent = <Encrypted value of 'y' from Section 6.7>
@@ -4711,7 +4714,8 @@ B.4.  Direct POP with No Signature Mechanism
            {106, id-cmc-dataReturn, <packet of binary data identifying
                                      where the key in question is.>}
      Certificates
-       Other certificates (optional - related to this message's SignedData)
+       Other certificates
+         (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 
