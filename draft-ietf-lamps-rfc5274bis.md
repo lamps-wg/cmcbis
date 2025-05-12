@@ -54,7 +54,7 @@ normative:
   CMS-DH: RFC2631
   CRMF: RFC4211
   DH-POP: RFC6955
-  PBKDF2: I-D.ietf-lamps-rfc9579bis
+  PBKDF2: RFC9579
   AES-WRAP: RFC3394
 
 informative:
@@ -72,7 +72,7 @@ structures and the transport mechanisms for the CMC enrollment
 protocol are covered in other documents.  This document provides the
 information needed to make a compliant version of CMC.
 
-This document obsoletes RFCs 5274 and 6402.
+This document obsoletes RFC 5274 and RFC 6402.
 
 --- middle
 
@@ -474,6 +474,9 @@ The IETF from time to time may issue documents dealing with the
 current state of the art.  Two examples of such documents are
 {{SMALL-SUB-GROUP}} and {{HASH-ATTACKS}}.
 
+# IANA Considerations
+
+This document does not require action from IANA.
 
 --- back
 
