@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-11T02:03:04.164866+00:00",
+  "timestamp": "2025-05-13T01:58:36.418646+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -4339,24 +4339,26 @@
       "id": "PR_kwDOKfq5gM6VdW9f",
       "title": "spacing and refs",
       "url": "https://github.com/lamps-wg/cmcbis/pull/104",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-05-08T15:54:35Z",
-      "updatedAt": "2025-05-08T19:00:59Z",
+      "updatedAt": "2025-05-12T15:14:07Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "964fde443cbb39e7bcaddcd3ea32684704cfb4e2",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "spacing-and-refs",
       "headRefOid": "f11b3b454d3ea4ff7a8312e1c44274510895329f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-05-12T15:14:01Z",
+      "mergedAt": "2025-05-12T15:14:01Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "63fbdd25ec0b2c7392683102bd038e537dd4fcbd"
+      },
       "comments": [],
       "reviews": [
         {
