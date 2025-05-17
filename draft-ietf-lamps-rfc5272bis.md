@@ -256,75 +256,31 @@ rekey that previously was implicit.
 
 ## Changes Since RFC 6402
 
-<aside markdown="block">
-Note: For now, this section will be list of the changes introduced
-  by each version. After WGLC, this section will be finalized.
-</aside>
+Included the following errata: {{erratum8385}}, {{erratum8137}},
+{{erratum7627}}, {{erratum2063}}, {{erratum7629}}, {{erratum7628}},
+{{erratum7379}}, {{erratum6571}}, {{erratum5931}}, {{erratum4775}},
+{{erratum8027}}, and {{erratum2731}}.
 
---04 WG version
+Addressed {{erratum3943}} for RFC 6402.
 
-* Merged {{erratum8385}}
-* Merged {{erratum6571}} into text
-* Refactored A.2 Module to allow import into A.1 Module
-* Editorial corrections from WGLC
-* Merged {{erratum8137}}
+To support adopting SHA-256 and HMAC-SHA256, maca-hMAC-SHA256 was added to
+POPAlgs and mda-sha256 was added to WitnessAlgs. Both were included in
+the example in Appendix B.
 
+Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256.
 
---03 WG version
+Updated the ASN.1 module to use the 2002 ASN.1 module from {{CMC-Updates}}.
 
-* Merged {{erratum8027}}
+Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
+Module for PBKDF2 PRFs.
 
---02 WG version
+Added a direct POP example to address management of KEM certificates.
 
-* Merged {{erratum8027}}
-* Added id-ce-subjectKeyIdentifier to examples
+Added id-ce-subjectKeyIdentifier to examples.
 
---01 WG version changes:
+Clarified that subjectKeyIdentifier choice used with id-alg-noSignature.
 
-* Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256
-* Editorial changes
-* Addressed errata 3943 for RFC 6402
-* Added direct POP example to address management of KEM certificates
-* Clarified that subjectKeyIdentifier choice used with id-alg-noSignature
-
---00 WG version changes:
-
-* Added pre-5378 boilerplate
-* Update DH-POP from RFC2875 to RFC6955
-
---02 individual version changes:
-
-* Added module to support new HMAC algorithms in PBKDF2
-
---01 individual version changes:
-
-* Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
-* Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis
-* Added missing "OBJECT IDENTIFIER" to declarations throughout mainbody
-  to match ASN.1 module
-* Rework Section 1.3
-* Update CMC Control Attribute Table
-* Updates ASN.1 to use 2002 ASN.1 module baseed on {{CMC-Updates}}
-* To support adopting SHA-256 and HMAC-SHA256:
-  * Add maca-hMAC-SHA256 to POPAlgs
-  * Add mda-sha256 to WitnessAlgs
-  * Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B
-* Merged {{erratum2731}}
-* Merged {{erratum4775}}
-* Merged {{erratum5931}}
-* Merged {{erratum6571}}
-* Merged {{erratum7379}}
-* Merged {{erratum7628}}
-* Merged {{erratum7629}}
-
-
---00 individual version changes:
-
-* Added "Updates Made by RFC 6402" section
-* Merged {{CMC-Updates}} text
-* Merged {{erratum2063}}
-* Merged {{erratum7627}}
-* Updated and moved Acknowledgments
+Update CMC Control Attribute Table to include raIdentityWitness and responseBody from RFC 6402
 
 #  Protocol Overview
 
