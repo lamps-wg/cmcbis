@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-13T01:58:36.418646+00:00",
+  "timestamp": "2025-05-18T02:04:39.928380+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -4456,6 +4456,58 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 106,
+      "id": "PR_kwDOKfq5gM6Wki5g",
+      "title": "Modify updates since Sections",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/106",
+      "state": "CLOSED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "list of changes by version to updates since sections.",
+      "createdAt": "2025-05-17T15:21:38Z",
+      "updatedAt": "2025-05-17T15:27:58Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "63fbdd25ec0b2c7392683102bd038e537dd4fcbd",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "Modify-\"updates-since\"-Sections",
+      "headRefOid": "b1053bc3a8b1039c51c33452b91bb57f9d38eb32",
+      "closedAt": "2025-05-17T15:25:44Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 107,
+      "id": "PR_kwDOKfq5gM6WkndW",
+      "title": "Modify updates since sections",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/107",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-05-17T15:37:54Z",
+      "updatedAt": "2025-05-17T15:37:55Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "63fbdd25ec0b2c7392683102bd038e537dd4fcbd",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "Modify-updates-since-Sections",
+      "headRefOid": "99c37550418aadb1816490dfc861b43458da65b1",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
