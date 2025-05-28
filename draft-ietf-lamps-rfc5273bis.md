@@ -94,6 +94,8 @@ document also incorporates {{erratum3593}}.
 
 # Changes Since 5273 and 6402
 
+Merged {{CMC-Updates}} text.
+
 IANA assigned TCP port 5318 for the use of CMC.
 
 Clarified the file extensions for Full PKI Requests and Responses.
