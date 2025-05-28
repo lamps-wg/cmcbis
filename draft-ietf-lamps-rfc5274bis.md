@@ -189,48 +189,21 @@ Transport wrapper:
 
 # Changes since RFC 5274 and 6402
 
-<aside markdown="block">
-Note: For now, this section will be list of the changes introduced
-  by each version. After WGLC, this section will be finalized.
-</aside>
 
--04 WG version:
+Merged {{CMC-Updates}} text.
 
-* Update this section
+Added RA Identity Proof Witness and Response Body Controls to
+CMC Controls Attribute table.
 
--03 WG version:
+Updated the Cryptographic Algorithm Requirements, and added
+section to maintain backwards compatability.
 
-* Updated cryptographic algorithm requirements
+> Replaced SHA-1 for SHA-256
+> Replaced HMAC-SHA-1 for HMAC-SHA-256
 
--02 WG version changes:
-
-* Reformat cryptographic algorithm section
-
--01 WG version changes:
-
-* Updated references
-
--00 WG version changes:
-
-* Added pre-5378 boilerplate
-
--02 individual version changes:
-
-* Updated text in intro
-* Changed "all agents" to "all entities" in overview
-* Updated section header numbering
-
--01 individual version changes:
-
-* Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis
-* Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
-
--00 individual version changes:
-
-* Added "Changes Since 5274 and 6402" section
-* Updated references
-* Merged {{CMC-Updates}} text
-* Updated and moved Acknowledgments
+Updated the Introduction section, changed "all agents" to
+"all entities" in the overview to maintain consistency
+throughout the document, and re-numbered the section headers.
 
 # Requirements for All Entities
 

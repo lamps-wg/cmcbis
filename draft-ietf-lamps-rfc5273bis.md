@@ -94,48 +94,16 @@ document also incorporates {{erratum3593}}.
 
 # Changes Since 5273 and 6402
 
-<aside markdown="block">
-Note: For now, this section will be list of the changes introduced
-  by each version. After WGLC, this section will be finalized.
-</aside>
+Merged {{CMC-Updates}} text.
 
--04 WG version:
+IANA assigned TCP port 5318 for the use of CMC.
 
-* Added text to explain file extensions.
+Clarified the file extensions for Full PKI Requests and Responses.
 
--03 WG version:
+Replaced TLS 1.0 for TLS 1.2 or later, and added that implemetations are
+required to follow the recommendations in {{!BCP195}}.
 
-* No changes.
-
--02 WG version:
-
-* Updated this section.
-
--01 WG version changes:
-
-* Added requirement that TLS 1.2 implementations follow {{!BCP195}}
-
--00 WG version changes:
-
-* Added pre-5378 boilerplate
-
--02 individual version changes:
-
-* Replaced TLS 1.0 with TLS 1.2 or later
-
--01 individual version changes:
-
-* Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis
-* Merged {{erratum3593}}
-
--00 individual version changes:
-
-* Moved 2119-text to its own section
-* Added "Changes Since 5273 and 6402" section
-* Updated references
-* Merged {{CMC-Updates}} text
-* Updated and moved Acknowledgments
-
+Addressed {{erratum3593}}.
 
 # File-Based Protocol
 
