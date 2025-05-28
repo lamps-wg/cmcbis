@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 18 November 2025                                    17 May 2025
+Expires: 29 November 2025                                    28 May 2025
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 November 2025.
+   This Internet-Draft will expire on 29 November 2025.
 
 Copyright Notice
 
@@ -198,6 +198,8 @@ Table of Contents
 
 4.  Changes since RFC 5274 and 6402
 
+   Merged [CMC-Updates] text.
+
    Added RA Identity Proof Witness and Response Body Controls to CMC
    Controls Attribute table.
 
@@ -208,7 +210,7 @@ Table of Contents
 
    Updated the Introduction section, changed "all agents" to "all
    entities" in the overview to maintain consistency throughout the
-   document,and re-numbered the section headers.
+   document, and re-numbered the section headers.
 
 5.  Requirements for All Entities
 
