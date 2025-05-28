@@ -295,10 +295,12 @@ Table of Contents
 
 1.5.  Changes Since RFC 6402
 
+   Merged [CMC-Updates] text.
+
    Included the following errata: [erratum8385], [erratum8137],
-   [erratum7627], [erratum2063], [erratum7629], [erratum7628],
+   [erratum8027], [erratum7629], [erratum7628], [erratum7627],
    [erratum7379], [erratum6571], [erratum5931], [erratum4775],
-   [erratum8027], and [erratum2731].
+   [erratum2731], and [erratum2063].
 
    Addressed [erratum3943] for RFC 6402.
 

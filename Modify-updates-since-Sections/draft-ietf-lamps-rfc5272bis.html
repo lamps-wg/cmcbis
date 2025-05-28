@@ -1645,22 +1645,23 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
         <h3 id="name-changes-since-rfc-6402">
 <a href="#section-1.5" class="section-number selfRef">1.5. </a><a href="#name-changes-since-rfc-6402" class="section-name selfRef">Changes Since RFC 6402</a>
         </h3>
-<p id="section-1.5-1">Included the following errata: <span>[<a href="#erratum8385" class="cite xref">erratum8385</a>]</span>, <span>[<a href="#erratum8137" class="cite xref">erratum8137</a>]</span>,
-<span>[<a href="#erratum7627" class="cite xref">erratum7627</a>]</span>, <span>[<a href="#erratum2063" class="cite xref">erratum2063</a>]</span>, <span>[<a href="#erratum7629" class="cite xref">erratum7629</a>]</span>, <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span>,
+<p id="section-1.5-1">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text.<a href="#section-1.5-1" class="pilcrow">¶</a></p>
+<p id="section-1.5-2">Included the following errata: <span>[<a href="#erratum8385" class="cite xref">erratum8385</a>]</span>, <span>[<a href="#erratum8137" class="cite xref">erratum8137</a>]</span>,
+<span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span>, <span>[<a href="#erratum7629" class="cite xref">erratum7629</a>]</span>, <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span>, <span>[<a href="#erratum7627" class="cite xref">erratum7627</a>]</span>,
 <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span>, <span>[<a href="#erratum6571" class="cite xref">erratum6571</a>]</span>, <span>[<a href="#erratum5931" class="cite xref">erratum5931</a>]</span>, <span>[<a href="#erratum4775" class="cite xref">erratum4775</a>]</span>,
-<span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span>, and <span>[<a href="#erratum2731" class="cite xref">erratum2731</a>]</span>.<a href="#section-1.5-1" class="pilcrow">¶</a></p>
-<p id="section-1.5-2">Addressed <span>[<a href="#erratum3943" class="cite xref">erratum3943</a>]</span> for RFC 6402.<a href="#section-1.5-2" class="pilcrow">¶</a></p>
-<p id="section-1.5-3">To support adopting SHA-256 and HMAC-SHA256, maca-hMAC-SHA256 was added to
+<span>[<a href="#erratum2731" class="cite xref">erratum2731</a>]</span>, and <span>[<a href="#erratum2063" class="cite xref">erratum2063</a>]</span>.<a href="#section-1.5-2" class="pilcrow">¶</a></p>
+<p id="section-1.5-3">Addressed <span>[<a href="#erratum3943" class="cite xref">erratum3943</a>]</span> for RFC 6402.<a href="#section-1.5-3" class="pilcrow">¶</a></p>
+<p id="section-1.5-4">To support adopting SHA-256 and HMAC-SHA256, maca-hMAC-SHA256 was added to
 POPAlgs and mda-sha256 was added to WitnessAlgs. Both were included in
-the example in Appendix B.<a href="#section-1.5-3" class="pilcrow">¶</a></p>
-<p id="section-1.5-4">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256.<a href="#section-1.5-4" class="pilcrow">¶</a></p>
-<p id="section-1.5-5">Updated the ASN.1 module to use the 2002 ASN.1 module from <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1.5-5" class="pilcrow">¶</a></p>
-<p id="section-1.5-6">Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
-Module for PBKDF2 PRFs.<a href="#section-1.5-6" class="pilcrow">¶</a></p>
-<p id="section-1.5-7">Added a direct POP example to address management of KEM certificates.<a href="#section-1.5-7" class="pilcrow">¶</a></p>
-<p id="section-1.5-8">Added id-ce-subjectKeyIdentifier to examples.<a href="#section-1.5-8" class="pilcrow">¶</a></p>
-<p id="section-1.5-9">Clarified that subjectKeyIdentifier choice used with id-alg-noSignature.<a href="#section-1.5-9" class="pilcrow">¶</a></p>
-<p id="section-1.5-10">Update CMC Control Attribute Table to include raIdentityWitness and responseBody from RFC 6402<a href="#section-1.5-10" class="pilcrow">¶</a></p>
+the example in Appendix B.<a href="#section-1.5-4" class="pilcrow">¶</a></p>
+<p id="section-1.5-5">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256.<a href="#section-1.5-5" class="pilcrow">¶</a></p>
+<p id="section-1.5-6">Updated the ASN.1 module to use the 2002 ASN.1 module from <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1.5-6" class="pilcrow">¶</a></p>
+<p id="section-1.5-7">Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
+Module for PBKDF2 PRFs.<a href="#section-1.5-7" class="pilcrow">¶</a></p>
+<p id="section-1.5-8">Added a direct POP example to address management of KEM certificates.<a href="#section-1.5-8" class="pilcrow">¶</a></p>
+<p id="section-1.5-9">Added id-ce-subjectKeyIdentifier to examples.<a href="#section-1.5-9" class="pilcrow">¶</a></p>
+<p id="section-1.5-10">Clarified that subjectKeyIdentifier choice used with id-alg-noSignature.<a href="#section-1.5-10" class="pilcrow">¶</a></p>
+<p id="section-1.5-11">Update CMC Control Attribute Table to include raIdentityWitness and responseBody from RFC 6402<a href="#section-1.5-11" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
