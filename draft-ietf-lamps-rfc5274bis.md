@@ -200,7 +200,7 @@ section to maintain backwards compatability.
 
 Updated the Introduction section, changed "all agents" to
 "all entities" in the overview to maintain consistency
-throughout the document,and re-numbered the section headers.
+throughout the document, and re-numbered the section headers.
 
 # Requirements for All Entities
 
