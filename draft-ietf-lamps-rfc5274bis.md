@@ -189,6 +189,9 @@ Transport wrapper:
 
 # Changes since RFC 5274 and 6402
 
+
+Merged {{CMC-Updates}} text.
+
 Added RA Identity Proof Witness and Response Body Controls to
 CMC Controls Attribute table.
 
