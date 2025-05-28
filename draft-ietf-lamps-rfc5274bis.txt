@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 13 November 2025                                    12 May 2025
+Expires: 29 November 2025                                    28 May 2025
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 November 2025.
+   This Internet-Draft will expire on 29 November 2025.
 
 Copyright Notice
 
@@ -198,53 +198,19 @@ Table of Contents
 
 4.  Changes since RFC 5274 and 6402
 
-      |  Note: For now, this section will be list of the changes
-      |  introduced by each version.  After WGLC, this section will be
-      |  finalized.
+   Merged [CMC-Updates] text.
 
-   -04 WG version:
+   Added RA Identity Proof Witness and Response Body Controls to CMC
+   Controls Attribute table.
 
-   *  Update this section
+   Updated the Cryptographic Algorithm Requirements, and added section
+   to maintain backwards compatability.
 
-   -03 WG version:
+      Replaced SHA-1 for SHA-256 Replaced HMAC-SHA-1 for HMAC-SHA-256
 
-   *  Updated cryptographic algorithm requirements
-
-   -02 WG version changes:
-
-   *  Reformat cryptographic algorithm section
-
-   -01 WG version changes:
-
-   *  Updated references
-
-   -00 WG version changes:
-
-   *  Added pre-5378 boilerplate
-
-   -02 individual version changes:
-
-   *  Updated text in intro
-
-   *  Changed "all agents" to "all entities" in overview
-
-   *  Updated section header numbering
-
-   -01 individual version changes:
-
-   *  Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis
-
-   *  Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
-
-   -00 individual version changes:
-
-   *  Added "Changes Since 5274 and 6402" section
-
-   *  Updated references
-
-   *  Merged [CMC-Updates] text
-
-   *  Updated and moved Acknowledgments
+   Updated the Introduction section, changed "all agents" to "all
+   entities" in the overview to maintain consistency throughout the
+   document, and re-numbered the section headers.
 
 5.  Requirements for All Entities
 
