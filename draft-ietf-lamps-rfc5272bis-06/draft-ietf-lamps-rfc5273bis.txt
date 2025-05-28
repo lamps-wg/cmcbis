@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 30 October 2025                                   28 April 2025
+Expires: 29 November 2025                                    28 May 2025
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -19,7 +19,7 @@ Abstract
    Syntax)) messages.  The transport mechanisms described in this
    document are HTTP, file, mail, and TCP.
 
-   This document obsoletes RFCs 5273 and 6402.
+   This document obsoletes RFC 5273 and RFC 6402.
 
 About This Document
 
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 October 2025.
+   This Internet-Draft will expire on 29 November 2025.
 
 Copyright Notice
 
@@ -118,51 +118,16 @@ Table of Contents
 
 3.  Changes Since 5273 and 6402
 
-      |  Note: For now, this section will be list of the changes
-      |  introduced by each version.  After WGLC, this section will be
-      |  finalized.
+   Merged [CMC-Updates] text.
 
-   -04 WG version:
+   IANA assigned TCP port 5318 for the use of CMC.
 
-   *  Added text to explain file extensions.
+   Clarified the file extensions for Full PKI Requests and Responses.
 
-   -03 WG version:
+   Replaced TLS 1.0 for TLS 1.2 or later, and added that implemetations
+   are required to follow the recommendations in [BCP195].
 
-   *  No changes.
-
-   -02 WG version:
-
-   *  Updated this section.
-
-   -01 WG version changes:
-
-   *  Added requirement that TLS 1.2 implementations follow [BCP195]
-
-   -00 WG version changes:
-
-   *  Added pre-5378 boilerplate
-
-   -02 individual version changes:
-
-   *  Replaced TLS 1.0 with TLS 1.2 or later
-
-   -01 individual version changes:
-
-   *  Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis
-
-   *  Merged [erratum3593]
-
-   -00 individual version changes:
-
-   *  Moved 2119-text to its own section
-
-   *  Added "Changes Since 5273 and 6402" section
-
-   *  Updated references
-
-   *  Merged [CMC-Updates] text
-
-   *  Updated and moved Acknowledgments
+   Addressed [erratum3593].
 
 4.  File-Based Protocol
 
@@ -254,8 +219,8 @@ Table of Contents
 
       Clients MAY attempt to send HTTP requests using TLS 1.2 [TLS] or
       later, although servers are not required to support TLS.  If TLS
-      1.2 [TLS] (or later) is used then implementations MUST follow the
-      recommendations in [BCP195].
+      is supported by an implementation, then the implementation MUST
+      folow the recommendations in [BCP195].
 
       Servers MUST NOT assume client support for any type of HTTP
       authentication such as cookies, Basic authentication, or Digest
@@ -367,9 +332,9 @@ Table of Contents
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC)", Work in Progress, Internet-Draft, draft-ietf-
-              lamps-rfc5272bis-03, 19 March 2025,
+              lamps-rfc5272bis-05, 1 May 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5272bis-03>.
+              rfc5272bis-05>.
 
    [erratum3593]
               "RFC 5273 erratum 3593", April 2013,
@@ -401,11 +366,10 @@ Table of Contents
 10.2.  Informative References
 
    [CMC-TRANSv1]
-              Mandel, J. and S. Turner, "Certificate Management over CMS
-              (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-03, 19 March 2025,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-03>.
+              Schaad, J. and M. Myers, "Certificate Management over CMS
+              (CMC): Transport Protocols", RFC 5273,
+              DOI 10.17487/RFC5273, June 2008,
+              <https://www.rfc-editor.org/rfc/rfc5273>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)

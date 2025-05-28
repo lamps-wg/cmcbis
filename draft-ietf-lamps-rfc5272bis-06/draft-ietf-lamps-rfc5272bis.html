@@ -18,16 +18,14 @@ and services based on CMS and PKCS #10 (Public Key Cryptography
 Standard), and 
          
          
-           The need for a PKI enrollment protocol for encryption only keys
+           The need for a PKI enrollment protocol for encryption-only keys
 due to algorithm or hardware design. 
          
        
        CMC also requires the use of the transport document and the
 requirements usage document along with this document for a full
 definition. 
-       This document obsoletes RFCs 5272 and 6402. 
-       This document also updates part of RFC 5911 to add support for additional
-HMAC algorithms used with the POP Link Witness control. 
+       This document obsoletes RFC 5272 and RFC 6402. 
     " name="description">
 <meta content="xml2rfc 3.28.1" name="generator">
 <meta content="Public Key Infrastructure" name="keyword">
@@ -42,7 +40,7 @@ HMAC algorithms used with the POP Link Witness control.
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.0
-    platformdirs 4.3.7
+    platformdirs 4.3.8
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.3
@@ -1066,11 +1064,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CMC: Structures</td>
-<td class="right">April 2025</td>
+<td class="right">May 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Mandel, Ed &amp; Turner, Ed</td>
-<td class="center">Expires 30 October 2025</td>
+<td class="center">Expires 29 November 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1084,17 +1082,14 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-obsoletes">Obsoletes:</dt>
 <dd class="obsoletes">
 <a href="https://www.rfc-editor.org/rfc/rfc5272" class="eref">5272</a>, <a href="https://www.rfc-editor.org/rfc/rfc6402" class="eref">6402</a> (if approved)</dd>
-<dt class="label-updates">Updates:</dt>
-<dd class="updates">
-<a href="https://www.rfc-editor.org/rfc/rfc5911" class="eref">5911</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-04-28" class="published">28 April 2025</time>
+<time datetime="2025-05-28" class="published">28 May 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-10-30">30 October 2025</time></dd>
+<dd class="expires"><time datetime="2025-11-29">29 November 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1122,16 +1117,14 @@ and services based on CMS and PKCS #10 (Public Key Cryptography
 Standard), and<a href="#section-abstract-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-abstract-2.2">
-          <p id="section-abstract-2.2.1">The need for a PKI enrollment protocol for encryption only keys
+          <p id="section-abstract-2.2.1">The need for a PKI enrollment protocol for encryption-only keys
 due to algorithm or hardware design.<a href="#section-abstract-2.2.1" class="pilcrow">¶</a></p>
 </li>
       </ol>
 <p id="section-abstract-3">CMC also requires the use of the transport document and the
 requirements usage document along with this document for a full
 definition.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
-<p id="section-abstract-4">This document obsoletes RFCs 5272 and 6402.<a href="#section-abstract-4" class="pilcrow">¶</a></p>
-<p id="section-abstract-5">This document also updates part of RFC 5911 to add support for additional
-HMAC algorithms used with the POP Link Witness control.<a href="#section-abstract-5" class="pilcrow">¶</a></p>
+<p id="section-abstract-4">This document obsoletes RFC 5272 and RFC 6402.<a href="#section-abstract-4" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1167,7 +1160,7 @@ HMAC algorithms used with the POP Link Witness control.<a href="#section-abstrac
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 30 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 29 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1506,7 +1499,7 @@ community:<a href="#section-1-1" class="pilcrow">¶</a></p>
 and services based on CMS and PKCS #10, and<a href="#section-1-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-1-2.2">
-          <p id="section-1-2.2.1">The need for a PKI enrollment protocol for encryption only keys
+          <p id="section-1-2.2.1">The need for a PKI enrollment protocol for encryption-only keys
 due to algorithm or hardware design.<a href="#section-1-2.2.1" class="pilcrow">¶</a></p>
 </li>
       </ol>
@@ -1529,15 +1522,15 @@ subset of the protocol.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
 <p id="section-1.1-3">The protocol must easily support the multi-key enrollment protocols
 required by S/MIME and other groups.<a href="#section-1.1-3" class="pilcrow">¶</a></p>
 <p id="section-1.1-4">The protocol must supply a way of doing all enrollment operations in
-a single round-trip.  When this is not possible the number of
-round-trips is to be minimized.<a href="#section-1.1-4" class="pilcrow">¶</a></p>
+a single round trip.  When this is not possible the number of
+round trips is to be minimized.<a href="#section-1.1-4" class="pilcrow">¶</a></p>
 <p id="section-1.1-5">The protocol must be designed such that all key generation can occur
 on the client.<a href="#section-1.1-5" class="pilcrow">¶</a></p>
 <p id="section-1.1-6">Support must exist for the mandatory algorithms used by S/MIME.
 Support should exist for all other algorithms cited by the S/MIME
 core documents.<a href="#section-1.1-6" class="pilcrow">¶</a></p>
 <p id="section-1.1-7">The protocol must contain Proof-of-Possession (POP) methods.
-Optional provisions for multiple-round-trip POP will be made if
+Optional provisions for multiple round trip POP will be made if
 necessary.<a href="#section-1.1-7" class="pilcrow">¶</a></p>
 <p id="section-1.1-8">The protocol must support deferred and pending responses to
 enrollment requests for cases where external procedures are required
@@ -1652,145 +1645,23 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
         <h3 id="name-changes-since-rfc-6402">
 <a href="#section-1.5" class="section-number selfRef">1.5. </a><a href="#name-changes-since-rfc-6402" class="section-name selfRef">Changes Since RFC 6402</a>
         </h3>
-<aside id="section-1.5-1">
-          <p id="section-1.5-1.1">Note: For now, this section will be list of the changes introduced
-  by each version. After WGLC, this section will be finalized.<a href="#section-1.5-1.1" class="pilcrow">¶</a></p>
-</aside>
-<p id="section-1.5-2">--04 WG version<a href="#section-1.5-2" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-1.5-3.1">
-            <p id="section-1.5-3.1.1">Merged <span>[<a href="#erratum8385" class="cite xref">erratum8385</a>]</span><a href="#section-1.5-3.1.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-3.2">
-            <p id="section-1.5-3.2.1">Merged <span>[<a href="#erratum6571" class="cite xref">erratum6571</a>]</span> into text<a href="#section-1.5-3.2.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-3.3">
-            <p id="section-1.5-3.3.1">Refactored A.2 Module to allow import into A.1 Module<a href="#section-1.5-3.3.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<p id="section-1.5-4">--03 WG version<a href="#section-1.5-4" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-1.5-5.1">
-            <p id="section-1.5-5.1.1">Merged <span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span><a href="#section-1.5-5.1.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<p id="section-1.5-6">--02 WG version<a href="#section-1.5-6" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-1.5-7.1">
-            <p id="section-1.5-7.1.1">Merged <span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span><a href="#section-1.5-7.1.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-7.2">
-            <p id="section-1.5-7.2.1">Added id-ce-subjectPublicKeyIdentifier to examples<a href="#section-1.5-7.2.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<p id="section-1.5-8">--01 WG version changes:<a href="#section-1.5-8" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-1.5-9.1">
-            <p id="section-1.5-9.1.1">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256<a href="#section-1.5-9.1.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-9.2">
-            <p id="section-1.5-9.2.1">Editorial changes<a href="#section-1.5-9.2.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-9.3">
-            <p id="section-1.5-9.3.1">Addressed errata 3943 for RFC 6402<a href="#section-1.5-9.3.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-9.4">
-            <p id="section-1.5-9.4.1">Added direct POP example to address management of KEM certificates<a href="#section-1.5-9.4.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-9.5">
-            <p id="section-1.5-9.5.1">Clarified that subjectKeyIdentifier choice used with id-alg-noSignature<a href="#section-1.5-9.5.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<p id="section-1.5-10">--00 WG version changes:<a href="#section-1.5-10" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-1.5-11.1">
-            <p id="section-1.5-11.1.1">Added pre-5378 boilerplate<a href="#section-1.5-11.1.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-11.2">
-            <p id="section-1.5-11.2.1">Update DH-POP from RFC2875 to RFC6955<a href="#section-1.5-11.2.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<p id="section-1.5-12">--02 individual version changes:<a href="#section-1.5-12" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-1.5-13.1">
-            <p id="section-1.5-13.1.1">Added module to support new HMAC algorithms in PBKDF2<a href="#section-1.5-13.1.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<p id="section-1.5-14">--01 individual version changes:<a href="#section-1.5-14" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-1.5-15.1">
-            <p id="section-1.5-15.1.1">Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis<a href="#section-1.5-15.1.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.2">
-            <p id="section-1.5-15.2.1">Changed RFC 5274 references to draft-mandel-lamps-rfc5274bis<a href="#section-1.5-15.2.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.3">
-            <p id="section-1.5-15.3.1">Added missing "OBJECT IDENTIFIER" to declarations throughout mainbody
-to match ASN.1 module<a href="#section-1.5-15.3.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.4">
-            <p id="section-1.5-15.4.1">Rework Section 1.3<a href="#section-1.5-15.4.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.5">
-            <p id="section-1.5-15.5.1">Update CMC Control Attribute Table<a href="#section-1.5-15.5.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.6">
-            <p id="section-1.5-15.6.1">Updates ASN.1 to use 2002 ASN.1 module baseed on <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span><a href="#section-1.5-15.6.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.7">
-            <p id="section-1.5-15.7.1">To support adopting SHA-256 and HMAC-SHA256:<a href="#section-1.5-15.7.1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-1.5-15.7.2.1">
-                <p id="section-1.5-15.7.2.1.1">Add maca-hMAC-SHA256 to POPAlgs<a href="#section-1.5-15.7.2.1.1" class="pilcrow">¶</a></p>
-</li>
-              <li class="normal" id="section-1.5-15.7.2.2">
-                <p id="section-1.5-15.7.2.2.1">Add mda-sha256 to WitnessAlgs<a href="#section-1.5-15.7.2.2.1" class="pilcrow">¶</a></p>
-</li>
-              <li class="normal" id="section-1.5-15.7.2.3">
-                <p id="section-1.5-15.7.2.3.1">Add maca-hMAC-SHA256 and mda-sha256 to example in Appendix B<a href="#section-1.5-15.7.2.3.1" class="pilcrow">¶</a></p>
-</li>
-            </ul>
-</li>
-          <li class="normal" id="section-1.5-15.8">
-            <p id="section-1.5-15.8.1">Merged <span>[<a href="#erratum2731" class="cite xref">erratum2731</a>]</span><a href="#section-1.5-15.8.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.9">
-            <p id="section-1.5-15.9.1">Merged <span>[<a href="#erratum4775" class="cite xref">erratum4775</a>]</span><a href="#section-1.5-15.9.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.10">
-            <p id="section-1.5-15.10.1">Merged <span>[<a href="#erratum5931" class="cite xref">erratum5931</a>]</span><a href="#section-1.5-15.10.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.11">
-            <p id="section-1.5-15.11.1">Merged <span>[<a href="#erratum6571" class="cite xref">erratum6571</a>]</span><a href="#section-1.5-15.11.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.12">
-            <p id="section-1.5-15.12.1">Merged <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span><a href="#section-1.5-15.12.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.13">
-            <p id="section-1.5-15.13.1">Merged <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span><a href="#section-1.5-15.13.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-15.14">
-            <p id="section-1.5-15.14.1">Merged <span>[<a href="#erratum7629" class="cite xref">erratum7629</a>]</span><a href="#section-1.5-15.14.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
-<p id="section-1.5-16">--00 individual version changes:<a href="#section-1.5-16" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-1.5-17.1">
-            <p id="section-1.5-17.1.1">Added "Updates Made by RFC 6402" section<a href="#section-1.5-17.1.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-17.2">
-            <p id="section-1.5-17.2.1">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text<a href="#section-1.5-17.2.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-17.3">
-            <p id="section-1.5-17.3.1">Merged <span>[<a href="#erratum2063" class="cite xref">erratum2063</a>]</span><a href="#section-1.5-17.3.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-17.4">
-            <p id="section-1.5-17.4.1">Merged <span>[<a href="#erratum7627" class="cite xref">erratum7627</a>]</span><a href="#section-1.5-17.4.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-1.5-17.5">
-            <p id="section-1.5-17.5.1">Updated and moved Acknowledgments<a href="#section-1.5-17.5.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
+<p id="section-1.5-1">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text.<a href="#section-1.5-1" class="pilcrow">¶</a></p>
+<p id="section-1.5-2">Included the following errata: <span>[<a href="#erratum8385" class="cite xref">erratum8385</a>]</span>, <span>[<a href="#erratum8137" class="cite xref">erratum8137</a>]</span>,
+<span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span>, <span>[<a href="#erratum7629" class="cite xref">erratum7629</a>]</span>, <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span>, <span>[<a href="#erratum7627" class="cite xref">erratum7627</a>]</span>,
+<span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span>, <span>[<a href="#erratum6571" class="cite xref">erratum6571</a>]</span>, <span>[<a href="#erratum5931" class="cite xref">erratum5931</a>]</span>, <span>[<a href="#erratum4775" class="cite xref">erratum4775</a>]</span>,
+<span>[<a href="#erratum2731" class="cite xref">erratum2731</a>]</span>, and <span>[<a href="#erratum2063" class="cite xref">erratum2063</a>]</span>.<a href="#section-1.5-2" class="pilcrow">¶</a></p>
+<p id="section-1.5-3">Addressed <span>[<a href="#erratum3943" class="cite xref">erratum3943</a>]</span> for RFC 6402.<a href="#section-1.5-3" class="pilcrow">¶</a></p>
+<p id="section-1.5-4">To support adopting SHA-256 and HMAC-SHA256, maca-hMAC-SHA256 was added to
+POPAlgs and mda-sha256 was added to WitnessAlgs. Both were included in
+the example in Appendix B.<a href="#section-1.5-4" class="pilcrow">¶</a></p>
+<p id="section-1.5-5">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256.<a href="#section-1.5-5" class="pilcrow">¶</a></p>
+<p id="section-1.5-6">Updated the ASN.1 module to use the 2002 ASN.1 module from <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1.5-6" class="pilcrow">¶</a></p>
+<p id="section-1.5-7">Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
+Module for PBKDF2 PRFs.<a href="#section-1.5-7" class="pilcrow">¶</a></p>
+<p id="section-1.5-8">Added a direct POP example to address management of KEM certificates.<a href="#section-1.5-8" class="pilcrow">¶</a></p>
+<p id="section-1.5-9">Added id-ce-subjectKeyIdentifier to examples.<a href="#section-1.5-9" class="pilcrow">¶</a></p>
+<p id="section-1.5-10">Clarified that subjectKeyIdentifier choice used with id-alg-noSignature.<a href="#section-1.5-10" class="pilcrow">¶</a></p>
+<p id="section-1.5-11">Update CMC Control Attribute Table to include raIdentityWitness and responseBody from RFC 6402<a href="#section-1.5-11" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1801,12 +1672,12 @@ to match ASN.1 module<a href="#section-1.5-15.3.1" class="pilcrow">¶</a></p>
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-protocol-overview" class="section-name selfRef">Protocol Overview</a>
       </h2>
 <p id="section-2-1">A PKI enrollment transaction in this specification is generally
-composed of a single round-trip of messages. In the simplest case a
+composed of a single round trip of messages. In the simplest case a
 PKI enrollment request, henceforth referred to as a PKI Request, is
 sent from the client to the server and a PKI enrollment response,
 henceforth referred to as a PKI Response, is then returned from the
 server to the client. In more complicated cases, such as delayed
-certificate issuance, more than one round-trip is required.<a href="#section-2-1" class="pilcrow">¶</a></p>
+certificate issuance, more than one round trip is required.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">This specification defines two PKI Request types and two PKI Response
 types.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <p id="section-2-3">PKI Requests are formed using either the PKCS #10 or CRMF structure.
@@ -2913,7 +2784,7 @@ and at the same time it should send a negative response,
 Full PKI Response <code>SignedData</code> type containing a CMC Status Info control
 <span class="bcp14">MUST</span> be returned using a <code>CMCFailInfo</code> with a value of internalCAError and
 a <code>bodyPartID</code> of 0, and the eContent field in the <code>EncapsulatedContentInfo</code>
-as well as <code>SignerInfo</code> fields <span class="bcp14">MUST</span> not be populated.<a href="#section-3.2.1.3.4-7" class="pilcrow">¶</a></p>
+as well as <code>SignerInfo</code> fields <span class="bcp14">MUST NOT</span> be populated.<a href="#section-3.2.1.3.4-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -4899,7 +4770,7 @@ encryption operations, POP <span class="bcp14">MUST</span> be performed by forci
 decrypt a value. See <span><a href="https://rfc-editor.org/rfc/rfc4211#section-5" class="relref">Section 5</a> of [<a href="#CRMF" class="cite xref">CRMF</a>]</span> for a detailed discussion
 of POP.<a href="#section-6.7-2" class="pilcrow">¶</a></p>
 <p id="section-6.7-3">By necessity, POP for encryption-only keys cannot be done in one
-round-trip, since there are four distinct steps:<a href="#section-6.7-3" class="pilcrow">¶</a></p>
+round trip, since there are four distinct steps:<a href="#section-6.7-3" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-6.7-4">
 <li id="section-6.7-4.1">
             <p id="section-6.7-4.1.1">Client tells the server about the public component of a new
@@ -4911,8 +4782,8 @@ presented public encryption key.<a href="#section-6.7-4.2.1" class="pilcrow">¶<
 </li>
           <li id="section-6.7-4.3">
             <p id="section-6.7-4.3.1">Client decrypts the POP challenge using the private key that
-corresponds to the presented public key and sends the hash of
-the plaintext back to the server.<a href="#section-6.7-4.3.1" class="pilcrow">¶</a></p>
+corresponds to the presented public key and uses it for
+computing a keyed hash value sent back to the server.<a href="#section-6.7-4.3.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-6.7-4.4">
             <p id="section-6.7-4.4.1">Server validates the decrypted POP challenge and continues
@@ -4921,8 +4792,8 @@ processing the certification request.<a href="#section-6.7-4.4.1" class="pilcrow
         </ol>
 <p id="section-6.7-5">CMC defines two different controls. The first deals with the
 encrypted challenge sent from the server to the user in Step 2. The
-second deals with the decrypted challenge sent from the client to the
-server in Step 3.<a href="#section-6.7-5" class="pilcrow">¶</a></p>
+second deals with the value derived from the decrypted challenge
+sent by the client to the server in Step 3.<a href="#section-6.7-5" class="pilcrow">¶</a></p>
 <p id="section-6.7-6">The Encrypted POP control is used to send the encrypted challenge
 from the server to the client as part of the PKIResponse. (Note that
 it is assumed that the message sent in Step 1 above is a Full PKI
@@ -5464,7 +5335,7 @@ being accepted.<a href="#section-6.14-7" class="pilcrow">¶</a></p>
 <p id="section-6.14-8">Servers <span class="bcp14">MUST</span> return a Full PKI Response for a Confirm Certificate
 Acceptance control.<a href="#section-6.14-8" class="pilcrow">¶</a></p>
 <p id="section-6.14-9">Note that if the CA includes this control, there will be two full
-round-trips of messages.<a href="#section-6.14-9" class="pilcrow">¶</a></p>
+round trips of messages.<a href="#section-6.14-9" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-6.14-10">
 <li id="section-6.14-10.1">
             <p id="section-6.14-10.1.1">The client sends the certification request to the CA.<a href="#section-6.14-10.1.1" class="pilcrow">¶</a></p>
@@ -6526,7 +6397,7 @@ for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).<a href="#section-11-2" c
 <dl class="references">
 <dt id="CMC-COMPL">[CMC-COMPL]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5274bis-03</span>, <time datetime="2025-03-19" class="refDate">19 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-03">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5274bis-05</span>, <time datetime="2025-05-01" class="refDate">1 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-05">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-PROTv1">[CMC-PROTv1]</dt>
         <dd>
@@ -6534,7 +6405,7 @@ for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).<a href="#section-11-2" c
 <dd class="break"></dd>
 <dt id="CMC-TRANS">[CMC-TRANS]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-03</span>, <time datetime="2025-03-19" class="refDate">19 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-03">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-05</span>, <time datetime="2025-05-01" class="refDate">1 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-05">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-Updates">[CMC-Updates]</dt>
         <dd>
@@ -6631,8 +6502,9 @@ for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).<a href="#section-11-2" c
         <h3 id="name-asn1-module-for-cmc">
 <a href="#appendix-A.1" class="section-number selfRef">A.1. </a><a href="#name-asn1-module-for-cmc" class="section-name selfRef">ASN.1 Module for CMC</a>
         </h3>
-<div class="alignLeft art-text artwork" id="appendix-A.1-1">
-<pre>
+<div class="breakable sourcecode" id="appendix-A.1-1">
+<pre>&lt;CODE BEGINS&gt;
+
 EnrollmentMessageSyntax-2025
     { iso(1) identified-organization(3) dod(6) internet(1)
     security(5) mechanisms(5) pkix(7) id-mod(0)
@@ -7267,7 +7139,9 @@ BEGIN
   id-ad-cmc OBJECT IDENTIFIER ::= { id-ad 12 }
 
 END
-</pre><a href="#appendix-A.1-1" class="pilcrow">¶</a>
+
+
+&lt;CODE ENDS&gt;</pre><a href="#appendix-A.1-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -7276,8 +7150,9 @@ END
         <h3 id="name-asn1-module-for-pbkdf2-prfs">
 <a href="#appendix-A.2" class="section-number selfRef">A.2. </a><a href="#name-asn1-module-for-pbkdf2-prfs" class="section-name selfRef">ASN.1 Module for PBKDF2 PRFs</a>
         </h3>
-<div class="alignLeft art-text artwork" id="appendix-A.2-1">
-<pre>
+<div class="breakable sourcecode" id="appendix-A.2-1">
+<pre>&lt;CODE BEGINS&gt;
+
 PBKDF2-PRFs-2025
   { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
     pkcs-9(9) smime(16) modules(0) id-mod-pbkdf2-prfs-2025(TBD2) }
@@ -7293,7 +7168,7 @@ PBKDF2-PRFs-2025
         id-mod-algorithmInformation-02(58) }
 
   hMAC-SHA1, alg-hMAC-SHA1, id-PBKDF2
-  FROM CryptographicMessageSyntaxAlgorithms-2009 -- From RFC 5911
+  FROM CryptographicMessageSyntaxAlgorithms-2009 -- From [RFC5911]
       { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9)
          smime(16) modules(0) id-mod-cmsalg-2001-02(37) }
 
@@ -7374,7 +7249,9 @@ PBKDF2-PRFs-2025
   }
 
 END
-</pre><a href="#appendix-A.2-1" class="pilcrow">¶</a>
+
+
+&lt;CODE ENDS&gt;</pre><a href="#appendix-A.2-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -7410,14 +7287,15 @@ request.<a href="#appendix-B.1-1" class="pilcrow">¶</a></p>
            {102, id-cmc-identityProof, computed value}
            {103, id-cmc-senderNonce, 10001}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = My Proposed DN
-               publicKey = My Public Key
-               extensions
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
-                 {id-ce-keyUsage, digitalSignature}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = My Proposed DN
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-subjectKeyIdentifier, 1000}
+                   {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
          sid.subjectKeyIdentifier = 1000
@@ -7464,14 +7342,15 @@ will modify the certification request before passing it on to the CA.<a href="#a
            {102, id-cmc-identityProof, computed value}
            {103, id-cmc-senderNonce, 10001}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = My Proposed DN
-               publicKey = My Public Key
-               extensions
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
-                 {id-ce-keyUsage, digitalSignature}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = My Proposed DN
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-subjectKeyIdentifier, 1000}
+                   {id-ce-keyUsage, digitalSignature}
      SignedData.SignerInfos
        SignerInfo
          sid.subjectKeyIdentifier = 1000
@@ -7574,14 +7453,11 @@ will modify the certification request before passing it on to the CA.<a href="#a
 <a href="#appendix-B.3" class="section-number selfRef">B.3. </a><a href="#name-direct-pop-for-an-rsa-or-ke" class="section-name selfRef">Direct POP for an RSA or KEM Certificate</a>
         </h3>
 <p id="appendix-B.3-1">This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only certificate using a
+an enrollment is done for an encryption-only certificate using a
 direct POP method; the example below shows.  For simplicity, it is assumed that the
-certification requester already has a signing-only certificate.<a href="#appendix-B.3-1" class="pilcrow">¶</a></p>
-<p id="appendix-B.3-2">The fact that a second round-trip is required is implicit rather than
-explicit.  The server determines this based on the fact that no other
-POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcrow">¶</a></p>
-<p id="appendix-B.3-3">Message #1 from client to server:<a href="#appendix-B.3-3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-4">
+certification requester already has a signature certificate.<a href="#appendix-B.3-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.3-2">Message #1 from client to server:<a href="#appendix-B.3-2" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-3">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7594,24 +7470,25 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
            {104, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = &lt;My DN from my signing cert&gt;
-               publicKey = My Public Key
-               extensions
-                 {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = &lt;My DN&gt;
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
              popo
                keyEncipherment
-                 subsequentMessage
+                 subsequentMessage = challengeResp
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
-</pre><a href="#appendix-B.3-4" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-3" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.3-5">Response #1 from server to client:<a href="#appendix-B.3-5" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-6">
+<p id="appendix-B.3-4">Response #1 from server to client:<a href="#appendix-B.3-4" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-5">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7625,38 +7502,40 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
            {104, id-cmc-recipientNonce, 10001}
            {105, id-cmc-encryptedPOP, {
               request {
-                certRequest
-                  certReqId = 201
-                   certTemplate
-                     subject = &lt;My DN from my signing cert&gt;
-                     publicKey = My Public Key
-                     extensions
-                       {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectPublicKeyIdentifier, 1000}
+                crm
+                  certReq
+                    certReqId = 201
+                     certTemplate
+                       subject = &lt;My DN&gt;
+                       publicKey = My Public Key
+                       extensions
+                         {id-ce-keyUsage, keyEncipherment}
+                         {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
-                     subsequentMessage
+                       subsequentMessage = challengeResp
               }
               cms
                 contentType = id-envelopedData
                 content
-                  recipientInfos.riid.issuerSerialNumber = &lt;NULL-DN, 201&gt;
+                  recipientInfos.rid.issuerSerialNumber = &lt;NULL-DN, 201&gt;
                   encryptedContentInfo
                     eContentType = id-data
-                    eContent = &lt;Encrypted value of 'y'&gt;
+                    eContent = &lt;Encrypted value of 'y' from Section 6.7&gt;
               thePOPAlgID = HMAC-SHA256
               witnessAlgID = SHA-256
-              witness &lt;hashed value of 'y'&gt;}}
+              witness &lt;hashed value of 'y' from Section 6.7&gt;}}
            {106, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
      certificates
-       Other certificates (optional)
+       Other certificates
+         (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
-</pre><a href="#appendix-B.3-6" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-5" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.3-7">Message #2 from client to server:<a href="#appendix-B.3-7" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-8">
+<p id="appendix-B.3-6">Message #2 from client to server:<a href="#appendix-B.3-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-7">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7674,24 +7553,25 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
              thePOPAlgID HMAC-SHA256,
              thePOP &lt;HMAC computed value goes here&gt;}}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = &lt;My DN from my signing cert&gt;
-               publicKey = My Public Key
-               extensions
-                 {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = &lt;My DN&gt;
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectKeyIdentifier, 1000}
              popo
                keyEncipherment
-                 subsequentMessage
+                 subsequentMessage = challengeResp
      SignedData.SignerInfos
        SignerInfo
          Signed by requester's signing cert
-</pre><a href="#appendix-B.3-8" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-7" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.3-9">Response #2 from server to client:<a href="#appendix-B.3-9" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.3-10">
+<p id="appendix-B.3-8">Response #2 from server to client:<a href="#appendix-B.3-8" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.3-9">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7708,9 +7588,10 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
      certificates
        Newly issued certificate
        Other certificates
+         (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
-</pre><a href="#appendix-B.3-10" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.3-9" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -7720,17 +7601,14 @@ POP exists for the certification request.<a href="#appendix-B.3-2" class="pilcro
 <a href="#appendix-B.4" class="section-number selfRef">B.4. </a><a href="#name-direct-pop-with-no-signatur" class="section-name selfRef">Direct POP with No Signature Mechanism</a>
         </h3>
 <p id="appendix-B.4-1">This section looks at the messages that would flow in the event that
-an enrollment is done for an encryption only cerrtificate using a
+an enrollment is done for an encryption-only certificate using a
 direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 <a href="#DirectPOPforRSACertificate" class="auto internal xref">Appendix B.3</a>, here the No Signature mechanism from
 <a href="#NoSig-Sig" class="auto internal xref">Appendix C.1</a>, the public key is for a KEM, and the EnvelopedData uses
 the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]</span>.<a href="#appendix-B.4-1" class="pilcrow">¶</a></p>
-<p id="appendix-B.4-2">The fact that a second round-trip is required is implicit rather than
-explicit.  The server determines this based on the fact that no other
-POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcrow">¶</a></p>
-<p id="appendix-B.4-3">Message #1 from client to server:<a href="#appendix-B.4-3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.4-4">
+<p id="appendix-B.4-2">Message #1 from client to server:<a href="#appendix-B.4-2" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-3">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7743,14 +7621,15 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
            {104, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = &lt; My DN &gt;
-               publicKey = My Public Key
-               extensions
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
-                 {id-ce-keyUsage, keyEncipherment}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = &lt; My DN &gt;
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
+                   {id-ce-keyUsage, keyEncipherment}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp
@@ -7758,10 +7637,10 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
       SignerInfo
         sid = &lt; subjectKeyIdentifier &gt;
         signatureAlgorithm = id-alg-noSignature
-</pre><a href="#appendix-B.4-4" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.4-3" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.4-5">Response #1 from server to client:<a href="#appendix-B.4-5" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.4-6">
+<p id="appendix-B.4-4">Response #1 from server to client:<a href="#appendix-B.4-4" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-5">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7775,14 +7654,15 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
            {104, id-cmc-recipientNonce, 10001}
            {105, id-cmc-encryptedPOP, {
               request {
-                certRequest
-                  certReqId = 201
-                   certTemplate
-                     subject = &lt; My DN &gt;
-                     publicKey = My Public Key
-                     extensions
-                       {id-ce-keyUsage, keyEncipherment}
-                       {id-ce-subjectPublicKeyIdentifier, 1000}
+                crm
+                  certReq
+                    certReqId = 201
+                     certTemplate
+                       subject = &lt; My DN &gt;
+                       publicKey = My Public Key
+                       extensions
+                         {id-ce-keyUsage, keyEncipherment}
+                         {id-ce-subjectPublicKeyIdentifier, 1000}
                    popo
                      keyEncipherment
                        subsequentMessage = challengeResp
@@ -7790,24 +7670,26 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
               cms
                 contentType = id-envelopedData
                 content &lt; uses ori.KEMRecipientInfo &gt;
-                  recipientInfos.ori.riid.issuerSerialNumber = &lt;NULL-DN, 201&gt;
+                  recipientInfos.ori.rid.issuerSerialNumber =
+                    &lt;NULL-DN, 201&gt;
                   encryptedContentInfo
                     eContentType = id-data
-                    eContent = &lt;Encrypted value of 'y'&gt;
+                    eContent = &lt;Encrypted value of 'y' from Section 6.7&gt;
        thePOPAlgID = KmacWithSHAKE128
        witnessAlgID = SHAKE128
-       witness &lt;hashed value of 'y'&gt;}}
+       witness &lt;hashed value of 'y' from Section 6.7&gt;}}
            {106, id-cmc-dataReturn, &lt;packet of binary data identifying
                                      where the key in question is.&gt;}
      Certificates
-       Other certificates (optional)
+       Other certificates
+         (optional - related to this message's SignedData)
      SignedData.SignerInfos
        Signed by CA
 
-</pre><a href="#appendix-B.4-6" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.4-5" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.4-7">Message #2 from client to server:<a href="#appendix-B.4-7" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.4-8">
+<p id="appendix-B.4-6">Message #2 from client to server:<a href="#appendix-B.4-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-7">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7825,14 +7707,15 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
              thePOPAlgID KmacWithSHAKE128,
              thePOP &lt;KMAC computed value goes here&gt;}}
          reqSequence
-           certRequest
-             certReqId = 201
-             certTemplate
-               subject = &lt; My DN &gt;
-               publicKey = My Public Key
-               extensions
-                 {id-ce-keyUsage, keyEncipherment}
-                 {id-ce-subjectPublicKeyIdentifier, 1000}
+           crm
+             certReq
+               certReqId = 201
+               certTemplate
+                 subject = &lt; My DN &gt;
+                 publicKey = My Public Key
+                 extensions
+                   {id-ce-keyUsage, keyEncipherment}
+                   {id-ce-subjectPublicKeyIdentifier, 1000}
              popo
                keyEncipherment
                  subsequentMessage = challengeResp
@@ -7841,10 +7724,10 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
          sid = &lt; subjectKeyIdentifier &gt;
          signatureAlgorithm = id-alg-noSignature
 
-</pre><a href="#appendix-B.4-8" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.4-7" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B.4-9">Response #2 from server to client:<a href="#appendix-B.4-9" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-B.4-10">
+<p id="appendix-B.4-8">Response #2 from server to client:<a href="#appendix-B.4-8" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="appendix-B.4-9">
 <pre>
    ContentInfo.contentType = id-signedData
    ContentInfo.content
@@ -7864,7 +7747,7 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
      SignedData.SignerInfos
        Signed by CA
 
-</pre><a href="#appendix-B.4-10" class="pilcrow">¶</a>
+</pre><a href="#appendix-B.4-9" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -7877,7 +7760,7 @@ POP exists for the certification request.<a href="#appendix-B.4-2" class="pilcro
       </h2>
 <p id="appendix-C-1">Part of a certification request is a signature over the request;
 DH and ECDH are key agreement algorithms and RSA-KEM and ML-KEM
-are key encapsulation mechanisms (KEM) are and cannot be used to
+are key encapsulation mechanisms (KEM) and cannot be used to
 directly produce the required signature object.  <span>[<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> provides
 three ways to produce the necessary signature value.  This document
 also defines a signature algorithm that does not provide a POP value,
@@ -7903,13 +7786,14 @@ type:<a href="#appendix-C.1-1" class="pilcrow">¶</a></p>
 </div>
 <p id="appendix-C.1-3">The parameters for id-alg-noSignature <span class="bcp14">MUST</span> be present and <span class="bcp14">MUST</span> be
 encoded as NULL.  NoSignatureValue contains the SHA-1 hash of the
-certification request.  It is important to realize that there is no
+certification request.  The hash value given by NoSignatureValue
+<span class="bcp14">SHOULD</span> be ignored.  It is important to realize that there is no
 security associated with this signature type.  If this signature type
 is on a certification request and the Certification Authority policy
 requires proof-of-possession of the private key, the POP mechanism
 defined in <a href="#EncryptedandDecryptedPOPControls" class="auto internal xref">Section 6.7</a> <span class="bcp14">MUST</span> be used.<a href="#appendix-C.1-3" class="pilcrow">¶</a></p>
 <p id="appendix-C.1-4">When the client generates the SignedData.SignerInfos.SignerInfo.sid
-field it has two choices issuerAndSerialNumber or subjectKeyIdentifier.
+field it has two choices: issuerAndSerialNumber or subjectKeyIdentifier.
 The client does not yet have a certificate and there cannot fill in
 the issuerAndSerialNumber and therefore <span class="bcp14">MUST</span> use the subjectKeyIdentifier
 choice.<a href="#appendix-C.1-4" class="pilcrow">¶</a></p>

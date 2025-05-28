@@ -12,7 +12,7 @@
 to move CMC (Certificate Management over CMS (Cryptographic Message
 Syntax)) messages.  The transport mechanisms described in this
 document are HTTP, file, mail, and TCP. 
-       This document obsoletes RFCs 5273 and 6402. 
+       This document obsoletes RFC 5273 and RFC 6402. 
     " name="description">
 <meta content="xml2rfc 3.28.1" name="generator">
 <meta content="Public Key Infrastructure" name="keyword">
@@ -28,7 +28,7 @@ document are HTTP, file, mail, and TCP.
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.0
-    platformdirs 4.3.7
+    platformdirs 4.3.8
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.3
@@ -1052,11 +1052,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CMC: Transport Protocols</td>
-<td class="right">April 2025</td>
+<td class="right">May 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Mandel, Ed &amp; Turner, Ed</td>
-<td class="center">Expires 30 October 2025</td>
+<td class="center">Expires 29 November 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1072,12 +1072,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5273" class="eref">5273</a>, <a href="https://www.rfc-editor.org/rfc/rfc6402" class="eref">6402</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-04-28" class="published">28 April 2025</time>
+<time datetime="2025-05-28" class="published">28 May 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-10-30">30 October 2025</time></dd>
+<dd class="expires"><time datetime="2025-11-29">29 November 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1098,7 +1098,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 to move CMC (Certificate Management over CMS (Cryptographic Message
 Syntax)) messages.  The transport mechanisms described in this
 document are HTTP, file, mail, and TCP.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
-<p id="section-abstract-2">This document obsoletes RFCs 5273 and 6402.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+<p id="section-abstract-2">This document obsoletes RFC 5273 and RFC 6402.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1134,7 +1134,7 @@ document are HTTP, file, mail, and TCP.<a href="#section-abstract-1" class="pilc
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 30 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 29 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1262,73 +1262,12 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-changes-since-5273-and-6402">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-changes-since-5273-and-6402" class="section-name selfRef">Changes Since 5273 and 6402</a>
       </h2>
-<aside id="section-3-1">
-        <p id="section-3-1.1">Note: For now, this section will be list of the changes introduced
-  by each version. After WGLC, this section will be finalized.<a href="#section-3-1.1" class="pilcrow">¶</a></p>
-</aside>
-<p id="section-3-2">-04 WG version:<a href="#section-3-2" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-3-3.1">
-          <p id="section-3-3.1.1">Added text to explain file extensions.<a href="#section-3-3.1.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
-<p id="section-3-4">-03 WG version:<a href="#section-3-4" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-3-5.1">
-          <p id="section-3-5.1.1">No changes.<a href="#section-3-5.1.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
-<p id="section-3-6">-02 WG version:<a href="#section-3-6" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-3-7.1">
-          <p id="section-3-7.1.1">Updated this section.<a href="#section-3-7.1.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
-<p id="section-3-8">-01 WG version changes:<a href="#section-3-8" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-3-9.1">
-          <p id="section-3-9.1.1">Added requirement that TLS 1.2 implementations follow <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span><a href="#section-3-9.1.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
-<p id="section-3-10">-00 WG version changes:<a href="#section-3-10" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-3-11.1">
-          <p id="section-3-11.1.1">Added pre-5378 boilerplate<a href="#section-3-11.1.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
-<p id="section-3-12">-02 individual version changes:<a href="#section-3-12" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-3-13.1">
-          <p id="section-3-13.1.1">Replaced TLS 1.0 with TLS 1.2 or later<a href="#section-3-13.1.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
-<p id="section-3-14">-01 individual version changes:<a href="#section-3-14" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-3-15.1">
-          <p id="section-3-15.1.1">Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis<a href="#section-3-15.1.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="section-3-15.2">
-          <p id="section-3-15.2.1">Merged <span>[<a href="#erratum3593" class="cite xref">erratum3593</a>]</span><a href="#section-3-15.2.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
-<p id="section-3-16">-00 individual version changes:<a href="#section-3-16" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-3-17.1">
-          <p id="section-3-17.1.1">Moved 2119-text to its own section<a href="#section-3-17.1.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="section-3-17.2">
-          <p id="section-3-17.2.1">Added "Changes Since 5273 and 6402" section<a href="#section-3-17.2.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="section-3-17.3">
-          <p id="section-3-17.3.1">Updated references<a href="#section-3-17.3.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="section-3-17.4">
-          <p id="section-3-17.4.1">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text<a href="#section-3-17.4.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="section-3-17.5">
-          <p id="section-3-17.5.1">Updated and moved Acknowledgments<a href="#section-3-17.5.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
+<p id="section-3-1">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">IANA assigned TCP port 5318 for the use of CMC.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-3">Clarified the file extensions for Full PKI Requests and Responses.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-4">Replaced TLS 1.0 for TLS 1.2 or later, and added that implemetations are
+required to follow the recommendations in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>.<a href="#section-3-4" class="pilcrow">¶</a></p>
+<p id="section-3-5">Addressed <span>[<a href="#erratum3593" class="cite xref">erratum3593</a>]</span>.<a href="#section-3-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="file-based-protocol">
@@ -1475,8 +1414,8 @@ following rules apply.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <li class="normal ulEmpty" id="section-6-5.1">
           <p id="section-6-5.1.1">Clients <span class="bcp14">MAY</span> attempt to send HTTP requests using TLS 1.2 <span>[<a href="#TLS" class="cite xref">TLS</a>]</span> or
 later, although servers are not required to support TLS. If
-TLS 1.2 <span>[<a href="#TLS" class="cite xref">TLS</a>]</span> (or later) is used then implementations <span class="bcp14">MUST</span> follow
-the recommendations in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>.<a href="#section-6-5.1.1" class="pilcrow">¶</a></p>
+TLS is supported by an implementation, then the implementation <span class="bcp14">MUST</span>
+folow the recommendations in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>.<a href="#section-6-5.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <ul class="normal ulEmpty">
@@ -1577,7 +1516,7 @@ detectable without the inclusion of the optional nonce mechanisms.
 Implementers of this protocol need to carefully consider
 environmental conditions before choosing whether or not to implement
 the senderNonce and recipientNonce attributes described in
-<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-03#section-6.6" class="relref">Section 6.6</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>.  Developers of state-constrained PKI clients are
+<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-05#section-6.6" class="relref">Section 6.6</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>.  Developers of state-constrained PKI clients are
 strongly encouraged to incorporate the use of these attributes.<a href="#section-9-1" class="pilcrow">¶</a></p>
 <p id="section-9-2">Initiation of a secure communications channel between an end-entity
 and a CA or Registration Authority (RA) -- and, similarly, between an
@@ -1593,7 +1532,7 @@ integrating this capability within an overall security architecture.<a href="#se
 initiated prior to use of this protocol.  This can occur when the
 protocol itself is being used to download onto the system the set of
 trust anchors to be used for these protocols.  In these instances,
-the Enveloped Data content type (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-03#section-3.2.1.3.3" class="relref">Section 3.2.1.3.3</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>)
+the Enveloped Data content type (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-05#section-3.2.1.3.3" class="relref">Section 3.2.1.3.3</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>)
 must be used to provide the same shrouding that TLS would have
 provided.<a href="#section-9-3" class="pilcrow">¶</a></p>
 </section>
@@ -1615,7 +1554,7 @@ provided.<a href="#section-9-3" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="CMC-STRUCT">[CMC-STRUCT]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5272bis-03</span>, <time datetime="2025-03-19" class="refDate">19 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-03">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5272bis-05</span>, <time datetime="2025-05-01" class="refDate">1 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-05">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="erratum3593">[erratum3593]</dt>
         <dd>
@@ -1652,7 +1591,7 @@ provided.<a href="#section-9-3" class="pilcrow">¶</a></p>
 <dl class="references">
 <dt id="CMC-TRANSv1">[CMC-TRANSv1]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-03</span>, <time datetime="2025-03-19" class="refDate">19 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-03">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-03</a>&gt;</span>. </dd>
+<span class="refAuthor">Schaad, J.</span> and <span class="refAuthor">M. Myers</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="seriesInfo">RFC 5273</span>, <span class="seriesInfo">DOI 10.17487/RFC5273</span>, <time datetime="2008-06" class="refDate">June 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5273">https://www.rfc-editor.org/rfc/rfc5273</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-Updates">[CMC-Updates]</dt>
         <dd>

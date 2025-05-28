@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 30 October 2025                                   28 April 2025
+Expires: 29 November 2025                                    28 May 2025
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -20,7 +20,7 @@ Abstract
    protocol are covered in other documents.  This document provides the
    information needed to make a compliant version of CMC.
 
-   This document obsoletes RFCs 5274 and 6402.
+   This document obsoletes RFC 5274 and RFC 6402.
 
 About This Document
 
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 October 2025.
+   This Internet-Draft will expire on 29 November 2025.
 
 Copyright Notice
 
@@ -96,9 +96,10 @@ Table of Contents
    9.  Requirements for RAs
    10. Requirements for CAs
    11. Security Considerations
-   12. References
-     12.1.  Normative References
-     12.2.  Informative References
+   12. IANA Considerations
+   13. References
+     13.1.  Normative References
+     13.2.  Informative References
    Acknowledgements
    Contributors
    Authors' Addresses
@@ -197,49 +198,19 @@ Table of Contents
 
 4.  Changes since RFC 5274 and 6402
 
-      |  Note: For now, this section will be list of the changes
-      |  introduced by each version.  After WGLC, this section will be
-      |  finalized.
+   Merged [CMC-Updates] text.
 
-   TODO for -03 WG version:
+   Added RA Identity Proof Witness and Response Body Controls to CMC
+   Controls Attribute table.
 
-   *  Add cryptographic algorithm requirements
+   Updated the Cryptographic Algorithm Requirements, and added section
+   to maintain backwards compatability.
 
-   -02 WG version changes:
+      Replaced SHA-1 for SHA-256 Replaced HMAC-SHA-1 for HMAC-SHA-256
 
-   *  Reformat cryptographic algorithm section
-
-   -01 WG version changes:
-
-   *  Updated references
-
-   -00 WG version changes:
-
-   *  Added pre-5378 boilerplate
-
-   -02 individual version changes:
-
-   *  Updated text in intro
-
-   *  Changed "all agents" to "all entities" in overview
-
-   *  Updated section header numbering
-
-   -01 individual version changes:
-
-   *  Changed RFC 5272 references to draft-mandel-lamps-rfc5272bis
-
-   *  Changed RFC 5273 references to draft-mandel-lamps-rfc5273bis
-
-   -00 individual version changes:
-
-   *  Added "Changes Since 5274 and 6402" section
-
-   *  Updated references
-
-   *  Merged [CMC-Updates] text
-
-   *  Updated and moved Acknowledgments
+   Updated the Introduction section, changed "all agents" to "all
+   entities" in the overview to maintain consistency throughout the
+   document, and re-numbered the section headers.
 
 5.  Requirements for All Entities
 
@@ -509,9 +480,13 @@ Table of Contents
    current state of the art.  Two examples of such documents are
    [SMALL-SUB-GROUP] and [HASH-ATTACKS].
 
-12.  References
+12.  IANA Considerations
 
-12.1.  Normative References
+   This document does not require action from IANA.
+
+13.  References
+
+13.1.  Normative References
 
    [AES-WRAP] Schaad, J. and R. Housley, "Advanced Encryption Standard
               (AES) Key Wrap Algorithm", RFC 3394, DOI 10.17487/RFC3394,
@@ -520,16 +495,16 @@ Table of Contents
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC)", Work in Progress, Internet-Draft, draft-ietf-
-              lamps-rfc5272bis-03, 19 March 2025,
+              lamps-rfc5272bis-05, 1 May 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5272bis-03>.
+              rfc5272bis-05>.
 
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-03, 19 March 2025,
+              Draft, draft-ietf-lamps-rfc5273bis-05, 1 May 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-03>.
+              rfc5273bis-05>.
 
    [CMS]      Housley, R., "Cryptographic Message Syntax (CMS)", STD 70,
               RFC 5652, DOI 10.17487/RFC5652, September 2009,
@@ -557,11 +532,10 @@ Table of Contents
               of-Possession Algorithms", RFC 6955, DOI 10.17487/RFC6955,
               May 2013, <https://www.rfc-editor.org/rfc/rfc6955>.
 
-   [PBKDF2]   Kario, A., "Use of Password-Based Message Authentication
-              Code 1 (PBMAC1) in PKCS #12 Syntax", Work in Progress,
-              Internet-Draft, draft-ietf-lamps-rfc9579bis-06, 25 April
-              2025, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              lamps-rfc9579bis-06>.
+   [PBKDF2]   Kario, H., "Use of Password-Based Message Authentication
+              Code 1 (PBMAC1) in PKCS #12 Syntax", RFC 9579,
+              DOI 10.17487/RFC9579, May 2024,
+              <https://www.rfc-editor.org/rfc/rfc9579>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -572,21 +546,13 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-   [RSA-256]  Schaad, J., Kaliski, B., and R. Housley, "Additional
-              Algorithms and Identifiers for RSA Cryptography for use in
-              the Internet X.509 Public Key Infrastructure Certificate
-              and Certificate Revocation List (CRL) Profile", RFC 4055,
-              DOI 10.17487/RFC4055, June 2005,
-              <https://www.rfc-editor.org/rfc/rfc4055>.
-
-12.2.  Informative References
+13.2.  Informative References
 
    [CMC-COMPv1]
-              Mandel, J. and S. Turner, "Certificate Management Messages
-              over CMS (CMC): Compliance Requirements", Work in
-              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-03,
-              19 March 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-lamps-rfc5274bis-03>.
+              Schaad, J. and M. Myers, "Certificate Management Messages
+              over CMS (CMC): Compliance Requirements", RFC 5274,
+              DOI 10.17487/RFC5274, June 2008,
+              <https://www.rfc-editor.org/rfc/rfc5274>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
