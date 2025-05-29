@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-25T02:07:20.824794+00:00",
+  "timestamp": "2025-05-29T01:59:05.952094+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -4488,26 +4488,81 @@
       "id": "PR_kwDOKfq5gM6WkndW",
       "title": "Modify updates since sections",
       "url": "https://github.com/lamps-wg/cmcbis/pull/107",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-05-17T15:37:54Z",
-      "updatedAt": "2025-05-17T15:37:55Z",
+      "updatedAt": "2025-05-28T14:04:00Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "63fbdd25ec0b2c7392683102bd038e537dd4fcbd",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "Modify-updates-since-Sections",
-      "headRefOid": "99c37550418aadb1816490dfc861b43458da65b1",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "b90e64614c8933c15a7f514c80a462e3233dad99",
+      "closedAt": "2025-05-28T14:04:00Z",
+      "mergedAt": "2025-05-28T14:04:00Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "640d5fc9017cbee11fb3e44af6672779b0e6b189"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6rWkjJ",
+          "commit": {
+            "abbreviatedOid": "99c3755"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-28T12:28:29Z",
+          "updatedAt": "2025-05-28T12:28:29Z",
+          "comments": [
+            {
+              "originalPosition": 54,
+              "body": "```suggestion\r\nthroughout the document, and re-numbered the section headers.\r\n```",
+              "createdAt": "2025-05-28T12:28:29Z",
+              "updatedAt": "2025-05-28T12:28:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6rWlYt",
+          "commit": {
+            "abbreviatedOid": "99c3755"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Just some nits.",
+          "createdAt": "2025-05-28T12:29:12Z",
+          "updatedAt": "2025-05-28T12:40:16Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\n\r\nMerged {{CMC-Updates}} text.\r\n\r\nAdded RA Identity Proof Witness and Response Body Controls to\r\n```",
+              "createdAt": "2025-05-28T12:29:12Z",
+              "updatedAt": "2025-05-28T12:40:16Z"
+            },
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\nMerged {{CMC-Updates}} text.\r\n\r\nIANA assigned TCP port 5318 for the use of CMC.\r\n```",
+              "createdAt": "2025-05-28T12:29:44Z",
+              "updatedAt": "2025-05-28T12:40:16Z"
+            },
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\r\nMerged {{CMC-Updates}} text.\r\n\r\nIncluded the following errata: {{erratum8385}}, {{erratum8137}},\r\n{{erratum8027}}, {{erratum7629}}, {{erratum7628}}, {{erratum7627}},\r\n{{erratum7379}}, {{erratum6571}}, {{erratum5931}}, {{erratum4775}},\r\n{{erratum2731}}, and {{erratum2063}}.\r\n```",
+              "createdAt": "2025-05-28T12:37:49Z",
+              "updatedAt": "2025-05-28T12:40:16Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
