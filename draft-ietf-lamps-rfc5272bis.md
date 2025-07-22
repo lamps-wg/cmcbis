@@ -496,7 +496,6 @@ Full PKI Request                        Full PKI Response
 
 ~~~
 {: #fig-full title="Full PKI Requests and Responses"}
-          
 # PKI Requests {#PKIRequests}
 
 Two types of PKI Requests exist. This section gives the details for
