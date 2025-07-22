@@ -427,11 +427,11 @@ for convenience and consistency of usage:
 
 ##  Protocol Requests/Responses {#ProtocolRequestsResponses}
 
-Figure 1 shows the Simple PKI Requests and Responses. The contents
+{{fig-simple}} shows the Simple PKI Requests and Responses. The contents
 of Simple PKI Request and Response are detailed in {{SimplePKIRequest}} and
 {{SimplePKIResponse}}.
 
-~~~
+~~~ aasvg
 Simple PKI Request                      Simple PKI Response
 -------------------------               --------------------------
 
@@ -454,14 +454,14 @@ Simple PKI Request                      Simple PKI Response
                                                         | unsigned |
                                                         +----------+
 
-             Figure 1: Simple PKI Requests and Responses
 ~~~
+{: #fig-simple title="Simple PKI Requests and Responses"}
 
-Figure 2 shows the Full PKI Requests and Responses. The contents of
+{{fig-full}} shows the Full PKI Requests and Responses. The contents of
 the Full PKI Request and Response are detailed in {{FullPKIRequest}} and
 {{FullPKIResponse}}.
 
-~~~
+~~~ aasvg
 Full PKI Request                        Full PKI Response
 -----------------------                 ------------------------
  +----------------+                      +----------------+
@@ -494,9 +494,9 @@ Full PKI Request                        Full PKI Response
          +-----------------+                       | CA or an LRA  |
                                                    +---------------+
 
-          Figure 2: Full PKI Requests and Responses
 ~~~
-
+{: #fig-full title="Full PKI Requests and Responses"}
+          
 # PKI Requests {#PKIRequests}
 
 Two types of PKI Requests exist. This section gives the details for
