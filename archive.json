@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-29T01:59:05.952094+00:00",
+  "timestamp": "2025-07-24T02:10:10.268674+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -4559,6 +4559,53 @@
               "body": "```suggestion\r\nMerged {{CMC-Updates}} text.\r\n\r\nIncluded the following errata: {{erratum8385}}, {{erratum8137}},\r\n{{erratum8027}}, {{erratum7629}}, {{erratum7628}}, {{erratum7627}},\r\n{{erratum7379}}, {{erratum6571}}, {{erratum5931}}, {{erratum4775}},\r\n{{erratum2731}}, and {{erratum2063}}.\r\n```",
               "createdAt": "2025-05-28T12:37:49Z",
               "updatedAt": "2025-05-28T12:40:16Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 108,
+      "id": "PR_kwDOKfq5gM6gBjuM",
+      "title": "Use aasvg",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/108",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-07-22T09:02:33Z",
+      "updatedAt": "2025-07-22T09:58:48Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "640d5fc9017cbee11fb3e44af6672779b0e6b189",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-aasvg",
+      "headRefOid": "812786723624fa35950d3f8a356d4027e448e5d8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM61VDM-",
+          "commit": {
+            "abbreviatedOid": "9bef0b6"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-22T09:58:31Z",
+          "updatedAt": "2025-07-22T09:58:31Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "```suggestion\r\n\r\n```",
+              "createdAt": "2025-07-22T09:58:31Z",
+              "updatedAt": "2025-07-22T09:58:31Z"
             }
           ]
         }
