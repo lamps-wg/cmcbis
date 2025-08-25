@@ -83,7 +83,7 @@ This document defines a number of transport methods that are used to
 move CMC messages (defined in {{CMC-STRUCT}}).  The transport
 mechanisms described in this document are HTTP, file, mail, and TCP.
 
-This document obsoletes {{CMC-TRANSv1}} and {{CMC-Updates}}. This
+This document obsoletes RFC 5273 {{CMC-TRANSv1}} and RFC 6402 {{CMC-Updates}}. This
 document also incorporates {{erratum3593}}.
 
 
