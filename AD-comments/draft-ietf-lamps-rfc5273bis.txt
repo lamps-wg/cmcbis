@@ -105,8 +105,8 @@ Table of Contents
    move CMC messages (defined in [CMC-STRUCT]).  The transport
    mechanisms described in this document are HTTP, file, mail, and TCP.
 
-   This document obsoletes [CMC-TRANSv1] and [CMC-Updates].  This
-   document also incorporates [erratum3593].
+   This document obsoletes RFC 5273 [CMC-TRANSv1] and RFC 6402
+   [CMC-Updates].  This document also incorporates [erratum3593].
 
 2.  Requirements Terminology
 
