@@ -1188,7 +1188,7 @@ The ASN.1 structure corresponding to the PKIResponse content type is:
     otherMsgSequence  SEQUENCE SIZE(0..MAX) OF OtherMsg
     }
 
-    ReponseBody ::= PKIResponse
+    ResponseBody ::= PKIResponse
 ~~~
 
 Note: In {{RFC2797}}, this ASN.1 type was named ResponseBody. It has
@@ -1349,7 +1349,6 @@ single body part. Clients MUST be able to deal with multiple CMC
 status info controls in a PKI Response. Servers MUST use the
 Extended CMC Status Info control, but MAY additionally use the CMC
 Status Info control. Clients MUST be able to process the Extended
-
 CMC Status Info control.
 
 ###  Extended CMC Status Info Control {#extCMCStatusInfo}
