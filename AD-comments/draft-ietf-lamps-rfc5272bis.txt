@@ -6,7 +6,7 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 23 January 2026                                    22 July 2025
+Expires: 26 February 2026                                 25 August 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -63,7 +63,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 January 2026.
+   This Internet-Draft will expire on 26 February 2026.
 
 Copyright Notice
 
@@ -102,65 +102,66 @@ Table of Contents
    2.  Protocol Overview
      2.1.  Terminology
      2.2.  Protocol Requests/Responses
-     2.3.  Simple PKI Request
-     2.4.  Full PKI Request
-       2.4.1.  PKIData Content Type
-       2.4.2.  Body Part Identification
-       2.4.3.  CMC Unsigned Data Attribute
-   3.  PKI Responses
-     3.1.  Simple PKI Response
-     3.2.  Full PKI Response
-       3.2.1.  PKIResponse Content Type
-   4.  Application of Encryption to a PKI Request/Response
-   5.  Controls
-     5.1.  CMC Status Info Controls
-       5.1.1.  Extended CMC Status Info Control
-       5.1.2.  CMC Status Info Control
-       5.1.3.  CMCStatus Values
-       5.1.4.  CMCFailInfo
-     5.2.  Identification and Identity Proof Controls
-       5.2.1.  Identity Proof Version 2 Control
-       5.2.2.  Identity Proof Control
-       5.2.3.  Identification Control
-       5.2.4.  Hardware Shared-Secret Token Generation
-     5.3.  Linking Identity and POP Information
-       5.3.1.  Cryptographic Linkage
-       5.3.2.  Shared-Secret/Subject DN Linking
-       5.3.3.  Existing Certificate Linking
-     5.4.  Data Return Control
-     5.5.  RA Certificate Modification Controls
-       5.5.1.  Modify Certification Request Control
-       5.5.2.  Add Extensions Control
-     5.6.  Transaction Identifier Control and Sender and Recipient
+   3.  PKI Requests
+     3.1.  Simple PKI Request
+     3.2.  Full PKI Request
+       3.2.1.  PKIData Content Type
+       3.2.2.  Body Part Identification
+       3.2.3.  CMC Unsigned Data Attribute
+   4.  PKI Responses
+     4.1.  Simple PKI Response
+     4.2.  Full PKI Response
+       4.2.1.  PKIResponse Content Type
+   5.  Application of Encryption to a PKI Request/Response
+   6.  Controls
+     6.1.  CMC Status Info Controls
+       6.1.1.  Extended CMC Status Info Control
+       6.1.2.  CMC Status Info Control
+       6.1.3.  CMCStatus Values
+       6.1.4.  CMCFailInfo
+     6.2.  Identification and Identity Proof Controls
+       6.2.1.  Identity Proof Version 2 Control
+       6.2.2.  Identity Proof Control
+       6.2.3.  Identification Control
+       6.2.4.  Hardware Shared-Secret Token Generation
+     6.3.  Linking Identity and POP Information
+       6.3.1.  Cryptographic Linkage
+       6.3.2.  Shared-Secret/Subject DN Linking
+       6.3.3.  Existing Certificate Linking
+     6.4.  Data Return Control
+     6.5.  RA Certificate Modification Controls
+       6.5.1.  Modify Certification Request Control
+       6.5.2.  Add Extensions Control
+     6.6.  Transaction Identifier Control and Sender and Recipient
             Nonce Controls
-     5.7.  Encrypted and Decrypted POP Controls
-     5.8.  RA POP Witness Control
-     5.9.  Get Certificate Control
-     5.10. Get CRL Control
-     5.11. Revocation Request Control
-     5.12. Registration and Response Information Controls
-     5.13. Query Pending Control
-     5.14. Confirm Certificate Acceptance Control
-     5.15. Publish Trust Anchors Control
-     5.16. Authenticated Data Control
-     5.17. Batch Request and Response Controls
-     5.18. Publication Information Control
-     5.19. Control Processed Control
-     5.20. RA Identity Proof Witness Control
-     5.21. Response Body Control
-   6.  Other Attributes
-     6.1.  Change Subject Name Attribute
-   7.  Registration Authorities
-     7.1.  Encryption Removal
-     7.2.  Signature Layer Removal
-   8.  Certificate Requirements
-     8.1.  Extended Key Usage
-     8.2.  Subject Information Access
-   9.  Security Considerations
-   10. IANA Considerations
-   11. References
-     11.1.  Normative References
-     11.2.  Informative References
+     6.7.  Encrypted and Decrypted POP Controls
+     6.8.  RA POP Witness Control
+     6.9.  Get Certificate Control
+     6.10. Get CRL Control
+     6.11. Revocation Request Control
+     6.12. Registration and Response Information Controls
+     6.13. Query Pending Control
+     6.14. Confirm Certificate Acceptance Control
+     6.15. Publish Trust Anchors Control
+     6.16. Authenticated Data Control
+     6.17. Batch Request and Response Controls
+     6.18. Publication Information Control
+     6.19. Control Processed Control
+     6.20. RA Identity Proof Witness Control
+     6.21. Response Body Control
+   7.  Other Attributes
+     7.1.  Change Subject Name Attribute
+   8.  Registration Authorities
+     8.1.  Encryption Removal
+     8.2.  Signature Layer Removal
+   9.  CMC Infrastucture Certificate Requirements
+     9.1.  Extended Key Usage
+     9.2.  Subject Information Access
+   10. Security Considerations
+   11. IANA Considerations
+   12. References
+     12.1.  Normative References
+     12.2.  Informative References
    Appendix A.  ASN.1 Modules
      A.1.  ASN.1 Module for CMC
      A.2.  ASN.1 Module for PBKDF2 PRFs
@@ -192,10 +193,8 @@ Table of Contents
    A small number of additional services are defined to supplement the
    core certification request service.
 
-   This document obsoletes [CMC-PROTv1] and [CMC-Updates].
-
-   This document also updates [CMS-ALGS] to add support for additional
-   HMAC algorithms used in the POP Link Witness V2 control.
+   This document obsoletes RFC 5272 [CMC-PROTv1] and RFC 6402
+   [CMC-Updates].
 
 1.1.  Protocol Requirements
 
@@ -469,8 +468,8 @@ Table of Contents
 2.2.  Protocol Requests/Responses
 
    Figure 1 shows the Simple PKI Requests and Responses.  The contents
-   of Simple PKI Request and Response are detailed in Section 2.3 and
-   Section 3.1.
+   of Simple PKI Request and Response are detailed in Section 3.1 and
+   Section 4.1.
 
    Simple PKI Request                      Simple PKI Response
    -------------------------               --------------------------
@@ -497,8 +496,8 @@ Table of Contents
                 Figure 1: Simple PKI Requests and Responses
 
    Figure 2 shows the Full PKI Requests and Responses.  The contents of
-   the Full PKI Request and Response are detailed in Section 2.4 and
-   Section 3.2.
+   the Full PKI Request and Response are detailed in Section 3.2 and
+   Section 4.2.
 
    Full PKI Request                        Full PKI Response
    -----------------------                 ------------------------
@@ -532,14 +531,14 @@ Table of Contents
             +-----------------+                       | CA or an LRA  |
                                                       +---------------+
 
-                 Figure 2: Full PKI Requests and Responses
+             Figure 2: Full PKI Requests and Responses
 
-   # PKI Requests {#PKIRequests}
+3.  PKI Requests
 
    Two types of PKI Requests exist.  This section gives the details for
    both types.
 
-2.3.  Simple PKI Request
+3.1.  Simple PKI Request
 
    A Simple PKI Request uses the PKCS #10 syntax CertificationRequest
    [PKCS10].
@@ -589,13 +588,13 @@ Table of Contents
    return a PKI Response with a CMCFailInfo value with the value
    unsupportedExt.
 
-2.4.  Full PKI Request
+3.2.  Full PKI Request
 
    The Full PKI Request provides the most functionality and flexibility.
 
    The Full PKI Request is encapsulated in either a SignedData or an
    AuthenticatedData with an encapsulated content type of 'id-cct-
-   PKIData' (Section 2.4.1).
+   PKIData' (Section 3.2.1).
 
    When a server processes a Full PKI Request, a PKI Response MUST be
    returned.  The PKI Response returned is:
@@ -654,7 +653,7 @@ Table of Contents
        keys).  In this case the CA MUST return a PKI Response with
        noKeyReuse as the CMCFailInfo failure code.
 
-2.4.1.  PKIData Content Type
+3.2.1.  PKIData Content Type
 
    The PKIData content type is used for the Full PKI Request.  A PKIData
    content type is identified by:
@@ -673,14 +672,14 @@ Table of Contents
    The fields in PKIData have the following meaning:
 
       controlSequence is a sequence of controls.  The controls
-         defined in this document are found in Section 5.  Controls can
+         defined in this document are found in Section 6.  Controls can
          be defined by other parties.  Details on the TaggedAttribute
-         structure can be found in Section 2.4.1.1.
+         structure can be found in Section 3.2.1.1.
 
       reqSequence is a sequence of certification requests.  The
          certification requests can be a CertificationRequest (PKCS
          #10), a CertReqMsg (CRMF), or an externally defined PKI
-         request.  Full details are found in Section 2.4.1.2.  If an
+         request.  Full details are found in Section 3.2.1.2.  If an
          externally defined certification request is present, but the
          server does not understand the certification request (or will
          not process it), a CMCStatus of noSupport MUST be returned for
@@ -688,16 +687,16 @@ Table of Contents
          requests are processed.
 
       cmsSequence is a sequence of [CMS] message objects.  See
-         Section 2.4.1.3 for more details.
+         Section 3.2.1.3 for more details.
 
       otherMsgSequence is a sequence of arbitrary data objects.  Data
          objects placed here are referred to by one or more controls.
          This allows for controls to use large amounts of data without
-         the data being embedded in the control.  See Section 2.4.1.4
+         the data being embedded in the control.  See Section 3.2.1.4
          for more details.
 
    All certification requests encoded into a single PKIData SHOULD be
-   for the same identity.  RAs that batch process (see Section 5.17) are
+   for the same identity.  RAs that batch process (see Section 6.17) are
    expected to place the PKI Requests received into the cmsSequence of a
    PKIData.
 
@@ -723,7 +722,7 @@ Table of Contents
    In this case, the cmsSequence and otherMsgSequence members are
    ignored.
 
-2.4.1.1.  Control Syntax
+3.2.1.1.  Control Syntax
 
    The actions to be performed for a PKI Request/Response are based on
    the included controls.  Each control consists of an object identifier
@@ -750,7 +749,7 @@ Table of Contents
 
    The final server MUST fail the processing of an entire PKIData if any
    included control is not recognized, that control is not already
-   marked as processed by a Control Processed control (see Section 5.19)
+   marked as processed by a Control Processed control (see Section 6.19)
    and no other error is generated.  The PKI Response MUST include a
    CMCFailInfo value with the value badRequest and the bodyList MUST
    contain the bodyPartID of the invalid or unrecognized control(s).  A
@@ -761,13 +760,13 @@ Table of Contents
 
    The controls defined by this document are found in Section 6.
 
-2.4.1.2.  Certification Request Formats
+3.2.1.2.  Certification Request Formats
 
    Certification Requests are based on PKCS #10, CRMF, or Other Request
-   formats.  Section 2.4.1.2.1 specifies the requirements for clients
-   and servers dealing with PKCS #10.  Section 2.4.1.2.2 specifies the
+   formats.  Section 3.2.1.2.1 specifies the requirements for clients
+   and servers dealing with PKCS #10.  Section 3.2.1.2.2 specifies the
    requirements for clients and servers dealing with CRMF.
-   Section 2.4.1.2.3 specifies the requirements for clients and servers
+   Section 3.2.1.2.3 specifies the requirements for clients and servers
    dealing with Other Request.
 
      TaggedRequest ::= CHOICE {
@@ -783,10 +782,10 @@ Table of Contents
    The fields in TaggedRequest have the following meaning:
 
       tcr is a certification request that uses the PKCS #10 syntax.
-         Details on PKCS #10 are found in Section 2.4.1.2.1.
+         Details on PKCS #10 are found in Section 3.2.1.2.1.
 
       crm is a certification request that uses the CRMF syntax.
-         Details on CRMF are found in Section 2.4.1.2.2.
+         Details on CRMF are found in Section 3.2.1.2.2.
 
       orm is an externally defined certification request.  One
          example is an attribute certification request.  The fields of
@@ -794,7 +793,7 @@ Table of Contents
 
       o  bodyPartID is the identifier number for this certification
             request.  Details on body part identifiers are found in
-            Section 2.4.2.
+            Section 3.2.2.
 
       o  requestMessageType identifies the other request type.  These
             values are defined outside of this document.
@@ -802,7 +801,7 @@ Table of Contents
       o  requestMessageValue is the data associated with the other
             request type.
 
-2.4.1.2.1.  PKCS #10 Certification Syntax
+3.2.1.2.1.  PKCS #10 Certification Syntax
 
    A certification request based on PKCS #10 uses the following ASN.1
    structure:
@@ -816,7 +815,7 @@ Table of Contents
 
       bodyPartID is the identifier number for this certification
          request.  Details on body part identifiers are found in
-         Section 2.4.2.
+         Section 3.2.2.
 
       certificationRequest contains the PKCS-#10-based certification
          request.  Its fields are described in [PKCS10].
@@ -832,7 +831,7 @@ Table of Contents
    returned, the CA MUST return a PKI Response with the CMCFailInfo
    value with the value badRequest.
 
-2.4.1.2.2.  CRMF Certification Syntax
+3.2.1.2.2.  CRMF Certification Syntax
 
    A CRMF message uses the following ASN.1 structure (defined in [CRMF]
    and included here for convenience):
@@ -880,7 +879,7 @@ Table of Contents
 
       The regInfo field MUST NOT be used on a CRMF certification
       request.  Equivalent functionality is provided in the CMC regInfo
-      control (Section 5.12).
+      control (Section 6.12).
 
       The indirect method of proving POP is not supported in this
       protocol.  One of the other methods (including the direct method
@@ -905,7 +904,7 @@ Table of Contents
    server MUST respond with a Full PKI Response with a CMCFailInfo value
    with the value of unsupportedExt.
 
-2.4.1.2.3.  Other Certification Request
+3.2.1.2.3.  Other Certification Request
 
    This document allows for other certification request formats to be
    defined and used as well.  An example of an other certification
@@ -913,7 +912,7 @@ Table of Contents
    certification request formats are defined by specifying an OID for
    identification and the structure to contain the data to be passed.
 
-2.4.1.3.  Content Info Objects
+3.2.1.3.  Content Info Objects
 
    The cmsSequence field of the PKIData and PKIResponse messages
    contains zero or more tagged content info objects.  The syntax for
@@ -935,7 +934,7 @@ Table of Contents
    Data, EnvelopedData, and SignedData.  All of these content types are
    defined in [CMS].
 
-2.4.1.3.1.  Authenticated Data
+3.2.1.3.1.  Authenticated Data
 
    The AuthenticatedData content type provides a method of doing pre-
    shared-secret-based validation of data being sent between two
@@ -950,7 +949,7 @@ Table of Contents
 
    AuthenticatedData content type is used by this document for:
 
-      The id-cmc-authData control (Section 5.16), and
+      The id-cmc-authData control (Section 6.16), and
 
       The top-level wrapper in environments where an encryption-only key
       is being certified or where a shared-secret exists, but a PKI-
@@ -960,7 +959,7 @@ Table of Contents
    encapsulated content types.  These embedded content types can contain
    additional controls that need to be processed.
 
-2.4.1.3.2.  Data
+3.2.1.3.2.  Data
 
    The Data content type allows for general transport of unstructured
    data.
@@ -968,21 +967,21 @@ Table of Contents
    The Data content type is used by this document for:
 
       Holding the encrypted random value y for POP proof in the
-      encrypted POP control (see Section 5.7).
+      encrypted POP control (see Section 6.7).
 
-2.4.1.3.3.  Enveloped Data
+3.2.1.3.3.  Enveloped Data
 
    The EnvelopedData content type provides for shrouding of data.
 
    The EnvelopedData content type is the primary confidentiality method
    for sensitive information in this protocol.  EnvelopedData can
-   provide encryption of an entire PKI Request (see Section 4).
+   provide encryption of an entire PKI Request (see Section 5).
    EnvelopedData can also be used to wrap private key material for key
    archival.  If the decryption on an EnvelopedData fails, a Full PKI
    Response is returned with a CMCFailInfo value of badMessageCheck and
    a bodyPartID of 0.
 
-2.4.1.3.4.  Signed Data
+3.2.1.3.4.  Signed Data
 
    The SignedData content type provides for authentication and
    integrity.
@@ -1007,20 +1006,19 @@ Table of Contents
    'EncapsulatedContentInfo' and no 'SignerInfo'.
 
    Only if the server is unable to sign the response (and unable to use
-   any RecipientInfo options of the AuthenticatedData content type), and
-   at the same time it should send a negative response, Full PKI
-   Response SignedData type containing a CMC Status Info control MUST be
-   returned using a CMCFailInfo with a value of internalCAError and a
-   bodyPartID of 0, and the eContent field in the
-   EncapsulatedContentInfo as well as SignerInfo fields MUST NOT be
-   populated.
+   any RecipientInfo options of the AuthenticatedData content type), it
+   should send a negative response.  A Full PKI Response SignedData type
+   containing a CMC Status Info control MUST be returned using a
+   CMCFailInfo with a value of internalCAError and a bodyPartID of 0,
+   and the eContent field in the EncapsulatedContentInfo as well as
+   SignerInfo fields MUST NOT be populated.
 
-2.4.1.4.  Other Message Bodies
+3.2.1.4.  Other Message Bodies
 
    The otherMsgSequence field of the PKI Request/Response allows for
    arbitrary data objects to be carried as part of a PKI Request/
    Response.  This is intended to contain a data object that is not
-   already wrapped in a cmsSequence field Section 2.4.1.3.  The data
+   already wrapped in a cmsSequence field Section 3.2.1.3.  The data
    object is ignored unless a control references the data object by
    bodyPartID.
 
@@ -1037,7 +1035,7 @@ Table of Contents
 
       otherMsgValue is the data.
 
-2.4.2.  Body Part Identification
+3.2.2.  Body Part Identification
 
    Each element of a PKIData or PKIResponse has an associated body part
    identifier.  The body part identifier is a 4-octet integer using the
@@ -1057,27 +1055,27 @@ Table of Contents
    The bodyPartID value of 0 is reserved for use as the reference to the
    current PKIData object.
 
-   Some controls, such as the Add Extensions control Section 5.5.2, use
+   Some controls, such as the Add Extensions control Section 6.5.2, use
    the body part identifier in the pkiDataReference field to refer to a
    PKI Request in the current PKIData.  Some controls, such as the
-   Extended CMC Status Info control Section 5.1.1, will also use body
+   Extended CMC Status Info control Section 6.1.1, will also use body
    part identifiers to refer to elements in the previous PKI Request/
    Response.  This allows an error to be explicit about the control or
    PKI Request to which the error applies.
 
    A BodyPartList contains a list of body parts in a PKI Request/
-   Response (i.e., the Batch Request control in Section 5.17).  The
+   Response (i.e., the Batch Request control in Section 6.17).  The
    ASN.1 type BodyPartList is defined as:
 
      BodyPartList ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
 
    A BodyPartPath contains a path of body part identifiers moving
    through nesting (i.e., the Modify Certification Request control in
-   Section 5.5.1).  The ASN.1 type BodyPartPath is defined as:
+   Section 6.5.1).  The ASN.1 type BodyPartPath is defined as:
 
      BodyPartPath ::= SEQUENCE SIZE (1..MAX) OF BodyPartID
 
-2.4.3.  CMC Unsigned Data Attribute
+3.2.3.  CMC Unsigned Data Attribute
 
    There is sometimes a need to include data in a PKI Request designed
    to be removed by an RA during processing.  An example of this is the
@@ -1132,12 +1130,12 @@ Table of Contents
    MUST appear with the same values(s) in all SignerInfo and
    AuthenticatedData items.
 
-3.  PKI Responses
+4.  PKI Responses
 
    Two types of PKI Responses exist.  This section gives the details on
    both types.
 
-3.1.  Simple PKI Response
+4.1.  Simple PKI Response
 
    Clients MUST be able to process the Simple PKI Response.  The Simple
    PKI Response consists of a SignedData with no EncapsulatedContentInfo
@@ -1154,11 +1152,11 @@ Table of Contents
    clients receive a new self-signed certificate from the server,
    clients SHOULD provide a mechanism to enable the user to use the
    certificate as a trust anchor.  (The Publish Trust Anchors control
-   (Section 5.15) should be used in the event that the server intends
+   (Section 6.15) should be used in the event that the server intends
    the client to accept one or more certificates as trust anchors.  This
    requires the use of the Full PKI Response message.)
 
-3.2.  Full PKI Response
+4.2.  Full PKI Response
 
    Clients MUST be able to process a Full PKI Response.
 
@@ -1176,13 +1174,13 @@ Table of Contents
    its presence in the certificate bag.  In the event clients receive a
    new self-signed certificate from the server, clients MAY provide a
    mechanism to enable the user to explicitly use the certificate as a
-   trust anchor.  (The Publish Trust Anchors control (Section 5.15)
+   trust anchor.  (The Publish Trust Anchors control (Section 6.15)
    exists for the purpose of allowing for distribution of trust anchor
    certificates.  If a trusted anchor publishes a new trusted anchor,
    this is one case where automated trust of the new trust anchor could
    be allowed.)
 
-3.2.1.  PKIResponse Content Type
+4.2.1.  PKIResponse Content Type
 
    The PKIResponse content type is used for the Full PKI Response.  The
    PKIResponse content type is identified by:
@@ -1208,15 +1206,15 @@ Table of Contents
       controlSequence is a sequence of controls.  The controls
          defined in this document are found in Section 6.  Controls can
          be defined by other parties.  Details on the TaggedAttribute
-         structure are found in Section 2.4.1.1.
+         structure are found in Section 3.2.1.1.
 
       cmsSequence is a sequence of [CMS] message objects.  See
-         Section 2.4.1.3 for more details.
+         Section 3.2.1.3 for more details.
 
       otherMsgSequence is a sequence of arbitrary data objects.  Data
          objects placed here are referred to by one or more controls.
          This allows for controls to use large amounts of data without
-         the data being embedded in the control.  See Section 2.4.1.4
+         the data being embedded in the control.  See Section 3.2.1.4
          for more details.
 
    Processing of PKIResponse by a recipient is as follows:
@@ -1236,7 +1234,7 @@ Table of Contents
    control.  In this case, the cmsSequence and otherMsgSequence members
    are to be ignored.
 
-4.  Application of Encryption to a PKI Request/Response
+5.  Application of Encryption to a PKI Request/Response
 
    There are occasions when a PKI Request or Response must be encrypted
    in order to prevent disclosure of information in the PKI Request/
@@ -1284,11 +1282,11 @@ Table of Contents
    secure, private communication of Simple and Full PKI Requests/
    Responses.
 
-5.  Controls
+6.  Controls
 
    Controls are carried as part of both Full PKI Requests and Responses.
    Each control is encoded as a unique OID followed by the data for the
-   control (see syntax in Section 2.4.1.1).  The encoding of the data is
+   control (see syntax in Section 3.2.1.1).  The encoding of the data is
    based on the control.  Processing systems would first detect the OID
    (TaggedAttribute attrType) and process the corresponding control
    value (TaggedAttribute attrValues) prior to processing the message
@@ -1406,7 +1404,7 @@ Table of Contents
 
                       Table 1: CMC Control Attributes
 
-5.1.  CMC Status Info Controls
+6.1.  CMC Status Info Controls
 
    The CMC Status Info controls return information about the status of a
    client/server request/response.  Two controls are described in this
@@ -1422,7 +1420,7 @@ Table of Contents
 
    CMC Status Info control.
 
-5.1.1.  Extended CMC Status Info Control
+6.1.1.  Extended CMC Status Info Control
 
    The Extended CMC Status Info control is identified by the OID:
 
@@ -1462,7 +1460,7 @@ Table of Contents
    The fields in CMCStatusInfoV2 have the following meaning:
 
       cMCStatus contains the returned status value.  Details are in
-         Section 5.1.3.
+         Section 6.1.3.
 
       bodyList identifies the controls or other elements to which the
          status value applies.  If an error is returned for a Simple PKI
@@ -1477,7 +1475,7 @@ Table of Contents
 
    The fields in OtherStatusInfo have the following meaning:
 
-      failInfo is described in Section 5.1.4.  It provides an error
+      failInfo is described in Section 6.1.4.  It provides an error
          code that details what failure occurred.  This choice is
          present only if cMCStatus contains the value failed.
 
@@ -1487,7 +1485,7 @@ Table of Contents
          structure PendInfo, which has the fields:
 
       o  pendToken is the token used in the Query Pending control
-            (Section 5.13).
+            (Section 6.13).
 
       o  pendTime contains the suggested time the server wants to be
             queried about the status of the certification request.
@@ -1510,7 +1508,7 @@ Table of Contents
    If the cMCStatus field is success, the Extended CMC Status Info
    control MAY be omitted unless it is the only item in the response.
 
-5.1.2.  CMC Status Info Control
+6.1.2.  CMC Status Info Control
 
    The CMC Status Info control is identified by the OID:
 
@@ -1530,7 +1528,7 @@ Table of Contents
    The fields in CMCStatusInfo have the following meaning:
 
       cMCStatus contains the returned status value.  Details are in
-         Section 5.1.3.
+         Section 6.1.3.
 
       bodyList contains the list of controls or other elements to
          which the status value applies.  If an error is being returned
@@ -1543,16 +1541,16 @@ Table of Contents
       otherInfo provides additional information that expands on the
          CMC status code returned in the cMCStatus field.
 
-      o  failInfo is described in Section 5.1.4.  It provides an
+      o  failInfo is described in Section 6.1.4.  It provides an
             error code that details what failure occurred.  This choice
             is present only if cMCStatus is failed.
 
-      o  pendInfo uses the PendInfo ASN.1 structure in Section 5.1.1.
+      o  pendInfo uses the PendInfo ASN.1 structure in Section 6.1.1.
             It contains information about when and how the client should
             request results of this request.  The pendInfo field MUST be
             populated for a cMCStatus value of pending or partial.
-            Further details can be found in Section 5.1.1 (Extended CMC
-            Status Info Control) and Section 5.13 (Query Pending Control
+            Further details can be found in Section 6.1.1 (Extended CMC
+            Status Info Control) and Section 6.13 (Query Pending Control
             ).
 
    If the cMCStatus field is success, the CMC Status Info control MAY be
@@ -1560,7 +1558,7 @@ Table of Contents
    exists for a Simple or Full PKI Request, then the value of success is
    assumed.
 
-5.1.3.  CMCStatus Values
+6.1.3.  CMCStatus Values
 
    CMCStatus is a field in the Extended CMC Status Info and CMC Status
    Info controls.  This field contains a code representing the success
@@ -1595,17 +1593,17 @@ Table of Contents
       noSupport indicates the requested operation is not supported.
 
       confirmRequired indicates a Confirm Certificate Acceptance
-         control (Section 5.14) must be returned before the certificate
+         control (Section 6.14) must be returned before the certificate
          can be used.
 
       popRequired indicates a direct POP operation is required
-         (Section 5.3.1.3).
+         (Section 6.3.1.3).
 
       partial indicates a partial PKI Response is returned.  The
          requester is responsible to poll back for the unfulfilled
          portions of the Full PKI Request.
 
-5.1.4.  CMCFailInfo
+6.1.4.  CMCFailInfo
 
    CMCFailInfo is a field in the Extended CMC Status Info and CMC Status
    Info controls.  CMCFailInfo conveys more detailed information
@@ -1673,7 +1671,7 @@ Table of Contents
    However, for closed environments they can be defined using this type.
    Such codes MUST be in the range from 1000 to 1999.
 
-5.2.  Identification and Identity Proof Controls
+6.2.  Identification and Identity Proof Controls
 
    Some CAs and RAs require that a proof-of-identity be included in a
    certification request.  Many different ways of doing this exist with
@@ -1685,17 +1683,17 @@ Table of Contents
    CMC provides a method to prove the client's identity based on a
    client/server shared-secret.  If clients support the Full PKI
    Request, clients MUST implement this method of identity proof
-   (Section 5.2.2).  Servers MUST provide this method, but MAY
+   (Section 6.2.2).  Servers MUST provide this method, but MAY
    additionally support bilateral methods of similar strength.
 
    This document also provides an Identification control
-   (Section 5.2.3).  This control is a simple method to allow a client
+   (Section 6.2.3).  This control is a simple method to allow a client
    to state who they are to the server.  Generally, a shared-secret AND
    an identifier of that shared-secret are passed from the server to the
    client.  The identifier is placed in the Identification control, and
    the shared-secret is used to compute the Identity Proof control.
 
-5.2.1.  Identity Proof Version 2 Control
+6.2.1.  Identity Proof Version 2 Control
 
    The Identity Proof Version 2 control is identified by the OID:
 
@@ -1758,7 +1756,7 @@ Table of Contents
    given length token based on character sets can be found in Appendix A
    of [PASSWORD].
 
-5.2.2.  Identity Proof Control
+6.2.2.  Identity Proof Control
 
    The Identity Proof control is identified by the OID:
 
@@ -1772,7 +1770,7 @@ Table of Contents
    Version 2 control.  In this case, the hash algorithm is fixed to
    SHA-1 and the MAC algorithm is fixed to HMAC-SHA1.
 
-5.2.3.  Identification Control
+6.2.3.  Identification Control
 
    Optionally, servers MAY require the inclusion of the unprotected
    Identification control with an Identification Proof control.  The
@@ -1780,7 +1778,7 @@ Table of Contents
    assists the server in locating the shared-secret needed to validate
    the contents of the Identity Proof control.  If the Identification
    control is included in the Full PKI Request, the derivation of the
-   key in Step 2 (from Section 5.2.1) is altered so that the hash of the
+   key in Step 2 (from Section 6.2.1) is altered so that the hash of the
    concatenation of the shared-secret and the UTF8 identity value
    (without the type and length bytes) are hashed rather than just the
    shared-secret.
@@ -1793,7 +1791,7 @@ Table of Contents
 
      Identification ::= UTF8String
 
-5.2.4.  Hardware Shared-Secret Token Generation
+6.2.4.  Hardware Shared-Secret Token Generation
 
    The shared-secret between the EE and the server is sometimes computed
    using a hardware device that generates a series of tokens.  The EE
@@ -1818,7 +1816,7 @@ Table of Contents
        and submit a different certification request with the same token
        value.
 
-5.3.  Linking Identity and POP Information
+6.3.  Linking Identity and POP Information
 
    In a CMC Full PKI Request, identity proof information about the
    client is carried in the certificate associated with the signature of
@@ -1829,15 +1827,15 @@ Table of Contents
    PKCS #10 or CRMF certification request.  (For keys capable of
    generating a digital signature, the POP is provided by the signature
    on the PKCS #10 or CRMF request.  For encryption-only keys, the
-   controls described in Section 5.7 are used.)  In order to prevent
+   controls described in Section 6.7 are used.)  In order to prevent
    substitution-style attacks, the protocol must guarantee that the same
    entity supplied both the POP and proof-of-identity information.
 
    We describe three mechanisms for linking identity and POP
    information: witness values cryptographically derived from a shared-
-   secret (Section 5.3.1), shared-secret/subject name matching
-   (Section 5.3.2) , and subject name matching to an existing
-   certificate (Section 5.3.3) .  Clients and servers MUST support the
+   secret (Section 6.3.1), shared-secret/subject name matching
+   (Section 6.3.2) , and subject name matching to an existing
+   certificate (Section 6.3.3) .  Clients and servers MUST support the
    witness value and the certificate linking techniques.  Clients and
    servers MAY support shared-secret/name matching or MAY support other
    bilateral techniques of similar strength.  The idea behind the first
@@ -1846,14 +1844,14 @@ Table of Contents
    shared-secret; this will defeat attempts to include certification
    requests from different entities in a single Full PKI Request.
 
-5.3.1.  Cryptographic Linkage
+6.3.1.  Cryptographic Linkage
 
    The first technique that links identity and POP information forces
    the client to include a piece of information cryptographically
    derived from the shared-secret as a signed extension within each
    certification request (PKCS #10 or CRMF).
 
-5.3.1.1.  POP Link Witness Version 2 Controls
+6.3.1.1.  POP Link Witness Version 2 Controls
 
    The POP Link Witness Version 2 control is identified by the OID:
 
@@ -1914,11 +1912,11 @@ Table of Contents
    shared-secret and the random string included in the POP Link Random
    control.
 
-   The Identification control (Section 5.2.3) or the subject DN of a
+   The Identification control (Section 6.2.3) or the subject DN of a
    certification request can be used to help identify which shared-
    secret was used.
 
-5.3.1.2.  POP Link Witness Control
+6.3.1.2.  POP Link Witness Control
 
    The POP Link Witness control is identified by the OID:
 
@@ -1931,7 +1929,7 @@ Table of Contents
    For this control, SHA-1 is used as the key generation algorithm.
    HMAC-SHA1 is used as the mac algorithm.
 
-5.3.1.3.  POP Link Random Control
+6.3.1.3.  POP Link Random Control
 
    The POP Link Random control is identified by the OID:
 
@@ -1941,7 +1939,7 @@ Table of Contents
 
      PopLinkRandom ::= OCTET STRING
 
-5.3.2.  Shared-Secret/Subject DN Linking
+6.3.2.  Shared-Secret/Subject DN Linking
 
    The second technique to link identity and POP information is to link
    a particular subject distinguished name (subject DN) to the shared-
@@ -1953,7 +1951,7 @@ Table of Contents
    information from the certification request.)
 
    When the shared-secret is generated and transferred out-of-band to
-   initiate the registration process (Section 5.2), a particular subject
+   initiate the registration process (Section 6.2), a particular subject
    DN is also associated with the shared-secret and communicated to the
    client.  (The subject DN generated MUST be unique per entity in
    accordance with the CA policy; a null subject DN cannot be used.  A
@@ -1967,8 +1965,8 @@ Table of Contents
        Request.  The subject names in the certification requests MUST
        NOT be null.
 
-   2.  The client MUST include an Identity Proof control (Section 5.2.2)
-       or Identity Proof Version 2 control (Section 5.2.1), derived from
+   2.  The client MUST include an Identity Proof control (Section 6.2.2)
+       or Identity Proof Version 2 control (Section 6.2.1), derived from
        the shared-secret, in the Full PKI Request.
 
    The server receiving this message MUST (a) validate the Identity
@@ -1977,7 +1975,7 @@ Table of Contents
    secret.  If either of these checks fails, the certification request
    MUST be rejected.
 
-5.3.3.  Existing Certificate Linking
+6.3.3.  Existing Certificate Linking
 
    Linking between the POP and an identity is easy when an existing
    certificate is used.  The client copies all of the naming information
@@ -2004,7 +2002,7 @@ Table of Contents
       that the CA have an out-of-band channel to map the identity in the
       device certificate to the new EE identity.
 
-5.4.  Data Return Control
+6.4.  Data Return Control
 
    The Data Return control allows clients to send arbitrary data
    (usually some type of internal state information) to the server and
@@ -2031,7 +2029,7 @@ Table of Contents
    exact source of the private key material.  This might be the
    identifier of a hardware device containing the private key.
 
-5.5.  RA Certificate Modification Controls
+6.5.  RA Certificate Modification Controls
 
    These controls exist for RAs to be able to modify the contents of a
    certification request.  Modifications might be necessary for various
@@ -2039,12 +2037,12 @@ Table of Contents
    modification of subject and/or subject alternative names.
 
    Two controls exist for this purpose.  The first control, Modify
-   Certification Request (Section 5.5.1), allows the RA to replace or
+   Certification Request (Section 6.5.1), allows the RA to replace or
    remove any field in the certificate.  The second control, Add
-   Extensions (Section 5.5.2), only allows for the addition of
+   Extensions (Section 6.5.2), only allows for the addition of
    extensions.
 
-5.5.1.  Modify Certification Request Control
+6.5.1.  Modify Certification Request Control
 
    The Modify Certification Request control is used by RAs to change
    fields in a requested certificate.
@@ -2121,7 +2119,7 @@ Table of Contents
    the target of both a Modify Certification Request control and an Add
    Extensions control.
 
-5.5.2.  Add Extensions Control
+6.5.2.  Add Extensions Control
 
    The Add Extensions control has been deprecated in favor of the Modify
    Certification Request control.  It was replaced so that fields in the
@@ -2186,7 +2184,7 @@ Table of Contents
        version of the extension would be used (allowing an RA to
        override the requested extension).
 
-5.6.  Transaction Identifier Control and Sender and Recipient Nonce
+6.6.  Transaction Identifier Control and Sender and Recipient Nonce
       Controls
 
    Transactions are identified and tracked with a transaction
@@ -2244,7 +2242,7 @@ Table of Contents
    Nonce control as a Recipient Nonce control and include a new value as
    its Sender Nonce control.
 
-5.7.  Encrypted and Decrypted POP Controls
+6.7.  Encrypted and Decrypted POP Controls
 
    Servers MAY require that this POP method be used only if another POP
    method is unavailable.  Servers SHOULD reject all certification
@@ -2393,7 +2391,7 @@ Table of Contents
        based on knowledge of R, thus the use of a one-way function like
        HMAC-SHA256.
 
-5.8.  RA POP Witness Control
+6.8.  RA POP Witness Control
 
    In a certification request scenario that involves an RA, the CA may
    allow (or require) that the RA perform the POP protocol with the
@@ -2429,7 +2427,7 @@ Table of Contents
    The CA MUST NOT start a challenge-response to re-verify the POP
    itself.
 
-5.9.  Get Certificate Control
+6.9.  Get Certificate Control
 
    Everything described in this section is optional to implement.
 
@@ -2460,7 +2458,7 @@ Table of Contents
    Certificate control is the only control in a Full PKI Request, the
    response should be a Simple PKI Response.
 
-5.10.  Get CRL Control
+6.10.  Get CRL Control
 
    Everything described in this section is optional to implement.
 
@@ -2506,7 +2504,7 @@ Table of Contents
    control in a Full PKI Request, the response should be a Simple PKI
    Response.
 
-5.11.  Revocation Request Control
+6.11.  Revocation Request Control
 
    The Revocation Request control is used to request that a certificate
    be revoked.
@@ -2584,7 +2582,7 @@ Table of Contents
 
    A Full PKI Response MUST be returned for a revocation request.
 
-5.12.  Registration and Response Information Controls
+6.12.  Registration and Response Information Controls
 
    The Registration Information control allows for clients to pass
    additional information as part of a Full PKI Request.
@@ -2614,7 +2612,7 @@ Table of Contents
    The content of this data is based on bilateral agreement between the
    client and server.
 
-5.13.  Query Pending Control
+6.13.  Query Pending Control
 
    In some environments, process requirements for manual intervention or
    other identity checks can delay the return of the certificate.  The
@@ -2640,7 +2638,7 @@ Table of Contents
    otherInfo is not omitted, the value of 'pendInfo' MUST be the same as
    the original pendInfo value.
 
-5.14.  Confirm Certificate Acceptance Control
+6.14.  Confirm Certificate Acceptance Control
 
    Some CAs require that clients give a positive confirmation that the
    certificates issued to the EE are acceptable.  The Confirm
@@ -2683,7 +2681,7 @@ Table of Contents
    4.  The CA sends a Full PKI Response to the client with an Extended
        CMC Status Info of success.
 
-5.15.  Publish Trust Anchors Control
+6.15.  Publish Trust Anchors Control
 
    The Publish Trust Anchors control allows for the distribution of set
    trust anchors from a central authority to an EE.  The same control is
@@ -2742,7 +2740,7 @@ Table of Contents
       of this control allows for an attacker to change the set of trust
       anchors on the client.
 
-5.16.  Authenticated Data Control
+6.16.  Authenticated Data Control
 
    The Authenticated Data control allows a server to provide data back
    to the client in an authenticated manner.  This control uses the
@@ -2752,7 +2750,7 @@ Table of Contents
    yet been downloaded onto the client so that a signing certificate for
    the server cannot be validated.  The specific case that this control
    was created for use with is the Publish Trust Anchors control
-   (Section 5.15), but it may be used in other cases as well.
+   (Section 6.15), but it may be used in other cases as well.
 
    The Authenticated Data control is identified by the OID:
 
@@ -2767,12 +2765,12 @@ Table of Contents
    cmsSequence element is AuthenticatedData.  The encapsulated content
    is an id-cct-PKIData.  The controls in the controlSequence need to be
    processed if the authentication succeeds.  (One example is the
-   Publish Trust Anchors control in Section 5.15.)
+   Publish Trust Anchors control in Section 6.15.)
 
    If the authentication operation fails, the CMCFailInfo authDataFail
    is returned.
 
-5.17.  Batch Request and Response Controls
+6.17.  Batch Request and Response Controls
 
    These controls allow for an RA to collect multiple requests together
    into a single Full PKI Request and forward it to a CA.  The server
@@ -2806,11 +2804,11 @@ Table of Contents
    requests are not propagated up to the top level.
 
    When a PKI Response with a CMCStatus value of partial is returned,
-   the Query Pending control (Section 5.13) is used to retrieve
+   the Query Pending control (Section 6.13) is used to retrieve
    additional results.  The returned status includes a suggested time
    after which the client should ask for the additional results.
 
-5.18.  Publication Information Control
+6.18.  Publication Information Control
 
    The Publication Information control allows for modifying publication
    of already issued certificates, both for publishing and removal from
@@ -2884,7 +2882,7 @@ Table of Contents
    Information control.  The behavior is undefined in the event that it
    does.
 
-5.19.  Control Processed Control
+6.19.  Control Processed Control
 
    The Control Processed control allows an RA to indicate to subsequent
    control processors that a specific control has already been
@@ -2912,7 +2910,7 @@ Table of Contents
          than passing the request on to the next server in the
          processing list.
 
-5.20.  RA Identity Proof Witness Control
+6.20.  RA Identity Proof Witness Control
 
    The RA Identity Proof Witness control allows an RA to indicate to
    subsequent control processors that all of the identity proof
@@ -2948,7 +2946,7 @@ Table of Contents
          identify this CMC control.
 
       BodyPartPath is the type structure associated with the control.
-         The syntax of BodyPartPath is defined in Section 2.4.2.  The
+         The syntax of BodyPartPath is defined in Section 3.2.2.  The
          path contains a sequence of body part identifiers leading to
          one of the following items:
 
@@ -2985,7 +2983,7 @@ Table of Contents
    validate the linking between the identity proof and the name
    information wrapped inside of the key proof-of-possession.
 
-5.21.  Response Body Control
+6.21.  Response Body Control
 
    The Response Body Control is designed to enable an RA to inform an EE
    that there is an embedded response message that MUST be processed as
@@ -3026,11 +3024,11 @@ Table of Contents
          this CMC control.
 
       BodyPartPath is the type structure associated with the control.
-         The syntax of BodyPartPath is defined in Section 2.4.2.  The
+         The syntax of BodyPartPath is defined in Section 3.2.2.  The
          path contains a sequence of body part identifiers leading to a
          cmsSequence item which contains a PKIResponse within it.
 
-6.  Other Attributes
+7.  Other Attributes
 
    There are a number of different locations where various types of
    attributes can be placed in either a CMC request or a CMC response
@@ -3038,7 +3036,7 @@ Table of Contents
    request, controls in CRMF Section 6 of [CRMF], and the various CMS
    attribute sequences.
 
-6.1.  Change Subject Name Attribute
+7.1.  Change Subject Name Attribute
 
    The Client Name Change Request attribute is designed for a client to
    ask for a change in its name as part of a certification request.
@@ -3098,7 +3096,7 @@ Table of Contents
        field is absent, the subjectAltName extension is removed from the
        certificate template.
 
-7.  Registration Authorities
+8.  Registration Authorities
 
    This specification permits the use of RAs.  An RA sits between the EE
    and the CA.  From the EE's perspective, the RA appears to be the CA,
@@ -3159,7 +3157,7 @@ Table of Contents
    layers.  The following sections look at the processing required if
    encryption layers and signing layers need to be removed.
 
-7.1.  Encryption Removal
+8.1.  Encryption Removal
 
    There are two cases that require an RA to remove or change encryption
    in a PKI Request.  In the first case, the encryption was applied for
@@ -3178,7 +3176,7 @@ Table of Contents
    layer provided by the EE needs to also be removed, the RA can also
    remove this layer.
 
-7.2.  Signature Layer Removal
+8.2.  Signature Layer Removal
 
    Only two instances exist where an RA should remove a signature layer
    on a Full PKI Request: if an encryption layer needs to be modified
@@ -3191,17 +3189,17 @@ Table of Contents
    resulting merged control statements MUST be placed in a new signing
    layer provided by the RA.
 
-8.  Certificate Requirements
+9.  CMC Infrastucture Certificate Requirements
 
    Certificates for servers used in the CMC protocol SHOULD conform to
    the profile defined in [PKIXCERT].  This document defines some
    additional items that MAY appear in CMC server certificates.
-   Section 8.1 defines some additional values for the Extended Key Usage
-   extension.  Section 8.2 defines a new Subject Information Access
+   Section 9.1 defines some additional values for the Extended Key Usage
+   extension.  Section 9.2 defines a new Subject Information Access
    value that allows for a CMC certificate to publish information on how
    to contact the services it provides.
 
-8.1.  Extended Key Usage
+9.1.  Extended Key Usage
 
    The Extended Key Usage (EKU) extension is used to restrict the use of
    a certificate to specific applications.  We define three different
@@ -3230,14 +3228,14 @@ Table of Contents
          extended key usage.  CMC Archive Servers and the associated
          protocol are to be defined in a future document.
 
-8.2.  Subject Information Access
+9.2.  Subject Information Access
 
    The subject information access extension indicates how to access
    information and services for the subject of the certificate.  We
    define a new value for use in this extension, to identify the
    different locations that CMC services will be available.  If this
    value is placed in a certificate, an appropriate extended key usage
-   defined in Section 8.1 MUST be included in the certificate as well.
+   defined in Section 9.1 MUST be included in the certificate as well.
 
    The id-ad-cmc OID is used when the subject offers certification
    services using the CMC protocol.  If the CMC services are available
@@ -3248,7 +3246,7 @@ Table of Contents
    GeneralName data structure does not permit the inclusion of a port
    number, in the absence of other external configuration information,
    the value of 5318 should be used.  (The port registration is in
-   Section 2.4) The semantics of other name forms of accessLocation
+   Section 3.2) The semantics of other name forms of accessLocation
    (when accessMethod is id-ad-cmc) are not defined by this
    specification.
 
@@ -3257,7 +3255,7 @@ Table of Contents
 
      id-ad-cmc OBJECT IDENTIFIER ::= { id-ad 12 }
 
-9.  Security Considerations
+10.  Security Considerations
 
    Mechanisms for thwarting replay attacks may be required in particular
    implementations of this protocol depending on the operational
@@ -3266,7 +3264,7 @@ Table of Contents
    of the optional nonce mechanisms.  Implementers of this protocol need
    to carefully consider environmental conditions before choosing
    whether or not to implement the senderNonce and recipientNonce
-   controls described in Section 5.6.  Developers of state-constrained
+   controls described in Section 6.6.  Developers of state-constrained
    PKI clients are strongly encouraged to incorporate the use of these
    controls.
 
@@ -3341,7 +3339,7 @@ Table of Contents
    checked, special care should be taken with names, name forms,
    algorithm choices, and algorithm parameters.
 
-10.  IANA Considerations
+11.  IANA Considerations
 
    This document defines a number of control objects.  These are
    identified by Object Identifiers (OIDs).  The objects are defined
@@ -3354,9 +3352,9 @@ Table of Contents
    modules should be allocated in the "SMI Security for PKIX Module
    Identifier" registry (1.3.6.1.5.5.7.0).
 
-11.  References
+12.  References
 
-11.1.  Normative References
+12.1.  Normative References
 
    [CMS]      Housley, R., "Cryptographic Message Syntax (CMS)", STD 70,
               RFC 5652, DOI 10.17487/RFC5652, September 2009,
@@ -3409,7 +3407,7 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-11.2.  Informative References
+12.2.  Informative References
 
    [CMC-COMPL]
               Mandel, J. and S. Turner, "Certificate Management Messages
@@ -4738,7 +4736,7 @@ C.1.  No-Signature Signature Mechanism
    security associated with this signature type.  If this signature type
    is on a certification request and the Certification Authority policy
    requires proof-of-possession of the private key, the POP mechanism
-   defined in Section 5.7 MUST be used.
+   defined in Section 6.7 MUST be used.
 
    When the client generates the SignedData.SignerInfos.SignerInfo.sid
    field it has two choices: issuerAndSerialNumber or
