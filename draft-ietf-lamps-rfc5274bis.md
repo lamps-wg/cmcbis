@@ -108,7 +108,7 @@ model.  These are 1) all Entities, 2) all Servers, 3) all Clients, 4)
 all End-Entities, 5) all Registration Authorities, 6) all Certification
 Authorities.
 
-This document obsoletes {{CMC-COMPv1}} and {{CMC-Updates}}.
+This document obsoletes RFC 5274 {{CMC-COMPv1}} and RFC 6402 {{CMC-Updates}}.
 
 # Terminology
 
