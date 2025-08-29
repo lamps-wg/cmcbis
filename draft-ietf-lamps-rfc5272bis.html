@@ -27,24 +27,24 @@ requirements usage document along with this document for a full
 definition. 
        This document obsoletes RFC 5272 and RFC 6402. 
     " name="description">
-<meta content="xml2rfc 3.28.1" name="generator">
+<meta content="xml2rfc 3.30.0" name="generator">
 <meta content="Public Key Infrastructure" name="keyword">
 <meta content="Certificate Management" name="keyword">
 <meta content="Cryptographic Message Syntax" name="keyword">
 <meta content="draft-ietf-lamps-rfc5272bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.28.1
-    Python 3.12.10
+  xml2rfc 3.30.0
+    Python 3.12.11
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
-    lxml 5.3.0
+    lxml 5.3.1
     platformdirs 4.3.8
     pycountry 24.6.1
     PyYAML 6.0.2
-    requests 2.32.3
-    setuptools 70.3.0
+    requests 2.32.4
+    setuptools 80.9.0
     wcwidth 0.2.13
 -->
 <link href="draft-ietf-lamps-rfc5272bis.xml" rel="alternate" type="application/rfc+xml">
@@ -1064,11 +1064,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CMC: Structures</td>
-<td class="right">May 2025</td>
+<td class="right">August 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Mandel, Ed &amp; Turner, Ed</td>
-<td class="center">Expires 29 November 2025</td>
+<td class="center">Expires 2 March 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1084,12 +1084,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5272" class="eref">5272</a>, <a href="https://www.rfc-editor.org/rfc/rfc6402" class="eref">6402</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-05-28" class="published">28 May 2025</time>
+<time datetime="2025-08-29" class="published">29 August 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-11-29">29 November 2025</time></dd>
+<dd class="expires"><time datetime="2026-03-02">2 March 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1160,7 +1160,7 @@ definition.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 29 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 2 March 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1408,7 +1408,7 @@ definition.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-certificate-requirements" class="internal xref">Certificate Requirements</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-cmc-infrastucture-certifica" class="internal xref">CMC Infrastucture Certificate Requirements</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.1">
                 <p id="section-toc.1-1.9.2.1.1"><a href="#section-9.1" class="auto internal xref">9.1</a>.  <a href="#name-extended-key-usage" class="internal xref">Extended Key Usage</a></p>
@@ -1505,9 +1505,7 @@ due to algorithm or hardware design.<a href="#section-1-2.2.1" class="pilcrow">�
       </ol>
 <p id="section-1-3">A small number of additional services are defined to supplement the
 core certification request service.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">This document obsoletes <span>[<a href="#CMC-PROTv1" class="cite xref">CMC-PROTv1</a>]</span> and <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">This document also updates <span>[<a href="#CMS-ALGS" class="cite xref">CMS-ALGS</a>]</span> to add support for additional
-HMAC algorithms used in the POP Link Witness V2 control.<a href="#section-1-5" class="pilcrow">¶</a></p>
+<p id="section-1-4">This document obsoletes RFC 5272 <span>[<a href="#CMC-PROTv1" class="cite xref">CMC-PROTv1</a>]</span> and RFC 6402 <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <div id="protocol-requirements">
 <section id="section-1.1">
         <h3 id="name-protocol-requirements">
@@ -2780,11 +2778,10 @@ beyond the certificates and CRLs, there is no 'eContent' field in the
 'EncapsulatedContentInfo' and no 'SignerInfo'.<a href="#section-3.2.1.3.4-6" class="pilcrow">¶</a></p>
 <p id="section-3.2.1.3.4-7">Only if the server is unable to sign the response (and unable to use
 any <code>RecipientInfo</code> options of the <code>AuthenticatedData</code> content type),
-and at the same time it should send a negative response,
-Full PKI Response <code>SignedData</code> type containing a CMC Status Info control
-<span class="bcp14">MUST</span> be returned using a <code>CMCFailInfo</code> with a value of internalCAError and
-a <code>bodyPartID</code> of 0, and the eContent field in the <code>EncapsulatedContentInfo</code>
-as well as <code>SignerInfo</code> fields <span class="bcp14">MUST NOT</span> be populated.<a href="#section-3.2.1.3.4-7" class="pilcrow">¶</a></p>
+it should send a negative response.  A Full PKI Response <code>SignedData</code> type
+containing a CMC Status Info control <span class="bcp14">MUST</span> be returned using a <code>CMCFailInfo</code>
+with a value of internalCAError and a <code>bodyPartID</code> of 0, and the eContent field
+in the <code>EncapsulatedContentInfo</code> as well as <code>SignerInfo</code> fields <span class="bcp14">MUST NOT</span> be populated.<a href="#section-3.2.1.3.4-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -3037,7 +3034,7 @@ PKIResponse content type is identified by:<a href="#section-4.2.1-1" class="pilc
     otherMsgSequence  SEQUENCE SIZE(0..MAX) OF OtherMsg
     }
 
-    ReponseBody ::= PKIResponse
+    ResponseBody ::= PKIResponse
 </pre><a href="#section-4.2.1-4" class="pilcrow">¶</a>
 </div>
 <p id="section-4.2.1-5">Note: In <span>[<a href="#RFC2797" class="cite xref">RFC2797</a>]</span>, this ASN.1 type was named ResponseBody. It has
@@ -3400,8 +3397,8 @@ compatibility with RFC 2797.<a href="#section-6.1-1" class="pilcrow">¶</a></p>
 single body part. Clients <span class="bcp14">MUST</span> be able to deal with multiple CMC
 status info controls in a PKI Response. Servers <span class="bcp14">MUST</span> use the
 Extended CMC Status Info control, but <span class="bcp14">MAY</span> additionally use the CMC
-Status Info control. Clients <span class="bcp14">MUST</span> be able to process the Extended<a href="#section-6.1-2" class="pilcrow">¶</a></p>
-<p id="section-6.1-3">CMC Status Info control.<a href="#section-6.1-3" class="pilcrow">¶</a></p>
+Status Info control. Clients <span class="bcp14">MUST</span> be able to process the Extended
+CMC Status Info control.<a href="#section-6.1-2" class="pilcrow">¶</a></p>
 <div id="extCMCStatusInfo">
 <section id="section-6.1.1">
           <h4 id="name-extended-cmc-status-info-co">
@@ -6142,8 +6139,8 @@ layer provided by the RA.<a href="#section-8.2-2" class="pilcrow">¶</a></p>
 </div>
 <div id="CertificateRequirements">
 <section id="section-9">
-      <h2 id="name-certificate-requirements">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-certificate-requirements" class="section-name selfRef">Certificate Requirements</a>
+      <h2 id="name-cmc-infrastucture-certifica">
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-cmc-infrastucture-certifica" class="section-name selfRef">CMC Infrastucture Certificate Requirements</a>
       </h2>
 <p id="section-9-1">Certificates for servers used in the CMC protocol <span class="bcp14">SHOULD</span> conform to
 the profile defined in <span>[<a href="#PKIXCERT" class="cite xref">PKIXCERT</a>]</span>.  This document defines some
@@ -6397,7 +6394,7 @@ for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).<a href="#section-11-2" c
 <dl class="references">
 <dt id="CMC-COMPL">[CMC-COMPL]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5274bis-05</span>, <time datetime="2025-05-01" class="refDate">1 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-05">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management Messages over CMS (CMC): Compliance Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5274bis-06</span>, <time datetime="2025-05-28" class="refDate">28 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-06">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5274bis-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-PROTv1">[CMC-PROTv1]</dt>
         <dd>
@@ -6405,7 +6402,7 @@ for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).<a href="#section-11-2" c
 <dd class="break"></dd>
 <dt id="CMC-TRANS">[CMC-TRANS]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-05</span>, <time datetime="2025-05-01" class="refDate">1 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-05">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC): Transport Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5273bis-06</span>, <time datetime="2025-05-28" class="refDate">28 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-06">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-Updates">[CMC-Updates]</dt>
         <dd>
