@@ -2545,7 +2545,7 @@ The fields of RevokeRequest have the following meaning:
    certificate was obtained to allow for revocation of a certificate
    in the event of key loss.
 
-comment is a human-readable comment.
+>> comment is a human-readable comment.
 
 For a revocation request to be reliable in the event of a dispute, a
 strong proof-of-origin is required. However, in the instance when an
