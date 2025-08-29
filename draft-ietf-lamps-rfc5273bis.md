@@ -198,8 +198,8 @@ A PKI Request using the POST method is constructed as follows:
 The Content-Type header MUST have the appropriate value from {{mime-id}}.
 
 A Content-Type header for a request:
->> Content-Type: application/pkcs7-mime; smime-type=CMC-request;
->>  name=request.p7m
+
+> Content-Type: application/pkcs7-mime; smime-type=CMC-request; name=request.p7m
 
 The body of the message is the binary value of the encoding of the
 PKI Request.
@@ -213,8 +213,8 @@ Rules) encoding of either a Simple or Full PKI Response.
 The Content-Type header MUST have the appropriate value from {{mime-id}}.
 
 A Content-Type header for a response:
->> Content-Type: application/pkcs7-mime; smime-type=CMC-response;
->>  name=response.p7m
+
+> Content-Type: application/pkcs7-mime; smime-type=CMC-response; name=response.p7m
 
 # TCP-Based Protocol
 
