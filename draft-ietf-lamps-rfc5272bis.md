@@ -3403,6 +3403,23 @@ identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs-2025".
 The OIDs for the modules should be allocated in the "SMI Security
 for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).
 
+IANA is requested to update the existing references to {{CMC-PROTv1}} in
+the Structure of Management Information (SMI) Numbers (MIB Module
+Registrations) registry group with [ RFC-to-be ] for the following:
+
+* id-aa-cmc-unsignedData
+* id-cmc-statusInfoV2
+* id-cmc-trustedAnchors
+* id-cmc-authData
+* id-cmc-batchRequests
+* id-cmc-batchResponses
+* id-cmc-publishCert
+* id-cmc-modCertTemplate
+* id-cmc-controlProcessed
+* id-cmc-popLinkWitnessV2
+* id-cmc-identityProofV2
+
+
 --- back
 
 # ASN.1 Modules {#ASN.1}
