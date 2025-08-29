@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 26 February 2026                                 25 August 2025
+Expires: 2 March 2026                                     29 August 2025
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 February 2026.
+   This Internet-Draft will expire on 2 March 2026.
 
 Copyright Notice
 
@@ -237,6 +237,9 @@ Table of Contents
 
    The Content-Type header MUST have the appropriate value from Table 2.
 
+   A Content-Type header for a request: >> Content-Type: application/
+   pkcs7-mime; smime-type=CMC-request; >> name=request.p7m
+
    The body of the message is the binary value of the encoding of the
    PKI Request.
 
@@ -247,6 +250,9 @@ Table of Contents
    Rules) encoding of either a Simple or Full PKI Response.
 
    The Content-Type header MUST have the appropriate value from Table 2.
+
+   A Content-Type header for a response: >> Content-Type: application/
+   pkcs7-mime; smime-type=CMC-response; >> name=response.p7m
 
 7.  TCP-Based Protocol
 
@@ -263,8 +269,8 @@ Table of Contents
    of time; this timeout would typically be several minutes long.
 
    CMC requires a registered port number to send and receive CMC
-   messages over TCP.  The title of this IP Protocol number is "pkix-
-   cmc".  The value of this TCP port is 5318.
+   messages over TCP.  The Service Name is "pkix-cmc".  The value of
+   this TCP port is 5318.
 
    Prior to [CMC-Updates], CMC did not have a registered port number and
    used an externally configured port from the Private Port range.
@@ -345,10 +351,6 @@ Table of Contents
               DOI 10.17487/RFC9110, June 2022,
               <https://www.rfc-editor.org/rfc/rfc9110>.
 
-   [IPsec]    Kent, S. and K. Seo, "Security Architecture for the
-              Internet Protocol", RFC 4301, DOI 10.17487/RFC4301,
-              December 2005, <https://www.rfc-editor.org/rfc/rfc4301>.
-
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
@@ -375,6 +377,10 @@ Table of Contents
               Schaad, J., "Certificate Management over CMS (CMC)
               Updates", RFC 6402, DOI 10.17487/RFC6402, November 2011,
               <https://www.rfc-editor.org/rfc/rfc6402>.
+
+   [IPsec]    Kent, S. and K. Seo, "Security Architecture for the
+              Internet Protocol", RFC 4301, DOI 10.17487/RFC4301,
+              December 2005, <https://www.rfc-editor.org/rfc/rfc4301>.
 
    [TLS]      Dierks, T. and E. Rescorla, "The Transport Layer Security
               (TLS) Protocol Version 1.2", RFC 5246,
