@@ -257,7 +257,7 @@ range for the use of CMC.
   Contact: chair@ietf.org
 ~~~
 
-IANA is requested to update the existing references to [RFC5273] in the
+IANA is requested to update the existing references to {{CMC-TRANSv1}} in the
 Media Type Sub-Parameter Registries for CMC-Request and CMC-Response to [ RFC-to-be ].
 
 # Security Considerations
