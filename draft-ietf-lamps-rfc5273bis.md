@@ -54,7 +54,6 @@ normative:
   BCP195: RFC9325
   CMC-STRUCT: I-D.ietf-lamps-rfc5272bis
   HTTP: RFC9110
-  IPsec: RFC4301
   SMIMEV4: RFC8551
 
 
@@ -62,7 +61,7 @@ informative:
   TLS: RFC5246
   CMC-TRANSv1: RFC5273
   CMC-Updates: RFC6402
-
+  IPsec: RFC4301
 
 
 --- abstract
@@ -198,6 +197,10 @@ A PKI Request using the POST method is constructed as follows:
 
 The Content-Type header MUST have the appropriate value from {{mime-id}}.
 
+A Content-Type header for a request:
+>> Content-Type: application/pkcs7-mime; smime-type=CMC-request;
+>>  name=request.p7m
+
 The body of the message is the binary value of the encoding of the
 PKI Request.
 
@@ -209,6 +212,9 @@ Rules) encoding of either a Simple or Full PKI Response.
 
 The Content-Type header MUST have the appropriate value from {{mime-id}}.
 
+A Content-Type header for a response:
+>> Content-Type: application/pkcs7-mime; smime-type=CMC-response;
+>>  name=response.p7m
 
 # TCP-Based Protocol
 
@@ -225,8 +231,8 @@ server MAY close a connection after it has been idle for some period
 of time; this timeout would typically be several minutes long.
 
 CMC requires a registered port number to send and receive CMC
-messages over TCP.  The title of this IP Protocol number is
-"pkix-cmc".  The value of this TCP port is 5318.
+messages over TCP.  The Service Name is "pkix-cmc".
+The value of this TCP port is 5318.
 
 Prior to {{CMC-Updates}}, CMC did not have a registered port number and
 used an externally configured port from the Private Port range.
