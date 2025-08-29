@@ -237,8 +237,10 @@ Table of Contents
 
    The Content-Type header MUST have the appropriate value from Table 2.
 
-   A Content-Type header for a request: >> Content-Type: application/
-   pkcs7-mime; smime-type=CMC-request; >> name=request.p7m
+   A Content-Type header for a request:
+
+      Content-Type: application/pkcs7-mime; smime-type=CMC-request;
+      name=request.p7m
 
    The body of the message is the binary value of the encoding of the
    PKI Request.
@@ -251,8 +253,10 @@ Table of Contents
 
    The Content-Type header MUST have the appropriate value from Table 2.
 
-   A Content-Type header for a response: >> Content-Type: application/
-   pkcs7-mime; smime-type=CMC-response; >> name=response.p7m
+   A Content-Type header for a response:
+
+      Content-Type: application/pkcs7-mime; smime-type=CMC-response;
+      name=response.p7m
 
 7.  TCP-Based Protocol
 
