@@ -496,9 +496,9 @@ Table of Contents
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC)", Work in Progress, Internet-Draft, draft-ietf-
-              lamps-rfc5272bis-06, 28 May 2025,
+              lamps-rfc5272bis-07, 29 August 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5272bis-06>.
+              rfc5272bis-07>.
 
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS

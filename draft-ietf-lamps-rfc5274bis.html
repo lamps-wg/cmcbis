@@ -1451,22 +1451,22 @@ encryption algorithm.<a href="#section-5.1-6" class="pilcrow">¶</a></p>
 <p id="section-5.1-7">If AuthenticatedData is supported, PasswordRecipientInfo <span class="bcp14">MUST</span> be
 supported.<a href="#section-5.1-7" class="pilcrow">¶</a></p>
 <p id="section-5.1-8">Algorithm requirements for the Identity Proof Version 2 control
-<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-06#section-6.2.1" class="relref">Section 6.2.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be implemented
+<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-07#section-6.2.1" class="relref">Section 6.2.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be implemented
 for hashAlgId.  HMAC-SHA256 <span class="bcp14">MUST</span> be implemented for macAlgId.<a href="#section-5.1-8" class="pilcrow">¶</a></p>
 <p id="section-5.1-9">Algorithm requirements for the Pop Link Witness Version 2 control
-<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-06#section-6.3.1" class="relref">Section 6.3.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be implemented
+<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-07#section-6.3.1" class="relref">Section 6.3.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be implemented
 for keyGenAlgorithm. PBKDF2 <span>[<a href="#PBKDF2" class="cite xref">PBKDF2</a>]</span> <span class="bcp14">MAY</span> be implemented for
 keyGenAlgorithm.  HMAC-SHA256 <span class="bcp14">MUST</span> be implemented for macAlgorithm.<a href="#section-5.1-9" class="pilcrow">¶</a></p>
 <p id="section-5.1-10">Algorithm requirements for the Encrypted POP and Decrypted POP
-controls <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-06#section-6.7" class="relref">Section 6.7</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be
+controls <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-07#section-6.7" class="relref">Section 6.7</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be
 implemented for witnessAlgID. HMAC-SHA256 <span class="bcp14">MUST</span> be implemented for
 thePOPAlgID.<a href="#section-5.1-10" class="pilcrow">¶</a></p>
-<p id="section-5.1-11">Algorithm requirements for Publish Trust Anchors control <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-06#section-6.15" class="relref">Section 6.15</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be implemented for hashAlgorithm.<a href="#section-5.1-11" class="pilcrow">¶</a></p>
+<p id="section-5.1-11">Algorithm requirements for Publish Trust Anchors control <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-07#section-6.15" class="relref">Section 6.15</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be implemented for hashAlgorithm.<a href="#section-5.1-11" class="pilcrow">¶</a></p>
 <p id="section-5.1-12">If an EE generates DH keys for certification, it <span class="bcp14">MUST</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span>].  EEs <span class="bcp14">MAY</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-3" class="relref">Section 3</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span>.  CAs and RAs
 that do POP verification <span class="bcp14">MUST</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> and
 <span class="bcp14">SHOULD</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-3" class="relref">Section 3</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span>.<a href="#section-5.1-12" class="pilcrow">¶</a></p>
 <p id="section-5.1-13">EEs that need to use a signature algorithm for keys that cannot
-produce a signature <span class="bcp14">MUST</span> support <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-06#appendix-C" class="relref">Appendix C</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> and <span class="bcp14">MUST</span>
+produce a signature <span class="bcp14">MUST</span> support <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-07#appendix-C" class="relref">Appendix C</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> and <span class="bcp14">MUST</span>
 support the Encrypted/Decrypted POP controls.  CAs and RAs that do
 POP verification <span class="bcp14">MUST</span> support this signature algorithm and <span class="bcp14">MUST</span>
 support the Encrypted/Decrypted POP controls.<a href="#section-5.1-13" class="pilcrow">¶</a></p>
@@ -1907,7 +1907,7 @@ decryptedPOP.<a href="#section-8-1" class="pilcrow">¶</a></p>
 <p id="section-9-1">RAs <span class="bcp14">SHOULD</span> be able to do delegated POP.  RAs implementing this
 feature <span class="bcp14">MUST</span> implement the id-cmc-lraPOPWitness control.<a href="#section-9-1" class="pilcrow">¶</a></p>
 <p id="section-9-2">All RAs <span class="bcp14">MUST</span> implement the promotion of the id-aa-cmc-unsignedData as
-covered in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-06#section-3.2.3" class="relref">Section 3.2.3</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>.<a href="#section-9-2" class="pilcrow">¶</a></p>
+covered in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-07#section-3.2.3" class="relref">Section 3.2.3</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>.<a href="#section-9-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="requirements-for-cas">
@@ -1979,7 +1979,7 @@ current state of the art.  Two examples of such documents are
 <dd class="break"></dd>
 <dt id="CMC-STRUCT">[CMC-STRUCT]</dt>
         <dd>
-<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5272bis-06</span>, <time datetime="2025-05-28" class="refDate">28 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-06">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-06</a>&gt;</span>. </dd>
+<span class="refAuthor">Mandel, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"Certificate Management over CMS (CMC)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-rfc5272bis-07</span>, <time datetime="2025-08-29" class="refDate">29 August 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-07">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-07</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="CMC-TRANS">[CMC-TRANS]</dt>
         <dd>
