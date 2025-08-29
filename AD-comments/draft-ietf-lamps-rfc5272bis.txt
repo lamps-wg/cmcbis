@@ -1195,7 +1195,7 @@ Table of Contents
        otherMsgSequence  SEQUENCE SIZE(0..MAX) OF OtherMsg
        }
 
-       ReponseBody ::= PKIResponse
+       ResponseBody ::= PKIResponse
 
    Note: In [RFC2797], this ASN.1 type was named ResponseBody.  It has
    been renamed to PKIResponse for clarity and the old name kept as a
@@ -1417,7 +1417,6 @@ Table of Contents
    status info controls in a PKI Response.  Servers MUST use the
    Extended CMC Status Info control, but MAY additionally use the CMC
    Status Info control.  Clients MUST be able to process the Extended
-
    CMC Status Info control.
 
 6.1.1.  Extended CMC Status Info Control
