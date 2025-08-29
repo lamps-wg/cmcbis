@@ -157,10 +157,8 @@ community:
 A small number of additional services are defined to supplement the
 core certification request service.
 
-This document obsoletes {{CMC-PROTv1}} and {{CMC-Updates}}.
+This document obsoletes RFC 5272 {{CMC-PROTv1}} and RFC 6402 {{CMC-Updates}}.
 
-This document also updates {{CMS-ALGS}} to add support for additional
-HMAC algorithms used in the POP Link Witness V2 control.
 
 ## Protocol Requirements
 
@@ -988,11 +986,10 @@ beyond the certificates and CRLs, there is no 'eContent' field in the
 
 Only if the server is unable to sign the response (and unable to use
 any `RecipientInfo` options of the `AuthenticatedData` content type),
-and at the same time it should send a negative response,
-Full PKI Response `SignedData` type containing a CMC Status Info control
-MUST be returned using a `CMCFailInfo` with a value of internalCAError and
-a `bodyPartID` of 0, and the eContent field in the `EncapsulatedContentInfo`
-as well as `SignerInfo` fields MUST NOT be populated.
+it should send a negative response.  A Full PKI Response `SignedData` type
+containing a CMC Status Info control MUST be returned using a `CMCFailInfo`
+with a value of internalCAError and a `bodyPartID` of 0, and the eContent field
+in the `EncapsulatedContentInfo` as well as `SignerInfo` fields MUST NOT be populated.
 
 ####  Other Message Bodies {#OtherMessageBodies}
 
@@ -1191,7 +1188,7 @@ The ASN.1 structure corresponding to the PKIResponse content type is:
     otherMsgSequence  SEQUENCE SIZE(0..MAX) OF OtherMsg
     }
 
-    ReponseBody ::= PKIResponse
+    ResponseBody ::= PKIResponse
 ~~~
 
 Note: In {{RFC2797}}, this ASN.1 type was named ResponseBody. It has
@@ -1352,7 +1349,6 @@ single body part. Clients MUST be able to deal with multiple CMC
 status info controls in a PKI Response. Servers MUST use the
 Extended CMC Status Info control, but MAY additionally use the CMC
 Status Info control. Clients MUST be able to process the Extended
-
 CMC Status Info control.
 
 ###  Extended CMC Status Info Control {#extCMCStatusInfo}
@@ -3242,7 +3238,7 @@ statements MUST be merged according to local policy rules. The
 resulting merged control statements MUST be placed in a new signing
 layer provided by the RA.
 
-# Certificate Requirements {#CertificateRequirements}
+# CMC Infrastucture Certificate Requirements {#CertificateRequirements}
 
 Certificates for servers used in the CMC protocol SHOULD conform to
 the profile defined in {{PKIXCERT}}.  This document defines some
