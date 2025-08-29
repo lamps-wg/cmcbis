@@ -292,8 +292,8 @@ Table of Contents
      Assignee: iesg@ietf.org
      Contact: chair@ietf.org
 
-   IANA is requested to update the existing references to [RFC5273] in
-   the Media Type Sub-Parameter Registries for CMC-Request and CMC-
+   IANA is requested to update the existing references to [CMC-TRANSv1]
+   in the Media Type Sub-Parameter Registries for CMC-Request and CMC-
    Response to [ RFC-to-be ].
 
 9.  Security Considerations
