@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-26T01:56:24.636275+00:00",
+  "timestamp": "2025-08-31T01:57:17.427941+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -708,15 +708,15 @@
       "id": "I_kwDOKfq5gM7H1Og1",
       "title": "AD comments",
       "url": "https://github.com/lamps-wg/cmcbis/issues/109",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "refer to this [email](https://mailarchive.ietf.org/arch/msg/spasm/9e359TESPrhDCmgbFYLpuP1E5to/)",
       "createdAt": "2025-08-25T17:22:02Z",
-      "updatedAt": "2025-08-25T17:22:02Z",
-      "closedAt": null,
+      "updatedAt": "2025-08-29T14:37:50Z",
+      "closedAt": "2025-08-29T14:37:50Z",
       "comments": []
     },
     {
@@ -724,15 +724,15 @@
       "id": "I_kwDOKfq5gM7H2HR8",
       "title": "Secdir review",
       "url": "https://github.com/lamps-wg/cmcbis/issues/112",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "3) page 26:\n    ReponseBody ::= PKIResponse\n\nTypo? I believe this should be ResponseBody ::= PKIResponse\n\n4) page 31:\n\n   Status Info control.  Clients MUST be able to process the Extended\n\n   CMC Status Info control.\n\nI believe there is a spurious line break between those two lines.",
       "createdAt": "2025-08-25T18:48:57Z",
-      "updatedAt": "2025-08-25T18:48:57Z",
-      "closedAt": null,
+      "updatedAt": "2025-08-29T14:36:47Z",
+      "closedAt": "2025-08-29T14:36:47Z",
       "comments": []
     },
     {
@@ -740,15 +740,15 @@
       "id": "I_kwDOKfq5gM7H2Iub",
       "title": "5273 IANA Considerations",
       "url": "https://github.com/lamps-wg/cmcbis/issues/113",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-08-25T18:51:28Z",
-      "updatedAt": "2025-08-25T18:51:28Z",
-      "closedAt": null,
+      "updatedAt": "2025-08-29T14:36:33Z",
+      "closedAt": "2025-08-29T14:36:33Z",
       "comments": []
     },
     {
@@ -756,15 +756,15 @@
       "id": "I_kwDOKfq5gM7H2OAc",
       "title": "Gen-ART review",
       "url": "https://github.com/lamps-wg/cmcbis/issues/115",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Refer to this [email](https://mailarchive.ietf.org/arch/msg/spasm/YiacNQ-aHLxV1XX0UyVmCGGzAGI/)",
       "createdAt": "2025-08-25T18:59:53Z",
-      "updatedAt": "2025-08-25T18:59:53Z",
-      "closedAt": null,
+      "updatedAt": "2025-08-29T14:36:25Z",
+      "closedAt": "2025-08-29T14:36:25Z",
       "comments": []
     }
   ],
@@ -4633,24 +4633,26 @@
       "id": "PR_kwDOKfq5gM6gBjuM",
       "title": "Use aasvg",
       "url": "https://github.com/lamps-wg/cmcbis/pull/108",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-07-22T09:02:33Z",
-      "updatedAt": "2025-07-22T09:58:48Z",
+      "updatedAt": "2025-08-29T14:49:35Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "640d5fc9017cbee11fb3e44af6672779b0e6b189",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-aasvg",
       "headRefOid": "812786723624fa35950d3f8a356d4027e448e5d8",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-08-29T14:49:35Z",
+      "mergedAt": "2025-08-29T14:49:35Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "40a5b4ebf35cff0d72d1f7a1ac20c7f1501b32fd"
+      },
       "comments": [],
       "reviews": [
         {
@@ -4680,104 +4682,378 @@
       "id": "PR_kwDOKfq5gM6lQkak",
       "title": "AD comments",
       "url": "https://github.com/lamps-wg/cmcbis/pull/110",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "#109 ",
       "createdAt": "2025-08-25T17:51:37Z",
-      "updatedAt": "2025-08-25T17:59:42Z",
+      "updatedAt": "2025-08-29T14:37:49Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "640d5fc9017cbee11fb3e44af6672779b0e6b189",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "AD-comments",
-      "headRefOid": "012288dce8a0be11e821f52eedeb187728f14df0",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "ed2f64a35560e1efe134a95efa41ed2c19a5fd49",
+      "closedAt": "2025-08-29T14:37:49Z",
+      "mergedAt": "2025-08-29T14:37:49Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "8cd0bd7f992ec5ce9ae893b0869a27956843fb61"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM684gh7",
+          "commit": {
+            "abbreviatedOid": "012288d"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-29T14:19:35Z",
+          "updatedAt": "2025-08-29T14:19:35Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 111,
       "id": "PR_kwDOKfq5gM6lRD-4",
       "title": "Secdir review",
       "url": "https://github.com/lamps-wg/cmcbis/pull/111",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-08-25T18:47:29Z",
-      "updatedAt": "2025-08-25T18:47:30Z",
+      "updatedAt": "2025-08-29T14:36:07Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "AD-comments",
       "baseRefOid": "012288dce8a0be11e821f52eedeb187728f14df0",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "Secdir-review",
       "headRefOid": "c203cce7481287890ab555758f017bc507cad0cb",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-08-29T14:36:02Z",
+      "mergedAt": "2025-08-29T14:36:02Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "ed2f64a35560e1efe134a95efa41ed2c19a5fd49"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM684gu4",
+          "commit": {
+            "abbreviatedOid": "c203cce"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-29T14:19:49Z",
+          "updatedAt": "2025-08-29T14:19:49Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 114,
       "id": "PR_kwDOKfq5gM6lRH_S",
       "title": "5273 IANA Considerations",
       "url": "https://github.com/lamps-wg/cmcbis/pull/114",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-08-25T18:55:20Z",
-      "updatedAt": "2025-08-25T18:55:21Z",
+      "updatedAt": "2025-08-29T14:35:28Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "AD-comments",
       "baseRefOid": "012288dce8a0be11e821f52eedeb187728f14df0",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "5273-IANA-Considerations",
       "headRefOid": "2bcc419f5466b56adc4b59b585bc32dd7edb11ae",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-08-29T14:35:19Z",
+      "mergedAt": "2025-08-29T14:35:19Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "95fd4660eb26f5403a05cc260ee4ad612b1050d4"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM684hBe",
+          "commit": {
+            "abbreviatedOid": "2bcc419"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-29T14:20:09Z",
+          "updatedAt": "2025-08-29T14:20:09Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 116,
       "id": "PR_kwDOKfq5gM6lRWpN",
       "title": "Gen-ART Review - 5273",
       "url": "https://github.com/lamps-wg/cmcbis/pull/116",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-08-25T19:18:31Z",
-      "updatedAt": "2025-08-25T19:19:03Z",
+      "updatedAt": "2025-08-29T14:34:47Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "AD-comments",
       "baseRefOid": "012288dce8a0be11e821f52eedeb187728f14df0",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "Gen-ART-Review---5273",
       "headRefOid": "10ff33609c2744b87fa2651c701f460ba70523eb",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-08-29T14:34:47Z",
+      "mergedAt": "2025-08-29T14:34:47Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "41f8b8cc6332f8be056d6376cadb33c11e5b8207"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM684hsL",
+          "commit": {
+            "abbreviatedOid": "10ff336"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-29T14:20:43Z",
+          "updatedAt": "2025-08-29T14:20:43Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 117,
+      "id": "PR_kwDOKfq5gM6mAcVA",
+      "title": "IANA updates",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/117",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Replace references to 5272 with RFC-to-be.",
+      "createdAt": "2025-08-29T14:49:21Z",
+      "updatedAt": "2025-08-29T14:55:20Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "8cd0bd7f992ec5ce9ae893b0869a27956843fb61",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-iana-updates",
+      "headRefOid": "fab10af3b1ecd0e4f69141d588fd1418bf61e88d",
+      "closedAt": "2025-08-29T14:55:13Z",
+      "mergedAt": "2025-08-29T14:55:13Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "27a688e4b4189d77f57381f2985b1e50262be203"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM685Blv",
+          "commit": {
+            "abbreviatedOid": "fab10af"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-29T14:55:05Z",
+          "updatedAt": "2025-08-29T14:55:05Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 118,
+      "id": "PR_kwDOKfq5gM6mAdxn",
+      "title": "Update IANA considerations",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/118",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I am afraid that referring to [RFC5273] is going to set off some kind of linter concern. I just replaced it the ref that's already been used in the doc.",
+      "createdAt": "2025-08-29T14:51:18Z",
+      "updatedAt": "2025-08-29T14:55:41Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "40a5b4ebf35cff0d72d1f7a1ac20c7f1501b32fd",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-ref-tweak",
+      "headRefOid": "1a506341005a8d1e8e194ef00715af5ed3cc1c03",
+      "closedAt": "2025-08-29T14:55:38Z",
+      "mergedAt": "2025-08-29T14:55:38Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "d73dd4b449c1eaa16e2c0c2a5c86e553c12db904"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM685APw",
+          "commit": {
+            "abbreviatedOid": "1a50634"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-29T14:53:15Z",
+          "updatedAt": "2025-08-29T14:53:15Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 119,
+      "id": "PR_kwDOKfq5gM6mAyou",
+      "title": "Fix some formatting",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/119",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-08-29T15:21:37Z",
+      "updatedAt": "2025-08-29T15:52:51Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "d73dd4b449c1eaa16e2c0c2a5c86e553c12db904",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-format-fix",
+      "headRefOid": "0529871bf0168eed22652495bbc1f41a7f11a977",
+      "closedAt": "2025-08-29T15:52:50Z",
+      "mergedAt": "2025-08-29T15:52:50Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "be03168cae9f9513cad9b113ee01d0993a202541"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM685q4T",
+          "commit": {
+            "abbreviatedOid": "0529871"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-29T15:52:34Z",
+          "updatedAt": "2025-08-29T15:52:34Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 120,
+      "id": "PR_kwDOKfq5gM6mA_bL",
+      "title": "Fix formatting",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/120",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-08-29T15:45:40Z",
+      "updatedAt": "2025-08-29T17:20:45Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "d73dd4b449c1eaa16e2c0c2a5c86e553c12db904",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "Fix-formatting",
+      "headRefOid": "587484a046affb7953d09f57e61d5d08d6ee8e4c",
+      "closedAt": "2025-08-29T17:20:45Z",
+      "mergedAt": "2025-08-29T17:20:45Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "105d272d116fcfdfff98aacf6782f73b61a0a71a"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM686sbv",
+          "commit": {
+            "abbreviatedOid": "587484a"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-29T17:20:40Z",
+          "updatedAt": "2025-08-29T17:20:40Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 121,
+      "id": "PR_kwDOKfq5gM6mBsMq",
+      "title": "Fix indent",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/121",
+      "state": "MERGED",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-08-29T17:08:42Z",
+      "updatedAt": "2025-08-29T17:21:00Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "be03168cae9f9513cad9b113ee01d0993a202541",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "Fix-Indent",
+      "headRefOid": "afc648c05d09bf0496f27aa153fbe9832678a2d0",
+      "closedAt": "2025-08-29T17:21:00Z",
+      "mergedAt": "2025-08-29T17:21:00Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "a2038d8354ce9374ffc079eed446ef77e9dfb074"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM686sj6",
+          "commit": {
+            "abbreviatedOid": "afc648c"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-29T17:20:55Z",
+          "updatedAt": "2025-08-29T17:20:55Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
