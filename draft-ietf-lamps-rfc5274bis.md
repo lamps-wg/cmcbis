@@ -54,7 +54,7 @@ normative:
   CMS-DH: RFC2631
   CRMF: RFC4211
   DH-POP: RFC6955
-  PBKDF2: RFC9579
+  PBKDF2: I-D.ietf-lamps-rfc9579bis
   AES-WRAP: RFC3394
 
 informative:
