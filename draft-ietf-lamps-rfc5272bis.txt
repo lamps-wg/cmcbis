@@ -6,7 +6,7 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 2 March 2026                                     29 August 2025
+Expires: 6 March 2026                                   2 September 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -63,7 +63,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 March 2026.
+   This Internet-Draft will expire on 6 March 2026.
 
 Copyright Notice
 
@@ -3437,9 +3437,9 @@ Table of Contents
    [CMC-COMPL]
               Mandel, J. and S. Turner, "Certificate Management Messages
               over CMS (CMC): Compliance Requirements", Work in
-              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-06,
-              28 May 2025, <https://datatracker.ietf.org/doc/html/draft-
-              ietf-lamps-rfc5274bis-06>.
+              Progress, Internet-Draft, draft-ietf-lamps-rfc5274bis-08,
+              29 August 2025, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-lamps-rfc5274bis-08>.
 
    [CMC-PROTv1]
               Schaad, J. and M. Myers, "Certificate Management over CMS
@@ -3449,9 +3449,9 @@ Table of Contents
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-06, 28 May 2025,
+              Draft, draft-ietf-lamps-rfc5273bis-08, 29 August 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-06>.
+              rfc5273bis-08>.
 
    [CMC-Updates]
               Schaad, J., "Certificate Management over CMS (CMC)
