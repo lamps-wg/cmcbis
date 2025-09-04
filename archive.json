@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-31T01:57:17.427941+00:00",
+  "timestamp": "2025-09-04T01:46:31.972727+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -5051,6 +5051,48 @@
           "body": "",
           "createdAt": "2025-08-29T17:20:55Z",
           "updatedAt": "2025-08-29T17:20:55Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 122,
+      "id": "PR_kwDOKfq5gM6mcx_G",
+      "title": "9579bis ref",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/122",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "We should have referred to I-D in the RFC editor's queue.",
+      "createdAt": "2025-09-02T12:50:57Z",
+      "updatedAt": "2025-09-02T15:40:25Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "a2038d8354ce9374ffc079eed446ef77e9dfb074",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-9579bis",
+      "headRefOid": "5fa6fc5be4e03523236a161c860759b66eff667d",
+      "closedAt": "2025-09-02T15:40:25Z",
+      "mergedAt": "2025-09-02T15:40:25Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "4351564cf265626e39e54f77dea8491f99581e69"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM69XxI1",
+          "commit": {
+            "abbreviatedOid": "5fa6fc5"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-02T15:39:15Z",
+          "updatedAt": "2025-09-02T15:39:15Z",
           "comments": []
         }
       ]
