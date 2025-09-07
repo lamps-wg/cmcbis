@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-04T01:46:31.972727+00:00",
+  "timestamp": "2025-09-07T01:54:52.963228+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -5094,6 +5094,77 @@
           "createdAt": "2025-09-02T15:39:15Z",
           "updatedAt": "2025-09-02T15:39:15Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 123,
+      "id": "PR_kwDOKfq5gM6nHSIh",
+      "title": "Editorial suggestions from secdir review",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/123",
+      "state": "OPEN",
+      "author": "kaduk",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Various spelling/grammar fixes, and attempt to use more canonical HTTP terminology and field capitalization.",
+      "createdAt": "2025-09-05T21:29:54Z",
+      "updatedAt": "2025-09-05T21:32:25Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "4351564cf265626e39e54f77dea8491f99581e69",
+      "headRepository": "kaduk/cmcbis",
+      "headRefName": "secdir",
+      "headRefOid": "07a616dc4da415a40b553611124187499ee4196c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6-MGbV",
+          "commit": {
+            "abbreviatedOid": "07a616d"
+          },
+          "author": "kaduk",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-05T21:30:16Z",
+          "updatedAt": "2025-09-05T21:32:25Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "To avoid starting a sentence with a lowercase letter in the file extension.",
+              "createdAt": "2025-09-05T21:30:16Z",
+              "updatedAt": "2025-09-05T21:32:25Z"
+            },
+            {
+              "originalPosition": 24,
+              "body": "Even RFC 8551 made this change already.",
+              "createdAt": "2025-09-05T21:30:52Z",
+              "updatedAt": "2025-09-05T21:32:25Z"
+            },
+            {
+              "originalPosition": 84,
+              "body": "I think we don't need to say anything about the headers in general, for a version-agnostic description of an HTTP message.",
+              "createdAt": "2025-09-05T21:31:37Z",
+              "updatedAt": "2025-09-05T21:32:25Z"
+            },
+            {
+              "originalPosition": 100,
+              "body": "\"value\" does not appear in the registry column headings.",
+              "createdAt": "2025-09-05T21:31:51Z",
+              "updatedAt": "2025-09-05T21:32:25Z"
+            },
+            {
+              "originalPosition": 109,
+              "body": "I think this improves readability since we don't talk about the details or give a reference until later.",
+              "createdAt": "2025-09-05T21:32:19Z",
+              "updatedAt": "2025-09-05T21:32:25Z"
+            }
+          ]
         }
       ]
     }
