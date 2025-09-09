@@ -99,6 +99,7 @@ IANA assigned TCP port 5318 for the use of CMC.
 
 Clarified the file extensions for Full PKI Requests and Responses.
 
+
 Replaced TLS 1.0 with TLS 1.2 or later, and added that implemetations are
 required to follow the recommendations in {{!BCP195}}.
 
