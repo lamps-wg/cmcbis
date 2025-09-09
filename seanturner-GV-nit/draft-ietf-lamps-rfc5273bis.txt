@@ -124,7 +124,7 @@ Table of Contents
 
    Clarified the file extensions for Full PKI Requests and Responses.
 
-   Replaced TLS 1.0 for TLS 1.2 or later, and added that implementations
+   Replaced TLS 1.0 with TLS 1.2 or later, and added that implemetations
    are required to follow the recommendations in [BCP195].
 
    Addressed [erratum3593].
@@ -136,9 +136,9 @@ Table of Contents
    enrollment is performed for an off-line client.  When files are used
    to transport binary, Full PKI Request or Full PKI Response messages,
    there MUST be only one instance of a request or response message in a
-   single file. crq and crp stand for Full PKI Request/Response,
-   respectively; for clarity we define file extensions for them.  The
-   following file type extensions SHOULD be used:
+   single file.  The abbreviations crq and crp stand for Full PKI
+   Request/Response, respectively; for clarity we define file extensions
+   for them.  The following file type extensions SHOULD be used:
 
                  +=====================+================+
                  | Message Type        | File Extension |
@@ -164,27 +164,27 @@ Table of Contents
    standard S/MIME (Secure MIME) message.
 
    Simple enrollment requests are encoded using the "application/pkcs10"
-   content type.  A file name MUST be included either in a content-type
-   or a content-disposition statement.  The extension for the file MUST
+   content type.  A file name MUST be included either in a Content-Type
+   or a Content-Disposition statement.  The extension for the file MUST
    be ".p10".
 
    Simple enrollment response messages MUST be encoded as content type
    "application/pkcs7-mime".  An smime-type parameter MUST be on the
-   content-type statement with a value of "certs-only".  A file name
-   with the ".p7c" extension MUST be specified as part of the content-
-   type or content-disposition statement.
+   Content-Type statement with a value of "certs-only".  A file name
+   with the ".p7c" extension MUST be specified as part of the Content-
+   Type or Content-Disposition statement.
 
    Full enrollment request messages MUST be encoded as content type
    "application/pkcs7-mime".  The smime-type parameter MUST be included
    with a value of "CMC-request".  A file name with the ".p7m" extension
-   MUST be specified as part of the content-type or content-disposition
+   MUST be specified as part of the Content-Type or Content-Disposition
    statement.
 
    Full enrollment response messages MUST be encoded as content type
    "application/pkcs7-mime".  The smime-type parameter MUST be included
    with a value of "CMC-response".  A file name with the ".p7m"
-   extension MUST be specified as part of the content-type or content-
-   disposition statement.
+   extension MUST be specified as part of the Content-Type or Content-
+   Disposition statement.
 
    +====================+==============+================+==============+
    | Item               | MIME Type    | File Extension | SMIME Type   |
@@ -220,7 +220,7 @@ Table of Contents
       Clients MAY attempt to send HTTP requests using TLS 1.2 [TLS] or
       later, although servers are not required to support TLS.  If TLS
       is supported by an implementation, then the implementation MUST
-      folow the recommendations in [BCP195].
+      follow the recommendations in [BCP195].
 
       Servers MUST NOT assume client support for any type of HTTP
       authentication such as cookies, Basic authentication, or Digest
@@ -235,25 +235,27 @@ Table of Contents
 
    A PKI Request using the POST method is constructed as follows:
 
-   The Content-Type header MUST have the appropriate value from Table 2.
+   The Content-Type header field MUST have the appropriate value from
+   Table 2.
 
-   A Content-Type header for a request:
+   A Content-Type header field for a request:
 
       Content-Type: application/pkcs7-mime; smime-type=CMC-request;
       name=request.p7m
 
-   The body of the message is the binary value of the encoding of the
+   The content of the message is the binary value of the encoding of the
    PKI Request.
 
 6.2.  PKI Response
 
-   An HTTP-based PKI Response is composed of the appropriate HTTP
-   headers, followed by the binary value of the BER (Basic Encoding
-   Rules) encoding of either a Simple or Full PKI Response.
+   The content of an HTTP-based PKI Response is the binary value of the
+   BER (Basic Encoding Rules) encoding of either a Simple or Full PKI
+   Response.
 
-   The Content-Type header MUST have the appropriate value from Table 2.
+   The Content-Type header field MUST have the appropriate value from
+   Table 2.
 
-   A Content-Type header for a response:
+   A Content-Type header field for a response:
 
       Content-Type: application/pkcs7-mime; smime-type=CMC-response;
       name=response.p7m
@@ -273,8 +275,8 @@ Table of Contents
    of time; this timeout would typically be several minutes long.
 
    CMC requires a registered port number to send and receive CMC
-   messages over TCP.  The Service Name is "pkix-cmc".  The value of
-   this TCP port is 5318.
+   messages over TCP.  The Service Name is "pkix-cmc".  The TCP port
+   number is 5318.
 
    Prior to [CMC-Updates], CMC did not have a registered port number and
    used an externally configured port from the Private Port range.
@@ -306,8 +308,8 @@ Table of Contents
    implementations of this protocol depending on the operational
    environment.  In cases where the Certification Authority (CA)
    maintains significant state information, replay attacks may be
-   detectable without the inclusion of the optional nonce mechanisms.
-   Implementers of this protocol need to carefully consider
+   detectable without the inclusion of the (optional) CMC nonce
+   mechanisms.  Implementers of this protocol need to carefully consider
    environmental conditions before choosing whether or not to implement
    the senderNonce and recipientNonce attributes described in
    Section 6.6 of [CMC-STRUCT].  Developers of state-constrained PKI
