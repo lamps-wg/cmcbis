@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-07T01:54:52.963228+00:00",
+  "timestamp": "2025-09-11T01:49:50.802122+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -5102,24 +5102,26 @@
       "id": "PR_kwDOKfq5gM6nHSIh",
       "title": "Editorial suggestions from secdir review",
       "url": "https://github.com/lamps-wg/cmcbis/pull/123",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "kaduk",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Various spelling/grammar fixes, and attempt to use more canonical HTTP terminology and field capitalization.",
       "createdAt": "2025-09-05T21:29:54Z",
-      "updatedAt": "2025-09-05T21:32:25Z",
+      "updatedAt": "2025-09-09T18:57:28Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "4351564cf265626e39e54f77dea8491f99581e69",
       "headRepository": "kaduk/cmcbis",
       "headRefName": "secdir",
       "headRefOid": "07a616dc4da415a40b553611124187499ee4196c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-09-09T18:57:27Z",
+      "mergedAt": "2025-09-09T18:57:27Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "45711d5749b1643581a1af1a4265eefad6ae7964"
+      },
       "comments": [],
       "reviews": [
         {
@@ -5128,7 +5130,7 @@
             "abbreviatedOid": "07a616d"
           },
           "author": "kaduk",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2025-09-05T21:30:16Z",
@@ -5165,6 +5167,74 @@
               "updatedAt": "2025-09-05T21:32:25Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6-5C8V",
+          "commit": {
+            "abbreviatedOid": "07a616d"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-09T17:37:11Z",
+          "updatedAt": "2025-09-09T17:37:11Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM6-5_N3",
+          "commit": {
+            "abbreviatedOid": "07a616d"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-09T18:57:15Z",
+          "updatedAt": "2025-09-09T18:57:15Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 124,
+      "id": "PR_kwDOKfq5gM6nqMlX",
+      "title": "5273: nit",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/124",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-09T18:11:43Z",
+      "updatedAt": "2025-09-09T20:04:57Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "45711d5749b1643581a1af1a4265eefad6ae7964",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-GV-nit",
+      "headRefOid": "1164d1a12ad2e541e875a72589e2df091569d69d",
+      "closedAt": "2025-09-09T20:04:56Z",
+      "mergedAt": "2025-09-09T20:04:56Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM6-5znE",
+          "commit": {
+            "abbreviatedOid": "1bc1833"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-09T18:42:14Z",
+          "updatedAt": "2025-09-09T18:42:14Z",
+          "comments": []
         }
       ]
     }
