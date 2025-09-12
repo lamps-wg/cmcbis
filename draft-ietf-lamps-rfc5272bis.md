@@ -198,7 +198,7 @@ to issue a certificate.
 
 ##  Changes from RFC 2797
 
-We have done a major overhaul on the layout of the document. This
+{{CMC-PROTv1}} did major overhaul on the layout of the document. This
 included two different steps.  Firstly we removed some sections from
 the document and moved them to two other documents. Information on
 how to transport our messages are now found in {{?CMC-TRANS}}.
@@ -228,6 +228,9 @@ A number of new controls have been added in this version:
 
 ## Updates Made by RFC 6402
 
+This version of the specification includes changes to {{CMC-PROTv1}}
+that are noted in this section.
+
 Two new controls have been added:
 
 > RA Identity Witness  allows for an RA to perform identity checking
@@ -253,6 +256,9 @@ This formalizes a requirement for the ability to do renewal and
 rekey that previously was implicit.
 
 ## Changes Since RFC 6402
+
+This version of the specification also introduces changes to
+{{CMC-PROTv1}} that are noted in this section.
 
 Merged {{CMC-Updates}} text.
 
