@@ -199,6 +199,7 @@ Updated the Cryptographic Algorithm Requirements, and added
 section to maintain backwards compatability.
 
 > Replaced SHA-1 for SHA-256
+
 > Replaced HMAC-SHA-1 for HMAC-SHA-256
 
 Updated the Introduction section, changed "all agents" to
@@ -229,48 +230,48 @@ in {{CMC-TRANS}}.  Other transport mechanisms MAY be implemented.
 ## Cryptographic Algorithm Requirements
 
 All entities MUST verify RSA-SHA256 signatures in
-SignedData; see {{!CMS-ALG2}}.  Entities MAY verify other signature
+SignedData; (see {{!CMS-ALG2}}).  Entities MAY verify other signature
 algorithms.
 
 All entities MUST generate RSA-SHA256 signatures for
-SignedData; see {{CMS-ALG2}}.  Other signatures algorithms MAY be used
+SignedData; (see {{CMS-ALG2}}).  Other signatures algorithms MAY be used
 for generation.
 
 All entities MUST support Advanced Encryption Standard (AES) as the
-content encryption algorithm for EnvelopedData; see {{CMS-AES}}.
+content encryption algorithm for EnvelopedData; (see {{CMS-AES}}).
 Other content encryption algorithms MAY be implemented.
 
 All entities MUST support RSA as a key transport algorithm for
-EnvelopedData; see {{CMS-ALG2}}. Other key transport algorithms MAY
+EnvelopedData; (see {{CMS-ALG2}}). Other key transport algorithms MAY
 be implemented.
 
 If an entity supports key agreement for EnvelopedData, it MUST
-support Diffie-Hellman; see {{CMS-DH}}.
+support Diffie-Hellman; (see {{CMS-DH}}).
 
 If an entity supports PasswordRecipientInfo for EnvelopedData or
 AuthenticatedData, it MUST support PBKDF2 {{!PBKDF2}} for key derivation
-algorithms.  It MUST support AES key wrap see {{!AES-WRAP}} as the key
+algorithms.  It MUST support AES key wrap (see {{!AES-WRAP}}) as the key
 encryption algorithm.
 
 If AuthenticatedData is supported, PasswordRecipientInfo MUST be
 supported.
 
 Algorithm requirements for the Identity Proof Version 2 control
-{{Section 6.2.1 of CMC-STRUCT}} are: SHA-256 MUST be implemented
+({{Section 6.2.1 of CMC-STRUCT}}) are: SHA-256 MUST be implemented
 for hashAlgId.  HMAC-SHA256 MUST be implemented for macAlgId.
 
 Algorithm requirements for the Pop Link Witness Version 2 control
-{{Section 6.3.1 of CMC-STRUCT}} are: SHA-256 MUST be implemented
+({{Section 6.3.1 of CMC-STRUCT}}) are: SHA-256 MUST be implemented
 for keyGenAlgorithm. PBKDF2 {{!PBKDF2}} MAY be implemented for
 keyGenAlgorithm.  HMAC-SHA256 MUST be implemented for macAlgorithm.
 
 Algorithm requirements for the Encrypted POP and Decrypted POP
-controls {{Section 6.7 of CMC-STRUCT}} are: SHA-256 MUST be
+controls ({{Section 6.7 of CMC-STRUCT}}) are: SHA-256 MUST be
 implemented for witnessAlgID. HMAC-SHA256 MUST be implemented for
 thePOPAlgID.
 
-Algorithm requirements for Publish Trust Anchors control {{Section
-6.15 of CMC-STRUCT}} are: SHA-256 MUST be implemented for hashAlgorithm.
+Algorithm requirements for Publish Trust Anchors control ({{Section
+6.15 of CMC-STRUCT}}) are: SHA-256 MUST be implemented for hashAlgorithm.
 
 If an EE generates DH keys for certification, it MUST support {{Section
 4 of DH-POP}}].  EEs MAY support {{Section 3 of DH-POP}}.  CAs and RAs
