@@ -139,7 +139,7 @@ or a Content-Disposition statement.  The extension for the file MUST
 be ".p10".
 
 Simple enrollment response messages MUST be encoded as content type
-"application/pkcs7-mime".  An smime-type parameter MUST be on the
+"application/pkcs7-mime".  A smime-type parameter MUST be on the
 Content-Type statement with a value of "certs-only".  A file name
 with the ".p7c" extension MUST be specified as part of the Content-
 Type or Content-Disposition statement.
@@ -304,7 +304,7 @@ Obviously, the authors of this version of the document would like to
 thank Jim Schaad and Michael Myers for their work on the previous
 version of this document.
 
-The acknowledgment from the previous version of this document follows:
+The acknowledgement from the previous version of this document follows:
 
 The authors and the PKIX Working Group are grateful for the
 participation of Xiaoyi Liu and Jeff Weinstein in helping to author
