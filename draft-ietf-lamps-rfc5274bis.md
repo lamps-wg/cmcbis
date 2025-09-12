@@ -80,7 +80,7 @@ This document obsoletes RFC 5274 and RFC 6402.
 
 The CMC (Certificate Management over CMS) protocol is designed in
 terms of a client/server relationship.  In the simplest case, the
-client is the requestor of the certificate (i.e., the End Entity
+client is the requestor of the certificate (i.e., the End-Entity
 (EE)) and the server is the issuer of the certificate (i.e., the
 Certification Authority (CA)).  The introduction of a Registration
 Authority (RA) into the set of agents complicates the picture only
@@ -121,7 +121,6 @@ End-Entity (EE):
   whom a certificate is issued.
 
 Registration Authority (RA) or Local RA (LRA):
-
 : Refers to an entity
   that acts as an intermediary between the EE and the CA.  Multiple
   RAs can exist between the End-Entity and the Certification
@@ -130,58 +129,52 @@ Registration Authority (RA) or Local RA (LRA):
   both RA and LRA.
 
 Certification Authority (CA):
-
 : Refers to the entity that issues
   certificates.
 
 Client:
-
 : Refers to an entity that creates a PKI Request.  In this
   document, both RAs and EEs can be clients.
 
 Server:
-
 : Refers to the entities that process PKI Requests and create
   PKI Responses.  In this document both CAs and RAs can be servers.
 
 PKCS #10:
-
 : Refers to the Public Key Cryptography Standard #10
   {{PKCS10}}, which defines a certification request syntax.
 
 CRMF:
-
 : Refers to the Certificate Request Message Format RFC {{CRMF}}.
 CMC uses this certification request syntax defined in this
 document as part of the protocol.
 
 CMS:
-
 : Refers to the Cryptographic Message Syntax RFC {{CMS}}.  This
   document provides for basic cryptographic services including
   encryption and signing with and without key management.
 
 PKI Request/Response:
-
 : Refers to the requests/responses described in
   this document.  PKI Requests include certification requests,
   revocation requests, etc.  PKI Responses include certs-only
   messages, failure messages, etc.
 
 Proof-of-Identity:
-
 : Refers to the client proving they are who they say
   that they are to the server.
 
 Proof-of-Possession (POP):
-
 : Refers to a value that can be used to
   prove that the private key corresponding to a public key is in the
-  possession and can be used by an end-entity.
+  possession and can be used by an End-Entity.
 
 Transport wrapper:
-
 : Refers to the outermost CMS wrapping layer.
+
+Entity:
+:Refers to EE, RA (or LRA), or CA.
+
 
 # Requirements Terminology
 
@@ -390,7 +383,7 @@ There are no additional requirements.
 
 # Requirements for EEs
 
-If an entity implements Diffie-Hellman, it MUST implement either the
+If an End-Entity implements Diffie-Hellman, it MUST implement either the
 DH-POP Proof-of-Possession as defined in {{Section 4 of DH-POP}} or the
 challenge-response POP controls id-cmc-encryptedPOP and id-cmc-
 decryptedPOP.
