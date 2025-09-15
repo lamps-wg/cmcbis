@@ -110,9 +110,10 @@ Addressed {{erratum3593}}.
 Enrollment messages and responses may be transferred between clients
 and servers using file-system-based mechanisms, such as when
 enrollment is performed for an off-line client.  When files are used
-to transport binary, Full PKI Request or Full PKI Response messages,
+to transport Full PKI Request or Full PKI Response messages,
 there MUST be only one instance of a request or response message in a
-single file. The abbreviations crq and crp stand for Full PKI Request/Response,
+single file and the file MUST be binary encoded. The abbreviations crq
+and crp stand for Full PKI Request/Response,
 respectively; for clarity we define file extensions for them. The
 following file type extensions SHOULD be used:
 
