@@ -187,7 +187,7 @@ follow the recommendations in {{BCP195}}.
 authentication such as cookies, Basic authentication, or Digest
 authentication.
 
-> Clients and servers are expected to follow the other rules and
+> Clients and servers are expected to follow other rules and
 restrictions in {{HTTP}}.  Note that some of those rules are for
 HTTP methods other than POST; clearly, only the rules that apply
 to POST are relevant for this specification.
