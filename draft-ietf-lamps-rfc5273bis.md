@@ -47,10 +47,6 @@ contributor:
 
 
 normative:
-  erratum3593:
-    title: "RFC 5273 erratum 3593"
-    target: https://www.rfc-editor.org/errata/eid3593
-    date: 2013-04
   BCP195: RFC9325
   CMC-STRUCT: I-D.ietf-lamps-rfc5272bis
   HTTP: RFC9110
@@ -62,7 +58,10 @@ informative:
   CMC-TRANSv1: RFC5273
   CMC-Updates: RFC6402
   IPsec: RFC4301
-
+  erratum3593:
+    title: "RFC 5273 erratum 3593"
+    target: https://www.rfc-editor.org/errata/eid3593
+    date: 2013-04
 
 --- abstract
 
