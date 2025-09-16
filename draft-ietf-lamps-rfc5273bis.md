@@ -227,7 +227,7 @@ The client closes a connection after receiving a response, or it
 issues another request to the server using the same connection.
 Reusing one connection for multiple successive requests, instead of
 opening multiple connections that are only used for a single request,
-is RECOMMENDED for performance and resource conservation reasons.  
+is RECOMMENDED for performance and resource conservation reasons.
 The client MUST wait for the full response before making another request
 on the same connection. A
 server MAY close a connection after it has been idle for some period
