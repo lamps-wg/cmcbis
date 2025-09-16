@@ -3294,7 +3294,7 @@ via HTTP or FTP {{Section 2 of CMC-TRANS}} and {{Section 4 of CMC-TRANS}}
 If the CMC services are available via electronic mail
 {{Section 3 of CMC-TRANS}}, accessLocation
 MUST be an rfc822Name.  If CMC services are available using TCP/IP
-{{Section 5 CMC-TRANS}},
+{{Section 5 of CMC-TRANS}},
 the dNSName or iPAddress name forms MUST be used.  Since the
 GeneralName data structure does not permit the inclusion of a port
 number, in the absence of other external configuration information,
