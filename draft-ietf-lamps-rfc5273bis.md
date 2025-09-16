@@ -268,8 +268,8 @@ implementations of this protocol depending on the operational
 environment.  In cases where the Certification Authority (CA)
 maintains significant state information, replay attacks may be
 detectable without the inclusion of the (optional) CMC nonce mechanisms.
-Implementers of this protocol need to carefully consider
-environmental conditions before choosing whether or not to implement
+[Implementers/Designers] of this protocol need to carefully consider
+environmental conditions before choosing whether or not to [implement/use]
 the senderNonce and recipientNonce attributes described in
 {{Section 6.6 of CMC-STRUCT}}.  Developers of state-constrained PKI clients are
 strongly encouraged to incorporate the use of these attributes.
