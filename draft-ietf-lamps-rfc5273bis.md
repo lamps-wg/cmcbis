@@ -290,8 +290,7 @@ initiated prior to use of this protocol.  This can occur when the
 protocol itself is being used to download onto the system the set of
 trust anchors to be used for these protocols.  In these instances,
 the Enveloped Data content type ({{Section 3.2.1.3.3 of CMC-STRUCT}})
-must be used to provide the same shrouding that TLS would have
-provided.
+provides the same shrouding that TLS would have provided.
 
 
 --- back
