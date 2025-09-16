@@ -178,10 +178,11 @@ following rules apply.
 
 > Servers MUST use the 200 response code for successful responses.
 
-> Clients MAY attempt to send HTTP requests using TLS 1.2 {{TLS}} or
-later, although servers are not required to support TLS. If
-TLS is supported by an implementation, then the implementation MUST
-follow the recommendations in {{BCP195}}.
+> Clients MAY attempt to send certification requests using HTTPS {{HTTP}},
+although servers are not required to support TLS/QUIC but a secure channel
+might be available regardless depending on the HTTP version implemented
+[HTTP/1.1][HTTP/2][HTTP/3]. If TLS is used by the HTTP version, then the
+implementation MUST follow the recommendations in {{BCP195}}.
 
 > Servers MUST NOT assume client support for any type of HTTP
 authentication such as cookies, Basic authentication, or Digest
