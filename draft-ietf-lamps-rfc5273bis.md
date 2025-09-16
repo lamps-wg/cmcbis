@@ -55,6 +55,7 @@ normative:
   CMC-STRUCT: I-D.ietf-lamps-rfc5272bis
   HTTP: RFC9110
   SMIMEV4: RFC8551
+  HTTP-IMP: RFC9205
 
 
 informative:
@@ -168,8 +169,9 @@ Disposition statement.
 # HTTP/HTTPS-Based Protocol
 
 This section describes the conventions for use of HTTP {{HTTP}} as a
-transport layer.  In most circumstances, the use of HTTP over TLS
-{{HTTP}} provides any necessary content protection from eavesdroppers.
+data transfer protocol.  Consult [HTTP-IMP] for additional information.
+In most circumstances, the use of HTTP over TLS {{HTTP}} provides any necessary
+content protection from eavesdroppers.
 
 In order for CMC clients and servers using HTTP to interoperate, the
 following rules apply.
