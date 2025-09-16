@@ -168,8 +168,8 @@ Disposition statement.
 # HTTP/HTTPS-Based Protocol
 
 This section describes the conventions for use of HTTP {{HTTP}} as a
-transport layer.  In most circumstances, the use of HTTP over TLS
-{{HTTP}} provides any necessary content protection from eavesdroppers.
+transport layer. The use of HTTP over TLS {{HTTP}} provides any necessary
+content protection from eavesdroppers.
 
 In order for CMC clients and servers using HTTP to interoperate, the
 following rules apply.
