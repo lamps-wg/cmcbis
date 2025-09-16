@@ -165,7 +165,7 @@ Disposition statement.
 {: #mime-id title="MIME PKI Request/Response Identification"}
 
 
-# HTTP/HTTPS-Based Protocol
+# HTTP-Based Protocol
 
 This section describes the conventions for use of HTTP {{HTTP}} as a
 transport layer.  In most circumstances, the use of HTTP over TLS
