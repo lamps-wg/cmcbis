@@ -183,9 +183,9 @@ later, although servers are not required to support TLS. If
 TLS is supported by an implementation, then the implementation MUST
 follow the recommendations in {{BCP195}}.
 
-> Servers MUST NOT assume client support for any type of HTTP
-authentication such as cookies, Basic authentication, or Digest
-authentication.
+> Clients are not required to support any type of HTTP
+authentication ([HTTP], Section 11) nor Cookies([RFC6265]). Thus, servers
+can not rely on these features to be available.
 
 > Clients and servers are expected to follow the other rules and
 restrictions in {{HTTP}}.  Note that some of those rules are for
