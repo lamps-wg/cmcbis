@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-16T01:46:53.319810+00:00",
+  "timestamp": "2025-09-18T01:46:53.043077+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -1052,6 +1052,278 @@
       "body": "Add BER ref.",
       "createdAt": "2025-09-16T01:43:40Z",
       "updatedAt": "2025-09-16T01:43:40Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 159,
+      "id": "I_kwDOKfq5gM7L2ZGJ",
+      "title": "5273: AuthEnvelopedData",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/159",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Consider supporting AuthEnvelopedData.  Would need to at a minimum:\n\n- [ ] Add a new sections in s3.2.1.3 of -rfc5272bis\n- [ ] Add new figures in s5 of -rfc5272bis\n- [ ] Debate about whether EnvelopedData or AuthEnvelopedData is the \u201cprimary\u201d\n- [ ] Debate about whether the encryptedPOP/decryptedPOP control should also change\n- [ ] Add new algorithm requirements in -rfc5274bis",
+      "createdAt": "2025-09-16T01:53:07Z",
+      "updatedAt": "2025-09-16T02:11:18Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 160,
+      "id": "I_kwDOKfq5gM7L2aiK",
+      "title": "5273: SecCons for EnvelopedData",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/160",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "From the review:\n\nWe have a nice note (\u00a79) about using EnvelopedData to provide content\nshrouding in cases where TLS cannot be used.  But this is the security\nconsiderations section; we should talk about what the risks are and why one\nmight want to have some kind of content shrouding at all (whether via TLS or\nEnvelopedData)!\n\nIt's also interesting to note that the phrasing is \"EnvelopedData ... must be\nused\" (lowerase must), which leaves it unclear whether there's an analogous\nrequirement to use TLS when it's possible to use TLS.  Perhaps we're just\nsaying that EnvelopedData is the only way to get content shrouding when TLS is\nnot available, in which case we probably want to avoid a \"must be used\"\nconstruction.",
+      "createdAt": "2025-09-16T01:57:19Z",
+      "updatedAt": "2025-09-16T01:57:19Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 162,
+      "id": "I_kwDOKfq5gM7L2dVw",
+      "title": "5273: SecCon File Permission",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/162",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "From the review:\n\nI guess the analogue for the file-based protocol is file permissions,\nwhich we don't currently talk about at all (we should).",
+      "createdAt": "2025-09-16T02:04:43Z",
+      "updatedAt": "2025-09-16T02:04:43Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 163,
+      "id": "I_kwDOKfq5gM7L2lrr",
+      "title": "5272: Eric's review",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/163",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "See [email](https://mailarchive.ietf.org/arch/msg/spasm/ahOJLptDP67YqOnbwNdVM8gMIho/).",
+      "createdAt": "2025-09-16T02:26:09Z",
+      "updatedAt": "2025-09-16T02:26:09Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 165,
+      "id": "I_kwDOKfq5gM7L2x5G",
+      "title": "5273: Httpdir review",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/165",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "see [review](https://mailarchive.ietf.org/arch/msg/spasm/gUelJ48nSiEULPvPBC89MbmLDFM/)",
+      "createdAt": "2025-09-16T02:59:25Z",
+      "updatedAt": "2025-09-16T02:59:25Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 166,
+      "id": "I_kwDOKfq5gM7L2yzo",
+      "title": "Section 4 - Title change",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/166",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I understand that this is just a minimal update to RFC 5273, Section 4. That\nsaid...:\n\nThe title should be \"HTTP-based Protocol\" (HTTPS is just a variant of HTTP)\n\n\n",
+      "createdAt": "2025-09-16T03:01:37Z",
+      "updatedAt": "2025-09-16T03:01:37Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 167,
+      "id": "I_kwDOKfq5gM7L2zXF",
+      "title": "Other use cases: security considerations",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/167",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "\"In most circumstances, the use of HTTP over TLS [HTTP] provides any necessary\ncontent protection from eavesdroppers.\"\n\n\"In most circumstances..:\" - what would be an example of other cases? Is there\nsomething the security considerations should include?\n\nAlso, this should say \"the use of HTTPS\" -- the important thing is the use of a\nsecure channel. For instance, HTTP/3 does not use TLS.",
+      "createdAt": "2025-09-16T03:02:53Z",
+      "updatedAt": "2025-09-16T03:02:53Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 168,
+      "id": "I_kwDOKfq5gM7L20X0",
+      "title": "Edit: Revise sentence on using POST method",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/168",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "\"Clients MUST use the POST method to submit their requests.\"\n\nEditorial: I prefer to state things in the positive, like: \"Requests are\nsubmitted by use of the POST method\".",
+      "createdAt": "2025-09-16T03:05:09Z",
+      "updatedAt": "2025-09-16T03:05:09Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 169,
+      "id": "I_kwDOKfq5gM7L202k",
+      "title": "Discuss why other 2xx codes were not acceptable",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/169",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "\"Servers MUST use the 200 response code for successful responses.\"\n\nI understand that this may be hard to change after the fact, but it's not clear\nwhy other 2xx codes are not ok.",
+      "createdAt": "2025-09-16T03:06:21Z",
+      "updatedAt": "2025-09-16T03:06:21Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 170,
+      "id": "I_kwDOKfq5gM7L21WO",
+      "title": "client requests",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/170",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": " \"Clients MAY attempt to send HTTP requests using TLS 1.2 [TLS] or later,\nalthough servers are not required to support TLS. If TLS is supported by an\nimplementation, then the implementation MUST folow the recommendations in\n[BCP195].\"\n\nThis sounds both severely outdated and over-specified. HTTP/1.1, HTTP/2, HTTP/3\ndefine their requirements for HTTPS connections already. In particular, HTTP/3\ndoes not use TCP at all.",
+      "createdAt": "2025-09-16T03:07:25Z",
+      "updatedAt": "2025-09-16T16:33:59Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 171,
+      "id": "I_kwDOKfq5gM7L22Oq",
+      "title": "Edit sentence for client auth",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/171",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "\"Servers MUST NOT assume client support for any type of HTTP authentication\nsuch as cookies, Basic authentication, or Digest authentication.\"\n\nMaybe: \"Clients are not required to support any kind of HTTP authentication\n([HTTP], Section 11) nor Cookies ([RFC6265]). Thus, servers can not rely on\nthese features to be available.\"",
+      "createdAt": "2025-09-16T03:09:23Z",
+      "updatedAt": "2025-09-16T03:09:23Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 172,
+      "id": "I_kwDOKfq5gM7L23BQ",
+      "title": "Support chunked transfer encoding",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/172",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "\"Clients and servers are expected to follow the other rules and restrictions in\n[HTTP]. Note that some of those rules are for HTTP methods other than POST;\nclearly, only the rules that apply to POST are relevant for this specification.\"\n\nHm, not really. For instance, servers have to support GET and HEAD (that's a\nbasic HTTP requirement), clients need to properly process 1xx responses. Is\nsupport for chunked transfer encoding required? (see RFC 9112, Section 6.1)?\nAre requests using chunked transfer encoding forbidden?",
+      "createdAt": "2025-09-16T03:11:12Z",
+      "updatedAt": "2025-09-16T03:11:12Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 173,
+      "id": "I_kwDOKfq5gM7L23cY",
+      "title": "Edits to 6.1",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/173",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "6.1\n\n\"The Content-Type header MUST have the appropriate value from Table 2.\"\n\n-> \"header field\"\n\n\"The body of the message is the binary value of the encoding of the PKI\nRequest.\"\n\n-> \"content\"",
+      "createdAt": "2025-09-16T03:11:57Z",
+      "updatedAt": "2025-09-16T03:11:57Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 174,
+      "id": "I_kwDOKfq5gM7L23q0",
+      "title": "Edits for 6.2",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/174",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "6.2\n\n\"An HTTP-based PKI Response is composed of the appropriate HTTP headers, ...\"\n\n-> \"header fields\"",
+      "createdAt": "2025-09-16T03:12:31Z",
+      "updatedAt": "2025-09-16T03:12:31Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 175,
+      "id": "I_kwDOKfq5gM7L24k6",
+      "title": "Media type guidance from 9205",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/175",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "What is the expected behaviour when the request's media type is none of the\ndefined values? Questions like these can't be simply ignored, because the\nserver can not rely on getting queries from compliant clients only. This is\njust an example of what to consider when using HTTP.\nhttps://www.rfc-editor.org/rfc/rfc9205.html has lots of good advice.",
+      "createdAt": "2025-09-16T03:14:32Z",
+      "updatedAt": "2025-09-16T03:14:32Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 176,
+      "id": "I_kwDOKfq5gM7L24_r",
+      "title": "Find info on HTTP URI",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/176",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "How does a client find out about what HTTP URI to send requests to? Is there a\nway to configure this? Is it always the same?",
+      "createdAt": "2025-09-16T03:15:36Z",
+      "updatedAt": "2025-09-16T03:15:36Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 177,
+      "id": "I_kwDOKfq5gM7L25RS",
+      "title": "Allowed HTTP Variants",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/177",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "What variants of HTTP can be used? If you want to restrict the protocol to\nHTTP/1.1, you really need to say so.",
+      "createdAt": "2025-09-16T03:16:13Z",
+      "updatedAt": "2025-09-16T03:16:13Z",
       "closedAt": null,
       "comments": []
     }
@@ -5978,7 +6250,7 @@
       "labels": [],
       "body": "Closes #150.",
       "createdAt": "2025-09-16T01:19:58Z",
-      "updatedAt": "2025-09-16T01:19:59Z",
+      "updatedAt": "2025-09-16T02:35:59Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -5990,7 +6262,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7AVfjh",
+          "commit": {
+            "abbreviatedOid": "bcf0b2a"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T02:35:59Z",
+          "updatedAt": "2025-09-16T02:35:59Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 152,
@@ -6004,7 +6290,7 @@
       "labels": [],
       "body": "Closes #149",
       "createdAt": "2025-09-16T01:34:26Z",
-      "updatedAt": "2025-09-16T01:34:27Z",
+      "updatedAt": "2025-09-16T02:35:35Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6016,7 +6302,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7AVfdS",
+          "commit": {
+            "abbreviatedOid": "cfb8220"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T02:35:35Z",
+          "updatedAt": "2025-09-16T02:35:35Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 154,
@@ -6030,7 +6330,7 @@
       "labels": [],
       "body": "Closes #153.",
       "createdAt": "2025-09-16T01:39:13Z",
-      "updatedAt": "2025-09-16T01:40:52Z",
+      "updatedAt": "2025-09-16T02:35:04Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6062,6 +6362,19 @@
               "updatedAt": "2025-09-16T01:40:41Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7AVfUT",
+          "commit": {
+            "abbreviatedOid": "b46939a"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T02:35:04Z",
+          "updatedAt": "2025-09-16T02:35:04Z",
+          "comments": []
         }
       ]
     },
@@ -6077,7 +6390,7 @@
       "labels": [],
       "body": "Closes #155.",
       "createdAt": "2025-09-16T01:42:36Z",
-      "updatedAt": "2025-09-16T01:42:37Z",
+      "updatedAt": "2025-09-16T02:34:26Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6089,7 +6402,441 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7AVfJm",
+          "commit": {
+            "abbreviatedOid": "28cc44c"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T02:34:26Z",
+          "updatedAt": "2025-09-16T02:34:26Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 158,
+      "id": "PR_kwDOKfq5gM6ovwPi",
+      "title": "Address 157",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/158",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #157.",
+      "createdAt": "2025-09-16T01:47:30Z",
+      "updatedAt": "2025-09-16T02:33:51Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-secdir-5273-berREF",
+      "headRefOid": "63d03114ce4d9b698e10be5aea586ce1ec08795a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7AVe-S",
+          "commit": {
+            "abbreviatedOid": "63d0311"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T02:33:51Z",
+          "updatedAt": "2025-09-16T02:33:51Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 161,
+      "id": "PR_kwDOKfq5gM6ovznt",
+      "title": "Address 160",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/161",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #160.",
+      "createdAt": "2025-09-16T01:59:03Z",
+      "updatedAt": "2025-09-16T02:33:19Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-secdir-5273-SecCons-envelopedData",
+      "headRefOid": "9859044776fde2011a933c19536447d64a3d96fc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7AVe1V",
+          "commit": {
+            "abbreviatedOid": "9859044"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T02:33:19Z",
+          "updatedAt": "2025-09-16T02:33:19Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 164,
+      "id": "PR_kwDOKfq5gM6ov-nO",
+      "title": "Address 163",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/164",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #163.",
+      "createdAt": "2025-09-16T02:35:57Z",
+      "updatedAt": "2025-09-16T02:49:30Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-eric-5272",
+      "headRefOid": "f29982211454cf6315ba54856e20f7343b68f899",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7AVhN8",
+          "commit": {
+            "abbreviatedOid": "03f158b"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-16T02:41:30Z",
+          "updatedAt": "2025-09-16T02:41:30Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\r\nvia HTTP or FTP {{Sections 2 & 4 of CMC-TRANS}}\r\n, accessLocation MUST be a uniformResourceIdentifier.\r\nIf the CMC services are available via electronic mail\r\n{{Section 3 of CMC-TRANS}}, accessLocation\r\nMUST be an rfc822Name.  If CMC services are available using TCP/IP\r\n{{Section 5 CMC-TRANS}},\r\n```",
+              "createdAt": "2025-09-16T02:41:30Z",
+              "updatedAt": "2025-09-16T02:41:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7AViBp",
+          "commit": {
+            "abbreviatedOid": "8581b0f"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-16T02:44:17Z",
+          "updatedAt": "2025-09-16T02:44:17Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\r\nvia HTTP or FTP {{Section 2 of CMC-TRANS}} and {{Section 4 of CMC-TRANS}}\r\n```",
+              "createdAt": "2025-09-16T02:44:17Z",
+              "updatedAt": "2025-09-16T02:44:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7AVizS",
+          "commit": {
+            "abbreviatedOid": "528b091"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-16T02:46:05Z",
+          "updatedAt": "2025-09-16T02:46:05Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\r\n{{Section 5 of CMC-TRANS}},\r\n```",
+              "createdAt": "2025-09-16T02:46:05Z",
+              "updatedAt": "2025-09-16T02:46:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7AVj2G",
+          "commit": {
+            "abbreviatedOid": "671f5cb"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "LGTM.",
+          "createdAt": "2025-09-16T02:48:36Z",
+          "updatedAt": "2025-09-16T02:48:36Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 178,
+      "id": "PR_kwDOKfq5gM6o5bas",
+      "title": "Change Title - Section 4",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/178",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "closes #166 ",
+      "createdAt": "2025-09-16T16:06:53Z",
+      "updatedAt": "2025-09-16T17:39:54Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "Change-Title---Section-4",
+      "headRefOid": "17187b038cb6f2bbbcd7dce3b5afd66542da7c78",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7AldUf",
+          "commit": {
+            "abbreviatedOid": "17187b0"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T17:39:54Z",
+          "updatedAt": "2025-09-16T17:39:54Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 179,
+      "id": "PR_kwDOKfq5gM6o5ivU",
+      "title": "addresses #167",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/179",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-16T16:18:40Z",
+      "updatedAt": "2025-09-16T17:40:13Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "addresses-#167",
+      "headRefOid": "ed302de8b61e0e5fca191a3c1b01f321dbce6d76",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7Aldl1",
+          "commit": {
+            "abbreviatedOid": "ed302de"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T17:40:13Z",
+          "updatedAt": "2025-09-16T17:40:13Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 180,
+      "id": "PR_kwDOKfq5gM6o5nxU",
+      "title": "Addresses 168",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/180",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "close #168 ",
+      "createdAt": "2025-09-16T16:24:07Z",
+      "updatedAt": "2025-09-16T17:40:32Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "Addresses-168",
+      "headRefOid": "20cd9ceaf3b931610ad0439a58c1621466c0366f",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7Aldyu",
+          "commit": {
+            "abbreviatedOid": "20cd9ce"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T17:40:32Z",
+          "updatedAt": "2025-09-16T17:40:32Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 181,
+      "id": "PR_kwDOKfq5gM6o5vgc",
+      "title": "Addresses 170",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/181",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-16T16:34:35Z",
+      "updatedAt": "2025-09-16T17:40:52Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "Addresses-170",
+      "headRefOid": "ef305790b6e3ad336d4756b69d2cb7d3e2ddca16",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7AleAp",
+          "commit": {
+            "abbreviatedOid": "ef30579"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T17:40:52Z",
+          "updatedAt": "2025-09-16T17:40:52Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 182,
+      "id": "PR_kwDOKfq5gM6o5z1a",
+      "title": "Addresses 171",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/182",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "closes #171 ",
+      "createdAt": "2025-09-16T16:40:29Z",
+      "updatedAt": "2025-09-16T17:41:09Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "Addresses-171",
+      "headRefOid": "b35755cc39f8728d635e5d9273885c6545961b50",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7AleMj",
+          "commit": {
+            "abbreviatedOid": "b35755c"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T17:41:09Z",
+          "updatedAt": "2025-09-16T17:41:09Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 183,
+      "id": "PR_kwDOKfq5gM6o6gWa",
+      "title": "Addresses 175",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/183",
+      "state": "OPEN",
+      "author": "mandelj7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "closes #175 ",
+      "createdAt": "2025-09-16T17:55:25Z",
+      "updatedAt": "2025-09-16T18:04:09Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "Addresses-175",
+      "headRefOid": "127a93fe5857e17b479c306a0af543e340955483",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7Alxyu",
+          "commit": {
+            "abbreviatedOid": "127a93f"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-16T18:04:09Z",
+          "updatedAt": "2025-09-16T18:04:09Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
