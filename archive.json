@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-18T01:46:53.043077+00:00",
+  "timestamp": "2025-09-21T01:57:27.490454+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -6690,7 +6690,7 @@
       "labels": [],
       "body": "close #168 ",
       "createdAt": "2025-09-16T16:24:07Z",
-      "updatedAt": "2025-09-16T17:40:32Z",
+      "updatedAt": "2025-09-18T11:19:22Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6715,6 +6715,39 @@
           "createdAt": "2025-09-16T17:40:32Z",
           "updatedAt": "2025-09-16T17:40:32Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7BDvok",
+          "commit": {
+            "abbreviatedOid": "20cd9ce"
+          },
+          "author": "reschke",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-18T11:17:32Z",
+          "updatedAt": "2025-09-18T11:17:33Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n> Client requests are submitted by use of the POST method.\r\n```",
+              "createdAt": "2025-09-18T11:17:32Z",
+              "updatedAt": "2025-09-18T11:17:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7BDyJV",
+          "commit": {
+            "abbreviatedOid": "20cd9ce"
+          },
+          "author": "reschke",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "Otherwise LGTM.",
+          "createdAt": "2025-09-18T11:19:22Z",
+          "updatedAt": "2025-09-18T11:19:22Z",
+          "comments": []
         }
       ]
     },
@@ -6730,7 +6763,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-09-16T16:34:35Z",
-      "updatedAt": "2025-09-16T17:40:52Z",
+      "updatedAt": "2025-09-18T11:22:10Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6754,6 +6787,19 @@
           "body": "",
           "createdAt": "2025-09-16T17:40:52Z",
           "updatedAt": "2025-09-16T17:40:52Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7BD17K",
+          "commit": {
+            "abbreviatedOid": "ef30579"
+          },
+          "author": "reschke",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "Sounds good. That said,\r\n\r\nhttps://www.rfc-editor.org/rfc/rfc9113.html#appendix-A\r\n\r\nhas very detailed requirements for Cipher Suites. not sure whether they are in sync with BCP195.\r\n",
+          "createdAt": "2025-09-18T11:22:10Z",
+          "updatedAt": "2025-09-18T11:22:10Z",
           "comments": []
         }
       ]
@@ -6834,6 +6880,46 @@
           "body": "",
           "createdAt": "2025-09-16T18:04:09Z",
           "updatedAt": "2025-09-16T18:04:09Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 184,
+      "id": "PR_kwDOKfq5gM6pkgA9",
+      "title": "Update PBKDF2",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/184",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-19T19:13:40Z",
+      "updatedAt": "2025-09-20T13:53:45Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-pbkdf2-ref",
+      "headRefOid": "81f9e6d3cdc1a6508e9f1f886277c4a519b1bb9c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7BqJDY",
+          "commit": {
+            "abbreviatedOid": "81f9e6d"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-20T13:53:45Z",
+          "updatedAt": "2025-09-20T13:53:45Z",
           "comments": []
         }
       ]
