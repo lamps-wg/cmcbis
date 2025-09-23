@@ -1329,7 +1329,6 @@ each of the controls described in this document.
 | id-cmc-queryPending        |  id-cmc 21 |  OCTET STRING  |      6.13 |
 | id-cmc-popLinkRandom       |  id-cmc 22 |  OCTET STRING  |      6.3.1 |
 | id-cmc-popLinkWitness      |  id-cmc 23 |  OCTET STRING  |      6.3.1 |
-| id-cmc-popLinkWitnessV2    |  id-cmc 33 |  OCTET STRING  |      6.3.1.1 |
 | id-cmc-confirmCertAcceptance |  id-cmc 24 |  CMCCertId   |      6.14 |
 | id-cmc-statusInfoV2        |  id-cmc 25 |  CMCStatusInfoV2 |    6.1.1 |
 | id-cmc-trustedAnchors      |  id-cmc 26 |  PublishTrustAnchors |6.15 |
@@ -1339,6 +1338,7 @@ each of the controls described in this document.
 | id-cmc-publishCert         |  id-cmc 30 |  CMCPublicationInfo | 6.18 |
 | id-cmc-modCertTemplate     |  id-cmc 31 |  ModCertTemplate |    6.5.1 |
 | id-cmc-controlProcessed    |  id-cmc 32 |  ControlsProcessed |  6.19 |
+| id-cmc-popLinkWitnessV2    |  id-cmc 33 |  OCTET STRING  |      6.3.1.1 |
 | id-cmc-identityProofV2     |  id-cmc 34 |  IdentityProofV2 |    6.2.1 |
 | id-cmc-raIdentityWitness   |  id-cmc 35 |  BodyPartPath |       6.20 |
 | id-cmc-responseBody        |  id-cmc 37 |  BodyPartPath |       6.21 |
