@@ -141,8 +141,8 @@ be ".p10".
 Simple enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  A smime-type parameter MUST be on the
 Content-Type statement with a value of "certs-only".  A file name
-with the ".p7c" extension MUST be specified as part of the Content-
-Type or Content-Disposition statement.
+with the ".p7c" extension MUST be specified as part of the
+Content-Type or Content-Disposition statement.
 
 Full enrollment request messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
@@ -153,8 +153,8 @@ statement.
 Full enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
 with a value of "CMC-Response".  A file name with the ".p7m"
-extension MUST be specified as part of the Content-Type or Content-
-Disposition statement.
+extension MUST be specified as part of the Content-Type or
+Content-Disposition statement.
 
 | Item         | MIME Type              | File Extension      | SMIME Type   |
 |:-------------|:-----------------------|:-----------|:-------------|
