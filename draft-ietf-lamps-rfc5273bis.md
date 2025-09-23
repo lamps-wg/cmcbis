@@ -139,29 +139,29 @@ or a Content-Disposition statement.  The extension for the file MUST
 be ".p10".
 
 Simple enrollment response messages MUST be encoded as content type
-"application/pkcs7-mime".  An smime-type parameter MUST be on the
+"application/pkcs7-mime".  A smime-type parameter MUST be on the
 Content-Type statement with a value of "certs-only".  A file name
 with the ".p7c" extension MUST be specified as part of the
 Content-Type or Content-Disposition statement.
 
 Full enrollment request messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-request".  A file name with the ".p7m" extension
+with a value of "CMC-Request".  A file name with the ".p7m" extension
 MUST be specified as part of the Content-Type or Content-Disposition
 statement.
 
 Full enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-response".  A file name with the ".p7m"
+with a value of "CMC-Response".  A file name with the ".p7m"
 extension MUST be specified as part of the Content-Type or
 Content-Disposition statement.
 
 | Item         | MIME Type              | File Extension      | SMIME Type   |
 |:-------------|:-----------------------|:-----------|:-------------|
 | Simple PKI Request  | application/pkcs10     | .p10       | N/A          |
-| Full PKI Request    | application/pkcs7-mime | .p7m       | CMC-request  |
+| Full PKI Request    | application/pkcs7-mime | .p7m       | CMC-Request  |
 | Simple PKI Response  | application/pkcs7-mime | .p7c       | certs-only   |
-| Full PKI Response     | application/pkcs7-mime | .p7m       | CMC-response |
+| Full PKI Response     | application/pkcs7-mime | .p7m       | CMC-Response |
 {: #mime-id title="MIME PKI Request/Response Identification"}
 
 
@@ -196,11 +196,11 @@ to POST are relevant for this specification.
 
 A PKI Request using the POST method is constructed as follows:
 
-The Content-Type header field MUST have the appropriate value from {{mime-id}}.
+The Content-Type field MUST have the appropriate value from {{mime-id}}.
 
-A Content-Type header field for a request:
+A Content-Type field for a request:
 
-> Content-Type: application/pkcs7-mime; smime-type=CMC-request; name=request.p7m
+> Content-Type: application/pkcs7-mime; smime-type=CMC-Request; name=request.p7m
 
 The content of the message is the binary value of the encoding of the
 PKI Request.
@@ -211,11 +211,11 @@ The content of an HTTP-based PKI Response is
 the binary value of the BER (Basic Encoding
 Rules) encoding of either a Simple or Full PKI Response.
 
-The Content-Type header field MUST have the appropriate value from {{mime-id}}.
+The Content-Type field MUST have the appropriate value from {{mime-id}}.
 
-A Content-Type header field for a response:
+A Content-Type field for a response:
 
-> Content-Type: application/pkcs7-mime; smime-type=CMC-response; name=response.p7m
+> Content-Type: application/pkcs7-mime; smime-type=CMC-Response; name=response.p7m
 
 # TCP-Based Protocol
 
@@ -237,9 +237,9 @@ The TCP port number is 5318.
 
 Prior to {{CMC-Updates}}, CMC did not have a registered port number and
 used an externally configured port from the Private Port range.
-Client implementations MAY want to continue to allow for this to
-occur.  Servers SHOULD change to use the new port.  It is expected
-that HTTP will continue to be the primary transport method used by
+Client implementations MAY continue to use a port chosen from the
+Private Port range.  A TCP Server SHOULD use port 5318 assigned to the CMC service.
+It is expected that HTTP will continue to be the primary transport method used by
 CMC installations.
 
 
@@ -304,7 +304,7 @@ Obviously, the authors of this version of the document would like to
 thank Jim Schaad and Michael Myers for their work on the previous
 version of this document.
 
-The acknowledgment from the previous version of this document follows:
+The acknowledgement from the previous version of this document follows:
 
 The authors and the PKIX Working Group are grateful for the
 participation of Xiaoyi Liu and Jeff Weinstein in helping to author
