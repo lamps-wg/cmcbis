@@ -6397,9 +6397,12 @@ value is placed in a certificate, an appropriate extended key usage
 defined in <a href="#ExtendedKeyUsage" class="auto internal xref">Section 9.1</a> <span class="bcp14">MUST</span> be included in the certificate as well.<a href="#section-9.2-1" class="pilcrow">¶</a></p>
 <p id="section-9.2-2">The id-ad-cmc OID is used when the subject offers certification
 services using the CMC protocol.  If the CMC services are available
-via HTTP or FTP, accessLocation <span class="bcp14">MUST</span> be a uniformResourceIdentifier.
-If the CMC services are available via electronic mail, accessLocation
-<span class="bcp14">MUST</span> be an rfc822Name.  If CMC services are available using TCP/IP,
+via HTTP or FTP <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-08#section-2" class="relref">Section 2</a> of [<a href="#CMC-TRANS" class="cite xref">CMC-TRANS</a>]</span> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-08#section-4" class="relref">Section 4</a> of [<a href="#CMC-TRANS" class="cite xref">CMC-TRANS</a>]</span>
+, accessLocation <span class="bcp14">MUST</span> be a uniformResourceIdentifier.
+If the CMC services are available via electronic mail
+<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-08#section-3" class="relref">Section 3</a> of [<a href="#CMC-TRANS" class="cite xref">CMC-TRANS</a>]</span>, accessLocation
+<span class="bcp14">MUST</span> be an rfc822Name.  If CMC services are available using TCP/IP
+<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5273bis-08#section-5" class="relref">Section 5</a> of [<a href="#CMC-TRANS" class="cite xref">CMC-TRANS</a>]</span>,
 the dNSName or iPAddress name forms <span class="bcp14">MUST</span> be used.  Since the
 GeneralName data structure does not permit the inclusion of a port
 number, in the absence of other external configuration information,
