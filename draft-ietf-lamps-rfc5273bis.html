@@ -1482,7 +1482,9 @@ encoded form.<a href="#section-7-1" class="pilcrow">¶</a></p>
 issues another request to the server using the same connection.
 Reusing one connection for multiple successive requests, instead of
 opening multiple connections that are only used for a single request,
-is <span class="bcp14">RECOMMENDED</span> for performance and resource conservation reasons.  A
+is <span class="bcp14">RECOMMENDED</span> for performance and resource conservation reasons.
+The client <span class="bcp14">MUST</span> wait for the full response before making another request
+on the same connection. A
 server <span class="bcp14">MAY</span> close a connection after it has been idle for some period
 of time; this timeout would typically be several minutes long.<a href="#section-7-2" class="pilcrow">¶</a></p>
 <p id="section-7-3">CMC requires a registered port number to send and receive CMC
