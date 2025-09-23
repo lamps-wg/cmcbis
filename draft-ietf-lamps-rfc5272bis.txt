@@ -1370,9 +1370,6 @@ Table of Contents
    | id-cmc-popLinkWitness        | id-cmc |OCTET STRING       |6.3.1  |
    |                              | 23     |                   |       |
    +------------------------------+--------+-------------------+-------+
-   | id-cmc-popLinkWitnessV2      | id-cmc |OCTET STRING       |6.3.1.1|
-   |                              | 33     |                   |       |
-   +------------------------------+--------+-------------------+-------+
    | id-cmc-confirmCertAcceptance | id-cmc |CMCCertId          |6.14   |
    |                              | 24     |                   |       |
    +------------------------------+--------+-------------------+-------+
@@ -1399,6 +1396,9 @@ Table of Contents
    +------------------------------+--------+-------------------+-------+
    | id-cmc-controlProcessed      | id-cmc |ControlsProcessed  |6.19   |
    |                              | 32     |                   |       |
+   +------------------------------+--------+-------------------+-------+
+   | id-cmc-popLinkWitnessV2      | id-cmc |OCTET STRING       |6.3.1.1|
+   |                              | 33     |                   |       |
    +------------------------------+--------+-------------------+-------+
    | id-cmc-identityProofV2       | id-cmc |IdentityProofV2    |6.2.1  |
    |                              | 34     |                   |       |
