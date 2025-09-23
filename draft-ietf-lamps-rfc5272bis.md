@@ -3297,9 +3297,12 @@ defined in {{ExtendedKeyUsage}} MUST be included in the certificate as well.
 
 The id-ad-cmc OID is used when the subject offers certification
 services using the CMC protocol.  If the CMC services are available
-via HTTP or FTP, accessLocation MUST be a uniformResourceIdentifier.
-If the CMC services are available via electronic mail, accessLocation
-MUST be an rfc822Name.  If CMC services are available using TCP/IP,
+via HTTP or FTP {{Section 2 of CMC-TRANS}} and {{Section 4 of CMC-TRANS}}
+, accessLocation MUST be a uniformResourceIdentifier.
+If the CMC services are available via electronic mail
+{{Section 3 of CMC-TRANS}}, accessLocation
+MUST be an rfc822Name.  If CMC services are available using TCP/IP
+{{Section 5 of CMC-TRANS}},
 the dNSName or iPAddress name forms MUST be used.  Since the
 GeneralName data structure does not permit the inclusion of a port
 number, in the absence of other external configuration information,
