@@ -249,8 +249,8 @@ Table of Contents
 6.2.  PKI Response
 
    The content of an HTTP-based PKI Response is the binary value of the
-   BER (Basic Encoding Rules) encoding of either a Simple or Full PKI
-   Response.
+   BER (Basic Encoding Rules) encoding [X690] of either a Simple or Full
+   PKI Response.
 
    The Content-Type field MUST have the appropriate value from Table 2.
 
@@ -371,6 +371,13 @@ Table of Contents
               Multipurpose Internet Mail Extensions (S/MIME) Version 4.0
               Message Specification", RFC 8551, DOI 10.17487/RFC8551,
               April 2019, <https://www.rfc-editor.org/rfc/rfc8551>.
+
+   [X690]     ITU-T, "Information Technology -- Abstract Syntax Notation
+              One (ASN.1): ASN.1 encoding rules: Specification of Basic
+              Encoding Rules (BER), Canonical Encoding Rules (CER) and
+              Distinguished Encoding Rules (DER)", ITU-T
+              Recommendation X.690, ISO/IEC 8825-1:2021, February 2021,
+              <https://www.itu.int/rec/T-REC-X.690>.
 
 10.2.  Informative References
 
