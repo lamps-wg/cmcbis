@@ -353,10 +353,6 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
               rfc5272bis-08>.
 
-   [erratum3593]
-              "RFC 5273 erratum 3593", April 2013,
-              <https://www.rfc-editor.org/errata/eid3593>.
-
    [HTTP]     Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
               Ed., "HTTP Semantics", STD 97, RFC 9110,
               DOI 10.17487/RFC9110, June 2022,
@@ -388,6 +384,10 @@ Table of Contents
               Schaad, J., "Certificate Management over CMS (CMC)
               Updates", RFC 6402, DOI 10.17487/RFC6402, November 2011,
               <https://www.rfc-editor.org/rfc/rfc6402>.
+
+   [erratum3593]
+              "RFC 5273 erratum 3593", April 2013,
+              <https://www.rfc-editor.org/errata/eid3593>.
 
    [IPsec]    Kent, S. and K. Seo, "Security Architecture for the
               Internet Protocol", RFC 4301, DOI 10.17487/RFC4301,
