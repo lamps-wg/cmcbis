@@ -176,13 +176,13 @@ Table of Contents
 
    Full enrollment request messages MUST be encoded as content type
    "application/pkcs7-mime".  The smime-type parameter MUST be included
-   with a value of "CMC-request".  A file name with the ".p7m" extension
+   with a value of "CMC-Request".  A file name with the ".p7m" extension
    MUST be specified as part of the Content-Type or Content-Disposition
    statement.
 
    Full enrollment response messages MUST be encoded as content type
    "application/pkcs7-mime".  The smime-type parameter MUST be included
-   with a value of "CMC-response".  A file name with the ".p7m"
+   with a value of "CMC-Response".  A file name with the ".p7m"
    extension MUST be specified as part of the Content-Type or Content-
    Disposition statement.
 
@@ -192,13 +192,13 @@ Table of Contents
    | Simple PKI         | application/ | .p10           | N/A          |
    | Request            | pkcs10       |                |              |
    +--------------------+--------------+----------------+--------------+
-   | Full PKI           | application/ | .p7m           | CMC-request  |
+   | Full PKI           | application/ | .p7m           | CMC-Request  |
    | Request            | pkcs7-mime   |                |              |
    +--------------------+--------------+----------------+--------------+
    | Simple PKI         | application/ | .p7c           | certs-only   |
    | Response           | pkcs7-mime   |                |              |
    +--------------------+--------------+----------------+--------------+
-   | Full PKI           | application/ | .p7m           | CMC-response |
+   | Full PKI           | application/ | .p7m           | CMC-Response |
    | Response           | pkcs7-mime   |                |              |
    +--------------------+--------------+----------------+--------------+
 
@@ -235,12 +235,11 @@ Table of Contents
 
    A PKI Request using the POST method is constructed as follows:
 
-   The Content-Type header field MUST have the appropriate value from
-   Table 2.
+   The Content-Type field MUST have the appropriate value from Table 2.
 
-   A Content-Type header field for a request:
+   A Content-Type field for a request:
 
-      Content-Type: application/pkcs7-mime; smime-type=CMC-request;
+      Content-Type: application/pkcs7-mime; smime-type=CMC-Request;
       name=request.p7m
 
    The content of the message is the binary value of the encoding of the
@@ -252,12 +251,11 @@ Table of Contents
    BER (Basic Encoding Rules) encoding of either a Simple or Full PKI
    Response.
 
-   The Content-Type header field MUST have the appropriate value from
-   Table 2.
+   The Content-Type field MUST have the appropriate value from Table 2.
 
-   A Content-Type header field for a response:
+   A Content-Type field for a response:
 
-      Content-Type: application/pkcs7-mime; smime-type=CMC-response;
+      Content-Type: application/pkcs7-mime; smime-type=CMC-Response;
       name=response.p7m
 
 7.  TCP-Based Protocol
