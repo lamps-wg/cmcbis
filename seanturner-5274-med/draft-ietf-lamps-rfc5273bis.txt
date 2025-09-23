@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 16 March 2026                                 12 September 2025
+Expires: 27 March 2026                                 23 September 2025
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 March 2026.
+   This Internet-Draft will expire on 27 March 2026.
 
 Copyright Notice
 
@@ -169,7 +169,7 @@ Table of Contents
    be ".p10".
 
    Simple enrollment response messages MUST be encoded as content type
-   "application/pkcs7-mime".  An smime-type parameter MUST be on the
+   "application/pkcs7-mime".  A smime-type parameter MUST be on the
    Content-Type statement with a value of "certs-only".  A file name
    with the ".p7c" extension MUST be specified as part of the Content-
    Type or Content-Disposition statement.
@@ -280,10 +280,10 @@ Table of Contents
 
    Prior to [CMC-Updates], CMC did not have a registered port number and
    used an externally configured port from the Private Port range.
-   Client implementations MAY want to continue to allow for this to
-   occur.  Servers SHOULD change to use the new port.  It is expected
-   that HTTP will continue to be the primary transport method used by
-   CMC installations.
+   Client implementations MAY continue to use a port chosen from the
+   Private Port range.  A TCP Server SHOULD use port 5318 assigned to
+   the CMC service.  It is expected that HTTP will continue to be the
+   primary transport method used by CMC installations.
 
 8.  IANA Considerations
 
@@ -403,7 +403,7 @@ Acknowledgements
    thank Jim Schaad and Michael Myers for their work on the previous
    version of this document.
 
-   The acknowledgment from the previous version of this document
+   The acknowledgement from the previous version of this document
    follows:
 
    The authors and the PKIX Working Group are grateful for the
