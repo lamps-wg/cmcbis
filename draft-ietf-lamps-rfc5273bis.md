@@ -237,9 +237,9 @@ The TCP port number is 5318.
 
 Prior to {{CMC-Updates}}, CMC did not have a registered port number and
 used an externally configured port from the Private Port range.
-Client implementations MAY want to continue to allow for this to
-occur.  Servers SHOULD change to use the new port.  It is expected
-that HTTP will continue to be the primary transport method used by
+Client implementations MAY continue to use a port chosen from the
+Private Port range.  A TCP Server SHOULD use port 5318 assigned to the CMC service.
+It is expected that HTTP will continue to be the primary transport method used by
 CMC installations.
 
 
