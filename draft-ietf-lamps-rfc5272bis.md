@@ -198,7 +198,7 @@ to issue a certificate.
 
 ##  Changes from RFC 2797
 
-{{CMC-PROTv1}} did major overhaul on the layout of the document. This
+{{CMC-PROTv1}} was a major overhaul on the layout of the document. This
 included two different steps.  Firstly we removed some sections from
 the document and moved them to two other documents. Information on
 how to transport our messages are now found in {{?CMC-TRANS}}.
