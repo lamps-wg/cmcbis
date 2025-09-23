@@ -146,22 +146,22 @@ Type or Content-Disposition statement.
 
 Full enrollment request messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-request".  A file name with the ".p7m" extension
+with a value of "CMC-Request".  A file name with the ".p7m" extension
 MUST be specified as part of the Content-Type or Content-Disposition
 statement.
 
 Full enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-response".  A file name with the ".p7m"
+with a value of "CMC-Response".  A file name with the ".p7m"
 extension MUST be specified as part of the Content-Type or Content-
 Disposition statement.
 
 | Item         | MIME Type              | File Extension      | SMIME Type   |
 |:-------------|:-----------------------|:-----------|:-------------|
 | Simple PKI Request  | application/pkcs10     | .p10       | N/A          |
-| Full PKI Request    | application/pkcs7-mime | .p7m       | CMC-request  |
+| Full PKI Request    | application/pkcs7-mime | .p7m       | CMC-Request  |
 | Simple PKI Response  | application/pkcs7-mime | .p7c       | certs-only   |
-| Full PKI Response     | application/pkcs7-mime | .p7m       | CMC-response |
+| Full PKI Response     | application/pkcs7-mime | .p7m       | CMC-Response |
 {: #mime-id title="MIME PKI Request/Response Identification"}
 
 
@@ -196,11 +196,11 @@ to POST are relevant for this specification.
 
 A PKI Request using the POST method is constructed as follows:
 
-The Content-Type header field MUST have the appropriate value from {{mime-id}}.
+The Content-Type field MUST have the appropriate value from {{mime-id}}.
 
-A Content-Type header field for a request:
+A Content-Type field for a request:
 
-> Content-Type: application/pkcs7-mime; smime-type=CMC-request; name=request.p7m
+> Content-Type: application/pkcs7-mime; smime-type=CMC-Request; name=request.p7m
 
 The content of the message is the binary value of the encoding of the
 PKI Request.
@@ -211,11 +211,11 @@ The content of an HTTP-based PKI Response is
 the binary value of the BER (Basic Encoding
 Rules) encoding of either a Simple or Full PKI Response.
 
-The Content-Type header field MUST have the appropriate value from {{mime-id}}.
+The Content-Type field MUST have the appropriate value from {{mime-id}}.
 
-A Content-Type header field for a response:
+A Content-Type field for a response:
 
-> Content-Type: application/pkcs7-mime; smime-type=CMC-response; name=response.p7m
+> Content-Type: application/pkcs7-mime; smime-type=CMC-Response; name=response.p7m
 
 # TCP-Based Protocol
 
