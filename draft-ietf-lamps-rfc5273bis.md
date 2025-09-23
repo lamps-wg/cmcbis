@@ -51,7 +51,18 @@ normative:
   CMC-STRUCT: I-D.ietf-lamps-rfc5272bis
   HTTP: RFC9110
   SMIMEV4: RFC8551
-
+  X690:
+    target: https://www.itu.int/rec/T-REC-X.690
+    title: >
+      Information Technology -- Abstract Syntax Notation One (ASN.1):
+      ASN.1 encoding rules: Specification of Basic Encoding Rules (BER),
+      Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)
+    date: 2021-02
+    author:
+    -  org: ITU-T
+    seriesinfo:
+      ITU-T Recommendation: X.690
+      ISO/IEC: 8825-1:2021
 
 informative:
   TLS: RFC5246
@@ -209,7 +220,7 @@ PKI Request.
 
 The content of an HTTP-based PKI Response is
 the binary value of the BER (Basic Encoding
-Rules) encoding of either a Simple or Full PKI Response.
+Rules) encoding {{X690}} of either a Simple or Full PKI Response.
 
 The Content-Type field MUST have the appropriate value from {{mime-id}}.
 
