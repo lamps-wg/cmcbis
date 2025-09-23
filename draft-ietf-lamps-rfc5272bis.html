@@ -1551,7 +1551,7 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
         <h3 id="name-changes-from-rfc-2797">
 <a href="#section-1.3" class="section-number selfRef">1.3. </a><a href="#name-changes-from-rfc-2797" class="section-name selfRef">Changes from RFC 2797</a>
         </h3>
-<p id="section-1.3-1">We have done a major overhaul on the layout of the document. This
+<p id="section-1.3-1"><span>[<a href="#CMC-PROTv1" class="cite xref">CMC-PROTv1</a>]</span> was a major overhaul on the layout of the document. This
 included two different steps.  Firstly we removed some sections from
 the document and moved them to two other documents. Information on
 how to transport our messages are now found in <span>[<a href="#CMC-TRANS" class="cite xref">CMC-TRANS</a>]</span>.
@@ -1611,31 +1611,33 @@ in <span>[<a href="#CMC-COMPL" class="cite xref">CMC-COMPL</a>]</span>.<a href="
         <h3 id="name-updates-made-by-rfc-6402">
 <a href="#section-1.4" class="section-number selfRef">1.4. </a><a href="#name-updates-made-by-rfc-6402" class="section-name selfRef">Updates Made by RFC 6402</a>
         </h3>
-<p id="section-1.4-1">Two new controls have been added:<a href="#section-1.4-1" class="pilcrow">¶</a></p>
-<ul class="normal ulEmpty">
-<li class="normal ulEmpty" id="section-1.4-2.1">
-            <p id="section-1.4-2.1.1">RA Identity Witness  allows for an RA to perform identity checking
-  using the identity and shared-secret, and then tell any
-  following servers that the identity check was successfully
-  performed.<a href="#section-1.4-2.1.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
+<p id="section-1.4-1">This version of the specification includes changes to <span>[<a href="#CMC-PROTv1" class="cite xref">CMC-PROTv1</a>]</span>
+that are noted in this section.<a href="#section-1.4-1" class="pilcrow">¶</a></p>
+<p id="section-1.4-2">Two new controls have been added:<a href="#section-1.4-2" class="pilcrow">¶</a></p>
 <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-1.4-3.1">
-            <p id="section-1.4-3.1.1">Response Body  allows for an RA to identify a nested response for
-  an EE to process.<a href="#section-1.4-3.1.1" class="pilcrow">¶</a></p>
+            <p id="section-1.4-3.1.1">RA Identity Witness  allows for an RA to perform identity checking
+  using the identity and shared-secret, and then tell any
+  following servers that the identity check was successfully
+  performed.<a href="#section-1.4-3.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-1.4-4">Created a new attribute, Change Subject Name, that allows a client
+<ul class="normal ulEmpty">
+<li class="normal ulEmpty" id="section-1.4-4.1">
+            <p id="section-1.4-4.1.1">Response Body  allows for an RA to identify a nested response for
+  an EE to process.<a href="#section-1.4-4.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-1.4-5">Created a new attribute, Change Subject Name, that allows a client
 to request a change in the subject name and subject alternate name
-fields in a certificate.<a href="#section-1.4-4" class="pilcrow">¶</a></p>
-<p id="section-1.4-5">Added Extended Key Usages for CMC to distinguish server types.<a href="#section-1.4-5" class="pilcrow">¶</a></p>
-<p id="section-1.4-6">Defined a new Subject Information Access type to hold locations to
-contact the CMC server.<a href="#section-1.4-6" class="pilcrow">¶</a></p>
-<p id="section-1.4-7">Clarified that the use of a pre-existing certificate is not limited
+fields in a certificate.<a href="#section-1.4-5" class="pilcrow">¶</a></p>
+<p id="section-1.4-6">Added Extended Key Usages for CMC to distinguish server types.<a href="#section-1.4-6" class="pilcrow">¶</a></p>
+<p id="section-1.4-7">Defined a new Subject Information Access type to hold locations to
+contact the CMC server.<a href="#section-1.4-7" class="pilcrow">¶</a></p>
+<p id="section-1.4-8">Clarified that the use of a pre-existing certificate is not limited
 to just renewal and rekey messages and is required for support.
 This formalizes a requirement for the ability to do renewal and
-rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</a></p>
+rekey that previously was implicit.<a href="#section-1.4-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="changes-since-rfc-6402">
@@ -1643,23 +1645,25 @@ rekey that previously was implicit.<a href="#section-1.4-7" class="pilcrow">¶</
         <h3 id="name-changes-since-rfc-6402">
 <a href="#section-1.5" class="section-number selfRef">1.5. </a><a href="#name-changes-since-rfc-6402" class="section-name selfRef">Changes Since RFC 6402</a>
         </h3>
-<p id="section-1.5-1">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text.<a href="#section-1.5-1" class="pilcrow">¶</a></p>
-<p id="section-1.5-2">Included the following errata: <span>[<a href="#erratum8385" class="cite xref">erratum8385</a>]</span>, <span>[<a href="#erratum8137" class="cite xref">erratum8137</a>]</span>,
+<p id="section-1.5-1">This version of the specification also introduces changes to
+<span>[<a href="#CMC-PROTv1" class="cite xref">CMC-PROTv1</a>]</span> that are noted in this section.<a href="#section-1.5-1" class="pilcrow">¶</a></p>
+<p id="section-1.5-2">Merged <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span> text.<a href="#section-1.5-2" class="pilcrow">¶</a></p>
+<p id="section-1.5-3">Included the following errata: <span>[<a href="#erratum8385" class="cite xref">erratum8385</a>]</span>, <span>[<a href="#erratum8137" class="cite xref">erratum8137</a>]</span>,
 <span>[<a href="#erratum8027" class="cite xref">erratum8027</a>]</span>, <span>[<a href="#erratum7629" class="cite xref">erratum7629</a>]</span>, <span>[<a href="#erratum7628" class="cite xref">erratum7628</a>]</span>, <span>[<a href="#erratum7627" class="cite xref">erratum7627</a>]</span>,
 <span>[<a href="#erratum7379" class="cite xref">erratum7379</a>]</span>, <span>[<a href="#erratum6571" class="cite xref">erratum6571</a>]</span>, <span>[<a href="#erratum5931" class="cite xref">erratum5931</a>]</span>, <span>[<a href="#erratum4775" class="cite xref">erratum4775</a>]</span>,
-<span>[<a href="#erratum2731" class="cite xref">erratum2731</a>]</span>, and <span>[<a href="#erratum2063" class="cite xref">erratum2063</a>]</span>.<a href="#section-1.5-2" class="pilcrow">¶</a></p>
-<p id="section-1.5-3">Addressed <span>[<a href="#erratum3943" class="cite xref">erratum3943</a>]</span> for RFC 6402.<a href="#section-1.5-3" class="pilcrow">¶</a></p>
-<p id="section-1.5-4">To support adopting SHA-256 and HMAC-SHA256, maca-hMAC-SHA256 was added to
+<span>[<a href="#erratum2731" class="cite xref">erratum2731</a>]</span>, and <span>[<a href="#erratum2063" class="cite xref">erratum2063</a>]</span>.<a href="#section-1.5-3" class="pilcrow">¶</a></p>
+<p id="section-1.5-4">Addressed <span>[<a href="#erratum3943" class="cite xref">erratum3943</a>]</span> for RFC 6402.<a href="#section-1.5-4" class="pilcrow">¶</a></p>
+<p id="section-1.5-5">To support adopting SHA-256 and HMAC-SHA256, maca-hMAC-SHA256 was added to
 POPAlgs and mda-sha256 was added to WitnessAlgs. Both were included in
-the example in Appendix B.<a href="#section-1.5-4" class="pilcrow">¶</a></p>
-<p id="section-1.5-5">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256.<a href="#section-1.5-5" class="pilcrow">¶</a></p>
-<p id="section-1.5-6">Updated the ASN.1 module to use the 2002 ASN.1 module from <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1.5-6" class="pilcrow">¶</a></p>
-<p id="section-1.5-7">Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
-Module for PBKDF2 PRFs.<a href="#section-1.5-7" class="pilcrow">¶</a></p>
-<p id="section-1.5-8">Added a direct POP example to address management of KEM certificates.<a href="#section-1.5-8" class="pilcrow">¶</a></p>
-<p id="section-1.5-9">Added id-ce-subjectKeyIdentifier to examples.<a href="#section-1.5-9" class="pilcrow">¶</a></p>
-<p id="section-1.5-10">Clarified that subjectKeyIdentifier choice used with id-alg-noSignature.<a href="#section-1.5-10" class="pilcrow">¶</a></p>
-<p id="section-1.5-11">Update CMC Control Attribute Table to include raIdentityWitness and responseBody from RFC 6402<a href="#section-1.5-11" class="pilcrow">¶</a></p>
+the example in Appendix B.<a href="#section-1.5-5" class="pilcrow">¶</a></p>
+<p id="section-1.5-6">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256.<a href="#section-1.5-6" class="pilcrow">¶</a></p>
+<p id="section-1.5-7">Updated the ASN.1 module to use the 2002 ASN.1 module from <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1.5-7" class="pilcrow">¶</a></p>
+<p id="section-1.5-8">Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
+Module for PBKDF2 PRFs.<a href="#section-1.5-8" class="pilcrow">¶</a></p>
+<p id="section-1.5-9">Added a direct POP example to address management of KEM certificates.<a href="#section-1.5-9" class="pilcrow">¶</a></p>
+<p id="section-1.5-10">Added id-ce-subjectKeyIdentifier to examples.<a href="#section-1.5-10" class="pilcrow">¶</a></p>
+<p id="section-1.5-11">Clarified that subjectKeyIdentifier choice used with id-alg-noSignature.<a href="#section-1.5-11" class="pilcrow">¶</a></p>
+<p id="section-1.5-12">Update CMC Control Attribute Table to include raIdentityWitness and responseBody from RFC 6402<a href="#section-1.5-12" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
