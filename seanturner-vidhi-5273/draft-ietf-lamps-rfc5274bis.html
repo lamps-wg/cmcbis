@@ -15,14 +15,14 @@ protocol are covered in other documents.  This document provides the
 information needed to make a compliant version of CMC. 
        This document obsoletes RFC 5274 and RFC 6402. 
     " name="description">
-<meta content="xml2rfc 3.30.1" name="generator">
+<meta content="xml2rfc 3.30.2" name="generator">
 <meta content="Public Key Infrastructure" name="keyword">
 <meta content="Cryptographic Message Syntax" name="keyword">
 <meta content="Certificate Management" name="keyword">
 <meta content="Compliance" name="keyword">
 <meta content="draft-ietf-lamps-rfc5274bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.30.1
+  xml2rfc 3.30.2
     Python 3.12.11
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
@@ -1057,7 +1057,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Mandel, Ed &amp; Turner, Ed</td>
-<td class="center">Expires 19 March 2026</td>
+<td class="center">Expires 27 March 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1073,12 +1073,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5274" class="eref">5274</a>, <a href="https://www.rfc-editor.org/rfc/rfc6402" class="eref">6402</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-09-15" class="published">15 September 2025</time>
+<time datetime="2025-09-23" class="published">23 September 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-03-19">19 March 2026</time></dd>
+<dd class="expires"><time datetime="2026-03-27">27 March 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1136,7 +1136,7 @@ information needed to make a compliant version of CMC.<a href="#section-abstract
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 19 March 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 27 March 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1255,7 +1255,7 @@ information needed to make a compliant version of CMC.<a href="#section-abstract
       </h2>
 <p id="section-1-1">The CMC (Certificate Management over CMS) protocol is designed in
 terms of a client/server relationship.  In the simplest case, the
-client is the requestor of the certificate (i.e., the End Entity
+client is the requestor of the certificate (i.e., the End-Entity
 (EE)) and the server is the issuer of the certificate (i.e., the
 Certification Authority (CA)).  The introduction of a Registration
 Authority (RA) into the set of agents complicates the picture only
@@ -1363,7 +1363,7 @@ that they are to the server.<a href="#section-2-2.20.1" class="pilcrow">¶</a></
         <dd style="margin-left: 1.5em" id="section-2-2.22">
           <p id="section-2-2.22.1">Refers to a value that can be used to
 prove that the private key corresponding to a public key is in the
-possession and can be used by an end-entity.<a href="#section-2-2.22.1" class="pilcrow">¶</a></p>
+possession and can be used by an End-Entity.<a href="#section-2-2.22.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.23">Transport wrapper:</dt>
@@ -1372,6 +1372,8 @@ possession and can be used by an end-entity.<a href="#section-2-2.22.1" class="p
 </dd>
       <dd class="break"></dd>
 </dl>
+<p id="section-2-3">Entity:
+:Refers to EE, RA (or LRA), or CA.<a href="#section-2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="requirements-terminology">
@@ -1397,13 +1399,17 @@ CMC Controls Attribute table.<a href="#section-4-2" class="pilcrow">¶</a></p>
 section to maintain backwards compatability.<a href="#section-4-3" class="pilcrow">¶</a></p>
 <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-4-4.1">
-          <p id="section-4-4.1.1">Replaced SHA-1 for SHA-256
-Replaced HMAC-SHA-1 for HMAC-SHA-256<a href="#section-4-4.1.1" class="pilcrow">¶</a></p>
+          <p id="section-4-4.1.1">Replaced SHA-1 for SHA-256<a href="#section-4-4.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-4-5">Updated the Introduction section, changed "all agents" to
+<ul class="normal ulEmpty">
+<li class="normal ulEmpty" id="section-4-5.1">
+          <p id="section-4-5.1.1">Replaced HMAC-SHA-1 for HMAC-SHA-256<a href="#section-4-5.1.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-4-6">Updated the Introduction section, changed "all agents" to
 "all entities" in the overview to maintain consistency
-throughout the document, and re-numbered the section headers.<a href="#section-4-5" class="pilcrow">¶</a></p>
+throughout the document, and re-numbered the section headers.<a href="#section-4-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="requirements-for-all-entities">
@@ -1431,37 +1437,37 @@ in <span>[<a href="#CMC-TRANS" class="cite xref">CMC-TRANS</a>]</span>.  Other t
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-cryptographic-algorithm-req" class="section-name selfRef">Cryptographic Algorithm Requirements</a>
         </h3>
 <p id="section-5.1-1">All entities <span class="bcp14">MUST</span> verify RSA-SHA256 signatures in
-SignedData; see <span>[<a href="#CMS-ALG2" class="cite xref">CMS-ALG2</a>]</span>.  Entities <span class="bcp14">MAY</span> verify other signature
+SignedData; (see <span>[<a href="#CMS-ALG2" class="cite xref">CMS-ALG2</a>]</span>).  Entities <span class="bcp14">MAY</span> verify other signature
 algorithms.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 <p id="section-5.1-2">All entities <span class="bcp14">MUST</span> generate RSA-SHA256 signatures for
-SignedData; see <span>[<a href="#CMS-ALG2" class="cite xref">CMS-ALG2</a>]</span>.  Other signatures algorithms <span class="bcp14">MAY</span> be used
+SignedData; (see <span>[<a href="#CMS-ALG2" class="cite xref">CMS-ALG2</a>]</span>).  Other signatures algorithms <span class="bcp14">MAY</span> be used
 for generation.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 <p id="section-5.1-3">All entities <span class="bcp14">MUST</span> support Advanced Encryption Standard (AES) as the
-content encryption algorithm for EnvelopedData; see <span>[<a href="#CMS-AES" class="cite xref">CMS-AES</a>]</span>.
+content encryption algorithm for EnvelopedData; (see <span>[<a href="#CMS-AES" class="cite xref">CMS-AES</a>]</span>).
 Other content encryption algorithms <span class="bcp14">MAY</span> be implemented.<a href="#section-5.1-3" class="pilcrow">¶</a></p>
 <p id="section-5.1-4">All entities <span class="bcp14">MUST</span> support RSA as a key transport algorithm for
-EnvelopedData; see <span>[<a href="#CMS-ALG2" class="cite xref">CMS-ALG2</a>]</span>. Other key transport algorithms <span class="bcp14">MAY</span>
+EnvelopedData; (see <span>[<a href="#CMS-ALG2" class="cite xref">CMS-ALG2</a>]</span>). Other key transport algorithms <span class="bcp14">MAY</span>
 be implemented.<a href="#section-5.1-4" class="pilcrow">¶</a></p>
 <p id="section-5.1-5">If an entity supports key agreement for EnvelopedData, it <span class="bcp14">MUST</span>
-support Diffie-Hellman; see <span>[<a href="#CMS-DH" class="cite xref">CMS-DH</a>]</span>.<a href="#section-5.1-5" class="pilcrow">¶</a></p>
+support Diffie-Hellman; (see <span>[<a href="#CMS-DH" class="cite xref">CMS-DH</a>]</span>).<a href="#section-5.1-5" class="pilcrow">¶</a></p>
 <p id="section-5.1-6">If an entity supports PasswordRecipientInfo for EnvelopedData or
 AuthenticatedData, it <span class="bcp14">MUST</span> support PBKDF2 <span>[<a href="#PBKDF2" class="cite xref">PBKDF2</a>]</span> for key derivation
-algorithms.  It <span class="bcp14">MUST</span> support AES key wrap see <span>[<a href="#AES-WRAP" class="cite xref">AES-WRAP</a>]</span> as the key
+algorithms.  It <span class="bcp14">MUST</span> support AES key wrap (see <span>[<a href="#AES-WRAP" class="cite xref">AES-WRAP</a>]</span>) as the key
 encryption algorithm.<a href="#section-5.1-6" class="pilcrow">¶</a></p>
 <p id="section-5.1-7">If AuthenticatedData is supported, PasswordRecipientInfo <span class="bcp14">MUST</span> be
 supported.<a href="#section-5.1-7" class="pilcrow">¶</a></p>
 <p id="section-5.1-8">Algorithm requirements for the Identity Proof Version 2 control
-<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-08#section-6.2.1" class="relref">Section 6.2.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be implemented
+(<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-08#section-6.2.1" class="relref">Section 6.2.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>) are: SHA-256 <span class="bcp14">MUST</span> be implemented
 for hashAlgId.  HMAC-SHA256 <span class="bcp14">MUST</span> be implemented for macAlgId.<a href="#section-5.1-8" class="pilcrow">¶</a></p>
 <p id="section-5.1-9">Algorithm requirements for the Pop Link Witness Version 2 control
-<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-08#section-6.3.1" class="relref">Section 6.3.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be implemented
+(<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-08#section-6.3.1" class="relref">Section 6.3.1</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>) are: SHA-256 <span class="bcp14">MUST</span> be implemented
 for keyGenAlgorithm. PBKDF2 <span>[<a href="#PBKDF2" class="cite xref">PBKDF2</a>]</span> <span class="bcp14">MAY</span> be implemented for
 keyGenAlgorithm.  HMAC-SHA256 <span class="bcp14">MUST</span> be implemented for macAlgorithm.<a href="#section-5.1-9" class="pilcrow">¶</a></p>
 <p id="section-5.1-10">Algorithm requirements for the Encrypted POP and Decrypted POP
-controls <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-08#section-6.7" class="relref">Section 6.7</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be
+controls (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-08#section-6.7" class="relref">Section 6.7</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>) are: SHA-256 <span class="bcp14">MUST</span> be
 implemented for witnessAlgID. HMAC-SHA256 <span class="bcp14">MUST</span> be implemented for
 thePOPAlgID.<a href="#section-5.1-10" class="pilcrow">¶</a></p>
-<p id="section-5.1-11">Algorithm requirements for Publish Trust Anchors control <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-08#section-6.15" class="relref">Section 6.15</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span> are: SHA-256 <span class="bcp14">MUST</span> be implemented for hashAlgorithm.<a href="#section-5.1-11" class="pilcrow">¶</a></p>
+<p id="section-5.1-11">Algorithm requirements for Publish Trust Anchors control (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-08#section-6.15" class="relref">Section 6.15</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>) are: SHA-256 <span class="bcp14">MUST</span> be implemented for hashAlgorithm.<a href="#section-5.1-11" class="pilcrow">¶</a></p>
 <p id="section-5.1-12">If an EE generates DH keys for certification, it <span class="bcp14">MUST</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span>].  EEs <span class="bcp14">MAY</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-3" class="relref">Section 3</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span>.  CAs and RAs
 that do POP verification <span class="bcp14">MUST</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> and
 <span class="bcp14">SHOULD</span> support <span><a href="https://rfc-editor.org/rfc/rfc6955#section-3" class="relref">Section 3</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span>.<a href="#section-5.1-12" class="pilcrow">¶</a></p>
@@ -1893,7 +1899,7 @@ by the id-cmc-revokeRequest control.<a href="#section-5.3-4" class="pilcrow">¶<
       <h2 id="name-requirements-for-ees">
 <a href="#section-8" class="section-number selfRef">8. </a><a href="#name-requirements-for-ees" class="section-name selfRef">Requirements for EEs</a>
       </h2>
-<p id="section-8-1">If an entity implements Diffie-Hellman, it <span class="bcp14">MUST</span> implement either the
+<p id="section-8-1">If an End-Entity implements Diffie-Hellman, it <span class="bcp14">MUST</span> implement either the
 DH-POP Proof-of-Possession as defined in <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> or the
 challenge-response POP controls id-cmc-encryptedPOP and id-cmc-
 decryptedPOP.<a href="#section-8-1" class="pilcrow">¶</a></p>
