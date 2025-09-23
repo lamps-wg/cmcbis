@@ -86,7 +86,7 @@ Table of Contents
    3.  Changes Since 5273 and 6402
    4.  File-Based Protocol
    5.  Mail-Based Protocol
-   6.  HTTP/HTTPS-Based Protocol
+   6.  HTTP-Based Protocol
      6.1.  PKI Request
      6.2.  PKI Response
    7.  TCP-Based Protocol
@@ -205,7 +205,7 @@ Table of Contents
 
              Table 2: MIME PKI Request/Response Identification
 
-6.  HTTP/HTTPS-Based Protocol
+6.  HTTP-Based Protocol
 
    This section describes the conventions for use of HTTP [HTTP] as a
    transport layer.  In most circumstances, the use of HTTP over TLS or
