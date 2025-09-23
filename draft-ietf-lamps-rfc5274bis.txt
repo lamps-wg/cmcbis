@@ -108,7 +108,7 @@ Table of Contents
 
    The CMC (Certificate Management over CMS) protocol is designed in
    terms of a client/server relationship.  In the simplest case, the
-   client is the requestor of the certificate (i.e., the End Entity
+   client is the requestor of the certificate (i.e., the End-Entity
    (EE)) and the server is the issuer of the certificate (i.e., the
    Certification Authority (CA)).  The introduction of a Registration
    Authority (RA) into the set of agents complicates the picture only
@@ -185,9 +185,11 @@ Table of Contents
 
    Proof-of-Possession (POP):  Refers to a value that can be used to
       prove that the private key corresponding to a public key is in the
-      possession of and can be used by an end-entity.
+      possession and can be used by an End-Entity.
 
    Transport wrapper:  Refers to the outermost CMS wrapping layer.
+
+   Entity: :Refers to EE, RA (or LRA), or CA.
 
 3.  Requirements Terminology
 
@@ -431,9 +433,9 @@ Table of Contents
 
 8.  Requirements for EEs
 
-   If an entity implements Diffie-Hellman, it MUST implement either the
-   DH-POP Proof-of-Possession as defined in Section 4 of [DH-POP] or the
-   challenge-response POP controls id-cmc-encryptedPOP and id-cmc-
+   If an End-Entity implements Diffie-Hellman, it MUST implement either
+   the DH-POP Proof-of-Possession as defined in Section 4 of [DH-POP] or
+   the challenge-response POP controls id-cmc-encryptedPOP and id-cmc-
    decryptedPOP.
 
 9.  Requirements for RAs

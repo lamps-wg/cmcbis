@@ -1255,7 +1255,7 @@ information needed to make a compliant version of CMC.<a href="#section-abstract
       </h2>
 <p id="section-1-1">The CMC (Certificate Management over CMS) protocol is designed in
 terms of a client/server relationship.  In the simplest case, the
-client is the requestor of the certificate (i.e., the End Entity
+client is the requestor of the certificate (i.e., the End-Entity
 (EE)) and the server is the issuer of the certificate (i.e., the
 Certification Authority (CA)).  The introduction of a Registration
 Authority (RA) into the set of agents complicates the picture only
@@ -1363,7 +1363,7 @@ that they are to the server.<a href="#section-2-2.20.1" class="pilcrow">¶</a></
         <dd style="margin-left: 1.5em" id="section-2-2.22">
           <p id="section-2-2.22.1">Refers to a value that can be used to
 prove that the private key corresponding to a public key is in the
-possession of and can be used by an end-entity.<a href="#section-2-2.22.1" class="pilcrow">¶</a></p>
+possession and can be used by an End-Entity.<a href="#section-2-2.22.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.23">Transport wrapper:</dt>
@@ -1372,6 +1372,8 @@ possession of and can be used by an end-entity.<a href="#section-2-2.22.1" class
 </dd>
       <dd class="break"></dd>
 </dl>
+<p id="section-2-3">Entity:
+:Refers to EE, RA (or LRA), or CA.<a href="#section-2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="requirements-terminology">
@@ -1897,7 +1899,7 @@ by the id-cmc-revokeRequest control.<a href="#section-5.3-4" class="pilcrow">¶<
       <h2 id="name-requirements-for-ees">
 <a href="#section-8" class="section-number selfRef">8. </a><a href="#name-requirements-for-ees" class="section-name selfRef">Requirements for EEs</a>
       </h2>
-<p id="section-8-1">If an entity implements Diffie-Hellman, it <span class="bcp14">MUST</span> implement either the
+<p id="section-8-1">If an End-Entity implements Diffie-Hellman, it <span class="bcp14">MUST</span> implement either the
 DH-POP Proof-of-Possession as defined in <span><a href="https://rfc-editor.org/rfc/rfc6955#section-4" class="relref">Section 4</a> of [<a href="#DH-POP" class="cite xref">DH-POP</a>]</span> or the
 challenge-response POP controls id-cmc-encryptedPOP and id-cmc-
 decryptedPOP.<a href="#section-8-1" class="pilcrow">¶</a></p>
