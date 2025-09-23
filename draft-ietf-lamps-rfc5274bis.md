@@ -177,7 +177,7 @@ Proof-of-Possession (POP):
 
 : Refers to a value that can be used to
   prove that the private key corresponding to a public key is in the
-  possession and can be used by an end-entity.
+  possession of and can be used by an end-entity.
 
 Transport wrapper:
 
