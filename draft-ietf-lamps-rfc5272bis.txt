@@ -373,12 +373,14 @@ Table of Contents
 
    No special services are provided to distinguish between a rekey
    request and a new certification request (generally for a new
-   purpose).  A control to unpublish a certificate would normally be
-   included in a rekey request, and be omitted in a new certification
-   request.  CAs or other publishing agents are also expected to have
+   purpose).  CAs or other publishing agents are also expected to have
    policies for removing certificates from publication either based on
    new certificates being added or the expiration or revocation of a
-   certificate.
+   certificate.  A control to unpublish a certificate would normally be
+   included in a rekey request if the CA did not wish to have a grace
+   period between the certificates, be omitted if the CA wishes to have
+   a grace period between certificates, and be omitted from a new
+   certification request.
 
    A provision exists for RAs to participate in the protocol by taking
    PKI Requests, wrapping them in a second layer of PKI Request with
