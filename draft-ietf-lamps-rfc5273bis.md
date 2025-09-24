@@ -185,6 +185,8 @@ content protection from eavesdroppers.
 In order for CMC clients and servers using HTTP to interoperate, the
 following rules apply.
 
+> Clients are configured with sufficient information to form the server URI {{!RFC3986}}.
+
 > Client requests are submitted by use of the POST method.
 
 > Servers MUST use the 200 response code for successful responses.
