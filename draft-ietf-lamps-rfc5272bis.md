@@ -198,7 +198,7 @@ to issue a certificate.
 
 ##  Changes from RFC 2797
 
-We have done a major overhaul on the layout of the document. This
+{{CMC-PROTv1}} was a major overhaul on the layout of the document. This
 included two different steps.  Firstly we removed some sections from
 the document and moved them to two other documents. Information on
 how to transport our messages are now found in {{?CMC-TRANS}}.
@@ -228,6 +228,9 @@ A number of new controls have been added in this version:
 
 ## Updates Made by RFC 6402
 
+This version of the specification includes changes to {{CMC-PROTv1}}
+that are noted in this section.
+
 Two new controls have been added:
 
 > RA Identity Witness  allows for an RA to perform identity checking
@@ -253,6 +256,9 @@ This formalizes a requirement for the ability to do renewal and
 rekey that previously was implicit.
 
 ## Changes Since RFC 6402
+
+This version of the specification also introduces changes to
+{{CMC-PROTv1}} that are noted in this section.
 
 Merged {{CMC-Updates}} text.
 
@@ -326,12 +332,14 @@ same organization where naming is shared.)
 
 No special services are provided to distinguish between a rekey
 request and a new certification request (generally for a new
-purpose). A control to unpublish a certificate would normally be
-included in a rekey request, and be omitted in a new certification
-request. CAs or other publishing agents are also expected to have
+purpose). CAs or other publishing agents are also expected to have
 policies for removing certificates from publication either based on
 new certificates being added or the expiration or revocation of a
-certificate.
+certificate. A control to unpublish a certificate would normally be
+included in a rekey request if the CA did not wish to have a grace
+period between the certificates, be omitted if the CA wishes to have a
+grace period between certificates, and be omitted from a new
+certification request.
 
 A provision exists for RAs to participate in the protocol by taking
 PKI Requests, wrapping them in a second layer of PKI Request with
@@ -1321,7 +1329,6 @@ each of the controls described in this document.
 | id-cmc-queryPending        |  id-cmc 21 |  OCTET STRING  |      6.13 |
 | id-cmc-popLinkRandom       |  id-cmc 22 |  OCTET STRING  |      6.3.1 |
 | id-cmc-popLinkWitness      |  id-cmc 23 |  OCTET STRING  |      6.3.1 |
-| id-cmc-popLinkWitnessV2    |  id-cmc 33 |  OCTET STRING  |      6.3.1.1 |
 | id-cmc-confirmCertAcceptance |  id-cmc 24 |  CMCCertId   |      6.14 |
 | id-cmc-statusInfoV2        |  id-cmc 25 |  CMCStatusInfoV2 |    6.1.1 |
 | id-cmc-trustedAnchors      |  id-cmc 26 |  PublishTrustAnchors |6.15 |
@@ -1331,6 +1338,7 @@ each of the controls described in this document.
 | id-cmc-publishCert         |  id-cmc 30 |  CMCPublicationInfo | 6.18 |
 | id-cmc-modCertTemplate     |  id-cmc 31 |  ModCertTemplate |    6.5.1 |
 | id-cmc-controlProcessed    |  id-cmc 32 |  ControlsProcessed |  6.19 |
+| id-cmc-popLinkWitnessV2    |  id-cmc 33 |  OCTET STRING  |      6.3.1.1 |
 | id-cmc-identityProofV2     |  id-cmc 34 |  IdentityProofV2 |    6.2.1 |
 | id-cmc-raIdentityWitness   |  id-cmc 35 |  BodyPartPath |       6.20 |
 | id-cmc-responseBody        |  id-cmc 37 |  BodyPartPath |       6.21 |
@@ -3289,9 +3297,12 @@ defined in {{ExtendedKeyUsage}} MUST be included in the certificate as well.
 
 The id-ad-cmc OID is used when the subject offers certification
 services using the CMC protocol.  If the CMC services are available
-via HTTP or FTP, accessLocation MUST be a uniformResourceIdentifier.
-If the CMC services are available via electronic mail, accessLocation
-MUST be an rfc822Name.  If CMC services are available using TCP/IP,
+via HTTP or FTP {{Section 2 of CMC-TRANS}} and {{Section 4 of CMC-TRANS}}
+, accessLocation MUST be a uniformResourceIdentifier.
+If the CMC services are available via electronic mail
+{{Section 3 of CMC-TRANS}}, accessLocation
+MUST be an rfc822Name.  If CMC services are available using TCP/IP
+{{Section 5 of CMC-TRANS}},
 the dNSName or iPAddress name forms MUST be used.  Since the
 GeneralName data structure does not permit the inclusion of a port
 number, in the absence of other external configuration information,

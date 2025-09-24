@@ -47,23 +47,33 @@ contributor:
 
 
 normative:
-  erratum3593:
-    title: "RFC 5273 erratum 3593"
-    target: https://www.rfc-editor.org/errata/eid3593
-    date: 2013-04
   BCP195: RFC9325
   CMC-STRUCT: I-D.ietf-lamps-rfc5272bis
   HTTP: RFC9110
   SMIMEV4: RFC8551
   HTTP-IMP: RFC9205
-
+  X690:
+    target: https://www.itu.int/rec/T-REC-X.690
+    title: >
+      Information Technology -- Abstract Syntax Notation One (ASN.1):
+      ASN.1 encoding rules: Specification of Basic Encoding Rules (BER),
+      Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)
+    date: 2021-02
+    author:
+    -  org: ITU-T
+    seriesinfo:
+      ITU-T Recommendation: X.690
+      ISO/IEC: 8825-1:2021
 
 informative:
   TLS: RFC5246
   CMC-TRANSv1: RFC5273
   CMC-Updates: RFC6402
   IPsec: RFC4301
-
+  erratum3593:
+    title: "RFC 5273 erratum 3593"
+    target: https://www.rfc-editor.org/errata/eid3593
+    date: 2013-04
 
 --- abstract
 
@@ -111,9 +121,10 @@ Addressed {{erratum3593}}.
 Enrollment messages and responses may be transferred between clients
 and servers using file-system-based mechanisms, such as when
 enrollment is performed for an off-line client.  When files are used
-to transport binary, Full PKI Request or Full PKI Response messages,
+to transport Full PKI Request or Full PKI Response messages,
 there MUST be only one instance of a request or response message in a
-single file. The abbreviations crq and crp stand for Full PKI Request/Response,
+single file and the file MUST be binary encoded. The abbreviations crq
+and crp stand for Full PKI Request/Response,
 respectively; for clarity we define file extensions for them. The
 following file type extensions SHOULD be used:
 
@@ -140,43 +151,43 @@ or a Content-Disposition statement.  The extension for the file MUST
 be ".p10".
 
 Simple enrollment response messages MUST be encoded as content type
-"application/pkcs7-mime".  An smime-type parameter MUST be on the
+"application/pkcs7-mime".  A smime-type parameter MUST be on the
 Content-Type statement with a value of "certs-only".  A file name
-with the ".p7c" extension MUST be specified as part of the Content-
-Type or Content-Disposition statement.
+with the ".p7c" extension MUST be specified as part of the
+Content-Type or Content-Disposition statement.
 
 Full enrollment request messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-request".  A file name with the ".p7m" extension
+with a value of "CMC-Request".  A file name with the ".p7m" extension
 MUST be specified as part of the Content-Type or Content-Disposition
 statement.
 
 Full enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-response".  A file name with the ".p7m"
-extension MUST be specified as part of the Content-Type or Content-
-Disposition statement.
+with a value of "CMC-Response".  A file name with the ".p7m"
+extension MUST be specified as part of the Content-Type or
+Content-Disposition statement.
 
 | Item         | MIME Type              | File Extension      | SMIME Type   |
 |:-------------|:-----------------------|:-----------|:-------------|
 | Simple PKI Request  | application/pkcs10     | .p10       | N/A          |
-| Full PKI Request    | application/pkcs7-mime | .p7m       | CMC-request  |
+| Full PKI Request    | application/pkcs7-mime | .p7m       | CMC-Request  |
 | Simple PKI Response  | application/pkcs7-mime | .p7c       | certs-only   |
-| Full PKI Response     | application/pkcs7-mime | .p7m       | CMC-response |
+| Full PKI Response     | application/pkcs7-mime | .p7m       | CMC-Response |
 {: #mime-id title="MIME PKI Request/Response Identification"}
 
 
-# HTTP/HTTPS-Based Protocol
+# HTTP-Based Protocol
 
 This section describes the conventions for use of HTTP {{HTTP}} as a
 data transfer protocol.  Consult {{HTTP-IMP}} for additional information.
-In most circumstances, the use of HTTP over TLS {{HTTP}} provides any necessary
+The use of HTTPS {{HTTP}} provides any necessary
 content protection from eavesdroppers.
 
 In order for CMC clients and servers using HTTP to interoperate, the
 following rules apply.
 
-> Clients MUST use the POST method to submit their requests.
+> Client requests are submitted by use of the POST method.
 
 > Servers MUST use the 200 response code for successful responses.
 
@@ -189,7 +200,7 @@ follow the recommendations in {{BCP195}}.
 authentication such as cookies, Basic authentication, or Digest
 authentication.
 
-> Clients and servers are expected to follow the other rules and
+> Clients and servers are expected to follow other rules and
 restrictions in {{HTTP}}.  Note that some of those rules are for
 HTTP methods other than POST; clearly, only the rules that apply
 to POST are relevant for this specification.
@@ -198,11 +209,11 @@ to POST are relevant for this specification.
 
 A PKI Request using the POST method is constructed as follows:
 
-The Content-Type header field MUST have the appropriate value from {{mime-id}}.
+The Content-Type field MUST have the appropriate value from {{mime-id}}.
 
-A Content-Type header field for a request:
+A Content-Type field for a request:
 
-> Content-Type: application/pkcs7-mime; smime-type=CMC-request; name=request.p7m
+> Content-Type: application/pkcs7-mime; smime-type=CMC-Request; name=request.p7m
 
 The content of the message is the binary value of the encoding of the
 PKI Request.
@@ -211,13 +222,13 @@ PKI Request.
 
 The content of an HTTP-based PKI Response is
 the binary value of the BER (Basic Encoding
-Rules) encoding of either a Simple or Full PKI Response.
+Rules) encoding {{X690}} of either a Simple or Full PKI Response.
 
-The Content-Type header field MUST have the appropriate value from {{mime-id}}.
+The Content-Type field MUST have the appropriate value from {{mime-id}}.
 
-A Content-Type header field for a response:
+A Content-Type field for a response:
 
-> Content-Type: application/pkcs7-mime; smime-type=CMC-response; name=response.p7m
+> Content-Type: application/pkcs7-mime; smime-type=CMC-Response; name=response.p7m
 
 # TCP-Based Protocol
 
@@ -229,7 +240,9 @@ The client closes a connection after receiving a response, or it
 issues another request to the server using the same connection.
 Reusing one connection for multiple successive requests, instead of
 opening multiple connections that are only used for a single request,
-is RECOMMENDED for performance and resource conservation reasons.  A
+is RECOMMENDED for performance and resource conservation reasons.
+The client MUST wait for the full response before making another request
+on the same connection. A
 server MAY close a connection after it has been idle for some period
 of time; this timeout would typically be several minutes long.
 
@@ -239,9 +252,9 @@ The TCP port number is 5318.
 
 Prior to {{CMC-Updates}}, CMC did not have a registered port number and
 used an externally configured port from the Private Port range.
-Client implementations MAY want to continue to allow for this to
-occur.  Servers SHOULD change to use the new port.  It is expected
-that HTTP will continue to be the primary transport method used by
+Client implementations MAY continue to use a port chosen from the
+Private Port range.  A TCP Server SHOULD use port 5318 assigned to the CMC service.
+It is expected that HTTP will continue to be the primary transport method used by
 CMC installations.
 
 
@@ -270,8 +283,8 @@ implementations of this protocol depending on the operational
 environment.  In cases where the Certification Authority (CA)
 maintains significant state information, replay attacks may be
 detectable without the inclusion of the (optional) CMC nonce mechanisms.
-Implementers of this protocol need to carefully consider
-environmental conditions before choosing whether or not to implement
+[Implementers/Designers] of this protocol need to carefully consider
+environmental conditions before choosing whether or not to [implement/use]
 the senderNonce and recipientNonce attributes described in
 {{Section 6.6 of CMC-STRUCT}}.  Developers of state-constrained PKI clients are
 strongly encouraged to incorporate the use of these attributes.
@@ -292,8 +305,7 @@ initiated prior to use of this protocol.  This can occur when the
 protocol itself is being used to download onto the system the set of
 trust anchors to be used for these protocols.  In these instances,
 the Enveloped Data content type ({{Section 3.2.1.3.3 of CMC-STRUCT}})
-must be used to provide the same shrouding that TLS would have
-provided.
+provides the same shrouding that TLS would have provided.
 
 
 --- back
@@ -306,7 +318,7 @@ Obviously, the authors of this version of the document would like to
 thank Jim Schaad and Michael Myers for their work on the previous
 version of this document.
 
-The acknowledgment from the previous version of this document follows:
+The acknowledgement from the previous version of this document follows:
 
 The authors and the PKIX Working Group are grateful for the
 participation of Xiaoyi Liu and Jeff Weinstein in helping to author
