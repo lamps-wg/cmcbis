@@ -169,7 +169,7 @@ Disposition statement.
 # HTTP/HTTPS-Based Protocol
 
 This section describes the conventions for use of HTTP {{HTTP}} as a
-data transfer protocol.  Consult [HTTP-IMP] for additional information.
+data transfer protocol.  Consult {{HTTP-IMP}} for additional information.
 In most circumstances, the use of HTTP over TLS {{HTTP}} provides any necessary
 content protection from eavesdroppers.
 
