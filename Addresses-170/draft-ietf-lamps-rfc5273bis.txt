@@ -223,7 +223,9 @@ Table of Contents
       a secure channel might be available regardless depending on the
       HTTP version implemented [HTTP_1.1], [HTTP_2], [HTTP_3], or later.
       If TLS is used by the HTTP version, then the implementation MUST
-      follow the recommendations in [BCP195].
+      follow the recommendations in [BCP195].  CMC implementations that
+      support TLS 1.3 or QUIC MUST NOT use early data (i.e., 0-RTT)
+      because POST is not idempotent.
 
       Servers MUST NOT assume client support for any type of HTTP
       authentication such as cookies, Basic authentication, or Digest
