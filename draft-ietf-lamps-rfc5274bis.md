@@ -80,7 +80,7 @@ This document obsoletes RFC 5274 and RFC 6402.
 
 The CMC (Certificate Management over CMS) protocol is designed in
 terms of a client/server relationship.  In the simplest case, the
-client is the requestor of the certificate (i.e., the End Entity
+client is the requestor of the certificate (i.e., the End-Entity
 (EE)) and the server is the issuer of the certificate (i.e., the
 Certification Authority (CA)).  The introduction of a Registration
 Authority (RA) into the set of agents complicates the picture only
@@ -121,7 +121,6 @@ End-Entity (EE):
   whom a certificate is issued.
 
 Registration Authority (RA) or Local RA (LRA):
-
 : Refers to an entity
   that acts as an intermediary between the EE and the CA.  Multiple
   RAs can exist between the End-Entity and the Certification
@@ -130,58 +129,52 @@ Registration Authority (RA) or Local RA (LRA):
   both RA and LRA.
 
 Certification Authority (CA):
-
 : Refers to the entity that issues
   certificates.
 
 Client:
-
 : Refers to an entity that creates a PKI Request.  In this
   document, both RAs and EEs can be clients.
 
 Server:
-
 : Refers to the entities that process PKI Requests and create
   PKI Responses.  In this document both CAs and RAs can be servers.
 
 PKCS #10:
-
 : Refers to the Public Key Cryptography Standard #10
   {{PKCS10}}, which defines a certification request syntax.
 
 CRMF:
-
 : Refers to the Certificate Request Message Format RFC {{CRMF}}.
 CMC uses this certification request syntax defined in this
 document as part of the protocol.
 
 CMS:
-
 : Refers to the Cryptographic Message Syntax RFC {{CMS}}.  This
   document provides for basic cryptographic services including
   encryption and signing with and without key management.
 
 PKI Request/Response:
-
 : Refers to the requests/responses described in
   this document.  PKI Requests include certification requests,
   revocation requests, etc.  PKI Responses include certs-only
   messages, failure messages, etc.
 
 Proof-of-Identity:
-
 : Refers to the client proving they are who they say
   that they are to the server.
 
 Proof-of-Possession (POP):
-
 : Refers to a value that can be used to
   prove that the private key corresponding to a public key is in the
-  possession and can be used by an end-entity.
+  possession and can be used by an End-Entity.
 
 Transport wrapper:
-
 : Refers to the outermost CMS wrapping layer.
+
+Entity:
+:Refers to EE, RA (or LRA), or CA.
+
 
 # Requirements Terminology
 
@@ -199,6 +192,7 @@ Updated the Cryptographic Algorithm Requirements, and added
 section to maintain backwards compatability.
 
 > Replaced SHA-1 for SHA-256
+
 > Replaced HMAC-SHA-1 for HMAC-SHA-256
 
 Updated the Introduction section, changed "all agents" to
@@ -229,48 +223,48 @@ in {{CMC-TRANS}}.  Other transport mechanisms MAY be implemented.
 ## Cryptographic Algorithm Requirements
 
 All entities MUST verify RSA-SHA256 signatures in
-SignedData; see {{!CMS-ALG2}}.  Entities MAY verify other signature
+SignedData; (see {{!CMS-ALG2}}).  Entities MAY verify other signature
 algorithms.
 
 All entities MUST generate RSA-SHA256 signatures for
-SignedData; see {{CMS-ALG2}}.  Other signatures algorithms MAY be used
+SignedData; (see {{CMS-ALG2}}).  Other signatures algorithms MAY be used
 for generation.
 
 All entities MUST support Advanced Encryption Standard (AES) as the
-content encryption algorithm for EnvelopedData; see {{CMS-AES}}.
+content encryption algorithm for EnvelopedData; (see {{CMS-AES}}).
 Other content encryption algorithms MAY be implemented.
 
 All entities MUST support RSA as a key transport algorithm for
-EnvelopedData; see {{CMS-ALG2}}. Other key transport algorithms MAY
+EnvelopedData; (see {{CMS-ALG2}}). Other key transport algorithms MAY
 be implemented.
 
 If an entity supports key agreement for EnvelopedData, it MUST
-support Diffie-Hellman; see {{CMS-DH}}.
+support Diffie-Hellman; (see {{CMS-DH}}).
 
 If an entity supports PasswordRecipientInfo for EnvelopedData or
 AuthenticatedData, it MUST support PBKDF2 {{!PBKDF2}} for key derivation
-algorithms.  It MUST support AES key wrap see {{!AES-WRAP}} as the key
+algorithms.  It MUST support AES key wrap (see {{!AES-WRAP}}) as the key
 encryption algorithm.
 
 If AuthenticatedData is supported, PasswordRecipientInfo MUST be
 supported.
 
 Algorithm requirements for the Identity Proof Version 2 control
-{{Section 6.2.1 of CMC-STRUCT}} are: SHA-256 MUST be implemented
+({{Section 6.2.1 of CMC-STRUCT}}) are: SHA-256 MUST be implemented
 for hashAlgId.  HMAC-SHA256 MUST be implemented for macAlgId.
 
 Algorithm requirements for the Pop Link Witness Version 2 control
-{{Section 6.3.1 of CMC-STRUCT}} are: SHA-256 MUST be implemented
+({{Section 6.3.1 of CMC-STRUCT}}) are: SHA-256 MUST be implemented
 for keyGenAlgorithm. PBKDF2 {{!PBKDF2}} MAY be implemented for
 keyGenAlgorithm.  HMAC-SHA256 MUST be implemented for macAlgorithm.
 
 Algorithm requirements for the Encrypted POP and Decrypted POP
-controls {{Section 6.7 of CMC-STRUCT}} are: SHA-256 MUST be
+controls ({{Section 6.7 of CMC-STRUCT}}) are: SHA-256 MUST be
 implemented for witnessAlgID. HMAC-SHA256 MUST be implemented for
 thePOPAlgID.
 
-Algorithm requirements for Publish Trust Anchors control {{Section
-6.15 of CMC-STRUCT}} are: SHA-256 MUST be implemented for hashAlgorithm.
+Algorithm requirements for Publish Trust Anchors control ({{Section
+6.15 of CMC-STRUCT}}) are: SHA-256 MUST be implemented for hashAlgorithm.
 
 If an EE generates DH keys for certification, it MUST support {{Section
 4 of DH-POP}}].  EEs MAY support {{Section 3 of DH-POP}}.  CAs and RAs
@@ -390,7 +384,7 @@ There are no additional requirements.
 
 # Requirements for EEs
 
-If an entity implements Diffie-Hellman, it MUST implement either the
+If an End-Entity implements Diffie-Hellman, it MUST implement either the
 DH-POP Proof-of-Possession as defined in {{Section 4 of DH-POP}} or the
 challenge-response POP controls id-cmc-encryptedPOP and id-cmc-
 decryptedPOP.
