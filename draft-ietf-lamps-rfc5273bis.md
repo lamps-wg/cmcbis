@@ -62,6 +62,9 @@ informative:
   CMC-TRANSv1: RFC5273
   CMC-Updates: RFC6402
   IPsec: RFC4301
+  HTTP/1.1: RFC9112
+  HTTP/2: RFC9113
+  HTTP/3: RFC9114
 
 
 --- abstract
@@ -181,7 +184,7 @@ following rules apply.
 > Clients MAY attempt to send certification requests using HTTPS {{HTTP}},
 although servers are not required to support TLS/QUIC but a secure channel
 might be available regardless depending on the HTTP version implemented
-[HTTP/1.1][HTTP/2][HTTP/3]. If TLS is used by the HTTP version, then the
+{{HTTP/1.1}}, {{HTTP/2}}, {{HTTP/3}}, or later. If TLS is used by the HTTP version, then the
 implementation MUST follow the recommendations in {{BCP195}}.
 
 > Servers MUST NOT assume client support for any type of HTTP
