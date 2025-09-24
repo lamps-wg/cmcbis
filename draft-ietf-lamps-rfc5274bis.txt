@@ -189,7 +189,7 @@ Table of Contents
 
    Transport wrapper:  Refers to the outermost CMS wrapping layer.
 
-   Entity: :Refers to EE, RA (or LRA), or CA.
+   Entity:  Refers to EE, RA (or LRA), or CA.
 
 3.  Requirements Terminology
 
