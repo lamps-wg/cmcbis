@@ -185,7 +185,7 @@ content protection from eavesdroppers.
 In order for CMC clients and servers using HTTP to interoperate, the
 following rules apply.
 
-> Clients MUST use the POST method to submit their requests.
+> Client requests are submitted by use of the POST method.
 
 > Servers MUST use the 200 response code for successful responses.
 
