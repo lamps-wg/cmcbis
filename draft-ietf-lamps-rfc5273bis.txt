@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 28 March 2026                                 24 September 2025
+Expires: 29 March 2026                                 25 September 2025
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 March 2026.
+   This Internet-Draft will expire on 29 March 2026.
 
 Copyright Notice
 
@@ -223,9 +223,9 @@ Table of Contents
       is supported by an implementation, then the implementation MUST
       follow the recommendations in [BCP195].
 
-      Servers MUST NOT assume client support for any type of HTTP
-      authentication such as cookies, Basic authentication, or Digest
-      authentication.
+      Clients are not required to support any type of HTTP
+      authentication Section 11 of [HTTP] nor Cookies [RFC6265].  Thus,
+      servers can not rely on these features to be available.
 
       Clients and servers are expected to follow other rules and
       restrictions in [HTTP].  Note that some of those rules are for
