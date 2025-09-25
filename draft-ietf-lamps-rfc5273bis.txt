@@ -224,7 +224,7 @@ Table of Contents
       follow the recommendations in [BCP195].
 
       Clients are not required to support any type of HTTP
-      authentication Section 11 of [HTTP] nor Cookies [RFC6265].  Thus,
+      authentication Section 11 of [HTTP] nor Cookies [COOKIES].  Thus,
       servers can not rely on these features to be available.
 
       Clients and servers are expected to follow other rules and
@@ -390,6 +390,10 @@ Table of Contents
               Schaad, J., "Certificate Management over CMS (CMC)
               Updates", RFC 6402, DOI 10.17487/RFC6402, November 2011,
               <https://www.rfc-editor.org/rfc/rfc6402>.
+
+   [COOKIES]  Barth, A., "HTTP State Management Mechanism", RFC 6265,
+              DOI 10.17487/RFC6265, April 2011,
+              <https://www.rfc-editor.org/rfc/rfc6265>.
 
    [erratum3593]
               "RFC 5273 erratum 3593", April 2013,
