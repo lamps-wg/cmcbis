@@ -69,6 +69,7 @@ informative:
   CMC-TRANSv1: RFC5273
   CMC-Updates: RFC6402
   IPsec: RFC4301
+  COOKIES: RFC6265
   erratum3593:
     title: "RFC 5273 erratum 3593"
     target: https://www.rfc-editor.org/errata/eid3593
@@ -195,7 +196,7 @@ TLS is supported by an implementation, then the implementation MUST
 follow the recommendations in {{BCP195}}.
 
 > Clients are not required to support any type of HTTP
-authentication {{Section 11 of HTTP}} nor Cookies [RFC6265]. Thus, servers
+authentication {{Section 11 of HTTP}} nor Cookies {{COOKIES}}. Thus, servers
 can not rely on these features to be available.
 
 > Clients and servers are expected to follow other rules and
