@@ -196,7 +196,7 @@ TLS is supported by an implementation, then the implementation MUST
 follow the recommendations in {{BCP195}}.
 
 > Clients are not required to support any type of HTTP
-authentication {{Section 11 of HTTP}} nor Cookies {{COOKIES}}. Thus, servers
+authentication ({{Section 11 of HTTP}}) nor Cookies {{COOKIES}}. Thus, servers
 can not rely on these features to be available.
 
 > Clients and servers are expected to follow other rules and
