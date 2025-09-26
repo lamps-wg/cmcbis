@@ -1623,7 +1623,7 @@ certification request. Many different ways of doing this exist with
 different degrees of security and reliability. Most are familiar
 with a bank's request to provide your mother's maiden name as a form
 of identity proof. The reasoning behind requiring a proof-of-
-identity can be found in Appendix C of {{CRMF}}.
+identity can be found in {{Appendix C of CRMF}}.
 
 CMC provides a method to prove the client's identity based on a
 client/server shared-secret. If clients support the Full PKI
@@ -1702,8 +1702,8 @@ potentially open the door for some types of attacks.
 
 Implementations MUST be able to support tokens at least 16 characters
 long. Guidance on the amount of entropy actually obtained from a
-given length token based on character sets can be found in Appendix A
-of {{PASSWORD}}.
+given length token based on character sets can be found in
+{{Appendix A of PASSWORD}}.
 
 ### Identity Proof Control {#IdentityProofControl}
 
