@@ -494,7 +494,7 @@ Full PKI Request                        Full PKI Response
  | PKIData                 |             | PKIResponse             |
  |                         |             |                         |
  | Sequence of:            |             | Sequence of:            |
- | <enrollment control> o  |             | <enrollment control>^   |
+ | <enrollment control><>  |             | <enrollment control>^   |
  | <certification request>^|             | <CMS object>^           |
  | <CMS object>^           |             | <other message>^        |
  | <other message>^        |             |                         |
