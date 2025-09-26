@@ -315,11 +315,11 @@ Table of Contents
    Updated Encrypted and Decrypted POP Controls section to use HMAC-
    SHA256.
 
-   Updated the ASN.1 module to use the 2002 ASN.1 module from
+   Updated the ASN.1 module to import from the 2008 ASN.1 module from
    [CMC-Updates].
 
-   Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
-   Module for PBKDF2 PRFs.
+   Modified the ASN.1 module in Appendix A.1 to import PBDKF2 PRFs from
+   Appendix A.2.
 
    Added a direct POP example to address management of KEM certificates.
 
@@ -329,7 +329,7 @@ Table of Contents
    noSignature.
 
    Update CMC Control Attribute Table to include raIdentityWitness and
-   responseBody from RFC 6402
+   responseBody from RFC 6402.
 
 2.  Protocol Overview
 
@@ -471,7 +471,7 @@ Table of Contents
             of the above methods.
 
       Object IDentifier (OID) is a primitive type in Abstract Syntax
-         Notation One (ASN.1).
+         Notation One (ASN.1) [ASN.1].
 
 2.2.  Protocol Requests/Responses
 
@@ -3355,10 +3355,10 @@ Table of Contents
 
    For the ASN.1 modules in Appendix A, IANA is requested to assign an
    OID for the module identifier (TBD1) with a Description of "id-mod-
-   enrollMsgSyntax-2025" and an OID for the module identifier (TBD2)
-   with a Description of "id-mod-pbkdf2-prfs-2025".  The OIDs for the
-   modules should be allocated in the "SMI Security for PKIX Module
-   Identifier" registry (1.3.6.1.5.5.7.0).
+   enrollMsgSyntax-2025" in Appendix A.1 and an OID for the module
+   identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs-2025" in
+   Appendix A.2.  The OIDs for the modules should be allocated in the
+   "SMI Security for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).
 
    IANA is requested to update the existing references to [CMC-PROTv1]
    in the Structure of Management Information (SMI) Numbers (MIB Module
@@ -3389,6 +3389,11 @@ Table of Contents
 12.  References
 
 12.1.  Normative References
+
+   [ASN.1]    ITU-T, "Information technology -- Abstract Syntax Notation
+              One (ASN.1): Specification of basic notation", ITU-T
+              Recommendation X.680, ISO/IEC 8824-1:2021, February 2021,
+              <https://www.itu.int/rec/T-REC-X.680>.
 
    [CMS]      Housley, R., "Cryptographic Message Syntax (CMS)", STD 70,
               RFC 5652, DOI 10.17487/RFC5652, September 2009,
