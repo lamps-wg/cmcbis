@@ -3476,39 +3476,39 @@ IANA is requested to replace the references for the following CMC
 controls found in the "SMI Security for PKIX CMC Controls" registry
 {{CMC-CTRLS}} to refer to [ RFC-to-be ]:
 
-*	id-cmc-statusInfo
-*	id-cmc-identification
-*	id-cmc-identityProof
-*	id-cmc-dataReturn
-*	id-cmc-transactionId
-*	id-cmc-senderNonce
-*	id-cmc-recipientNonce
-*	id-cmc-addExtensions
-*	id-cmc-encryptedPOP
-*	id-cmc-decryptedPOP
-*	id-cmc-lraPOPWitness
-*	id-cmc-getCert
-*	id-cmc-getCRL
-*	id-cmc-revokeRequest
-*	id-cmc-regInfo
-*	id-cmc-responseInfo
-*	id-cmc-queryPending
-*	id-cmc-popLinkRandom
-*	id-cmc-popLinkWitness
-*	id-cmc-confirmCertAcceptance
-*	id-cmc-statusInfoV2
-*	id-cmc-trustedAnchors
-*	id-cmc-authData
-*	id-cmc-batchRequests
-*	id-cmc-batchResponses
-*	id-cmc-publishCert
-*	id-cmc-modCertTemplate
-*	id-cmc-controlProcessed
-*	id-cmc-popLinkWitnessV2
-*	id-cmc-identityProofV2
-*	id-cmc-raIdentityWitness
-*	id-cmc-changeSubjectName
-*	id-cmc-responseBody
+* id-cmc-statusInfo
+* id-cmc-identification
+* id-cmc-identityProof
+* id-cmc-dataReturn
+* id-cmc-transactionId
+* id-cmc-senderNonce
+* id-cmc-recipientNonce
+* id-cmc-addExtensions
+* id-cmc-encryptedPOP
+* id-cmc-decryptedPOP
+* id-cmc-lraPOPWitness
+* id-cmc-getCert
+* id-cmc-getCRL
+* id-cmc-revokeRequest
+* id-cmc-regInfo
+* id-cmc-responseInfo
+* id-cmc-queryPending
+* id-cmc-popLinkRandom
+* id-cmc-popLinkWitness
+* id-cmc-confirmCertAcceptance
+* id-cmc-statusInfoV2
+* id-cmc-trustedAnchors
+* id-cmc-authData
+* id-cmc-batchRequests
+* id-cmc-batchResponses
+* id-cmc-publishCert
+* id-cmc-modCertTemplate
+* id-cmc-controlProcessed
+* id-cmc-popLinkWitnessV2
+* id-cmc-identityProofV2
+* id-cmc-raIdentityWitness
+* id-cmc-changeSubjectName
+* id-cmc-responseBody
 
 IANA is requested to replace the references for the following CMC
 content types found in the "SMI Security for PKIX CMC Content Types"
