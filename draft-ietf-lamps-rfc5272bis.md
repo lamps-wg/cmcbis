@@ -86,7 +86,7 @@ informative:
   PKIX-EKPS:
     target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.3
     title: "SMI Security for PKIX Extended Key Purpose"
-  PKIX-ALGS:
+  IANA-PKIX-ALGS:
     target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.6
     title: "SMI Security for PKIX Algorithms"
   CMC-CTRLS:
