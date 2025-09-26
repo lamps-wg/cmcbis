@@ -3515,7 +3515,7 @@ content types found in the "SMI Security for PKIX CMC Content Types"
 registry {{CMC-CTS}} to refer to [ RFC-to-be ]:
 
 * id-cct-PKIData
-*	id-cct-PKIResponse
+* id-cct-PKIResponse
 
 IANA is requested to replace the references for the following PKIX
 access descriptor found in the "SMI Security for PKIX Access
