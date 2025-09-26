@@ -271,7 +271,7 @@ Addressed {{erratum3943}} for RFC 6402.
 
 To support adopting SHA-256 and HMAC-SHA256, maca-hMAC-SHA256 was added to
 POPAlgs and mda-sha256 was added to WitnessAlgs. Both were included in
-the example in Appendix B.
+the example in {{enroll}}.
 
 Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256.
 
