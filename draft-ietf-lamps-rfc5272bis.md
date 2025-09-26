@@ -1703,7 +1703,7 @@ potentially open the door for some types of attacks.
 Implementations MUST be able to support tokens at least 16 characters
 long. Guidance on the amount of entropy actually obtained from a
 given length token based on character sets can be found in
-{{Appendix A of PASSWORD}}.
+({{Appendix A of PASSWORD}}).
 
 ### Identity Proof Control {#IdentityProofControl}
 
