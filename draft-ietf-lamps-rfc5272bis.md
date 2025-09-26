@@ -3468,7 +3468,7 @@ registry {{PKIX-EKPS}} to refer to [ RFC-to-be ]:
 
 IANA is requested to replace the references for the following signature
 algorithm found in the "SMI Security for PKIX Algorithms" registry
-{{PKIX-ALGS}} to refer to [ RFC-to-be ]:
+{{IANA-PKIX-ALGS}} to refer to [ RFC-to-be ]:
 
 * id-alg-noSignature
 
