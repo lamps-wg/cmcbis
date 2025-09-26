@@ -53,6 +53,18 @@ normative:
    PKCS10: RFC2986
    PKIXCERT: RFC5280
    PKIX-ALGS: RFC5912
+   ASN.1:
+     target: https://www.itu.int/rec/T-REC-X.680
+     title: >
+       Information technology --
+       Abstract Syntax Notation One (ASN.1):
+       Specification of basic notation
+     author:
+     - org: ITU-T
+     date: 2021-02
+     seriesinfo:
+       ITU-T Recommendation: X.680
+       ISO/IEC: 8824-1:2021
 
 informative:
   CMC-PROTv1: RFC5272
@@ -292,14 +304,15 @@ Addressed {{erratum3943}} for RFC 6402.
 
 To support adopting SHA-256 and HMAC-SHA256, maca-hMAC-SHA256 was added to
 POPAlgs and mda-sha256 was added to WitnessAlgs. Both were included in
-the example in Appendix B.
+the example in {{enroll}}.
 
 Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256.
 
-Updated the ASN.1 module to use the 2002 ASN.1 module from {{CMC-Updates}}.
+Updated the ASN.1 module to import from the 2008 ASN.1 module from
+{{CMC-Updates}}.
 
-Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
-Module for PBKDF2 PRFs.
+Modified the ASN.1 module in {{asn.1-cmc}} to import PBDKF2 PRFs from
+{{asn.1-pbkdf2}}.
 
 Added a direct POP example to address management of KEM certificates.
 
@@ -307,7 +320,8 @@ Added id-ce-subjectKeyIdentifier to examples.
 
 Clarified that subjectKeyIdentifier choice used with id-alg-noSignature.
 
-Update CMC Control Attribute Table to include raIdentityWitness and responseBody from RFC 6402
+Update CMC Control Attribute Table to include raIdentityWitness and
+responseBody from RFC 6402.
 
 #  Protocol Overview
 
@@ -450,7 +464,7 @@ for convenience and consistency of usage:
       the above methods.
 
 >> Object IDentifier (OID) is a primitive type in Abstract Syntax
-   Notation One (ASN.1).
+   Notation One (ASN.1) {{ASN.1}}.
 
 ##  Protocol Requests/Responses {#ProtocolRequestsResponses}
 
@@ -3431,12 +3445,12 @@ Object Identifiers (OIDs).  The OIDs are defined from an arc delegated
 by IANA to the PKIX Working Group with the notable except of one
 S/MIME attribute. All registrations follow.
 
-For the ASN.1 modules in Appendix A, IANA is requested to assign an OID
-for the module identifier (TBD1) with a Description of
-"id-mod-enrollMsgSyntax-2025" and an OID for the module identifier
-(TBD2) with a Description of "id-mod-pbkdf2-prfs-2025".  The OIDs for
-the modules should be allocated in the "SMI Security for PKIX Module
-Identifier" registry {{PKIX-MODIDS}}.
+For the ASN.1 modules in {{asn.1-modules}}, IANA is requested to assign
+an OID for the module identifier (TBD1) with a Description of
+"id-mod-enrollMsgSyntax-2025" in {{asn.1-cmc}} and an OID for the module
+identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs-2025" in {{asn.1-pbkdf2}}.
+The OIDs for the modules should be allocated in the "SMI Security
+for PKIX Module Identifier" registry {{PKIX-MODIDS}}.
 
 IANA is requested to replace the references for the following S/MIME
 attributes found in the "SMI Security for S/MIME Attributes" registry
@@ -3526,7 +3540,7 @@ registries are to remain unchanged.
 
 --- back
 
-# ASN.1 Modules {#ASN.1}
+# ASN.1 Modules {#asn.1-modules}
 
 ## ASN.1 Module for CMC {#asn.1-cmc}
 ~~~
@@ -4170,7 +4184,7 @@ END
 <CODE ENDS>
 ~~~
 
-## ASN.1 Module for PBKDF2 PRFs
+## ASN.1 Module for PBKDF2 PRFs {#asn.1-pbkdf2}
 
 ~~~
 <CODE BEGINS>
