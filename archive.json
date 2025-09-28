@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-25T01:49:37.218992+00:00",
+  "timestamp": "2025-09-28T01:58:18.639519+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -1380,6 +1380,70 @@
       "body": "What variants of HTTP can be used? If you want to restrict the protocol to\nHTTP/1.1, you really need to say so.",
       "createdAt": "2025-09-16T03:16:13Z",
       "updatedAt": "2025-09-16T03:16:13Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 190,
+      "id": "I_kwDOKfq5gM7OFhuo",
+      "title": "5272: ASN.1 Ref",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/190",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "We added a reference for DER (aka X.690) in [-rfc5273bis](https://lamps-wg.github.io/cmcbis/draft-ietf-lamps-rfc5273bis.html).  We should probably add one for ASN.1 in [-rfc5272bis](https://lamps-wg.github.io/cmcbis/draft-ietf-lamps-rfc5272bis.html).  Also need to rename .md link for ASN.1 module appendix.\n\nAnd, I noticed that the updates notes we moved to 2002 ASN.1, but we are going to refer to the 2021 version so we should point there instead.",
+      "createdAt": "2025-09-26T13:02:10Z",
+      "updatedAt": "2025-09-26T14:14:50Z",
+      "closedAt": "2025-09-26T14:14:50Z",
+      "comments": []
+    },
+    {
+      "number": 191,
+      "id": "I_kwDOKfq5gM7OFrZf",
+      "title": "5272: Ref for Appendix B",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/191",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Found a place where we should add a ref.",
+      "createdAt": "2025-09-26T13:09:58Z",
+      "updatedAt": "2025-09-26T14:13:51Z",
+      "closedAt": "2025-09-26T14:13:51Z",
+      "comments": []
+    },
+    {
+      "number": 193,
+      "id": "I_kwDOKfq5gM7OFu5B",
+      "title": "5272: md formatting",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/193",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixing some md formatting for Appendix references.",
+      "createdAt": "2025-09-26T13:12:45Z",
+      "updatedAt": "2025-09-26T14:24:55Z",
+      "closedAt": "2025-09-26T14:24:55Z",
+      "comments": []
+    },
+    {
+      "number": 196,
+      "id": "I_kwDOKfq5gM7OGpYQ",
+      "title": "5272: IANA Considerations",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/196",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "IANA had more questions about references in the [SMI registries](https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml) CMC-related references to [RFC 2797](https://datatracker.ietf.org/doc/html/rfc2797), [RFC 5272](https://datatracker.ietf.org/doc/html/rfc2797), and [RFC 6402](https://datatracker.ietf.org/doc/html/rfc6402). After a review, Joe and I think that all but the references for the ASN.1 modules from [RFC 2797](https://datatracker.ietf.org/doc/html/rfc2797), [RFC 5272](https://datatracker.ietf.org/doc/html/rfc2797), and [RFC 6402](https://datatracker.ietf.org/doc/html/rfc6402) need to change.\n\nThe IESG is also lookin for links to the registry \u00af\\_(\u30c4)_/\u00af",
+      "createdAt": "2025-09-26T14:09:29Z",
+      "updatedAt": "2025-09-26T14:09:29Z",
       "closedAt": null,
       "comments": []
     }
@@ -3020,7 +3084,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2024-04-17T15:22:59Z",
-      "updatedAt": "2024-06-18T19:57:03Z",
+      "updatedAt": "2025-09-26T16:20:24Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "e8b382e3d337482491d4a400a4ac5ddf6e9ef04f",
@@ -3090,7 +3154,7 @@
       "labels": [],
       "body": "https://www.rfc-editor.org/errata/eid3943 ",
       "createdAt": "2024-07-01T18:47:30Z",
-      "updatedAt": "2024-09-23T17:49:10Z",
+      "updatedAt": "2025-09-26T16:20:22Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "Editorial-changes-for-ASN.1",
       "baseRefOid": "b9eb9af9e3edc2d77bb4761630e534cb599471ae",
@@ -3588,7 +3652,7 @@
       "labels": [],
       "body": "Reverts lamps-wg/cmcbis#44",
       "createdAt": "2024-09-23T17:29:13Z",
-      "updatedAt": "2024-09-23T22:33:46Z",
+      "updatedAt": "2025-09-26T16:20:23Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "2e4fa674c40ebda962c9fb1c74a5c0bbedf9ed7b",
@@ -3628,7 +3692,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2024-09-23T17:55:34Z",
-      "updatedAt": "2024-09-23T17:59:12Z",
+      "updatedAt": "2025-09-26T16:20:21Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "2e4fa674c40ebda962c9fb1c74a5c0bbedf9ed7b",
@@ -3656,7 +3720,7 @@
       "labels": [],
       "body": "Update normative and informative references",
       "createdAt": "2024-09-24T00:07:13Z",
-      "updatedAt": "2024-09-29T18:34:21Z",
+      "updatedAt": "2025-09-26T16:20:21Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "471cc78aeba7bd900fcd019848eed4e2a015c565",
@@ -5175,7 +5239,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-05-17T15:37:54Z",
-      "updatedAt": "2025-05-28T14:04:00Z",
+      "updatedAt": "2025-09-26T16:20:19Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "63fbdd25ec0b2c7392683102bd038e537dd4fcbd",
@@ -5256,7 +5320,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-07-22T09:02:33Z",
-      "updatedAt": "2025-08-29T14:49:35Z",
+      "updatedAt": "2025-09-26T16:15:17Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "640d5fc9017cbee11fb3e44af6672779b0e6b189",
@@ -5305,7 +5369,7 @@
       "labels": [],
       "body": "#109 ",
       "createdAt": "2025-08-25T17:51:37Z",
-      "updatedAt": "2025-08-29T14:37:49Z",
+      "updatedAt": "2025-09-26T16:15:19Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "640d5fc9017cbee11fb3e44af6672779b0e6b189",
@@ -5431,7 +5495,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-08-25T19:18:31Z",
-      "updatedAt": "2025-08-29T14:34:47Z",
+      "updatedAt": "2025-09-26T16:15:18Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "AD-comments",
       "baseRefOid": "012288dce8a0be11e821f52eedeb187728f14df0",
@@ -5557,7 +5621,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-08-29T15:21:37Z",
-      "updatedAt": "2025-08-29T15:52:51Z",
+      "updatedAt": "2025-09-26T16:15:20Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "d73dd4b449c1eaa16e2c0c2a5c86e553c12db904",
@@ -5599,7 +5663,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-08-29T15:45:40Z",
-      "updatedAt": "2025-08-29T17:20:45Z",
+      "updatedAt": "2025-09-26T16:15:21Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "d73dd4b449c1eaa16e2c0c2a5c86e553c12db904",
@@ -5641,7 +5705,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-08-29T17:08:42Z",
-      "updatedAt": "2025-08-29T17:21:00Z",
+      "updatedAt": "2025-09-26T16:15:22Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "be03168cae9f9513cad9b113ee01d0993a202541",
@@ -5683,7 +5747,7 @@
       "labels": [],
       "body": "We should have referred to I-D in the RFC editor's queue.",
       "createdAt": "2025-09-02T12:50:57Z",
-      "updatedAt": "2025-09-02T15:40:25Z",
+      "updatedAt": "2025-09-26T16:15:23Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "a2038d8354ce9374ffc079eed446ef77e9dfb074",
@@ -5824,7 +5888,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-09-09T18:11:43Z",
-      "updatedAt": "2025-09-09T20:04:57Z",
+      "updatedAt": "2025-09-26T16:15:23Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "45711d5749b1643581a1af1a4265eefad6ae7964",
@@ -5866,7 +5930,7 @@
       "labels": [],
       "body": "close #125 ",
       "createdAt": "2025-09-12T15:35:43Z",
-      "updatedAt": "2025-09-23T19:17:10Z",
+      "updatedAt": "2025-09-26T16:15:24Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -5908,7 +5972,7 @@
       "labels": [],
       "body": "close #127 ",
       "createdAt": "2025-09-12T16:10:42Z",
-      "updatedAt": "2025-09-23T19:19:08Z",
+      "updatedAt": "2025-09-26T16:15:27Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -5950,7 +6014,7 @@
       "labels": [],
       "body": "Closes #129.",
       "createdAt": "2025-09-12T18:43:58Z",
-      "updatedAt": "2025-09-23T19:21:13Z",
+      "updatedAt": "2025-09-26T16:15:28Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -5992,7 +6056,7 @@
       "labels": [],
       "body": "Closes #131.",
       "createdAt": "2025-09-12T18:51:24Z",
-      "updatedAt": "2025-09-23T19:24:05Z",
+      "updatedAt": "2025-09-26T16:15:31Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6034,7 +6098,7 @@
       "labels": [],
       "body": "Closes #133.",
       "createdAt": "2025-09-12T19:27:38Z",
-      "updatedAt": "2025-09-23T19:27:55Z",
+      "updatedAt": "2025-09-26T16:16:05Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6096,7 +6160,7 @@
       "labels": [],
       "body": "Closes #136.",
       "createdAt": "2025-09-12T20:50:41Z",
-      "updatedAt": "2025-09-23T19:33:20Z",
+      "updatedAt": "2025-09-26T16:16:03Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "ae11f5c4acfb647b9fb6db7d1d0a07e8e52c241d",
@@ -6138,7 +6202,7 @@
       "labels": [],
       "body": "close #135 ",
       "createdAt": "2025-09-12T20:56:47Z",
-      "updatedAt": "2025-09-23T19:35:33Z",
+      "updatedAt": "2025-09-26T16:15:32Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6180,7 +6244,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-09-15T16:59:05Z",
-      "updatedAt": "2025-09-23T19:41:45Z",
+      "updatedAt": "2025-09-26T16:14:23Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "a105245c5c12e961a413f8bec647a99e2bf6f8b7",
@@ -6222,7 +6286,7 @@
       "labels": [],
       "body": "Closes #142.",
       "createdAt": "2025-09-15T17:04:13Z",
-      "updatedAt": "2025-09-23T19:42:33Z",
+      "updatedAt": "2025-09-26T16:15:33Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6264,7 +6328,7 @@
       "labels": [],
       "body": "Closes #144.",
       "createdAt": "2025-09-15T17:16:10Z",
-      "updatedAt": "2025-09-23T19:45:29Z",
+      "updatedAt": "2025-09-26T16:15:43Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6306,7 +6370,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-09-15T17:43:28Z",
-      "updatedAt": "2025-09-23T19:47:17Z",
+      "updatedAt": "2025-09-26T16:15:43Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6348,7 +6412,7 @@
       "labels": [],
       "body": "Closes #150.",
       "createdAt": "2025-09-16T01:19:58Z",
-      "updatedAt": "2025-09-23T19:49:23Z",
+      "updatedAt": "2025-09-26T16:15:45Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6390,7 +6454,7 @@
       "labels": [],
       "body": "Closes #149",
       "createdAt": "2025-09-16T01:34:26Z",
-      "updatedAt": "2025-09-23T19:50:34Z",
+      "updatedAt": "2025-09-26T16:15:45Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6432,7 +6496,7 @@
       "labels": [],
       "body": "Closes #153.",
       "createdAt": "2025-09-16T01:39:13Z",
-      "updatedAt": "2025-09-23T19:56:24Z",
+      "updatedAt": "2025-09-26T16:15:46Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6494,7 +6558,7 @@
       "labels": [],
       "body": "Closes #155.",
       "createdAt": "2025-09-16T01:42:36Z",
-      "updatedAt": "2025-09-23T19:58:33Z",
+      "updatedAt": "2025-09-26T16:15:47Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6536,7 +6600,7 @@
       "labels": [],
       "body": "Closes #157.",
       "createdAt": "2025-09-16T01:47:30Z",
-      "updatedAt": "2025-09-23T20:00:27Z",
+      "updatedAt": "2025-09-26T16:15:48Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6578,7 +6642,7 @@
       "labels": [],
       "body": "Closes #160.",
       "createdAt": "2025-09-16T01:59:03Z",
-      "updatedAt": "2025-09-23T23:54:16Z",
+      "updatedAt": "2025-09-26T16:15:49Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6620,7 +6684,7 @@
       "labels": [],
       "body": "Closes #163.",
       "createdAt": "2025-09-16T02:35:57Z",
-      "updatedAt": "2025-09-23T23:56:50Z",
+      "updatedAt": "2025-09-26T16:15:52Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6722,7 +6786,7 @@
       "labels": [],
       "body": "closes #166 ",
       "createdAt": "2025-09-16T16:06:53Z",
-      "updatedAt": "2025-09-23T23:58:39Z",
+      "updatedAt": "2025-09-26T16:15:53Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6764,7 +6828,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-09-16T16:18:40Z",
-      "updatedAt": "2025-09-24T00:03:39Z",
+      "updatedAt": "2025-09-26T16:14:24Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "0c8394c2dfa24c89251ec0530681de7ed65bb543",
@@ -6806,7 +6870,7 @@
       "labels": [],
       "body": "close #168 ",
       "createdAt": "2025-09-16T16:24:07Z",
-      "updatedAt": "2025-09-24T00:05:49Z",
+      "updatedAt": "2025-09-26T16:16:07Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -6955,24 +7019,26 @@
       "id": "PR_kwDOKfq5gM6o5z1a",
       "title": "Addresses 171",
       "url": "https://github.com/lamps-wg/cmcbis/pull/182",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "closes #171 ",
       "createdAt": "2025-09-16T16:40:29Z",
-      "updatedAt": "2025-09-24T15:49:20Z",
+      "updatedAt": "2025-09-26T16:14:40Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "Addresses-171",
       "headRefOid": "b53b837bfc0edde310354ed521b0d7fa3a817811",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-09-25T14:35:32Z",
+      "mergedAt": "2025-09-25T14:35:32Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "ac63785b3845a06c1a3c61158c323f4e9d7f1de5"
+      },
       "comments": [],
       "reviews": [
         {
@@ -7082,7 +7148,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-09-19T19:13:40Z",
-      "updatedAt": "2025-09-24T00:16:04Z",
+      "updatedAt": "2025-09-26T16:15:55Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3940dc6dcbea2a42af293a4361ae83f7a216d93d",
@@ -7124,7 +7190,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-09-24T00:19:16Z",
-      "updatedAt": "2025-09-24T00:20:03Z",
+      "updatedAt": "2025-09-26T16:14:25Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "54aa416ed1730c9339ff3d96dc3840668b5c4643",
@@ -7219,6 +7285,557 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 188,
+      "id": "PR_kwDOKfq5gM6qh5cs",
+      "title": "ref change",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/188",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-25T14:54:44Z",
+      "updatedAt": "2025-09-26T16:14:42Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "ac63785b3845a06c1a3c61158c323f4e9d7f1de5",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-9625-ref",
+      "headRefOid": "eb4af32145f24cad3deb1f7da05f126fb3634107",
+      "closedAt": "2025-09-25T14:55:43Z",
+      "mergedAt": "2025-09-25T14:55:43Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "aadcf547f9ac006be2c71c36527b0db8ff1e0d9b"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 189,
+      "id": "PR_kwDOKfq5gM6qh96E",
+      "title": "Add ()",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/189",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-25T15:00:28Z",
+      "updatedAt": "2025-09-26T16:14:45Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "aadcf547f9ac006be2c71c36527b0db8ff1e0d9b",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-add-paren",
+      "headRefOid": "e7d70be9993f4966d24a6fefd28677270690d38a",
+      "closedAt": "2025-09-26T14:11:22Z",
+      "mergedAt": "2025-09-26T14:11:22Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "f7ce4ce13f0dcfa25407c694c60bc353a6c7394a"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7DDgmt",
+          "commit": {
+            "abbreviatedOid": "e7d70be"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-26T14:11:16Z",
+          "updatedAt": "2025-09-26T14:11:16Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 192,
+      "id": "PR_kwDOKfq5gM6qt6Bz",
+      "title": "5272: Address #191",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/192",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #191.",
+      "createdAt": "2025-09-26T13:11:53Z",
+      "updatedAt": "2025-09-26T16:14:48Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "aadcf547f9ac006be2c71c36527b0db8ff1e0d9b",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-appB-ref",
+      "headRefOid": "bc932f74317410e9a7c008e559cd348c43eeacf8",
+      "closedAt": "2025-09-26T14:13:50Z",
+      "mergedAt": "2025-09-26T14:13:50Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "7522962bf4b37aadaf1fb7d2633b8a5e54ed1f91"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7DDiv4",
+          "commit": {
+            "abbreviatedOid": "bc932f7"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-26T14:13:45Z",
+          "updatedAt": "2025-09-26T14:13:45Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 194,
+      "id": "PR_kwDOKfq5gM6qt9Cw",
+      "title": "5272: Address #193",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/194",
+      "state": "CLOSED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #193.",
+      "createdAt": "2025-09-26T13:14:29Z",
+      "updatedAt": "2025-09-26T16:14:54Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "aadcf547f9ac006be2c71c36527b0db8ff1e0d9b",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-md-appRef",
+      "headRefOid": "ad2304d3a677955df05481adbca8ee6ff66e1320",
+      "closedAt": "2025-09-26T14:24:43Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This seems to be unsupported so should probably close this and Close #193. Or, am I missing something?",
+          "createdAt": "2025-09-26T13:24:26Z",
+          "updatedAt": "2025-09-26T13:24:26Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7DDaP3",
+          "commit": {
+            "abbreviatedOid": "016b767"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-26T14:03:52Z",
+          "updatedAt": "2025-09-26T14:03:53Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\nidentity can be found in ({{Appendix C of CRMF}}).\n```",
+              "createdAt": "2025-09-26T14:03:52Z",
+              "updatedAt": "2025-09-26T14:03:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7DDamw",
+          "commit": {
+            "abbreviatedOid": "016b767"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-26T14:04:14Z",
+          "updatedAt": "2025-09-26T14:04:14Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "```suggestion\n({{Appendix A of PASSWORD}}).\n```",
+              "createdAt": "2025-09-26T14:04:14Z",
+              "updatedAt": "2025-09-26T14:04:14Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 195,
+      "id": "PR_kwDOKfq5gM6qui84",
+      "title": "5272: Address #190",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/195",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #190.",
+      "createdAt": "2025-09-26T13:53:44Z",
+      "updatedAt": "2025-09-26T16:14:52Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "aadcf547f9ac006be2c71c36527b0db8ff1e0d9b",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-asn1-ref",
+      "headRefOid": "d104ff84abd94f551ddb56eefab998a3faa142fd",
+      "closedAt": "2025-09-26T14:14:49Z",
+      "mergedAt": "2025-09-26T14:14:49Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "080c7b069656942b39487752c5ba94c909a48616"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7DDjjx",
+          "commit": {
+            "abbreviatedOid": "d104ff8"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-26T14:14:43Z",
+          "updatedAt": "2025-09-26T14:14:43Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 197,
+      "id": "PR_kwDOKfq5gM6qu541",
+      "title": "5272: Address #196",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/197",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #196.",
+      "createdAt": "2025-09-26T14:23:18Z",
+      "updatedAt": "2025-09-26T15:58:43Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "080c7b069656942b39487752c5ba94c909a48616",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-iana-tweaks-redux",
+      "headRefOid": "430fbe460f16fa60ad4baa83a3c021ddb09ff144",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7DDwR9",
+          "commit": {
+            "abbreviatedOid": "f226b0d"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-26T14:29:20Z",
+          "updatedAt": "2025-09-26T14:29:20Z",
+          "comments": [
+            {
+              "originalPosition": 74,
+              "body": "```suggestion\n* id-kp-cmcRA\n* id-kp-cmcArchive\n```",
+              "createdAt": "2025-09-26T14:29:20Z",
+              "updatedAt": "2025-09-26T14:29:20Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7DDweA",
+          "commit": {
+            "abbreviatedOid": "f226b0d"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-26T14:29:32Z",
+          "updatedAt": "2025-09-26T14:29:32Z",
+          "comments": [
+            {
+              "originalPosition": 125,
+              "body": "```suggestion\n* id-cct-PKIResponse\n```",
+              "createdAt": "2025-09-26T14:29:32Z",
+              "updatedAt": "2025-09-26T14:29:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7DETLL",
+          "commit": {
+            "abbreviatedOid": "ca0f647"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-26T15:07:24Z",
+          "updatedAt": "2025-09-26T15:07:24Z",
+          "comments": [
+            {
+              "originalPosition": 118,
+              "body": "```suggestion\n* id-cmc-statusInfo\n* id-cmc-identification\n* id-cmc-identityProof\n* id-cmc-dataReturn\n* id-cmc-transactionId\n* id-cmc-senderNonce\n* id-cmc-recipientNonce\n* id-cmc-addExtensions\n* id-cmc-encryptedPOP\n* id-cmc-decryptedPOP\n* id-cmc-lraPOPWitness\n* id-cmc-getCert\n* id-cmc-getCRL\n* id-cmc-revokeRequest\n* id-cmc-regInfo\n* id-cmc-responseInfo\n* id-cmc-queryPending\n* id-cmc-popLinkRandom\n* id-cmc-popLinkWitness\n* id-cmc-confirmCertAcceptance\n* id-cmc-statusInfoV2\n* id-cmc-trustedAnchors\n* id-cmc-authData\n* id-cmc-batchRequests\n* id-cmc-batchResponses\n* id-cmc-publishCert\n* id-cmc-modCertTemplate\n* id-cmc-controlProcessed\n* id-cmc-popLinkWitnessV2\n* id-cmc-identityProofV2\n* id-cmc-raIdentityWitness\n* id-cmc-changeSubjectName\n* id-cmc-responseBody\n```",
+              "createdAt": "2025-09-26T15:07:24Z",
+              "updatedAt": "2025-09-26T15:07:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7DEW9l",
+          "commit": {
+            "abbreviatedOid": "f3d6ad9"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-26T15:12:16Z",
+          "updatedAt": "2025-09-26T15:12:16Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "```suggestion\n  IANA-PKIX-ALGS:\n```",
+              "createdAt": "2025-09-26T15:12:16Z",
+              "updatedAt": "2025-09-26T15:12:16Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7DEXQN",
+          "commit": {
+            "abbreviatedOid": "f3d6ad9"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-26T15:12:38Z",
+          "updatedAt": "2025-09-26T15:12:38Z",
+          "comments": [
+            {
+              "originalPosition": 68,
+              "body": "```suggestion\n{{IANA-PKIX-ALGS}} to refer to [ RFC-to-be ]:\n```",
+              "createdAt": "2025-09-26T15:12:38Z",
+              "updatedAt": "2025-09-26T15:12:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7DFBP6",
+          "commit": {
+            "abbreviatedOid": "430fbe4"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-26T15:58:43Z",
+          "updatedAt": "2025-09-26T15:58:43Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 198,
+      "id": "PR_kwDOKfq5gM6qv0HA",
+      "title": "Fix aasvg",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/198",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "* in Figure 2 looked weird.",
+      "createdAt": "2025-09-26T15:45:33Z",
+      "updatedAt": "2025-09-26T16:15:05Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "080c7b069656942b39487752c5ba94c909a48616",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-aasvg-tweak",
+      "headRefOid": "27347a38d059cb6e6e6af1b669865fedfa02b980",
+      "closedAt": "2025-09-26T15:48:02Z",
+      "mergedAt": "2025-09-26T15:48:02Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "b1f714ecad3397e65bc59b9965cb1cff197d21d1"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 199,
+      "id": "PR_kwDOKfq5gM6qv7jM",
+      "title": "More aasvg",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/199",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-26T15:55:48Z",
+      "updatedAt": "2025-09-26T16:15:06Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "b1f714ecad3397e65bc59b9965cb1cff197d21d1",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-more-aasvg",
+      "headRefOid": "b4b6ec97a25c71473c20abfdbd345841bb2b7c06",
+      "closedAt": "2025-09-26T15:57:01Z",
+      "mergedAt": "2025-09-26T15:57:01Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "97699a3b3f0e6d1dd21ea2a709a891a91f6dfb0f"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7DFAL5",
+          "commit": {
+            "abbreviatedOid": "b4b6ec9"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-09-26T15:57:07Z",
+          "updatedAt": "2025-09-26T15:57:07Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 200,
+      "id": "PR_kwDOKfq5gM6qwAON",
+      "title": "more aasvg",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/200",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-26T16:03:34Z",
+      "updatedAt": "2025-09-26T16:15:06Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "97699a3b3f0e6d1dd21ea2a709a891a91f6dfb0f",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-more-aasvg-1",
+      "headRefOid": "00e1a22c7ff9020c8f0488c72270ab6fa37245d1",
+      "closedAt": "2025-09-26T16:03:41Z",
+      "mergedAt": "2025-09-26T16:03:41Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "450cb333a961fa7022e18576220b5caaaa273e2a"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 201,
+      "id": "PR_kwDOKfq5gM6qwErA",
+      "title": "even more aasvg",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/201",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-26T16:09:55Z",
+      "updatedAt": "2025-09-26T16:15:07Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "450cb333a961fa7022e18576220b5caaaa273e2a",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-aasvg-arrows",
+      "headRefOid": "176d0e96594b97d0762b66aef94f5d6c76c96207",
+      "closedAt": "2025-09-26T16:10:05Z",
+      "mergedAt": "2025-09-26T16:10:05Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "c406c9ed849bccdb2d45eb3a4fc52e34643d69ef"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 202,
+      "id": "PR_kwDOKfq5gM6qwHAj",
+      "title": "Revert \"even more aasvg\"",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/202",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Reverts lamps-wg/cmcbis#201",
+      "createdAt": "2025-09-26T16:12:55Z",
+      "updatedAt": "2025-09-26T16:15:11Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "c406c9ed849bccdb2d45eb3a4fc52e34643d69ef",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "revert-201-seanturner-aasvg-arrows",
+      "headRefOid": "e359bf730aa2e8a702d0c61b36da0e9cdadb019d",
+      "closedAt": "2025-09-26T16:13:10Z",
+      "mergedAt": "2025-09-26T16:13:10Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "b4c16885130ce5244f51965325005d341916c834"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 203,
+      "id": "PR_kwDOKfq5gM6qwJzW",
+      "title": "fix aasvg",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/203",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-26T16:17:03Z",
+      "updatedAt": "2025-09-26T16:19:53Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "b4c16885130ce5244f51965325005d341916c834",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-fix-aasvg",
+      "headRefOid": "6a55e3f7dcf1fb21e04248afc785f0af2ec3df69",
+      "closedAt": "2025-09-26T16:17:11Z",
+      "mergedAt": "2025-09-26T16:17:11Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "0ab658ac70f4c4497ace48f24e2bd6559c5ad0c0"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
