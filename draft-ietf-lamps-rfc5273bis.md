@@ -196,7 +196,7 @@ following rules apply.
 > Clients MAY attempt to send certification requests using HTTPS {{HTTP}},
 although servers are not required to support TLS/QUIC but a secure channel
 might be available regardless depending on the HTTP version implemented
-{{HTTP/1.1}}, {{HTTP/2}}, {{HTTP/3}}, or later. If TLS is used by the HTTP version, then the
+{{HTTP/1.0}}, {{HTTP/1.1}}, {{HTTP/2}}, {{HTTP/3}}, or later. If TLS is used by the HTTP version, then the
 implementation MUST follow the recommendations in {{BCP195}}. CMC implementations
 that support TLS 1.3 or QUIC MUST NOT use early data (i.e., 0-RTT) because POST is
 not idempotent.
