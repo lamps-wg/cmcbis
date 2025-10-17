@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 28 March 2026                                 24 September 2025
+Expires: 20 April 2026                                   17 October 2025
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 March 2026.
+   This Internet-Draft will expire on 20 April 2026.
 
 Copyright Notice
 
@@ -221,11 +221,11 @@ Table of Contents
       Clients MAY attempt to send certification requests using HTTPS
       [HTTP], although servers are not required to support TLS/QUIC but
       a secure channel might be available regardless depending on the
-      HTTP version implemented [HTTP_1.1], [HTTP_2], [HTTP_3], or later.
-      If TLS is used by the HTTP version, then the implementation MUST
-      follow the recommendations in [BCP195].  CMC implementations that
-      support TLS 1.3 or QUIC MUST NOT use early data (i.e., 0-RTT)
-      because POST is not idempotent.
+      HTTP version implemented [HTTP_1.0], [HTTP_1.1], [HTTP_2],
+      [HTTP_3], or later.  If TLS is used by the HTTP version, then the
+      implementation MUST follow the recommendations in [BCP195].  CMC
+      implementations that support TLS 1.3 or QUIC MUST NOT use early
+      data (i.e., 0-RTT) because POST is not idempotent.
 
       Servers MUST NOT assume client support for any type of HTTP
       authentication such as cookies, Basic authentication, or Digest
@@ -398,6 +398,11 @@ Table of Contents
    [erratum3593]
               "RFC 5273 erratum 3593", April 2013,
               <https://www.rfc-editor.org/errata/eid3593>.
+
+   [HTTP_1.0] Berners-Lee, T., Fielding, R., and H. Frystyk, "Hypertext
+              Transfer Protocol -- HTTP/1.0", RFC 1945,
+              DOI 10.17487/RFC1945, May 1996,
+              <https://www.rfc-editor.org/rfc/rfc1945>.
 
    [HTTP_1.1] Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
               Ed., "HTTP/1.1", STD 99, RFC 9112, DOI 10.17487/RFC9112,
