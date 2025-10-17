@@ -70,7 +70,8 @@ informative:
   CMC-Updates: RFC6402
   IPsec: RFC4301
     HTTP/1.0: RFC1945
-    HTTP/1.1: RFC9112
+  HTTP/1.0: RFC1945
+  HTTP/1.1: RFC9112
   HTTP/2: RFC9113
   HTTP/3: RFC9114
   erratum3593:
