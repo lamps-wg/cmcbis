@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-28T01:58:18.639519+00:00",
+  "timestamp": "2025-10-19T02:02:58.045839+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -6945,13 +6945,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-09-16T16:34:35Z",
-      "updatedAt": "2025-09-24T15:43:10Z",
+      "updatedAt": "2025-10-17T20:28:01Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "3e654c4aa47c269e2b659364298fb941ce264c84",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "Addresses-170",
-      "headRefOid": "a51a1516928855ebcbf07fac2d9f7b76760a17a6",
+      "headRefOid": "644864ae668188ace5a97a696b6ded42dceaba8a",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -7009,6 +7009,86 @@
               "body": "```suggestion\r\nimplementation MUST follow the recommendations in {{BCP195}}. CMC implementations\r\nthat support TLS 1.3 or QUIC MUST NOT use early data (i.e., 0-RTT) because POST is\r\nnot idempotent.\r\n```",
               "createdAt": "2025-09-23T18:59:09Z",
               "updatedAt": "2025-09-23T18:59:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7Hyhg4",
+          "commit": {
+            "abbreviatedOid": "a51a151"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-17T20:24:42Z",
+          "updatedAt": "2025-10-17T20:24:43Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\n    HTTP/1.0: RFC1945\n    HTTP/1.1: RFC9112\n```",
+              "createdAt": "2025-10-17T20:24:43Z",
+              "updatedAt": "2025-10-17T20:24:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7Hyh62",
+          "commit": {
+            "abbreviatedOid": "a51a151"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-17T20:25:02Z",
+          "updatedAt": "2025-10-17T20:25:02Z",
+          "comments": [
+            {
+              "originalPosition": 21,
+              "body": "```suggestion\n{{HTTP/1.0}}, {{HTTP/1.1}}, {{HTTP/2}}, {{HTTP/3}}, or later. If TLS is used by the HTTP version, then the\n```",
+              "createdAt": "2025-10-17T20:25:02Z",
+              "updatedAt": "2025-10-17T20:25:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7HykxU",
+          "commit": {
+            "abbreviatedOid": "31e93ef"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-17T20:27:27Z",
+          "updatedAt": "2025-10-17T20:27:27Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\n  HTTP/1.0: RFC1945\n  HTTP/1.1: RFC9112\n```",
+              "createdAt": "2025-10-17T20:27:27Z",
+              "updatedAt": "2025-10-17T20:27:27Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7HylVd",
+          "commit": {
+            "abbreviatedOid": "6b4771e"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-17T20:27:53Z",
+          "updatedAt": "2025-10-17T20:27:53Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "```suggestion\n  HTTP/1.0: RFC1945\n  HTTP/1.1: RFC9112\n```",
+              "createdAt": "2025-10-17T20:27:53Z",
+              "updatedAt": "2025-10-17T20:27:53Z"
             }
           ]
         }
@@ -7836,6 +7916,46 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 204,
+      "id": "PR_kwDOKfq5gM6uYOqx",
+      "title": "5273: Address #162 (file permissions)",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/204",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #162.",
+      "createdAt": "2025-10-17T20:17:03Z",
+      "updatedAt": "2025-10-17T20:33:01Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "0ab658ac70f4c4497ace48f24e2bd6559c5ad0c0",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-SecCon-file-permissions",
+      "headRefOid": "dc1b5e409c95f3dba65be7d0e6debff5a2e679ac",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7Hyb3Z",
+          "commit": {
+            "abbreviatedOid": "dc1b5e4"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-17T20:18:52Z",
+          "updatedAt": "2025-10-17T20:18:52Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
