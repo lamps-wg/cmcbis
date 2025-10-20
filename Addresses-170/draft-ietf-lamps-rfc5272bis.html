@@ -27,24 +27,23 @@ requirements usage document along with this document for a full
 definition. 
        This document obsoletes RFC 5272 and RFC 6402. 
     " name="description">
-<meta content="xml2rfc 3.30.2" name="generator">
+<meta content="xml2rfc 3.31.0" name="generator">
 <meta content="Public Key Infrastructure" name="keyword">
 <meta content="Certificate Management" name="keyword">
 <meta content="Cryptographic Message Syntax" name="keyword">
 <meta content="draft-ietf-lamps-rfc5272bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.30.2
-    Python 3.12.11
+  xml2rfc 3.31.0
+    Python 3.12.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.1
-    platformdirs 4.4.0
+    platformdirs 4.5.0
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.5
-    setuptools 80.9.0
     wcwidth 0.2.14
 -->
 <link href="draft-ietf-lamps-rfc5272bis.xml" rel="alternate" type="application/rfc+xml">
@@ -1068,7 +1067,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Mandel, Ed &amp; Turner, Ed</td>
-<td class="center">Expires 20 April 2026</td>
+<td class="center">Expires 23 April 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1084,12 +1083,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5272" class="eref">5272</a>, <a href="https://www.rfc-editor.org/rfc/rfc6402" class="eref">6402</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-10-17" class="published">17 October 2025</time>
+<time datetime="2025-10-20" class="published">20 October 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-04-20">20 April 2026</time></dd>
+<dd class="expires"><time datetime="2026-04-23">23 April 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1160,7 +1159,7 @@ definition.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 20 April 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 23 April 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1655,15 +1654,17 @@ rekey that previously was implicit.<a href="#section-1.4-8" class="pilcrow">¶</
 <p id="section-1.5-4">Addressed <span>[<a href="#erratum3943" class="cite xref">erratum3943</a>]</span> for RFC 6402.<a href="#section-1.5-4" class="pilcrow">¶</a></p>
 <p id="section-1.5-5">To support adopting SHA-256 and HMAC-SHA256, maca-hMAC-SHA256 was added to
 POPAlgs and mda-sha256 was added to WitnessAlgs. Both were included in
-the example in Appendix B.<a href="#section-1.5-5" class="pilcrow">¶</a></p>
+the example in <a href="#enroll" class="auto internal xref">Appendix B</a>.<a href="#section-1.5-5" class="pilcrow">¶</a></p>
 <p id="section-1.5-6">Updated Encrypted and Decrypted POP Controls section to use HMAC-SHA256.<a href="#section-1.5-6" class="pilcrow">¶</a></p>
-<p id="section-1.5-7">Updated the ASN.1 module to use the 2002 ASN.1 module from <span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1.5-7" class="pilcrow">¶</a></p>
-<p id="section-1.5-8">Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
-Module for PBKDF2 PRFs.<a href="#section-1.5-8" class="pilcrow">¶</a></p>
+<p id="section-1.5-7">Updated the ASN.1 module to import from the 2008 ASN.1 module from
+<span>[<a href="#CMC-Updates" class="cite xref">CMC-Updates</a>]</span>.<a href="#section-1.5-7" class="pilcrow">¶</a></p>
+<p id="section-1.5-8">Modified the ASN.1 module in <a href="#asn.1-cmc" class="auto internal xref">Appendix A.1</a> to import PBDKF2 PRFs from
+<a href="#asn.1-pbkdf2" class="auto internal xref">Appendix A.2</a>.<a href="#section-1.5-8" class="pilcrow">¶</a></p>
 <p id="section-1.5-9">Added a direct POP example to address management of KEM certificates.<a href="#section-1.5-9" class="pilcrow">¶</a></p>
 <p id="section-1.5-10">Added id-ce-subjectKeyIdentifier to examples.<a href="#section-1.5-10" class="pilcrow">¶</a></p>
 <p id="section-1.5-11">Clarified that subjectKeyIdentifier choice used with id-alg-noSignature.<a href="#section-1.5-11" class="pilcrow">¶</a></p>
-<p id="section-1.5-12">Update CMC Control Attribute Table to include raIdentityWitness and responseBody from RFC 6402<a href="#section-1.5-12" class="pilcrow">¶</a></p>
+<p id="section-1.5-12">Update CMC Control Attribute Table to include raIdentityWitness and
+responseBody from RFC 6402.<a href="#section-1.5-12" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1980,7 +1981,7 @@ for convenience and consistency of usage:<a href="#section-2.1-1" class="pilcrow
             <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-2.1-19.1.1.1">
                 <p id="section-2.1-19.1.1.1.1">Object IDentifier (OID) is a primitive type in Abstract Syntax
-   Notation One (ASN.1).<a href="#section-2.1-19.1.1.1.1" class="pilcrow">¶</a></p>
+   Notation One (ASN.1) <span>[<a href="#ASN.1" class="cite xref">ASN.1</a>]</span>.<a href="#section-2.1-19.1.1.1.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
@@ -2106,12 +2107,6 @@ the Full PKI Request and Response are detailed in <a href="#FullPKIRequest" clas
                 <path d="M 336,464 L 544,464" fill="none" stroke="black"></path>
                 <path d="M 80,496 L 224,496" fill="none" stroke="black"></path>
                 <path d="M 416,512 L 544,512" fill="none" stroke="black"></path>
-                <circle cx="80" cy="304" r="6" class="closeddot" fill="black"></circle>
-                <circle cx="152" cy="272" r="6" class="closeddot" fill="black"></circle>
-                <circle cx="216" cy="240" r="6" class="closeddot" fill="black"></circle>
-                <circle cx="400" cy="288" r="6" class="closeddot" fill="black"></circle>
-                <circle cx="472" cy="256" r="6" class="closeddot" fill="black"></circle>
-                <circle cx="512" cy="224" r="6" class="closeddot" fill="black"></circle>
                 <g class="text">
                   <text x="20" y="36">Full</text>
                   <text x="56" y="36">PKI</text>
@@ -2142,25 +2137,27 @@ the Full PKI Request and Response are detailed in <a href="#FullPKIRequest" clas
                   <text x="380" y="212">Sequence</text>
                   <text x="432" y="212">of:</text>
                   <text x="72" y="228">&lt;enrollment</text>
-                  <text x="160" y="228">control&gt;*</text>
+                  <text x="160" y="228">control&gt;^</text>
                   <text x="392" y="228">&lt;enrollment</text>
-                  <text x="476" y="228">control&gt;</text>
+                  <text x="480" y="228">control&gt;^</text>
                   <text x="84" y="244">&lt;certification</text>
-                  <text x="180" y="244">request&gt;</text>
+                  <text x="184" y="244">request&gt;^</text>
                   <text x="364" y="244">&lt;CMS</text>
-                  <text x="420" y="244">object&gt;*</text>
+                  <text x="420" y="244">object&gt;^</text>
                   <text x="44" y="260">&lt;CMS</text>
-                  <text x="100" y="260">object&gt;*</text>
+                  <text x="100" y="260">object&gt;^</text>
                   <text x="372" y="260">&lt;other</text>
-                  <text x="436" y="260">message&gt;</text>
+                  <text x="440" y="260">message&gt;^</text>
                   <text x="52" y="276">&lt;other</text>
-                  <text x="116" y="276">message&gt;</text>
+                  <text x="120" y="276">message&gt;^</text>
                   <text x="368" y="292">where</text>
+                  <text x="400" y="292">^</text>
                   <text x="420" y="292">==</text>
                   <text x="452" y="292">zero</text>
                   <text x="484" y="292">or</text>
                   <text x="516" y="292">more</text>
                   <text x="48" y="308">where</text>
+                  <text x="80" y="308">^</text>
                   <text x="100" y="308">==</text>
                   <text x="132" y="308">zero</text>
                   <text x="164" y="308">or</text>
@@ -6506,10 +6503,10 @@ algorithm choices, and algorithm parameters.<a href="#section-10-11" class="pilc
 <p id="section-11-1">This document defines a number of control objects.  These are
 identified by Object Identifiers (OIDs).  The objects are defined
 from an arc delegated by IANA to the PKIX Working Group.<a href="#section-11-1" class="pilcrow">¶</a></p>
-<p id="section-11-2">For the ASN.1 modules in Appendix A, IANA is requested to assign
+<p id="section-11-2">For the ASN.1 modules in <a href="#asn.1-modules" class="auto internal xref">Appendix A</a>, IANA is requested to assign
 an OID for the module identifier (TBD1) with a Description of
-"id-mod-enrollMsgSyntax-2025" and an OID for the module
-identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs-2025".
+"id-mod-enrollMsgSyntax-2025" in <a href="#asn.1-cmc" class="auto internal xref">Appendix A.1</a> and an OID for the module
+identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs-2025" in <a href="#asn.1-pbkdf2" class="auto internal xref">Appendix A.2</a>.
 The OIDs for the modules should be allocated in the "SMI Security
 for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).<a href="#section-11-2" class="pilcrow">¶</a></p>
 <p id="section-11-3">IANA is requested to update the existing references to <span>[<a href="#CMC-PROTv1" class="cite xref">CMC-PROTv1</a>]</span> in
@@ -6563,6 +6560,10 @@ Registrations) registry group with [ RFC-to-be ] for the following:<a href="#sec
 <a href="#section-12.1" class="section-number selfRef">12.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
+<dt id="ASN.1">[ASN.1]</dt>
+        <dd>
+<span class="refAuthor">ITU-T</span>, <span class="refTitle">"Information technology -- Abstract Syntax Notation One (ASN.1): Specification of basic notation"</span>, <span class="seriesInfo">ITU-T Recommendation X.680</span>, <span class="seriesInfo">ISO/IEC 8824-1:2021</span>, <time datetime="2021-02" class="refDate">February 2021</time>, <span>&lt;<a href="https://www.itu.int/rec/T-REC-X.680">https://www.itu.int/rec/T-REC-X.680</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="CMS">[CMS]</dt>
         <dd>
 <span class="refAuthor">Housley, R.</span>, <span class="refTitle">"Cryptographic Message Syntax (CMS)"</span>, <span class="seriesInfo">STD 70</span>, <span class="seriesInfo">RFC 5652</span>, <span class="seriesInfo">DOI 10.17487/RFC5652</span>, <time datetime="2009-09" class="refDate">September 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5652">https://www.rfc-editor.org/rfc/rfc5652</a>&gt;</span>. </dd>
@@ -6709,7 +6710,7 @@ Registrations) registry group with [ RFC-to-be ] for the following:<a href="#sec
 </div>
 </section>
 </div>
-<div id="ASN.1">
+<div id="asn.1-modules">
 <section id="appendix-A">
       <h2 id="name-asn1-modules">
 <a href="#appendix-A" class="section-number selfRef">Appendix A. </a><a href="#name-asn1-modules" class="section-name selfRef">ASN.1 Modules</a>
@@ -7362,7 +7363,7 @@ END
 </div>
 </section>
 </div>
-<div id="asn1-module-for-pbkdf2-prfs">
+<div id="asn.1-pbkdf2">
 <section id="appendix-A.2">
         <h3 id="name-asn1-module-for-pbkdf2-prfs">
 <a href="#appendix-A.2" class="section-number selfRef">A.2. </a><a href="#name-asn1-module-for-pbkdf2-prfs" class="section-name selfRef">ASN.1 Module for PBKDF2 PRFs</a>
