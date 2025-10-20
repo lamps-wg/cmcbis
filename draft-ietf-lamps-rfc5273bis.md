@@ -317,6 +317,12 @@ trust anchors to be used for these protocols.  In these instances,
 the Enveloped Data content type ({{Section 3.2.1.3.3 of CMC-STRUCT}})
 provides the same shrouding that TLS would have provided.
 
+For the mail-based protocol, the Enveloped Data content type can
+also be used to apply confidentiality protection (content shrouding)
+to the conveyed messages. SMTP-over-TLS {{?RFC3207}} does
+provide hop-by-hop security, but cannot guarantee that all hops
+are actually protected.
+
 For the file-based protocol, an additional method of applying
 confidentiality protection (content shrouding) to the conveyed messages
 is usually availablle in the form of filesystem permissions.  The local
