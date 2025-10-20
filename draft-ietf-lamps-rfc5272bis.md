@@ -77,6 +77,27 @@ informative:
   X942: RFC2631
   RFC2797:
   CMS-RI: RFC9629
+  PKIX-MODIDS:
+    target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.0
+    title: "SMI Security for PKIX Module Identifier"
+  SMIME-ATTRS:
+    target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#security-smime-2
+    title: "SMI Security for S/MIME Attributes"
+  PKIX-EKPS:
+    target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.3
+    title: "SMI Security for PKIX Extended Key Purpose"
+  IANA-PKIX-ALGS:
+    target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.6
+    title: "SMI Security for PKIX Algorithms"
+  CMC-CTRLS:
+    target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.7
+    title: "SMI Security for PKIX CMC Controls"
+  CMC-CTS:
+    target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.15
+    title: "SMI Security for PKIX CMC Content Types"
+  PKIX-ADS:
+    target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.48
+    title: "SMI Security for PKIX Access Descriptor"
   erratum2063:
     target: https://www.rfc-editor.org/errata/eid2063
     title: RFC 5272 erratum 2063
@@ -3418,22 +3439,63 @@ algorithm choices, and algorithm parameters.
 
 # IANA Considerations {#IANAConsiderations}
 
-This document defines a number of control objects.  These are
-identified by Object Identifiers (OIDs).  The objects are defined
-from an arc delegated by IANA to the PKIX Working Group.
+This document defines a number of CMC-related control objects, ASN.1
+modules, extended key purposes, content types.  All are identified by
+Object Identifiers (OIDs).  The OIDs are defined from an arc delegated
+by IANA to the PKIX Working Group with the notable except of one
+S/MIME attribute. All registrations follow.
 
 For the ASN.1 modules in {{asn.1-modules}}, IANA is requested to assign
 an OID for the module identifier (TBD1) with a Description of
 "id-mod-enrollMsgSyntax-2025" in {{asn.1-cmc}} and an OID for the module
 identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs-2025" in {{asn.1-pbkdf2}}.
 The OIDs for the modules should be allocated in the "SMI Security
-for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).
+for PKIX Module Identifier" registry {{PKIX-MODIDS}}.
 
-IANA is requested to update the existing references to {{CMC-PROTv1}} in
-the Structure of Management Information (SMI) Numbers (MIB Module
-Registrations) registry group with [ RFC-to-be ] for the following:
+IANA is requested to replace the references for the following S/MIME
+attributes found in the "SMI Security for S/MIME Attributes" registry
+{{SMIME-ATTRS}} to refer to [ RFC-to-be ]:
 
 * id-aa-cmc-unsignedData
+
+IANA is requested to replace the references for the following key
+purposes found in the SMI Security for "PKIX Extended Key Purpose"
+registry {{PKIX-EKPS}} to refer to [ RFC-to-be ]:
+
+* id-kp-cmcCA
+* id-kp-cmcRA
+* id-kp-cmcArchive
+
+IANA is requested to replace the references for the following signature
+algorithm found in the "SMI Security for PKIX Algorithms" registry
+{{IANA-PKIX-ALGS}} to refer to [ RFC-to-be ]:
+
+* id-alg-noSignature
+
+IANA is requested to replace the references for the following CMC
+controls found in the "SMI Security for PKIX CMC Controls" registry
+{{CMC-CTRLS}} to refer to [ RFC-to-be ]:
+
+* id-cmc-statusInfo
+* id-cmc-identification
+* id-cmc-identityProof
+* id-cmc-dataReturn
+* id-cmc-transactionId
+* id-cmc-senderNonce
+* id-cmc-recipientNonce
+* id-cmc-addExtensions
+* id-cmc-encryptedPOP
+* id-cmc-decryptedPOP
+* id-cmc-lraPOPWitness
+* id-cmc-getCert
+* id-cmc-getCRL
+* id-cmc-revokeRequest
+* id-cmc-regInfo
+* id-cmc-responseInfo
+* id-cmc-queryPending
+* id-cmc-popLinkRandom
+* id-cmc-popLinkWitness
+* id-cmc-confirmCertAcceptance
 * id-cmc-statusInfoV2
 * id-cmc-trustedAnchors
 * id-cmc-authData
@@ -3444,7 +3506,37 @@ Registrations) registry group with [ RFC-to-be ] for the following:
 * id-cmc-controlProcessed
 * id-cmc-popLinkWitnessV2
 * id-cmc-identityProofV2
+* id-cmc-raIdentityWitness
+* id-cmc-changeSubjectName
+* id-cmc-responseBody
 
+IANA is requested to replace the references for the following CMC
+content types found in the "SMI Security for PKIX CMC Content Types"
+registry {{CMC-CTS}} to refer to [ RFC-to-be ]:
+
+* id-cct-PKIData
+* id-cct-PKIResponse
+
+IANA is requested to replace the references for the following PKIX
+access descriptor found in the "SMI Security for PKIX Access
+Descriptor" registry {{PKIX-ADS}} to refer to [ RFC-to-be ]:
+
+* id-ad-cmc
+
+IANA is to note that the references for the following module OIDs
+in the "SMI Security for PKIX Module Identifier" registry
+{{PKIX-MODIDS}} are to remain unchanged as these modules remain
+unchanged by this specification:
+
+* id-mod-cmc
+* id-mod-cmc2002
+* id-mod-enrollMsgSyntax-2011-88
+* id-mod-enrollMsgSyntax-2011-08
+
+Likewise, the id-cmc-glaRR entry in the "SMI Security for PKIX CMC
+Controls" registry and all entries in the "SMI Security for PKIX CMC
+Controls" and "SMI Security for PKIX CMC GLA Requests and Responses"
+registries are to remain unchanged.
 
 --- back
 
