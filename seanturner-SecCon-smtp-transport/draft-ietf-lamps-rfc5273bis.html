@@ -1396,41 +1396,50 @@ Content-Disposition statement.<a href="#section-5-5" class="pilcrow">¶</a></p>
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-http-based-protocol" class="section-name selfRef">HTTP-Based Protocol</a>
       </h2>
 <p id="section-6-1">This section describes the conventions for use of HTTP <span>[<a href="#HTTP" class="cite xref">HTTP</a>]</span> as a
-transport layer. The use of HTTPS <span>[<a href="#HTTP" class="cite xref">HTTP</a>]</span> provides any necessary
+data transfer protocol.  Consult <span>[<a href="#HTTP-IMP" class="cite xref">HTTP-IMP</a>]</span> for additional information.
+The use of HTTPS <span>[<a href="#HTTP" class="cite xref">HTTP</a>]</span> provides any necessary
 content protection from eavesdroppers.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <p id="section-6-2">In order for CMC clients and servers using HTTP to interoperate, the
 following rules apply.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-6-3.1">
-          <p id="section-6-3.1.1">Client requests are submitted by use of the POST method.<a href="#section-6-3.1.1" class="pilcrow">¶</a></p>
+          <p id="section-6-3.1.1">Clients are configured with sufficient information to form the server URI <span>[<a href="#RFC3986" class="cite xref">RFC3986</a>]</span>.<a href="#section-6-3.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-6-4.1">
-          <p id="section-6-4.1.1">Servers <span class="bcp14">MUST</span> use the 200 response code for successful responses.<a href="#section-6-4.1.1" class="pilcrow">¶</a></p>
+          <p id="section-6-4.1.1">Client requests are submitted by use of the POST method.<a href="#section-6-4.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-6-5.1">
-          <p id="section-6-5.1.1">Clients <span class="bcp14">MAY</span> attempt to send HTTP requests using TLS 1.2 <span>[<a href="#TLS" class="cite xref">TLS</a>]</span> or
-later, although servers are not required to support TLS. If
-TLS is supported by an implementation, then the implementation <span class="bcp14">MUST</span>
-follow the recommendations in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>.<a href="#section-6-5.1.1" class="pilcrow">¶</a></p>
+          <p id="section-6-5.1.1">Servers <span class="bcp14">MUST</span> use the 2XX response codes for successful responses.<a href="#section-6-5.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-6-6.1">
-          <p id="section-6-6.1.1">Clients are not required to support any type of HTTP
-authentication (<span><a href="https://rfc-editor.org/rfc/rfc9110#section-11" class="relref">Section 11</a> of [<a href="#HTTP" class="cite xref">HTTP</a>]</span>) nor Cookies <span>[<a href="#COOKIES" class="cite xref">COOKIES</a>]</span>. Thus, servers
-can not rely on these features to be available.<a href="#section-6-6.1.1" class="pilcrow">¶</a></p>
+          <p id="section-6-6.1.1">Clients <span class="bcp14">MAY</span> attempt to send certification requests using HTTPS <span>[<a href="#HTTP" class="cite xref">HTTP</a>]</span>,
+although servers are not required to support TLS/QUIC but a secure channel
+might be available regardless depending on the HTTP version implemented
+<span>[<a href="#HTTP_1.0" class="cite xref">HTTP_1.0</a>]</span>, <span>[<a href="#HTTP_1.1" class="cite xref">HTTP_1.1</a>]</span>, <span>[<a href="#HTTP_2" class="cite xref">HTTP_2</a>]</span>, <span>[<a href="#HTTP_3" class="cite xref">HTTP_3</a>]</span>, or later. If TLS is used by the HTTP version, then the
+implementation <span class="bcp14">MUST</span> follow the recommendations in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>. CMC implementations
+that support TLS 1.3 or QUIC <span class="bcp14">MUST NOT</span> use early data (i.e., 0-RTT) because POST is
+not idempotent.<a href="#section-6-6.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-6-7.1">
-          <p id="section-6-7.1.1">Clients and servers are expected to follow other rules and
+          <p id="section-6-7.1.1">Clients are not required to support any type of HTTP
+authentication (<span><a href="https://rfc-editor.org/rfc/rfc9110#section-11" class="relref">Section 11</a> of [<a href="#HTTP" class="cite xref">HTTP</a>]</span>) nor Cookies <span>[<a href="#COOKIES" class="cite xref">COOKIES</a>]</span>. Thus, servers
+can not rely on these features to be available.<a href="#section-6-7.1.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<ul class="normal ulEmpty">
+<li class="normal ulEmpty" id="section-6-8.1">
+          <p id="section-6-8.1.1">Clients and servers are expected to follow other rules and
 restrictions in <span>[<a href="#HTTP" class="cite xref">HTTP</a>]</span>.  Note that some of those rules are for
 HTTP methods other than POST; clearly, only the rules that apply
-to POST are relevant for this specification.<a href="#section-6-7.1.1" class="pilcrow">¶</a></p>
+to POST are relevant for this specification.<a href="#section-6-8.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <div id="pki-request">
@@ -1555,6 +1564,13 @@ also be used to apply confidentiality protection (content shrouding)
 to the conveyed messages. SMTP-over-TLS <span>[<a href="#RFC3207" class="cite xref">RFC3207</a>]</span> does
 provide hop-by-hop security, but cannot guarantee that all hops
 are actually protected.<a href="#section-9-4" class="pilcrow">¶</a></p>
+<p id="section-9-5">For the file-based protocol, an additional method of applying
+confidentiality protection (content shrouding) to the conveyed messages
+is usually availablle in the form of filesystem permissions.  The local
+system may allow for read access to be limited to just a single user or
+group that corresponds to the entity authorized to read the request or
+response, respectively, and diligent use of these filesystem permissions
+can be a useful mechanism in multi-user environments.<a href="#section-9-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
@@ -1580,9 +1596,17 @@ are actually protected.<a href="#section-9-4" class="pilcrow">¶</a></p>
         <dd>
 <span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="seriesInfo">STD 97</span>, <span class="seriesInfo">RFC 9110</span>, <span class="seriesInfo">DOI 10.17487/RFC9110</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9110">https://www.rfc-editor.org/rfc/rfc9110</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="HTTP-IMP">[HTTP-IMP]</dt>
+        <dd>
+<span class="refAuthor">Nottingham, M.</span>, <span class="refTitle">"Building Protocols with HTTP"</span>, <span class="seriesInfo">BCP 56</span>, <span class="seriesInfo">RFC 9205</span>, <span class="seriesInfo">DOI 10.17487/RFC9205</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9205">https://www.rfc-editor.org/rfc/rfc9205</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC2119">[RFC2119]</dt>
         <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC3986">[RFC3986]</dt>
+        <dd>
+<span class="refAuthor">Berners-Lee, T.</span>, <span class="refAuthor">Fielding, R.</span>, and <span class="refAuthor">L. Masinter</span>, <span class="refTitle">"Uniform Resource Identifier (URI): Generic Syntax"</span>, <span class="seriesInfo">STD 66</span>, <span class="seriesInfo">RFC 3986</span>, <span class="seriesInfo">DOI 10.17487/RFC3986</span>, <time datetime="2005-01" class="refDate">January 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3986">https://www.rfc-editor.org/rfc/rfc3986</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
         <dd>
@@ -1620,6 +1644,22 @@ are actually protected.<a href="#section-9-4" class="pilcrow">¶</a></p>
 <dt id="erratum3593">[erratum3593]</dt>
         <dd>
 <span class="refTitle">"RFC 5273 erratum 3593"</span>, <time datetime="2013-04" class="refDate">April 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid3593">https://www.rfc-editor.org/errata/eid3593</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="HTTP_1.0">[HTTP_1.0]</dt>
+        <dd>
+<span class="refAuthor">Berners-Lee, T.</span>, <span class="refAuthor">Fielding, R.</span>, and <span class="refAuthor">H. Frystyk</span>, <span class="refTitle">"Hypertext Transfer Protocol -- HTTP/1.0"</span>, <span class="seriesInfo">RFC 1945</span>, <span class="seriesInfo">DOI 10.17487/RFC1945</span>, <time datetime="1996-05" class="refDate">May 1996</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc1945">https://www.rfc-editor.org/rfc/rfc1945</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="HTTP_1.1">[HTTP_1.1]</dt>
+        <dd>
+<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP/1.1"</span>, <span class="seriesInfo">STD 99</span>, <span class="seriesInfo">RFC 9112</span>, <span class="seriesInfo">DOI 10.17487/RFC9112</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9112">https://www.rfc-editor.org/rfc/rfc9112</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="HTTP_2">[HTTP_2]</dt>
+        <dd>
+<span class="refAuthor">Thomson, M., Ed.</span> and <span class="refAuthor">C. Benfield, Ed.</span>, <span class="refTitle">"HTTP/2"</span>, <span class="seriesInfo">RFC 9113</span>, <span class="seriesInfo">DOI 10.17487/RFC9113</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9113">https://www.rfc-editor.org/rfc/rfc9113</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="HTTP_3">[HTTP_3]</dt>
+        <dd>
+<span class="refAuthor">Bishop, M., Ed.</span>, <span class="refTitle">"HTTP/3"</span>, <span class="seriesInfo">RFC 9114</span>, <span class="seriesInfo">DOI 10.17487/RFC9114</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9114">https://www.rfc-editor.org/rfc/rfc9114</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="IPsec">[IPsec]</dt>
         <dd>
