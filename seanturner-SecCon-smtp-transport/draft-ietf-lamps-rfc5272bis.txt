@@ -6,7 +6,7 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 23 March 2026                                 19 September 2025
+Expires: 23 April 2026                                   20 October 2025
 
 
                  Certificate Management over CMS (CMC)
@@ -63,7 +63,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 March 2026.
+   This Internet-Draft will expire on 23 April 2026.
 
 Copyright Notice
 
@@ -238,10 +238,10 @@ Table of Contents
 
 1.3.  Changes from RFC 2797
 
-   We have done a major overhaul on the layout of the document.  This
-   included two different steps.  Firstly we removed some sections from
-   the document and moved them to two other documents.  Information on
-   how to transport our messages are now found in [CMC-TRANS].
+   [CMC-PROTv1] was a major overhaul on the layout of the document.
+   This included two different steps.  Firstly we removed some sections
+   from the document and moved them to two other documents.  Information
+   on how to transport our messages are now found in [CMC-TRANS].
    Information on which controls and sections of this document must be
    implemented along with which algorithms are required can now be found
    in [CMC-COMPL].
@@ -268,6 +268,9 @@ Table of Contents
 
 1.4.  Updates Made by RFC 6402
 
+   This version of the specification includes changes to [CMC-PROTv1]
+   that are noted in this section.
+
    Two new controls have been added:
 
       RA Identity Witness allows for an RA to perform identity checking
@@ -293,6 +296,9 @@ Table of Contents
 
 1.5.  Changes Since RFC 6402
 
+   This version of the specification also introduces changes to
+   [CMC-PROTv1] that are noted in this section.
+
    Merged [CMC-Updates] text.
 
    Included the following errata: [erratum8385], [erratum8137],
@@ -309,11 +315,11 @@ Table of Contents
    Updated Encrypted and Decrypted POP Controls section to use HMAC-
    SHA256.
 
-   Updated the ASN.1 module to use the 2002 ASN.1 module from
+   Updated the ASN.1 module to import from the 2008 ASN.1 module from
    [CMC-Updates].
 
-   Modified the ASN.1 module for CMC (A.1) to allow the import of ASN.1
-   Module for PBKDF2 PRFs.
+   Modified the ASN.1 module in Appendix A.1 to import PBDKF2 PRFs from
+   Appendix A.2.
 
    Added a direct POP example to address management of KEM certificates.
 
@@ -323,7 +329,7 @@ Table of Contents
    noSignature.
 
    Update CMC Control Attribute Table to include raIdentityWitness and
-   responseBody from RFC 6402
+   responseBody from RFC 6402.
 
 2.  Protocol Overview
 
@@ -367,12 +373,14 @@ Table of Contents
 
    No special services are provided to distinguish between a rekey
    request and a new certification request (generally for a new
-   purpose).  A control to unpublish a certificate would normally be
-   included in a rekey request, and be omitted in a new certification
-   request.  CAs or other publishing agents are also expected to have
+   purpose).  CAs or other publishing agents are also expected to have
    policies for removing certificates from publication either based on
    new certificates being added or the expiration or revocation of a
-   certificate.
+   certificate.  A control to unpublish a certificate would normally be
+   included in a rekey request if the CA did not wish to have a grace
+   period between the certificates, be omitted if the CA wishes to have
+   a grace period between certificates, and be omitted from a new
+   certification request.
 
    A provision exists for RAs to participate in the protocol by taking
    PKI Requests, wrapping them in a second layer of PKI Request with
@@ -463,7 +471,7 @@ Table of Contents
             of the above methods.
 
       Object IDentifier (OID) is a primitive type in Abstract Syntax
-         Notation One (ASN.1).
+         Notation One (ASN.1) [ASN.1].
 
 2.2.  Protocol Requests/Responses
 
@@ -511,12 +519,12 @@ Table of Contents
     | PKIData                 |             | PKIResponse             |
     |                         |             |                         |
     | Sequence of:            |             | Sequence of:            |
-    | <enrollment control>*   |             | <enrollment control>*   |
-    | <certification request>*|             | <CMS object>*           |
-    | <CMS object>*           |             | <other message>*        |
-    | <other message>*        |             |                         |
-    |                         |             | where * == zero or more |
-    | where * == zero or more |             |                         |
+    | <enrollment control>^   |             | <enrollment control>^   |
+    | <certification request>^|             | <CMS object>^           |
+    | <CMS object>^           |             | <other message>^        |
+    | <other message>^        |             |                         |
+    |                         |             | where ^ == zero or more |
+    | where ^ == zero or more |             |                         |
     |                         |             | All certificates issued |
     | Certification requests  |             | as part of the response |
     | are CRMF, PKCS #10, or  |             | are included in the     |
@@ -1362,9 +1370,6 @@ Table of Contents
    | id-cmc-popLinkWitness        | id-cmc |OCTET STRING       |6.3.1  |
    |                              | 23     |                   |       |
    +------------------------------+--------+-------------------+-------+
-   | id-cmc-popLinkWitnessV2      | id-cmc |OCTET STRING       |6.3.1.1|
-   |                              | 33     |                   |       |
-   +------------------------------+--------+-------------------+-------+
    | id-cmc-confirmCertAcceptance | id-cmc |CMCCertId          |6.14   |
    |                              | 24     |                   |       |
    +------------------------------+--------+-------------------+-------+
@@ -1391,6 +1396,9 @@ Table of Contents
    +------------------------------+--------+-------------------+-------+
    | id-cmc-controlProcessed      | id-cmc |ControlsProcessed  |6.19   |
    |                              | 32     |                   |       |
+   +------------------------------+--------+-------------------+-------+
+   | id-cmc-popLinkWitnessV2      | id-cmc |OCTET STRING       |6.3.1.1|
+   |                              | 33     |                   |       |
    +------------------------------+--------+-------------------+-------+
    | id-cmc-identityProofV2       | id-cmc |IdentityProofV2    |6.2.1  |
    |                              | 34     |                   |       |
@@ -3238,16 +3246,17 @@ Table of Contents
 
    The id-ad-cmc OID is used when the subject offers certification
    services using the CMC protocol.  If the CMC services are available
-   via HTTP or FTP, accessLocation MUST be a uniformResourceIdentifier.
-   If the CMC services are available via electronic mail, accessLocation
-   MUST be an rfc822Name.  If CMC services are available using TCP/IP,
-   the dNSName or iPAddress name forms MUST be used.  Since the
-   GeneralName data structure does not permit the inclusion of a port
-   number, in the absence of other external configuration information,
-   the value of 5318 should be used.  (The port registration is in
-   Section 3.2) The semantics of other name forms of accessLocation
-   (when accessMethod is id-ad-cmc) are not defined by this
-   specification.
+   via HTTP or FTP Section 2 of [CMC-TRANS] and Section 4 of [CMC-TRANS]
+   , accessLocation MUST be a uniformResourceIdentifier.  If the CMC
+   services are available via electronic mail Section 3 of [CMC-TRANS],
+   accessLocation MUST be an rfc822Name.  If CMC services are available
+   using TCP/IP Section 5 of [CMC-TRANS], the dNSName or iPAddress name
+   forms MUST be used.  Since the GeneralName data structure does not
+   permit the inclusion of a port number, in the absence of other
+   external configuration information, the value of 5318 should be used.
+   (The port registration is in Section 3.2) The semantics of other name
+   forms of accessLocation (when accessMethod is id-ad-cmc) are not
+   defined by this specification.
 
    The ASN.1 type for this extension is GeneralName see Section 4.2.1.8
    of [PKIXCERT].
@@ -3346,10 +3355,10 @@ Table of Contents
 
    For the ASN.1 modules in Appendix A, IANA is requested to assign an
    OID for the module identifier (TBD1) with a Description of "id-mod-
-   enrollMsgSyntax-2025" and an OID for the module identifier (TBD2)
-   with a Description of "id-mod-pbkdf2-prfs-2025".  The OIDs for the
-   modules should be allocated in the "SMI Security for PKIX Module
-   Identifier" registry (1.3.6.1.5.5.7.0).
+   enrollMsgSyntax-2025" in Appendix A.1 and an OID for the module
+   identifier (TBD2) with a Description of "id-mod-pbkdf2-prfs-2025" in
+   Appendix A.2.  The OIDs for the modules should be allocated in the
+   "SMI Security for PKIX Module Identifier" registry (1.3.6.1.5.5.7.0).
 
    IANA is requested to update the existing references to [CMC-PROTv1]
    in the Structure of Management Information (SMI) Numbers (MIB Module
@@ -3380,6 +3389,11 @@ Table of Contents
 12.  References
 
 12.1.  Normative References
+
+   [ASN.1]    ITU-T, "Information technology -- Abstract Syntax Notation
+              One (ASN.1): Specification of basic notation", ITU-T
+              Recommendation X.680, ISO/IEC 8824-1:2021, February 2021,
+              <https://www.itu.int/rec/T-REC-X.680>.
 
    [CMS]      Housley, R., "Cryptographic Message Syntax (CMS)", STD 70,
               RFC 5652, DOI 10.17487/RFC5652, September 2009,
