@@ -208,8 +208,9 @@ Table of Contents
 6.  HTTP-Based Protocol
 
    This section describes the conventions for use of HTTP [HTTP] as a
-   transport layer.  The use of HTTPS [HTTP] provides any necessary
-   content protection from eavesdroppers.
+   data transfer protocol.  Consult [HTTP-IMP] for additional
+   information.  The use of HTTPS [HTTP] provides any necessary content
+   protection from eavesdroppers.
 
    In order for CMC clients and servers using HTTP to interoperate, the
    following rules apply.
@@ -360,6 +361,10 @@ Table of Contents
               Ed., "HTTP Semantics", STD 97, RFC 9110,
               DOI 10.17487/RFC9110, June 2022,
               <https://www.rfc-editor.org/rfc/rfc9110>.
+
+   [HTTP-IMP] Nottingham, M., "Building Protocols with HTTP", BCP 56,
+              RFC 9205, DOI 10.17487/RFC9205, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9205>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
