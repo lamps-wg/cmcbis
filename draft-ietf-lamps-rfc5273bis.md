@@ -69,6 +69,10 @@ informative:
   CMC-TRANSv1: RFC5273
   CMC-Updates: RFC6402
   IPsec: RFC4301
+  HTTP/1.0: RFC1945
+  HTTP/1.1: RFC9112
+  HTTP/2: RFC9113
+  HTTP/3: RFC9114
   COOKIES: RFC6265
   erratum3593:
     title: "RFC 5273 erratum 3593"
@@ -190,10 +194,13 @@ following rules apply.
 
 > Servers MUST use the 200 response code for successful responses.
 
-> Clients MAY attempt to send HTTP requests using TLS 1.2 {{TLS}} or
-later, although servers are not required to support TLS. If
-TLS is supported by an implementation, then the implementation MUST
-follow the recommendations in {{BCP195}}.
+> Clients MAY attempt to send certification requests using HTTPS {{HTTP}},
+although servers are not required to support TLS/QUIC but a secure channel
+might be available regardless depending on the HTTP version implemented
+{{HTTP/1.0}}, {{HTTP/1.1}}, {{HTTP/2}}, {{HTTP/3}}, or later. If TLS is used by the HTTP version, then the
+implementation MUST follow the recommendations in {{BCP195}}. CMC implementations
+that support TLS 1.3 or QUIC MUST NOT use early data (i.e., 0-RTT) because POST is
+not idempotent.
 
 > Clients are not required to support any type of HTTP
 authentication ({{Section 11 of HTTP}}) nor Cookies {{COOKIES}}. Thus, servers
