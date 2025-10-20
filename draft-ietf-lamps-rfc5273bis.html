@@ -1559,6 +1559,13 @@ protocol itself is being used to download onto the system the set of
 trust anchors to be used for these protocols.  In these instances,
 the Enveloped Data content type (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-08#section-3.2.1.3.3" class="relref">Section 3.2.1.3.3</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>)
 provides the same shrouding that TLS would have provided.<a href="#section-9-3" class="pilcrow">¶</a></p>
+<p id="section-9-4">For the file-based protocol, an additional method of applying
+confidentiality protection (content shrouding) to the conveyed messages
+is usually availablle in the form of filesystem permissions.  The local
+system may allow for read access to be limited to just a single user or
+group that corresponds to the entity authorized to read the request or
+response, respectively, and diligent use of these filesystem permissions
+can be a useful mechanism in multi-user environments.<a href="#section-9-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
