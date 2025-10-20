@@ -194,7 +194,7 @@ following rules apply.
 
 > Client requests are submitted by use of the POST method.
 
-> Servers MUST use the 200 response code for successful responses.
+> Servers MUST use the 2XX response codes for successful responses.
 
 > Clients MAY attempt to send certification requests using HTTPS {{HTTP}},
 although servers are not required to support TLS/QUIC but a secure channel
