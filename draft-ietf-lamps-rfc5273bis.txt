@@ -215,6 +215,9 @@ Table of Contents
    In order for CMC clients and servers using HTTP to interoperate, the
    following rules apply.
 
+      Clients are configured with sufficient information to form the
+      server URI [RFC3986].
+
       Client requests are submitted by use of the POST method.
 
       Servers MUST use the 2XX response codes for successful responses.
@@ -370,6 +373,11 @@ Table of Contents
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              RFC 3986, DOI 10.17487/RFC3986, January 2005,
+              <https://www.rfc-editor.org/rfc/rfc3986>.
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
