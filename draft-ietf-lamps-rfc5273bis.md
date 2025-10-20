@@ -73,6 +73,7 @@ informative:
   HTTP/1.1: RFC9112
   HTTP/2: RFC9113
   HTTP/3: RFC9114
+  COOKIES: RFC6265
   erratum3593:
     title: "RFC 5273 erratum 3593"
     target: https://www.rfc-editor.org/errata/eid3593
@@ -201,9 +202,9 @@ implementation MUST follow the recommendations in {{BCP195}}. CMC implementation
 that support TLS 1.3 or QUIC MUST NOT use early data (i.e., 0-RTT) because POST is
 not idempotent.
 
-> Servers MUST NOT assume client support for any type of HTTP
-authentication such as cookies, Basic authentication, or Digest
-authentication.
+> Clients are not required to support any type of HTTP
+authentication ({{Section 11 of HTTP}}) nor Cookies {{COOKIES}}. Thus, servers
+can not rely on these features to be available.
 
 > Clients and servers are expected to follow other rules and
 restrictions in {{HTTP}}.  Note that some of those rules are for
