@@ -51,6 +51,7 @@ normative:
   CMC-STRUCT: I-D.ietf-lamps-rfc5272bis
   HTTP: RFC9110
   SMIMEV4: RFC8551
+  HTTP-IMP: RFC9205
   X690:
     target: https://www.itu.int/rec/T-REC-X.690
     title: >
@@ -69,6 +70,10 @@ informative:
   CMC-TRANSv1: RFC5273
   CMC-Updates: RFC6402
   IPsec: RFC4301
+  HTTP/1.0: RFC1945
+  HTTP/1.1: RFC9112
+  HTTP/2: RFC9113
+  HTTP/3: RFC9114
   COOKIES: RFC6265
   erratum3593:
     title: "RFC 5273 erratum 3593"
@@ -180,20 +185,26 @@ Content-Disposition statement.
 # HTTP-Based Protocol
 
 This section describes the conventions for use of HTTP {{HTTP}} as a
-transport layer. The use of HTTPS {{HTTP}} provides any necessary
+data transfer protocol.  Consult {{HTTP-IMP}} for additional information.
+The use of HTTPS {{HTTP}} provides any necessary
 content protection from eavesdroppers.
 
 In order for CMC clients and servers using HTTP to interoperate, the
 following rules apply.
 
+> Clients are configured with sufficient information to form the server URI {{!RFC3986}}.
+
 > Client requests are submitted by use of the POST method.
 
-> Servers MUST use the 200 response code for successful responses.
+> Servers MUST use the 2XX response codes for successful responses.
 
-> Clients MAY attempt to send HTTP requests using TLS 1.2 {{TLS}} or
-later, although servers are not required to support TLS. If
-TLS is supported by an implementation, then the implementation MUST
-follow the recommendations in {{BCP195}}.
+> Clients MAY attempt to send certification requests using HTTPS {{HTTP}},
+although servers are not required to support TLS/QUIC but a secure channel
+might be available regardless depending on the HTTP version implemented
+{{HTTP/1.0}}, {{HTTP/1.1}}, {{HTTP/2}}, {{HTTP/3}}, or later. If TLS is used by the HTTP version, then the
+implementation MUST follow the recommendations in {{BCP195}}. CMC implementations
+that support TLS 1.3 or QUIC MUST NOT use early data (i.e., 0-RTT) because POST is
+not idempotent.
 
 > Clients are not required to support any type of HTTP
 authentication ({{Section 11 of HTTP}}) nor Cookies {{COOKIES}}. Thus, servers
@@ -311,6 +322,14 @@ also be used to apply confidentiality protection (content shrouding)
 to the conveyed messages. SMTP-over-TLS {{?RFC3207}} does
 provide hop-by-hop security, but cannot guarantee that all hops
 are actually protected.
+
+For the file-based protocol, an additional method of applying
+confidentiality protection (content shrouding) to the conveyed messages
+is usually availablle in the form of filesystem permissions.  The local
+system may allow for read access to be limited to just a single user or
+group that corresponds to the entity authorized to read the request or
+response, respectively, and diligent use of these filesystem permissions
+can be a useful mechanism in multi-user environments.
 
 --- back
 
