@@ -50,6 +50,7 @@ normative:
   CMC-TRANS: I-D.ietf-lamps-rfc5273bis
   CMS: RFC5652
   CMS-AES: RFC3565
+  CMS-AES-AE: RFC5084
   CMS-ALG2: RFC5754
   CMS-DH: RFC2631
   CRMF: RFC4211
@@ -234,17 +235,21 @@ All entities MUST support Advanced Encryption Standard (AES) as the
 content encryption algorithm for EnvelopedData; (see {{CMS-AES}}).
 Other content encryption algorithms MAY be implemented.
 
+All entities MUST support Advanced Encryption Standard (AES) as the
+content encryption algorithm for AuthEnvelopedData; (see {{CMS-AES-AE}}).
+Other content encryption algorithms MAY be implemented.
+
 All entities MUST support RSA as a key transport algorithm for
-EnvelopedData; (see {{CMS-ALG2}}). Other key transport algorithms MAY
-be implemented.
+EnvelopedData and AuthEnvelopedData; (see {{CMS-ALG2}}). Other key
+transport algorithms MAY be implemented.
 
-If an entity supports key agreement for EnvelopedData, it MUST
-support Diffie-Hellman; (see {{CMS-DH}}).
+If an entity supports key agreement for EnvelopedData or AuthEnvelopedData,
+it MUST support Diffie-Hellman; (see {{CMS-DH}}).
 
-If an entity supports PasswordRecipientInfo for EnvelopedData or
-AuthenticatedData, it MUST support PBKDF2 {{!PBKDF2}} for key derivation
-algorithms.  It MUST support AES key wrap (see {{!AES-WRAP}}) as the key
-encryption algorithm.
+If an entity supports PasswordRecipientInfo for EnvelopedData,
+AuthenticatedData, or AuthEnvelopedData it MUST support PBKDF2 {{!PBKDF2}}
+for key derivation algorithms.  It MUST support AES key wrap
+(see {{!AES-WRAP}}) as the key encryption algorithm.
 
 If AuthenticatedData is supported, PasswordRecipientInfo MUST be
 supported.
@@ -267,7 +272,7 @@ Algorithm requirements for Publish Trust Anchors control ({{Section
 6.15 of CMC-STRUCT}}) are: SHA-256 MUST be implemented for hashAlgorithm.
 
 If an EE generates DH keys for certification, it MUST support {{Section
-4 of DH-POP}}].  EEs MAY support {{Section 3 of DH-POP}}.  CAs and RAs
+4 of DH-POP}}.  EEs MAY support {{Section 3 of DH-POP}}.  CAs and RAs
 that do POP verification MUST support {{Section 4 of DH-POP}} and
 SHOULD support {{Section 3 of DH-POP}}.
 
