@@ -46,6 +46,7 @@ contributor:
 
 normative:
    CMS: RFC5652
+   CMS-AE: RFC5083
    CMS-ALGS: RFC5911
    CRMF: RFC4211
    DH-POP: RFC6955
@@ -952,9 +953,10 @@ The fields in `TaggedContentInfo` have the following meaning:
 
 >> `contentInfo` is a ContentInfo object (defined in {{CMS}}).
 
-The four content types used in `cmsSequence` are `AuthenticatedData`,
-`Data`, `EnvelopedData`, and `SignedData`. All of these content types are
-defined in {{CMS}}.
+The five content types used in `cmsSequence` are `AuthenticatedData`,
+`Data`, `EnvelopedData`, `SignedData`, and `AuthEnvelopedData`. The
+first four content types are defined in {{CMS}} and the the last is
+defined in {{CMS-AE}}.
 
 #####  Authenticated Data {#AuthenticatedData}
 
@@ -995,7 +997,7 @@ The Data content type is used by this document for:
 
 The `EnvelopedData` content type provides for shrouding of data.
 
-The `EnvelopedData` content type is the primary confidentiality method
+The `EnvelopedData` content type is one confidentiality method
 for sensitive information in this protocol. `EnvelopedData` can
 provide encryption of an entire PKI Request (see {{ApplicationofEncryptiontoaPKIRequestResponse}}).
 `EnvelopedData` can also be used to wrap private key material for key
@@ -1033,6 +1035,18 @@ it should send a negative response.  A Full PKI Response `SignedData` type
 containing a CMC Status Info control MUST be returned using a `CMCFailInfo`
 with a value of internalCAError and a `bodyPartID` of 0, and the eContent field
 in the `EncapsulatedContentInfo` as well as `SignerInfo` fields MUST NOT be populated.
+
+#####  Authenticated Enveloped Data {#AuthEnvelopedData}
+
+The `AuthEnvelopedData` content type provides for shrouding of data.
+
+The `AuthEnvelopedData` content type is the primary confidentiality method
+for sensitive information in this protocol. `AuthEnvelopedData` can
+provide encryption of an entire PKI Request (see {{ApplicationofEncryptiontoaPKIRequestResponse}}).
+`AuthEnvelopedData` can also be used to wrap private key material for key
+archival. If the decryption on an `AuthEnvelopedData` fails, a Full PKI
+Response is returned with a `CMCFailInfo` value of `badMessageCheck` and
+a `bodyPartID` of 0.
 
 ####  Other Message Bodies {#OtherMessageBodies}
 
@@ -1282,12 +1296,13 @@ of PKI Requests and Responses that are placed in the cmsSequence
 field can be encrypted separately.
 
 Confidentiality is provided by wrapping the PKI Request/Response (a
-SignedData) in an EnvelopedData. The nested content type in the
-EnvelopedData is id-SignedData. Note that this is different from
-S/MIME where there is a MIME layer placed between the encrypted and
-signed data. It is recommended that if an EnvelopedData layer is
-applied to a PKI Request/Response, a second signature layer be placed
-outside of the EnvelopedData layer. The following figure shows how
+SignedData) in an EnvelopedData or an AuthEnvelopedData. The nested
+content type in the EnvelopedData or AuthEnvelopedData is id-SignedData.
+Note that this is different from S/MIME where there is a MIME layer
+placed between the encrypted and signed data. It is recommended that if
+an EnvelopedData or AuthEnvelopedData layer is applied to a PKI
+Request/Response, a second signature layer be placed outside of the
+EnvelopedData or AuthEnvelopedData layer. The following figure shows how
 this nesting would be done:
 
 ~~~
@@ -1295,6 +1310,11 @@ this nesting would be done:
   ------              --------                  --------
    SignedData          EnvelopedData             SignedData
      PKIData             SignedData                EnvelopedData
+                           PKIData                   SignedData
+                                                       PKIData
+
+   SignedData          AuthEnvelopedData         SignedData
+     PKIData             SignedData                AuthEnvelopedData
                            PKIData                   SignedData
                                                        PKIData
 ~~~
@@ -1308,9 +1328,9 @@ PKI Request without knowledge of the contents (i.e., all it does is
 amalgamate multiple PKI Requests and forward them to a server).
 
 After the RA removes the envelope and completes processing, it may
-then apply a new EnvelopedData layer to protect PKI Requests for
-transmission to the next processing agent. Section 7 contains more
-information about RA processing.
+then apply a new EnvelopedData or AuthEnvelopedData layer to protect
+PKI Requests for transmission to the next processing agent. {{RegistrationAuthorities}}
+contains more information about RA processing.
 
 Full PKI Requests/Responses can be encrypted or transmitted in the
 clear. Servers MUST provide support for all three options.
@@ -2355,14 +2375,15 @@ The encrypted POP algorithm works as follows:
     *  request is the original certification request (it is included
        here so the client need not keep a copy of the request).
 
-     * cms is an EnvelopedData, the encapsulated content type being id-
-      data and the content being the POP Proof Value; this value
-      needs to be long enough that one cannot reverse the value from
-      the witness hash. If the certification request contains a
-      Subject Key Identifier (SKI) extension, then the recipient
-      identifier SHOULD be the SKI. If the issuerAndSerialNumber
-      form is used, the IssuerName MUST be encoded as NULL and the
-      SerialNumber as the bodyPartID of the certification request.
+     * cms is an EnvelopedData or AuthEnvelopedData, the encapsulated
+      content type being id-data and the content being the POP Proof
+      Value; this value needs to be long enough that one cannot
+      reverse the value from the witness hash. If the certification
+      request contains a Subject Key Identifier (SKI) extension, then
+      the recipient identifier SHOULD be the SKI. If the
+      issuerAndSerialNumber form is used, the IssuerName MUST be encoded
+      as NULL and the SerialNumber as the bodyPartID of the certification
+      request.
 
     * thePOPAlgID identifies the algorithm to be used in computing the
       return POP value.
@@ -4474,7 +4495,8 @@ Response from RA to client:
 This section looks at the messages that would flow in the event that
 an enrollment is done for an encryption-only certificate using a
 direct POP method; the example below shows.  For simplicity, it is assumed that the
-certification requester already has a signature certificate.
+certification requester already has a signature certificate. This example use
+EnvelopedData but AuthEnvelopedData could be used instead.
 
 Message #1 from client to server:
 
@@ -4620,8 +4642,9 @@ an enrollment is done for an encryption-only certificate using a
 direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 {{DirectPOPforRSACertificate}}, here the No Signature mechanism from
-{{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData uses
-the KEMRecipientInfo from {{CMS-RI}}.
+{{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData oruses
+the KEMRecipientInfo from {{CMS-RI}}. While the examples uses
+EnvelopedData, AuthEnvelopedData could be used instead.
 
 Message #1 from client to server:
 
