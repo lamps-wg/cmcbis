@@ -3298,14 +3298,13 @@ Responses (Simple PKI Requests cannot be encrypted). Data portions
 of PKI Requests and Responses that are placed in the cmsSequence
 field can be encrypted separately.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <p id="section-5-2">Confidentiality is provided by wrapping the PKI Request/Response (a
-SignedData) in an EnvelopedData or an AuthEnvelopedData. The nested
-content type in the EnvelopedData or AuthEnvelopedData is id-SignedData.
-Note that this is different from S/MIME where there is a MIME layer
-placed between the encrypted and signed data. It is recommended that if
-an EnvelopedData or AuthEnvelopedData layer is applied to a PKI
-Request/Response, a second signature layer be placed outside of the
-EnvelopedData or AuthEnvelopedData layer. The following figure shows how
-this nesting would be done:<a href="#section-5-2" class="pilcrow">¶</a></p>
+SignedData) in an EnvelopedData or an AuthEnvelopedData. When using
+EnvelopedData, the nested content type is id-SignedData. Note that
+this is different from S/MIME where there is a MIME layer placed
+between the encrypted and signed data. It is recommended that if an
+EnvelopedData layer is applied to a PKI Request/Response, a second
+signature layer be placed outside of the EnvelopedData layer. The
+following figure shows how this nesting would be done:<a href="#section-5-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-5-3">
 <pre>
   Normal              Option 1                  Option 2
@@ -3314,30 +3313,49 @@ this nesting would be done:<a href="#section-5-2" class="pilcrow">¶</a></p>
      PKIData             SignedData                EnvelopedData
                            PKIData                   SignedData
                                                        PKIData
-
-   SignedData          AuthEnvelopedData         SignedData
-     PKIData             SignedData                AuthEnvelopedData
-                           PKIData                   SignedData
-                                                       PKIData
 </pre><a href="#section-5-3" class="pilcrow">¶</a>
 </div>
-<p id="section-5-4">Note: PKIResponse can be substituted for PKIData in the above figure.<a href="#section-5-4" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-5-4">
+        <dt id="section-5-4.1">Note:</dt>
+        <dd style="margin-left: 1.5em" id="section-5-4.2">
+          <p id="section-5-4.2.1">PKIResponse can be substituted for PKIData in the above figure.<a href="#section-5-4.2.1" class="pilcrow">¶</a></p>
+</dd>
+      <dd class="break"></dd>
+</dl>
 <p id="section-5-5">Options 1 and 2 prevent leakage of sensitive data by encrypting the
 Full PKI Request/Response. An RA that receives a PKI Request that it
 cannot decrypt <span class="bcp14">MAY</span> reject the PKI Request unless it can process the
 PKI Request without knowledge of the contents (i.e., all it does is
 amalgamate multiple PKI Requests and forward them to a server).<a href="#section-5-5" class="pilcrow">¶</a></p>
-<p id="section-5-6">After the RA removes the envelope and completes processing, it may
+<p id="section-5-6">For AuthEnvelopedData, no additional wrappers are needed because
+AuthEnvelopedData also provides for authentication. The following
+figure shows the nesting:<a href="#section-5-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-5-7">
+<pre>
+  Normal
+  ------
+   AuthEnvelopedData
+     PKIData
+</pre><a href="#section-5-7" class="pilcrow">¶</a>
+</div>
+<span class="break"></span><dl class="dlParallel" id="section-5-8">
+        <dt id="section-5-8.1">Note:</dt>
+        <dd style="margin-left: 1.5em" id="section-5-8.2">
+          <p id="section-5-8.2.1">PKIResponse can be substituted for PKIData in the above figure.<a href="#section-5-8.2.1" class="pilcrow">¶</a></p>
+</dd>
+      <dd class="break"></dd>
+</dl>
+<p id="section-5-9">After the RA removes the envelope and completes processing, it may
 then apply a new EnvelopedData or AuthEnvelopedData layer to protect
 PKI Requests for transmission to the next processing agent. <a href="#RegistrationAuthorities" class="auto internal xref">Section 8</a>
-contains more information about RA processing.<a href="#section-5-6" class="pilcrow">¶</a></p>
-<p id="section-5-7">Full PKI Requests/Responses can be encrypted or transmitted in the
-clear. Servers <span class="bcp14">MUST</span> provide support for all three options.<a href="#section-5-7" class="pilcrow">¶</a></p>
-<p id="section-5-8">Alternatively, an authenticated, secure channel could exist between
+contains more information about RA processing.<a href="#section-5-9" class="pilcrow">¶</a></p>
+<p id="section-5-10">Full PKI Requests/Responses can be encrypted or transmitted in the
+clear. Servers <span class="bcp14">MUST</span> provide support for all three options.<a href="#section-5-10" class="pilcrow">¶</a></p>
+<p id="section-5-11">Alternatively, an authenticated, secure channel could exist between
 the parties that require confidentiality. Clients and servers <span class="bcp14">MAY</span>
 use such channels instead of the technique described above to provide
 secure, private communication of Simple and Full PKI Requests/
-Responses.<a href="#section-5-8" class="pilcrow">¶</a></p>
+Responses.<a href="#section-5-11" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="Controls">
@@ -6803,7 +6821,7 @@ registries are to remain unchanged.<a href="#section-11-17" class="pilcrow">¶</
         <dd>
 <span class="refAuthor">Schaad, J.</span>, <span class="refTitle">"Certificate Management over CMS (CMC) Updates"</span>, <span class="seriesInfo">RFC 6402</span>, <span class="seriesInfo">DOI 10.17487/RFC6402</span>, <time datetime="2011-11" class="refDate">November 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6402">https://www.rfc-editor.org/rfc/rfc6402</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="CMS-RI">[CMS-RI]</dt>
+<dt id="CMS-KEM">[CMS-KEM]</dt>
         <dd>
 <span class="refAuthor">Housley, R.</span>, <span class="refAuthor">Gray, J.</span>, and <span class="refAuthor">T. Okubo</span>, <span class="refTitle">"Using Key Encapsulation Mechanism (KEM) Algorithms in the Cryptographic Message Syntax (CMS)"</span>, <span class="seriesInfo">RFC 9629</span>, <span class="seriesInfo">DOI 10.17487/RFC9629</span>, <time datetime="2024-08" class="refDate">August 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9629">https://www.rfc-editor.org/rfc/rfc9629</a>&gt;</span>. </dd>
 <dd class="break"></dd>
@@ -8019,7 +8037,7 @@ direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 <a href="#DirectPOPforRSACertificate" class="auto internal xref">Appendix B.3</a>, here the No Signature mechanism from
 <a href="#NoSig-Sig" class="auto internal xref">Appendix C.1</a>, the public key is for a KEM, and the EnvelopedData uses
-the KEMRecipientInfo from <span>[<a href="#CMS-RI" class="cite xref">CMS-RI</a>]</span>. This example uses
+the KEMRecipientInfo from <span>[<a href="#CMS-KEM" class="cite xref">CMS-KEM</a>]</span>. This example uses
 EnvelopedData; however either EnvelopedData or AuthEnvelopedData can be used.<a href="#appendix-B.4-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.4-2">Message #1 from client to server:<a href="#appendix-B.4-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.4-3">
