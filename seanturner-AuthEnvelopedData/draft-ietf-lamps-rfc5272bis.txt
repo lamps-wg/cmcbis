@@ -4768,7 +4768,7 @@ B.4.  Direct POP with No Signature Mechanism
    direct POP method.  Instead of assuming that the certification
    requester already has a signing-only certificate as in Appendix B.3,
    here the No Signature mechanism from Appendix C.1, the public key is
-   for a KEM, and the EnvelopedData oruses the KEMRecipientInfo from
+   for a KEM, and the EnvelopedData uses the KEMRecipientInfo from
    [CMS-RI].  While the examples uses EnvelopedData, AuthEnvelopedData
    could be used instead.
 
