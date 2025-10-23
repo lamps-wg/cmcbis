@@ -293,8 +293,8 @@ implementations of this protocol depending on the operational
 environment.  In cases where the Certification Authority (CA)
 maintains significant state information, replay attacks may be
 detectable without the inclusion of the (optional) CMC nonce mechanisms.
-[Implementers/Designers] of this protocol need to carefully consider
-environmental conditions before choosing whether or not to [implement/use]
+Implementers and Designers of this protocol need to carefully consider
+environmental conditions before choosing whether or not to implement or use
 the senderNonce and recipientNonce attributes described in
 {{Section 6.6 of CMC-STRUCT}}.  Developers of state-constrained PKI clients are
 strongly encouraged to incorporate the use of these attributes.
@@ -325,7 +325,7 @@ are actually protected.
 
 For the file-based protocol, an additional method of applying
 confidentiality protection (content shrouding) to the conveyed messages
-is usually availablle in the form of filesystem permissions.  The local
+is usually available in the form of filesystem permissions.  The local
 system may allow for read access to be limited to just a single user or
 group that corresponds to the entity authorized to read the request or
 response, respectively, and diligent use of these filesystem permissions
