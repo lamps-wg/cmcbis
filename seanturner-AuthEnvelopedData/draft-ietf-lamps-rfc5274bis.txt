@@ -250,17 +250,22 @@ Table of Contents
    content encryption algorithm for EnvelopedData; (see [CMS-AES]).
    Other content encryption algorithms MAY be implemented.
 
+   All entities MUST support Advanced Encryption Standard (AES) as the
+   content encryption algorithm for AuthEnvelopedData; (see
+   [CMS-AES-AE]).  Other content encryption algorithms MAY be
+   implemented.
+
    All entities MUST support RSA as a key transport algorithm for
-   EnvelopedData; (see [CMS-ALG2]).  Other key transport algorithms MAY
-   be implemented.
+   EnvelopedData and AuthEnvelopedData; (see [CMS-ALG2]).  Other key
+   transport algorithms MAY be implemented.
 
-   If an entity supports key agreement for EnvelopedData, it MUST
-   support Diffie-Hellman; (see [CMS-DH]).
+   If an entity supports key agreement for EnvelopedData or
+   AuthEnvelopedData, it MUST support Diffie-Hellman; (see [CMS-DH]).
 
-   If an entity supports PasswordRecipientInfo for EnvelopedData or
-   AuthenticatedData, it MUST support PBKDF2 [PBKDF2] for key derivation
-   algorithms.  It MUST support AES key wrap (see [AES-WRAP]) as the key
-   encryption algorithm.
+   If an entity supports PasswordRecipientInfo for EnvelopedData,
+   AuthenticatedData, or AuthEnvelopedData it MUST support PBKDF2
+   [PBKDF2] for key derivation algorithms.  It MUST support AES key wrap
+   (see [AES-WRAP]) as the key encryption algorithm.
 
    If AuthenticatedData is supported, PasswordRecipientInfo MUST be
    supported.
@@ -284,7 +289,7 @@ Table of Contents
    hashAlgorithm.
 
    If an EE generates DH keys for certification, it MUST support
-   Section 4 of [DH-POP]].  EEs MAY support Section 3 of [DH-POP].  CAs
+   Section 4 of [DH-POP].  EEs MAY support Section 3 of [DH-POP].  CAs
    and RAs that do POP verification MUST support Section 4 of [DH-POP]
    and SHOULD support Section 3 of [DH-POP].
 
@@ -521,6 +526,12 @@ Table of Contents
               Encryption Algorithm in Cryptographic Message Syntax
               (CMS)", RFC 3565, DOI 10.17487/RFC3565, July 2003,
               <https://www.rfc-editor.org/rfc/rfc3565>.
+
+   [CMS-AES-AE]
+              Housley, R., "Using AES-CCM and AES-GCM Authenticated
+              Encryption in the Cryptographic Message Syntax (CMS)",
+              RFC 5084, DOI 10.17487/RFC5084, November 2007,
+              <https://www.rfc-editor.org/rfc/rfc5084>.
 
    [CMS-ALG2] Turner, S., "Using SHA2 Algorithms with Cryptographic
               Message Syntax", RFC 5754, DOI 10.17487/RFC5754, January
