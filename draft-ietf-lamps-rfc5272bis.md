@@ -4642,7 +4642,7 @@ an enrollment is done for an encryption-only certificate using a
 direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 {{DirectPOPforRSACertificate}}, here the No Signature mechanism from
-{{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData oruses
+{{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData uses
 the KEMRecipientInfo from {{CMS-RI}}. While the examples uses
 EnvelopedData, AuthEnvelopedData could be used instead.
 
