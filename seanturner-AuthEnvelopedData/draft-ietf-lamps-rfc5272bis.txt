@@ -4769,8 +4769,8 @@ B.4.  Direct POP with No Signature Mechanism
    requester already has a signing-only certificate as in Appendix B.3,
    here the No Signature mechanism from Appendix C.1, the public key is
    for a KEM, and the EnvelopedData uses the KEMRecipientInfo from
-   [CMS-RI].  While the examples uses EnvelopedData, AuthEnvelopedData
-   could be used instead.
+   [CMS-RI].  This example uses EnvelopedData; however either
+   EnvelopedData or AuthEnvelopedData can be used.
 
    Message #1 from client to server:
 
