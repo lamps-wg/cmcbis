@@ -4495,8 +4495,8 @@ Response from RA to client:
 This section looks at the messages that would flow in the event that
 an enrollment is done for an encryption-only certificate using a
 direct POP method; the example below shows.  For simplicity, it is assumed that the
-certification requester already has a signature certificate. This example use
-EnvelopedData but AuthEnvelopedData could be used instead.
+certification requester already has a signature certificate. This example uses
+EnvelopedData; however either EnvelopedData or AuthEnvelopedData can be used.
 
 Message #1 from client to server:
 
