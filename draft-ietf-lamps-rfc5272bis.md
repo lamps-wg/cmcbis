@@ -4643,8 +4643,8 @@ direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 {{DirectPOPforRSACertificate}}, here the No Signature mechanism from
 {{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData uses
-the KEMRecipientInfo from {{CMS-RI}}. While the examples uses
-EnvelopedData, AuthEnvelopedData could be used instead.
+the KEMRecipientInfo from {{CMS-RI}}. This example uses
+EnvelopedData; however either EnvelopedData or AuthEnvelopedData can be used.
 
 Message #1 from client to server:
 
