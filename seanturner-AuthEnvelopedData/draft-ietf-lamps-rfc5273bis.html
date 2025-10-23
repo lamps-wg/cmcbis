@@ -1558,12 +1558,13 @@ initiated prior to use of this protocol.  This can occur when the
 protocol itself is being used to download onto the system the set of
 trust anchors to be used for these protocols.  In these instances,
 the Enveloped Data content type (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-09#section-3.2.1.3.3" class="relref">Section 3.2.1.3.3</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>)
+or Authenticated Enveloped Data content type <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-rfc5272bis-09#section-3.2.1.3.5" class="relref">Section 3.2.1.3.5</a> of [<a href="#CMC-STRUCT" class="cite xref">CMC-STRUCT</a>]</span>
 provides the same shrouding that TLS would have provided.<a href="#section-9-3" class="pilcrow">¶</a></p>
-<p id="section-9-4">For the mail-based protocol, the Enveloped Data content type can
-also be used to apply confidentiality protection (content shrouding)
-to the conveyed messages. SMTP-over-TLS <span>[<a href="#RFC3207" class="cite xref">RFC3207</a>]</span> does
-provide hop-by-hop security, but cannot guarantee that all hops
-are actually protected.<a href="#section-9-4" class="pilcrow">¶</a></p>
+<p id="section-9-4">For the mail-based protocol, the Enveloped Data or Authenticated
+Enveloped Data content types can also be used to apply confidentiality
+protection (content shrouding) to the conveyed messages.
+SMTP-over-TLS <span>[<a href="#RFC3207" class="cite xref">RFC3207</a>]</span> does provide hop-by-hop security, but
+cannot guarantee that all hops are actually protected.<a href="#section-9-4" class="pilcrow">¶</a></p>
 <p id="section-9-5">For the file-based protocol, an additional method of applying
 confidentiality protection (content shrouding) to the conveyed messages
 is usually available in the form of filesystem permissions.  The local
