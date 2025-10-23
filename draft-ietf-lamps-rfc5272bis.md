@@ -77,7 +77,7 @@ informative:
   SMALL-GROUP: RFC2785
   X942: RFC2631
   RFC2797:
-  CMS-RI: RFC9629
+  CMS-KEM: RFC9629
   PKIX-MODIDS:
     target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.0
     title: "SMI Security for PKIX Module Identifier"
@@ -1296,14 +1296,13 @@ of PKI Requests and Responses that are placed in the cmsSequence
 field can be encrypted separately.
 
 Confidentiality is provided by wrapping the PKI Request/Response (a
-SignedData) in an EnvelopedData or an AuthEnvelopedData. The nested
-content type in the EnvelopedData or AuthEnvelopedData is id-SignedData.
-Note that this is different from S/MIME where there is a MIME layer
-placed between the encrypted and signed data. It is recommended that if
-an EnvelopedData or AuthEnvelopedData layer is applied to a PKI
-Request/Response, a second signature layer be placed outside of the
-EnvelopedData or AuthEnvelopedData layer. The following figure shows how
-this nesting would be done:
+SignedData) in an EnvelopedData or an AuthEnvelopedData. When using
+EnvelopedData, the nested content type is id-SignedData. Note that
+this is different from S/MIME where there is a MIME layer placed
+between the encrypted and signed data. It is recommended that if an
+EnvelopedData layer is applied to a PKI Request/Response, a second
+signature layer be placed outside of the EnvelopedData layer. The
+following figure shows how this nesting would be done:
 
 ~~~
   Normal              Option 1                  Option 2
@@ -1312,20 +1311,29 @@ this nesting would be done:
      PKIData             SignedData                EnvelopedData
                            PKIData                   SignedData
                                                        PKIData
-
-   SignedData          AuthEnvelopedData         SignedData
-     PKIData             SignedData                AuthEnvelopedData
-                           PKIData                   SignedData
-                                                       PKIData
 ~~~
 
-Note: PKIResponse can be substituted for PKIData in the above figure.
+Note:
+: PKIResponse can be substituted for PKIData in the above figure.
 
 Options 1 and 2 prevent leakage of sensitive data by encrypting the
 Full PKI Request/Response. An RA that receives a PKI Request that it
 cannot decrypt MAY reject the PKI Request unless it can process the
 PKI Request without knowledge of the contents (i.e., all it does is
 amalgamate multiple PKI Requests and forward them to a server).
+
+For AuthEnvelopedData, no additional wrappers are needed because
+AuthEnvelopedData also provides for authentication. The following
+figure shows the nesting:
+
+~~~
+  Normal
+  ------
+   AuthEnvelopedData
+     PKIData
+~~~
+Note:
+: PKIResponse can be substituted for PKIData in the above figure.
 
 After the RA removes the envelope and completes processing, it may
 then apply a new EnvelopedData or AuthEnvelopedData layer to protect
@@ -4643,7 +4651,7 @@ direct POP method.  Instead of assuming that the certification
 requester already has a signing-only certificate as in
 {{DirectPOPforRSACertificate}}, here the No Signature mechanism from
 {{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData uses
-the KEMRecipientInfo from {{CMS-RI}}. This example uses
+the KEMRecipientInfo from {{CMS-KEM}}. This example uses
 EnvelopedData; however either EnvelopedData or AuthEnvelopedData can be used.
 
 Message #1 from client to server:
