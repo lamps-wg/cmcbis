@@ -4629,8 +4629,8 @@ B.3.  Direct POP for an RSA or KEM Certificate
    an enrollment is done for an encryption-only certificate using a
    direct POP method; the example below shows.  For simplicity, it is
    assumed that the certification requester already has a signature
-   certificate.  This example use EnvelopedData but AuthEnvelopedData
-   could be used instead.
+   certificate.  This example uses EnvelopedData; however either
+   EnvelopedData or AuthEnvelopedData can be used.
 
    Message #1 from client to server:
 
