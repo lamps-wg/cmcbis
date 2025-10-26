@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-10-21T01:53:49.266320+00:00",
+  "timestamp": "2025-10-26T01:59:00.626811+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -8056,26 +8056,157 @@
       "id": "PR_kwDOKfq5gM6ustUr",
       "title": "fix typo and remove brackets",
       "url": "https://github.com/lamps-wg/cmcbis/pull/207",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-10-20T19:40:36Z",
-      "updatedAt": "2025-10-20T19:40:37Z",
+      "updatedAt": "2025-10-23T16:23:41Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "fc32b30e6a61de4ae217f907e503ae30e68f689b",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "fix-typo-and-remove-brackets",
       "headRefOid": "b072f478a264d289cd845c3a6ab1d331e610cc16",
+      "closedAt": "2025-10-23T16:23:40Z",
+      "mergedAt": "2025-10-23T16:23:40Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7I7S60",
+          "commit": {
+            "abbreviatedOid": "b072f47"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-10-23T16:23:31Z",
+          "updatedAt": "2025-10-23T16:23:31Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 208,
+      "id": "PR_kwDOKfq5gM6vUVSd",
+      "title": "Address #159",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/208",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Adds support for AuthEnvelopedData; see [RFC5083](https://datatracker.ietf.org/doc/rfc5083/).",
+      "createdAt": "2025-10-23T17:06:29Z",
+      "updatedAt": "2025-10-23T19:04:24Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-AuthEnvelopedData",
+      "headRefOid": "691cfe4e28eddff3643e171a228627acda4d9bfd",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Need to make sure [s8](https://lamps-wg.github.io/cmcbis/draft-ietf-lamps-rfc5272bis.html#name-registration-authorities) works for AuthEnvelopedData.",
+          "createdAt": "2025-10-23T19:04:24Z",
+          "updatedAt": "2025-10-23T19:04:24Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7I84oJ",
+          "commit": {
+            "abbreviatedOid": "8c01639"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-23T17:21:46Z",
+          "updatedAt": "2025-10-23T17:21:47Z",
+          "comments": [
+            {
+              "originalPosition": 135,
+              "body": "```suggestion\n{{NoSig-Sig}}, the public key is for a KEM, and the EnvelopedData uses\n```",
+              "createdAt": "2025-10-23T17:21:46Z",
+              "updatedAt": "2025-10-23T17:21:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7I9725",
+          "commit": {
+            "abbreviatedOid": "771c79b"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-23T17:57:19Z",
+          "updatedAt": "2025-10-23T17:57:19Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Needs to specify AES-GCM or AES-CCM?",
+              "createdAt": "2025-10-23T17:57:19Z",
+              "updatedAt": "2025-10-23T19:02:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7I-sOm",
+          "commit": {
+            "abbreviatedOid": "771c79b"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-23T18:31:17Z",
+          "updatedAt": "2025-10-23T18:31:17Z",
+          "comments": [
+            {
+              "originalPosition": 125,
+              "body": "```suggestion\ncertification requester already has a signature certificate. This example uses\nEnvelopedData; however either EnvelopedData or AuthEnvelopedData can be used.\n```",
+              "createdAt": "2025-10-23T18:31:17Z",
+              "updatedAt": "2025-10-23T18:31:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7I-tUh",
+          "commit": {
+            "abbreviatedOid": "771c79b"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-23T18:32:10Z",
+          "updatedAt": "2025-10-23T18:32:10Z",
+          "comments": [
+            {
+              "originalPosition": 135,
+              "body": "```suggestion\nthe KEMRecipientInfo from {{CMS-RI}}. This example uses\nEnvelopedData; however either EnvelopedData or AuthEnvelopedData can be used.\n```",
+              "createdAt": "2025-10-23T18:32:10Z",
+              "updatedAt": "2025-10-23T18:32:10Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
