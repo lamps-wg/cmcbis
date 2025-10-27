@@ -1297,12 +1297,14 @@ field can be encrypted separately.
 
 Confidentiality is provided by wrapping the PKI Request/Response (a
 SignedData) in an EnvelopedData or an AuthEnvelopedData. When using
-EnvelopedData, the nested content type is id-SignedData. Note that
-this is different from S/MIME where there is a MIME layer placed
-between the encrypted and signed data. It is recommended that if an
-EnvelopedData layer is applied to a PKI Request/Response, a second
-signature layer be placed outside of the EnvelopedData layer. The
-following figure shows how this nesting would be done:
+EnvelopedData or AuthEnvelopedData, the nested content type is
+id-SignedData. Note that this is different from S/MIME where there
+is a MIME layer placed between the encrypted and signed data for
+EnvelopedData and between the authenticated encryption and signed data
+for AuthEnvelopedData. It is recommended that if an EnvelopedData
+or AuthEnvelopedData layer is applied to a PKI Request/Response, a second
+signature layer be placed outside of the EnvelopedData or AuthEnvelopedData
+layer. The following figure shows how this nesting would be done:
 
 ~~~
   Normal              Option 1                  Option 2
@@ -1316,24 +1318,14 @@ following figure shows how this nesting would be done:
 Note:
 : PKIResponse can be substituted for PKIData in the above figure.
 
+Note:
+: AuthEnvelopedData can be substituted for EnvelopedData in the above figure.
+
 Options 1 and 2 prevent leakage of sensitive data by encrypting the
 Full PKI Request/Response. An RA that receives a PKI Request that it
 cannot decrypt MAY reject the PKI Request unless it can process the
 PKI Request without knowledge of the contents (i.e., all it does is
 amalgamate multiple PKI Requests and forward them to a server).
-
-For AuthEnvelopedData, no additional wrappers are needed because
-AuthEnvelopedData also provides for authentication. The following
-figure shows the nesting:
-
-~~~
-  Normal
-  ------
-   AuthEnvelopedData
-     PKIData
-~~~
-Note:
-: PKIResponse can be substituted for PKIData in the above figure.
 
 After the RA removes the envelope and completes processing, it may
 then apply a new EnvelopedData or AuthEnvelopedData layer to protect
@@ -1341,7 +1333,9 @@ PKI Requests for transmission to the next processing agent. {{RegistrationAuthor
 contains more information about RA processing.
 
 Full PKI Requests/Responses can be encrypted or transmitted in the
-clear. Servers MUST provide support for all three options.
+clear. Servers that support EnvelopedData MUST provide support for
+all three EnvelopedData options. Servers that support AuthEnvelopedData
+MUST provide support for both AuthEnvelopedData options.
 
 Alternatively, an authenticated, secure channel could exist between
 the parties that require confidentiality. Clients and servers MAY
@@ -3276,11 +3270,13 @@ figure:
 
 Under some circumstances, an RA is required to remove wrapping
 layers. The following sections look at the processing required if
-encryption layers and signing layers need to be removed.
+encryption, signing, and authenticated encryption layers need to
+be removed.
 
 ##  Encryption Removal {#EncryptionRemoval}
 
-There are two cases that require an RA to remove or change encryption
+There are two cases that require an RA to remove or change encryption,
+applies to both EnvelopedData or AuthEnvelopedData,
 in a PKI Request. In the first case, the encryption was applied for
 the purposes of protecting the entire PKI Request from unauthorized
 entities. If the CA does not have a Recipient Info entry in the
