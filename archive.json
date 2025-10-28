@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-10-26T01:59:00.626811+00:00",
+  "timestamp": "2025-10-28T01:52:49.131665+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -8105,13 +8105,13 @@
       "labels": [],
       "body": "Adds support for AuthEnvelopedData; see [RFC5083](https://datatracker.ietf.org/doc/rfc5083/).",
       "createdAt": "2025-10-23T17:06:29Z",
-      "updatedAt": "2025-10-23T19:04:24Z",
+      "updatedAt": "2025-10-27T13:56:40Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-AuthEnvelopedData",
-      "headRefOid": "691cfe4e28eddff3643e171a228627acda4d9bfd",
+      "headRefOid": "224a9f765ec41b01ec05fcb47bcdfafaa11afa4d",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
