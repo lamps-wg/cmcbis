@@ -1333,9 +1333,8 @@ PKI Requests for transmission to the next processing agent. {{RegistrationAuthor
 contains more information about RA processing.
 
 Full PKI Requests/Responses can be encrypted or transmitted in the
-clear. Servers that support EnvelopedData MUST provide support for
-all three EnvelopedData options. Servers that support AuthEnvelopedData
-MUST provide support for both AuthEnvelopedData options.
+clear. Servers that support EnvelopedData or AuthEnvelopedData MUST provide support for
+all three EnvelopedData or AuthEnvelopedData options, respectively.
 
 Alternatively, an authenticated, secure channel could exist between
 the parties that require confidentiality. Clients and servers MAY
