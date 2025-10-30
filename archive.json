@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-10-28T01:52:49.131665+00:00",
+  "timestamp": "2025-10-30T01:59:20.212167+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -8105,13 +8105,13 @@
       "labels": [],
       "body": "Adds support for AuthEnvelopedData; see [RFC5083](https://datatracker.ietf.org/doc/rfc5083/).",
       "createdAt": "2025-10-23T17:06:29Z",
-      "updatedAt": "2025-10-27T13:56:40Z",
+      "updatedAt": "2025-10-28T13:44:43Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-AuthEnvelopedData",
-      "headRefOid": "224a9f765ec41b01ec05fcb47bcdfafaa11afa4d",
+      "headRefOid": "9ff84714104e2ca4ec11cbb29a22aef2d04f5e09",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -8203,6 +8203,26 @@
               "body": "```suggestion\nthe KEMRecipientInfo from {{CMS-RI}}. This example uses\nEnvelopedData; however either EnvelopedData or AuthEnvelopedData can be used.\n```",
               "createdAt": "2025-10-23T18:32:10Z",
               "updatedAt": "2025-10-23T18:32:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7J_eEc",
+          "commit": {
+            "abbreviatedOid": "224a9f7"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-28T13:44:38Z",
+          "updatedAt": "2025-10-28T13:44:38Z",
+          "comments": [
+            {
+              "originalPosition": 110,
+              "body": "```suggestion\nclear. Servers that support EnvelopedData or AuthEnvelopedData MUST provide support for\nall three EnvelopedData or AuthEnvelopedData options, respectively.\n```",
+              "createdAt": "2025-10-28T13:44:38Z",
+              "updatedAt": "2025-10-28T13:44:38Z"
             }
           ]
         }
