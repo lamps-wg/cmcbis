@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 20 April 2026                                   17 October 2025
+Expires: 24 May 2026                                    20 November 2025
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 April 2026.
+   This Internet-Draft will expire on 24 May 2026.
 
 Copyright Notice
 
@@ -502,16 +502,16 @@ Table of Contents
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC)", Work in Progress, Internet-Draft, draft-ietf-
-              lamps-rfc5272bis-08, 29 August 2025,
+              lamps-rfc5272bis-09, 20 October 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5272bis-08>.
+              rfc5272bis-09>.
 
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-08, 29 August 2025,
+              Draft, draft-ietf-lamps-rfc5273bis-09, 20 October 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-08>.
+              rfc5273bis-09>.
 
    [CMS]      Housley, R., "Cryptographic Message Syntax (CMS)", STD 70,
               RFC 5652, DOI 10.17487/RFC5652, September 2009,
