@@ -157,7 +157,7 @@ be ".p10".
 
 Simple enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  A smime-type parameter MUST be on the
-Content-Type heder with a value of "certs-only".  A file name
+Content-Type header with a value of "certs-only".  A file name
 with the ".p7c" extension MUST be specified as part of the
 Content-Type or Content-Disposition header.
 
