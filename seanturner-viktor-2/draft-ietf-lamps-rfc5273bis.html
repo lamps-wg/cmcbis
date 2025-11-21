@@ -1564,13 +1564,7 @@ also be used to apply confidentiality protection (content shrouding)
 to the conveyed messages. Note that even if the application uses
 SMTP-over-TLS <span>[<a href="#RFC3207" class="cite xref">RFC3207</a>]</span> with its preferred Messsage Submission
 Agent (MSA) for initial submission of the message for delivery, SMTP
-in subsequent relay hops may not be either authenticated or encrypted.
-For some combinations of initial MSA and destination domains it may be
-possible to request use of authenticated TLS at every relay "hop" of message
-delivery via the mechanism specified in <span>[<a href="#RFC8689" class="cite xref">RFC8689</a>]</span>. This <span class="bcp14">MAY</span> be
-used, when supported, and expected to work, but risks non-delivery if
-some of the SMTP servers along the relay chain do not support the
-REQUIRETLS ESMTP extension.<a href="#section-9-4" class="pilcrow">¶</a></p>
+in subsequent relay hops may not be either authenticated or encrypted.<a href="#section-9-4" class="pilcrow">¶</a></p>
 <p id="section-9-5">For the file-based protocol, an additional method of applying
 confidentiality protection (content shrouding) to the conveyed messages
 is usually available in the form of filesystem permissions.  The local
@@ -1675,10 +1669,6 @@ can be a useful mechanism in multi-user environments.<a href="#section-9-5" clas
 <dt id="RFC3207">[RFC3207]</dt>
         <dd>
 <span class="refAuthor">Hoffman, P.</span>, <span class="refTitle">"SMTP Service Extension for Secure SMTP over Transport Layer Security"</span>, <span class="seriesInfo">RFC 3207</span>, <span class="seriesInfo">DOI 10.17487/RFC3207</span>, <time datetime="2002-02" class="refDate">February 2002</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3207">https://www.rfc-editor.org/rfc/rfc3207</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC8689">[RFC8689]</dt>
-        <dd>
-<span class="refAuthor">Fenton, J.</span>, <span class="refTitle">"SMTP Require TLS Option"</span>, <span class="seriesInfo">RFC 8689</span>, <span class="seriesInfo">DOI 10.17487/RFC8689</span>, <time datetime="2019-11" class="refDate">November 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8689">https://www.rfc-editor.org/rfc/rfc8689</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="TLS">[TLS]</dt>
       <dd>
