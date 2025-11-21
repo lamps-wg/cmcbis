@@ -323,12 +323,6 @@ to the conveyed messages. Note that even if the application uses
 SMTP-over-TLS {{?RFC3207}} with its preferred Messsage Submission
 Agent (MSA) for initial submission of the message for delivery, SMTP
 in subsequent relay hops may not be either authenticated or encrypted.
-For some combinations of initial MSA and destination domains it may be
-possible to request use of authenticated TLS at every relay "hop" of message
-delivery via the mechanism specified in {{?RFC8689}}. This MAY be
-used, when supported, and expected to work, but risks non-delivery if
-some of the SMTP servers along the relay chain do not support the
-REQUIRETLS ESMTP extension.
 
 For the file-based protocol, an additional method of applying
 confidentiality protection (content shrouding) to the conveyed messages
