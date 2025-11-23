@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-10-30T01:59:20.212167+00:00",
+  "timestamp": "2025-11-23T02:11:37.516640+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -8223,6 +8223,146 @@
               "body": "```suggestion\nclear. Servers that support EnvelopedData or AuthEnvelopedData MUST provide support for\nall three EnvelopedData or AuthEnvelopedData options, respectively.\n```",
               "createdAt": "2025-10-28T13:44:38Z",
               "updatedAt": "2025-10-28T13:44:38Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 209,
+      "id": "PR_kwDOKfq5gM60oiTi",
+      "title": "5273: statement->header",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/209",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Refer to email Content-Disposition and Content-Type as headers.",
+      "createdAt": "2025-11-20T16:20:27Z",
+      "updatedAt": "2025-11-21T00:01:03Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-viktor-1",
+      "headRefOid": "170241d038472e1939f50c71184c876567864592",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7P8do5",
+          "commit": {
+            "abbreviatedOid": "a4a633f"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-11-20T16:20:41Z",
+          "updatedAt": "2025-11-20T16:20:41Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\nContent-Type header with a value of \"certs-only\".  A file name\n```",
+              "createdAt": "2025-11-20T16:20:41Z",
+              "updatedAt": "2025-11-20T16:20:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7P8zGY",
+          "commit": {
+            "abbreviatedOid": "170241d"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-11-20T16:40:20Z",
+          "updatedAt": "2025-11-20T16:40:20Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7QDhNj",
+          "commit": {
+            "abbreviatedOid": "170241d"
+          },
+          "author": "vdukhovni",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-11-21T00:01:03Z",
+          "updatedAt": "2025-11-21T00:01:03Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 210,
+      "id": "PR_kwDOKfq5gM60opK4",
+      "title": "5273: Enhance SMTP-over-TLS explanation and requirements",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/210",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Clarify the limitations of SMTP-over-TLS and the use of authenticated TLS for message delivery.",
+      "createdAt": "2025-11-20T16:28:59Z",
+      "updatedAt": "2025-11-21T15:11:33Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-viktor-2",
+      "headRefOid": "950075bbdbbb0fee0d3967502be8bff482f1726d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7P83v_",
+          "commit": {
+            "abbreviatedOid": "5c05772"
+          },
+          "author": "elear",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-11-20T16:44:38Z",
+          "updatedAt": "2025-11-20T16:44:39Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "This is so speculative that it should at this stage be removed, and it's not really end-to-end, since each SMTP server will use its own cert, and in effect acts as an MITM, absent object-level encryption (appripraite enveloping).\r\n\r\n```suggestion\r\n```",
+              "createdAt": "2025-11-20T16:44:38Z",
+              "updatedAt": "2025-11-20T16:44:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7QDgIX",
+          "commit": {
+            "abbreviatedOid": "5c05772"
+          },
+          "author": "vdukhovni",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-11-20T23:58:07Z",
+          "updatedAt": "2025-11-20T23:58:22Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "Perhaps the below is slightly better, adding a missing \"of\", and changing \"end-to-end\" to \"every relay hop\".\n```suggestion\nFor some combinations of initial MSA and destination domains it may be\npossible to request use of authenticated TLS at every relay \"hop\" of message\n```",
+              "createdAt": "2025-11-20T23:58:07Z",
+              "updatedAt": "2025-11-20T23:58:22Z"
             }
           ]
         }
