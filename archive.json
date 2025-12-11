@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-11-23T02:11:37.516640+00:00",
+  "timestamp": "2025-12-11T02:05:29.563306+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -8233,24 +8233,26 @@
       "id": "PR_kwDOKfq5gM60oiTi",
       "title": "5273: statement->header",
       "url": "https://github.com/lamps-wg/cmcbis/pull/209",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Refer to email Content-Disposition and Content-Type as headers.",
       "createdAt": "2025-11-20T16:20:27Z",
-      "updatedAt": "2025-11-21T00:01:03Z",
+      "updatedAt": "2025-12-10T14:29:25Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-viktor-1",
       "headRefOid": "170241d038472e1939f50c71184c876567864592",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-12-10T14:29:25Z",
+      "mergedAt": "2025-12-10T14:29:24Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "c04e3ad189bbb115b3c66048e89c5abf9eea84ac"
+      },
       "comments": [],
       "reviews": [
         {
