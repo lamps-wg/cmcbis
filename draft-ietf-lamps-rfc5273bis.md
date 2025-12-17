@@ -151,7 +151,7 @@ CMS wrapping is optional.  Note that this is different from the
 standard S/MIME (Secure MIME) message.
 
 Simple enrollment requests are encoded using the "application/pkcs10"
-content type {{!RFC9867}}.  A file name MUST be included either in a
+content type {{!RFC5967}}.  A file name MUST be included either in a
 Content-Type or a Content-Disposition header in the name or filename
 parameter, respectively. The extension for the file MUST be ".p10”.  An
 example from {{RFC6967}} follows:
