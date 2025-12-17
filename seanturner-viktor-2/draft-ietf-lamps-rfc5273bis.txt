@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 25 May 2026                                    21 November 2025
+Expires: 20 June 2026                                   17 December 2025
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 May 2026.
+   This Internet-Draft will expire on 20 June 2026.
 
 Copyright Notice
 
@@ -349,6 +349,12 @@ Table of Contents
    over-TLS [RFC3207] with its preferred Messsage Submission Agent (MSA)
    for initial submission of the message for delivery, SMTP in
    subsequent relay hops may not be either authenticated or encrypted.
+   For some combinations of initial MSA and destination domains it may
+   be possible to request use of authenticated TLS at every relay "hop"
+   of message delivery via the mechanism specified in [RFC8689].  This
+   MAY be used, when supported, and expected to work, but risks non-
+   delivery if some of the SMTP servers along the relay chain do not
+   support the REQUIRETLS ESMTP extension.
 
    For the file-based protocol, an additional method of applying
    confidentiality protection (content shrouding) to the conveyed
@@ -455,6 +461,10 @@ Table of Contents
    [RFC3207]  Hoffman, P., "SMTP Service Extension for Secure SMTP over
               Transport Layer Security", RFC 3207, DOI 10.17487/RFC3207,
               February 2002, <https://www.rfc-editor.org/rfc/rfc3207>.
+
+   [RFC8689]  Fenton, J., "SMTP Require TLS Option", RFC 8689,
+              DOI 10.17487/RFC8689, November 2019,
+              <https://www.rfc-editor.org/rfc/rfc8689>.
 
    [TLS]      Dierks, T. and E. Rescorla, "The Transport Layer Security
               (TLS) Protocol Version 1.2", RFC 5246,
