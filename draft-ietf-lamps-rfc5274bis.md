@@ -235,9 +235,11 @@ All entities MUST support Advanced Encryption Standard (AES) as the
 content encryption algorithm for EnvelopedData; (see {{CMS-AES}}).
 Other content encryption algorithms MAY be implemented.
 
-All entities MUST support Advanced Encryption Standard (AES) as the
-content encryption algorithm for AuthEnvelopedData; (see {{CMS-AES-AE}}).
-Other content encryption algorithms MAY be implemented.
+All entities MUST support AES-Galois/Counter Mode (GCM) as the
+authenticated content encryption algorithm for AuthEnvelopedData; (see {{CMS-AES-AE}}).
+They MUST also support a 12 octet nonce size and a 12 octet integrity
+check value (ICV) length. Other content encryption algorithms MAY be
+implemented.
 
 All entities MUST support RSA as a key transport algorithm for
 EnvelopedData and AuthEnvelopedData; (see {{CMS-ALG2}}). Other key
