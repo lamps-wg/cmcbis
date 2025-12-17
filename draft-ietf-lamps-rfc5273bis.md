@@ -151,27 +151,72 @@ CMS wrapping is optional.  Note that this is different from the
 standard S/MIME (Secure MIME) message.
 
 Simple enrollment requests are encoded using the "application/pkcs10"
-content type.  A file name MUST be included either in a Content-Type
-or a Content-Disposition header.  The extension for the file MUST
-be ".p10".
+content type {{!RFC9867}}.  A file name MUST be included either in a
+Content-Type or a Content-Disposition header in the name or filename
+parameter, respectively. The extension for the file MUST be ".p10”.  An
+example from {{RFC6967}} follows:
+
+<aside markdown="block">
+  The examples that follow are purposely truncated for brevity.
+</aside>
+
+~~~
+Content-Type: application/pkcs10; name=smime.p10
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=smime.p10
+
+rf ... 4V
+~~~
 
 Simple enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  A smime-type parameter MUST be on the
-Content-Type header with a value of "certs-only".  A file name
-with the ".p7c" extension MUST be specified as part of the
-Content-Type or Content-Disposition header.
+Content-Type header with a value of "certs-only".  A file name with
+the ".p7c" extension MUST be specified as part of the Content-Type or
+Content-Disposition header in the name or filename parameter,
+respectively. An example similar to that from {{SMIMEV4}} follows:
+
+~~~
+Content-Type: application/pkcs7-mime; smime-type=certs-only;
+  name=smime.p7c
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=smime.p7c
+
+rf ... 4V
+~~~
 
 Full enrollment request messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
 with a value of "CMC-Request".  A file name with the ".p7m" extension
 MUST be specified as part of the Content-Type or Content-Disposition
-header.
+header in the name or filename parameter, respectively. An example
+similar to that from {{SMIMEV4}} follows:
+
+~~~
+Content-Type: application/pkcs7-mime; smime-type=CMC-Request;
+  name=smime.p7c
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=smime.p7m
+
+rf ... 4V
+~~~
 
 Full enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-Response".  A file name with the ".p7m"
-extension MUST be specified as part of the Content-Type or
-Content-Disposition header.
+with a value of "CMC-Response".  A file name with the ".p7m" extension
+MUST be specified as part of the Content-Type or Content-Disposition
+statement.  An example similar to that from {{SMIMEV4}} follows:
+
+~~~
+Content-Type: application/pkcs7-mime; smime-type=CMC-Response;
+  name=smime.p7m
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=smime.p7m
+
+rf ... 4V
+~~~
+
+For file names present in the name or filename parameters, non-ASCII
+text is prohibited.
 
 | Item         | MIME Type              | File Extension      | SMIME Type   |
 |:-------------|:-----------------------|:-----------|:-------------|
