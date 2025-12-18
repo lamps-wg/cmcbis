@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-12-11T02:05:29.563306+00:00",
+  "timestamp": "2025-12-18T02:01:43.813278+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -1485,6 +1485,38 @@
       "createdAt": "2025-10-20T17:04:09Z",
       "updatedAt": "2025-10-20T18:12:09Z",
       "closedAt": "2025-10-20T18:12:09Z",
+      "comments": []
+    },
+    {
+      "number": 211,
+      "id": "I_kwDOKfq5gM7e5UID",
+      "title": "5273: Mail Text",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/211",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "@vdukhovni PTAL\n\nCollecting some comments on an already merged PR:\n\nhttps://github.com/lamps-wg/cmcbis/commit/45711d5749b1643581a1af1a4265eefad6ae7964#r169673166\nhttps://github.com/lamps-wg/cmcbis/commit/45711d5749b1643581a1af1a4265eefad6ae7964#r169663242\nhttps://github.com/lamps-wg/cmcbis/commit/fc32b30e6a61de4ae217f907e503ae30e68f689b#r169674615\n\nWe're interpreting some tea leaves here since neither Joe nor I was one of the original authors:\n\nWe believe this section was trying to tell implementers to make messages conform to what 1) should have been in [RFC 2986](https://www.rfc-editor.org/rfc/rfc2986.html) but ended up in in [s2.2 of RFC 5967](https://www.rfc-editor.org/rfc/rfc5967.html#section-2.2) (application/pkcs10); 2) is in [s3.5.2 of RFC 8551](https://www.rfc-editor.org/rfc/rfc8551.html#section-3.5.2) (application/pkcs7-mime); \u2014 and 3) not multipart.  I am hoping that if we reference massage in some references to RFCs 5967 and 8551 that would make it clearer?\n\nOn your other points:\n\n- refer to correct parameter names: in light of above, we will attempt to clean up some of the language to make sure we refer to the correct parameters.\n- file name requirement: pretty sure it was saying that you had to include some kind of value, i.e., you had to include the field and make sure it's not an empty string.\n- As far as non-ASCII character support - you really got me!! Should this have been specified in the media type definitions? I'd personally lean toward prohibiting them.\n\nWe'll work on a PR.",
+      "createdAt": "2025-12-17T16:20:30Z",
+      "updatedAt": "2025-12-17T16:20:30Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 212,
+      "id": "I_kwDOKfq5gM7e6WnT",
+      "title": "5272: Explain how Falco/draft-ietf-lamps-cms-euf-cma-signeddata doesn't apply",
+      "url": "https://github.com/lamps-wg/cmcbis/issues/212",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "With [Falco Attack](Strenzke, F., \"ForgedAttributes: An Existential Forgery Vulnerability of CMS and PKCS#7 Signatures\", 22 November 2023, <https://ia.cr/2023/1801>) and [draft-ietf-lamps-cms-euf-cma-signeddata](https://datatracker.ietf.org/doc/draft-ietf-lamps-cms-euf-cma-signeddata/) it's probably worth noting that since we don't use id-data the attacks don't apply -- we always have a signed-attribute.",
+      "createdAt": "2025-12-17T17:42:57Z",
+      "updatedAt": "2025-12-17T17:42:57Z",
+      "closedAt": null,
       "comments": []
     }
   ],
@@ -8105,13 +8137,13 @@
       "labels": [],
       "body": "Adds support for AuthEnvelopedData; see [RFC5083](https://datatracker.ietf.org/doc/rfc5083/).",
       "createdAt": "2025-10-23T17:06:29Z",
-      "updatedAt": "2025-10-28T13:44:43Z",
+      "updatedAt": "2025-12-17T16:17:52Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-AuthEnvelopedData",
-      "headRefOid": "9ff84714104e2ca4ec11cbb29a22aef2d04f5e09",
+      "headRefOid": "5528f1f896cc79c6ba99d15fa5aee06463e33f76",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -8225,6 +8257,39 @@
               "updatedAt": "2025-10-28T13:44:38Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7V4t5F",
+          "commit": {
+            "abbreviatedOid": "5528f1f"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-12-17T15:54:44Z",
+          "updatedAt": "2025-12-17T15:54:44Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7V5F79",
+          "commit": {
+            "abbreviatedOid": "5528f1f"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-12-17T16:17:52Z",
+          "updatedAt": "2025-12-17T16:17:52Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "We know there's a conflict here with the text in #210. We'll use the text from #210.",
+              "createdAt": "2025-12-17T16:17:52Z",
+              "updatedAt": "2025-12-17T16:17:52Z"
+            }
+          ]
         }
       ]
     },
@@ -8315,18 +8380,26 @@
       "labels": [],
       "body": "Clarify the limitations of SMTP-over-TLS and the use of authenticated TLS for message delivery.",
       "createdAt": "2025-11-20T16:28:59Z",
-      "updatedAt": "2025-11-21T15:11:33Z",
+      "updatedAt": "2025-12-18T01:25:07Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-viktor-2",
-      "headRefOid": "950075bbdbbb0fee0d3967502be8bff482f1726d",
+      "headRefOid": "23c29aac0fab7b7739d5ca244643563e07cbbda7",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think I was a little overzealous in deleting some text that Viktor and Ben liked that also addressed Eliot's speculative comment.",
+          "createdAt": "2025-12-17T15:48:43Z",
+          "updatedAt": "2025-12-17T15:48:43Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOKfq5gM7P83v_",
@@ -8367,6 +8440,127 @@
               "updatedAt": "2025-11-20T23:58:22Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7V_5F1",
+          "commit": {
+            "abbreviatedOid": "23c29aa"
+          },
+          "author": "vdukhovni",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "LGTM.",
+          "createdAt": "2025-12-18T01:25:07Z",
+          "updatedAt": "2025-12-18T01:25:07Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 213,
+      "id": "PR_kwDOKfq5gM65buyp",
+      "title": "Update Mail Text",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/213",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Clarified requirements for headers and provided examples for encoding types.",
+      "createdAt": "2025-12-17T18:54:02Z",
+      "updatedAt": "2025-12-18T00:02:50Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "c04e3ad189bbb115b3c66048e89c5abf9eea84ac",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-mail-text",
+      "headRefOid": "84471a4648e009b06a51c4078c7362a1d0b5d1ff",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closes #211.",
+          "createdAt": "2025-12-17T18:54:26Z",
+          "updatedAt": "2025-12-17T18:54:26Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7V7uoc",
+          "commit": {
+            "abbreviatedOid": "7c99c6e"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-12-17T18:56:18Z",
+          "updatedAt": "2025-12-17T18:56:18Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\ncontent type {{!RFC5967}}.  A file name MUST be included either in a\n```",
+              "createdAt": "2025-12-17T18:56:18Z",
+              "updatedAt": "2025-12-17T18:56:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7V7v00",
+          "commit": {
+            "abbreviatedOid": "7c99c6e"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-12-17T18:57:20Z",
+          "updatedAt": "2025-12-17T18:58:12Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\ncontent type {{!RFC5967}}.  A file name MUST be included either in a\n```",
+              "createdAt": "2025-12-17T18:57:20Z",
+              "updatedAt": "2025-12-17T18:58:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7V7yO9",
+          "commit": {
+            "abbreviatedOid": "c9a459e"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-12-17T18:59:35Z",
+          "updatedAt": "2025-12-17T18:59:35Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "```suggestion\nexample from {{RFC5967}} follows:\n```",
+              "createdAt": "2025-12-17T18:59:35Z",
+              "updatedAt": "2025-12-17T18:59:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7V_KFj",
+          "commit": {
+            "abbreviatedOid": "84471a4"
+          },
+          "author": "vdukhovni",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "LGTM, modulo one question:\r\n\r\n* Is it, or should it be, made clear to the reader that the `Content-Type` and `Content-Disposition` headers in question are present in the **primary** message header, not a nested MIME part header?\r\n\r\nOr is it valid for the message to be a `multipart/alternative` or multipart/mixed`, ... with the required/described attachment somewhere in the resulting set of MIME multipart components?",
+          "createdAt": "2025-12-18T00:02:50Z",
+          "updatedAt": "2025-12-18T00:02:50Z",
+          "comments": []
         }
       ]
     }
