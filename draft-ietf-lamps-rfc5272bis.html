@@ -6526,6 +6526,11 @@ minimum, all fields should be checked to ensure that the policies of
 the CA/RA are correctly enforced.  While all fields need to be
 checked, special care should be taken with names, name forms,
 algorithm choices, and algorithm parameters.<a href="#section-10-11" class="pilcrow">¶</a></p>
+<p id="section-10-12">The vulnerability noted in <span>[<a href="#Str23" class="cite xref">Str23</a>]</span> is mitigated in Full PKI Requests
+and Responses because signed attributes are always present and id-data
+is always used with a media-type. The vulnerability noted in <span>[<a href="#Str23" class="cite xref">Str23</a>]</span>
+is not applicable to Simple PKI Requests or Responses because there
+is no content encryption applied.<a href="#section-10-12" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="IANAConsiderations">
@@ -6904,6 +6909,10 @@ registries are to remain unchanged.<a href="#section-11-17" class="pilcrow">¶</
 <dt id="SMIME-ATTRS">[SMIME-ATTRS]</dt>
         <dd>
 <span class="refTitle">"SMI Security for S/MIME Attributes"</span>, <span>n.d.</span>, <span>&lt;<a href="https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#security-smime-2">https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#security-smime-2</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="Str23">[Str23]</dt>
+        <dd>
+<span class="refAuthor">Strenzke, F.</span>, <span class="refTitle">"ForgedAttributes: An Existential Forgery Vulnerability of CMS Signatures"</span>, <time datetime="2023-11-22" class="refDate">22 November 2023</time>, <span>&lt;<a href="https://ia.cr/2023/1801">https://ia.cr/2023/1801</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="X942">[X942]</dt>
       <dd>

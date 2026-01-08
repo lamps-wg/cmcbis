@@ -3372,6 +3372,12 @@ Table of Contents
    checked, special care should be taken with names, name forms,
    algorithm choices, and algorithm parameters.
 
+   The vulnerability noted in [Str23] is mitigated in Full PKI Requests
+   and Responses because signed attributes are always present and id-
+   data is always used with a media-type.  The vulnerability noted in
+   [Str23] is not applicable to Simple PKI Requests or Responses because
+   there is no content encryption applied.
+
 11.  IANA Considerations
 
    This document defines a number of CMC-related control objects, ASN.1
@@ -3713,6 +3719,10 @@ Table of Contents
               "SMI Security for S/MIME Attributes", n.d.,
               <https://www.iana.org/assignments/smi-numbers/smi-
               numbers.xhtml#security-smime-2>.
+
+   [Str23]    Strenzke, F., "ForgedAttributes: An Existential Forgery
+              Vulnerability of CMS Signatures", 22 November 2023,
+              <https://ia.cr/2023/1801>.
 
    [X942]     Rescorla, E., "Diffie-Hellman Key Agreement Method",
               RFC 2631, DOI 10.17487/RFC2631, June 1999,
