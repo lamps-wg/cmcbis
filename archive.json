@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-12-21T02:11:31.485325+00:00",
+  "timestamp": "2026-01-08T02:08:20.767850+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -8488,7 +8488,7 @@
       "labels": [],
       "body": "Clarified requirements for headers and provided examples for encoding types.",
       "createdAt": "2025-12-17T18:54:02Z",
-      "updatedAt": "2025-12-18T17:00:40Z",
+      "updatedAt": "2026-01-06T17:49:57Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c04e3ad189bbb115b3c66048e89c5abf9eea84ac",
@@ -8506,6 +8506,13 @@
           "body": "Closes #211.",
           "createdAt": "2025-12-17T18:54:26Z",
           "updatedAt": "2025-12-17T18:54:26Z"
+        },
+        {
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Because this has been done for so long in many different ways, I am not sure what makes sense to say about this. In HTTP, I know that multipart/form-data is used by some/many. If we look at S/MIME, here's what I'm thinking:\r\n\r\n- multipart/signed is used in S/MIME, but that's for detached signatures - and that doesn't make much sense with a CSR.\r\n- multipart/alternative could be used, but are you really going to send a text and BER/DER version of the csr/cert?  Would send a \"pretty print\" part and then a BER part? I guess you could loosely think of the output of the OpenSSL `ca` command that concatenates both the \"pretty print\" and:\r\n-----BEGIN CERTIFICATE-----\r\nASCII Cert goes here\r\n-----END CERTIFICATE-----\r\nas an input to something that is multipart/alternative. But, you don't need to send the pretty print part and the output of the command doesn't break it up that way - it's just one pem file.\r\n- multipart/mixed could also be used maybe say if you were going to send a cover message that says \"hi, attached is my CSR\". But, I'm not sure we should really be getting into all the ways you could or could not put together an email with a CSR.\r\n\r\nIf you're the RA/CA and you're bundling of requests/responses, then you should/could be using the internal CMC fields to do the bundling so I'm not sure we need to go into all the ways you could do it via email.\r\n\r\nIs there some other scenarios you're thinking about?",
+          "createdAt": "2026-01-06T17:49:57Z",
+          "updatedAt": "2026-01-06T17:49:57Z"
         }
       ],
       "reviews": [
