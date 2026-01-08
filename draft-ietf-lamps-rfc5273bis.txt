@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 13 June 2026                                   10 December 2025
+Expires: 12 July 2026                                     8 January 2026
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,11 +51,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 June 2026.
+   This Internet-Draft will expire on 12 July 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -341,13 +341,15 @@ Table of Contents
    protocol itself is being used to download onto the system the set of
    trust anchors to be used for these protocols.  In these instances,
    the Enveloped Data content type (Section 3.2.1.3.3 of [CMC-STRUCT])
-   provides the same shrouding that TLS would have provided.
+   or Authenticated Enveloped Data content type Section 3.2.1.3.5 of
+   [CMC-STRUCT] provides the same shrouding that TLS would have
+   provided.
 
-   For the mail-based protocol, the Enveloped Data content type can also
-   be used to apply confidentiality protection (content shrouding) to
-   the conveyed messages.  SMTP-over-TLS [RFC3207] does provide hop-by-
-   hop security, but cannot guarantee that all hops are actually
-   protected.
+   For the mail-based protocol, the Enveloped Data or Authenticated
+   Enveloped Data content types can also be used to apply
+   confidentiality protection (content shrouding) to the conveyed
+   messages.  SMTP-over-TLS [RFC3207] does provide hop-by-hop security,
+   but cannot guarantee that all hops are actually protected.
 
    For the file-based protocol, an additional method of applying
    confidentiality protection (content shrouding) to the conveyed

@@ -6,7 +6,7 @@ Limited Additional Mechanisms for PKIX and SMIME           J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5272, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 13 June 2026                                   10 December 2025
+Expires: 12 July 2026                                     8 January 2026
 
 
                  Certificate Management over CMS (CMC)
@@ -63,11 +63,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 June 2026.
+   This Internet-Draft will expire on 12 July 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -938,9 +938,10 @@ Table of Contents
 
       contentInfo is a ContentInfo object (defined in [CMS]).
 
-   The four content types used in cmsSequence are AuthenticatedData,
-   Data, EnvelopedData, and SignedData.  All of these content types are
-   defined in [CMS].
+   The five content types used in cmsSequence are AuthenticatedData,
+   Data, EnvelopedData, SignedData, and AuthEnvelopedData.  The first
+   four content types are defined in [CMS] and the the last is defined
+   in [CMS-AE].
 
 3.2.1.3.1.  Authenticated Data
 
@@ -981,13 +982,13 @@ Table of Contents
 
    The EnvelopedData content type provides for shrouding of data.
 
-   The EnvelopedData content type is the primary confidentiality method
-   for sensitive information in this protocol.  EnvelopedData can
-   provide encryption of an entire PKI Request (see Section 5).
-   EnvelopedData can also be used to wrap private key material for key
-   archival.  If the decryption on an EnvelopedData fails, a Full PKI
-   Response is returned with a CMCFailInfo value of badMessageCheck and
-   a bodyPartID of 0.
+   The EnvelopedData content type is one confidentiality method for
+   sensitive information in this protocol.  EnvelopedData can provide
+   encryption of an entire PKI Request (see Section 5).  EnvelopedData
+   can also be used to wrap private key material for key archival.  If
+   the decryption on an EnvelopedData fails, a Full PKI Response is
+   returned with a CMCFailInfo value of badMessageCheck and a bodyPartID
+   of 0.
 
 3.2.1.3.4.  Signed Data
 
@@ -1020,6 +1021,18 @@ Table of Contents
    CMCFailInfo with a value of internalCAError and a bodyPartID of 0,
    and the eContent field in the EncapsulatedContentInfo as well as
    SignerInfo fields MUST NOT be populated.
+
+3.2.1.3.5.  Authenticated Enveloped Data
+
+   The AuthEnvelopedData content type provides for shrouding of data.
+
+   The AuthEnvelopedData content type is the primary confidentiality
+   method for sensitive information in this protocol.  AuthEnvelopedData
+   can provide encryption of an entire PKI Request (see Section 5).
+   AuthEnvelopedData can also be used to wrap private key material for
+   key archival.  If the decryption on an AuthEnvelopedData fails, a
+   Full PKI Response is returned with a CMCFailInfo value of
+   badMessageCheck and a bodyPartID of 0.
 
 3.2.1.4.  Other Message Bodies
 
@@ -1253,13 +1266,16 @@ Table of Contents
    field can be encrypted separately.
 
    Confidentiality is provided by wrapping the PKI Request/Response (a
-   SignedData) in an EnvelopedData.  The nested content type in the
-   EnvelopedData is id-SignedData.  Note that this is different from S/
-   MIME where there is a MIME layer placed between the encrypted and
-   signed data.  It is recommended that if an EnvelopedData layer is
-   applied to a PKI Request/Response, a second signature layer be placed
-   outside of the EnvelopedData layer.  The following figure shows how
-   this nesting would be done:
+   SignedData) in an EnvelopedData or an AuthEnvelopedData.  When using
+   EnvelopedData or AuthEnvelopedData, the nested content type is id-
+   SignedData.  Note that this is different from S/MIME where there is a
+   MIME layer placed between the encrypted and signed data for
+   EnvelopedData and between the authenticated encryption and signed
+   data for AuthEnvelopedData.  It is recommended that if an
+   EnvelopedData or AuthEnvelopedData layer is applied to a PKI Request/
+   Response, a second signature layer be placed outside of the
+   EnvelopedData or AuthEnvelopedData layer.  The following figure shows
+   how this nesting would be done:
 
      Normal              Option 1                  Option 2
      ------              --------                  --------
@@ -1268,7 +1284,11 @@ Table of Contents
                               PKIData                   SignedData
                                                           PKIData
 
-   Note: PKIResponse can be substituted for PKIData in the above figure.
+   Note:  PKIResponse can be substituted for PKIData in the above
+      figure.
+
+   Note:  AuthEnvelopedData can be substituted for EnvelopedData in the
+      above figure.
 
    Options 1 and 2 prevent leakage of sensitive data by encrypting the
    Full PKI Request/Response.  An RA that receives a PKI Request that it
@@ -1277,12 +1297,14 @@ Table of Contents
    amalgamate multiple PKI Requests and forward them to a server).
 
    After the RA removes the envelope and completes processing, it may
-   then apply a new EnvelopedData layer to protect PKI Requests for
-   transmission to the next processing agent.  Section 7 contains more
-   information about RA processing.
+   then apply a new EnvelopedData or AuthEnvelopedData layer to protect
+   PKI Requests for transmission to the next processing agent.
+   Section 8 contains more information about RA processing.
 
    Full PKI Requests/Responses can be encrypted or transmitted in the
-   clear.  Servers MUST provide support for all three options.
+   clear.  Servers that support EnvelopedData or AuthEnvelopedData MUST
+   provide support for all three EnvelopedData or AuthEnvelopedData
+   options, respectively.
 
    Alternatively, an authenticated, secure channel could exist between
    the parties that require confidentiality.  Clients and servers MAY
@@ -2330,14 +2352,15 @@ Table of Contents
        *  request is the original certification request (it is included
           here so the client need not keep a copy of the request).
 
-       *  cms is an EnvelopedData, the encapsulated content type being
-          id- data and the content being the POP Proof Value; this value
-          needs to be long enough that one cannot reverse the value from
-          the witness hash.  If the certification request contains a
-          Subject Key Identifier (SKI) extension, then the recipient
-          identifier SHOULD be the SKI.  If the issuerAndSerialNumber
-          form is used, the IssuerName MUST be encoded as NULL and the
-          SerialNumber as the bodyPartID of the certification request.
+       *  cms is an EnvelopedData or AuthEnvelopedData, the encapsulated
+          content type being id-data and the content being the POP Proof
+          Value; this value needs to be long enough that one cannot
+          reverse the value from the witness hash.  If the certification
+          request contains a Subject Key Identifier (SKI) extension,
+          then the recipient identifier SHOULD be the SKI.  If the
+          issuerAndSerialNumber form is used, the IssuerName MUST be
+          encoded as NULL and the SerialNumber as the bodyPartID of the
+          certification request.
 
        *  thePOPAlgID identifies the algorithm to be used in computing
           the return POP value.
@@ -3162,13 +3185,15 @@ Table of Contents
 
    Under some circumstances, an RA is required to remove wrapping
    layers.  The following sections look at the processing required if
-   encryption layers and signing layers need to be removed.
+   encryption, signing, and authenticated encryption layers need to be
+   removed.
 
 8.1.  Encryption Removal
 
-   There are two cases that require an RA to remove or change encryption
-   in a PKI Request.  In the first case, the encryption was applied for
-   the purposes of protecting the entire PKI Request from unauthorized
+   There are two cases that require an RA to remove or change
+   encryption, applies to both EnvelopedData or AuthEnvelopedData, in a
+   PKI Request.  In the first case, the encryption was applied for the
+   purposes of protecting the entire PKI Request from unauthorized
    entities.  If the CA does not have a Recipient Info entry in the
    encryption layer, the RA MUST remove the encryption layer.  The RA
    MAY add a new encryption layer with or without adding a new signing
@@ -3499,6 +3524,11 @@ Table of Contents
               RFC 5652, DOI 10.17487/RFC5652, September 2009,
               <https://www.rfc-editor.org/rfc/rfc5652>.
 
+   [CMS-AE]   Housley, R., "Cryptographic Message Syntax (CMS)
+              Authenticated-Enveloped-Data Content Type", RFC 5083,
+              DOI 10.17487/RFC5083, November 2007,
+              <https://www.rfc-editor.org/rfc/rfc5083>.
+
    [CMS-ALGS] Hoffman, P. and J. Schaad, "New ASN.1 Modules for
               Cryptographic Message Syntax (CMS) and S/MIME", RFC 5911,
               DOI 10.17487/RFC5911, June 2010,
@@ -3581,7 +3611,7 @@ Table of Contents
               Updates", RFC 6402, DOI 10.17487/RFC6402, November 2011,
               <https://www.rfc-editor.org/rfc/rfc6402>.
 
-   [CMS-RI]   Housley, R., Gray, J., and T. Okubo, "Using Key
+   [CMS-KEM]  Housley, R., Gray, J., and T. Okubo, "Using Key
               Encapsulation Mechanism (KEM) Algorithms in the
               Cryptographic Message Syntax (CMS)", RFC 9629,
               DOI 10.17487/RFC9629, August 2024,
@@ -4604,7 +4634,8 @@ B.3.  Direct POP for an RSA or KEM Certificate
    an enrollment is done for an encryption-only certificate using a
    direct POP method; the example below shows.  For simplicity, it is
    assumed that the certification requester already has a signature
-   certificate.
+   certificate.  This example uses EnvelopedData; however either
+   EnvelopedData or AuthEnvelopedData can be used.
 
    Message #1 from client to server:
 
@@ -4743,7 +4774,8 @@ B.4.  Direct POP with No Signature Mechanism
    requester already has a signing-only certificate as in Appendix B.3,
    here the No Signature mechanism from Appendix C.1, the public key is
    for a KEM, and the EnvelopedData uses the KEMRecipientInfo from
-   [CMS-RI].
+   [CMS-KEM].  This example uses EnvelopedData; however either
+   EnvelopedData or AuthEnvelopedData can be used.
 
    Message #1 from client to server:
 
