@@ -318,11 +318,21 @@ the Enveloped Data content type ({{Section 3.2.1.3.3 of CMC-STRUCT}})
 or Authenticated Enveloped Data content type {{Section 3.2.1.3.5 of CMC-STRUCT}}
 provides the same shrouding that TLS would have provided.
 
+
 For the mail-based protocol, the Enveloped Data or Authenticated
 Enveloped Data content types can also be used to apply confidentiality
 protection (content shrouding) to the conveyed messages.
-SMTP-over-TLS {{?RFC3207}} does provide hop-by-hop security, but
-cannot guarantee that all hops are actually protected.
+Note that even if the application uses SMTP-over-TLS {{?RFC3207}}
+with its preferred Message Submission Agent (MSA)
+for initial submission of the message for delivery, SMTP
+in subsequent relay hops may not be either authenticated or encrypted.
+For some combinations of initial MSA and destination domains it may be
+possible to request use of authenticated TLS at every relay "hop" of
+message delivery via the mechanism specified in {{?RFC8689}}. This MAY
+be used, when supported, and expected to work, but risks non-delivery
+if some of the SMTP servers along the relay chain do not support the
+REQUIRETLS ESMTP extension.
+
 
 For the file-based protocol, an additional method of applying
 confidentiality protection (content shrouding) to the conveyed messages
