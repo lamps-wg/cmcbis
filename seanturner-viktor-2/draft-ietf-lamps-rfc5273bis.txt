@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5273, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 20 June 2026                                   17 December 2025
+Expires: 12 July 2026                                     8 January 2026
 
 
        Certificate Management over CMS (CMC): Transport Protocols
@@ -51,11 +51,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 June 2026.
+   This Internet-Draft will expire on 12 July 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -166,26 +166,26 @@ Table of Contents
 
    Simple enrollment requests are encoded using the "application/pkcs10"
    content type.  A file name MUST be included either in a Content-Type
-   or a Content-Disposition statement.  The extension for the file MUST
-   be ".p10".
+   or a Content-Disposition header.  The extension for the file MUST be
+   ".p10".
 
    Simple enrollment response messages MUST be encoded as content type
    "application/pkcs7-mime".  A smime-type parameter MUST be on the
-   Content-Type statement with a value of "certs-only".  A file name
-   with the ".p7c" extension MUST be specified as part of the Content-
-   Type or Content-Disposition statement.
+   Content-Type header with a value of "certs-only".  A file name with
+   the ".p7c" extension MUST be specified as part of the Content-Type or
+   Content-Disposition header.
 
    Full enrollment request messages MUST be encoded as content type
    "application/pkcs7-mime".  The smime-type parameter MUST be included
    with a value of "CMC-Request".  A file name with the ".p7m" extension
    MUST be specified as part of the Content-Type or Content-Disposition
-   statement.
+   header.
 
    Full enrollment response messages MUST be encoded as content type
    "application/pkcs7-mime".  The smime-type parameter MUST be included
    with a value of "CMC-Response".  A file name with the ".p7m"
    extension MUST be specified as part of the Content-Type or Content-
-   Disposition statement.
+   Disposition header.
 
    +====================+==============+================+==============+
    | Item               | MIME Type    | File Extension | SMIME Type   |
@@ -341,20 +341,23 @@ Table of Contents
    protocol itself is being used to download onto the system the set of
    trust anchors to be used for these protocols.  In these instances,
    the Enveloped Data content type (Section 3.2.1.3.3 of [CMC-STRUCT])
-   provides the same shrouding that TLS would have provided.
+   or Authenticated Enveloped Data content type Section 3.2.1.3.5 of
+   [CMC-STRUCT] provides the same shrouding that TLS would have
+   provided.
 
-   For the mail-based protocol, the Enveloped Data content type can also
-   be used to apply confidentiality protection (content shrouding) to
-   the conveyed messages.  Note that even if the application uses SMTP-
-   over-TLS [RFC3207] with its preferred Messsage Submission Agent (MSA)
-   for initial submission of the message for delivery, SMTP in
-   subsequent relay hops may not be either authenticated or encrypted.
-   For some combinations of initial MSA and destination domains it may
-   be possible to request use of authenticated TLS at every relay "hop"
-   of message delivery via the mechanism specified in [RFC8689].  This
-   MAY be used, when supported, and expected to work, but risks non-
-   delivery if some of the SMTP servers along the relay chain do not
-   support the REQUIRETLS ESMTP extension.
+   For the mail-based protocol, the Enveloped Data or Authenticated
+   Enveloped Data content types can also be used to apply
+   confidentiality protection (content shrouding) to the conveyed
+   messages.  Note that even if the application uses SMTP-over-TLS
+   [RFC3207] with its preferred Message Submission Agent (MSA) for
+   initial submission of the message for delivery, SMTP in subsequent
+   relay hops may not be either authenticated or encrypted.  For some
+   combinations of initial MSA and destination domains it may be
+   possible to request use of authenticated TLS at every relay "hop" of
+   message delivery via the mechanism specified in [RFC8689].  This MAY
+   be used, when supported, and expected to work, but risks non-delivery
+   if some of the SMTP servers along the relay chain do not support the
+   REQUIRETLS ESMTP extension.
 
    For the file-based protocol, an additional method of applying
    confidentiality protection (content shrouding) to the conveyed
