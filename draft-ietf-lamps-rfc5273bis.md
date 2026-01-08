@@ -152,26 +152,26 @@ standard S/MIME (Secure MIME) message.
 
 Simple enrollment requests are encoded using the "application/pkcs10"
 content type.  A file name MUST be included either in a Content-Type
-or a Content-Disposition statement.  The extension for the file MUST
+or a Content-Disposition header.  The extension for the file MUST
 be ".p10".
 
 Simple enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  A smime-type parameter MUST be on the
-Content-Type statement with a value of "certs-only".  A file name
+Content-Type header with a value of "certs-only".  A file name
 with the ".p7c" extension MUST be specified as part of the
-Content-Type or Content-Disposition statement.
+Content-Type or Content-Disposition header.
 
 Full enrollment request messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
 with a value of "CMC-Request".  A file name with the ".p7m" extension
 MUST be specified as part of the Content-Type or Content-Disposition
-statement.
+header.
 
 Full enrollment response messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
 with a value of "CMC-Response".  A file name with the ".p7m"
 extension MUST be specified as part of the Content-Type or
-Content-Disposition statement.
+Content-Disposition header.
 
 | Item         | MIME Type              | File Extension      | SMIME Type   |
 |:-------------|:-----------------------|:-----------|:-------------|
@@ -315,13 +315,16 @@ initiated prior to use of this protocol.  This can occur when the
 protocol itself is being used to download onto the system the set of
 trust anchors to be used for these protocols.  In these instances,
 the Enveloped Data content type ({{Section 3.2.1.3.3 of CMC-STRUCT}})
+or Authenticated Enveloped Data content type {{Section 3.2.1.3.5 of CMC-STRUCT}}
 provides the same shrouding that TLS would have provided.
 
-For the mail-based protocol, the Enveloped Data content type can
-also be used to apply confidentiality protection (content shrouding)
-to the conveyed messages. Note that even if the application uses
-SMTP-over-TLS {{?RFC3207}} with its preferred Messsage Submission
-Agent (MSA) for initial submission of the message for delivery, SMTP
+
+For the mail-based protocol, the Enveloped Data or Authenticated
+Enveloped Data content types can also be used to apply confidentiality
+protection (content shrouding) to the conveyed messages.
+Note that even if the application uses SMTP-over-TLS {{?RFC3207}}
+with its preferred Message Submission Agent (MSA)
+for initial submission of the message for delivery, SMTP
 in subsequent relay hops may not be either authenticated or encrypted.
 For some combinations of initial MSA and destination domains it may be
 possible to request use of authenticated TLS at every relay "hop" of
@@ -329,6 +332,7 @@ message delivery via the mechanism specified in {{?RFC8689}}. This MAY
 be used, when supported, and expected to work, but risks non-delivery
 if some of the SMTP servers along the relay chain do not support the
 REQUIRETLS ESMTP extension.
+
 
 For the file-based protocol, an additional method of applying
 confidentiality protection (content shrouding) to the conveyed messages
