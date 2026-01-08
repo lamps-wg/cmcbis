@@ -99,6 +99,15 @@ informative:
   PKIX-ADS:
     target: https://www.iana.org/assignments/smi-numbers/smi-numbers.xhtml#smi-numbers-1.3.6.1.5.5.7.48
     title: "SMI Security for PKIX Access Descriptor"
+  Str23:
+    target: https://ia.cr/2023/1801
+    title: "ForgedAttributes: An Existential Forgery Vulnerability of CMS Signatures"
+    author:
+      -
+        ins: F. Strenzke
+    date: 2023-11-22
+    format:
+      PDF: https://eprint.iacr.org/2023/1801.pdf
   erratum2063:
     target: https://www.rfc-editor.org/errata/eid2063
     title: RFC 5272 erratum 2063
@@ -3460,6 +3469,12 @@ minimum, all fields should be checked to ensure that the policies of
 the CA/RA are correctly enforced.  While all fields need to be
 checked, special care should be taken with names, name forms,
 algorithm choices, and algorithm parameters.
+
+The vulnerability noted in {{Str23}} is mitigated in Full PKI Requests
+and Responses because signed attributes are always present and id-data
+is always used with a media-type. The vulnerability noted in {{Str23}}
+is not applicable to Simple PKI Requests or Responses because there
+is no content encryption applied.
 
 # IANA Considerations {#IANAConsiderations}
 
