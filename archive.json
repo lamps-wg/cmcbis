@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-01-08T02:08:20.767850+00:00",
+  "timestamp": "2026-01-11T02:25:16.257811+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -1508,15 +1508,15 @@
       "id": "I_kwDOKfq5gM7e6WnT",
       "title": "5272: Explain how Falco/draft-ietf-lamps-cms-euf-cma-signeddata doesn't apply",
       "url": "https://github.com/lamps-wg/cmcbis/issues/212",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "With [Falco Attack](Strenzke, F., \"ForgedAttributes: An Existential Forgery Vulnerability of CMS and PKCS#7 Signatures\", 22 November 2023, <https://ia.cr/2023/1801>) and [draft-ietf-lamps-cms-euf-cma-signeddata](https://datatracker.ietf.org/doc/draft-ietf-lamps-cms-euf-cma-signeddata/) it's probably worth noting that since we don't use id-data the attacks don't apply -- we always have a signed-attribute.",
       "createdAt": "2025-12-17T17:42:57Z",
-      "updatedAt": "2025-12-17T17:42:57Z",
-      "closedAt": null,
+      "updatedAt": "2026-01-08T14:02:33Z",
+      "closedAt": "2026-01-08T14:02:33Z",
       "comments": []
     }
   ],
@@ -8130,24 +8130,26 @@
       "id": "PR_kwDOKfq5gM6vUVSd",
       "title": "Address #159",
       "url": "https://github.com/lamps-wg/cmcbis/pull/208",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Adds support for AuthEnvelopedData; see [RFC5083](https://datatracker.ietf.org/doc/rfc5083/).",
       "createdAt": "2025-10-23T17:06:29Z",
-      "updatedAt": "2025-12-17T16:17:52Z",
+      "updatedAt": "2026-01-08T14:01:04Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-AuthEnvelopedData",
       "headRefOid": "5528f1f896cc79c6ba99d15fa5aee06463e33f76",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-01-08T14:01:04Z",
+      "mergedAt": "2026-01-08T14:01:04Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "3756a1376a38a0776787ff1c358a9da6c13a4258"
+      },
       "comments": [
         {
           "author": "seanturner",
@@ -8373,24 +8375,26 @@
       "id": "PR_kwDOKfq5gM60opK4",
       "title": "5273: Enhance SMTP-over-TLS explanation and requirements",
       "url": "https://github.com/lamps-wg/cmcbis/pull/210",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Clarify the limitations of SMTP-over-TLS and the use of authenticated TLS for message delivery.",
       "createdAt": "2025-11-20T16:28:59Z",
-      "updatedAt": "2025-12-18T13:21:40Z",
+      "updatedAt": "2026-01-08T14:46:43Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
-      "baseRefOid": "c57bc0ee76ff245e39f400c6e065a0bc61dcbd99",
+      "baseRefOid": "4426cdd9533225dde1a9142ae5787d6a1317bc3d",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-viktor-2",
-      "headRefOid": "23c29aac0fab7b7739d5ca244643563e07cbbda7",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "d31b8300443e8d5f9e271f1829d7a457a561ed7d",
+      "closedAt": "2026-01-08T14:46:43Z",
+      "mergedAt": "2026-01-08T14:46:42Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "24ead48cca6689e28ba3cf90850255704e17f3f7"
+      },
       "comments": [
         {
           "author": "seanturner",
@@ -8401,7 +8405,7 @@
         },
         {
           "author": "elear",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "LGTM\r\n",
           "createdAt": "2025-12-18T13:21:40Z",
           "updatedAt": "2025-12-18T13:21:40Z"
@@ -8414,7 +8418,7 @@
             "abbreviatedOid": "5c05772"
           },
           "author": "elear",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2025-11-20T16:44:38Z",
@@ -8434,7 +8438,7 @@
             "abbreviatedOid": "5c05772"
           },
           "author": "vdukhovni",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2025-11-20T23:58:07Z",
@@ -8454,7 +8458,7 @@
             "abbreviatedOid": "23c29aa"
           },
           "author": "vdukhovni",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "APPROVED",
           "body": "LGTM.",
           "createdAt": "2025-12-18T01:25:07Z",
@@ -8467,11 +8471,24 @@
             "abbreviatedOid": "23c29aa"
           },
           "author": "elear",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "APPROVED",
           "body": "",
           "createdAt": "2025-12-18T13:21:32Z",
           "updatedAt": "2025-12-18T13:21:32Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKfq5gM7Y71iN",
+          "commit": {
+            "abbreviatedOid": "23c29aa"
+          },
+          "author": "mandelj7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-01-08T14:01:33Z",
+          "updatedAt": "2026-01-08T14:01:33Z",
           "comments": []
         }
       ]
@@ -8609,24 +8626,26 @@
       "id": "PR_kwDOKfq5gM65olO_",
       "title": "Add SecCon for Falco attack",
       "url": "https://github.com/lamps-wg/cmcbis/pull/214",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "With Falco and [draft-ietf-lamps-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata) this revision ought to say something.\r\n\r\nCloses #212.",
       "createdAt": "2025-12-18T16:35:54Z",
-      "updatedAt": "2025-12-18T17:18:51Z",
+      "updatedAt": "2026-01-08T14:02:33Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c04e3ad189bbb115b3c66048e89c5abf9eea84ac",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-falco",
       "headRefOid": "6c8d37bafcbef3ce46ce922de7b7e21b51110f12",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-01-08T14:02:32Z",
+      "mergedAt": "2026-01-08T14:02:32Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "4426cdd9533225dde1a9142ae5787d6a1317bc3d"
+      },
       "comments": [],
       "reviews": [
         {
