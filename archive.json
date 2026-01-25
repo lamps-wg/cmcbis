@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-01-22T02:20:52.772274+00:00",
+  "timestamp": "2026-01-25T02:27:30.053082+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -8505,13 +8505,13 @@
       "labels": [],
       "body": "Clarified requirements for headers and provided examples for encoding types.",
       "createdAt": "2025-12-17T18:54:02Z",
-      "updatedAt": "2026-01-21T16:25:48Z",
+      "updatedAt": "2026-01-23T15:47:48Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c04e3ad189bbb115b3c66048e89c5abf9eea84ac",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-mail-text",
-      "headRefOid": "84471a4648e009b06a51c4078c7362a1d0b5d1ff",
+      "headRefOid": "b42f6ec78eebab006ac0ce2e72c71b6aea4c5010",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -8544,6 +8544,41 @@
           "body": "I can think of no reason why the content in question would an attachment, somewhere unspecified in the MIME structure, rather than the top-level content of the message. If there was some more complex structure one could use the entire MIME structure would need to be specified, so recipients would know what to expect.\r\n\r\nIf this is to be interoperable, it should be clearly specified I think.",
           "createdAt": "2026-01-21T16:25:48Z",
           "updatedAt": "2026-01-21T16:25:48Z"
+        },
+        {
+          "author": "russhousley",
+          "authorAssociation": "NONE",
+          "body": "I cannot see any reason thy it would be an attachment.  Viktor, are you happy with the current wording?",
+          "createdAt": "2026-01-22T21:30:05Z",
+          "updatedAt": "2026-01-22T21:30:05Z"
+        },
+        {
+          "author": "debcooley",
+          "authorAssociation": "NONE",
+          "body": "I would think that the simplest, most straightforward option is the best.  Giving options leads to interop issues.  So, don't get fancy, and don't overthink it.  \r\n\r\nI'd leave it as it stands. (and publish the damn thing)",
+          "createdAt": "2026-01-23T11:49:34Z",
+          "updatedAt": "2026-01-23T11:49:34Z"
+        },
+        {
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "body": "What appears to be simple is to s/attachment/inline and add some words about where to put the headers.\r\n\r\nI have to admit that when I was thinking about this I was thinking about me crafting an email to include these request, but that's it -- this is an automated process. If you're sending one, send one. If you're sending a bunch, use the built in bundling mechanism -- so you essentially send one blob.",
+          "createdAt": "2026-01-23T12:36:51Z",
+          "updatedAt": "2026-01-23T12:36:51Z"
+        },
+        {
+          "author": "debcooley",
+          "authorAssociation": "NONE",
+          "body": "That, do that. \r\n\r\nDon't overthink it. \r\n",
+          "createdAt": "2026-01-23T12:41:06Z",
+          "updatedAt": "2026-01-23T12:41:06Z"
+        },
+        {
+          "author": "vdukhovni",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I seem to have completely failed to explain the issue. :-( :-(\r\n\r\nIt has NOTHING to do with the details of the `Content-Disposition:` header. It makes no difference whether that's \"attachment\" or \"inline\" unless a human is looking at with an interactive MUA, and not always even then.\r\n\r\nThe lack of specificity and clarity is about **WHERE** that `Content-Type:` or `Content-Disposition:` appears, is it the primary message header.  I rather expect the first alternative below, in which case the specified content (payload) is the entire message body, and \"inline\" vs. \"attachment\" is especially irrelevant, because primary message body is rarely presented as an \"attachment\", though automated tooling could arguably treat it differently.\r\n\r\nThe issue is whether the specification defines a complete RFC822  message (what I expect, but is not said), or some random nested MIME part, in which case how is that identified amongst all the other MIME part.  Is this a MIME sub-type specification, or a **message** format specification?\r\n\r\n```email\r\nReceived: from ...\r\n...\r\nReceived: from ...\r\nFrom: ...\r\nTo: ...\r\nSubject: ...\r\nMIME-Version: 1.0\r\nContent-Type: <as-specified>\r\nContent-Disposition: <as-specified>\r\n\r\n<specified content>\r\n```\r\nOr is the specified content in some multipart MIME structure:\r\n```email\r\nReceived: from ...\r\nFrom: ...\r\nTo: ...\r\nSubject: ...\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=foo\r\n\r\n--foo\r\nContent-Type: whatever\r\nAnother-Header: ...\r\n\r\n<a body part>\r\n\r\n--foo\r\nContent-Type: <as-specified>\r\nContent-Disposition: <as-specified>\r\n\r\n<specified content>\r\n--foo\r\nContent-Type: whatever\r\nAnother-Header: ...\r\n\r\n<another (final) body part>\r\n\r\n--foo--\r\n```",
+          "createdAt": "2026-01-23T15:47:48Z",
+          "updatedAt": "2026-01-23T15:47:48Z"
         }
       ],
       "reviews": [
