@@ -150,28 +150,106 @@ When using a mail-based protocol, MIME wrapping between the layers of
 CMS wrapping is optional.  Note that this is different from the
 standard S/MIME (Secure MIME) message.
 
+What follows is a set of Simple PKI Request and Response messages and a
+set of Full PKI Request and Response messages. The headers discussed
+below appear in the top-level content of the messagea and the messages'
+contents are the entire messages' bodies.
+
+<aside markdown="block">
+  The examples that follow are purposely truncated for brevity.
+</aside>
+
 Simple enrollment requests are encoded using the "application/pkcs10"
-content type.  A file name MUST be included either in a Content-Type
-or a Content-Disposition header.  The extension for the file MUST
-be ".p10".
+content type {{!RFC5967}}.  A file name MUST be included either in a
+Content-Type or a Content-Disposition header in the name or filename
+parameter, respectively. The extension for the file MUST be ".p10”.  An
+example similar to that from {{RFC5967}} follows:
 
-Simple enrollment response messages MUST be encoded as content type
+~~~
+From: cmc-client@example.com
+Message-Id: <E06C3FA6-FF15-4851-AC7F-DB9F3B1C2C7A@example.com>
+To: cmc-server@example.com
+Subject: Simple Enrollment Request
+Date: Tue, 3 Feb 2026 16:08:28 -0500
+MIME-Version: 1.0
+Content-Type: application/pkcs10; name=smime.p10
+Content-Transfer-Encoding: base64
+Content-Disposition: inline; filename=smime.p10
+
+< message contents >
+~~~
+
+Simple PKI Response messages MUST be encoded as content type
 "application/pkcs7-mime".  A smime-type parameter MUST be on the
-Content-Type header with a value of "certs-only".  A file name
-with the ".p7c" extension MUST be specified as part of the
-Content-Type or Content-Disposition header.
+Content-Type header with a value of "certs-only".  A file name with
+the ".p7c" extension MUST be specified as part of the Content-Type or
+Content-Disposition header in the name or filename parameter,
+respectively. An example similar to that from {{SMIMEV4}} follows:
 
-Full enrollment request messages MUST be encoded as content type
+~~~
+From: cmc-server@example.com
+Message-Id: <E06C3FA6-FF15-4851-AC7F-DB9F3B1C2C7B@example.com>
+To: cmc-client@example.com
+Subject: Re: Simple Enrollment Request
+Date: Tue, 3 Feb 2026 16:09:28 -0500
+MIME-Version: 1.0
+References: <E06C3FA6-FF15-4851-AC7F-DB9F3B1C2C7A@example.com>
+In-Reply-To: <E06C3FA6-FF15-4851-AC7F-DB9F3B1C2C7A@example.com>
+Content-Type: application/pkcs7-mime; smime-type=certs-only;
+  name=smime.p7c
+Content-Transfer-Encoding: base64
+Content-Disposition: inline; filename=smime.p7c
+
+< message contents >
+~~~
+
+Full PKI Request messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
 with a value of "CMC-Request".  A file name with the ".p7m" extension
 MUST be specified as part of the Content-Type or Content-Disposition
-header.
+header in the name or filename parameter, respectively. An example
+similar to that from {{SMIMEV4}} follows:
 
-Full enrollment response messages MUST be encoded as content type
+~~~
+From: cmc-client@example.com
+Message-Id: <E06C3FA6-FF15-4851-AC7F-DB9F3B1C2C7C@example.com>
+To: cmc-server@example.com
+Subject: Full Enrollment Request
+Date: Tue, 3 Feb 2026 16:10:28 -0500
+MIME-Version: 1.0
+Content-Type: application/pkcs7-mime; smime-type=CMC-Request;
+  name=smime.p7c
+Content-Transfer-Encoding: base64
+Content-Disposition: inline; filename=smime.p7m
+
+< message contents >
+~~~
+
+Full PKI Response messages MUST be encoded as content type
 "application/pkcs7-mime".  The smime-type parameter MUST be included
-with a value of "CMC-Response".  A file name with the ".p7m"
-extension MUST be specified as part of the Content-Type or
-Content-Disposition header.
+with a value of "CMC-Response".  A file name with the ".p7m" extension
+MUST be specified as part of the Content-Type or Content-Disposition
+statement.  An example similar to that from {{SMIMEV4}} follows:
+
+~~~
+From: cmc-server@example.com
+Message-Id: <E06C3FA6-FF15-4851-AC7F-DB9F3B1C2C7D@example.com>
+To: cmc-client@example.com
+Subject: Re: Full Enrollment Request
+Date: Tue, 3 Feb 2026 16:11:28 -0500
+MIME-Version: 1.0
+References: <E06C3FA6-FF15-4851-AC7F-DB9F3B1C2C7C@example.com>
+In-Reply-To: <E06C3FA6-FF15-4851-AC7F-DB9F3B1C2C7C@example.com>
+Content-Type: application/pkcs7-mime; smime-type=CMC-Response;
+  name=smime.p7m
+Content-Transfer-Encoding: base64
+Content-Disposition: inline; filename=smime.p7m
+
+< message contents >
+~~~
+
+For file names present in the name or filename parameters, non-ASCII
+text is prohibited.
 
 | Item         | MIME Type              | File Extension      | SMIME Type   |
 |:-------------|:-----------------------|:-----------|:-------------|
