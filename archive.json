@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-05T02:38:25.171808+00:00",
+  "timestamp": "2026-02-08T03:17:17.768021+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -8498,24 +8498,26 @@
       "id": "PR_kwDOKfq5gM65buyp",
       "title": "5273: Update Mail Text",
       "url": "https://github.com/lamps-wg/cmcbis/pull/213",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Clarified requirements for headers and provided examples for encoding types.",
       "createdAt": "2025-12-17T18:54:02Z",
-      "updatedAt": "2026-02-04T02:04:16Z",
+      "updatedAt": "2026-02-06T16:48:31Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "c04e3ad189bbb115b3c66048e89c5abf9eea84ac",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "seanturner-mail-text",
       "headRefOid": "adfa734857e482c22223bf9876184bc1afca03dc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-02-06T16:48:30Z",
+      "mergedAt": "2026-02-06T16:48:30Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "55290bfedfd1d69c2e02e05cf94e9e73df42f7f7"
+      },
       "comments": [
         {
           "author": "seanturner",
