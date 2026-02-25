@@ -115,11 +115,21 @@ IANA assigned TCP port 5318 for the use of CMC.
 
 Clarified the file extensions for Full PKI Requests and Responses.
 
+Added examples of encoding types for mail-based Requests and Responses.
 
 Replaced TLS 1.0 with TLS 1.2 or later, and added that implemetations are
 required to follow the recommendations in {{!BCP195}}.
 
 Addressed {{erratum3593}}.
+
+Added reference to RFC9205 for HTTP guidance.
+
+Restrict early data (0-RTT) if using TLS 1.3 or QUIC.
+
+Restrict the use of TCP-Pipelining.
+
+Clarified the limitations of SMTP-over-TLS and the use of authenticated TLS for message delivery.
+
 
 # File-Based Protocol
 
@@ -152,7 +162,7 @@ standard S/MIME (Secure MIME) message.
 
 What follows is a set of Simple PKI Request and Response messages and a
 set of Full PKI Request and Response messages. The headers discussed
-below appear in the top-level content of the messagea and the messages'
+below appear in the top-level content of the message and the messages'
 contents are the entire messages' bodies.
 
 <aside markdown="block">
@@ -429,6 +439,11 @@ can be a useful mechanism in multi-user environments.
 Obviously, the authors of this version of the document would like to
 thank Jim Schaad and Michael Myers for their work on the previous
 version of this document.
+
+Thank you to Julian Reschke, Benjamin Kaduk, Vidhi Goel, Thomas Fossati,
+Gorry Fairhurst, Éric Vyncke, Gunter Van de Velde, Mahesh Jethanandani,
+Mike Bishop, Mohamed Boucadair, Viktor Dukhovni, and Eliot Lear for reviewing
+the document and providing comments.
 
 The acknowledgement from the previous version of this document follows:
 
