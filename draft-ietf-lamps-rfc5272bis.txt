@@ -331,6 +331,8 @@ Table of Contents
    Update CMC Control Attribute Table to include raIdentityWitness and
    responseBody from RFC 6402.
 
+   Added support for AuthEnvelopedData.
+
 2.  Protocol Overview
 
    A PKI enrollment transaction in this specification is generally
@@ -4963,6 +4965,10 @@ Acknowledgments
    Obviously, the authors of this version of the document would like to
    thank Jim Schaad and Michael Myers for their work on the previous
    version of this document.
+
+   Thank you to Charlie Kaufman, Orie Steele, Paul Wouters, Éric Vyncke,
+   Mike Bishop, Reese Enghardt, and Mohamed Boucadair for reviewing the
+   document and providing comments.
 
    The acknowledgment from the previous version of this document
    follows:
