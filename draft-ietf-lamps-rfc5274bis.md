@@ -462,6 +462,9 @@ Obviously, the authors of this version of the document would like to
 thank Jim Schaad and Michael Myers for their work on the previous
 version of this document.
 
+Thank you to Mike Bishop, Mohamed Boucadair, and Erik Kline for
+reviewing the document and providing comments.
+
 The acknowledgment from the previous version of this document follows:
 
 The authors and the PKIX Working Group are grateful for the
