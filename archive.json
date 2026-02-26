@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-19T02:43:59.347237+00:00",
+  "timestamp": "2026-02-26T02:38:23.522594+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -8739,78 +8739,126 @@
       "id": "PR_kwDOKfq5gM7Ebqxg",
       "title": " 5272: acknowledgments and updates since",
       "url": "https://github.com/lamps-wg/cmcbis/pull/215",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-02-17T18:48:29Z",
-      "updatedAt": "2026-02-17T18:48:30Z",
+      "updatedAt": "2026-02-25T16:07:43Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "55290bfedfd1d69c2e02e05cf94e9e73df42f7f7",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "5272-acknowledgments-and-updates-since",
       "headRefOid": "12da5b640f88df9958f01707d9de12b275d4840d",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-02-25T16:07:43Z",
+      "mergedAt": "2026-02-25T16:07:43Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "56ee79dccf446d409ac619c5609798bf8c8fd8d6"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7lyalG",
+          "commit": {
+            "abbreviatedOid": "12da5b6"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-02-25T15:58:31Z",
+          "updatedAt": "2026-02-25T15:58:31Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 216,
       "id": "PR_kwDOKfq5gM7Eb1_3",
       "title": "5273: Acknowledgments, updates since, and typo",
       "url": "https://github.com/lamps-wg/cmcbis/pull/216",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-02-17T19:03:41Z",
-      "updatedAt": "2026-02-17T19:03:42Z",
+      "updatedAt": "2026-02-25T16:00:48Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "55290bfedfd1d69c2e02e05cf94e9e73df42f7f7",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "5273-Acknowledgments,-updates-since,-and-typo",
       "headRefOid": "8ef375014864b774c33fbc5b0866a098d378ead0",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-02-25T16:00:48Z",
+      "mergedAt": "2026-02-25T16:00:48Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "0e690d1505a18324ca9ceb727345ec1f9a8a52a0"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7lybQl",
+          "commit": {
+            "abbreviatedOid": "8ef3750"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-02-25T15:59:01Z",
+          "updatedAt": "2026-02-25T15:59:01Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 217,
       "id": "PR_kwDOKfq5gM7Eb54n",
       "title": "5274: acknowledgments",
       "url": "https://github.com/lamps-wg/cmcbis/pull/217",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "mandelj7",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-02-17T19:09:01Z",
-      "updatedAt": "2026-02-17T19:09:02Z",
+      "updatedAt": "2026-02-25T16:00:36Z",
       "baseRepository": "lamps-wg/cmcbis",
       "baseRefName": "main",
       "baseRefOid": "55290bfedfd1d69c2e02e05cf94e9e73df42f7f7",
       "headRepository": "lamps-wg/cmcbis",
       "headRefName": "5274-acknowledgments",
       "headRefOid": "19df484d81c70b5b2b5407a5f91d87f8988fc712",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-02-25T16:00:28Z",
+      "mergedAt": "2026-02-25T16:00:28Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "4704841344325af59e32f7baec85cc9fc7c995be"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfq5gM7lybn_",
+          "commit": {
+            "abbreviatedOid": "19df484"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-02-25T15:59:18Z",
+          "updatedAt": "2026-02-25T15:59:18Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
