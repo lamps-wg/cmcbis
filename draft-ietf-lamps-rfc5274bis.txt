@@ -6,7 +6,7 @@ LAMPS Working Group                                        J. Mandel, Ed
 Internet-Draft                                              AKAYLA, Inc.
 Obsoletes: 5274, 6402 (if approved)                        S. Turner, Ed
 Intended status: Standards Track                                   sn3rd
-Expires: 29 August 2026                                 25 February 2026
+Expires: 28 November 2026                                    27 May 2026
 
 
 Certificate Management Messages over CMS (CMC): Compliance Requirements
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 August 2026.
+   This Internet-Draft will expire on 28 November 2026.
 
 Copyright Notice
 
@@ -503,21 +503,21 @@ Table of Contents
 
    [AES-WRAP] Schaad, J. and R. Housley, "Advanced Encryption Standard
               (AES) Key Wrap Algorithm", RFC 3394, DOI 10.17487/RFC3394,
-              September 2002, <https://www.rfc-editor.org/rfc/rfc3394>.
+              October 2002, <https://www.rfc-editor.org/rfc/rfc3394>.
 
    [CMC-STRUCT]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC)", Work in Progress, Internet-Draft, draft-ietf-
-              lamps-rfc5272bis-10, 6 February 2026,
+              lamps-rfc5272bis-11, 26 February 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5272bis-10>.
+              rfc5272bis-11>.
 
    [CMC-TRANS]
               Mandel, J. and S. Turner, "Certificate Management over CMS
               (CMC): Transport Protocols", Work in Progress, Internet-
-              Draft, draft-ietf-lamps-rfc5273bis-10, 6 February 2026,
+              Draft, draft-ietf-lamps-rfc5273bis-11, 26 February 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
-              rfc5273bis-10>.
+              rfc5273bis-11>.
 
    [CMS]      Housley, R., "Cryptographic Message Syntax (CMS)", STD 70,
               RFC 5652, DOI 10.17487/RFC5652, September 2009,
@@ -581,7 +581,7 @@ Table of Contents
    [HASH-ATTACKS]
               Hoffman, P. and B. Schneier, "Attacks on Cryptographic
               Hashes in Internet Protocols", RFC 4270,
-              DOI 10.17487/RFC4270, November 2005,
+              DOI 10.17487/RFC4270, December 2005,
               <https://www.rfc-editor.org/rfc/rfc4270>.
 
    [PKCS10]   Nystrom, M. and B. Kaliski, "PKCS #10: Certification
