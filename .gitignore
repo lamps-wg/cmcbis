@@ -7,6 +7,7 @@
 *~
 .tags
 /*-[0-9][0-9].xml
+/.*.mk
 /.gems/
 /.refcache
 /.targets.mk
@@ -17,7 +18,9 @@
 /versioned/
 Gemfile.lock
 archive.json
-draft-mandel-lamps-rfc5272bis.xml
+draft-ietf-lamps-rfc5272bis.xml
+draft-ietf-lamps-rfc5273bis.xml
+draft-ietf-lamps-rfc5274bis.xml
 package-lock.json
 report.xml
 !requirements.txt
