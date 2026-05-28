@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-26T02:38:23.522594+00:00",
+  "timestamp": "2026-05-28T01:29:58.915305+00:00",
   "repo": "lamps-wg/cmcbis",
   "labels": [
     {
@@ -1492,15 +1492,15 @@
       "id": "I_kwDOKfq5gM7e5UID",
       "title": "5273: Mail Text",
       "url": "https://github.com/lamps-wg/cmcbis/issues/211",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "@vdukhovni PTAL\n\nCollecting some comments on an already merged PR:\n\nhttps://github.com/lamps-wg/cmcbis/commit/45711d5749b1643581a1af1a4265eefad6ae7964#r169673166\nhttps://github.com/lamps-wg/cmcbis/commit/45711d5749b1643581a1af1a4265eefad6ae7964#r169663242\nhttps://github.com/lamps-wg/cmcbis/commit/fc32b30e6a61de4ae217f907e503ae30e68f689b#r169674615\n\nWe're interpreting some tea leaves here since neither Joe nor I was one of the original authors:\n\nWe believe this section was trying to tell implementers to make messages conform to what 1) should have been in [RFC 2986](https://www.rfc-editor.org/rfc/rfc2986.html) but ended up in in [s2.2 of RFC 5967](https://www.rfc-editor.org/rfc/rfc5967.html#section-2.2) (application/pkcs10); 2) is in [s3.5.2 of RFC 8551](https://www.rfc-editor.org/rfc/rfc8551.html#section-3.5.2) (application/pkcs7-mime); \u2014 and 3) not multipart.  I am hoping that if we reference massage in some references to RFCs 5967 and 8551 that would make it clearer?\n\nOn your other points:\n\n- refer to correct parameter names: in light of above, we will attempt to clean up some of the language to make sure we refer to the correct parameters.\n- file name requirement: pretty sure it was saying that you had to include some kind of value, i.e., you had to include the field and make sure it's not an empty string.\n- As far as non-ASCII character support - you really got me!! Should this have been specified in the media type definitions? I'd personally lean toward prohibiting them.\n\nWe'll work on a PR.",
       "createdAt": "2025-12-17T16:20:30Z",
-      "updatedAt": "2025-12-17T16:20:30Z",
-      "closedAt": null,
+      "updatedAt": "2026-05-18T20:53:43Z",
+      "closedAt": "2026-05-18T20:53:43Z",
       "comments": []
     },
     {
@@ -8859,6 +8859,34 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 218,
+      "id": "PR_kwDOKfq5gM7c0iZW",
+      "title": "Update workflow",
+      "url": "https://github.com/lamps-wg/cmcbis/pull/218",
+      "state": "MERGED",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Update archive.yml",
+      "createdAt": "2026-05-18T20:51:34Z",
+      "updatedAt": "2026-05-27T16:16:45Z",
+      "baseRepository": "lamps-wg/cmcbis",
+      "baseRefName": "main",
+      "baseRefOid": "56ee79dccf446d409ac619c5609798bf8c8fd8d6",
+      "headRepository": "lamps-wg/cmcbis",
+      "headRefName": "seanturner-update-workflow",
+      "headRefOid": "a953afd8568ce3e686ee45090123770477ef3fa4",
+      "closedAt": "2026-05-27T16:16:45Z",
+      "mergedAt": "2026-05-27T16:16:45Z",
+      "mergedBy": "mandelj7",
+      "mergeCommit": {
+        "oid": "755452e2a5036bf3ede29213bd639bf90caa6814"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
